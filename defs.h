@@ -18,6 +18,8 @@
 #else
 #include <malloc.h>
 #endif
+#define restr __restrict__
+//#define restr
 //This allows easy changing of complex and real types
 typedef fftw_complex comp;
 typedef double real;

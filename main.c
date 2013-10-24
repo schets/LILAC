@@ -110,21 +110,28 @@ int main(int argc, char** argv){
     for(int i = 0; i < NUM_TIME_STEPS+1; i++){
         t[i] = dt*((real)i-NUM_TIME_STEPS/2.0);
     }
-    nl;
     //build initial condition 
     //use fftw_malloc to ensure proper memory alignment
-    comp* U_int1 = malloc(sizeof(comp)*NUM_TIME_STEPS);
-    comp* U_int2 = malloc(sizeof(comp)*NUM_TIME_STEPS);
-    comp* U_int1_f = malloc(sizeof(comp)*NUM_TIME_STEPS);
-    comp* U_int2_f = malloc(sizeof(comp)*NUM_TIME_STEPS);
+    comp* U_int1 = malloc(2*sizeof(comp)*NUM_TIME_STEPS);
+    comp* U_int2 = U_int1+NUM_TIME_STEPS;
+    comp* U_int1_f = malloc(2*sizeof(comp)*NUM_TIME_STEPS);
+    comp* U_int2_f = U_int1_f + NUM_TIME_STEPS; 
+    real* U_sq1 = malloc(2*sizeof(comp)*NUM_TIME_STEPS);
+    real* U_sq2 = U_sq2 + NUM_TIME_STEPS;
+    comp* comp_in=malloc(sizeof(comp)*NUM_TIME_STEPS);
+    comp* comp_out=malloc(sizeof(comp)*NUM_TIME_STEPS);
+    real* comp_in_r=malloc(sizeof(real)*NUM_TIME_STEPS);
+    comp* comp_out_r = malloc(sizeof(comp)*(1+NUM_TIME_STEPS/2));
     for(int i = 0; i < NUM_TIME_STEPS; i++){
         U_int1[i] = U_int2[i] = 1.0/cosh(t[i]/2.0);
     }
-    fftw_plan p_for1, p_for2, p_back1, p_back2;
-    p_for1=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int1, U_int1_f, FFTW_FORWARD, FFTW_MEASURE);
-    p_for2=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int2, U_int2_f, FFTW_FORWARD, FFTW_MEASURE);
-    p_back1=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int1_f, U_int1, FFTW_BACKWARD, FFTW_MEASURE);
-    p_back2=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int2_f, U_int2, FFTW_BACKWARD, FFTW_MEASURE);
+    fftw_plan p_for1, p_for2, p_back1, p_back2, comp_r, comp_c;
+    p_for1=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int1, U_int1_f, FFTW_FORWARD, FFTW_ESTIMATE);
+    p_for2=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int2, U_int2_f, FFTW_FORWARD, FFTW_ESTIMATE);
+    p_back1=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int1_f, U_int1, FFTW_BACKWARD, FFTW_ESTIMATE);
+    p_back2=fftw_plan_dft_1d(NUM_TIME_STEPS, U_int2_f, U_int2, FFTW_BACKWARD, FFTW_ESTIMATE);
+    comp_r=fftw_plan_dft_r2c_1d(NUM_TIME_STEPS, comp_in_r, comp_out_r, FFTW_ESTIMATE);
+    comp_c=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE);
     //build array of spectral values
     //fftw does method similar to matlab where the positive frequencies are stored in the first half
     //and the negative frequencies are stored in the second half
@@ -141,8 +148,6 @@ int main(int argc, char** argv){
         printf("%.2f, ", k[i]);
     }
 
-    nl;
-    nl;
     tt = clock();//used to measure the time the program takes
     //build fourier transform initial conditions
     fftw_execute(p_for1);
@@ -166,9 +171,12 @@ int main(int argc, char** argv){
     tt = clock() - tt;
     printf("Total elapsed time was %lf seconds\n", (real)((real)tt)/CLOCKS_PER_SEC);
     free(U_int1);
-    free(U_int2);
     free(U_int1_f);
-    free(U_int2_f);
+    free(U_sq1);
+    free(comp_out);
+    free(comp_in);
+    free(comp_in_r);
+    free(comp_out_r);
     free(k);
     fftw_destroy_plan(p_for1);
     fftw_destroy_plan(p_for2);
