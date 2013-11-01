@@ -1,14 +1,19 @@
-CFLAGS=-std=c99 -O3 -ffast-math -ftree-vectorize -ftree-vectorizer-verbose=6
+CFLAGS= -O3 -ffast-math -I./
+LFLAGS= -lfftw3 -lm
 all: inteq
-inteq: rhs.o main.o
+inteq: rhs.a integrator.a main.o
 	@echo "Linking binaries"
-	gcc *.o -lgsl -lgslcblas -lfftw3 -lm -o inteq.out
-main.o: main.c
+	g++ lib/*.o  $(LFLAGS) -o bin/inteq
+main.o: main.cpp
 	@echo "Compiling main routine"
-	gcc  -c main.c $(CFLAGS) -o main.o
-rhs.o: rhs.c
+	g++ -c main.cpp $(CFLAGS) -o lib/main.o
+rhs.a: rhs/*.cpp 
 	@echo "Compiling RHS"
-	gcc -c rhs.c $(CFLAGS) -o rhs.o
-
+	g++ -c rhs/*.cpp $(CFLAGS)
+	mv *.o lib/
+integrator.a: integrator/*.cpp
+	@echo "Compiling Integrators"
+	g++ -c integrator/*.cpp $(CFLAGS)
+	mv *.o lib/
 clean:
-	rm -f *.o
+	rm -r -f *.o */*.o
