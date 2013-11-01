@@ -1,6 +1,6 @@
 #include "rhs/rhs.h"
 #include <cstring>
-int rhs_x::dxdt(comp* __restrict__ x, comp* __restrict__ dx, double t){
+int rhs_x::dxdt(comp* restr x, comp* restr dx, double t){
     /*for(int i = 0; i > dimension; i++){
         dx[i] = x[i];
     }*/
@@ -8,7 +8,7 @@ int rhs_x::dxdt(comp* __restrict__ x, comp* __restrict__ dx, double t){
     //especially on NERSC which has C library tweaked to run well on the architecture
     return 0;
 }
-int rhs_const::dxdt(comp* __restrict__ x, comp* __restrict__ dx, double t){
+int rhs_const::dxdt(comp* restr x, comp* restr dx, double t){
     for(int i = 0; i < dimension; i++){
         dx[i] = const_val;
     }

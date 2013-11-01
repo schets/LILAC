@@ -1,5 +1,6 @@
 #include "rhs/rhs.h"
 #include "defs.h"
+#include "comp_funcs.h"
 #include <cstring>
 comp trap(comp * restr v, size_t s){
     comp sum = 0;
@@ -19,32 +20,99 @@ double trap(double * restr v, size_t s){
     sum += v[0] + v[s-1];
     return sum;
 }
-int rhs_CNLS::dxdt(comp* __restrict__ x, comp* __restrict__ dx, double t){
-    p->uf1=x;
-    p->uf2=x+NUM_TIME_STEPS;
+rhs_CNLS::rhs_CNLS(size_t dimen, double g, double e, double _dt,
+        double tlen, size_t n_steps):rhs(dimen), g0(g), e0(e), dt(_dt),
+        LENGTH_T(tlen), NUM_TIME_STEPS(n_steps){
+    u1 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    u2 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    comp_in = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    comp_out = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    comp_out_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    comp_in_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+    sq1 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+    sq2 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+    k = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+    ksq = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+    //input arrays don't really matter here because the plan
+    //is executated against specific input arrays at runtime
+    //and not with the initialization arrays
+    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
+    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
+    //create k values
+    double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
+    for(int i=0; i<NUM_TIME_STEPS/2; i++){
+        k[i] = mulval * i;
+        ksq[i] = k[i]*k[i];
+    }
+    for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
+        k[i] = mulval * (i-NUM_TIME_STEPS);
+        ksq[i] = k[i]*k[i];
+    }
+}
+rhs_CNLS::~rhs_CNLS(){
+    free(u1);
+    free(u2);
+    free(comp_in);
+    free(comp_out);
+    free(comp_in_r);
+    free(comp_out_r);
+    free(sq1);
+    free(sq2);
+    free(k);
+    free(ksq);
+    fftw_destroy_plan(ffor);
+    fftw_destroy_plan(fback);
+}
+//This is the RHS for the CNLS equations
+//I haven't implemented real ffts for the parts to which they apply
+//since they have a more complicated output and I just want to have a working
+//copy for now
+int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
+    uf1=x;
+    uf2=x+NUM_TIME_STEPS;
+
     //take the inverse fourier transform
-    fftw_execute(p->pb1);
-    fftw_execute(p->pb2);
+    fftw_execute_dft(fback, uf1, u1);
+    fftw_execute_dft(fback, uf2, u2);
+    //normalize the u arrays
+    for(int i = 0; i < NUM_TIME_STEPS; i++){
+        u1[i]/=NUM_TIME_STEPS;
+        u2[i]/=NUM_TIME_STEPS;
+       // cout << _real(u1[i]) << " ";
+    }
+   // cout << endl;
     //do fancy math stuff
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        double cur1 = cabs(p->u1[i]);
-        double cur2 = cabs(p->u2[i]);
-        p->sq1[i] = cur1*cur1;
-        p->sq2[i] = cur2*cur2;
-        p->comp_in_r[i] = p->sq1[i] + p->sq2[i];
+        sq1[i] = _sqabs(u1[i]);
+        sq2[i] = _sqabs(u2[i]);
+        comp_in_r[i] = sq1[i] + sq2[i];
     }
-    comp expr1 = I*(2*p->g0/(1+trap(p->comp_in_r, NUM_TIME_STEPS)*p->dt/p->e0));
+    comp expr1 = I*(2*g0/(1+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts for the rhs
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        p->comp_in_r[i] = p->sq1[i] + A*p->sq2[i];
-        p->comp_in[i] = p->u2[i] * p->u2[i] + conj(p->u1[i]);
+        comp_in_r[i] = sq1[i] + A*sq2[i];
+        comp_in[i] = u2[i] * u2[i] + _conj(u1[i]);
     }
-    fftw_execute(p->c_r);
-    fftw_execute(p->c_c);
+    //fourier transform forwards nonlinear equations
+    fftw_execute_dft(ffor, comp_in, comp_out);
+    fftw_execute_dft(ffor, comp_in_r, comp_out_r);
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        comp cval = ((D/2) * p->ksq[i] + K) * p->uf1[i] - p->comp_out_r[i]*p->u1[i]; 
-        cval -= B*p->comp_out[i] + expr1*p->uf1[i]*(1-tau*p->ksq[i]) - Gamma*p->uf1[i];
+        dx[i] = ((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]*u1[i]
+            - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i];
     }
+    //Do the fft work for the other half of the calculations
+    for(size_t i = 0; i < NUM_TIME_STEPS; i++){
+        comp_in_r[i] = A*sq1[i] + sq2[i];
+        comp_in[i] = u1[i] * u1[i] + _conj(u2[i]);
+    }
+    fftw_execute_dft(ffor, comp_in, comp_out);
+    fftw_execute_dft(ffor, comp_in_r, comp_out_r);
+    for(size_t i = 0; i < NUM_TIME_STEPS; i++){
+        dx[i+NUM_TIME_STEPS] = ((D/2) * ksq[i] + K) * uf2[i] - comp_out_r[i]*u2[i]
+            - B*comp_out[i] + expr1*uf2[i]*(1-tau*ksq[i]) - Gamma*uf2[i];
+    }
+    //all values have been set
+    //return success code
     return 0;
 }
 

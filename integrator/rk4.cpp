@@ -17,7 +17,7 @@ rk4::~rk4(){
 //This has been modified to work with complex numbers
 //and fit into the solver object structure.
 //But the code mostly remains unchanged
-int rk4::integrate(rhs* func, comp* u0, double t0, double tf)
+int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)
     //****************************************************************************80
     //
     //  Purpose:
