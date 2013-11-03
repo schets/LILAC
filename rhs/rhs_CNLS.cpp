@@ -72,14 +72,10 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     uf2=x+NUM_TIME_STEPS;
 
     //take the inverse fourier transform
-    fftw_execute_dft(fback, uf1, u1);
-    fftw_execute_dft(fback, uf2, u2);
+    fftw_norm(fback, uf1, u1, NUM_TIME_STEPS);
+    fftw_norm(fback, uf2, u2, NUM_TIME_STEPS);
     //normalize the u arrays
-    for(int i = 0; i < NUM_TIME_STEPS; i++){
-        u1[i]/=NUM_TIME_STEPS;
-        u2[i]/=NUM_TIME_STEPS;
-       // cout << _real(u1[i]) << " ";
-    }
+    
    // cout << endl;
     //do fancy math stuff
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
@@ -94,23 +90,29 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
         comp_in[i] = u2[i] * u2[i] + _conj(u1[i]);
     }
     //fourier transform forwards nonlinear equations
-    fftw_execute_dft(ffor, comp_in, comp_out);
-    fftw_execute_dft(ffor, comp_in_r, comp_out_r);
+    fftw_norm(ffor, comp_in, comp_out, NUM_TIME_STEPS);
+    fftw_norm(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
+    
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = ((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]*u1[i]
             - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i];
     }
     //Do the fft work for the other half of the calculations
+    
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = A*sq1[i] + sq2[i];
         comp_in[i] = u1[i] * u1[i] + _conj(u2[i]);
     }
-    fftw_execute_dft(ffor, comp_in, comp_out);
-    fftw_execute_dft(ffor, comp_in_r, comp_out_r);
+    fftw_norm(ffor, comp_in, comp_out, NUM_TIME_STEPS);
+    fftw_norm(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = ((D/2) * ksq[i] + K) * uf2[i] - comp_out_r[i]*u2[i]
             - B*comp_out[i] + expr1*uf2[i]*(1-tau*ksq[i]) - Gamma*uf2[i];
     }
+    for(size_t i = 0; i < NUM_TIME_STEPS; i++){
+        cout << _real(dx[i]) << "+i" << _imag(dx[i]) << 
+            ", " << _real(dx[i+NUM_TIME_STEPS]) << "+i"<<_imag(dx[i+NUM_TIME_STEPS])<<endl;
+    }       //
     //all values have been set
     //return success code
     return 0;
