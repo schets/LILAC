@@ -2,13 +2,7 @@ CFLAGS=-O3 -ffast-math -march=native -I./
 LFLAGS=-lfftw3 -lm
 CPP=g++
 LD=g++
-all: mkdirs bin/inteq
-mkdirs:
-	@mkdir -p lib
-	@mkdir -p lib/integrator
-	@mkdir -p lib/rhs
-	@mkdir -p lib/solver
-	@mkdir -p bin
+all: bin/inteq 
 bin/inteq: lib/rhs.o lib/integrator.o lib/main.o
 	@echo "Linking binaries"
 	$(LD)  lib/*.o $(LFLAGS) -o bin/inteq

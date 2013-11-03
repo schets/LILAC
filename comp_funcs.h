@@ -1,6 +1,9 @@
 #ifndef COMP_FUNCS_H
 #define COMP_FUNCS_H
-#include <math.h>
+#include <cmath>
+extern "C"{
+#include <fftw3.h>
+}
 //THis file contains inlined complex functions
 //The C and C++ standard treat complex as an array of two doubles
 //but the C standard doesn't always have inlined complex functions
@@ -31,4 +34,14 @@ inline double _sqabs(comp inval){
     i = ((double*)&inval)[1];
     return r*r + i*i;
 }
+
+//This function returns a normalized fourier transform in either direction
+inline void fftw_norm(fftw_plan pp, comp* in, comp* out, size_t len){
+    fftw_execute_dft(pp, in, out);
+    double nval = std::sqrt(len);
+    for(size_t jj = 0; jj < len; jj++){
+        out[i]/=nval;
+    }
+}
+
 #endif
