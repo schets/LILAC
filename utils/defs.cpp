@@ -38,12 +38,4 @@ typedef fftw_complex comp;
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50
-typedef struct odeparams{
-    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,
-         * restr comp_out, * restr comp_out_r, * restr comp_in_r;
-    double * restr sq1, * restr sq2, * restr k, * restr ksq;
-    fftw_plan p1, p2, pb1, pb2, c_r, c_c;
-    double alpha1, alpha2, alpha3, alpha4;
-    double g0, e0, dt;
-} odeparams;
 #endif

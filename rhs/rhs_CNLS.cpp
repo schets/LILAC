@@ -40,7 +40,6 @@ rhs_CNLS::rhs_CNLS(size_t dimen, double g, double e, double _dt,
     fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
     //create k values
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
-    cout << mulval << endl << endl;
     for(int i=0; i<NUM_TIME_STEPS/2; i++){
         k[i] = mulval * i;
         ksq[i] = k[i]*k[i];
@@ -77,7 +76,11 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     fftw_norm(fback, uf2, u2, NUM_TIME_STEPS);
     //normalize the u arrays
     
-   // cout << endl;
+   // for(int i = 0; i < NUM_TIME_STEPS; i++){
+  //      cout << _real(u1[i]) << "+" << _imag(u1[i]) << "i\n";
+  //  }
+  //  cout << endl << endl << endl;
+    // cout << endl;
     //do fancy math stuff
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         sq1[i] = _sqabs(u1[i]);
@@ -93,32 +96,24 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     //fourier transform forwards nonlinear equations
     fftw_norm(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fftw_norm(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    
+
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = ((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]*u1[i]
             - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i];
     }
     //Do the fft work for the other half of the calculations
-    
+
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = A*sq1[i] + sq2[i];
         comp_in[i] = u1[i] * u1[i] + _conj(u2[i]);
     }
     fftw_norm(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fftw_norm(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    for(int i = 0; i < NUM_TIME_STEPS; i++){
-        cout << k[i] << " " << ksq[i] << endl;
-    }
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = ((D/2) * ksq[i] + K) * uf2[i] - comp_out_r[i]*u2[i]
             - B*comp_out[i] + expr1*uf2[i]*(1-tau*ksq[i]) - Gamma*uf2[i];
     }
-    cout << "RHS output values" << endl;
-    cout << "real(u)   imag(u)   real(v)   imag(v)" << endl;
-    for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        cout << _real(dx[i]) << "+i" << _imag(dx[i]) << 
-            ", " << _real(dx[i+NUM_TIME_STEPS]) << "+i"<<_imag(dx[i+NUM_TIME_STEPS])<<endl;
-    }       //
+    //
     //all values have been set
     //return success code
     return 0;

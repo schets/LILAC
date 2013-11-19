@@ -1,4 +1,4 @@
-#include "rhs/rhs.h"
+#include "rhs.h"
 #include <cstring>
 int rhs_x::dxdt(comp* restr x, comp* restr dx, double t){
     /*for(int i = 0; i > dimension; i++){

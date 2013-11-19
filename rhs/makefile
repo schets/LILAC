@@ -13,7 +13,7 @@ $(LIB_MAIN)/rhs.o: $(RHS_OBJ)
 $(LIB_PATH)/rhs_main.o: rhs.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_main.o
 	$(CPP) -c rhs.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_main.o
-$(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp
+$(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_CNLS.o
 	$(CPP) -c rhs_CNLS.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_CNLS.o
 
