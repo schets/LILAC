@@ -8,7 +8,7 @@
 
 OBJS = lib/rhs.o  lib/solver.o lib/integrator.o lib/main.o
 all: $(OBJS) bin/inteq
-
+	@cd parser && make
 include make.inc
 .PHONY: clean
 bin/inteq: $(OBJS) 
