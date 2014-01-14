@@ -29,12 +29,12 @@ typedef fftw_complex comp;
 //parameters taken from matlab main file
 //can move to input parameters as well
 //but for now these are defines
-#define D (-.04)
-#define K (.01)
+#define D (-.4)
+#define K (.1)
 #define A (2.0/3.0)
 #define B (1.0/3.0) //need to find a real value for this
 #define tau (.01)
-#define Gamma (.01)
+#define Gamma (.1)
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50

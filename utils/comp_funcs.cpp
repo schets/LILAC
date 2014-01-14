@@ -37,14 +37,17 @@ inline double _sqabs(comp inval){
 }
 
 //This function returns a normalized fourier transform in either direction
-inline void fftw_norm(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
+
+inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
+    fftw_execute_dft(pp, in, out);
+    
+}
+inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
     fftw_execute_dft(pp, in, out);
     double nval;
-    nval=1.00/std::sqrt(len);
     nval=1.00/len;
     for(size_t i = 0; i < len; i++){
         out[i]*=nval;
     }
 }
-
 #endif
