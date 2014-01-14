@@ -10,7 +10,7 @@ class engine;
 class engineimp{
     //wrapper class for item pointer
     //facilitates easier memory management
-    class iptr{
+    /*class iptr{
         public:
             item* ptr;
             iptr(item* p):ptr(p){}
@@ -23,12 +23,27 @@ class engineimp{
             inline operator item*(){
                 return ptr;
             };
-    };
-    std::map<std::string, iptr> values;
+            inline item* operator->(){
+                return ptr;
+            }
+            inline item& operator*(){
+                return *ptr;
+            }
+            inline operator const item*() const{
+                return ptr;
+            };
+            inline const item* operator->() const{
+                return ptr;
+            }
+            inline const item& operator*()const {
+                return *ptr;
+            }
+    };*/
+    std::map<std::string, item*> values;
     void read(std::ifstream& fstr);
     public:
-        engineimp(const std::string fname);
-        friend class engine;
+    engineimp(const std::string fname);
+    friend class engine;
 };
 
 #endif

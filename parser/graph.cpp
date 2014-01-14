@@ -1,5 +1,7 @@
+#include "engineimp.h"
 #include "graph.h"
 #include <iostream>
+#include <stdlib.h>
 void graph::insert(item* it_p){
     if(nodes.count(it_p->name())){
         std::cout << "Warning: variable " << it_p->name() << "has already been entered\n";
@@ -31,17 +33,23 @@ void graph::proc_node_deps(graph::graphnode& g){
     g.processed=1;
     std::list<std::string>::iterator beg;
     for(beg = g.pointsto.begin(); beg != g.pointsto.end(); beg++){
+        if(!nodes.count(*beg)){
+            std::cout<<g.p->name()<<" depends on "<<*beg<<", which has not been inserted\n";
+            exit(EXIT_FAILURE);
+        }
+            
         nodes[*beg].pointedat.push_back(g.p->name());
     }
 }
 //returns sorted list, all items in list are added to the graph
 int graph::sort(std::list<item*>& l){
     std::list<graphnode*> queuelist;
-    std::list<item*>::iterator beg = l.begin();
-    for(; beg != l.end(); beg++){
-        insert(*beg);
+    std::list<item*>::iterator begl = l.begin();
+    for(; begl != l.end(); begl++){
+        insert(*begl);
     }
     l.clear(); 
+    ins_extra_deps();
     std::map<std::string, graphnode>::iterator beg = nodes.begin();
     //populate the list of nodes without dependencies
     for(; beg != nodes.end(); beg++){
@@ -76,10 +84,6 @@ int graph::sort(std::list<item*>& l){
 }
 int main(){
     graph g;
-    real rval;
-    rval.parse("3.12");
-    double dval;
-    rval.retrieve(&dval);
-    std::cout << dval << std::endl;
+    engineimp ee("testfile.in");
     return 0;
 }

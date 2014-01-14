@@ -26,31 +26,59 @@ void engineimp::read(std::ifstream& fstr){
     std::string token;
     std::string curline;
     std::list<item*> post_order;
+    int line = 0;
 
-    //get first line
-    std::getline(fstr, curline);
     while(fstr.good()){
-
+        
+        //get current line
+        std::getline(fstr, curline);
+        line++;
+        std::cout<<curline<<std::endl;
+        item* curit;
         //remove comments
-        curline.remove(curline.find(comment, curline.end()));
+        size_t cpos = curline.find(comment);
+        if(cpos != std::string::npos){
+            curline.erase(cpos, std::string::npos);
+        }
         
         //trim leading and trailing whitespace
         trim(curline);
-
-        //skip rest of loop is entire string deleted
+        std::cout << "Trim:" << curline<<std::endl;
+        //skip rest of loop if entire string deleted
         if(curline.empty()){
             continue;
         }
         //retrieve the first token
-        token="";
+        ltoken(token, curline);
+        std::cout << token << ", " << curline<<std::endl;
+        //this token should be the variable type
+        curit = creator::create(token);
+        if(curline.empty()){
+            std::cout<<"Variables need a name and a value, "<<
+                "error on line " << line << std::endl;
+            continue;
+        }
+        //get next token, should be variable name
+        ltoken(token, curline);
+        std::cout << token << ", " << curline<<std::endl;
+        curit->setname(token);
+        curit->parse(curline);
+        post_order.push_back(curit);
+        values[token]=curit; 
+        std::cout << std::endl;
         //get the current line from the string
-        std::getline(fstr, curline);
     }
     graph gg;
     //topologically sort the variables
     //so that variables can only depend
     //on items previously in the list
     gg.sort(post_order);
+    std::list<item*>::iterator lbeg;
+    for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
+        (*lbeg)->postprocess(values);
+        std::cout << (*lbeg)->name() << ": " << (*lbeg)->type() << std::endl;
+    }
 };
+
 
 
