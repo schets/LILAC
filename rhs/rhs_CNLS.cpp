@@ -25,10 +25,10 @@ inline void printv(double c){
 }
 comp trap(comp * restr v, size_t s){
     comp sum = 0;
-    for(size_t i=0; i < s-1; i++){
+    for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
-   // sum += v[0] + v[s-1];
+    sum += (v[0] + v[s-1])/2.0;
     return sum;
 }
 double trap(double * restr v, size_t s){

@@ -6,37 +6,32 @@
 
 
 class item{
-    std::vector<std::string> deps;
     std::string _name;
     public:
     virtual void parse(const std::string& inval) = 0;
-    virtual void retrieve(void* inval) = 0;
+    virtual void retrieve(void* inval) const = 0;
     virtual void postprocess(std::map<std::string, item*>& indat){};
-    inline const std::vector<std::string>& dependencies() const{
-        return deps;//deps is initialized in constructors
-    }
-    const inline std::string& name() const{
-        return _name;
-    }
+    virtual std::vector<std::string> dependencies() const = 0;
+    virtual std::string type() const = 0;
     virtual ~item(){}
+    void setname(const std::string n);
+    const std::string& name()const ;
 };
 class real:public item{
     double value;
     public:
+        virtual std::vector<std::string> dependencies() const;
+        virtual  std::string type() const;
         virtual void parse(const std::string& inval);
-        virtual void retrieve(void* inval);
-};
-class integer:public item{
-    int value;
-    public:
-        virtual void parse(const std::string& inval);
-        virtual void retrieve(void* inval);
+        virtual void retrieve(void* inval) const ;
 };
 class string:public item{
     std::string value;
     public:
+    virtual std::vector<std::string> dependencies() const;
+    virtual std::string type() const;
     virtual void parse(const std::string& inval);
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval) const ;
 };
 typedef std::map<std::string, item*> data_str;
 #endif

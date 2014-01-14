@@ -12,6 +12,7 @@ graph::graphnode& graph::_insert(item* it_p){
     g.p = it_p;
     g.processed=0;
     std::vector<std::string> deps = it_p->dependencies();
+    g.pointsto.clear();
     g.pointsto.insert(g.pointsto.begin(), deps.begin(), deps.end());
     return g;
 }
@@ -19,7 +20,7 @@ void graph::ins_extra_deps(){
     std::map<std::string, graphnode>::iterator beg;
     for(beg=nodes.begin(); beg!= nodes.end(); beg++){
         graphnode& g = beg->second;
-        if(g.processed){
+        if(!g.processed){
             proc_node_deps(g);
         }
     }

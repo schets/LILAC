@@ -1,11 +1,14 @@
 #ifndef ENGINE_H
 #define ENGINE_H
-#include <map>
 #include <string>
-#include "item"
+#include "item.h"
+class engineimp;
 class engine{
-    map<std::string, item*> values;
+    engineimp* eng;
     public:
-    void 
+    engine(const std::string fname); 
+    ~engine();
+    void run();
+    void output();
 };
 #endif
