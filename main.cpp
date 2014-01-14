@@ -6,7 +6,7 @@
 #include "integrator/integrator.h"
 using namespace std;
 int main(int argc, char** argv){
-    size_t nts=512;
+    size_t nts=5;
     double t_int = 60.0;
     rhs* rh = new rhs_CNLS(2*nts, 1.73, 4.23, t_int/nts, t_int, nts);
     integrator* inter = new rk4(10000, 2*nts);
@@ -27,22 +27,22 @@ int main(int argc, char** argv){
     fft(t2, u0+nts, u0+nts, nts);
     clock_t tval = clock();
     for(int i = 0; i < 1; i++){
-         inter->integrate(rh, u0, 0, t_int);
-   //       rh->dxdt(u0, u1, 0);
+   //      inter->integrate(rh, u0, 0, t_int);
+          rh->dxdt(u0, u1, 0);
      //     rh->dxdt(u1, u0, 0);
 
     }
-    ifft(t1, u0, u0, nts);
-    ifft(t1, u0+nts, u0+nts, nts);
-    comp* tmp = u1;
-    u1=u0;
+   // ifft(t1, u0, u0, nts);
+  //  ifft(t1, u0+nts, u0+nts, nts);
+  //  comp* tmp = u1;
+  //  u1=u0;
     //fftw_norm(t1, u1, u1, nts);
     //fftw_norm(t1, u1+nts, u1+nts, nts);
     for(int i = 0; i < nts; i++){
-     //   cout<<_real(u1[i])<<"+"<< _imag(u1[i])<<"i\n";
-        cout << _sqabs(u1[i]) << endl;
+        cout<<_real(u1[i])<<"+"<< _imag(u1[i])<<"i\n";
+   //     cout << _sqabs(u1[i]) << endl;
     }
-    u1=tmp;
+  //  u1=tmp;
     cout << ((double)clock() - tval)/CLOCKS_PER_SEC << endl;
     delete inter;
     delete rh;

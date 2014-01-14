@@ -34,9 +34,14 @@ void graph::proc_node_deps(graph::graphnode& g){
         nodes[*beg].pointedat.push_back(g.p->name());
     }
 }
+//returns sorted list, all items in list are added to the graph
 int graph::sort(std::list<item*>& l){
     std::list<graphnode*> queuelist;
-    l.clear();
+    std::list<item*>::iterator beg = l.begin();
+    for(; beg != l.end(); beg++){
+        insert(*beg);
+    }
+    l.clear(); 
     std::map<std::string, graphnode>::iterator beg = nodes.begin();
     //populate the list of nodes without dependencies
     for(; beg != nodes.end(); beg++){

@@ -33,10 +33,10 @@ comp trap(comp * restr v, size_t s){
 }
 double trap(double * restr v, size_t s){
     double sum = 0;
-    for(size_t i=0; i < s-1; i++){
+    for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
-   // sum += v[0] + v[s-1];
+    sum += (v[0] + v[s-1])/2.0;
     return sum;
 }
 rhs_CNLS::rhs_CNLS(size_t dimen, double g, double e, double _dt,
@@ -101,6 +101,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
         comp_in_r[i] = sq1[i] + sq2[i];
     }
     comp expr1 = I*(2*g0/(1+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
+    printv(expr1);
     //calculate the ffts for the rhs
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (sq1[i] + A*sq2[i])*u1[i];
