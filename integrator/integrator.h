@@ -19,18 +19,6 @@ class integrator{
         virtual ~integrator(){}
 };
 //fixed step runge kutta integrator
-class rk4:public integrator{
-    const size_t steps;
-    comp* restr f0, * restr f2, * restr f3, * restr f1;
-    comp* restr u_calc;
-    public:
-    virtual int integrate(rhs* rh, comp* u, double t0, double tf);
-    rk4(size_t step, size_t dimen): integrator(dimen), steps(step),
-        f0((comp*)malloc(dimen*sizeof(comp))), f1((comp*)malloc(dimen*sizeof(comp))),
-        f2((comp*)malloc(dimen*sizeof(comp))), f3((comp*)malloc(dimen*sizeof(comp))),
-        u_calc((comp*)malloc(dimen*sizeof(comp))){}
 
-    ~rk4();
-};
 
 #endif

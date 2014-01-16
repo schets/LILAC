@@ -1,5 +1,12 @@
 #include "rhs/rhs.h"
+#include "int_imp.h"
 #include "integrator.h"
+
+rk4::rk4(size_t step, size_t dimen): integrator(dimen), steps(step),
+        f0((comp*)malloc(dimen*sizeof(comp))), f1((comp*)malloc(dimen*sizeof(comp))),
+        f2((comp*)malloc(dimen*sizeof(comp))), f3((comp*)malloc(dimen*sizeof(comp))),
+        u_calc((comp*)malloc(dimen*sizeof(comp))){}
+
 //use malloc instead of new since that allows use with fftw_malloc if so desired
 rk4::~rk4(){
     free(f1);

@@ -1,5 +1,7 @@
 #makefile for the RHS class and derived variants
 
+include ../make.inc
+
 all: $(LIB_MAIN)/rhs.o
 
 LIB_PATH= $(LIB_MAIN)/rhs

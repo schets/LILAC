@@ -1,6 +1,6 @@
 export
-CFLAGS=-I./ -I./utils 
-LFLAGS= -lfftw3 -lm -ffast-math -O3
+CFLAGS=-I./ -I./utils -ffast-math -O3 
+LFLAGS= -lfftw3 -lm 
 CPP=g++
 LD=g++
 LIB_MAIN=../lib

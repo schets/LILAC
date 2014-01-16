@@ -12,7 +12,7 @@ void trim(std::string& curline){
     }
     startpos = curline.find_last_not_of("\n\r\t ");
     if(startpos != std::string::npos){
-        curline=curline.substr(0, startpos);
+        curline=curline.substr(0, startpos+1);
     }
 }
 void ltoken(std::string& tok, std::string& str, std::string delim=" "){
@@ -52,7 +52,7 @@ void engineimp::read(std::ifstream& fstr){
         ltoken(token, curline);
         std::cout << token << ", " << curline<<std::endl;
         //this token should be the variable type
-        curit = creator::create(token);
+        curit = item::create(token);
         if(curline.empty()){
             std::cout<<"Variables need a name and a value, "<<
                 "error on line " << line << std::endl;
@@ -73,10 +73,12 @@ void engineimp::read(std::ifstream& fstr){
     //so that variables can only depend
     //on items previously in the list
     gg.sort(post_order);
+
     std::list<item*>::iterator lbeg;
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
         (*lbeg)->postprocess(values);
         std::cout << (*lbeg)->name() << ": " << (*lbeg)->type() << std::endl;
+        (*lbeg)->print();
     }
 };
 

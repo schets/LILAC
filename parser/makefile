@@ -1,3 +1,20 @@
-CFLAGS='-DNDEBUG -std=c++11 -x -c++ -O3'
-all:
-	g++ *.cpp $(CFLAGS) -o parser
+include ../make.inc
+LIB_PATH=$(LIB_MAIN)/engine
+ENG_OBJ= $(LIB_PATH)/engine_main.o $(LIB_PATH)/item.o $(LIB_PATH)/engine_read.o $(LIB_PATH)/graph.o
+all: $(LIB_MAIN)/engine.o 
+
+$(LIB_MAIN)/engine.o: $(ENG_OBJ)
+	@rm -f $(LIB_MAIN)/engine.o
+	ld -r $(LIB_PATH)/*.o -o $(LIB_MAIN)/engine.o
+$(LIB_PATH)/engine_read.o:engine_read.cpp
+	@rm -f $(LIB_PATH)/engine_read.o
+	$(CPP) -c engine_read.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_read.o
+$(LIB_PATH)/graph.o:graph.cpp
+	@rm -f $(LIB_PATH)/graph.o
+	$(CPP) -c graph.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/graph.o
+$(LIB_PATH)/engine_main.o:engine.cpp
+	@rm -f $(LIB_PATH)/engine_main.o
+	$(CPP) -c engine.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_main.o
+$(LIB_PATH)/item.o:item.cpp
+	@rm -f $(LIB_PATH)/item.o
+	$(CPP) -c item.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/item.o

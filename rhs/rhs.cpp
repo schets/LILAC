@@ -1,18 +1,33 @@
 #include "rhs.h"
+#include "rhs_imp.h"
 #include <cstring>
-int rhs_x::dxdt(comp* restr x, comp* restr dx, double t){
-    /*for(int i = 0; i > dimension; i++){
-        dx[i] = x[i];
-    }*/
-    memcpy(dx, x, sizeof(comp)*dimension);//will almost definitely be faster than array copy
-    //especially on NERSC which has C library tweaked to run well on the architecture
-    return 0;
-}
 int rhs_const::dxdt(comp* restr x, comp* restr dx, double t){
     for(int i = 0; i < dimension; i++){
         dx[i] = const_val;
     }
     return 0;
 }
-//test main for integrator
+std::vector<std::string> rhs_const::dependencies() const{
+    std::string deps[] = {"const_fact", "dimension"};
+    return std::vector<std::string>(deps, deps+2);
+}
+std::string rhs_const::type() const {
+    return "rhs_const";
+}
+void rhs::parse(std::string s){
+}
 
+rhs* rhs::create(std::string tname){
+    if(tname == "CNLS"){
+        return new rhs_CNLS();
+    }
+    else if (tname == "const"){
+        return new rhs_const();
+    }
+    return 0;
+}
+std::vector<std::string> rhs::dependencies()const {
+    return std::vector<std::string>();
+}
+void rhs::retrieve(void* p) const{
+}

@@ -21,7 +21,6 @@ extern "C"{
 #endif
 #define restr __restrict__
 //#define restr
-using namespace std;
 //typedef complex<double> comp;
 typedef fftw_complex comp;
 //#define NUM_TIME_STEPS (256) //number of time points

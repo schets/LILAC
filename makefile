@@ -6,10 +6,9 @@
 #www.github.com/schets/lasers
 
 
-OBJS = lib/rhs.o  lib/solver.o lib/integrator.o lib/main.o
-all: $(OBJS) bin/inteq
-	@cd parser && make
+OBJS = lib/rhs.o  lib/solver.o lib/integrator.o lib/main.o lib/engine.o
 include make.inc
+all: $(OBJS) bin/inteq
 .PHONY: clean
 bin/inteq: $(OBJS) 
 	@mkdir -p bin
@@ -26,5 +25,11 @@ lib/integrator.o: integrator/*.cpp utils/*.cpp
 	@rm -rf lib/integrator.o
 	@$(MAKE) -C integrator
 lib/solver.o:
+
+lib/engine.o:
+	@mkdir -p lib/engine
+	@rm -rf lib/engine.o
+	@$(MAKE) -C parser
+
 clean:
 	rm -rf lib/* bin/*

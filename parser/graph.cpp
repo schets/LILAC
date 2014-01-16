@@ -5,7 +5,7 @@
 void graph::insert(item* it_p){
     if(nodes.count(it_p->name())){
         std::cout << "Warning: variable " << it_p->name() << "has already been entered\n";
-        return;
+        std::cout <<"Overwriting with new value\n";
     }
     _insert(it_p);
 }
@@ -77,12 +77,13 @@ int graph::sort(std::list<item*>& l){
     for(beg=nodes.begin(); beg != nodes.end(); beg++){
         graphnode& g = beg->second;
         if(!g.pointedat.empty()){
+            std::cout << "Topological sort has failed" << std::endl;
             return SORT_FAILED;
         }
     }
     return SORT_SUCCESS;
 }
-int main(){
+int __main__(){
     graph g;
     engineimp ee("testfile.in");
     return 0;

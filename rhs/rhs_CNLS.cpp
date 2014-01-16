@@ -1,27 +1,32 @@
 #include "rhs/rhs.h"
+#include "rhs_imp.h"
 #include "defs.h"
 #include "comp_funcs.h"
 #include <cstring>
+template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b){
+    a.insert(a.begin(), b.begin(), b.end());
+    return a;
+}
 void printar(comp* u0, comp* u1, int num){
     for(int i = 0; i < num; i++){
-        cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i, "<<_real(u1[i])<<"+"<<_imag(u1[i])<<"i\n";
+        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i, "<<_real(u1[i])<<"+"<<_imag(u1[i])<<"i\n";
     }
 }
 void printar(double* u0, double* u1, int num){
     for(int i = 0; i < num; i++){
-        cout<<u0[i]<<", "<<u1[i]<<endl;
+        std::cout<<u0[i]<<", "<<u1[i]<<std::endl;
     }
 }
 void printar(double* u0, int num){
     for(int i = 0; i < num; i++){
-        cout<<u0[i]<<endl;
+        std::cout<<u0[i]<<std::endl;
     }
 }
 inline void printv(comp c){
-    cout << _real(c)<<"+"<<_imag(c)<<"i\n";
+    std::cout << _real(c)<<"+"<<_imag(c)<<"i\n";
 }
 inline void printv(double c){
-    cout << c << endl;
+    std::cout << c << std::endl;
 }
 comp trap(comp * restr v, size_t s){
     comp sum = 0;
@@ -132,3 +137,10 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     return 0;
 }
 
+std::vector<std::string> rhs_CNLS::dependencies() const{
+    std::string deps[] = {};
+    return appendvec(std::vector<std::string>(deps, deps+0), rhs::dependencies());
+}
+std::string rhs_CNLS::type() const {
+    return "rhs_CNLS";
+}

@@ -8,8 +8,8 @@ using namespace std;
 int main(int argc, char** argv){
     size_t nts=5;
     double t_int = 60.0;
-    rhs* rh = new rhs_CNLS(2*nts, 1.73, 4.23, t_int/nts, t_int, nts);
-    integrator* inter = new rk4(10000, 2*nts);
+    rhs* rh = rhs::create("CNLS");
+    integrator* inter = 0;//new rk4(1); 
     comp* u0 = (comp*)malloc(2*nts*sizeof(comp));
     comp* u1 = (comp*)malloc(2*nts*sizeof(comp));
     double* t = (double*)malloc((nts)*sizeof(double)); 
