@@ -21,6 +21,7 @@ void ltoken(std::string& tok, std::string& str, std::string delim=" "){
     str.erase(0, tpos + delim.length());
 }
 void engineimp::read(std::ifstream& fstr){
+
     const std::string delim=" ";
     const std::string comment="#";
     std::string token;
@@ -33,7 +34,6 @@ void engineimp::read(std::ifstream& fstr){
         //get current line
         std::getline(fstr, curline);
         line++;
-        std::cout<<curline<<std::endl;
         item* curit;
         //remove comments
         size_t cpos = curline.find(comment);
@@ -43,14 +43,12 @@ void engineimp::read(std::ifstream& fstr){
         
         //trim leading and trailing whitespace
         trim(curline);
-        std::cout << "Trim:" << curline<<std::endl;
         //skip rest of loop if entire string deleted
         if(curline.empty()){
             continue;
         }
         //retrieve the first token
         ltoken(token, curline);
-        std::cout << token << ", " << curline<<std::endl;
         //this token should be the variable type
         curit = item::create(token);
         if(curline.empty()){
@@ -60,12 +58,10 @@ void engineimp::read(std::ifstream& fstr){
         }
         //get next token, should be variable name
         ltoken(token, curline);
-        std::cout << token << ", " << curline<<std::endl;
         curit->setname(token);
         curit->parse(curline);
         post_order.push_back(curit);
         values[token]=curit; 
-        std::cout << std::endl;
         //get the current line from the string
     }
     graph gg;
@@ -77,8 +73,6 @@ void engineimp::read(std::ifstream& fstr){
     std::list<item*>::iterator lbeg;
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
         (*lbeg)->postprocess(values);
-        std::cout << (*lbeg)->name() << ": " << (*lbeg)->type() << std::endl;
-        (*lbeg)->print();
     }
 };
 

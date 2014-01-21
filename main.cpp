@@ -4,9 +4,10 @@
 #include "comp_funcs.h"
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
+#include <parser/engine.h>
 using namespace std;
 int main(int argc, char** argv){
-    size_t nts=5;
+    /*size_t nts=5;
     double t_int = 60.0;
     rhs* rh = rhs::create("CNLS");
     integrator* inter = 0;//new rk4(1); 
@@ -50,6 +51,8 @@ int main(int argc, char** argv){
     fftw_destroy_plan(t1);
     free(u0);
     free(u1);
-    free(t);
+    free(t);*/
+    engine e("infile.in");
+    e.run();
     return 0;
 }

@@ -1,24 +1,15 @@
 #ifndef DEF_H
 #define DEF_H
 #include <iostream>
+#include <string>
+#include <sstream>
 extern "C" {
+#include "stdlib.h"
 #include <complex.h>
 #include <fftw3.h>
 #include <math.h>
 #include <time.h>
 }
-//change runtime malloc behavior
-//fftw_malloc promises aligned memory for SIMD
-//and is therefore used intead of new/malloc
-#define FFTW_MALLOC
-#ifdef FFTW_MALLOC
-#define malloc fftw_malloc
-#define free fftw_free
-#else
-extern "C"{
-#include <malloc.h>
-}
-#endif
 #define restr __restrict__
 //#define restr
 //typedef complex<double> comp;
@@ -37,4 +28,61 @@ typedef fftw_complex comp;
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50
+#include "parser/item.h"
+class _fatal{
+};
+class _warning{
+};
+const static _fatal FATAL_ERROR;
+const static _warning WARNING;
+inline void err(std::string message, std::string function, std::string file, _fatal f){
+    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\nExiting program\n";
+    exit(1);
+}
+inline void err(std::string message, std::string function, std::string file, _warning w){
+    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\nContinuing program\n";
+}
+inline void err(std::string message, std::string function, std::string file, item* p, _fatal f){
+    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\n";
+    p->print();
+    std::cout << "\nExiting program\n";
+    exit(1);
+}
+inline void err(std::string message, std::string function, std::string file, item* p, _warning f){
+    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\n";
+    p->print();
+    std::cout << "\nContinuing program\n";
+}
+
+
+//change runtime malloc behavior
+//fftw_malloc promises aligned memory for SIMD
+//and is therefore used intead of new/malloc
+#define FFTW_MALLOC
+/*#ifdef FFTW_MALLOC
+inline void* malloc(size_t ss){
+    void* rv = fftw_malloc(ss);
+    if(!rv){
+        std::stringstream str;
+        str << "Memory allocation of " << ss << " bytes of data failed";
+        err(str.str(), "malloc", "defs.h", FATAL_ERROR);
+    }
+    return rv;
+}
+inline void free(void* ss){
+    if(!ss){
+        err("Attempt to free a null pointer", "free", "defs.h", WARNING);
+    }
+    fftw_free(ss);
+}
+#else*/
+extern "C"{
+#include <malloc.h>
+}
+//#endif
+
 #endif

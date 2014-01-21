@@ -2,10 +2,6 @@
 #include "int_imp.h"
 #include "integrator.h"
 
-rk4::rk4(size_t step, size_t dimen): integrator(dimen), steps(step),
-        f0((comp*)malloc(dimen*sizeof(comp))), f1((comp*)malloc(dimen*sizeof(comp))),
-        f2((comp*)malloc(dimen*sizeof(comp))), f3((comp*)malloc(dimen*sizeof(comp))),
-        u_calc((comp*)malloc(dimen*sizeof(comp))){}
 
 //use malloc instead of new since that allows use with fftw_malloc if so desired
 rk4::~rk4(){
@@ -76,6 +72,7 @@ int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)
     //get dt
     const size_t m = dimension;
     const double t_diff = tf-t0;
+    const size_t steps = ceil(t_diff/stepsize);
     const double dt = t_diff/steps;
     //do steps integrations
     //each loop iteration is a runge_kutta timestep
@@ -120,5 +117,29 @@ int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)
         t0 += dt;
     }
     return 0;
+}
+void rk4::retrieve(void* p)const{}
+void rk4::parse(std::string instr) {}
+std::vector<std::string> rk4::dependencies()const{
+    std::vector<std::string> tvec = integrator::dependencies();
+    tvec.push_back("stepsize");
+    return tvec;
+}
+std::string rk4::type()const{
+    return "rk4";
+}
+void rk4::postprocess(std::map<std::string, item*>& dat){
+    double sval;
+    integrator::postprocess(dat);
+    dat["stepsize"]->retrieve((void*)&stepsize);
+    if(stepsize <= 0){
+        err("Stepsize is invalid, must be >= 0", "rk4::postprocess",
+                "integrator/rk4.cpp", dat["stepsize"], FATAL_ERROR);
+    }
+    f0= (comp*)malloc(dimension*sizeof(comp));
+    f1=(comp*)malloc(dimension*sizeof(comp));
+    f2=(comp*)malloc(dimension*sizeof(comp)); 
+    f3=(comp*)malloc(dimension*sizeof(comp));
+    u_calc=(comp*)malloc(dimension*sizeof(comp));
 }
 

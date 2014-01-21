@@ -26,7 +26,7 @@ lib/integrator.o: integrator/*.cpp utils/*.cpp
 	@$(MAKE) -C integrator
 lib/solver.o:
 
-lib/engine.o:
+lib/engine.o: parser/*.cpp utils/*.cpp
 	@mkdir -p lib/engine
 	@rm -rf lib/engine.o
 	@$(MAKE) -C parser

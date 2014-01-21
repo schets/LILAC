@@ -11,6 +11,7 @@ char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
 engineimp::engineimp(const std::string fname){
+
     std::ifstream fstr(fname.c_str());
     if(f_is_empty(fstr)){
         engine_exit("Empty/non-existant file passed as configuration parameter");
@@ -18,7 +19,15 @@ engineimp::engineimp(const std::string fname){
     read(fstr);
 };
 
-
+engineimp::~engineimp(){
+    std::map<std::string, item*>::iterator beg;
+    for(beg=values.begin(); beg != values.end(); beg++){
+        if(beg->second){
+            delete beg->second;
+        }
+    }
+    values.clear();
+}
 
 
 
@@ -30,10 +39,14 @@ engineimp::engineimp(const std::string fname){
  *
  *
  */
-engine::engine(const std::string fname):eng(new engineimp(fname)){
+engine::engine(const std::string fname){
+    eng = new engineimp(fname);
 }
 engine::~engine(){
     if(eng){
         delete eng;
     }
+}
+void engine::run(){
+    eng->run();
 }

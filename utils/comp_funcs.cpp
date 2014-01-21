@@ -2,7 +2,10 @@
 #define COMP_FUNCS_H
 #include <cmath>
 #include "defs.h"
+#include <vector>
+#include <string>
 extern "C"{
+#include <stdlib.h>
 #include <fftw3.h>
 }
 //THis file contains inlined complex functions
@@ -49,5 +52,9 @@ inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len
     for(size_t i = 0; i < len; i++){
         out[i]*=nval;
     }
+}
+template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b){
+    a.insert(a.begin(), b.begin(), b.end());
+    return a;
 }
 #endif

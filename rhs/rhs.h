@@ -15,29 +15,21 @@
  *
  * 
  * */
-class rhs:public item{
+class rhs:public item_dim{
 
-    protected:
-        /*!
-         * Stores the dimension of the rhs 
-         * */
-        size_t dimension;
-    public:
+        public:
         /*!\brief
          * Returns the dimension of the right hand side
          */
-        inline size_t dim() const{
-            return dimension;
-        }
+        
         static rhs* create(std::string tname);
         virtual std::vector<std::string> dependencies() const;
         virtual void parse(std::string inval);
-        virtual void retrieve(void* inval) const ;
+        virtual void postprocess(std::map<std::string, item*>& dat);
         /*!\brief
          * Creates the base rhs class with a dimension=dimen
          */
         rhs(){};
-        rhs(size_t dimen): dimension(dimen){}
         /*!\brief
          * Stores the derivative in dx given the time t and current x
          */

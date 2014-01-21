@@ -1,5 +1,5 @@
 export
-CFLAGS=-I./ -I./utils -ffast-math -O3 
+CFLAGS=-I./ -I./utils -g #-ffast-math -O3 
 LFLAGS= -lfftw3 -lm 
 CPP=g++
 LD=g++
