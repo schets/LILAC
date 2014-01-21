@@ -2,6 +2,10 @@
 #include "engineimp.h"
 #include "graph.h"
 #include "item.h"
+#include "defs.h"
+extern "C"{
+#include <fftw3.h>
+}
 #include <stdlib.h>
 void engine_exit(const std::string reason){
     std::cout << "\n\nExiting because: " << reason << std::endl;
@@ -14,7 +18,8 @@ engineimp::engineimp(const std::string fname){
 
     std::ifstream fstr(fname.c_str());
     if(f_is_empty(fstr)){
-        engine_exit("Empty/non-existant file passed as configuration parameter");
+        err("Empty/non-existant file passed as configuration parameter",
+                "engineimp::engineimp(std::string)", "parser/engine.cpp", FATAL_ERROR);
     }
     read(fstr);
 };
@@ -26,7 +31,6 @@ engineimp::~engineimp(){
             delete beg->second;
         }
     }
-    values.clear();
 }
 
 

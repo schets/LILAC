@@ -54,5 +54,10 @@ int main(int argc, char** argv){
     free(t);*/
     engine e("infile.in");
     e.run();
+    //
+    //This cleans up the fftw memory
+    //not necessary since memory is freed on program exit
+    //but makes finding memory leaks far far easier
+    fftw_cleanup();
     return 0;
 }

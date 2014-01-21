@@ -8,6 +8,11 @@ void printar(comp* u0, comp* u1, int num){
         std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i, "<<_real(u1[i])<<"+"<<_imag(u1[i])<<"i\n";
     }
 }
+void printar(comp* u0, int num){
+    for(int i = 0; i < num; i++){
+        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i\n";
+    }
+}
 void printar(double* u0, double* u1, int num){
     for(int i = 0; i < num; i++){
         std::cout<<u0[i]<<", "<<u1[i]<<std::endl;
@@ -42,34 +47,34 @@ double trap(double * restr v, size_t s){
 }
 rhs_CNLS::rhs_CNLS(size_t dimen, double g, double e, double _dt,
         double tlen, size_t n_steps): g0(g), e0(e), dt(_dt),
-        LENGTH_T(tlen), NUM_TIME_STEPS(n_steps){
-    u1 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    u2 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_in = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_out = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_out_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_in_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-    sq1 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-    sq2 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-    k = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-    ksq = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-    //input arrays don't really matter here because the plan
-    //is executed against specific input arrays at runtime
-    //and not with the initialization arrays
-    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
-    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
-    //create k values
+    LENGTH_T(tlen), NUM_TIME_STEPS(n_steps){
+        u1 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        u2 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        comp_in = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        comp_out = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        comp_out_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        comp_in_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
+        sq1 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+        sq2 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+        k = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+        ksq = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
+        //input arrays don't really matter here because the plan
+        //is executed against specific input arrays at runtime
+        //and not with the initialization arrays
+        ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
+        fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
+        //create k values
 
-    double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
-    for(int i=0; i<NUM_TIME_STEPS/2; i++){
-        k[i] = 2.0*mulval * i/((float)NUM_TIME_STEPS);
-        ksq[i] = k[i]*k[i];
+        double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
+        for(int i=0; i<NUM_TIME_STEPS/2; i++){
+            k[i] = 2.0*mulval * i/((float)NUM_TIME_STEPS);
+            ksq[i] = k[i]*k[i];
+        }
+        for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
+            k[i] = 2.0*mulval * ((int)i-(int)NUM_TIME_STEPS)/((float)NUM_TIME_STEPS);
+            ksq[i] = k[i]*k[i];
+        }
     }
-    for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
-        k[i] = 2.0*mulval * ((int)i-(int)NUM_TIME_STEPS)/((float)NUM_TIME_STEPS);
-        ksq[i] = k[i]*k[i];
-    }
-}
 rhs_CNLS::~rhs_CNLS(){
     free(u1);
     free(u2);
@@ -102,7 +107,6 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
         comp_in_r[i] = sq1[i] + sq2[i];
     }
     comp expr1 = I*(2*g0/(1+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
-    printv(expr1);
     //calculate the ffts for the rhs
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (sq1[i] + A*sq2[i])*u1[i];
@@ -113,8 +117,10 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
-            - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
+                - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
+        //printv(k[i]);
     }
+    //printv(K);
     //Do the fft work for the other half of the calculations
 
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
@@ -125,7 +131,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
-            - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
+                - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
     }
     //
     //all values have been set
@@ -176,11 +182,11 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
     for(int i=0; i<NUM_TIME_STEPS/2; i++){
-        k[i] = 2.0*mulval * i/((float)NUM_TIME_STEPS);
+        k[i] = mulval * (2.0*i/(1.0*NUM_TIME_STEPS));
         ksq[i] = k[i]*k[i];
     }
     for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
-        k[i] = 2.0*mulval * ((int)i-(int)NUM_TIME_STEPS)/((float)NUM_TIME_STEPS);
+        k[i] = mulval * 2.0*(i-(int)NUM_TIME_STEPS)/(NUM_TIME_STEPS*1.0);
         ksq[i] = k[i]*k[i];
     }
 
