@@ -112,7 +112,7 @@ int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)
         //
         for ( i = 0; i < m; i++ )
         {
-            u0[i] += (dt * ( f0[i] + 2.0 * f1[i] + 2.0 * f2[i] + f3[i] ) / 6.0);
+            u0[i] += (dt * ( f0[i]  + 2.0 * f1[i] + 2.0 * f2[i] + f3[i] ) / 6.0);
         }
         t0 += dt;
     }

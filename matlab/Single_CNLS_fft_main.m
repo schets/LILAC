@@ -73,12 +73,13 @@ maxTrips = 50;
 change_norm=1.e+1000;
 norms=[];
 j = 1;
-sol=CNLS_fft_rhs(5,U_int_0_s,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt);
+sol=CNLS_fft_rhs(5,U_int_0_s,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt)
 usol=ifft(sol(1:nt));
 vsol=ifft((nt+1):(2*nt));
 while (j<=maxTrips && change_norm>1.e-3)
 % for j=1:RoundTrips
     %j
+    break
     if j==1
         U_int_s=U_int_0_s;
     else

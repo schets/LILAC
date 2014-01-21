@@ -39,6 +39,15 @@ inline double _sqabs(comp inval){
     return r*r + i*i;
 }
 
+inline double energy(comp* v, size_t s){
+    double sum = _sqabs(v[0]);
+    for(size_t i = 0; i < s; i++){
+        sum += _sqabs(v[0]);
+    }
+    sum += _sqabs(v[s-2]);
+    return sqrt(sum);
+}
+
 //This function returns a normalized fourier transform in either direction
 
 inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){

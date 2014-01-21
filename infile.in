@@ -1,7 +1,7 @@
 #file for testing io system
 CNLS rhs 
 rk4 integrator
-integer dimension 12
+integer dimension 512
 real g0 1.73
 real e0 4.23
 real t_int 60
@@ -9,5 +9,5 @@ real a 1.0
 real b 1.0
 real qqq 23
 test blah 344
-real stepsize .001
+real stepsize .0001
 string nameval testtest
