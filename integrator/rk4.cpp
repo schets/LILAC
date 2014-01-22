@@ -48,7 +48,7 @@ int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)
     //
     //    09 October 2013
     //
-    //  Author:
+    //  Author
     //
     //    John Burkardt
     //
@@ -133,7 +133,7 @@ void rk4::postprocess(std::map<std::string, item*>& dat){
     integrator::postprocess(dat);
     dat["stepsize"]->retrieve((void*)&stepsize);
     if(stepsize <= 0){
-        err("Stepsize is invalid, must be >= 0", "rk4::postprocess",
+        err("stepsize is invalid, must be >= 0", "rk4::postprocess",
                 "integrator/rk4.cpp", dat["stepsize"], FATAL_ERROR);
     }
     f0= (comp*)malloc(dimension*sizeof(comp));

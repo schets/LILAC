@@ -123,7 +123,7 @@ item* item::create(std::string name){
     else if(name=="CNLS"){
         return rhs::create(name);
     }
-    else if(name=="rk4"){
+    else if(name=="rk4" || name == "rk45"){
         return integrator::create(name);
     }
     name.append(" does not name a valid type");

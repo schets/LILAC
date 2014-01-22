@@ -1,7 +1,7 @@
 #include "engineimp.h"
 #include "engine.h"
 #include <iostream>
-#include "comp_funcs.h"
+#include "utils/comp_funcs.h"
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
 #include <time.h>
@@ -37,9 +37,16 @@ void engineimp::run(){
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
     fft(t1, u0, u0, nts);
     fft(t2, u0+nts, u0+nts, nts);
-    clock_t tval = clock();
+    clock_t tval =clock();
+    for(int i = 0; i < 00000; i++){
+        rh->dxdt(u0, u1, 0);
+        asm("");
+    }
+    rh->dxdt(u0, u1, 1);
+    tval = clock()-tval;
+    std::cout<<"time for rhs calls="<<tval<<std::endl;
     for(int i = 0; i < 1; i++){
-              inter->integrate(rh, u0, 0, t_int);
+              inter->integrate(rh, u0, 0, 15);
  //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 
@@ -51,7 +58,7 @@ void engineimp::run(){
     ifft(t1, u0, u0, nts);
     ifft(t1, u0+nts, u0+nts, nts);
     for(int i = 0; i < nts*2; i++){
-   //     std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i\n";
+        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i\n";
         //     cout << _sqabs(u1[i]) << endl;
     }
     double ener = energy(u0, nts*2)*t_int/nts;

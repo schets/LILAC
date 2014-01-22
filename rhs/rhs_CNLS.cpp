@@ -3,32 +3,7 @@
 #include "defs.h"
 #include "comp_funcs.h"
 #include <cstring>
-void printar(comp* u0, comp* u1, int num){
-    for(int i = 0; i < num; i++){
-        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i, "<<_real(u1[i])<<"+"<<_imag(u1[i])<<"i\n";
-    }
-}
-void printar(comp* u0, int num){
-    for(int i = 0; i < num; i++){
-        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i\n";
-    }
-}
-void printar(double* u0, double* u1, int num){
-    for(int i = 0; i < num; i++){
-        std::cout<<u0[i]<<", "<<u1[i]<<std::endl;
-    }
-}
-void printar(double* u0, int num){
-    for(int i = 0; i < num; i++){
-        std::cout<<u0[i]<<std::endl;
-    }
-}
-inline void printv(comp c){
-    std::cout << _real(c)<<"+"<<_imag(c)<<"i\n";
-}
-inline void printv(double c){
-    std::cout << c << std::endl;
-}
+
 comp trap(comp * restr v, size_t s){
     comp sum = 0;
     for(size_t i=1; i < s-1; i++){
@@ -96,6 +71,7 @@ rhs_CNLS::~rhs_CNLS(){
 //since they have a more complicated output and I just want to have a working
 //copy for now
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
+    
     uf1=x;
     uf2=x+NUM_TIME_STEPS;
     //take the inverse fourier transform
@@ -118,7 +94,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
-       // dx[i] = 1;
+    //    dx[i] = 1;
     }
     //Do the fft work for the other half of the calculations
 
@@ -131,7 +107,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
-       // dx[i+NUM_TIME_STEPS] = 1;
+    //    dx[i+NUM_TIME_STEPS] = 1;
     }
     //printar(dx, NUM_TIME_STEPS*2);
     //

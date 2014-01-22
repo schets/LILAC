@@ -59,12 +59,9 @@ inline void err(std::string message, std::string function, std::string file, ite
 }
 
 
-//change runtime malloc behavior
-//fftw_malloc promises aligned memory for SIMD
-//and is therefore used intead of new/malloc
-#define FFTW_MALLOC
-/*#ifdef FFTW_MALLOC
-inline void* malloc(size_t ss){
+//Alligned malloc
+//also ensures return value is valid
+inline void* al_malloc(size_t ss){
     void* rv = fftw_malloc(ss);
     if(!rv){
         std::stringstream str;
@@ -73,16 +70,13 @@ inline void* malloc(size_t ss){
     }
     return rv;
 }
-inline void free(void* ss){
+inline void al_free(void* ss){
     if(!ss){
         err("Attempt to free a null pointer", "free", "defs.h", WARNING);
     }
     fftw_free(ss);
 }
-#else*/
 extern "C"{
 #include <malloc.h>
 }
-//#endif
-
 #endif

@@ -11,7 +11,7 @@ tau=0.1;
 Gamma=0.1;
 mode=0;% if mode=1, load parameter values from CNLS_GA_results.mat
        % else, use default values.
-RTlength=1.5;% roundtrip length
+RTlength=15;% roundtrip length
 if mode==1
     load CNLS_GA_results.mat
     g01=param(5);
@@ -73,34 +73,33 @@ maxTrips = 50;
 change_norm=1.e+1000;
 norms=[];
 j = 1;
-sol=CNLS_fft_rhs(5,U_int_0_s,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt)
-usol=ifft(sol(1:nt));
-vsol=ifft((nt+1):(2*nt));
 while (j<=maxTrips && change_norm>1.e-3)
 % for j=1:RoundTrips
     %j
-    break
     if j==1
         U_int_s=U_int_0_s;
     else
         U_int_s=[fft(U_solution(1:nt,j-1));fft(U_solution((nt+1):2*nt,j-1))];
     end
     % integrating FFT'd ODE for NLSE
-    options = odeset('RelTol',1e-4,'AbsTol',1e-3*ones(nt*2,1));
+    options = odeset('RelTol',1e-5,'AbsTol',1e-3*ones(nt*2,1));
     % options=[];
-    [z,U]=ode45(@(z,U) CNLS_fft_rhs(z,U,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt),[RTlength*(j-1):0.01:RTlength*j],U_int_s,options);
+%    [RTlength*(j-1):0.01:RTlength*j]
+    [z,U]=ode45(@(z,U) CNLS_fft_rhs(z,U,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt),[0, RTlength],U_int_s,options);
+   % U
     % iFFT to back out u, v at spatial end of round trip
-    u_end=ifft(U(end,1:nt));
-    v_end=ifft(U(end,(nt+1):(2*nt)));
+    u_end=ifft(U(end,1:nt))'
+    v_end=ifft(U(end,(nt+1):(2*nt)))'
+    solution_end=[u_end, v_end];
     %Apply Jones Matrix
     U_end=J_1*J_p*J_2*J_3*[u_end;v_end];
     % solution containing both small u and v
     U_solution(:,j)=[U_end(1,:).'; U_end(2,:).'];
     U_solution_output(:,j)=U_solution(:,j);
-   if(j~=1)
-       phi=sqrt(abs(U_solution_output(1:nt,:)).^2+abs(U_solution_output((nt+1):2*nt,:)).^2);
-       change_norm=norm((phi(:,end)-phi(:,end-1)))/norm(phi(:,end-1));
-       norms=[norms; change_norm];
+    if(j~=1)
+        phi=sqrt(abs(U_solution_output(1:nt,:)).^2+abs(U_solution_output((nt+1):2*nt,:)).^2);
+        change_norm=norm((phi(:,end)-phi(:,end-1)))/norm(phi(:,end-1));
+        norms=[norms; change_norm];
    end
    break;
    j = j+1;
