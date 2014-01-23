@@ -4,7 +4,7 @@ all: $(LIB_MAIN)/integrator.o
 
 LIB_PATH=$(LIB_MAIN)/integrator
 
-INT_OBJ = $(LIB_PATH)/rk4.o $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o
+INT_OBJ = $(LIB_PATH)/rk4.o $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/lsoda.o
 
 $(LIB_MAIN)/integrator.o: $(INT_OBJ)
 	@rm -f $(LIB_MAIN)/integrator.o
@@ -19,3 +19,6 @@ $(LIB_PATH)/integrator.o: integrator.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/rk45.o: rk45.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rk45.o
 	$(CPP) -c rk45.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rk45.o
+$(LIB_PATH)/lsoda.o: lsoda.cpp $(INLINE_HEADERS)
+	@rm -f $(LIB_PATH)/lsoda.o
+	$(CPP) -c lsoda.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/lsoda.o 

@@ -144,7 +144,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         if(dt < dt_min){
             err("Estimated timestep is smaller than minimum timestep, using minimum timestep",
                     "rk45::integrate", "integrator/rk45.cpp", (item*)func, WARNING);
-            std::cout << "dt= " << dt << ", dt_min=" << dt_min<<std::endl;
+            //std::cout << "dt= " << dt << ", dt_min=" << dt_min<<std::endl;
             dt = dt_min;
         }
         dt = std::min(dt, dt_max);
@@ -254,4 +254,6 @@ void rk45::postprocess(std::map<std::string, item*>& dat){
     u_calc=f6+dimension;
 }
 void rk45::parse(std::string inval){
+};
+void rk45::print() const{
 };

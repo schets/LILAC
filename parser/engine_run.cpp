@@ -5,6 +5,20 @@
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
 #include <time.h>
+#include <stdio.h>
+void jac(comp* jm, comp* x, comp* store, comp* store2, rhs* rh){
+    for(size_t i = 0; i < rh->dimension; i++)
+    {
+        const double diff = .0001;
+        x[i] += diff;
+        rh->dxdt(x, store, 0);
+        x[i] -= diff*2;
+        rh->dxdt(x, store, 0);
+        for(size_t j = 0; j < rh->dimension; j++){
+            jm[j+rh->dimension*i]=(store[j]-store2[j])/(2*diff);
+        }
+    };
+}
 void engineimp::run(){
     int ints;
     values["dimension"]->retrieve(&ints);
@@ -22,9 +36,12 @@ void engineimp::run(){
     }
     integrator* inter= (integrator*)values["integrator"];
     rhs* rh = (rhs*)values["rhs"];
-    comp* u0 = (comp*)malloc(2*nts*sizeof(comp));
-    comp* u1 = (comp*)malloc(2*nts*sizeof(comp));
-    double* t = (double*)malloc((nts)*sizeof(double)); 
+    comp* u0 = (comp*)al_malloc(2*nts*sizeof(comp));
+    comp* u1 = (comp*)al_malloc(2*nts*sizeof(comp));
+    comp* jacm = (comp*)al_malloc(ints*ints*sizeof(comp));
+    comp* store = (comp*)al_malloc(2*ints*sizeof(comp));
+    comp* store2 = store+ints;
+    double* t = (double*)al_malloc((nts)*sizeof(double)); 
     double dt =t_int*1.0/nts;
 
     for(int i = 0; i < nts; i++){
@@ -32,6 +49,13 @@ void engineimp::run(){
     }
     for(int i = 0; i < nts; i++){
         u0[i] = u0[i+nts] = 1.00/cosh(t[i]/2.0);
+    }
+    jac(jacm, u0, store, store2, rh);
+    for(int i = 0; i < ints; i++){
+        for(int j = 0; j < ints; j++){
+            printf("%*.2e+%*.2ei, ", 6, _real(jacm[i+ints*j]), 6, _imag(jacm[+ints*j]));
+        }
+        std::cout<<"\n";
     }
     fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
@@ -46,15 +70,15 @@ void engineimp::run(){
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
     for(int i = 0; i < 1; i++){
-              inter->integrate(rh, u0, 0, 15);
- //       rh->dxdt(u0, u1, 0);
+        //inter->integrate(rh, u0, 0, 1.5);
+        //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 
     }
     // ifft(t1, u0, u0, nts);
     //  ifft(t1, u0+nts, u0+nts, nts);
-      comp* tmp = u1;
-      u1=u0;
+    comp* tmp = u1;
+    u1=u0;
     ifft(t1, u0, u0, nts);
     ifft(t1, u0+nts, u0+nts, nts);
     for(int i = 0; i < nts*2; i++){
@@ -63,11 +87,12 @@ void engineimp::run(){
     }
     double ener = energy(u0, nts*2)*t_int/nts;
     std::cout << "Energy is: " << ener << std::endl;
-     u1=tmp;
+    u1=tmp;
     //std::cout << ((double)clock() - tval)/CLOCKS_PER_SEC << std::endl;
     fftw_destroy_plan(t2);
     fftw_destroy_plan(t1);
-    free(u0);
-    free(u1);
-    free(t);
+    al_free(u0);
+    al_free(u1);
+    al_free(t);
+    al_free(store);
 }

@@ -1,11 +1,12 @@
 #ifndef DEF_H
 #define DEF_H
+//#include <eigen3/Eigen/Eigen>
 #include <iostream>
 #include <string>
 #include <sstream>
 extern "C" {
-#include "stdlib.h"
 #include <complex.h>
+#include "stdlib.h"
 #include <fftw3.h>
 #include <math.h>
 #include <time.h>
@@ -30,8 +31,12 @@ typedef fftw_complex comp;
 #define maxTrips 50
 #include "parser/item.h"
 class _fatal{
+    public:
+    _fatal(){};
 };
 class _warning{
+    public:
+    _warning(){};
 };
 const static _fatal FATAL_ERROR;
 const static _warning WARNING;

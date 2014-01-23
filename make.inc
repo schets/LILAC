@@ -1,8 +1,8 @@
 export
 CFLAGS=-I./ -I./utils -ffast-math -g -O3 -fno-strict-aliasing -march=native 
-LFLAGS= -lfftw3 -lm 
-CPP=g++
-LD=g++
+LFLAGS= -lstdc++ -lfftw3 -lm 
+CPP=gcc
+LD=gcc
 LIB_MAIN=../lib
 MAIN_PATH=..
 INLINE_HEADERS=../utils/*.cpp

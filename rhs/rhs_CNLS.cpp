@@ -94,7 +94,6 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
-    //    dx[i] = 1;
     }
     //Do the fft work for the other half of the calculations
 
@@ -107,7 +106,6 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
-    //    dx[i+NUM_TIME_STEPS] = 1;
     }
     //printar(dx, NUM_TIME_STEPS*2);
     //

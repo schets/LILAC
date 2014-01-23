@@ -9,9 +9,9 @@ A=2/3;
 B=1/3;
 tau=0.1;
 Gamma=0.1;
+RTlength=1.5;
 mode=0;% if mode=1, load parameter values from CNLS_GA_results.mat
        % else, use default values.
-RTlength=15;% roundtrip length
 if mode==1
     load CNLS_GA_results.mat
     g01=param(5);
@@ -68,11 +68,11 @@ J_p=R_matrix(alpha_p)*W_p*R_matrix(-alpha_p);
 time=tic;
 U_int_0_s(1:nt,1)=fft(U_int(1:nt));
 U_int_0_s((nt+1):(2*nt),1)=fft(U_int((nt+1):(2*nt)));
-U_int_0_s;
 maxTrips = 50;
 change_norm=1.e+1000;
 norms=[];
 j = 1;
+%CNLS_fft_rhs(1,U_int_0_s,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt)
 while (j<=maxTrips && change_norm>1.e-3)
 % for j=1:RoundTrips
     %j
@@ -82,16 +82,17 @@ while (j<=maxTrips && change_norm>1.e-3)
         U_int_s=[fft(U_solution(1:nt,j-1));fft(U_solution((nt+1):2*nt,j-1))];
     end
     % integrating FFT'd ODE for NLSE
-    options = odeset('RelTol',1e-5,'AbsTol',1e-3*ones(nt*2,1));
+    options = odeset('RelTol',1e-5);
     % options=[];
 %    [RTlength*(j-1):0.01:RTlength*j]
-    [z,U]=ode45(@(z,U) CNLS_fft_rhs(z,U,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt),[0, RTlength],U_int_s,options);
-   % U
+    [z,U]=ode45(@(z,U) CNLS_fft_rhs(z,U,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt),[0, 1.5],U_int_0_s,options);
+   % U(end, :)'
     % iFFT to back out u, v at spatial end of round trip
-    u_end=ifft(U(end,1:nt))'
-    v_end=ifft(U(end,(nt+1):(2*nt)))'
+    length(z)
+   u_end=ifft(U(end,1:nt))'
+   v_end=ifft(U(end,(nt+1):(2*nt)))'
     solution_end=[u_end, v_end];
-    %Apply Jones Matrix
+        %Apply Jones Matrix
     U_end=J_1*J_p*J_2*J_3*[u_end;v_end];
     % solution containing both small u and v
     U_solution(:,j)=[U_end(1,:).'; U_end(2,:).'];
