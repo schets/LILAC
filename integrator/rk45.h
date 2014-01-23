@@ -5,6 +5,7 @@ class rk45:public integrator{
     comp* restr f0, * restr f1, * restr f2, * restr f3;
     comp* restr f4, * restr f5, * restr f6;
     comp* restr u_calc;
+    double* restr u_calc2;
     public:
     void print() const;
     void postprocess(std::map<std::string, item*>& dat);

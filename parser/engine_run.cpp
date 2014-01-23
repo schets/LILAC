@@ -53,7 +53,6 @@ void engineimp::run(){
     jac(jacm, u0, store, store2, rh);
     for(int i = 0; i < ints; i++){
         for(int j = 0; j < ints; j++){
-            printf("%*.2e+%*.2ei, ", 6, _real(jacm[i+ints*j]), 6, _imag(jacm[+ints*j]));
         }
         std::cout<<"\n";
     }
@@ -70,7 +69,7 @@ void engineimp::run(){
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
     for(int i = 0; i < 1; i++){
-        //inter->integrate(rh, u0, 0, 1.5);
+        inter->integrate(rh, u0, 0, 1.5);
         //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 

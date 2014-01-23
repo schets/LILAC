@@ -32,11 +32,9 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     double dt = dt_init;
     const double magic_power = 0.2;//used in a matlab ode45, found in matlab ode45 code
     const double magic_mult = 0.8;//magic multiplying safety factor for determining the next timestep;
-    //We use the Fehlberg parameters
-    //This is the method that ODE45 uses
 
-    /*test dorman-prince, didn't match ode45 well
-     * const double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
+//    dorman prince integrator parameters
+      const double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
       const double b1 = 0.2;
       const double b2[] = {3.0/40, 9.0/40};
       const double b3[] = {44.0/45, -56.0/15, 32.0/9};
@@ -46,7 +44,9 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
       const double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
       -92097.0/339200, 187.0/2100, 1.0/40};
       const double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
-      */
+    /*
+     * Fehlberg parameters, usable if one wants
+     * Fehlberg minimizes the 4th order error, so is less desireable
     const double a[] = {1.0/4, 3.0/8, 12.0/13, 1.0, 1.0/2};
     const double b1 = 0.25;
     const double b2[] = {3.0/32, 9.0/32};
@@ -54,7 +54,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     const double b4[] = {439.0/216, -8.0, 3680.0/513, -845.0/4104};
     const double b5[] = {-8.0/27, 2.0, -3544.0/2565, 1859.0/4104, -11.0/40};
     const double c4[] = {25.0/216, 0, 1408.0/2565, 2197.0/4104, -1.0/5, 0};
-    const double c5[] = {16.0/135, 0, 6656.0/12825, 28561.0/56430, -9.0/50, 2.0/55};
+    const double c5[] = {16.0/135, 0, 6656.0/12825, 28561.0/56430, -9.0/50, 2.0/55};*/
     double taui;
     taui = 0;
     double tcur=t0;
@@ -80,15 +80,18 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
                 "rk45::integrate", "integrator/rh45.cpp", (item*)func, WARNING);
     }
     int tries=0;
+
+    //while this seems odd, it helps streamline the inner integrator loop
+    func->dxdt(u0, f6, tcur);
     while(tcur < tf){
         //this function=lol at compiler loop unrolling
         if((tcur + dt) > tf){
             break;
         }
         tries++;
-        if(tries == 1){
-            func->dxdt(u0, f0, tcur);
-        }
+        swp=f6;
+        f6=f0;
+        f0=swp;
         double ts = tcur;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + b1*f0[i]*dt;
@@ -116,6 +119,12 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         }
         tcur = ts + a[4]*dt;
         func->dxdt(u_calc, f5, tcur);   
+        for(size_t i = 0; i < dimension; i++){
+            u_calc[i] = u0[i] + dt*(b5[0]*f0[i] + b5[1] * f1[i] + b5[2]*f2[i] + 
+                    b5[3]*f3[i] + b5[4]*f4[i] + b5[5]*f5[i]);
+        }
+        tcur = ts + a[5]*dt;
+        func->dxdt(u_calc, f6, tcur);   
         tcur = ts;
         //calculate the magnitude of the error, and the fourth/5th order arrays
         //The references that I found are for real values
@@ -125,14 +134,16 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         //This is done with the inf norm
         double delta=1E-12;
         for(size_t i = 0; i < dimension; i++){
-
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
-                    c5[4]*f4[i] + c5[5]*f5[i]);
+                    c5[4]*f4[i] + c5[5]*f5[i] + c5[6]*f6[i]);
 
-            comp ord4 = u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
-                    c4[4]*f4[i] + c4[5]*f5[i]);
-
-            double deltam = _sqabs(u_calc[i] - ord4);//square of absolute error
+            u_calc2[i] = _sqabs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
+                    c4[4]*f4[i] + c4[5]*f5[i] + c4[6]*f6[i]) - u_calc[i]);
+        }
+            
+        //seperate these two loops to allow vectorization of the first}
+        for(size_t i = 0; i < dimension; i++){
+            double deltam = u_calc2[i];//square of absolute error
             if(deltam>delta){
                 delta=deltam;
             }
@@ -149,13 +160,16 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         }
         dt = std::min(dt, dt_max);
         if(delta>=tauv){
+            swp=f6;
+            f6=f0;
+            f0=swp;
             continue;
         }
         tcur += dt_last;
         if((tcur + dt) > tf){
             dt = tf-tcur;
         }
-//#define give_out
+        //#define give_out
 #ifdef give_out
         std::cout << "delta"<<delta<<"\ntauv"<<tauv<<"\ntauv/delta"<<(tauv/delta)<<
             "\ndt_last="<<dt_last<<"\ndt="<<dt<<"\ntcur="<<tcur<<
@@ -209,6 +223,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
 }
 rk45::~rk45(){
     al_free(f0);
+    al_free(u_calc2);
 }
 std::vector<std::string> rk45::dependencies() const{
     std::string deps[] = {"dt_init", "dt_min", "dt_max", "relerr", "abserr"};
@@ -252,6 +267,7 @@ void rk45::postprocess(std::map<std::string, item*>& dat){
     f5=f4+dimension;
     f6=f5+dimension;
     u_calc=f6+dimension;
+    u_calc2 = (double*) al_malloc(dimension*sizeof(double));
 }
 void rk45::parse(std::string inval){
 };

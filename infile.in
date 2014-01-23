@@ -1,7 +1,7 @@
 #file for testing io system
 CNLS rhs 
-rk45 integrator
-integer dimension 6
+rk4 integrator
+integer dimension 16
 real g0 1.73
 real e0 4.23
 real t_int 60
