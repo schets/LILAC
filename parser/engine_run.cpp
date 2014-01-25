@@ -51,25 +51,21 @@ void engineimp::run(){
         u0[i] = u0[i+nts] = 1.00/cosh(t[i]/2.0);
     }
     jac(jacm, u0, store, store2, rh);
-    for(int i = 0; i < ints; i++){
-        for(int j = 0; j < ints; j++){
-        }
-        std::cout<<"\n";
-    }
     fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
     fft(t1, u0, u0, nts);
     fft(t2, u0+nts, u0+nts, nts);
     clock_t tval =clock();
-    for(int i = 0; i < 00000; i++){
-        rh->dxdt(u0, u1, 0);
-        asm("");
-    }
+   
     rh->dxdt(u0, u1, 1);
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
-    for(int i = 0; i < 1; i++){
-        inter->integrate(rh, u0, 0, 1.5);
+    for(int i = 0; i < 50; i++){
+        for(int j = 0; j < nts*2; j++){
+            u1[i] = u0[i];
+        }
+        inter->integrate(rh, u1, 0, 1.5);
+        std::cout << "done" << std::endl;
         //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 

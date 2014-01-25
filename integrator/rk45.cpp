@@ -30,7 +30,7 @@ inline void printv(double c){
 }
 int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     double dt = dt_init;
-    const double magic_power = 0.2;//used in a matlab ode45, found in matlab ode45 code
+    const double magic_power = 1.0/6; //found from reference file, reference p.91 Ascher and Petzold
     const double magic_mult = 0.8;//magic multiplying safety factor for determining the next timestep;
 
 //    dorman prince integrator parameters
@@ -169,10 +169,10 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         if((tcur + dt) > tf){
             dt = tf-tcur;
         }
-        //#define give_out
+       // #define give_out
 #ifdef give_out
-        std::cout << "delta"<<delta<<"\ntauv"<<tauv<<"\ntauv/delta"<<(tauv/delta)<<
-            "\ndt_last="<<dt_last<<"\ndt="<<dt<<"\ntcur="<<tcur<<
+        std::cout << "delta="<<delta<<"\ntauv="<<tauv<<"\ntauv/delta="<<(tauv/delta)<<
+            "\nmul_fac="<<magic_mult*std::pow(tauv/delta, magic_power)<<"\ndt_last="<<dt_last<<"\ndt="<<dt<<"\ntcur="<<tcur<<
             "\ntries="<<tries<<std::endl;
         /*        std::cout<<"\nf0=\n";
                   printar(f0, dimension);
