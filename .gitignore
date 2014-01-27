@@ -1,5 +1,8 @@
-lib
-bin
-html
 *.o
 *.a
+html/*
+bin/*
+lib/*
+bin
+html
+lib
