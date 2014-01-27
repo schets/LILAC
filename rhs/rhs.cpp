@@ -1,24 +1,21 @@
 #include "rhs.h"
 #include "rhs_imp.h"
 #include <cstring>
-/*int rhs_const::dxdt(comp* restr x, comp* restr dx, double t){
-    for(int i = 0; i < dimension; i++){
-        dx[i] = const_val;
-    }
-    return 0;
-}
-std::vector<std::string> rhs_const::dependencies() const{
-    std::string deps[] = {"const_fact", "dimension"};
-    return std::vector<std::string>(deps, deps+2);
-}
-std::string rhs_const::type() const {
-    return "rhs_const";
-}*/
-void rhs::parse(std::string s){
-}
+/*!
+ * Provides the default postprocessing for the rhs base class
+ * which simply calls the postprocessing for item_dim
+ * @param dat The map containing the io data, may be modified by function
+ * \sa item_dim::postprocess
+ */
 void rhs::postprocess(std::map<std::string, item*>& dat){
     item_dim::postprocess(dat);
 }
+/*!
+ * Creates an rhs object
+ * @param tname The name of the type to be returned
+ * @return A pointer to the rhs object
+ * \sa item::create
+ * */
 rhs* rhs::create(std::string tname){
     if(tname == "CNLS"){
         return new rhs_CNLS();
@@ -28,6 +25,12 @@ rhs* rhs::create(std::string tname){
     }*/
     return 0;
 }
+/*!
+ * Returns a vector of dependencies
+ * rhs has no explicit dependencies except for those of the parent class
+ * @return A vector containing the names of the dependencies
+ * \sa item_dep::dependencies
+ * */
 std::vector<std::string> rhs::dependencies()const {
-    return std::vector<std::string>();
+    return item_dim::dependencies();
 }

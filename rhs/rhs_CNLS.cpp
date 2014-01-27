@@ -20,36 +20,9 @@ double trap(double * restr v, size_t s){
     sum += (v[0] + v[s-1])/2.0;
     return sum;
 }
-rhs_CNLS::rhs_CNLS(size_t dimen, double g, double e, double _dt,
-        double tlen, size_t n_steps): g0(g), e0(e), dt(_dt),
-    LENGTH_T(tlen), NUM_TIME_STEPS(n_steps){
-        u1 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        u2 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        comp_in = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        comp_out = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        comp_out_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        comp_in_r = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
-        sq1 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-        sq2 = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-        k = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-        ksq = (double*)malloc(NUM_TIME_STEPS*sizeof(double));
-        //input arrays don't really matter here because the plan
-        //is executed against specific input arrays at runtime
-        //and not with the initialization arrays
-        ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
-        fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
-        //create k values
-
-        double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
-        for(int i=0; i<NUM_TIME_STEPS/2; i++){
-            k[i] = 2.0*mulval * i/((float)NUM_TIME_STEPS);
-            ksq[i] = k[i]*k[i];
-        }
-        for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
-            k[i] = 2.0*mulval * ((int)i-(int)NUM_TIME_STEPS)/((float)NUM_TIME_STEPS);
-            ksq[i] = k[i]*k[i];
-        }
-    }
+/*!
+ * Destructor for rhs_CNLS
+ * */
 rhs_CNLS::~rhs_CNLS(){
     free(u1);
     free(u2);
@@ -65,13 +38,8 @@ rhs_CNLS::~rhs_CNLS(){
     fftw_destroy_plan(fback);
 }
 
-
-//This is the RHS for the CNLS equations
-//I haven't implemented real ffts for the parts to which they apply
-//since they have a more complicated output and I just want to have a working
-//copy for now
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
-    
+
     uf1=x;
     uf2=x+NUM_TIME_STEPS;
     //take the inverse fourier transform
@@ -122,6 +90,9 @@ std::vector<std::string> rhs_CNLS::dependencies() const{
 std::string rhs_CNLS::type() const {
     return "rhs_CNLS";
 }
+/*!
+ * Initializes the rhs_CNLS class  
+ */
 void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension/2;
@@ -166,3 +137,5 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
     }
 
 }
+void rhs_CNLS::parse(std::string inval){
+};

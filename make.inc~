@@ -1,0 +1,11 @@
+pollycc=clang -Xclang -load -Xclang /usr/local/lib/LLVMPolly.so
+POLLYFLAGS= -mllvm -polly -mllvm -polly-vectorizer=polly
+CFLAGS=-I./ -I./utils -O3 -ffast-math -fno-strict-aliasing -march=native $(POLLYFLAGS) 
+LFLAGS= -lstdc++ -lfftw3 -lm 
+CPP=clang
+LD=clang
+LIB_MAIN=../lib
+MAIN_PATH=..
+INLINE_HEADERS=../utils/*.cpp
+INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/
+

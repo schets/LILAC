@@ -2,29 +2,21 @@
 #define RHS_H
 #include "defs.h"
 #include "parser/item.h"
-/*!
- * The RHS class is effectively the definition of the equations that are being solved.
- * From the perspective of the integrator, and the solver, this is a black box that
- * creates a function's derivative given the value. They just see an rhs* and call dxdt. All classed that inherit rhs
- * must provide a calling function that takes in the function values at a certain point
- * and an array that will contain the derivatives at that time, along with the current time
- * The return value of this function can be an error code, although I have not implemented
- * any error handling yet. The C++ try/catch functionality wreaks havoc on optimizations
- * so I don't think it would be a good idea to use it in any of the routines here
- *
- *
+//!The rhs base class
+/*! \class rhs
+ * The RHS class provides the RHS of an equation du/dt = f(u)
+ * This is an abstract virtual class that provides a uniform interface to the
+ * integrator class. Aside from the standard item functions, derived classes must implement
+ * a function dxdt which loads an array with the derivative at a certain time given the time and
+ * function value
+ * \sa integrator  
  * 
  * */
 class rhs:public item_dim{
 
         public:
-        /*!\brief
-         * Returns the dimension of the right hand side
-         */
-        
         static rhs* create(std::string tname);
         virtual std::vector<std::string> dependencies() const;
-        virtual void parse(std::string inval);
         virtual void postprocess(std::map<std::string, item*>& dat);
         /*!\brief
          * Creates the base rhs class with a dimension=dimen
