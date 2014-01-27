@@ -1,5 +1,5 @@
 export
-CFLAGS=-I./ -I./utils -ffast-math -O3 -fno-strict-aliasing -march=native
+CFLAGS=-I./ -I./utils -ffast-math -O3 -fstrict-aliasing -march=native
 LFLAGS= -lstdc++ -lfftw3 -lm 
 CPP=gcc
 LD=gcc

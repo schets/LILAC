@@ -60,6 +60,7 @@ void engineimp::run(){
     rh->dxdt(u0, u1, 1);
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
+//    Eigen::Map<comp, 2, Eigen::Dynamic, Eigen::RowMajor> dmap(u0, 2, nts*2);
     for(int i = 0; i < 50; i++){
         for(int j = 0; j < nts*2; j++){
             u1[i] = u0[i];

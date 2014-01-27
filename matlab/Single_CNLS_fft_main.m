@@ -89,11 +89,14 @@ while (j<=maxTrips && change_norm>1.e-3)
    % U(end, :)'
     % iFFT to back out u, v at spatial end of round trip
     length(z)
-   u_end=ifft(U(end,1:nt))'
-   v_end=ifft(U(end,(nt+1):(2*nt)))'
+   u_end=ifft(U(end,1:nt))';
+   v_end=ifft(U(end,(nt+1):(2*nt)))';
     solution_end=[u_end, v_end];
-        %Apply Jones Matrix
+    u_end
+    %Apply Jones Matrix
+    %[u_end;v_end]
     U_end=J_1*J_p*J_2*J_3*[u_end;v_end];
+    U_end
     % solution containing both small u and v
     U_solution(:,j)=[U_end(1,:).'; U_end(2,:).'];
     U_solution_output(:,j)=U_solution(:,j);
