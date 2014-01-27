@@ -6,6 +6,12 @@
 #include "integrator/integrator.h"
 #include <time.h>
 #include <stdio.h>
+void rmat(comp* in, double alpha){
+    in[0] = cos(alpha);
+    in[1] = -1*sin(alpha);
+    in[2]=sin(alpha);
+    in[3]=cos(alpha);
+}
 void jac(comp* jm, comp* x, comp* store, comp* store2, rhs* rh){
     for(size_t i = 0; i < rh->dimension; i++)
     {
@@ -43,7 +49,9 @@ void engineimp::run(){
     comp* store2 = store+ints;
     double* t = (double*)al_malloc((nts)*sizeof(double)); 
     double dt =t_int*1.0/nts;
-
+    comp m1[4], m2[4], m3[4], m4[4];
+    Eigen::Map<Eigen::Matrix<comp, 2, 2, Eigen::RowMajor> > em1(m1);
+    Eigen::Map<Eigen::Matrix<comp, 2, 2, Eigen::RowMajor> > em2(m2);
     for(int i = 0; i < nts; i++){
         t[i] = dt*((double)i-nts/2.0);
     }
@@ -60,10 +68,10 @@ void engineimp::run(){
     rh->dxdt(u0, u1, 1);
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
-//    Eigen::Map<comp, 2, Eigen::Dynamic, Eigen::RowMajor> dmap(u0, 2, nts*2);
-    for(int i = 0; i < 50; i++){
+    Eigen::Map<Eigen::Matrix<comp, 2, Eigen::Dynamic, Eigen::RowMajor>, Eigen::Aligned> dmap(u0, 2, nts*2);
+    for(int i = 0; i < 1; i++){
         for(int j = 0; j < nts*2; j++){
-            u1[i] = u0[i];
+            u1[j] = u0[j];
         }
         inter->integrate(rh, u1, 0, 1.5);
         std::cout << "done" << std::endl;
@@ -73,17 +81,14 @@ void engineimp::run(){
     }
     // ifft(t1, u0, u0, nts);
     //  ifft(t1, u0+nts, u0+nts, nts);
-    comp* tmp = u1;
-    u1=u0;
-    ifft(t1, u0, u0, nts);
-    ifft(t1, u0+nts, u0+nts, nts);
+    ifft(t1, u1, u1, nts);
+    ifft(t1, u1+nts, u1+nts, nts);
     for(int i = 0; i < nts*2; i++){
-        std::cout<<_real(u0[i])<<"+"<< _imag(u0[i])<<"i\n";
+        //std::cout<<_real(u1[i])<<"+"<< _imag(u0[i])<<"i\n";
         //     cout << _sqabs(u1[i]) << endl;
     }
-    double ener = energy(u0, nts*2)*t_int/nts;
+    double ener = energy(u1, nts*2)*t_int/nts;
     std::cout << "Energy is: " << ener << std::endl;
-    u1=tmp;
     //std::cout << ((double)clock() - tval)/CLOCKS_PER_SEC << std::endl;
     fftw_destroy_plan(t2);
     fftw_destroy_plan(t1);
@@ -91,4 +96,5 @@ void engineimp::run(){
     al_free(u1);
     al_free(t);
     al_free(store);
+    fftw_cleanup();
 }

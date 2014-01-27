@@ -1,3 +1,4 @@
+#include "defs.h"
 #include "item.h"
 #include "item_imp.h"
 #include "../rhs/rhs.h"

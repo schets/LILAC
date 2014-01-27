@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-//#include <Eigen>
+#include <eigen3/Eigen/Eigen>
 extern "C" {
 #include <complex.h>
 #include "stdlib.h"

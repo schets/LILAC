@@ -1,7 +1,7 @@
 #ifndef COMP_FUNCS_H
 #define COMP_FUNCS_H
-#include <cmath>
 #include "defs.h"
+#include <cmath>
 #include <vector>
 #include <string>
 extern "C"{

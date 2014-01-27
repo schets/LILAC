@@ -30,8 +30,10 @@ inline void printv(double c){
 }
 int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     double dt = dt_init;
+    double dtave=0;
+    size_t steps=0;
     const double magic_power = 1.0/6; //found from reference file, reference p.91 Ascher and Petzold
-    const double magic_mult = 0.8;//magic multiplying safety factor for determining the next timestep;
+    const double magic_mult = .8;//magic multiplying safety factor for determining the next timestep;
 
 //    dorman prince integrator parameters
       const double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
@@ -68,6 +70,9 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     tauv = std::sqrt(taui);
     tauv *= relerr;
     comp* restr tmp, * restr swp, * restr u0hld;//this is used for freeing the memory later
+    comp* restr tmp6, * restr tmpc;
+    tmp6 = f6;
+    tmpc = u_calc;
     u0hld=u0;
     //used to avoid memory problems later on
     //allows for easy switching of pointers to avoid memory copies
@@ -199,6 +204,8 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
                 taui = val;
             }
         }
+        steps++;
+        dtave+=dt_last;
         tauv=std::sqrt(taui);
         tauv *= relerr;
         tries=0;
@@ -219,6 +226,9 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     }
     //u0, or at least that original address, now holds the final integration values
     f0=tmp;
+    f6 = tmp6;
+    u_calc=tmpc;
+    std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
     return 0;
 }
 rk45::~rk45(){
