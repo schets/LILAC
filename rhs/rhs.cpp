@@ -24,9 +24,7 @@ rhs* rhs::create(std::string tname){
     else if(tname=="example_rhs"){
         return new example_rhs();
     }
-  /*  else if (tname == "const"){
-        return new rhs_const();
-    }*/
+    
     return 0;
 }
 /*!

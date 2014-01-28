@@ -102,7 +102,7 @@ void example_rhs::postprocess(std::map<std::string, item*>& dat){
     //aligned memory and plays nicely with fftw and Eigen.
     value_holder = (comp*)al_malloc(dimension*sizeof(comp));
     for(size_t i = 0; i < dimension; i++){
-        value_holder[i] = i*val1 + (dimension-i)*val2;
+        value_holder[i] = I*i*val1 + (dimension-i)*val2;
     }
 }
 
@@ -132,7 +132,7 @@ int example_rhs::dxdt(comp* restr x, comp* restr dx, double t){
     //See detailed documentation for more
     //But is a nice example
     for(size_t i = 0; i < dimension; i++){
-        dx[i] = sin(_real(x[i])*_imag(value_holder[i])) * val2/val1;
+        dx[i] = (_real(x[i])*_imag(value_holder[i])) * (val2/val1);
     }
     return 0;
 }

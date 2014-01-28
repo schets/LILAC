@@ -121,11 +121,14 @@ item* item::create(std::string name){
     else if(name == "integer"){
         return new integer();
     }
-    else if(name=="CNLS"){
-        return rhs::create(name);
+    item* rval = 0;
+    rval=rhs::create(name);
+    if(rval){
+        return rval;
     }
-    else if(name=="rk4" || name == "rk45"){
-        return integrator::create(name);
+    rval=integrator::create(name);
+    if(rval){
+        return rval;
     }
     name.append(" does not name a valid type");
     err(name, "item::create", "parser/item.cpp", WARNING);

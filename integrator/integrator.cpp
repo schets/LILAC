@@ -15,7 +15,5 @@ item* integrator::create(std::string inval){
     if(inval=="rk45"){
         return new rk45();
     }
-    inval.append(" is not a valid integrator name");
-    err(inval, "integrator::create", "integrator/integrator.cpp", FATAL_ERROR);
     return 0;
 }
