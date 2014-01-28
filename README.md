@@ -1,28 +1,22 @@
-lasers
-======
+LILAC: Learning and Integration of Lasers for Adaptive Control
 
-Codes for modeling lasers
-This code models a laser pulse in a fiber cavity. Our goal with this is to solve 
-1D partial differential equations of the form du/dt = h(u). Since the computational domain
-is periodic in x, we use a spectral method to solve this euqation. This reduces the problem
-to the ODE dF(u)/dt = F(h(u)), where F is the fourier transform. For a series expansion,
-we solve the associated ODE for each of the Fourier coefficients.
+This project provides a framework with which to analyze/control lasers, and more generally, any tunable dynamical system.
 
-The program is organized into 3 main sections: The solver, the integrator, and the right hand side.
+You can find documentation on the [wiki](github.com/schets/LILAC/wiki). 
 
-Solver: The solver class is not currently implemented, but it will control to simulation 
-of the problem as a whole. It will deal with running the integrator and retrieving the 
-solution values from the final result. For example, the solver will integrate the CNLS around
-a round trip, and then apply the waveplates and polarizers.
+Installation:
+This project depends on [GCC](gcc.gnu.org), [Git](git-scm.com), [FFTW](www.fftw.org) and [Eigen](eigen.tuxfamily.org). These are simple to install on inux and Macintosh systems and each site provides installation instructions.
 
-Integrator: The integrator class integrates the right hand side of the problem in Fourier space.
-It takes in the initial condition and returns the solution at a later time. The runtime
-parameters, such as the number of steps to take or the maximum error, are specified in the constructor
-Currently, only a fixed step 4th order runge kutta integrator is implemented.
+Once you have installed Git, FFTW, and Eigen, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
 
-RHS: The rhs class defines the problem being solved. It takes in the solution values and returns
-the derivative at the specific point. The actual parameters that may define a specirfic problem are passed in the constructor. Currently, du/dt=const and du/dt=u are both implemented. A definition for the CNLS equations is being worked on; however, it currently has an error and the solutions increase rapidly to infinity.
+On Linux:
+1. From the command line, proceed to the directory in which you want to have lilac installed.
+2. Run the command: git clone https://github.com/schets/LILAC lilac
+3. Enter the lilac directory (cd lilac)
+4. Compile the code by running make
+5. Upon successful compilation, the lilac binary can be found in ithe directory bin
 
-All of the above classes are purely virtual, and see each other as a sort of black box.
-The solver sees the integrator as an object that takes in an initial condition and returns a solution,
-nothing more. Meanwhile, the integrator sees the rhs as something that just takes a solution value and returns a derivative. This makes for easy addition of new functionality. If I wanted to add the equation du/dt=u^-1, I could code a child class for for that and all the code I would replace in the main program would be that the rhs* would point to an instance of rhs_inverse instead of whatever it did before.
+
+See the wiki for a tutorial on writing input files, and extending the engine in various manners. The engine is designed so that only a cursory knowledge of C/C++ is needed to write most extensions, and in general extending the code will not involve editing the engine itself.
+
+A nice tutorial on C++ can be found at www.cplusplus.com/tutorial, and a tutorial on pointers (arrays in C/C++) can be found at http://pw1.netcom.com/~tjensen/ptr/pointers.htm
