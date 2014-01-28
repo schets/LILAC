@@ -69,12 +69,12 @@ void engineimp::run(){
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
     Eigen::Map<Eigen::Matrix<comp, 2, Eigen::Dynamic, Eigen::RowMajor>, Eigen::Aligned> dmap(u0, 2, nts*2);
-    for(int i = 0; i < 1; i++){
+    for(int i = 0; i < 50; i++){
         for(int j = 0; j < nts*2; j++){
             u1[j] = u0[j];
         }
         inter->integrate(rh, u1, 0, 1.5);
-        std::cout << "done" << std::endl;
+        //std::cout << "done" << std::endl;
         //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 

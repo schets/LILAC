@@ -6,8 +6,7 @@ all: $(LIB_MAIN)/rhs.o
 
 LIB_PATH= $(LIB_MAIN)/rhs
 
-RHS_OBJ = $(LIB_PATH)/rhs_main.o $(LIB_PATH)/rhs_CNLS.o
-
+RHS_OBJ = $(LIB_PATH)/rhs_main.o $(LIB_PATH)/rhs_CNLS.o $(LIB_PATH)/example_rhs.o
 
 $(LIB_MAIN)/rhs.o: $(RHS_OBJ)
 	@rm -f $(LIB_MAIN)/rhs.o
@@ -18,4 +17,6 @@ $(LIB_PATH)/rhs_main.o: rhs.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_CNLS.o
 	$(CPP) -c rhs_CNLS.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_CNLS.o
-
+$(LIB_PATH)/example_rhs.o: example_rhs.cpp $(INLINE_HEADERS)
+	@rm -f $(LIB_PATH)/example_rhs.o
+	$(CPP) -c example_rhs.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/example_rhs.o

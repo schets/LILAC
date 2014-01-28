@@ -125,8 +125,8 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         tcur = ts + a[4]*dt;
         func->dxdt(u_calc, f5, tcur);   
         for(size_t i = 0; i < dimension; i++){
-            u_calc[i] = u0[i] + dt*(b5[0]*f0[i] + b5[1] * f1[i] + b5[2]*f2[i] + 
-                    b5[3]*f3[i] + b5[4]*f4[i] + b5[5]*f5[i]);
+            u_calc[i] = u0[i] + dt*(b6[0]*f0[i] + b6[1] * f1[i] + b6[2]*f2[i] + 
+                    b6[3]*f3[i] + b6[4]*f4[i] + b6[5]*f5[i]);
         }
         tcur = ts + a[5]*dt;
         func->dxdt(u_calc, f6, tcur);   
@@ -228,7 +228,10 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     f0=tmp;
     f6 = tmp6;
     u_calc=tmpc;
+#define PRINT_TIME
+#ifdef PRINT_TIME
     std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
+#endif
     return 0;
 }
 rk45::~rk45(){

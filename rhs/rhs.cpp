@@ -1,5 +1,6 @@
 #include "rhs.h"
 #include "rhs_imp.h"
+#include "example_rhs.h"
 #include <cstring>
 /*!
  * Provides the default postprocessing for the rhs base class
@@ -19,6 +20,9 @@ void rhs::postprocess(std::map<std::string, item*>& dat){
 rhs* rhs::create(std::string tname){
     if(tname == "CNLS"){
         return new rhs_CNLS();
+    }
+    else if(tname=="example_rhs"){
+        return new example_rhs();
     }
   /*  else if (tname == "const"){
         return new rhs_const();
