@@ -2,7 +2,7 @@ LILAC: Learning and Integration of Lasers for Adaptive Control
 
 This project provides a framework with which to analyze/control lasers, and more generally, any tunable dynamical system.
 
-You can find documentation on the [wiki](https://github.com/schets/LILAC/wiki), and doxygen generated [advanced documentation](https://schets.github.io/LILAC) as well 
+You can find documentation on the [wiki](http://github.com/schets/LILAC/wiki), and doxygen generated [advanced documentation](http://schets.github.io/LILAC) as well 
 
 Installation:
 This project depends on [GCC](gcc.gnu.org), [Git](git-scm.com), [FFTW](www.fftw.org) and [Eigen](eigen.tuxfamily.org). These are simple to install on inux and Macintosh systems and each site provides installation instructions.
