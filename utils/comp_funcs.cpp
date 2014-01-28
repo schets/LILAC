@@ -17,25 +17,25 @@ extern "C"{
 //and provide nice inlined functions that should also
 //work nicely with SIMD instructions
 inline comp _conj(comp inval){
-    ((double*)&inval)[1] *= -1;
+    ((double* restr)&inval)[1] *= -1;
     return inval;
 }
 inline double _real(comp inval){
-    return ((double*)&inval)[0];
+    return ((double* restr)&inval)[0];
 }
 inline double _imag(comp inval){
-    return ((double*)&inval)[1];
+    return ((double* restr)&inval)[1];
 }
 inline double _abs(comp inval){
     double r, i;
-    r = ((double*)&inval)[0];
-    i = ((double*)&inval)[1];
+    r = ((double* restr)&inval)[0];
+    i = ((double* restr)&inval)[1];
     return std::sqrt(r*r + i*i);
 }
 inline double _sqabs(comp inval){
     double r, i;
-    r = ((double*)&inval)[0];
-    i = ((double*)&inval)[1];
+    r = ((double* restr)&inval)[0];
+    i = ((double* restr)&inval)[1];
     return r*r + i*i;
 }
 

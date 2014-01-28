@@ -1,9 +1,11 @@
-//This is an example file for how to add a new function that can be integrated
-//As of now, this represents the current state of the engine.
-//Since the engine is still being developed, this example will change with it.
-//For example, I already have some semi-significant changes planned to facilitate
-//an effective method for referencing variables throughout the input file
-//
+//! This files is the example header
+/*! \file This is an example file for how to add a new function that can be integrated
+* As of now, this represents the current state of the engine.
+* Since the engine is still being developed, this example will change with it.
+* For example, I already have some semi-significant changes planned to facilitate
+* an effective method for referencing variables throughout the input file
+* It still has good input on how to make an rhs-type class
+*/
 #include "defs.h"//This file contains many headers that are useful in C/C++, especially for mathematical functions
 
 #include "rhs.h" //This file contains the base class for rhs-type classes
@@ -20,6 +22,11 @@
 
 
 //!This class is a basic example of how to write an rhs class
+/*!This class is an example of a function rhs class.
+ * It implements all of the functions needed, and can even be called from
+ * the input file. Make sure to read the source file, as it contains a large amount of documentations that is not present in the documentation
+ * \sa example_rhs.cpp, example_rhs.h, rhs, and item 
+ */
 class example_rhs:public rhs{
     //up here declare variables that are used internally by the function
     //These may be akin to various parameters, tunable or not

@@ -4,7 +4,6 @@
 #include <list>
 #include "graph.h"
 #include "item.h"
-#include "creator.h"
 void trim(std::string& curline){
     size_t startpos = curline.find_first_not_of("\n\r\t ");
     if(startpos != std::string::npos){

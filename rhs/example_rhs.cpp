@@ -1,3 +1,8 @@
+//! This file is the source file for the example header
+/*! \file This is the .cpp file for the example rhs function
+ * It contains some basic test functions, as well as extra in-function
+ * documentation explaining most steps and various details
+ * */
 #include "example_rhs.h"
 #include "comp_funcs.h" //includes various functions for complex variables
 //****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
@@ -11,7 +16,7 @@
 //instead of the example file names. Also, please don't remove the example build commands
 
 
-//Thsi is deprecated, just implement an empty version for now
+//!This is deprecated, just implement an empty version for now
 void example_rhs::parse(std::string inval){
 }
 
