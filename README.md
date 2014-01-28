@@ -10,6 +10,7 @@ This project depends on [GCC](gcc.gnu.org), [Git](git-scm.com), [FFTW](www.fftw.
 Once you have installed Git, FFTW, and Eigen, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
 
 On Linux:
+
 1. From the command line, proceed to the directory in which you want to have lilac installed.
 2. Run the command: git clone https://github.com/schets/LILAC lilac
 3. Enter the lilac directory (cd lilac)
