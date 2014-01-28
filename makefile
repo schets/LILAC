@@ -8,11 +8,11 @@
 
 OBJS = lib/rhs.o  lib/solver.o lib/integrator.o lib/main.o lib/engine.o
 include make.inc
-all: $(OBJS) bin/inteq
+all: $(OBJS) bin/lilac
 .PHONY: clean
-bin/inteq: $(OBJS) 
+bin/lilac: $(OBJS) 
 	@mkdir -p bin
-	$(LD)  lib/*.o $(LFLAGS) -o bin/inteq
+	$(LD)  lib/*.o $(LFLAGS) -o bin/lilac
 lib/main.o: main.cpp utils/*.cpp
 	@rm -f lib/main.o
 	$(CPP) -c main.cpp $(CFLAGS) -o lib/main.o
