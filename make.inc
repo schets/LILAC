@@ -1,5 +1,5 @@
 export
-CFLAGS=-I./ -I./utils -ffast-math -O3 -fstrict-aliasing -march=native -ftree-vectorizer-verbose=1
+CFLAGS=-I./ -I./utils -ffast-math -O3 -fstrict-aliasing -march=native 
 LFLAGS= -lstdc++ -lfftw3 -lm 
 CPP=gcc
 LD=gcc
