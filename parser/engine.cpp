@@ -15,7 +15,6 @@ char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
 engineimp::engineimp(const std::string fname){
-
     std::ifstream fstr(fname.c_str());
     if(f_is_empty(fstr)){
         err("Empty/non-existant file passed as configuration parameter",
@@ -31,6 +30,10 @@ engineimp::~engineimp(){
             delete beg->second;
         }
     }
+}
+
+char engineimp::item_exists(std::string name) const{
+    return values.count(name);
 }
 
 

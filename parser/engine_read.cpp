@@ -20,7 +20,6 @@ void ltoken(std::string& tok, std::string& str, std::string delim=" "){
     str.erase(0, tpos + delim.length());
 }
 void engineimp::read(std::ifstream& fstr){
-
     const std::string delim=" ";
     const std::string comment="#";
     std::string token;
@@ -49,7 +48,7 @@ void engineimp::read(std::ifstream& fstr){
         //retrieve the first token
         ltoken(token, curline);
         //this token should be the variable type
-        curit = item::create(token);
+        curit = item::create(token, this);
         if(curline.empty()){
             std::cout<<"Variables need a name and a value, "<<
                 "error on line " << line << std::endl;

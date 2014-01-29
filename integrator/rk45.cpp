@@ -36,16 +36,16 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     const double magic_mult = .8;//magic multiplying safety factor for determining the next timestep;
 
 //    dorman prince integrator parameters
-      const double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
-      const double b1 = 0.2;
-      const double b2[] = {3.0/40, 9.0/40};
-      const double b3[] = {44.0/45, -56.0/15, 32.0/9};
-      const double b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
-      const double b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
-      const double b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
-      const double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
+      const static double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
+      const static double b1 = 0.2;
+      const static double b2[] = {3.0/40, 9.0/40};
+      const static double b3[] = {44.0/45, -56.0/15, 32.0/9};
+      const static double b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
+      const static double b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
+      const static double b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
+      const static double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
       -92097.0/339200, 187.0/2100, 1.0/40};
-      const double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
+      const static double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
     /*
      * Fehlberg parameters, usable if one wants
      * Fehlberg minimizes the 4th order error, so is less desireable

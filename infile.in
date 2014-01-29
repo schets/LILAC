@@ -1,21 +1,13 @@
 #file for testing io system
-example_rhs rhs 
-rk4 integrator
-integer dimension 3 
+CNLS rhs 
+rk45 integrator
+integer dimension 1024 
 real g0 1.73
 real e0 4.23
 real t_int 60
-real relerr 1e-4
+real relerr 1e-5
 real abserr 1e-3
 real dt_init .01
 real dt_min 1E-10
-real dt_max 0.1
-real a 1.0
-real b 1.0
-real qqq 23
-test blah 344
-real stepsize .001
-real val1 9.23
-real val2 .2
-string random_info asdfasdfu
-string nameval testtest
+real dt_max 0.05
+real stepsize .00511268
