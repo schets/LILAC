@@ -40,8 +40,10 @@ rhs_CNLS::~rhs_CNLS(){
 
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
 
-    uf1=x;
-    uf2=x+NUM_TIME_STEPS;
+    uf1= (comp* restr)x;
+    uf2=(comp* restr)(x+NUM_TIME_STEPS);
+    u1 = (comp* restr)u1;
+    u2 = (comp* restr)u2;
     //take the inverse fourier transform
     ifft(fback, uf1, u1, NUM_TIME_STEPS);
     ifft(fback, uf2, u2, NUM_TIME_STEPS);

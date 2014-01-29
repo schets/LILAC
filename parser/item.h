@@ -28,5 +28,6 @@ class item_dim:public item{
         virtual void postprocess(std::map<std::string, item*>& dat);
         virtual std::vector<std::string> dependencies() const = 0;
 };
+class variable;
 #endif
 

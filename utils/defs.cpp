@@ -5,6 +5,7 @@
 #include <string>
 #include <sstream>
 #include <eigen3/Eigen/Eigen>
+#include <memory>
 extern "C" {
 #include <complex.h>
 #include "stdlib.h"
@@ -12,7 +13,7 @@ extern "C" {
 #include <math.h>
 #include <time.h>
 }
-#define restr __restrict__
+#define restr __restrict
 //#define restr
 //typedef complex<double> comp;
 typedef fftw_complex comp;
@@ -31,6 +32,7 @@ typedef fftw_complex comp;
 #define PI (3.14159)
 #define maxTrips 50
 #include "parser/item.h"
+
 class _fatal{
     public:
     _fatal(){};
