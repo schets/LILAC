@@ -64,7 +64,7 @@ void engineimp::run(){
     for(int i = 0; i < nts; i++){
         u0[i] = u0[i+nts] = 1.00/cosh(t[i]/2.0);
     }
-    FILE* f = fopen("gnuout", "w");
+    FILE* f = fopen("gnuout.ignore", "w");
     fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
     fft(t1, u0, u0, nts);
