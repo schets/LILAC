@@ -228,7 +228,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     f0=tmp;
     f6 = tmp6;
     u_calc=tmpc;
-#define PRINT_TIME
+//#define PRINT_TIME
 #ifdef PRINT_TIME
     std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
 #endif

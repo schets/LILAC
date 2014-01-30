@@ -4,8 +4,15 @@
 #include "utils/comp_funcs.h"
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
+#include "controller/controller.h"
 #include <time.h>
 #include <stdio.h>
+void make_torxyz(double c1, double c2, double rb, double rs, double* out){
+    out[0]=cos(c1)*(cos(c2)+rb);
+    out[1]=sin(c1)*(cos(c2)+rb);
+    out[2]=sin(c2);
+}
+
 void rmat(comp* in, double alpha){
     in[0] = cos(alpha);
     in[1] = -1*sin(alpha);
@@ -40,8 +47,10 @@ void engineimp::run(){
         err("rhs variable is not defined", "engineimp::run()",
                 "parser/engine_run.cpp", FATAL_ERROR);
     }
-    integrator* inter= (integrator*)values["integrator"];
-    rhs* rh = (rhs*)values["rhs"];
+    integrator* inter;
+    values["integrator"]->retrieve(&inter);
+    rhs* rh;
+    values["rhs"]->retrieve(&rh);
     comp* u0 = (comp*)al_malloc(2*nts*sizeof(comp));
     comp* u1 = (comp*)al_malloc(2*nts*sizeof(comp));
     double* t = (double*)al_malloc((nts)*sizeof(double)); 
@@ -55,6 +64,7 @@ void engineimp::run(){
     for(int i = 0; i < nts; i++){
         u0[i] = u0[i+nts] = 1.00/cosh(t[i]/2.0);
     }
+    FILE* f = fopen("gnuout", "w");
     fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
     fft(t1, u0, u0, nts);
@@ -65,16 +75,31 @@ void engineimp::run(){
     tval = clock()-tval;
     std::cout<<"time for rhs calls="<<tval<<std::endl;
     Eigen::Map<Eigen::Matrix<comp, 2, Eigen::Dynamic, Eigen::RowMajor>, Eigen::Aligned> dmap(u0, 2, nts*2);
-    for(int i = 0; i < 50; i++){
+    double a1, a2, a3, ap;
+    values["a1"]->retrieve(&a1);
+    values["a2"]->retrieve(&a2);
+    values["a3"]->retrieve(&a3);
+    values["ap"]->retrieve(&ap);
+    controller* cont;
+    values["cont"]->retrieve(&cont);
+    double xyz[3];
+    for(int i = 0; i < 180; i++){
+
         for(int j = 0; j < nts*2; j++){
             u1[j] = u0[j];
         }
-        inter->integrate(rh, u1, 0, 1.5);
+        make_torxyz(a1, ap, 3, 1, xyz);
+        fprintf(f, "%.3lf, %.3lf, %.3lf\n", xyz[0], xyz[1], xyz[2]);
+        cont->control(0, 0);
+        // inter->integrate(rh, u1, 0, 1.5);
+
         //std::cout << "done" << std::endl;
         //       rh->dxdt(u0, u1, 0);
         //     rh->dxdt(u1, u0, 0);
 
     }
+    fprintf(f, "e");
+    fclose(f);
     // ifft(t1, u0, u0, nts);
     //  ifft(t1, u0+nts, u0+nts, nts);
     ifft(t1, u1, u1, nts);

@@ -66,4 +66,20 @@ template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b
     a.insert(a.begin(), b.begin(), b.end());
     return a;
 }
+inline void trim(std::string& curline){
+    size_t startpos = curline.find_first_not_of("\n\r\t ");
+    if(startpos != std::string::npos){
+        curline=curline.substr(startpos);
+    }
+    startpos = curline.find_last_not_of("\n\r\t ");
+    if(startpos != std::string::npos){
+        curline=curline.substr(0, startpos+1);
+    }
+}
+inline void ltoken(std::string& tok, std::string& str, std::string delim=" "){
+    size_t tpos = str.find(delim);
+    tok=str.substr(0, tpos);
+    str.erase(0, tpos + delim.length());
+}
+
 #endif

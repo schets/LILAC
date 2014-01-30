@@ -1,12 +1,23 @@
 #include "defs.h"
 #include "item.h"
-#include "item_imp.h"
+#include "../controller/controller.h"
 #include "../rhs/rhs.h"
 #include "../integrator/integrator.h"
 #include <sstream>
 #include <vector>
 #include <iostream>
 #include "comp_funcs.h"
+/*
+ * This sets the value of object passed equal to the 
+ * address of the current item
+ *
+ * This is used for classes such as integrator, controller, etc
+ * which will comprise most of the item types here.
+ * This function can be rewritten for native types such as ints, etc
+ */
+void item::retrieve(void* p){
+    *((const item**)p) = this;
+}
 //item function
 //!Returns dependencies of item, for which there are none
 std::vector<std::string> item::dependencies()const{
@@ -33,39 +44,39 @@ const std::string& item::name()const {
 }
 
 //!Deprecated
-void real::parse(std::string inval){
+void real8::parse(std::string inval){
     std::stringstream convert(inval);
     convert >> value;
 }
 
 /*!
  * Stores the value in the address pointed to by inval
- * @param inval Address where the value of the real is stored
+ * @param inval Address where the value of the real8 is stored
  */
-void real::retrieve(void* inval){
+void real8::retrieve(void* inval){
     *(double*)inval = value;
 }
 
 /*!
- * Returns the type of real
- * @return Type of real class, which is "real"
+ * Returns the type of real8
+ * @return Type of real8 class, which is "real8"
  */
-std::string real::type() const{
-    return "real";
+std::string real8::type() const{
+    return "real8";
 }
 
 /*!
- * Returns dependencies for real class
- * @return Dependencies of real type, for which there are none
+ * Returns dependencies for real8 class
+ * @return Dependencies of real8 type, for which there are none
  */
-std::vector<std::string> real::dependencies() const{
+std::vector<std::string> real8::dependencies() const{
     std::vector<std::string> w;
     return w;
 }
 /*!
  *Prints the value, along with the name
  */
-void real::print() const{
+void real8::print() const{
     std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
 }
 
@@ -224,6 +235,14 @@ void variable::copy(double* inval){
     *inval = value;
 }
 
+//! Deprecated, won't be around too long
+void variable::parse(std::string inval){
+    real8::parse(inval);
+    inc_size=value;
+    low_bound=0;
+    high_bound=6.2382;
+    value=0;
+}
 /*!
  * This function create an item of the type name
  * @param name Name of the item to be created
@@ -231,8 +250,8 @@ void variable::copy(double* inval){
  */
 item* item::create(std::string name, engineimp* in){
     item* rval=0;
-    if(name == "real"){
-        rval = new real();
+    if(name == "real8"){
+        rval = new real8();
         rval->holder=in;
         return rval;
     }
@@ -246,12 +265,22 @@ item* item::create(std::string name, engineimp* in){
         rval->holder=in;
         return rval;
     }
+    if(name == "var"){
+        rval = new variable();
+        rval->holder=in;
+        return rval;
+    }
     rval=rhs::create(name);
     if(rval){
         rval->holder=in;
         return rval;
     }
     rval=integrator::create(name);
+    if(rval){
+        rval->holder=in;
+        return rval;
+    }
+    rval=controller::create(name);
     if(rval){
         rval->holder=in;
         return rval;
