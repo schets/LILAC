@@ -1,20 +1,20 @@
 #file for testing io system
 CNLS rhs 
 rk45 integrator
-integer dimension 1024 
+integer dimension 512 
 real8 g0 1.73
 real8 e0 4.23
 real8 t_int 60
-real8 relerr 1e-5
+real8 relerr 1e-4
 real8 abserr 1e-3
 real8 dt_init .01
 real8 dt_min 1E-10
 real8 dt_max 0.05
 real8 stepsize .00511268
-var a1 .0301763
-var a2 .06853
-var a3 .156
-var ap .355
+var a1 .411342234234234
+var a2 .473214323423423423
+var a3 .57434323234234234
+var ap .734243234234234234
 string names doesntmatter
 integer iterations 5
 toroidal cont

@@ -60,7 +60,7 @@ inline void err(std::string message, std::string function, std::string file, ite
     exit(1);
 }
 inline void err(std::string message, std::string function, std::string file, item* p, _warning f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
     std::cout << "\nContinuing program\n";

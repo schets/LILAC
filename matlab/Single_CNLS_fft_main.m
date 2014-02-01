@@ -28,10 +28,10 @@ else
     %e01=4.23;
     e01=4.23;
     %alpha_1=-0.3755;
-    alpha_1=-0.4668;
-    alpha_2=0.0496;
-    alpha_3=0.4860;
-    alpha_p=1.5410;
+    alpha_1=0;
+    alpha_2=0;
+    alpha_3=0;
+    alpha_p=0;
     %alpha_1=0.0;
     %alpha_2=0.3;
     %alpha_2=0.49*pi;
@@ -41,7 +41,7 @@ else
     alpha = [alpha_1; alpha_2; alpha_3; alpha_p];
 end
 Lt=60;  % length of t-domain
-nt=6; % number of time points
+nt=8; % number of time points
 t2=linspace(-Lt/2,Lt/2,nt+1); 
 t=t2(1:nt);
 dt=Lt/nt;
@@ -65,6 +65,10 @@ J_1=R_matrix(alpha_1)*W_q*R_matrix(-alpha_1);
 J_2=R_matrix(alpha_2)*W_q*R_matrix(-alpha_2);
 J_3=R_matrix(alpha_3)*W_h*R_matrix(-alpha_3);
 J_p=R_matrix(alpha_p)*W_p*R_matrix(-alpha_p);
+J_1
+J_2
+J_3
+J_p
 time=tic;
 U_int_0_s(1:nt,1)=fft(U_int(1:nt));
 U_int_0_s((nt+1):(2*nt),1)=fft(U_int((nt+1):(2*nt)));
@@ -88,15 +92,20 @@ while (j<=maxTrips && change_norm>1.e-3)
     [z,U]=ode45(@(z,U) CNLS_fft_rhs(z,U,kt,D,K,A,B,g01,e01,tau,Gamma,dt,t,nt),[0, 1.5],U_int_0_s,options);
    % U(end, :)'
     % iFFT to back out u, v at spatial end of round trip
-    length(z)
+%    length(z)
    u_end=ifft(U(end,1:nt))';
    v_end=ifft(U(end,(nt+1):(2*nt)))';
     solution_end=[u_end, v_end];
-    u_end
+  %  u_end
     %Apply Jones Matrix
     %[u_end;v_end]
-    U_end=J_1*J_p*J_2*J_3*[u_end;v_end];
-    U_end
+    %u_mul = zeros(;
+    u_mul(:,1)=u_end;
+    u_mul(:, 2)=v_end;
+  %  [u_end'; v_end']
+  %  return
+    U_end=J_1*J_p*J_2*J_3*[u_end'; v_end'];
+    U_end'
     % solution containing both small u and v
     U_solution(:,j)=[U_end(1,:).'; U_end(2,:).'];
     U_solution_output(:,j)=U_solution(:,j);
@@ -129,7 +138,6 @@ cpu_time=toc(time)
 solution_end=phi(:,end);
 % compute energy of the pulse
 energy=sqrt(trapz(solution_end.^2)*dt);
-energy
 % function used to check whether the output is a single pulse
 %pulse_check(solution_end,t,nt)
 % colormap used in 'waterfall'

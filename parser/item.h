@@ -17,7 +17,7 @@ class item{
     virtual void postprocess(std::map<std::string, item*>& indat){};
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const = 0;
-    virtual ~item(){}
+    virtual ~item(){};
     void setname(const std::string n);
     const std::string& name()const ;
 };

@@ -29,6 +29,7 @@ inline void printv(double c){
     std::cout << c << std::endl;
 }
 int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
+    size_t num_fail = 0;
     double dt = dt_init;
     double dtave=0;
     size_t steps=0;
@@ -158,10 +159,20 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         double dt_last = dt;
         dt =dt*magic_mult*std::pow(tauv/delta, magic_power);
         if(dt < dt_min){
-            err("Estimated timestep is smaller than minimum timestep, using minimum timestep",
-                    "rk45::integrate", "integrator/rk45.cpp", (item*)func, WARNING);
+            num_fail++;
+            if(num_fail > 10){
+                err("Estimated timestep is smaller than minimum timestep too many times, exiting",
+                        "rk45::integrate", "integrator/rk45.cpp", (item*)func, WARNING);
+                f0=tmp;
+                f6 = tmp6;
+                u_calc=tmpc;
+                return -1;
+            }
             //std::cout << "dt= " << dt << ", dt_min=" << dt_min<<std::endl;
             dt = dt_min;
+        }
+        else{
+            num_fail = 0;
         }
         dt = std::min(dt, dt_max);
         if(delta>=tauv){
@@ -174,7 +185,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         if((tcur + dt) > tf){
             dt = tf-tcur;
         }
-       // #define give_out
+        // #define give_out
 #ifdef give_out
         std::cout << "delta="<<delta<<"\ntauv="<<tauv<<"\ntauv/delta="<<(tauv/delta)<<
             "\nmul_fac="<<magic_mult*std::pow(tauv/delta, magic_power)<<"\ndt_last="<<dt_last<<"\ndt="<<dt<<"\ntcur="<<tcur<<
@@ -215,24 +226,24 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         u_calc = u0;
         u0 = swp;
         //instead of copying u_calc to u_0 swap pointers
+}
+//check if a memory copy needs to be done on u0
+//u0 currently points to the most recent update
+//if u0 does not point to where it originally did, re-copy the memory over
+if(u0 != u0hld){
+    for(size_t i = 0; i < dimension; i++){
+        u0hld[i] = u0[i];
     }
-    //check if a memory copy needs to be done on u0
-    //u0 currently points to the most recent update
-    //if u0 does not point to where it originally did, re-copy the memory over
-    if(u0 != u0hld){
-        for(size_t i = 0; i < dimension; i++){
-            u0hld[i] = u0[i];
-        }
-    }
-    //u0, or at least that original address, now holds the final integration values
-    f0=tmp;
-    f6 = tmp6;
-    u_calc=tmpc;
+}
+//u0, or at least that original address, now holds the final integration values
+f0=tmp;
+f6 = tmp6;
+u_calc=tmpc;
 //#define PRINT_TIME
 #ifdef PRINT_TIME
-    std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
+std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
 #endif
-    return 0;
+return 0;
 }
 rk45::~rk45(){
     al_free(f0);

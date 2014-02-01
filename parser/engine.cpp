@@ -1,11 +1,7 @@
 #include "engine.h"
 #include "engineimp.h"
-#include "graph.h"
 #include "item.h"
 #include "defs.h"
-extern "C"{
-#include <fftw3.h>
-}
 #include <stdlib.h>
 void engine_exit(const std::string reason){
     std::cout << "\n\nExiting because: " << reason << std::endl;
@@ -27,6 +23,7 @@ engineimp::~engineimp(){
     std::map<std::string, item*>::iterator beg;
     for(beg=values.begin(); beg != values.end(); beg++){
         if(beg->second){
+      //      std::cout << "Starting deletion for " << beg->second->name() << std::endl;
             delete beg->second;
         }
     }

@@ -1,6 +1,6 @@
 export
-CFLAGS=-I./ -I./utils -g -ffast-math -O3 -fstrict-aliasing -march=native 
-LFLAGS= -lstdc++ -lfftw3 -lm 
+CFLAGS=-I./ -I./utils -g -O3 -ffast-math  -fstrict-aliasing -march=native 
+LFLAGS= -lstdc++ -lfftw3 -lgsl -lgslcblas -lm  
 CPP=gcc
 LD=gcc
 

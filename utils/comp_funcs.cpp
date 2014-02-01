@@ -44,7 +44,7 @@ inline double energy(comp* v, size_t s){
     for(size_t i = 0; i < s; i++){
         sum += _sqabs(v[0]);
     }
-    sum += _sqabs(v[s-2]);
+    sum += _sqabs(v[s-1]);
     return sqrt(sum);
 }
 

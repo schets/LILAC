@@ -8,3 +8,5 @@ html
 lib
 *~
 *.ignore
+*.out
+*.3d

@@ -29,7 +29,7 @@ lib/controller.o: controller/*.cpp utils/*.cpp
 	@mkdir -p lib/controller
 	@rm -rf lib/controller.o
 	@$(MAKE) -C controller
-lib/engine.o: parser/*.cpp utils/*.cpp
+lib/engine.o: parser/*.cpp utils/*.cpp parser/*.c
 	@mkdir -p lib/engine
 	@rm -rf lib/engine.o
 	@$(MAKE) -C parser
