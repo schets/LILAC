@@ -116,7 +116,7 @@ void engineimp::run(){
     double xyz[3];
     int count=0;
     double ener;
-    for(int qq = 0; qq < 1000; qq++){
+    for(int qq = 0; qq < 100; qq++){
         mscore = 0;
         mpulse=0;
         a3=0.4860;
