@@ -76,6 +76,7 @@ class integer:public item{
  * \sa real
  */
 class variable:public real8{
+    size_t update_count;
     std::list<double*> modifiers;
     public:
     double low_bound, high_bound, inc_size;
@@ -84,6 +85,15 @@ class variable:public real8{
     virtual void copy(double* inval);
     virtual void parse(std::string inval);
     void inc();
+};
+
+/*!
+ * This class that a children have a pointer to a set of frequency values
+ * Has no functions, and does not inherit from anything else
+ */
+class spectral{
+    public:
+        double* k;
 };
 #endif
 

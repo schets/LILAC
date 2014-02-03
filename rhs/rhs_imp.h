@@ -10,7 +10,7 @@ class rhs_CNLS: public rhs{
     //This class defines the rhs equations for the coupled CNLS
     comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,
          * restr comp_out, * restr comp_out_r, * restr comp_in_r;
-    double * restr sq1, * restr sq2, * restr k, * restr ksq;
+    double * restr sq1, * restr sq2,  * restr ksq;
     fftw_plan ffor, fback;
     double g0;
     double e0;
@@ -18,6 +18,7 @@ class rhs_CNLS: public rhs{
     double LENGTH_T;
     size_t NUM_TIME_STEPS;
     public:
+    double* restr k;
     virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;

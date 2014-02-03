@@ -3,13 +3,18 @@
 #include <iostream>
 #include "utils/comp_funcs.h"
 #include "rhs/rhs.h"
+#include "rhs/rhs_imp.h"
 #include "integrator/integrator.h"
 #include "controller/controller.h"
 #include <time.h>
 #include <stdio.h>
 extern "C"{
+#include <gsl/gsl_statistics_double.h>
 #include "pulse_check.h"
 }
+
+
+//This calculates the moments of a distribution
 void make_torxyz(double c1, double c2, double rb, double rs, double* out){
     out[0]=cos(c1)*(cos(c2)+rb);
     out[1]=sin(c1)*(cos(c2)+rb);
@@ -60,6 +65,8 @@ void engineimp::run(){
     Eigen::Matrix<double, 2, 2> jcalc;
     integrator* inter;
     values["integrator"]->retrieve(&inter);
+    int num_steps;
+    values["tor_steps"]->retrieve(&num_steps);
     rhs* rh;
     values["rhs"]->retrieve(&rh);
     comp* restr u0 = (comp*)al_malloc(2*nts*sizeof(comp));
@@ -68,6 +75,7 @@ void engineimp::run(){
     double* mhold = (double*)al_malloc(nts*sizeof(double));
     double* phold = (double*)al_malloc(nts*sizeof(double));
     double* t = (double*)al_malloc((nts)*sizeof(double)); 
+    comp* kurtosis_arr = (comp*)al_malloc(nts*sizeof(comp));
     double dt =t_int*1.0/nts;
     comp m1[4], m2[4], m3[4], m4[4];
     Eigen::Matrix<double, 2, 2> val = rmat(.99);
@@ -76,12 +84,11 @@ void engineimp::run(){
     for(int i = 0; i < nts; i++){
         t[i] = dt*((double)i-nts/2.0);
     }
-    
+
     for(int i = 0; i < nts; i++){
         u0[i] = u0[i+nts] = 1.00/cosh(t[i]/2.0);
         help[i] = _real(u0[i]);
     }
-    std::cout << "Pulse check: " << pulse_check(help, t, nts) << std::endl;
     FILE* f = fopen("iso_out.3D", "w");
     fprintf(f, "X Y Z val\n");
     fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
@@ -104,19 +111,19 @@ void engineimp::run(){
     FILE* fpulse = fopen("pmax.out", "w");
     values["a1"]->retrieve(&a1);
     values["a2"]->retrieve(&a2);
-   // values["a3"]->retrieve(&a3);
+    // values["a3"]->retrieve(&a3);
     values["ap"]->retrieve(&ap);
     /*a1=-.4668;
-    a2=.0496;
-    a3=.4860;
-    ap=1.541;*/
+      a2=.0496;
+      a3=.4860;
+      ap=1.541;*/
     a3=0.4860;
     controller* cont;
     values["cont"]->retrieve(&cont);
     double xyz[3];
     int count=0;
     double ener;
-    for(int qq = 0; qq < 100; qq++){
+    for(int qq = 0; qq < num_steps; qq++){
         mscore = 0;
         mpulse=0;
         a3=0.4860;
@@ -131,7 +138,7 @@ void engineimp::run(){
         for(size_t j = 0; j < nts; j++){
             u0[j] = u0[j+nts] = 1.00/cosh(t[j]/2.0);
         }
-        for(size_t i = 0; i < 40; i++){
+        for(size_t i = 0; i < 50; i++){
             count++;
             //generate Jones matrices
             // copy current state to temp
@@ -156,33 +163,34 @@ void engineimp::run(){
                 }
                 change_norm = sqrt(change_norm/norm);  
                 //         std::cout << change_norm << std::endl;
-                if(change_norm < 1e-3){
+                if(change_norm < 1e-2){
                     break;
                 }
             }
         }
         for(size_t j = 0; j < nts; j++){
-            help[j] = sqrt(_sqabs(u0[j]) + _sqabs(u0[j+nts]));
+            kurtosis_arr[j] = help[j] = sqrt(_sqabs(u0[j]) + _sqabs(u0[j+nts]));
         }
+        fft(t2, kurtosis_arr, kurtosis_arr, nts);
         ener = energy(u0, nts) + energy(u0+nts, nts);
-        double pulse_val = pulse_check(help, t, nts);
-        if(pulse_val > mpulse){
+        double kurtosis_v = gsl_stats_kurtosis(help, 1, nts);
+        if(kurtosis_v > mpulse){
             for(size_t j = 0; j < nts; j++){
                 phold[j] = help[j];
             }
-            mpulse = pulse_val;
+            mpulse = kurtosis_v;
         }
-        if(pulse_val*ener > mscore){
+        if(ener > mscore){
             for(size_t j = 0; j < nts; j++){
                 mhold[j] = help[j];
             }
-            mscore = pulse_val*ener;
+            mscore = ener;
         }
         double dt = 60.0/nts;
         ener /= dt;
-        std::cout << "Simulation ran " << count << "number of times,score was " << ener*pulse_val <<  "\n";
+        std::cout << "Simulation ran " << count << " times, score was " << ener*kurtosis_v <<  "\n";
         count = 0;
-        fprintf(f, "%lf %lf %lf %lf\n", a1, a2, ap, ener*pulse_val);
+        fprintf(f, "%lf %lf %lf %lf\n", a1, a2, ap, ener*kurtosis_v);
         cont->control(0, 0);
     }
     for(int j = 0; j < nts; j++){
@@ -200,4 +208,5 @@ void engineimp::run(){
     al_free(help);
     al_free(mhold);
     al_free(phold);
+    al_free(kurtosis_arr);
 }

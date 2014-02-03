@@ -1,4 +1,5 @@
 #makefile for the integrator class and derived variants
+include ../make.inc
 LIB_MAIN=../lib
 all: $(LIB_MAIN)/integrator.o
 

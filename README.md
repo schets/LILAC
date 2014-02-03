@@ -5,9 +5,9 @@ This project provides a framework with which to analyze/control lasers, and more
 You can find documentation on the [wiki](http://github.com/schets/LILAC/wiki), and doxygen generated [advanced documentation](http://schets.github.io/LILAC) as well 
 
 Installation:
-This project depends on [GCC](gcc.gnu.org), [Git](git-scm.com), [FFTW](www.fftw.org) and [Eigen](eigen.tuxfamily.org). These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
+This project depends on [GCC](gcc.gnu.org), [Git](git-scm.com), [FFTW](www.fftw.org), [GSL](http://www.gnu.org/software/gsl/) and [Eigen](eigen.tuxfamily.org). These are simple to install on Linux and Macintosh systems and each site provides installation instructions. GSL will likely be dropped as a requirement in the future, but for now it useful functions and allows more time to focus on the actual engine
 
-Once you have installed GCC, Git, FFTW, and Eigen, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
+Once you have installed GCC, Git, FFTW, GSL, and Eigen, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
 
 On Linux:
 
