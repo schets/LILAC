@@ -131,7 +131,7 @@ void engineimp::run(){
         for(size_t j = 0; j < nts; j++){
             u0[j] = u0[j+nts] = 1.00/cosh(t[j]/2.0);
         }
-        for(size_t i = 0; i < 50; i++){
+        for(size_t i = 0; i < 40; i++){
             count++;
             //generate Jones matrices
             // copy current state to temp

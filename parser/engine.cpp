@@ -3,10 +3,6 @@
 #include "item.h"
 #include "defs.h"
 #include <stdlib.h>
-void engine_exit(const std::string reason){
-    std::cout << "\n\nExiting because: " << reason << std::endl;
-    exit(EXIT_FAILURE);
-}
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
@@ -34,7 +30,6 @@ char engineimp::item_exists(std::string name) const{
 }
 
 
-
 /*
  *
  *Engine wrapper functions
@@ -42,6 +37,11 @@ char engineimp::item_exists(std::string name) const{
  *
  *
  *
+ */
+
+/*!
+ * Constructs an engine object, a wrapper for engimeimp
+ * \sa engineimp
  */
 engine::engine(const std::string fname){
     eng = new engineimp(fname);
