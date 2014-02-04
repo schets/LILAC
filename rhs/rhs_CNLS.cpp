@@ -102,15 +102,15 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
         err("dimension not even, which is required for rhs_CNLS", 
                 "rhs_CNLS::postprocess", "rhs/rhs_CNLS.cpp", FATAL_ERROR);
     }
-    dat["t_int"]->retrieve(&LENGTH_T);
+    dat["t_int"]->retrieve(&LENGTH_T, this);
     if(LENGTH_T <= 0){
         std::string errmess = "t_int is invalid, must be >= 0";
         err(errmess, "rhs_CNLS::postprocess", "rhs/rhs_CNLS.cpp",
                 dat["t_int"], FATAL_ERROR);
     }
     dt = LENGTH_T/NUM_TIME_STEPS;
-    dat["g0"]->retrieve(&g0);
-    dat["e0"]->retrieve(&e0);
+    dat["g0"]->retrieve(&g0, this);
+    dat["e0"]->retrieve(&e0, this);
     u1 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
     u2 = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));
     comp_in = (comp*)malloc(NUM_TIME_STEPS*sizeof(comp));

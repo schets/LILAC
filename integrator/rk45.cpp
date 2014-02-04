@@ -190,21 +190,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         std::cout << "delta="<<delta<<"\ntauv="<<tauv<<"\ntauv/delta="<<(tauv/delta)<<
             "\nmul_fac="<<magic_mult*std::pow(tauv/delta, magic_power)<<"\ndt_last="<<dt_last<<"\ndt="<<dt<<"\ntcur="<<tcur<<
             "\ntries="<<tries<<std::endl;
-        /*        std::cout<<"\nf0=\n";
-                  printar(f0, dimension);
-                  std::cout<<"f1=\n";
-                  printar(f1, dimension);
-                  std::cout<<"f2=\n";
-                  printar(f2, dimension);
-                  std::cout<<"f3=\n";
-                  printar(f3, dimension);
-                  std::cout<<"f4=\n";
-                  printar(f4, dimension);
-                  std::cout<<"f5=\n";
-                  printar(f5, dimension);
-                  std::cout<<"f6=\n";
-        //       printar(u_calc, dimension);
-        */
+
         std::cin.get();
 
 #endif
@@ -258,27 +244,27 @@ std::string rk45::type() const{
 }
 void rk45::postprocess(std::map<std::string, item*>& dat){
     integrator::postprocess(dat);
-    dat["dt_init"]->retrieve((void*)&dt_init);
+    dat["dt_init"]->retrieve((void*)&dt_init, this);
     if(dt_init <= 0){
         err("dt_init is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_init"], FATAL_ERROR);
     }
-    dat["dt_min"]->retrieve((void*)&dt_min);
+    dat["dt_min"]->retrieve((void*)&dt_min, this);
     if(dt_min <= 0){
         err("dt_min is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_min"], FATAL_ERROR);
     }
-    dat["dt_max"]->retrieve((void*)&dt_max);
+    dat["dt_max"]->retrieve((void*)&dt_max, this);
     if(dt_max <= 0){
         err("dt_max is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_max"], FATAL_ERROR);
     }
-    dat["relerr"]->retrieve((void*)&relerr);
+    dat["relerr"]->retrieve((void*)&relerr, this);
     if(relerr <= 0){
         err("relerr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["relerr"], FATAL_ERROR);
     }
-    dat["abserr"]->retrieve((void*)&abserr);
+    dat["abserr"]->retrieve((void*)&abserr, this);
     if(abserr <= 0){
         err("abserr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["abserr"], FATAL_ERROR);

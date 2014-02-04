@@ -12,7 +12,6 @@ $(LIB_MAIN)/rhs.o: $(RHS_OBJ)
 	@rm -f $(LIB_MAIN)/rhs.o
 	ld -r $(LIB_PATH)/*.o -o $(LIB_MAIN)/rhs.o 
 $(LIB_PATH)/rhs_main.o: rhs.cpp $(INLINE_HEADERS)
-	@mkdir $(LIB_PATH)
 	@rm -f $(LIB_PATH)/rhs_main.o
 	$(CPP) -c rhs.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_main.o
 $(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp $(INLINE_HEADERS)

@@ -8,7 +8,7 @@
 #include <iostream>
 #include "comp_funcs.h"
 #include "variable.cpp"
-/*
+/*!
  * This sets the value of object passed equal to the 
  * address of the current item
  *
@@ -16,8 +16,23 @@
  * which will comprise most of the item types here.
  * This function can be rewritten for native types such as ints, etc
  */
-void item::retrieve(void* p){
+void item::retrieve(void* p, item* caller){
     *((const item**)p) = this;
+}
+/*!
+ * Updates structures that are held in the class.
+ * This is called after each iteration of the control algorithms
+ * so that items can update internal parameters such as matrices
+ * and whatnot. The controller updates the actual values for parameters
+ * so if a class only depends on the direct values than the function need not be
+ * re-implemented
+ */
+void item::update(){
+    std::string errmess = this->name();
+    errmess.append(" of type ");
+    errmess.append(this->type());
+    errmess.append(" does not support runtime updating");
+    err(errmess, "item::update", "parser/item.cpp", WARNING);
 }
 //item function
 //!Returns dependencies of item, for which there are none
@@ -54,7 +69,7 @@ void real8::parse(std::string inval){
  * Stores the value in the address pointed to by inval
  * @param inval Address where the value of the real8 is stored
  */
-void real8::retrieve(void* inval){
+void real8::retrieve(void* inval, item* caller){
     *(double*)inval = value;
 }
 
@@ -94,7 +109,7 @@ void string::parse(std::string inval){
  * Sets the value stored at inval equal to the string
  * @param inval The address of the string
  */
-void string::retrieve(void* inval){
+void string::retrieve(void* inval, item* caller){
     *(std::string*)inval = value;
 }
 
@@ -155,7 +170,7 @@ std::vector<std::string> integer::dependencies() const{
 /*!
  * Sets the input pointer to the value of the integer
  */
-void integer::retrieve(void* p){
+void integer::retrieve(void* p, item* caller){
     int* qq = (int*)p;
     *qq = value;
 }
@@ -164,7 +179,7 @@ void integer::retrieve(void* p){
  */
 void item_dim::postprocess(std::map<std::string, item*>& dat){
     int dimt;
-    dat["dimension"]->retrieve(&dimt);
+    dat["dimension"]->retrieve(&dimt, this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
         err(errmess, "int_dim::postprocess", "item/item.cpp",

@@ -93,9 +93,9 @@ void example_rhs::postprocess(std::map<std::string, item*>& dat){
     //an item*. Then this pointer is called to retrieve the value, and is passed the address
     //of val1
 
-    dat["val1"]->retrieve(&val1);
-    dat["val2"]->retrieve(&val2);
-    dat["random_info"]->retrieve(&random_info);
+    dat["val1"]->retrieve(&val1, this);
+    dat["val2"]->retrieve(&val2, this);
+    dat["random_info"]->retrieve(&random_info, this);
 
     //now, we are going to allocate some memory to something
     //This may be useful for storing temporary calculations during the RHS
@@ -106,6 +106,20 @@ void example_rhs::postprocess(std::map<std::string, item*>& dat){
     //I use al_malloc here instead of malloc or new, since it provides
     //aligned memory and plays nicely with fftw and Eigen.
     value_holder = (comp*)al_malloc(dimension*sizeof(comp));
+    for(size_t i = 0; i < dimension; i++){
+        value_holder[i] = I*i*val1 + (dimension-i)*val2;
+    }
+}
+//!Update function for example_rhs
+/*!
+ * This function updates the values held by this class in case one of them
+ * is a variable that is being controlled. We don't re-allocate memory,
+ * since integers like dimension cannot be controlled. However, we must re-evaluate
+ * the array value_holder. The values val1, val2, etc are controlled themselves
+ * by the controller
+ * 
+ */
+void example_rhs::update(){
     for(size_t i = 0; i < dimension; i++){
         value_holder[i] = I*i*val1 + (dimension-i)*val2;
     }

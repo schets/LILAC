@@ -65,6 +65,7 @@ class example_rhs:public rhs{
     virtual std::string type() const;
     virtual std::vector<std::string> dependencies() const;
     virtual void postprocess(std::map<std::string, item*>& indat);
+    virtual void update();
 
     virtual void parse(std::string nval); //ignor for now, will be going away soon
     //but needs to be implemented to compile

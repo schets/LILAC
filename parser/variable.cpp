@@ -1,5 +1,6 @@
 #include "defs.h"
 #include "item.h"
+#include "engineimp.h"
 /*!
  * This function prints the value of the current variable
  */
@@ -12,18 +13,15 @@ void variable::print() const{
  * at by inval. It also keeps track of the pointer and updates it whenever
  * the variable has changed
  */
-void variable::retrieve(void* inval){
+void variable::retrieve(void* inval, item* caller){
     double* d = (double*)inval;
     *d = value;
-    modifiers.remove(d);
-    modifiers.push_back(d);
+    //add pointer to the list of pointer for the given class
+    modifiers[caller].insert(d);
 }
 
 /*!
- * This function increments the variable.
- * The list of pointers will be managed by the engine class,
- * but for now it is unsafe. Currently the goal is to get a
- * functioning automated toroidal search, and move on from there
+ * This function increments the variable, and updates the relevant classes
  */
 void variable::inc(){
     value += inc_size;
@@ -34,9 +32,23 @@ void variable::inc(){
     if(value < low_bound){
         value = high_bound - (low_bound-value);
     }
-    std::list<double*>::iterator it = modifiers.begin();
-    for(; it!= modifiers.end(); it++){
-        (*(*it)) = value;
+    std::map<item*, std::set<double*> >::iterator mit, mremove;
+
+    for(mit = modifiers.begin(); mit!= modifiers.end();){
+        if(!(holder->item_exists(mit->first)) && mit->first){
+            mremove = mit;
+            mit++;
+            modifiers.erase(mremove);
+            continue;
+        }
+        std::set<double*>::iterator sit;
+        for(sit=mit->second.begin(); sit!= mit->second.end(); sit++){
+            *(*sit) = value;
+        }
+        if(mit->first){
+            mit->first->update();
+        }
+        mit++;
     }
 }
 

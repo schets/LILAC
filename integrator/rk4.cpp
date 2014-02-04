@@ -131,7 +131,7 @@ std::string rk4::type()const{
 void rk4::postprocess(std::map<std::string, item*>& dat){
     double sval;
     integrator::postprocess(dat);
-    dat["stepsize"]->retrieve((void*)&stepsize);
+    dat["stepsize"]->retrieve((void*)&stepsize, this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "rk4::postprocess",
                 "integrator/rk4.cpp", dat["stepsize"], FATAL_ERROR);

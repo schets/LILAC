@@ -6,11 +6,16 @@
 #include "item.h"
 #include "comp_funcs.h"
 void engineimp::read(std::ifstream& fstr){
+    _read(fstr);
+    sort_pp();
+}
+void engineimp::_read(std::ifstream& fstr){
     const std::string delim=" ";
     const std::string comment="#";
+    const char command = '!';
     std::string token;
     std::string curline;
-    std::list<item*> post_order;
+    
     int line = 0;
 
     while(fstr.good()){
@@ -31,6 +36,13 @@ void engineimp::read(std::ifstream& fstr){
         if(curline.empty()){
             continue;
         }
+        //if the first character is a !, then a system command is being executed
+        //if a ! is not the first character, then bad input
+        if(curline[0] == command){
+            curline.erase(0, 1);
+            execute_command(curline);
+            continue;
+        }
         //retrieve the first token
         ltoken(token, curline);
         //this token should be the variable type
@@ -44,9 +56,19 @@ void engineimp::read(std::ifstream& fstr){
         ltoken(token, curline);
         curit->setname(token);
         curit->parse(curline);
-        post_order.push_back(curit);
         values[token]=curit; 
         //get the current line from the string
+    }
+};
+
+/*!
+ * Sorts the items in order of dependencies and performs all of the postprocessing
+ */
+void engineimp::sort_pp(){
+    std::list<item*> post_order;
+    std::map<std::string, item*>::iterator beg;
+    for(beg = values.begin(); beg != values.end(); beg++){
+        post_order.push_back(beg->second);
     }
     graph gg;
     //topologically sort the variables
@@ -58,7 +80,21 @@ void engineimp::read(std::ifstream& fstr){
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
         (*lbeg)->postprocess(values);
     }
-};
+}
 
-
-
+void engineimp::execute_command(std::string inval){
+    std::cout << "Command is " << inval << std::endl;
+    trim(inval);
+    std::string command;
+    ltoken(command, inval);
+    if(command == "include"){
+        //filename is the rest of the line
+        std::string fname =inval;
+        std::ifstream fstr(fname.c_str());
+        if(fstr.peek()==std::ifstream::traits_type::eof()){
+            fname.append("Empty/non-existant file passed as configuration parameter");
+            err(fname, "engineimp::engineimp(std::string)", "parser/engine.cpp", FATAL_ERROR);
+        }
+        _read(fstr);
+    }
+}

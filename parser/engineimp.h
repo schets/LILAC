@@ -18,15 +18,14 @@ class engine;
 class engineimp{
     std::map<std::string, item*> values;
     void read(std::ifstream& fstr);
-    //!This tracks what update the engine is on, so that variables can skip querying sometimes
-    size_t update_count;
+    void _read(std::ifstream& fstr);
+    void sort_pp();
+    void execute_command(std::string inval);
     public:
     //! Returns the current count for updating, aka removing items
-    inline size_t get_update_count(){
-        return update_count;
-    }
+    void remove_item(std::string name);
     void run();
-    char item_exists(std::string name) const;
+    char item_exists(item* val) const;
     engineimp(const std::string fname);
     ~engineimp();
     friend class engine;

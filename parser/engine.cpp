@@ -25,10 +25,18 @@ engineimp::~engineimp(){
     }
 }
 
-char engineimp::item_exists(std::string name) const{
-    return values.count(name);
+char engineimp::item_exists(item* p) const{
+    if(!p){
+        return 1;
+    }
+    std::map<std::string, item*>::const_iterator mbeg;
+    for(mbeg = values.begin(); mbeg != values.end(); mbeg++){
+        if(p == mbeg->second){
+            return 1;
+        }
+    }
+    return 0;
 }
-
 
 /*
  *

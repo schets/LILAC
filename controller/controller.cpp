@@ -33,7 +33,7 @@ std::vector<std::string> controller::dependencies() const{
 void controller::postprocess(std::map<std::string, item*>& inval){
     item_dim::postprocess(inval);
     std::string names;
-    inval["names"]->retrieve(&names);
+    inval["names"]->retrieve(&names, this);
     //perform processing on the names
     //will actually do this right over the weekend
     //also with typechecking

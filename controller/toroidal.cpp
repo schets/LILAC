@@ -25,7 +25,7 @@ std::vector<std::string> toroidal::dependencies() const{
  */
 void toroidal::postprocess(std::map<std::string, item*>& dat){
     controller::postprocess(dat);
-    dat["iterations"]->retrieve(&iterations);
+    dat["iterations"]->retrieve(&iterations, this);
 }
 
 /*!

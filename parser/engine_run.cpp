@@ -48,11 +48,11 @@ void print2c(Eigen::Matrix<comp, 2, 2>& in){
 }
 void engineimp::run(){
     int ints;
-    values["dimension"]->retrieve(&ints);
+    values["dimension"]->retrieve(&ints, 0);
     size_t nts=(size_t)ints;
     nts/= 2;
     double t_int;
-    values["t_int"]->retrieve(&t_int);
+    values["t_int"]->retrieve(&t_int, 0);
     if(!values.count("integrator")){
         err("integrator variable is not defined", "engineimp::run()",
                 "parser/engine_run.cpp", FATAL_ERROR);
@@ -64,18 +64,17 @@ void engineimp::run(){
     Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;
     Eigen::Matrix<double, 2, 2> jcalc;
     integrator* inter;
-    values["integrator"]->retrieve(&inter);
+    values["integrator"]->retrieve(&inter, 0);
     int num_steps;
-    values["tor_steps"]->retrieve(&num_steps);
+    values["tor_steps"]->retrieve(&num_steps, 0);
     rhs* rh;
-    values["rhs"]->retrieve(&rh);
+    values["rhs"]->retrieve(&rh, 0);
     comp* restr u0 = (comp*)al_malloc(2*nts*sizeof(comp));
     comp* restr u1 = (comp*)al_malloc(2*nts*sizeof(comp));
     double* help = (double*)al_malloc(nts*sizeof(double));
     double* mhold = (double*)al_malloc(nts*sizeof(double));
     double* phold = (double*)al_malloc(nts*sizeof(double));
     double* t = (double*)al_malloc((nts)*sizeof(double)); 
-    comp* kurtosis_arr = (comp*)al_malloc(nts*sizeof(comp));
     double dt =t_int*1.0/nts;
     comp m1[4], m2[4], m3[4], m4[4];
     Eigen::Matrix<double, 2, 2> val = rmat(.99);
@@ -109,35 +108,29 @@ void engineimp::run(){
     double mpulse;
     FILE* fmax = fopen("max.out", "w");
     FILE* fpulse = fopen("pmax.out", "w");
-    values["a1"]->retrieve(&a1);
-    values["a2"]->retrieve(&a2);
-    // values["a3"]->retrieve(&a3);
-    values["ap"]->retrieve(&ap);
-    /*a1=-.4668;
+   // values["a1"]->retrieve(&a1, 0);
+    values["a2"]->retrieve(&a2, 0);
+    values["a3"]->retrieve(&a3, 0);
+    values["ap"]->retrieve(&ap, 0);
+    a1=0;
       a2=.0496;
       a3=.4860;
-      ap=1.541;*/
-    a3=0.4860;
+      ap=1.541;
     controller* cont;
-    values["cont"]->retrieve(&cont);
+    values["cont"]->retrieve(&cont, 0);
     double xyz[3];
     int count=0;
     double ener;
     for(int qq = 0; qq < num_steps; qq++){
         mscore = 0;
         mpulse=0;
-        a3=0.4860;
+     //   a3=0.4860;
         j1=rmat(a1).cast<comp>()*wq*rmat(-1*a1).cast<comp>();
         j2=rmat(a2).cast<comp>()*wq*rmat(-1*a2).cast<comp>();
         j3=rmat(a3).cast<comp>()*wh*rmat(-1*a3).cast<comp>();
         jp=rmat(ap).cast<comp>()*wp*rmat(-1*ap).cast<comp>();
 
-        //I don't have a pulse check yet
-        //So this just assumes a nice sech pulse
-        //as the starting point
-        for(size_t j = 0; j < nts; j++){
-            u0[j] = u0[j+nts] = 1.00/cosh(t[j]/2.0);
-        }
+
         for(size_t i = 0; i < 50; i++){
             count++;
             //generate Jones matrices
@@ -163,15 +156,11 @@ void engineimp::run(){
                 }
                 change_norm = sqrt(change_norm/norm);  
                 //         std::cout << change_norm << std::endl;
-                if(change_norm < 1e-2){
+                if(change_norm < 2e-3){
                     break;
                 }
             }
         }
-        for(size_t j = 0; j < nts; j++){
-            kurtosis_arr[j] = help[j] = sqrt(_sqabs(u0[j]) + _sqabs(u0[j+nts]));
-        }
-        fft(t2, kurtosis_arr, kurtosis_arr, nts);
         ener = energy(u0, nts) + energy(u0+nts, nts);
         double kurtosis_v = gsl_stats_kurtosis(help, 1, nts);
         if(kurtosis_v > mpulse){
@@ -190,8 +179,10 @@ void engineimp::run(){
         ener /= dt;
         std::cout << "Simulation ran " << count << " times, score was " << ener*kurtosis_v <<  "\n";
         count = 0;
-        fprintf(f, "%lf %lf %lf %lf\n", a1, a2, ap, ener*kurtosis_v);
+        fprintf(f, "%lf %lf %lf %lf\n", a2, a3, ap, ener*kurtosis_v);
         cont->control(0, 0);
+
+        //printf( "%lf %lf %lf %lf\n", a1, a2, a3,ap);
     }
     for(int j = 0; j < nts; j++){
         fprintf(fmax, "%d, %lf\n", j, mhold[j]);
@@ -208,5 +199,4 @@ void engineimp::run(){
     al_free(help);
     al_free(mhold);
     al_free(phold);
-    al_free(kurtosis_arr);
 }

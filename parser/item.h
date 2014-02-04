@@ -3,6 +3,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <set>
 #include <list>
 #include <iostream>
 class engineimp;
@@ -13,13 +14,15 @@ class item{
     static item* create(std::string name, engineimp* rval);
     virtual void print() const;
     virtual void parse(std::string inval) = 0;
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval, item* caller);
     virtual void postprocess(std::map<std::string, item*>& indat){};
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const = 0;
+    virtual void update();
     virtual ~item(){};
     void setname(const std::string n);
-    const std::string& name()const ;
+    const std::string& name()const;
+    friend class variable;
 };
 
 //class that describes items with a dimension
@@ -37,7 +40,7 @@ class real8:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval, item* caller);
     friend class variable;
 };
 //!stores a string valued input
@@ -48,7 +51,7 @@ class string:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval, item* caller);
 };
 
 //!Stores an integer valued input
@@ -59,7 +62,7 @@ class integer:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval, item* caller);
 };
 //!stores a real number that is varied during the simulation
 /*!
@@ -77,23 +80,14 @@ class integer:public item{
  */
 class variable:public real8{
     size_t update_count;
-    std::list<double*> modifiers;
+    std::map<item*, std::set<double*> > modifiers;
     public:
     double low_bound, high_bound, inc_size;
     virtual void print() const;
-    virtual void retrieve(void* inval);
+    virtual void retrieve(void* inval, item* caller);
     virtual void copy(double* inval);
     virtual void parse(std::string inval);
     void inc();
-};
-
-/*!
- * This class that a children have a pointer to a set of frequency values
- * Has no functions, and does not inherit from anything else
- */
-class spectral{
-    public:
-        double* k;
 };
 #endif
 
