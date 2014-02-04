@@ -12,6 +12,7 @@ $(LIB_MAIN)/integrator.o: $(INT_OBJ)
 	ld -r $(LIB_PATH)/*.o -o $(LIB_MAIN)/integrator.o 
 
 $(LIB_PATH)/rk4.o: rk4.cpp $(INLINE_HEADERS)
+	@mkdir -p $(LIB_PATH)
 	@rm -f $(LIB_PATH)/rk4.o
 	$(CPP) -c rk4.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rk4.o
 $(LIB_PATH)/integrator.o: integrator.cpp $(INLINE_HEADERS)

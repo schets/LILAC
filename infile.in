@@ -10,7 +10,7 @@ real8 abserr 1e-3
 real8 dt_init .01
 real8 dt_min 1E-10
 real8 dt_max 0.1
-integer tor_steps 5000 
+integer tor_steps 100 
 var a1 .411342234234234
 var a2 .473214323423423423
 var a3 .57434323234234234

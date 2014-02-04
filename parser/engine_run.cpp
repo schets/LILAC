@@ -13,7 +13,17 @@ extern "C"{
 #include "pulse_check.h"
 }
 
-
+double mom4(double invals[], size_t len){
+    double mean = gsl_stats_mean(invals, 1, len);
+    double sd = gsl_stats_sd(invals, 1, len);
+    double mom = 0;
+    mean = 0;
+    for(size_t i = 0; i < len; i++){
+        mom += pow((invals[i] - mean)/sd, 4);
+    }
+    mom /= len;
+    return mom;
+}
 //This calculates the moments of a distribution
 void make_torxyz(double c1, double c2, double rb, double rs, double* out){
     out[0]=cos(c1)*(cos(c2)+rb);
@@ -105,12 +115,14 @@ void engineimp::run(){
     wp(0, 0)=1;
     wp(1, 1)=0;
     double mscore = 0;
-    double mpulse;
+    double mpulse = 0;
+    double mener = 0;
     FILE* fmax = fopen("max.out", "w");
     FILE* fpulse = fopen("pmax.out", "w");
+    FILE* fener = fopen("emax.out", "w");
    // values["a1"]->retrieve(&a1, 0);
-    values["a2"]->retrieve(&a2, 0);
-    values["a3"]->retrieve(&a3, 0);
+    values["a1"]->retrieve(&a2, 0);
+    values["a2"]->retrieve(&a3, 0);
     values["ap"]->retrieve(&ap, 0);
     a1=0;
       a2=.0496;
@@ -121,10 +133,12 @@ void engineimp::run(){
     double xyz[3];
     int count=0;
     double ener;
+
+    double norm, change_norm;
     for(int qq = 0; qq < num_steps; qq++){
         mscore = 0;
         mpulse=0;
-     //   a3=0.4860;
+        //   a3=0.4860;
         j1=rmat(a1).cast<comp>()*wq*rmat(-1*a1).cast<comp>();
         j2=rmat(a2).cast<comp>()*wq*rmat(-1*a2).cast<comp>();
         j3=rmat(a3).cast<comp>()*wh*rmat(-1*a3).cast<comp>();
@@ -144,7 +158,6 @@ void engineimp::run(){
             ifft(t1, u0, u0, nts);
             ifft(t1, u0+nts, u0+nts, nts);
             dmap = j1*jp*j2*j3*dmap;
-            double norm, change_norm;
             norm = change_norm = 0;
             if(i){
                 //find the change in norms
@@ -156,30 +169,38 @@ void engineimp::run(){
                 }
                 change_norm = sqrt(change_norm/norm);  
                 //         std::cout << change_norm << std::endl;
-                if(change_norm < 2e-3){
+                if(change_norm < 1e-4){
                     break;
                 }
             }
         }
-        ener = energy(u0, nts) + energy(u0+nts, nts);
-        double kurtosis_v = gsl_stats_kurtosis(help, 1, nts);
+        help[0] = sqrt(_sqabs(u0[0]) + _sqabs(u0[nts]));
+        ener = help[0];
+        for(size_t i = 1; i < nts-1; i++){
+            help[i] = _sqabs(u0[i]) + _sqabs(u0[nts+i]);
+            ener += 2*help[i];
+            help[i]=sqrt(help[i]);
+        }
+        help[nts-1]= _sqabs(u0[nts-1]) + _sqabs(u0[2*nts-1]);
+        ener += help[nts-1];
+        help[nts-1]=sqrt(help[nts-1]);
+        ener = sqrt(ener);
+        double kurtosis_v = 1.0/(3+gsl_stats_kurtosis(help, 1, nts));
         if(kurtosis_v > mpulse){
             for(size_t j = 0; j < nts; j++){
                 phold[j] = help[j];
             }
             mpulse = kurtosis_v;
         }
-        if(ener > mscore){
+        if(fabs(ener*kurtosis_v) > mscore){
             for(size_t j = 0; j < nts; j++){
                 mhold[j] = help[j];
             }
-            mscore = ener;
+            mscore = fabs(ener*kurtosis_v);
         }
-        double dt = 60.0/nts;
-        ener /= dt;
-        std::cout << "Simulation ran " << count << " times, score was " << ener*kurtosis_v <<  "\n";
+        std::cout << "Simulation ran " << count << " times, score was " << fabs(ener*kurtosis_v) <<  "\n";
         count = 0;
-        fprintf(f, "%lf %lf %lf %lf\n", a2, a3, ap, ener*kurtosis_v);
+        fprintf(f, "%lf %lf %lf %lf\n", a1, a2, ap, ener*kurtosis_v);
         cont->control(0, 0);
 
         //printf( "%lf %lf %lf %lf\n", a1, a2, a3,ap);
