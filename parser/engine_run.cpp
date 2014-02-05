@@ -12,7 +12,14 @@ extern "C"{
 #include <gsl/gsl_statistics_double.h>
 #include "pulse_check.h"
 }
-
+double mom4(comp invals[], double* kvals, size_t len){
+    double mom = 0;
+    for(size_t i = 0; i < len; i++){
+        mom += pow(_sqabs(invals[i]), 2)*kvals[i];
+    }
+    mom /= len;
+    return mom;
+}
 double mom4(double invals[], size_t len){
     double mean = gsl_stats_mean(invals, 1, len);
     double sd = gsl_stats_sd(invals, 1, len);
@@ -81,6 +88,7 @@ void engineimp::run(){
     values["rhs"]->retrieve(&rh, 0);
     comp* restr u0 = (comp*)al_malloc(2*nts*sizeof(comp));
     comp* restr u1 = (comp*)al_malloc(2*nts*sizeof(comp));
+    comp* kurtosis_help = (comp*)al_malloc(nts*sizeof(comp));
     double* help = (double*)al_malloc(nts*sizeof(double));
     double* mhold = (double*)al_malloc(nts*sizeof(double));
     double* phold = (double*)al_malloc(nts*sizeof(double));
@@ -100,8 +108,8 @@ void engineimp::run(){
     }
     FILE* f = fopen("iso_out.3D", "w");
     fprintf(f, "X Y Z val\n");
-    fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     fftw_plan t1 = fftw_plan_dft_1d(nts, u0, u0, FFTW_BACKWARD, FFTW_ESTIMATE);
+    fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     clock_t tval =clock();
     Eigen::Map<Eigen::Matrix<comp, 2, Eigen::Dynamic, Eigen::RowMajor>, Eigen::Aligned> dmap(u0, 2, nts);
     double a1, a2, a3, ap;
@@ -169,23 +177,28 @@ void engineimp::run(){
                 }
                 change_norm = sqrt(change_norm/norm);  
                 //         std::cout << change_norm << std::endl;
-                if(change_norm < 1e-4){
+                if(change_norm < 1e-3){
                     break;
                 }
             }
         }
         help[0] = sqrt(_sqabs(u0[0]) + _sqabs(u0[nts]));
+    fftw_plan t2 = fftw_plan_dft_1d(nts, u0+nts, u0+nts, FFTW_FORWARD, FFTW_ESTIMATE);
         ener = help[0];
+        kurtosis_help[0] = help[0];
         for(size_t i = 1; i < nts-1; i++){
             help[i] = _sqabs(u0[i]) + _sqabs(u0[nts+i]);
             ener += 2*help[i];
             help[i]=sqrt(help[i]);
+            kurtosis_help[i] = help[i];
         }
         help[nts-1]= _sqabs(u0[nts-1]) + _sqabs(u0[2*nts-1]);
         ener += help[nts-1];
         help[nts-1]=sqrt(help[nts-1]);
+        kurtosis_help[nts-1]=help[nts-1];
         ener = sqrt(ener);
-        double kurtosis_v = 1.0/(3+gsl_stats_kurtosis(help, 1, nts));
+        fft(t2, kurtosis_help, kurtosis_help, nts);
+        double kurtosis_v = 1.0/(mom4(kurtosis_help, ((rhs_CNLS*)rh)->k, nts));
         if(kurtosis_v > mpulse){
             for(size_t j = 0; j < nts; j++){
                 phold[j] = help[j];
