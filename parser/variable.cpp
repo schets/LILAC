@@ -23,15 +23,17 @@ void variable::retrieve(void* inval, item* caller){
 /*!
  * This function increments the variable, and updates the relevant classes
  */
-void variable::inc(){
-    value += inc_size;
+void variable::set(double p){
+    value = p;
     //deal with periodicity here
-    if(value > high_bound){
+    while(value > high_bound){
         value = low_bound + (value-high_bound);
     }
-    if(value < low_bound){
+    while(value < low_bound){
         value = high_bound - (low_bound-value);
     }
+    //add items to engine's list of items that require updating
+    //Removes items from list if they no longer exist in the engine
     std::map<item*, std::set<double*> >::iterator mit, mremove;
 
     for(mit = modifiers.begin(); mit!= modifiers.end();){
@@ -46,10 +48,17 @@ void variable::inc(){
             *(*sit) = value;
         }
         if(mit->first){
-            mit->first->update();
+            holder->needs_updating(mit->first);
         }
         mit++;
     }
+}
+void variable::inc(double p){
+    set(value + p);
+}
+//! cover funtion for variable
+void variable::inc(){
+    inc(inc_size);
 }
 
 /*!

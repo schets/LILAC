@@ -6,7 +6,7 @@
 #www.github.com/schets/lasers
 
 
-OBJS = lib/rhs.o  lib/controller.o lib/integrator.o lib/main.o lib/engine.o lib/objective.o lib/system.o
+OBJS = lib/rhs.o  lib/controller.o lib/integrator.o lib/main.o lib/engine.o lib/objective.o lib/simulation.o
 include make.inc
 all: $(OBJS) bin/lilac
 .PHONY: clean
@@ -37,9 +37,9 @@ lib/objective.o: objective/*.cpp utils/*.cpp
 	@mkdir -p lib/objective
 	@rm -f lib/objective.o
 	@$(MAKE) -C objective
-lib/system.o: system/*.cpp utils/*.cpp
-	@mkdir -p lib/system
-	@rm -f lib/system.o
-	@$(MAKE) -C system
+lib/simulation.o: simulation/*.cpp utils/*.cpp
+	@mkdir -p lib/simulation
+	@rm -f lib/simulation.o
+	@$(MAKE) -C simulation
 clean:
 	rm -rf lib/* bin/*

@@ -3,6 +3,7 @@
 #include "../controller/controller.h"
 #include "../rhs/rhs.h"
 #include "../integrator/integrator.h"
+#include "../simulation/simulation.h"
 #include <sstream>
 #include <vector>
 #include <iostream>
@@ -242,6 +243,11 @@ item* item::create(std::string name, engineimp* in){
         return rval;
     }
     rval=controller::create(name);
+    if(rval){
+        rval->holder=in;
+        return rval;
+    }
+    rval=simulation::create(name);
     if(rval){
         rval->holder=in;
         return rval;

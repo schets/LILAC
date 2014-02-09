@@ -12,8 +12,8 @@
  *\sa controller::dependencies, item_dim::dependencies
  */
 std::vector<std::string> toroidal::dependencies() const{
-    std::string deps[] = {"iterations"};
-    return appendvec(std::vector<std::string>(deps, deps+1), controller::dependencies());
+    std::string deps[] = {"iterations", "initial_inc", "mul_fac"};
+    return appendvec(std::vector<std::string>(deps, deps+3), controller::dependencies());
 }
 
 
@@ -26,6 +26,8 @@ std::vector<std::string> toroidal::dependencies() const{
 void toroidal::postprocess(std::map<std::string, item*>& dat){
     controller::postprocess(dat);
     dat["iterations"]->retrieve(&iterations, this);
+    dat["mul_fac"]->retrieve(&mul_fac, this);
+    dat["initial_inc"]->retrieve(&initial_inc, this);
 }
 
 /*!
@@ -37,7 +39,13 @@ std::string toroidal::type() const{
 }
 
 void toroidal::control(comp* u, objective* obj){
+    double curinc = initial_inc;
     for(int i = 0; i < vars.size(); i++){
-        vars[i]->inc();
+        vars[i]->inc(curinc);
+        curinc *= mul_fac;
     }
+}
+
+void toroidal::addvar(variable* v){
+    vars.push_back(v);
 }

@@ -11,8 +11,8 @@ void engineimp::read(std::ifstream& fstr){
 }
 void engineimp::_read(std::ifstream& fstr){
     const std::string delim=" ";
-    const std::string comment="#";
-    const char command = '!';
+    const std::string comment="!";
+    const char command = '#';
     std::string token;
     std::string curline;
     
@@ -22,6 +22,7 @@ void engineimp::_read(std::ifstream& fstr){
         
         //get current line
         std::getline(fstr, curline);
+        std::cout << curline << std::endl;
         line++;
         item* curit;
         //remove comments
@@ -83,18 +84,26 @@ void engineimp::sort_pp(){
 }
 
 void engineimp::execute_command(std::string inval){
-    std::cout << "Command is " << inval << std::endl;
     trim(inval);
     std::string command;
     ltoken(command, inval);
     if(command == "include"){
         //filename is the rest of the line
-        std::string fname =inval;
+        std::string fname = curdir;
+        fname.append(inval);
         std::ifstream fstr(fname.c_str());
         if(fstr.peek()==std::ifstream::traits_type::eof()){
             fname.append("Empty/non-existant file passed as configuration parameter");
             err(fname, "engineimp::engineimp(std::string)", "parser/engine.cpp", FATAL_ERROR);
         }
         _read(fstr);
+    }
+    else if(command=="cd"){
+        curdir.append(inval);
+        trim(curdir, '/');
+        curdir.push_back('/');
+    }
+    else if(command=="setdir"){
+        curdir=inval;
     }
 }

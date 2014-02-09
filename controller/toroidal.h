@@ -10,7 +10,10 @@
  */
 class toroidal:public controller{
     int iterations;
+    double initial_inc;
+    double mul_fac;
     public:
+    virtual void addvar(variable* v); 
         virtual std::vector<std::string> dependencies() const;
         virtual void postprocess(std::map<std::string, item*>& inval);
         virtual std::string type() const;

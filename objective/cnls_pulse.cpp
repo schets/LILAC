@@ -1,8 +1,6 @@
 #include "cnls_pulse.h"
 #include "comp_funcs.h"
-extern "C"{
-#include <gsl/gsl_statistics_double.h>
-}
+
 
 /*!
  * This is the objective function for objects that have a cnls-like form-
@@ -25,6 +23,6 @@ double cnls_pulse::score(comp* restr invals){
     ener += help[dim-1];
     help[dim-1]=sqrt(help[dim-1]);
     ener = std::sqrt(ener);
-    double kurtosis_v = 1.0/(3+gsl_stats_kurtosis(help, 1, dim));
+    double kurtosis_v=0;
     return kurtosis_v*ener;
 }

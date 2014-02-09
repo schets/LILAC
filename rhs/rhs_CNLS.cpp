@@ -124,8 +124,8 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
     //input arrays don't really matter here because the plan
     //is executed against specific input arrays at runtime
     //and not with the initialization arrays
-    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
-    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
+    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_MEASURE); 
+    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_MEASURE); 
     //create k values
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);

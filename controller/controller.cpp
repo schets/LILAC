@@ -37,11 +37,11 @@ void controller::postprocess(std::map<std::string, item*>& inval){
     //perform processing on the names
     //will actually do this right over the weekend
     //also with typechecking
-    vars.resize(4);
+ /*   vars.resize(4);
     vars[0] = (variable*)inval["a1"];
     vars[1] = (variable*)inval["a2"];
     vars[2] = (variable*)inval["a3"];
-    vars[3] = (variable*)inval["ap"];
+    vars[3] = (variable*)inval["ap"];*/
 }
 
 item* controller::create(std::string name){

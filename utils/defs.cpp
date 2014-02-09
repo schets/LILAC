@@ -8,7 +8,6 @@
 #include <memory>
 extern "C" {
 #include <complex.h>
-#include "stdlib.h"
 #include <fftw3.h>
 #include <math.h>
 #include <time.h>
@@ -50,6 +49,7 @@ inline void err(std::string message, std::string function, std::string file, _fa
 }
 inline void err(std::string message, std::string function, std::string file, _warning w){
     std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+#include <cstdlib>
         "\nError message is:\n"<<message<<"\nContinuing program\n";
 }
 inline void err(std::string message, std::string function, std::string file, item* p, _fatal f){

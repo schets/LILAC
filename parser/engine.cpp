@@ -37,7 +37,40 @@ char engineimp::item_exists(item* p) const{
     }
     return 0;
 }
-
+/*!
+ * Updates items which reference variables that require changing,
+ * and resets the list of items which require updating
+ */
+void engineimp::update(){
+    std::set<item*>::iterator beg;
+    for(beg = update_vars.begin(); beg != update_vars.end(); beg++){
+        (*beg)->update();
+    }
+    update_vars.clear();
+}
+/*!
+ * Adds an item to the list of items that require updating
+ * @param name Name of the item that requires updating
+ */
+void engineimp::needs_updating(std::string name){
+    std::map<std::string, item*>::iterator pos = values.find(name);
+    if(pos == values.end()){
+        std::string errmess = "Lookup for item \"";
+        errmess.append(name);
+        errmess.append("\" has failed");
+        err(errmess, "engineimp::needs_updating", "parser/engine.cpp", WARNING);
+        return;
+    }
+    needs_updating(pos->second);
+}
+void engineimp::needs_updating(item* inval){
+    if(!inval){
+        err("Null pointer passed to needs_updating", "engineimp::needs_updating",
+                "parser/engine.cpp", WARNING);
+        return;
+    }
+    update_vars.insert(inval);
+}
 /*
  *
  *Engine wrapper functions

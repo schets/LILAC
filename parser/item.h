@@ -8,9 +8,11 @@
 #include <iostream>
 class engineimp;
 class item{
+    protected:
     std::string _name;
-    engineimp* holder;
     public:
+
+    engineimp* holder;
     static item* create(std::string name, engineimp* rval);
     virtual void print() const;
     virtual void parse(std::string inval) = 0;
@@ -88,6 +90,8 @@ class variable:public real8{
     virtual void copy(double* inval);
     virtual void parse(std::string inval);
     void inc();
+    void inc(double i);
+    void set(double v);
 };
 #endif
 

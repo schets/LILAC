@@ -5,7 +5,6 @@
 #include <vector>
 #include <string>
 extern "C"{
-#include <stdlib.h>
 #include <fftw3.h>
 }
 //THis file contains inlined complex functions
@@ -72,6 +71,16 @@ inline void trim(std::string& curline){
         curline=curline.substr(startpos);
     }
     startpos = curline.find_last_not_of("\n\r\t ");
+    if(startpos != std::string::npos){
+        curline=curline.substr(0, startpos+1);
+    }
+}
+inline void trim(std::string& curline, char val){
+    size_t startpos = curline.find_first_not_of(val);
+    if(startpos != std::string::npos){
+        curline=curline.substr(startpos);
+    }
+    startpos = curline.find_last_not_of(val);
     if(startpos != std::string::npos){
         curline=curline.substr(0, startpos+1);
     }
