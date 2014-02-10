@@ -1,5 +1,5 @@
 #include "objective.h"
-#include "bi_pulse_score.h"
+#include "n_pulse_score.h"
 //#include <gsl/gsl_stats_double.h>
 
 /*!
@@ -22,8 +22,8 @@ void objective::postprocess(std::map<std::string, item*>& invals){
 } 
 
 item* objective::create(std::string name){
-    if(name=="bi_pulse_score"){
-        return new bi_pulse_score();
+    if(name=="n_pulse_score"){
+        return new n_pulse_score();
     }
     return 0;
 }

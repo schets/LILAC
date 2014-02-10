@@ -44,11 +44,19 @@ inline double _sqabs(comp inval){
 #endif
 inline double energy(comp* v, size_t s){
     double sum = _sqabs(v[0]);
-    for(size_t i = 0; i < s; i++){
-        sum += _sqabs(v[0]);
+    for(size_t i = 1; i < s-1; i++){
+        sum += 2*_sqabs(v[i]);
     }
     sum += _sqabs(v[s-1]);
-    return sqrt(sum);
+    return sqrt(sum/2);
+}
+inline double energy(double* v, size_t s){
+    double sum = v[0]*v[0];
+    for(size_t i = 1; i < s-1; i++){
+        sum += 2*v[i]*v[i];
+    }
+    sum += v[s-1]*v[s-1];
+    return sqrt(sum/2);
 }
 
 //This function returns a normalized fourier transform in either direction

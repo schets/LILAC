@@ -78,7 +78,6 @@ void engineimp::sort_pp(){
 
     std::list<item*>::iterator lbeg;
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
-        std::cout << (*lbeg)->name() << std::endl;
         (*lbeg)->postprocess(values);
     }
 }

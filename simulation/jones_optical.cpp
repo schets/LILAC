@@ -169,24 +169,6 @@ double jones_optical::get_change(){
     return sqrt(change_norm/norm);
 }
 double jones_optical::score(){
-    double ener=0;
-    help[0] = sqrt(_sqabs(ucur[0]) + _sqabs(ucur[nts]));
-    ener = help[0];
-    kurtosis_help[0] = help[0];
-    for(size_t i = 1; i < nts-1; i++){
-        help[i] = _sqabs(ucur[i]) + _sqabs(ucur[nts+i]);
-        ener += 2*help[i];
-        help[i]=sqrt(help[i]);
-        kurtosis_help[i] = help[i];
-    }
-    help[nts-1]= _sqabs(ucur[nts-1]) + _sqabs(ucur[2*nts-1]);
-    ener += help[nts-1];
-    help[nts-1]=sqrt(help[nts-1]);
-    kurtosis_help[nts-1]=help[nts-1];
-    ener = sqrt(ener);
-    fft(ffor, kurtosis_help, kurtosis_help, nts);
-    double kurtosis_v = 1.0/(mom4(kurtosis_help, 0, nts));
-    double uscore = log10(fabs(kurtosis_v* ener));
     double score = obj->score(ucur);
     if(score > best_score){
         best_score = score;
@@ -194,7 +176,7 @@ double jones_optical::score(){
         ba2=jones_matrices[0]->a2;
         bap=jones_matrices[0]->ap;
         for(int i = 0; i < nts; i++){
-            phold[i] = help[i];
+            phold[i] = sqrt(_sqabs(ucur[i]) + _sqabs(ucur[i+nts]));
         }
     }
     return score;
