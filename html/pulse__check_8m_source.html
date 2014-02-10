@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: Main Page</title>
+<title>LILAC: matlab/pulse_check.m Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,10 +36,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
-      <li><a href="files.html"><span>Files</span></a></li>
+      <li class="current"><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
         <span class="left">
@@ -58,7 +58,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>File&#160;List</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,15 +77,38 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_363c7dd63633bc0b67762e7ff7b5a8f6.html">matlab</a></li>  </ul>
+</div>
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LILAC Documentation</div>  </div>
+<div class="title">pulse_check.m</div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">function</span> ind=pulse_check(solution_end,t,nt);</div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;%[row,col,val]=find(solution_end&gt;0.80*max(solution_end));</div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;%Check <span class="keywordflow">if</span> the indices are consecutive</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;%<span class="keywordflow">if</span> max(diff(row))&gt;=2|length(row)&gt;=0.5*nt;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;%    ind=0;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;%<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;%    ind=1;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;%end</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;f=fittype(<span class="stringliteral">&#39;a*sech(x-b)+c&#39;</span>);</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;fit1=fit(t<span class="stringliteral">&#39;,solution_end,f,&#39;</span>StartPoint<span class="stringliteral">&#39;,[1/2 1 0]);</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="stringliteral">fdata=feval(fit1,t&#39;</span>);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;error=norm(fdata-solution_end)/norm(solution_end);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;error</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keywordflow">if</span> error&gt;=0.2</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    ind=0;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="keywordflow">else</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ind=1;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;end</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

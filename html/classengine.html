@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: Main Page</title>
+<title>LILAC: engine Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,9 +36,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="annotated.html"><span>Classes</span></a></li>
+      <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
         <div id="MSearchBox" class="MSearchBoxInactive">
@@ -58,7 +58,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
+      <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
+      <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
+    </ul>
+  </div>
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,15 +80,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="classengine-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">LILAC Documentation</div>  </div>
+<div class="title">engine Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a89ad4d21b22367b682ffc34875ddd4c7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classengine.html#a89ad4d21b22367b682ffc34875ddd4c7">engine</a> (const std::string fname)</td></tr>
+<tr class="separator:a89ad4d21b22367b682ffc34875ddd4c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54e1fe05c9e06f98f91860a89ee5e532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a54e1fe05c9e06f98f91860a89ee5e532"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>run</b> ()</td></tr>
+<tr class="separator:a54e1fe05c9e06f98f91860a89ee5e532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a625b5dd7fc69c9ce59e245250f4cfcc9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a625b5dd7fc69c9ce59e245250f4cfcc9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>output</b> ()</td></tr>
+<tr class="separator:a625b5dd7fc69c9ce59e245250f4cfcc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p>Definition at line <a class="el" href="engine_8h_source.html#l00006">6</a> of file <a class="el" href="engine_8h_source.html">engine.h</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a89ad4d21b22367b682ffc34875ddd4c7"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">engine::engine </td>
+          <td>(</td>
+          <td class="paramtype">const std::string&#160;</td>
+          <td class="paramname"><em>fname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructs an engine object, a wrapper for engimeimp </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classengineimp.html">engineimp</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="engine_8cpp_source.html#l00087">87</a> of file <a class="el" href="engine_8cpp_source.html">engine.cpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following files:<ul>
+<li>parser/<a class="el" href="engine_8h_source.html">engine.h</a></li>
+<li>parser/<a class="el" href="engine_8cpp_source.html">engine.cpp</a></li>
+</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

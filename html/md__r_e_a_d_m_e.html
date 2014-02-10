@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: Main Page</title>
+<title>LILAC: README</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -36,8 +36,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </script>
   <div id="navrow1" class="tabs">
     <ul class="tablist">
-      <li class="current"><a href="index.html"><span>Main&#160;Page</span></a></li>
-      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
+      <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li class="current"><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
       <li>
@@ -58,7 +58,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       </li>
     </ul>
   </div>
-</div><!-- top -->
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -73,15 +72,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </iframe>
 </div>
 
+</div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">LILAC Documentation</div>  </div>
+<div class="title">README </div>  </div>
 </div><!--header-->
 <div class="contents">
-</div><!-- contents -->
+<div class="textblock"><p>LILAC: Learning and Integration of Lasers for Adaptive Control</p>
+<p>This project provides a framework with which to analyze/control lasers, and more generally, any tunable dynamical system.</p>
+<p>You can find documentation on the <a href="http://github.com/schets/LILAC/wiki">wiki</a>, and doxygen generated <a href="http://schets.github.io/LILAC">advanced documentation</a> as well</p>
+<p>Installation: This project depends on <a href="gcc.gnu.org">GCC</a>, <a href="git-scm.com">Git</a>, <a href="www.fftw.org">FFTW</a>, <a href="http://www.gnu.org/software/gsl/">GSL</a> and <a href="eigen.tuxfamily.org">Eigen</a>. These are simple to install on Linux and Macintosh systems and each site provides installation instructions. GSL will likely be dropped as a requirement in the future, but for now it useful functions and allows more time to focus on the actual engine</p>
+<p>Once you have installed GCC, Git, FFTW, GSL, and Eigen, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.</p>
+<p>On Linux:</p>
+<ol type="1">
+<li>From the command line, proceed to the directory in which you want to have lilac installed.</li>
+<li>Run the command: git clone <a href="https://github.com/schets/LILAC">https://github.com/schets/LILAC</a> lilac</li>
+<li>Enter the lilac directory (cd lilac)</li>
+<li>Compile the code by running make</li>
+<li>Upon successful compilation, the lilac binary can be found in ithe directory bin</li>
+</ol>
+<p>See the wiki for a tutorial on writing input files, and extending the engine in various manners. The engine is designed so that only a cursory knowledge of C/C++ is needed to write most extensions, and in general extending the code will not involve editing the engine itself.</p>
+<p>A nice tutorial on C++ can be found at www.cplusplus.com/tutorial, and a tutorial on pointers (arrays in C/C++) can be found at <a href="http://pw1.netcom.com/~tjensen/ptr/pointers.htm">http://pw1.netcom.com/~tjensen/ptr/pointers.htm</a> </p>
+</div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>
