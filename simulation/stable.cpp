@@ -1,4 +1,5 @@
 #include "stable.h"
+#include "objective/objective.h"
 #include "comp_funcs.h"
 /*!
  * This function iterates the system forwards in time until it reaches a stable state
@@ -86,4 +87,7 @@ std::string stable_ode::type() const{
 std::vector<std::string> stable_ode::dependencies() const{
     std::string deps[] = {"rhs", "integrator", "t0", "int_len"};
     return appendvec(std::vector<std::string>(deps, deps+4), stable::dependencies());
+}
+double stable_ode::score(){
+    return obj->score(ucur);
 }

@@ -50,6 +50,7 @@ class stable_ode:public stable{
         virtual void post_integration_operations();
         virtual void iterate_system();
     public:
+        double score();
         virtual std::vector<std::string> dependencies() const;
         virtual void postprocess(std::map<std::string, item*>& invals);
         virtual std::string type() const;

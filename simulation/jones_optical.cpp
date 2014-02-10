@@ -32,9 +32,10 @@ std::string get_unique_name(std::string base){
  * for creating elements in the post processor of items yet
  */
 class jones_matrix:public real8{
+
+    public:
     double a1, a2, a3, ap;
     Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;
-    public:
     Eigen::Matrix<comp, 2, 2> mvals;
     Eigen::Matrix<comp, 2, 2> rmat(double alpha){
         Eigen::Matrix<comp, 2, 2> in;
@@ -78,7 +79,9 @@ std::vector<std::string> jones_optical::dependencies() const{
     return appendvec(stable_ode::dependencies(), std::vector<std::string>(deps, deps+1));
 }
 void jones_optical::postprocess(std::map<std::string, item*>& invals){
+
     stable_ode::postprocess(invals);
+
     if(dimension%2){
         err("System jones_optical requires an even dimension", "jones_optical::postprocess",
                 "system/jones_optical.cpp", FATAL_ERROR);
@@ -95,8 +98,8 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     phold=(double*)al_malloc(sizeof(double)*dimension/2);
 
     nts=dimension/2;
-    fback = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_BACKWARD, FFTW_MEASURE);
-    ffor = fftw_plan_dft_1d(nts, ucur+nts, ucur+nts, FFTW_FORWARD, FFTW_MEASURE);
+    fback = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_BACKWARD, FFTW_ESTIMATE);
+    ffor = fftw_plan_dft_1d(nts, ucur+nts, ucur+nts, FFTW_FORWARD, FFTW_ESTIMATE);
     double dt = 60.0/nts;
     for(int i = 0; i < nts; i++){
         t[i] = dt*((double)i-nts/2.0);
@@ -111,6 +114,7 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     //create jones matrices
     std::string name_base = "jones_system_vars";
     std::string mat_base = "jones_system_matrices";
+
     for(int i = 0; i < num_segments; i++){
         std::vector<variable*> vv(4, (variable*)0);
         for(int j = 0; j < 4; j++){
@@ -119,12 +123,12 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
             vv[j]->setname(get_unique_name(name_base));
             vv[j]->set(0);
             vv[j]->parse("0.1");
-            std::cout << "variable name is " << vv[j]->name() << "\n";
             invals[vv[j]->name()]=vv[j];
             if(j != 2){
                 cont->addvar(vv[j]);
             }
         }
+
         jones_matrix* m = new jones_matrix(vv, get_unique_name(mat_base));
         invals[m->name()]=m;
         jones_matrices.push_back(m);
@@ -182,9 +186,13 @@ double jones_optical::score(){
     ener = sqrt(ener);
     fft(ffor, kurtosis_help, kurtosis_help, nts);
     double kurtosis_v = 1.0/(mom4(kurtosis_help, 0, nts));
-    double score = log10(fabs(kurtosis_v* ener));
+    double uscore = log10(fabs(kurtosis_v* ener));
+    double score = obj->score(ucur);
     if(score > best_score){
         best_score = score;
+        ba1=jones_matrices[0]->a1;
+        ba2=jones_matrices[0]->a2;
+        bap=jones_matrices[0]->ap;
         for(int i = 0; i < nts; i++){
             phold[i] = help[i];
         }
@@ -197,6 +205,7 @@ jones_optical::~jones_optical(){
         fprintf(pmax, "%d, %lf\n", i, phold[i]);
     }
     fclose(pmax);
+    printf("%lf, %lf, %lf, %lf\n", ba1, ba2, bap, best_score);
     al_free(help);
     al_free(t);
     al_free(kurtosis_help);

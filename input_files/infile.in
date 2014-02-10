@@ -4,7 +4,7 @@
 #include toroidal.in
 #include jones_optical.in
 integer dimension 512 
-integer tor_steps 2000 
+integer tor_steps 500 
 var a1 .411342234234234
 var a2 .473214323423423423
 var a3 .57434323234234234

@@ -7,14 +7,18 @@
 extern "C"{
 #include <fftw3.h>
 }
-//THis file contains inlined complex functions
-//The C and C++ standard treat complex as an array of two doubles
-//but the C standard doesn't always have inlined complex functions
-//and the C++ standard uses templates and wreaks havoc with
-//the compiler
-//So these operate directly on the double values in the array
-//and provide nice inlined functions that should also
-//work nicely with SIMD instructions
+//#define GCC
+#ifdef GCC
+#define _conj(x) conj(x)
+#define _real(x) creal(x)
+#define _imag(x) cimag(x)
+#define _abs(x) cabs(x)
+inline double _sqabs(comp inval){
+    double v = cabs(inval);
+    return v*v;
+}
+#else
+
 inline comp _conj(comp inval){
     ((double* restr)&inval)[1] *= -1;
     return inval;
@@ -37,7 +41,7 @@ inline double _sqabs(comp inval){
     i = ((double* restr)&inval)[1];
     return r*r + i*i;
 }
-
+#endif
 inline double energy(comp* v, size_t s){
     double sum = _sqabs(v[0]);
     for(size_t i = 0; i < s; i++){

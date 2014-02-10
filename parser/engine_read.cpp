@@ -22,7 +22,6 @@ void engineimp::_read(std::ifstream& fstr){
         
         //get current line
         std::getline(fstr, curline);
-        std::cout << curline << std::endl;
         line++;
         item* curit;
         //remove comments
@@ -79,6 +78,7 @@ void engineimp::sort_pp(){
 
     std::list<item*>::iterator lbeg;
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
+        std::cout << (*lbeg)->name() << std::endl;
         (*lbeg)->postprocess(values);
     }
 }

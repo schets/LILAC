@@ -4,3 +4,4 @@ real8 int_len 1.5
 real8 change_threshold 1e-3
 integer num_jones_segments 1
 integer max_iterations 50
+bi_pulse_score objective

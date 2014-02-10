@@ -2,7 +2,7 @@
 #define CONTROLLER_H
 #include "defs.h"
 #include "../parser/item.h"
-#include "objective.h"
+#include "objective/objective.h"
 #include <vector>
 class toroidal;
 //!This is the base class for the control type classes

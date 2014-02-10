@@ -11,6 +11,7 @@ class jones_matrix;
 class jones_optical:public stable_ode{
     double* help, *t, *phold;
     double best_score;
+    double ba1, ba2, bap;
     comp* kurtosis_help;
     size_t nts;
     fftw_plan ffor, fback;

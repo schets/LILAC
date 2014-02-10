@@ -252,6 +252,12 @@ item* item::create(std::string name, engineimp* in){
         rval->holder=in;
         return rval;
     }
+    rval=objective::create(name);
+    if(rval){
+        rval->holder=in;
+        return rval;
+    }
+
     name.append(" does not name a valid type");
     err(name, "item::create", "parser/item.cpp", FATAL_ERROR);
     //should really have an exit type code here

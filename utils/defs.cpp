@@ -12,7 +12,7 @@ extern "C" {
 #include <math.h>
 #include <time.h>
 }
-#define restr __restrict
+#define restr 
 //#define restr
 //typedef complex<double> comp;
 typedef fftw_complex comp;
