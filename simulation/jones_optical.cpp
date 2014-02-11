@@ -34,45 +34,45 @@ std::string get_unique_name(std::string base){
 class jones_matrix:public real8{
 
     public:
-    double a1, a2, a3, ap;
-    Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;
-    Eigen::Matrix<comp, 2, 2> mvals;
-    Eigen::Matrix<comp, 2, 2> rmat(double alpha){
-        Eigen::Matrix<comp, 2, 2> in;
-        in(0, 0) = cos(alpha);
-        in(0, 1) = -1*sin(alpha);
-        in(1, 0)=sin(alpha);
-        in(1, 1)=cos(alpha);
-        return in;
-    }
+        double a1, a2, a3, ap;
+        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;
+        Eigen::Matrix<comp, 2, 2> mvals;
+        Eigen::Matrix<comp, 2, 2> rmat(double alpha){
+            Eigen::Matrix<comp, 2, 2> in;
+            in(0, 0) = cos(alpha);
+            in(0, 1) = -1*sin(alpha);
+            in(1, 0)=sin(alpha);
+            in(1, 1)=cos(alpha);
+            return in;
+        }
 
-    virtual std::string type() const{
-        return "jones_matrix";
-    }
-    virtual void update(){
-        j1=rmat(a1)*wq*rmat(-1*a1);
-        j2=rmat(a2)*wq*rmat(-1*a2);
-        j3=rmat(a3)*wh*rmat(-1*a3);
-        jp=rmat(ap)*wp*rmat(-1*ap);
-        mvals = j1*jp*j2*j3;
-    }
-    jones_matrix(std::vector<variable*> avars, std::string n){
-        setname(n);
-        wq(1, 0) = wq (0, 1) = 0;
-        wq(0, 0)=(comp)cexp(-1*I*3.14159*0.25);
-        wq(1, 1)=(comp)cexp(1.0*I*3.14159*0.25);
-        wh(1, 0)=wh(0, 1)=0;
-        wh(0, 0)=-1.0*I;
-        wh(1, 1)=1.0*I;
-        wp(0, 1)=wp(1, 0)=0;
-        wp(0, 0)=1;
-        wp(1, 1)=0;
-        avars[0]->retrieve(&a1, this);
-        avars[1]->retrieve(&a2, this);
-        avars[2]->retrieve(&a3, this);
-        avars[3]->retrieve(&ap, this);
-        update();
-    }
+        virtual std::string type() const{
+            return "jones_matrix";
+        }
+        virtual void update(){
+            j1=rmat(a1)*wq*rmat(-1*a1);
+            j2=rmat(a2)*wq*rmat(-1*a2);
+            j3=rmat(a3)*wh*rmat(-1*a3);
+            jp=rmat(ap)*wp*rmat(-1*ap);
+            mvals = j1*jp*j2*j3;
+        }
+        jones_matrix(std::vector<variable*> avars, std::string n){
+            setname(n);
+            wq(1, 0) = wq (0, 1) = 0;
+            wq(0, 0)=(comp)cexp(-1*I*3.14159*0.25);
+            wq(1, 1)=(comp)cexp(1.0*I*3.14159*0.25);
+            wh(1, 0)=wh(0, 1)=0;
+            wh(0, 0)=-1.0*I;
+            wh(1, 1)=1.0*I;
+            wp(0, 1)=wp(1, 0)=0;
+            wp(0, 0)=1;
+            wp(1, 1)=0;
+            avars[0]->retrieve(&a1, this);
+            avars[1]->retrieve(&a2, this);
+            avars[2]->retrieve(&a3, this);
+            avars[3]->retrieve(&ap, this);
+            update();
+        }
 };
 std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments"};
@@ -124,9 +124,7 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
             vv[j]->set(0);
             vv[j]->parse("0.1");
             invals[vv[j]->name()]=vv[j];
-            if(j != 2){
-                cont->addvar(vv[j]);
-            }
+            cont->addvar(vv[j]);
         }
 
         jones_matrix* m = new jones_matrix(vv, get_unique_name(mat_base));
@@ -170,24 +168,42 @@ double jones_optical::get_change(){
 }
 double jones_optical::score(){
     double score = obj->score(ucur);
+    data_store dat;
+    dat.avals.resize(4*jones_matrices.size());
+    for(size_t i = 0; i < jones_matrices.size(); i++){
+        dat.avals[i*4]=jones_matrices[i]->a1;
+        dat.avals[i*4+1]=jones_matrices[i]->a2;
+        dat.avals[i*4+2]=jones_matrices[i]->a3;
+        dat.avals[i*4+3]=jones_matrices[i]->ap;
+    }
+    dat.score = score;
+    out_dat.push_back(dat);
     if(score > best_score){
         best_score = score;
-        ba1=jones_matrices[0]->a1;
-        ba2=jones_matrices[0]->a2;
-        bap=jones_matrices[0]->ap;
-        for(int i = 0; i < nts; i++){
+        for(size_t i = 0; i < nts; i++){
             phold[i] = sqrt(_sqabs(ucur[i]) + _sqabs(ucur[i+nts]));
         }
     }
     return score;
 }
 jones_optical::~jones_optical(){
-    FILE* pmax = fopen("pmax_sys.out", "w");
-    for(int i = 0; i < nts; i++){
-        fprintf(pmax, "%d, %lf\n", i, phold[i]);
+    FILE* pmax;
+    pmax = fopen(out_f_name.c_str(), "w");
+    std::list<data_store>::iterator it = out_dat.begin();
+    it++;//discard this first since it has been replicated
+    //This also provides a more chaotic base for the later simulations and increases accuracy
+    for(; it != out_dat.end(); it++){
+        for(size_t i = 0; i < it->avals.size(); i++){
+            fprintf(pmax, "%lf ", it->avals[i]);
+        }
+        fprintf(pmax, "%lf\n", it->score);
     }
     fclose(pmax);
-    printf("%lf, %lf, %lf, %lf\n", ba1, ba2, bap, best_score);
+    pmax = fopen("pmax.out", "w");
+    for(size_t i = 0; i < nts; i++){
+        fprintf(pmax, "%d, %lf\n", (int)i, phold[i]);
+    }
+    fclose(pmax);
     al_free(help);
     al_free(t);
     al_free(kurtosis_help);

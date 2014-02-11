@@ -1,2 +1,2 @@
 #!/bin/sh
-cloc --exclude-dir=html ./
+cloc --exclude-dir=html,eigen3 ./

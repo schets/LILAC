@@ -7,7 +7,21 @@
 #include <parser/engine.h>
 using namespace std;
 int main(int argc, char** argv){
-    engine e("infile.in");
+    std::string outfile;
+    std::string index;
+    if(argc == 2){
+        outfile = argv[1];
+        std::cout << outfile << ", " << argv[1] << std::endl;
+    }
+    else if(argc == 3){
+        outfile = argv[1];
+        index = argv[2];
+    }
+    else{
+        outfile = "data_out.out";
+        index="0";
+    }
+    engine e("infile.in", outfile, index);
     e.run();
     //
     //This cleans up the fftw memory

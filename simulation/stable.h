@@ -21,6 +21,7 @@ class stable:public simulation{
         virtual void iterate_system() = 0;
         virtual std::vector<std::string> dependencies() const = 0;
         virtual void postprocess(std::map<std::string, item*>& invals) = 0;
+        int num_gone;
     public:
         double simulate();
         virtual ~stable(){};

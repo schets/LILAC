@@ -70,6 +70,7 @@ class integer:public item{
     virtual std::string type() const;
     virtual void parse(std::string inval);
     virtual void retrieve(void* inval, item* caller);
+    friend class engineimp;
 };
 //!stores a real number that is varied during the simulation
 /*!

@@ -14,12 +14,15 @@ class controller:public item_dim{
     protected:
     std::vector<variable*> vars;
     public:
+    int index;
     virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
     virtual void postprocess(std::map<std::string, item*>& inval);
     virtual void addvar(variable* v)=0;
     virtual std::string type() const = 0;
     virtual void control(comp* u, objective* obj) = 0;
+    virtual char is_good() = 0;
+    virtual void pre_set(){};
     static item* create(std::string name);
 };
 

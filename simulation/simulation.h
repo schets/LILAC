@@ -13,6 +13,7 @@ class simulation:public item_dim{
         controller* cont;
         objective* obj;
     public:
+        std::string out_f_name;
         virtual void parse(std::string inval){};
         //!This function simulates the system and returns the resulting score
         virtual double simulate() = 0;

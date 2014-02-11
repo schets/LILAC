@@ -18,7 +18,11 @@ double stable::simulate(){
         }
     }
     double v = this->score();
-    printf("System took %d iterations, score was %e\n", qq, v);
+    if(!num_gone || !(num_gone%100)){
+        printf("System:%d, test# %d,  took %d iterations, score was %e\n",
+                cont->index, num_gone, qq, v);
+    }
+    num_gone++;
     return v;
 }
 std::vector<std::string> stable::dependencies() const{
@@ -27,6 +31,7 @@ std::vector<std::string> stable::dependencies() const{
 }
 
 void stable::postprocess(std::map<std::string, item*>& invals){
+    num_gone=0;
     simulation::postprocess(invals);
     invals["change_threshold"]->retrieve(&change_threshold, this);
     if(change_threshold < 0){

@@ -6,6 +6,7 @@ void simulation::postprocess(std::map<std::string, item*>& invals){
     item_dim::postprocess(invals);
     invals["controller"]->retrieve(&cont, this);
     invals["objective"]->retrieve(&obj, this);
+    invals["!out_file"]->retrieve(&out_f_name, this);
 }
 
 /*!

@@ -10,6 +10,7 @@
  */
 class toroidal:public controller{
     int iterations;
+    int num_int;
     double initial_inc;
     double mul_fac;
     public:
@@ -18,5 +19,7 @@ class toroidal:public controller{
         virtual void postprocess(std::map<std::string, item*>& inval);
         virtual std::string type() const;
         virtual void control(comp* u, objective* obj);
+        virtual char is_good();
+        virtual void pre_set();
 };
 #endif

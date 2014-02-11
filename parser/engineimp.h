@@ -37,7 +37,7 @@ class engineimp{
     //!Queries whether an item exists or not
     char item_exists(item* val) const;
     //!Constructor, reads from an input file
-    engineimp(const std::string fname);
+    engineimp(const std::string fname, const std::string outname, const std::string index);
     //!Deletes data
     ~engineimp();
     friend class engine;

@@ -6,7 +6,14 @@
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
-engineimp::engineimp(const std::string fname){
+engineimp::engineimp(const std::string fname, const std::string outname, const std::string index){
+    values["!out_file"] = new string();
+    values["!out_file"]->parse(outname);
+    values["!out_file"]->setname("!out_file");
+    integer* p = new integer();
+    p->parse(index);
+    p->setname("!start_ind");
+    values["!start_ind"]=p;
     std::ifstream fstr(fname.c_str());
     if(f_is_empty(fstr)){
         err("Empty/non-existant file passed as configuration parameter",
@@ -19,7 +26,7 @@ engineimp::~engineimp(){
     std::map<std::string, item*>::iterator beg;
     for(beg=values.begin(); beg != values.end(); beg++){
         if(beg->second){
-      //      std::cout << "Starting deletion for " << beg->second->name() << std::endl;
+            //      std::cout << "Starting deletion for " << beg->second->name() << std::endl;
             delete beg->second;
         }
     }
@@ -84,8 +91,8 @@ void engineimp::needs_updating(item* inval){
  * Constructs an engine object, a wrapper for engimeimp
  * \sa engineimp
  */
-engine::engine(const std::string fname){
-    eng = new engineimp(fname);
+engine::engine(const std::string fname, const std::string outname, std::string index){
+    eng = new engineimp(fname, outname, index);
 }
 engine::~engine(){
     if(eng){

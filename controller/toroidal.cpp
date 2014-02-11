@@ -25,9 +25,21 @@ std::vector<std::string> toroidal::dependencies() const{
  */
 void toroidal::postprocess(std::map<std::string, item*>& dat){
     controller::postprocess(dat);
+    num_int=0;
     dat["iterations"]->retrieve(&iterations, this);
     dat["mul_fac"]->retrieve(&mul_fac, this);
+    if(mul_fac==0){
+        err("Multiply factor, mul_fac, must not be equal to zero", 
+               "toroidal::postprocess", "controller/toroidal.cpp",
+               FATAL_ERROR);
+    }
     dat["initial_inc"]->retrieve(&initial_inc, this);
+    if(initial_inc==0){
+        err("The initial increment, initial_inc, must not be equal to zero", 
+               "toroidal::postprocess", "controller/toroidal.cpp",
+               FATAL_ERROR);
+    }
+    //find the controllers place in the number of iterations
 }
 
 /*!
@@ -40,6 +52,7 @@ std::string toroidal::type() const{
 
 void toroidal::control(comp* u, objective* obj){
     double curinc = initial_inc;
+    num_int++;
     for(int i = 0; i < vars.size(); i++){
         vars[i]->inc(curinc);
         curinc *= mul_fac;
@@ -48,4 +61,16 @@ void toroidal::control(comp* u, objective* obj){
 
 void toroidal::addvar(variable* v){
     vars.push_back(v);
+}
+char toroidal::is_good(){
+    return num_int <= iterations;
+}
+void toroidal::pre_set(){
+    for(size_t i = 0; i < index*iterations; i++){
+        double curinc=initial_inc;
+        for(size_t j = 0; j < vars.size(); j++){
+            vars[j]->inc(curinc);
+            curinc *= mul_fac;
+        }
+    }
 }

@@ -83,8 +83,3 @@ int graph::sort(std::list<item*>& l){
     }
     return SORT_SUCCESS;
 }
-int __main__(){
-    graph g;
-    engineimp ee("testfile.in");
-    return 0;
-}
