@@ -1,10 +1,21 @@
 #include "n_pulse_score.h"
 #include "comp_funcs.h"
-extern "C"{
-#include <gsl/gsl_statistics_double.h>
+double kurtosis(double in[], size_t len){
+    double mean, mom4, mom2;
+    mean = mom4 = mom2 = 0;
+    for(size_t i = 0; i < len; i++){
+        mean += in[i];
+    }
+    mean /= len;
+    for(size_t i = 0; i < len; i++){
+        double sq = (in[i] - mean)*(in[i]-mean);
+        mom2+= sq;
+        mom4+= sq*sq;
+    }
+    mom4/=len;
+    mom2/=len;
+    return mom4/(mom2*mom2) - 3;
 }
-double mom4(comp*, double*, int);
-
 /*!
  * This is the objective function for objects that have a cnls-like form
  * n coupled waves where the best solution is for each one to be a pulse.
@@ -28,7 +39,7 @@ double n_pulse_score::score(comp* ucur){
     for(size_t i = 0; i < nts; i++){
         help[i] = _abs(kurtosis_help[i]);
     }
-    double kurtosis_v = 1.0/(gsl_stats_kurtosis(help, 1, nts));
+    double kurtosis_v = 1.0/(kurtosis(help, nts));
     double score = kurtosis_v* ener;
     return score;
 }

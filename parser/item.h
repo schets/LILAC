@@ -10,6 +10,8 @@ class engineimp;
 class item{
     protected:
     std::string _name;
+    std::string _write_name;
+    char has_write_name;
     public:
 
     engineimp* holder;
@@ -21,9 +23,12 @@ class item{
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const = 0;
     virtual void update();
+    item();
     virtual ~item(){};
     void setname(const std::string n);
+    void set_write_name(std::string wname);
     const std::string& name()const;
+    const std::string& write_name() const;
     friend class variable;
 };
 

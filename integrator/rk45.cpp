@@ -36,28 +36,28 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
     const double magic_power = 1.0/6; //found from reference file, reference p.91 Ascher and Petzold
     const double magic_mult = .8;//magic multiplying safety factor for determining the next timestep;
 
-//    dorman prince integrator parameters
-      const static double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
-      const static double b1 = 0.2;
-      const static double b2[] = {3.0/40, 9.0/40};
-      const static double b3[] = {44.0/45, -56.0/15, 32.0/9};
-      const static double b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
-      const static double b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
-      const static double b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
-      const static double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
-      -92097.0/339200, 187.0/2100, 1.0/40};
-      const static double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
+    //    dorman prince integrator parameters
+    MAKE_ALIGNED const static double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
+    MAKE_ALIGNED const static double b1 = 0.2;
+    MAKE_ALIGNED const static double b2[] = {3.0/40, 9.0/40};
+    MAKE_ALIGNED const static double b3[] = {44.0/45, -56.0/15, 32.0/9};
+    MAKE_ALIGNED const static double b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
+    MAKE_ALIGNED const static double b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
+    MAKE_ALIGNED const static double b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
+    MAKE_ALIGNED const static double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
+        -92097.0/339200, 187.0/2100, 1.0/40};
+    MAKE_ALIGNED       const static double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
     /*
      * Fehlberg parameters, usable if one wants
      * Fehlberg minimizes the 4th order error, so is less desireable
-    const double a[] = {1.0/4, 3.0/8, 12.0/13, 1.0, 1.0/2};
-    const double b1 = 0.25;
-    const double b2[] = {3.0/32, 9.0/32};
-    const double b3[] = {1932.0/2197, -7200.0/2197, 7296.0/2197};
-    const double b4[] = {439.0/216, -8.0, 3680.0/513, -845.0/4104};
-    const double b5[] = {-8.0/27, 2.0, -3544.0/2565, 1859.0/4104, -11.0/40};
-    const double c4[] = {25.0/216, 0, 1408.0/2565, 2197.0/4104, -1.0/5, 0};
-    const double c5[] = {16.0/135, 0, 6656.0/12825, 28561.0/56430, -9.0/50, 2.0/55};*/
+     const double a[] = {1.0/4, 3.0/8, 12.0/13, 1.0, 1.0/2};
+     const double b1 = 0.25;
+     const double b2[] = {3.0/32, 9.0/32};
+     const double b3[] = {1932.0/2197, -7200.0/2197, 7296.0/2197};
+     const double b4[] = {439.0/216, -8.0, 3680.0/513, -845.0/4104};
+     const double b5[] = {-8.0/27, 2.0, -3544.0/2565, 1859.0/4104, -11.0/40};
+     const double c4[] = {25.0/216, 0, 1408.0/2565, 2197.0/4104, -1.0/5, 0};
+     const double c5[] = {16.0/135, 0, 6656.0/12825, 28561.0/56430, -9.0/50, 2.0/55};*/
     double taui;
     taui = 0;
     double tcur=t0;
@@ -68,6 +68,16 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
             taui = taum;
         }
     }
+    ALIGNED(u0);
+    ALIGNED(u_calc);
+    ALIGNED(u_calc2);
+    ALIGNED(f0);
+    ALIGNED(f1);
+    ALIGNED(f2);
+    ALIGNED(f3);
+    ALIGNED(f4);
+    ALIGNED(f5);
+    ALIGNED(f6);
     tauv = std::sqrt(taui);
     tauv *= relerr;
     comp* restr tmp, * restr swp, * restr u0hld;//this is used for freeing the memory later
@@ -99,32 +109,38 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         f6=f0;
         f0=swp;
         double ts = tcur;
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + b1*f0[i]*dt;
         }
         tcur = ts + a[0]*dt;
         func->dxdt(u_calc, f1, tcur); 
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b2[0]*f0[i] + b2[1] * f1[i]);
         }
         tcur = ts + a[1]*dt;
         func->dxdt(u_calc, f2, tcur);
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b3[0]*f0[i] + b3[1] * f1[i] + b3[2]*f2[i]);
         }
         tcur = ts + a[2]*dt;
         func->dxdt(u_calc, f3, tcur);
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b4[0]*f0[i] + b4[1] * f1[i] + b4[2]*f2[i] + b4[3]*f3[i]);
         }
         tcur = ts + a[3]*dt;
         func->dxdt(u_calc, f4, tcur);
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b5[0]*f0[i] + b5[1] * f1[i] + b5[2]*f2[i] + 
                     b5[3]*f3[i] + b5[4]*f4[i]);
         }
         tcur = ts + a[4]*dt;
         func->dxdt(u_calc, f5, tcur);   
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b6[0]*f0[i] + b6[1] * f1[i] + b6[2]*f2[i] + 
                     b6[3]*f3[i] + b6[4]*f4[i] + b6[5]*f5[i]);
@@ -139,14 +155,15 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         //internally, I do calculations with the squares to avoid calculations of sqrt
         //This is done with the inf norm
         double delta=1E-12;
+        VEC_ALIGN;
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
                     c5[4]*f4[i] + c5[5]*f5[i] + c5[6]*f6[i]);
 
             u_calc2[i] = _sqabs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
-                    c4[4]*f4[i] + c4[5]*f5[i] + c4[6]*f6[i]) - u_calc[i]);
+                        c4[4]*f4[i] + c4[5]*f5[i] + c4[6]*f6[i]) - u_calc[i]);
         }
-            
+
         //seperate these two loops to allow vectorization of the first}
         for(size_t i = 0; i < dimension; i++){
             double deltam = u_calc2[i];//square of absolute error

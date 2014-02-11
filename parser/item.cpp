@@ -9,6 +9,19 @@
 #include <iostream>
 #include "comp_funcs.h"
 #include "variable.cpp"
+item::item(){
+    has_write_name=0;
+}
+void item::set_write_name(std::string wname){
+    has_write_name=1;
+    _write_name=wname;
+}
+const std::string& item::write_name() const{
+    if(has_write_name){
+        return _write_name;
+    }
+    return _name;
+}
 /*!
  * This sets the value of object passed equal to the 
  * address of the current item
