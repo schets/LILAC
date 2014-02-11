@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include <eigen3/Eigen/Eigen>
+#include "eigen3/Eigen/Eigen"
 #include <memory>
 extern "C" {
 #include <complex.h>
