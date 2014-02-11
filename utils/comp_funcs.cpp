@@ -7,18 +7,8 @@
 extern "C"{
 #include <fftw3.h>
 }
-//#define GCC
-#ifdef GCC
-#define _conj(x) conj(x)
-#define _real(x) creal(x)
-#define _imag(x) cimag(x)
-#define _abs(x) cabs(x)
-inline double _sqabs(comp inval){
-    double v = cabs(inval);
-    return v*v;
-}
-#else
-
+//These are over twice as fast as using the standard library functions,
+//or even using intrinsics. They allow vectorizing
 inline comp _conj(comp inval){
     ((double* restr)&inval)[1] *= -1;
     return inval;
@@ -41,7 +31,6 @@ inline double _sqabs(comp inval){
     i = ((double* restr)&inval)[1];
     return r*r + i*i;
 }
-#endif
 inline double energy(comp* v, size_t s){
     double sum = _sqabs(v[0]);
     for(size_t i = 1; i < s-1; i++){

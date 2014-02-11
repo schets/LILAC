@@ -19,7 +19,7 @@ extern "C" {
 #define VEC_ALIGN #pragma vector aligned
 #else
 #define restr __restrict__
-#define ALIGNED
+#define ALIGNED(x)
 #define MAKE_ALIGNED
 #define VEC_ALIGN
 #endif
