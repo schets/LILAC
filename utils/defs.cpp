@@ -8,7 +8,7 @@
 #include <memory>
 extern "C" {
 #include <complex.h>
-#include <fftw3.h>
+#include "fftw3.h"
 #include <math.h>
 #include <time.h>
 }
