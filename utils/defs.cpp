@@ -16,12 +16,10 @@ extern "C" {
 #define restr restrict
 #define ALIGNED(x) __assume_aligned(x, 16)
 #define MAKE_ALIGNED __declspec(align(16))
-#define VEC_ALIGN #pragma vector aligned
 #else
 #define restr __restrict__
 #define ALIGNED(x)
 #define MAKE_ALIGNED
-#define VEC_ALIGN
 #endif
 //#define restr
 //typedef complex<double> comp;

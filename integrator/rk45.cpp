@@ -109,38 +109,38 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         f6=f0;
         f0=swp;
         double ts = tcur;
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + b1*f0[i]*dt;
         }
         tcur = ts + a[0]*dt;
         func->dxdt(u_calc, f1, tcur); 
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b2[0]*f0[i] + b2[1] * f1[i]);
         }
         tcur = ts + a[1]*dt;
         func->dxdt(u_calc, f2, tcur);
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b3[0]*f0[i] + b3[1] * f1[i] + b3[2]*f2[i]);
         }
         tcur = ts + a[2]*dt;
         func->dxdt(u_calc, f3, tcur);
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b4[0]*f0[i] + b4[1] * f1[i] + b4[2]*f2[i] + b4[3]*f3[i]);
         }
         tcur = ts + a[3]*dt;
         func->dxdt(u_calc, f4, tcur);
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b5[0]*f0[i] + b5[1] * f1[i] + b5[2]*f2[i] + 
                     b5[3]*f3[i] + b5[4]*f4[i]);
         }
         tcur = ts + a[4]*dt;
         func->dxdt(u_calc, f5, tcur);   
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b6[0]*f0[i] + b6[1] * f1[i] + b6[2]*f2[i] + 
                     b6[3]*f3[i] + b6[4]*f4[i] + b6[5]*f5[i]);
@@ -155,7 +155,7 @@ int rk45::integrate(rhs* func, comp* restr u0, double t0, double tf){
         //internally, I do calculations with the squares to avoid calculations of sqrt
         //This is done with the inf norm
         double delta=1E-12;
-        VEC_ALIGN;
+        #pragma vector aligned
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
                     c5[4]*f4[i] + c5[5]*f5[i] + c5[6]*f6[i]);

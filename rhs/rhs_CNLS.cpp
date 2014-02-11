@@ -7,7 +7,7 @@
 comp trap(comp * restr v, size_t s){
     ALIGNED(v);
     comp sum = 0;
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
@@ -17,7 +17,7 @@ comp trap(comp * restr v, size_t s){
 double trap(double * restr v, size_t s){
     ALIGNED(v);
     double sum = 0;
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
@@ -57,7 +57,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     ALIGNED(comp_out_r);
     ALIGNED(k);
     ALIGNED(ksq);
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         sq1[i] = _sqabs(u1[i]);
         sq2[i] = _sqabs(u2[i]);
@@ -65,7 +65,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     }
     comp expr1 = I*(2.0*g0/(1.0+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts for the rhs
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (sq1[i] + A*sq2[i])*u1[i];
         comp_in[i] = u2[i] * u2[i] * _conj(u1[i]);
@@ -73,20 +73,20 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     //fourier transform forwards nonlinear equations
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
     }
     //Do the fft work for the other half of the calculations
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (A*sq1[i] + sq2[i])*u2[i];
         comp_in[i] = u1[i] * u1[i] * _conj(u2[i]);
     }
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    VEC_ALIGN;
+    #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
