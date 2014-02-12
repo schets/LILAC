@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 #include <sstream>
-#include "eigen3/Eigen/Eigen"
+#include "../eigen3/Eigen/Eigen"
 #include <memory>
 extern "C" {
 #include <complex.h>
@@ -38,7 +38,7 @@ typedef fftw_complex comp;
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50
-#include "parser/item.h"
+#include "../parser/item.h"
 
 class _fatal{
     public:

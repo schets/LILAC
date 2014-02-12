@@ -1,10 +1,10 @@
 #include <iostream>
 #include <time.h>
-#include "defs.h"
-#include "comp_funcs.h"
+#include "utils/defs.h"
+#include "utils/comp_funcs.h"
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
-#include <parser/engine.h>
+#include "parser/engine.h"
 using namespace std;
 int main(int argc, char** argv){
     std::string outfile;

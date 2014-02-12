@@ -1,8 +1,8 @@
 #ifndef SOLVER_HPP
 #define SOLVER_HPP
-#include "defs.h"
-#include "rhs/rhs.h"
-#include "parser/item.h"
+#include "../utils/defs.h"
+#include "../rhs/rhs.h"
+#include "../parser/item.h"
 //!This class defines the integration base class
 /*!
  * This class defines the base integration class, the interface that is used by

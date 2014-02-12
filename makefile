@@ -15,7 +15,7 @@ bin/lilac: $(OBJS)
 	$(LD)  lib/*.o $(LFLAGS) -o bin/lilac
 lib/main.o: main.cpp utils/*.cpp
 	@rm -f lib/main.o
-	$(CPP) -c main.cpp $(CFLAGS) -o lib/main.o
+	$(CPP) -c main.cpp $(INC_FLAGS) $(CFLAGS) -o lib/main.o
 lib/rhs.o: rhs/*.cpp utils/*cpp 
 	@mkdir -p lib
 	@mkdir -p lib/rhs

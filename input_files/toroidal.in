@@ -1,5 +1,5 @@
 string names doesntmatter
-integer iterations 1000
+integer iterations 10000
 real8 initial_inc .15
 real8 mul_fac 1.294784622373
 toroidal controller

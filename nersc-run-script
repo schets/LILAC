@@ -1,14 +1,15 @@
-#PBS -q debug
-#PBS -l mppwidth=24
-#PBS -l walltime=00:10:00
+#PBS -q regular
+#PBS -l mppwidth=120
+#PBS -l walltime=4:00:00
 #PBS -N LILAC
 #PBS -o output/lilac_out.txt
 #PBS -e output/lilac_err.txt
 #PBS -m e
+#PBS -V
 
-cd $PBS_O_WORKDIR
+cd $HOME/lilac
 module load taskfarmer
 
-cd $PBS_O_WORKDIR
+cd $HOME/lilac
 
-tf -t 48 -n 1 -e serial.err -o serial.out ./tf_script.sh
+tf -t 240 -n 5 -e serial.err -o serial.out $HOME/lilac/tf_script.sh

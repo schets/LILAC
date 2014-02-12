@@ -1,0 +1,20 @@
+Warning: no access to tty (Bad file descriptor).
+Thus no job control in this shell.
+
+ + --------------------------------------------------------------------------
+ +        Job name: LILAC
+ +          Job Id: 7136808.hopque01
+ +          System: hopper
+ +     Queued Time: Tue Feb 11 00:52:05 2014
+ +      Start Time: Tue Feb 11 00:54:54 2014
+ + Completion Time: Tue Feb 11 03:18:11 2014
+ +            User: kutz
+ +        MOM Host: nid04943
+ +           Queue: reg_short
+ +  Req. Resources: mppnodect=5,mppnppn=24,mppwidth=120,other=QSUBPID:54030:hopper10,walltime=04:00:00
+ +  Used Resources: cput=00:00:01,mem=6868kb,vmem=58024kb,walltime=02:23:20
+ +     Acct String: m1968
+ +   PBS_O_WORKDIR: /global/u2/k/kutz/lilac
+ +     Submit Args: nersc-run-script
+ + --------------------------------------------------------------------------
+

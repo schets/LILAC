@@ -1,7 +1,7 @@
 #ifndef RHS_H
 #define RHS_H
-#include "defs.h"
-#include "parser/item.h"
+#include "../utils/defs.h"
+#include "../parser/item.h"
 //!The rhs base class
 /*! \class rhs
  * The RHS class provides the RHS of an equation du/dt = f(u)
