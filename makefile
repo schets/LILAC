@@ -13,7 +13,7 @@ all: $(OBJS) bin/lilac
 bin/lilac: $(OBJS) 
 	@mkdir -p bin
 	$(LD)  lib/*.o -o bin/lilac $(LFLAGS) 
-	@co bin/lilac rundir/lilac
+	@cp bin/lilac rundir/lilac
 lib/main.o: main.cpp utils/*.cpp
 	@rm -f lib/main.o
 	$(CPP) -c main.cpp $(INC_FLAGS)  -o lib/main.o	$(CFLAGS)

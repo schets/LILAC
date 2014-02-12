@@ -7,7 +7,8 @@ LD=gcc
 LFLAGS= -lstdc++ -lfftw3 -lm 
 endif
 ifeq ($(CPP), CC)
-export CFLAGS= -fast -no-ipo -restrict -O3 -ansi-alias -no-prec-div -fargument-noalias -fno-alias -finline-functions -funroll-loops -fpermissive -DICC -mkl=sequential
+export FAST_FLAGS= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div
+export CFLAGS= -fast -no-ipo -restrict -O3  -finline-functions -funroll-loops -fpermissive -DICC -mkl=sequential
 export LD=CC
 export LFLAGS= -lfftw3 -lm -mkl=sequential
 endif
@@ -16,4 +17,4 @@ LIB_MAIN=../lib
 MAIN_PATH=..
 INLINE_HEADERS=../utils/*.cpp
 INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/
-
+#export FAST_FLAGS= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -guide-vec -scalar-rep -no-prec-div
