@@ -14,10 +14,10 @@ $(LIB_MAIN)/rhs.o: $(RHS_OBJ)
 $(LIB_PATH)/rhs_main.o: rhs.cpp $(INLINE_HEADERS)
 	@mkdir -p $(LIB_PATH)
 	@rm -f $(LIB_PATH)/rhs_main.o
-	$(CPP) -c rhs.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_main.o
+	$(CPP) -c rhs.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_main.o $(CFLAGS)
 $(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_CNLS.o
-	$(CPP) -c rhs_CNLS.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/rhs_CNLS.o
+	$(CPP) -c rhs_CNLS.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_CNLS.o $(CFLAGS)
 $(LIB_PATH)/example_rhs.o: example_rhs.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/example_rhs.o
-	$(CPP) -c example_rhs.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/example_rhs.o
+	$(CPP) -c example_rhs.cpp $(INC_PATH)  -o $(LIB_PATH)/example_rhs.o $(CFLAGS)

@@ -7,9 +7,9 @@ LD=gcc
 LFLAGS= -lstdc++ -lfftw3 -lm 
 endif
 ifeq ($(CPP), CC)
-export CFLAGS=-mkl=sequential -fast -no-ipo -restrict -O3 -ansi-alias -no-prec-div -fargument-noalias -fno-alias -finline-functions -funroll-loops -fpermissive -DICC -I../ 
+export CFLAGS= -fast -no-ipo -restrict -O3 -ansi-alias -no-prec-div -fargument-noalias -fno-alias -finline-functions -funroll-loops -fpermissive -DICC -mkl=sequential
 export LD=CC
-export LFLAGS=-mkl=sequential -lfftw3 -lm 
+export LFLAGS= -lfftw3 -lm -mkl=sequential
 endif
 
 LIB_MAIN=../lib

@@ -11,6 +11,7 @@ bin
 html
 lib
 *~
+rundir/*.*
 *.ignore
 *.out
 *.3D

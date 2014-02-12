@@ -12,10 +12,11 @@ all: $(OBJS) bin/lilac
 .PHONY: clean
 bin/lilac: $(OBJS) 
 	@mkdir -p bin
-	$(LD)  lib/*.o $(LFLAGS) -o bin/lilac
+	$(LD)  lib/*.o -o bin/lilac $(LFLAGS) 
+	@co bin/lilac rundir/lilac
 lib/main.o: main.cpp utils/*.cpp
 	@rm -f lib/main.o
-	$(CPP) -c main.cpp $(INC_FLAGS) $(CFLAGS) -o lib/main.o
+	$(CPP) -c main.cpp $(INC_FLAGS)  -o lib/main.o	$(CFLAGS)
 lib/rhs.o: rhs/*.cpp utils/*cpp 
 	@mkdir -p lib
 	@mkdir -p lib/rhs
