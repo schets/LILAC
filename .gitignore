@@ -12,6 +12,13 @@ html
 lib
 *~
 rundir/*.*
+rundir/output/*
+!rundir/inputfiles
+rundir/stdout/*
+!rundir/infile.in
+!rundir/*.sh
+!*.sh
+rundir/lilac
 *.ignore
 *.out
 *.3D

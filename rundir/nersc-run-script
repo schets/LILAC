@@ -1,14 +1,12 @@
-#PBS -q regular
-#PBS -l mppwidth=120
-#PBS -l walltime=2:00:00
-#PBS -N LILAC-hyperthreading
+#PBS -q debug
+#PBS -l mppwidth=24
+#PBS -l walltime=0:10:00
+#PBS -N LILAC
 #PBS -o output/lilac_out.txt
 #PBS -e output/lilac_err.txt
+#PBS -S /bin/bash
 #PBS -V
 
 cd $HOME/lilac/rundir
-module load taskfarmer
 
-cd $HOME/lilac/rundir
-
-tf -t 240 -n 5 -e -j 2 serial.err -o serial.out $HOME/lilac/rundir/tf_script.sh
+tf -t 24 -n 1 $HOME/lilac/rundir/tf_script.sh
