@@ -1,3 +1,7 @@
+*.swp
+*.err
+*.OU
+*.ER
 *.o
 *.a
 html/*
