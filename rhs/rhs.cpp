@@ -1,5 +1,6 @@
 #include "rhs.h"
 #include "rhs_imp.h"
+#include "rhs_SQGLE.h"
 #include "example_rhs.h"
 #include <cstring>
 /*!
@@ -21,10 +22,13 @@ rhs* rhs::create(std::string tname){
     if(tname == "CNLS"){
         return new rhs_CNLS();
     }
+    else if(tname == "SQGLE"){
+        return new rhs_SQGLE();
+    }
     else if(tname=="example_rhs"){
+        err("Example_rhs created", "rhs::create", "rhs/rhs.cpp", WARNING);
         return new example_rhs();
     }
-    
     return 0;
 }
 /*!

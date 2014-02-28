@@ -1,8 +1,9 @@
 !file for testing io system
-#include rhs_CNLS.in
+#include sqgle.in
+!#include rhs_CNLS.in
 #include rk45.in
 #include toroidal.in
-#include jones_optical.in
-integer dimension 512 
+#include jones_optical_sqgle.in
+integer dimension 512
 
 

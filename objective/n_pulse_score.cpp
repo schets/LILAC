@@ -14,7 +14,7 @@ double kurtosis(double in[], size_t len){
     }
     mom4/=len;
     mom2/=len;
-    return mom4/(mom2*mom2) - 3;
+    return mom4/(mom2*mom2);
 }
 /*!
  * This is the objective function for objects that have a cnls-like form

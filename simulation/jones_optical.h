@@ -9,22 +9,21 @@
 #include <list>
 //!jones matrix class, inherits from real8 since there is no meaningful functions for most of it
 class jones_matrix;
-class jones_optical:public stable_ode{
+class jones_optical:public stable_spectral_pde_1d{
     double* help, *t, *phold;
     double best_score;
     double ba1, ba2, bap;
     comp* kurtosis_help;
-    size_t nts;
-    fftw_plan ffor, fback;
     std::vector<jones_matrix*> jones_matrices;
     struct data_store{
         std::vector<double> avals;
         double score;
     };
+    double jones_int_dist;
     std::list<data_store> out_dat;
     protected:
-    virtual void pre_integration_operations();
-    virtual void post_integration_operations();
+    virtual void pre_fft_operations();
+    virtual void post_ifft_operations();
     virtual double get_change();
     public:
     virtual double score();

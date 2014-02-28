@@ -7,21 +7,28 @@
  * and then returns the objective function of that state.
  */
 double stable::simulate(){
-    int qq;
-    for (qq = 0; qq < max_iterations; qq++){
+    bad_res=0;
+    for (round = 0; round < max_iterations; round++){
+
         this->iterate_system();
-        if(qq){
+
+        if(bad_res<0){
+            return 0;
+        }
+        if(round){
             double chan = this->get_change();
             if(chan < change_threshold){
                 break;
             }
         }
+
     }
     double v = this->score();
-    if(!num_gone || !(num_gone%100)){
+    if(1 || !num_gone || !(num_gone%1)){
         printf("System:%d, test# %d,  took %d iterations, score was %e\n",
-                cont->index, num_gone, qq, v);
+                cont->index, num_gone, round, v);
     }
+
     num_gone++;
     return v;
 }
@@ -58,9 +65,12 @@ void stable_ode::iterate_system(){
         ulast[i] = ucur[i];
     }
     this->pre_integration_operations(); 
-    inter->integrate(rh, ucur, tcur, tcur+int_len);
-    this->post_integration_operations();
+    int res = inter->integrate(rh, ucur, tcur, tcur+int_len);
     tcur += int_len;
+    this->post_integration_operations();
+    if(res < 0){
+        bad_res=1;
+    }
 }
 
 void stable_ode::postprocess(std::map<std::string, item*>& invals){
@@ -96,3 +106,75 @@ std::vector<std::string> stable_ode::dependencies() const{
 double stable_ode::score(){
     return obj->score(ucur);
 }
+
+//stable_spectral_pde_1d functions
+
+std::string stable_spectral_pde_1d::type() const{
+    return "stable_spectral_pde_1d";
+}
+
+std::vector<std::string> stable_spectral_pde_1d::dependencies() const{
+    std::string deps[] = {"num_pulses"};
+    return appendvec(std::vector<std::string>(deps, deps+1), stable_ode::dependencies());
+};
+
+void stable_spectral_pde_1d::postprocess(std::map<std::string, item*>& invals){
+    stable_ode::postprocess(invals);
+    int _num;
+    invals["num_pulses"]->retrieve(&_num, this);
+    if(_num <= 0){
+        err("Number of pulses must be greater than zero", "stable_spectral_pde_1d::postprocess",
+                "simulation/stable.cpp", FATAL_ERROR);
+    }
+    num_pulses=_num;
+    if(dimension%num_pulses){
+        err("Dimension must be divisible by the number of pulses",  "stable_spectral_pde_1d::postprocess",
+                "simulation/stable.cpp", FATAL_ERROR);
+    }
+    nts=dimension/num_pulses;
+
+    ffor = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_FORWARD, FFTW_ESTIMATE);
+    fback = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_BACKWARD, FFTW_ESTIMATE);
+    t=new double[nts];
+    double dt=60.0/nts;
+    for(int i = 0; i < nts; i++){
+        t[i] = dt*((double)i-nts/2.0);
+    }
+    help = new double[nts];
+    for(int i = 0; i < nts; i++){
+        ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
+        help[i] = _real(ucur[i]);
+    }
+}
+void stable_spectral_pde_1d::pre_integration_operations(){
+    if(round==0){
+        for(int i = 0; i < nts; i++){
+            ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
+        }
+    }
+    pre_fft_operations();
+    for(size_t i = 0; i < num_pulses; i++){
+        fft(ffor, ucur+i*nts, ucur+i*nts, nts);
+    }
+    post_fft_operations();
+}
+void stable_spectral_pde_1d::post_integration_operations(){
+    pre_ifft_operations();
+
+    for(size_t i = 0; i < num_pulses; i++){
+        ifft(fback, ucur+i*nts, ucur+i*nts, nts);
+    }
+    post_ifft_operations();
+}
+void stable_spectral_pde_1d::pre_fft_operations(){};
+void stable_spectral_pde_1d::post_fft_operations(){};
+void stable_spectral_pde_1d::pre_ifft_operations(){};
+void stable_spectral_pde_1d::post_ifft_operations(){};
+stable_spectral_pde_1d::~stable_spectral_pde_1d()
+{
+    delete[] t;
+    delete[] help;
+    fftw_destroy_plan(ffor);
+    fftw_destroy_plan(fback);
+}
+

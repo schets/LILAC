@@ -22,6 +22,8 @@ class stable:public simulation{
         virtual std::vector<std::string> dependencies() const = 0;
         virtual void postprocess(std::map<std::string, item*>& invals) = 0;
         int num_gone;
+        int round;
+        int bad_res;
     public:
         double simulate();
         virtual ~stable(){};
@@ -65,5 +67,27 @@ class stable_ode:public stable{
  * so I'll just leave it blank for now
  */
 class stable_spectral_pde_1d:public stable_ode{
+    private:
+        virtual void pre_integration_operations();
+        virtual void post_integration_operations();
+    protected:
+        double* t;
+        double* help;
+        size_t nts;
+        size_t num_pulses;
+        fftw_plan ffor, fback;
+        //!Applies operations prior to the fft and integration
+        virtual void pre_fft_operations();
+        //!Applies operations after the fft but before the integrations
+        virtual void post_fft_operations();
+        //!Applies operations after the integration but prior to the ifft
+        virtual void pre_ifft_operations();
+        //!Applies operations after the integration and ifft()
+        virtual void post_ifft_operations();
+    public:
+        virtual std::vector<std::string> dependencies() const;
+        virtual void postprocess(std::map<std::string, item*>& invals);
+        virtual std::string type() const;
+        virtual ~stable_spectral_pde_1d();
 };
 #endif
