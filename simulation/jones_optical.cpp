@@ -3,6 +3,8 @@
 #include <set>
 #include <cstdlib>
 #include <ctime>
+#include <cmath>
+#define gen_t_dat
 double mom4(comp invals[], double* kvals, int len);
 class _unique_name{
     std::set<std::string> names;
@@ -25,6 +27,37 @@ std::string get_unique_name(std::string base){
     static _unique_name nn;
     return nn.get_unique_name(base);
 }
+double gaussrand()
+{
+	static double U, V;
+	static int phase = 0;
+	double Z;
+
+	if(phase == 0) {
+		U = (rand() + 1.) / (RAND_MAX + 2.);
+		V = rand() / (RAND_MAX + 1.);
+		Z = sqrt(-2 * log(U)) * sin(2 * PI * V);
+	} else
+		Z = sqrt(-2 * log(U)) * cos(2 * PI * V);
+
+	phase = 1 - phase;
+
+	return Z;
+}
+void noise(comp* inval, double norm, size_t len){
+    for(size_t i = 0; i < len; i++){
+        inval[i] = gaussrand() + I*gaussrand();
+    }
+    double n = 0;
+    for(size_t i = 0; i < len; i++){
+        n += _sqabs(inval[i]);
+    }
+    n = sqrt(n);
+    double mval = norm/n;
+    for(size_t i = 0; i < len; i++){
+        inval[i] *= mval;
+    }
+}
 
 /*!
  * class to allow automatic updating of the matrices involved
@@ -45,11 +78,18 @@ class jones_matrix:public real8{
             in(1, 1)=cos(alpha);
             return in;
         }
-
         virtual std::string type() const{
             return "jones_matrix";
         }
         virtual void update(){
+          /*  a1=2.6562;
+            a2=1.274936;
+            a3=5.003272;
+            ap=2.871042;
+            a1=a2 = 0;
+            a2=.12;
+            a3=1.2;
+            ap=3.4;*/
             j1=rmat(a1)*wq*rmat(-1*a1);
             j2=rmat(a2)*wq*rmat(-1*a2);
             j3=rmat(a3)*wh*rmat(-1*a3);
@@ -79,7 +119,13 @@ std::vector<std::string> jones_optical::dependencies() const{
     return appendvec(stable_spectral_pde_1d::dependencies(), std::vector<std::string>(deps, deps+2));
 }
 void jones_optical::postprocess(std::map<std::string, item*>& invals){
-
+#ifdef gen_t_dat
+    func_dat=fopen("python/grad_data2.out", "w");
+    func_score = fopen("python/score_data2.out", "w");
+#else
+    func_dat=fopen("python/grad_data.out", "w");
+    func_score = fopen("python/score_data.out", "w");
+#endif
     stable_spectral_pde_1d::postprocess(invals);
 
     if(dimension%2){
@@ -102,16 +148,13 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     t = (double*)al_malloc(sizeof(double)*nts);
     kurtosis_help=(comp*)al_malloc(sizeof(comp)*nts);
     phold=(double*)al_malloc(sizeof(double)*nts);
+    nvec1= (comp*)al_malloc(dimension*sizeof(comp));
+    nvec2= (double*)al_malloc(nts*sizeof(double));
 
-    double dt = 60.0/nts;
-    for(int i = 0; i < nts; i++){
-        t[i] = dt*((double)i-nts/2.0);
-    }
+    noise(ucur, 0.2, dimension); 
 
-
-    for(int i = 0; i < nts; i++){
-        ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
-        help[i] = _real(ucur[i]);
+    for(int i = 0; i < num_pulses; i++){
+        fft(ffor, nvec1 + i*nts, nvec1 +1*nts, nts);
     }
     //generate variables for the jones matrices
     //create jones matrices
@@ -124,8 +167,12 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
             vv[j] = new variable();
             vv[j]->holder=holder;
             vv[j]->setname(get_unique_name(name_base));
-            vv[j]->set(0);
             vv[j]->parse("0.1");
+#ifdef gen_t_dat
+            vv[j]->set(2*3.1415*(rand()*1.0/RAND_MAX));
+#else
+            vv[j]->set(0);
+#endif
             invals[vv[j]->name()]=vv[j];
             cont->addvar(vv[j]);
         }
@@ -135,13 +182,49 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
         jones_matrices.push_back(m);
     }
 }
+double sign(double v){
+    if(v < 0){
+        return -1;
+    }
+    return 1;
+}
 /*!
  * FFT solutions since this is a spectral system
  */
 void jones_optical::pre_fft_operations(){
     if(round==0){
-        for(int i = 0; i < nts; i++){
-            ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
+        noise(ucur, 5.0, dimension);
+    }
+    if(round == 1){
+        for(size_t j = 0; j < num_pulses; j++){
+            fft(ffor, ucur+j*nts, ucur+j*nts, nts);
+        }
+        for(size_t i = 0; i < dimension; i++){
+            nvec1[i] = ucur[i];
+        }
+        for(size_t j = 0; j < num_pulses; j++){
+            ifft(fback, ucur+j*nts, ucur+j*nts, nts);
+        }
+    }
+    if(round==num_min){
+        for(size_t j = 0; j < num_pulses; j++){
+            fft(ffor, ucur+j*nts, ucur+j*nts, nts);
+        }
+
+        for(size_t i = 0; i < nts; i++){
+            nvec2[i] = _sqabs(ucur[i]);        
+            for(size_t j = 0; j < num_pulses; j++){
+                nvec2[i] += _sqabs(ucur[i+j*nts]);
+            }
+            nvec2[i] = sqrt(nvec2[i]);
+        }
+
+        for(size_t i = 0; i < nts; i++){
+            fprintf(func_dat, "%lf ", nvec2[i]);
+        }
+        fprintf(func_dat, "\n");
+        for(size_t j = 0; j < num_pulses; j++){
+            ifft(fback, ucur+j*nts, ucur+j*nts, nts);
         }
     }
 }
@@ -180,7 +263,14 @@ double jones_optical::get_change(){
         cfsq = sqrt(cfsq)-sqrt(fsq);
         change_norm += cfsq*cfsq;
     }
-    return sqrt(change_norm/norm);
+    if(norm < 1e-4){
+        return 0;
+    }
+    double ss = sqrt(change_norm/norm);
+    if(round < 45 && ss < 1e-3){
+        std::cout << "stable solution reached, norm not zero" << std::endl;
+    }
+    return ss;
 }
 double jones_optical::score(){
     double score = obj->score(ucur);
@@ -196,9 +286,24 @@ double jones_optical::score(){
     out_dat.push_back(dat);
     if(score > best_score){
         best_score = score;
+
+        ba1=jones_matrices[0]->a1;
+        ba2=jones_matrices[0]->a2;
+        ba3=jones_matrices[0]->a3;
+        bap=jones_matrices[0]->ap;
         for(size_t i = 0; i < nts; i++){
-            phold[i] = sqrt(_sqabs(ucur[i]) + _sqabs(ucur[i+nts]));
-        }
+            phold[i] = _sqabs(ucur[i]);
+            for(size_t j = 1; j < num_pulses; j++){
+                phold[i] += _sqabs(ucur[i+j*nts]);
+            }
+            phold[i] = sqrt(phold[i]);
+        }       
+    }
+    if(round < max_iterations - 1 && score > .05){
+        fprintf(func_score, "%lf 1\n", score);
+    }
+    else{
+        fprintf(func_score, "%lf 0\n", score);
     }
     return score;
 }
@@ -217,15 +322,25 @@ jones_optical::~jones_optical(){
         fprintf(pmax, "%lf\n", it->score);
     }
     fclose(pmax);
+    printf("%f, %f, %f, %f\n", ba1, ba2, ba3, bap);
     pmax = fopen("pmax.out", "w");
     for(size_t i = 0; i < nts; i++){
         fprintf(pmax, "%d, %lf\n", (int)i, phold[i]);
     }
+    pmax = fopen("diff.out", "w");
+    for(size_t i = 0; i < dimension*2; i++){
+        fprintf(pmax, "%d, %lf\n", (int)i, ((double*)nvec2)[i]);
+    }
+
     fclose(pmax);
     al_free(help);
     al_free(t);
     al_free(kurtosis_help);
     al_free(phold);
+    al_free(nvec1);
+    al_free(nvec2);
+    fclose(func_dat);
+    fclose(func_score);
 }
 
 std::string jones_optical::type() const{

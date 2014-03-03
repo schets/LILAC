@@ -11,8 +11,10 @@
 class jones_matrix;
 class jones_optical:public stable_spectral_pde_1d{
     double* help, *t, *phold;
+    comp* nvec1;
+    double *nvec2;
     double best_score;
-    double ba1, ba2, bap;
+    double ba1, ba2, bap, ba3;
     comp* kurtosis_help;
     std::vector<jones_matrix*> jones_matrices;
     struct data_store{
@@ -21,6 +23,7 @@ class jones_optical:public stable_spectral_pde_1d{
     };
     double jones_int_dist;
     std::list<data_store> out_dat;
+    FILE* func_dat, *func_score;
     protected:
     virtual void pre_fft_operations();
     virtual void post_ifft_operations();

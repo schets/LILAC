@@ -9,6 +9,8 @@
  * gets the change between the two most recent iterations, and a function
  * iterate_system, which iterates the system forwards one time step
  */
+
+const static size_t num_min = 10;
 class stable:public simulation{
     protected:
         //!Maximum number of times the system is iterated before assuming an unstable state

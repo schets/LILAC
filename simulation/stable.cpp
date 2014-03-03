@@ -17,7 +17,7 @@ double stable::simulate(){
         }
         if(round){
             double chan = this->get_change();
-            if(chan < change_threshold){
+            if(chan < change_threshold && round > num_min){
                 break;
             }
         }

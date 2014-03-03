@@ -75,5 +75,4 @@ void variable::parse(std::string inval){
     inc_size=value;
     low_bound=0;
     high_bound=6.2382;
-    value=0;
 }

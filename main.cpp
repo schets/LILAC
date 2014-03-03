@@ -21,6 +21,7 @@ int main(int argc, char** argv){
         outfile = "data_out.out";
         index="0";
     }
+    srand(time(0));
     engine e("infile.in", outfile, index);
     e.run();
     //

@@ -1,8 +1,8 @@
 export
 CPP=gcc
 ifeq ($(CPP), gcc)
-FASTMATH=-funroll-loops -ffast-math -funsafe-loop-optimizations
-CFLAGS=-I../ -I./utils -g -std=c++03 -DGCC -m64 -mfpmath=sse -O3 $(FASTMATH) -fstrict-aliasing -march=native
+FASTMATH=-funroll-loops -ffast-math -funsafe-loop-optimizations -fstrict-aliasing 
+CFLAGS=-I../ -I./utils -g -std=c++03 -DGCC -m64 -O3 $(FASTMATH) -march=native
 LD=gcc
 LFLAGS= -lstdc++ -lfftw3 -lm 
 endif
