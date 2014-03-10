@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classjones__optical-members.html">List of all members</a>  </div>
@@ -96,11 +97,12 @@ Inheritance diagram for jones_optical:</div>
  <div class="center">
   <img src="classjones__optical.png" usemap="#jones_optical_map" alt=""/>
   <map id="jones_optical_map" name="jones_optical_map">
-<area href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="stable_ode" shape="rect" coords="0,224,86,248"/>
-<area href="classstable.html" title="A system that attempts to reach an equilibrium." alt="stable" shape="rect" coords="0,168,86,192"/>
-<area href="classsimulation.html" alt="simulation" shape="rect" coords="0,112,86,136"/>
-<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="0,56,86,80"/>
-<area href="classitem.html" alt="item" shape="rect" coords="0,0,86,24"/>
+<area href="classstable__spectral__pde__1d.html" title="This class represents the spectral integration of a PDE." alt="stable_spectral_pde_1d" shape="rect" coords="0,280,146,304"/>
+<area href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="stable_ode" shape="rect" coords="0,224,146,248"/>
+<area href="classstable.html" alt="stable" shape="rect" coords="0,168,146,192"/>
+<area href="classsimulation.html" alt="simulation" shape="rect" coords="0,112,146,136"/>
+<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="0,56,146,80"/>
+<area href="classitem.html" alt="item" shape="rect" coords="0,0,146,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -120,16 +122,25 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a31387a59d4e2aa0ecd5217bc64bbc0af"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a31387a59d4e2aa0ecd5217bc64bbc0af">pre_integration_operations</a> ()</td></tr>
-<tr class="separator:a31387a59d4e2aa0ecd5217bc64bbc0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9db3e13eae1309eeb41d9a4942e6fd93"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9db3e13eae1309eeb41d9a4942e6fd93"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a9db3e13eae1309eeb41d9a4942e6fd93">post_integration_operations</a> ()</td></tr>
-<tr class="memdesc:a9db3e13eae1309eeb41d9a4942e6fd93"><td class="mdescLeft">&#160;</td><td class="mdescRight">This applies operations ofter the integration occurs. <br/></td></tr>
-<tr class="separator:a9db3e13eae1309eeb41d9a4942e6fd93"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a154a378dce4b88caeb4a4d53d665e286"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286">pre_fft_operations</a> ()</td></tr>
+<tr class="separator:a154a378dce4b88caeb4a4d53d665e286"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9988a52e2fa53446c5b985845d8ce3a3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9988a52e2fa53446c5b985845d8ce3a3"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3">post_ifft_operations</a> ()</td></tr>
+<tr class="memdesc:a9988a52e2fa53446c5b985845d8ce3a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies operations after the integration and ifft() <br/></td></tr>
+<tr class="separator:a9988a52e2fa53446c5b985845d8ce3a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3693d14353d62ecb0f711f8f1f9c8a2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3693d14353d62ecb0f711f8f1f9c8a2"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#ae3693d14353d62ecb0f711f8f1f9c8a2">get_change</a> ()</td></tr>
 <tr class="memdesc:ae3693d14353d62ecb0f711f8f1f9c8a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the difference between the two most recent iterations. <br/></td></tr>
 <tr class="separator:ae3693d14353d62ecb0f711f8f1f9c8a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_methods_classstable__spectral__pde__1d"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classstable__spectral__pde__1d')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classstable__spectral__pde__1d.html">stable_spectral_pde_1d</a></td></tr>
+<tr class="memitem:a5f4541b6f983d96f0299165ac71260bd inherit pro_methods_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5f4541b6f983d96f0299165ac71260bd"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d.html#a5f4541b6f983d96f0299165ac71260bd">post_fft_operations</a> ()</td></tr>
+<tr class="memdesc:a5f4541b6f983d96f0299165ac71260bd inherit pro_methods_classstable__spectral__pde__1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies operations after the fft but before the integrations. <br/></td></tr>
+<tr class="separator:a5f4541b6f983d96f0299165ac71260bd inherit pro_methods_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f87ec98163faac36f789ccc206b2f0e inherit pro_methods_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4f87ec98163faac36f789ccc206b2f0e"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d.html#a4f87ec98163faac36f789ccc206b2f0e">pre_ifft_operations</a> ()</td></tr>
+<tr class="memdesc:a4f87ec98163faac36f789ccc206b2f0e inherit pro_methods_classstable__spectral__pde__1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies operations after the integration but prior to the ifft. <br/></td></tr>
+<tr class="separator:a4f87ec98163faac36f789ccc206b2f0e inherit pro_methods_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_methods_classstable__ode"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classstable__ode')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classstable__ode.html">stable_ode</a></td></tr>
 <tr class="memitem:aea94e3860f24457a6cc7119ce6ddcb5f inherit pro_methods_classstable__ode"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__ode.html#aea94e3860f24457a6cc7119ce6ddcb5f">iterate_system</a> ()</td></tr>
 <tr class="separator:aea94e3860f24457a6cc7119ce6ddcb5f inherit pro_methods_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -140,40 +151,33 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a9e2293caa95e8a72564971517d3ab8bf inherit pub_static_methods_classsimulation"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9e2293caa95e8a72564971517d3ab8bf"></a>
 static <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>)</td></tr>
 <tr class="separator:a9e2293caa95e8a72564971517d3ab8bf inherit pub_static_methods_classsimulation"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_classitem__dim"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem__dim')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classitem__dim.html">item_dim</a></td></tr>
-<tr class="memitem:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cbb20c8a55447ada9f905599040a7e3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td></tr>
-<tr class="separator:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classstable__ode"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classstable__ode')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classstable__ode.html">stable_ode</a></td></tr>
-<tr class="memitem:aece8c85571f98acabd2cf9096bd082db inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aece8c85571f98acabd2cf9096bd082db"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>tcur</b></td></tr>
-<tr class="separator:aece8c85571f98acabd2cf9096bd082db inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe40c8ff7f38c5334a0e18614096610b inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe40c8ff7f38c5334a0e18614096610b"></a>
-comp *restr&#160;</td><td class="memItemRight" valign="bottom"><b>ucur</b></td></tr>
-<tr class="separator:abe40c8ff7f38c5334a0e18614096610b inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0e01611d6cd354051020f4516a5cd4d inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0e01611d6cd354051020f4516a5cd4d"></a>
-comp *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><b>ulast</b></td></tr>
-<tr class="separator:af0e01611d6cd354051020f4516a5cd4d inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aca9e5c37012d2bf3dbb199bea49edbaa inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aca9e5c37012d2bf3dbb199bea49edbaa"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa">int_len</a></td></tr>
-<tr class="memdesc:aca9e5c37012d2bf3dbb199bea49edbaa inherit pro_attribs_classstable__ode"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the length of integration for each step. <br/></td></tr>
-<tr class="separator:aca9e5c37012d2bf3dbb199bea49edbaa inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac7b59df4eb514aebbba3ab85c13b55c3 inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac7b59df4eb514aebbba3ab85c13b55c3"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__ode.html#ac7b59df4eb514aebbba3ab85c13b55c3">t0</a></td></tr>
-<tr class="memdesc:ac7b59df4eb514aebbba3ab85c13b55c3 inherit pro_attribs_classstable__ode"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the starting time. <br/></td></tr>
-<tr class="separator:ac7b59df4eb514aebbba3ab85c13b55c3 inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7922535c172528fa46a867434017ec16 inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7922535c172528fa46a867434017ec16"></a>
-<a class="el" href="classrhs.html">rhs</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__ode.html#a7922535c172528fa46a867434017ec16">rh</a></td></tr>
-<tr class="memdesc:a7922535c172528fa46a867434017ec16 inherit pro_attribs_classstable__ode"><td class="mdescLeft">&#160;</td><td class="mdescRight">This defines the rhs that is being integrated. <br/></td></tr>
-<tr class="separator:a7922535c172528fa46a867434017ec16 inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c0d31b5e70e95dccb389b0f357ac226 inherit pro_attribs_classstable__ode"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3c0d31b5e70e95dccb389b0f357ac226"></a>
-<a class="el" href="classintegrator.html">integrator</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226">inter</a></td></tr>
-<tr class="memdesc:a3c0d31b5e70e95dccb389b0f357ac226 inherit pro_attribs_classstable__ode"><td class="mdescLeft">&#160;</td><td class="mdescRight">This defines the integrator being used. <br/></td></tr>
-<tr class="separator:a3c0d31b5e70e95dccb389b0f357ac226 inherit pro_attribs_classstable__ode"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classsimulation"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classsimulation')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classsimulation.html">simulation</a></td></tr>
+<tr class="memitem:ab876ef55f93382f1d6b5bd9989dd4065 inherit pub_attribs_classsimulation"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab876ef55f93382f1d6b5bd9989dd4065"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>out_f_name</b></td></tr>
+<tr class="separator:ab876ef55f93382f1d6b5bd9989dd4065 inherit pub_attribs_classsimulation"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classstable__spectral__pde__1d"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classstable__spectral__pde__1d')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classstable__spectral__pde__1d.html">stable_spectral_pde_1d</a></td></tr>
+<tr class="memitem:a730e9002f1a8d72dc44588509d56a37f inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a730e9002f1a8d72dc44588509d56a37f"></a>
+double *&#160;</td><td class="memItemRight" valign="bottom"><b>t</b></td></tr>
+<tr class="separator:a730e9002f1a8d72dc44588509d56a37f inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a220a47d3b752e15bf51f0ff6907f3680 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a220a47d3b752e15bf51f0ff6907f3680"></a>
+double *&#160;</td><td class="memItemRight" valign="bottom"><b>help</b></td></tr>
+<tr class="separator:a220a47d3b752e15bf51f0ff6907f3680 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a611a36936049dbd31962bf71ee65cadd inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a611a36936049dbd31962bf71ee65cadd"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>nts</b></td></tr>
+<tr class="separator:a611a36936049dbd31962bf71ee65cadd inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e6eb515ddc0f65695e91f08f749c0d5 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e6eb515ddc0f65695e91f08f749c0d5"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>num_pulses</b></td></tr>
+<tr class="separator:a3e6eb515ddc0f65695e91f08f749c0d5 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b845957cbde74a196c5b7580241b535 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8b845957cbde74a196c5b7580241b535"></a>
+fftw_plan&#160;</td><td class="memItemRight" valign="bottom"><b>ffor</b></td></tr>
+<tr class="separator:a8b845957cbde74a196c5b7580241b535 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82ee9f7b3b20d62a5b8a1f5fc9585fb3 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a82ee9f7b3b20d62a5b8a1f5fc9585fb3"></a>
+fftw_plan&#160;</td><td class="memItemRight" valign="bottom"><b>fback</b></td></tr>
+<tr class="separator:a82ee9f7b3b20d62a5b8a1f5fc9585fb3 inherit pro_attribs_classstable__spectral__pde__1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00011">11</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00012">12</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a4cea8c8867354d915f1d239852b7e3df"></a>
 <div class="memitem">
@@ -200,13 +204,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="classitem__dim.html#a466c79634e0deeb7bd7d7b45e9bc399d">item_dim::dependencies</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Dependencies for system </dd></dl>
 
-<p>Reimplemented from <a class="el" href="classstable__ode.html#a33edb6392535f9d260b625d98713bda5">stable_ode</a>.</p>
+<p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d.html#a27c2acd1021b3a6cda45c9f1b71425bb">stable_spectral_pde_1d</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00076">76</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00116">116</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a31387a59d4e2aa0ecd5217bc64bbc0af"></a>
+<a class="anchor" id="a154a378dce4b88caeb4a4d53d665e286"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -214,7 +218,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void jones_optical::pre_integration_operations </td>
+          <td class="memname">void jones_optical::pre_fft_operations </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -228,9 +232,9 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div><div class="memdoc">
 <p>FFT solutions since this is a spectral system </p>
 
-<p>Reimplemented from <a class="el" href="classstable__ode.html">stable_ode</a>.</p>
+<p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d.html#af3716272d91b31c664759fe2f662cc0e">stable_spectral_pde_1d</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00136">136</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00200">200</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 </div>
 </div>
@@ -241,7 +245,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

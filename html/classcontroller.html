@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,7 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="classcontroller-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">controller Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
@@ -118,9 +118,6 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="separator:af0851bcc6efa3d1131eba7bb7ff33fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6de7d9883bf80c92cb17c41fb94d690"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#ae6de7d9883bf80c92cb17c41fb94d690">postprocess</a> (std::map&lt; std::string, <a class="el" href="classitem.html">item</a> * &gt; &amp;inval)</td></tr>
 <tr class="separator:ae6de7d9883bf80c92cb17c41fb94d690"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11c098cf244f02c8dfd3205d0427a97c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a11c098cf244f02c8dfd3205d0427a97c"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>addvar</b> (<a class="el" href="classvariable.html">variable</a> *v)=0</td></tr>
-<tr class="separator:a11c098cf244f02c8dfd3205d0427a97c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0d9b65e1ba30aee864398df4c0efc6ad"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d9b65e1ba30aee864398df4c0efc6ad"></a>
 virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</b> () const =0</td></tr>
 <tr class="separator:a0d9b65e1ba30aee864398df4c0efc6ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,11 +131,11 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>)</td></tr>
 <tr class="separator:ab4f7e2c11f394543826e28d190d951f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:aa42036ac7883f96e470424ebff6d2440"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa42036ac7883f96e470424ebff6d2440"></a>
-std::vector&lt; <a class="el" href="classvariable.html">variable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vars</b></td></tr>
-<tr class="separator:aa42036ac7883f96e470424ebff6d2440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a4e416de61a1ef5c9be69135c0918ada0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e416de61a1ef5c9be69135c0918ada0"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>toroidal</b></td></tr>
+<tr class="separator:a4e416de61a1ef5c9be69135c0918ada0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -231,7 +228,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:49 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

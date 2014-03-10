@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: simulation/stable.cpp Source File</title>
+<title>LILAC: system/stable.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_7487f41de01cca700e4de80b884d7106.html">simulation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e8522150b400a43ebfdbd1fed060b8e2.html">system</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -88,87 +88,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;stable.h&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;comp_funcs.h&quot;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="classstable.html#a79279beb50f624ba987b39f890d7d9fc">    8</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classstable.html#a79279beb50f624ba987b39f890d7d9fc">stable::simulate</a>(){</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">int</span> qq;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">for</span> (qq = 0; qq &lt; <a class="code" href="classstable.html#a8158b1ab70f08c3fa59e01bb043641b7" title="Maximum number of times the system is iterated before assuming an unstable state.">max_iterations</a>; qq++){</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        this-&gt;iterate_system();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">if</span>(qq){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            <span class="keywordtype">double</span> chan = this-&gt;<a class="code" href="classstable.html#a4319a1a34ba1c731f8da063d6a4a2333" title="Returns the difference between the two most recent iterations.">get_change</a>();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            <span class="keywordflow">if</span>(chan &lt; <a class="code" href="classstable.html#ac769a346e2cc948b18ac3f836b006698" title="The threshold of change between two iterations for which the system will be considered stable...">change_threshold</a>){</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            }</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        }</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">double</span> v = this-&gt;score();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    printf(<span class="stringliteral">&quot;System took %d iterations, score was %e\n&quot;</span>, qq, v);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">return</span> v;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classstable.html#a23034870f1989c0e655f29493ef95f0d">   23</a></span>&#160;std::vector&lt;std::string&gt; <a class="code" href="classstable.html#a23034870f1989c0e655f29493ef95f0d">stable::dependencies</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::string deps[] = {<span class="stringliteral">&quot;change_threshold&quot;</span>, <span class="stringliteral">&quot;max_iterations&quot;</span>};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keywordflow">return</span> appendvec(<a class="code" href="classsimulation.html#a166cf85cd6e92fde6ad08e9104733c72">simulation::dependencies</a>(), std::vector&lt;std::string&gt;(deps, deps+2));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;}</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keywordtype">void</span> stable::postprocess(std::map&lt;std::string, item*&gt;&amp; invals){</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    simulation::postprocess(invals);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    invals[<span class="stringliteral">&quot;change_threshold&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable.html#ac769a346e2cc948b18ac3f836b006698" title="The threshold of change between two iterations for which the system will be considered stable...">change_threshold</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classstable.html#ac769a346e2cc948b18ac3f836b006698" title="The threshold of change between two iterations for which the system will be considered stable...">change_threshold</a> &lt; 0){</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        err(<span class="stringliteral">&quot;Input parameter change_threshold must be greater than or equal to zero&quot;</span>,</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                <span class="stringliteral">&quot;stable::postprocess&quot;</span>, <span class="stringliteral">&quot;system/stable.cpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    invals[<span class="stringliteral">&quot;max_iterations&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable.html#a8158b1ab70f08c3fa59e01bb043641b7" title="Maximum number of times the system is iterated before assuming an unstable state.">max_iterations</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classstable.html#a8158b1ab70f08c3fa59e01bb043641b7" title="Maximum number of times the system is iterated before assuming an unstable state.">max_iterations</a> &lt;= 0){</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        err(<span class="stringliteral">&quot;Input parameter max_iterations must be greater than or equal to zero&quot;</span>,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                <span class="stringliteral">&quot;stable::postprocess&quot;</span>, <span class="stringliteral">&quot;system/stable.cpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//stable_ode functions</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="classstable__ode.html#aea94e3860f24457a6cc7119ce6ddcb5f">   50</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__ode.html#aea94e3860f24457a6cc7119ce6ddcb5f">stable_ode::iterate_system</a>(){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; dimension; i++){</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        ulast[i] = ucur[i];</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    this-&gt;pre_integration_operations(); </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226" title="This defines the integrator being used.">inter</a>-&gt;<a class="code" href="classintegrator.html#a8bf070f16a46a50ac2cfcd4807ab17b8" title="Integrates the function rh.">integrate</a>(<a class="code" href="classstable__ode.html#a7922535c172528fa46a867434017ec16" title="This defines the rhs that is being integrated.">rh</a>, ucur, tcur, tcur+<a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa" title="This is the length of integration for each step.">int_len</a>);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    this-&gt;<a class="code" href="classstable__ode.html#a67a680b684324b1157d3497992c2b961" title="This applies operations ofter the integration occurs.">post_integration_operations</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    tcur += <a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa" title="This is the length of integration for each step.">int_len</a>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keywordtype">void</span> stable_ode::postprocess(std::map&lt;std::string, item*&gt;&amp; invals){</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    stable::postprocess(invals);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    invals[<span class="stringliteral">&quot;rhs&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable__ode.html#a7922535c172528fa46a867434017ec16" title="This defines the rhs that is being integrated.">rh</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    invals[<span class="stringliteral">&quot;integrator&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226" title="This defines the integrator being used.">inter</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    invals[<span class="stringliteral">&quot;t0&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable__ode.html#ac7b59df4eb514aebbba3ab85c13b55c3" title="This is the starting time.">t0</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    tcur = <a class="code" href="classstable__ode.html#ac7b59df4eb514aebbba3ab85c13b55c3" title="This is the starting time.">t0</a>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    invals[<span class="stringliteral">&quot;int_len&quot;</span>]-&gt;retrieve(&amp;<a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa" title="This is the length of integration for each step.">int_len</a>, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">double</span> eps_val = 1e-12;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa" title="This is the length of integration for each step.">int_len</a> &lt; eps_val){</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        err(<span class="stringliteral">&quot;Variable int_len is too small, int_len must be greater than 1e-12&quot;</span>,</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="stringliteral">&quot;stable_ode::postprocess&quot;</span>, <span class="stringliteral">&quot;system/stable.cpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    ucur = (comp*)al_malloc(2*dimension*<span class="keyword">sizeof</span>(comp));</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    ulast=ucur+dimension;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;stable_ode::~stable_ode(){</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    al_free(ucur);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keywordtype">void</span> stable_ode::pre_integration_operations(){</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classstable__ode.html#a67a680b684324b1157d3497992c2b961">   81</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__ode.html#a67a680b684324b1157d3497992c2b961" title="This applies operations ofter the integration occurs.">stable_ode::post_integration_operations</a>(){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;std::string stable_ode::type()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;stable_ode&quot;</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="code" href="classstable__ode.html#a33edb6392535f9d260b625d98713bda5">   86</a></span>&#160;std::vector&lt;std::string&gt; <a class="code" href="classstable__ode.html#a33edb6392535f9d260b625d98713bda5">stable_ode::dependencies</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    std::string deps[] = {<span class="stringliteral">&quot;rhs&quot;</span>, <span class="stringliteral">&quot;integrator&quot;</span>, <span class="stringliteral">&quot;t0&quot;</span>, <span class="stringliteral">&quot;int_len&quot;</span>};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> appendvec(std::vector&lt;std::string&gt;(deps, deps+4), <a class="code" href="classstable.html#a23034870f1989c0e655f29493ef95f0d">stable::dependencies</a>());</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:49 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

@@ -105,26 +105,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    item_dim::postprocess(inval);</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string names;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    inval[<span class="stringliteral">&quot;names&quot;</span>]-&gt;retrieve(&amp;names, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//perform processing on the names</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//will actually do this right over the weekend</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//also with typechecking</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="comment">/*   vars.resize(4);</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    vars[0] = (variable*)inval[&quot;a1&quot;];</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    vars[1] = (variable*)inval[&quot;a2&quot;];</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    vars[2] = (variable*)inval[&quot;a3&quot;];</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    vars[3] = (variable*)inval[&quot;ap&quot;];*/</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="classitem.html">item</a>* controller::create(std::string name){</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">if</span>(name == <span class="stringliteral">&quot;toroidal&quot;</span>){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classtoroidal.html" title="This class defines the toroidal search controller.">toroidal</a>();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    inval[<span class="stringliteral">&quot;!start_ind&quot;</span>]-&gt;retrieve(&amp;index, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//perform processing on the names</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//will actually do this right over the weekend</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">//also with typechecking</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; <span class="comment">/*   vars.resize(4);</span></div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    vars[0] = (variable*)inval[&quot;a1&quot;];</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    vars[1] = (variable*)inval[&quot;a2&quot;];</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    vars[2] = (variable*)inval[&quot;a3&quot;];</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="comment">    vars[3] = (variable*)inval[&quot;ap&quot;];*/</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<a class="code" href="classitem.html">item</a>* controller::create(std::string name){</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(name == <span class="stringliteral">&quot;toroidal&quot;</span>){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">new</span> <a class="code" href="classtoroidal.html" title="This class defines the toroidal search controller.">toroidal</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:23 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

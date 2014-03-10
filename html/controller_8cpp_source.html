@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,11 +108,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">//perform processing on the names</span></div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">//will actually do this right over the weekend</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="comment">//also with typechecking</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="comment">/*   vars.resize(4);</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">    vars[0] = (variable*)inval[&quot;a1&quot;];</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">    vars[1] = (variable*)inval[&quot;a2&quot;];</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    vars[2] = (variable*)inval[&quot;a3&quot;];</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    vars[3] = (variable*)inval[&quot;ap&quot;];*/</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    vars.resize(4);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    vars[0] = (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)inval[<span class="stringliteral">&quot;a1&quot;</span>];</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    vars[1] = (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)inval[<span class="stringliteral">&quot;a2&quot;</span>];</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    vars[2] = (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)inval[<span class="stringliteral">&quot;a3&quot;</span>];</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    vars[3] = (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)inval[<span class="stringliteral">&quot;ap&quot;</span>];</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<a class="code" href="classitem.html">item</a>* controller::create(std::string name){</div>
@@ -124,7 +124,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:49 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

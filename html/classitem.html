@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -85,8 +85,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classitem-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -99,27 +97,24 @@ Inheritance diagram for item:</div>
  <div class="center">
   <img src="classitem.png" usemap="#item_map" alt=""/>
   <map id="item_map" name="item_map">
-<area href="classinteger.html" title="Stores an integer valued input." alt="integer" shape="rect" coords="0,56,146,80"/>
-<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="468,56,614,80"/>
-<area href="classreal8.html" title="Stores a real-valued input." alt="real8" shape="rect" coords="1170,56,1316,80"/>
-<area href="classstring.html" title="stores a string valued input" alt="string" shape="rect" coords="1326,56,1472,80"/>
-<area href="classcontroller.html" title="This is the base class for the control type classes." alt="controller" shape="rect" coords="0,112,146,136"/>
-<area href="classintegrator.html" title="This class defines the integration base class." alt="integrator" shape="rect" coords="234,112,380,136"/>
-<area href="classobjective.html" alt="objective" shape="rect" coords="468,112,614,136"/>
-<area href="classrhs.html" title="The rhs base class." alt="rhs" shape="rect" coords="702,112,848,136"/>
-<area href="classsimulation.html" alt="simulation" shape="rect" coords="936,112,1082,136"/>
-<area href="classjones__matrix.html" alt="jones_matrix" shape="rect" coords="1092,112,1238,136"/>
-<area href="classvariable.html" title="stores a real number that is varied during the simulation" alt="variable" shape="rect" coords="1248,112,1394,136"/>
-<area href="classtoroidal.html" title="This class defines the toroidal search controller." alt="toroidal" shape="rect" coords="0,168,146,192"/>
-<area href="classrk4.html" alt="rk4" shape="rect" coords="156,168,302,192"/>
-<area href="classrk45.html" title="Dormand-Prince integrator." alt="rk45" shape="rect" coords="312,168,458,192"/>
-<area href="classcnls__pulse.html" alt="cnls_pulse" shape="rect" coords="468,168,614,192"/>
-<area href="classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="example_rhs" shape="rect" coords="624,168,770,192"/>
-<area href="classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="rhs_CNLS" shape="rect" coords="780,168,926,192"/>
-<area href="classstable.html" title="A system that attempts to reach an equilibrium." alt="stable" shape="rect" coords="936,168,1082,192"/>
-<area href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="stable_ode" shape="rect" coords="936,224,1082,248"/>
-<area href="classjones__optical.html" alt="jones_optical" shape="rect" coords="858,280,1004,304"/>
-<area href="classstable__spectral__pde__1d.html" title="This class represents the spectral integration of a PDE." alt="stable_spectral_pde_1d" shape="rect" coords="1014,280,1160,304"/>
+<area href="classinteger.html" title="Stores an integer valued input." alt="integer" shape="rect" coords="0,56,86,80"/>
+<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="288,56,374,80"/>
+<area href="classreal8.html" title="Stores a real-valued input." alt="real8" shape="rect" coords="672,56,758,80"/>
+<area href="classstring.html" title="stores a string valued input" alt="string" shape="rect" coords="768,56,854,80"/>
+<area href="classcontroller.html" title="This is the base class for the control type classes." alt="controller" shape="rect" coords="0,112,86,136"/>
+<area href="classintegrator.html" title="This class defines the integration base class." alt="integrator" shape="rect" coords="96,112,182,136"/>
+<area href="classobjective.html" alt="objective" shape="rect" coords="288,112,374,136"/>
+<area href="classrhs.html" title="The rhs base class." alt="rhs" shape="rect" coords="384,112,470,136"/>
+<area href="classsystem.html" alt="system" shape="rect" coords="576,112,662,136"/>
+<area href="classvariable.html" title="stores a real number that is varied during the simulation" alt="variable" shape="rect" coords="672,112,758,136"/>
+<area href="classtoroidal.html" title="This class defines the toroidal search controller." alt="toroidal" shape="rect" coords="0,168,86,192"/>
+<area href="classrk4.html" alt="rk4" shape="rect" coords="192,168,278,192"/>
+<area href="classrk45.html" title="Dormand-Prince integrator." alt="rk45" shape="rect" coords="192,224,278,248"/>
+<area href="classcnls__pulse.html" alt="cnls_pulse" shape="rect" coords="288,168,374,192"/>
+<area href="classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="example_rhs" shape="rect" coords="480,168,566,192"/>
+<area href="classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="rhs_CNLS" shape="rect" coords="480,224,566,248"/>
+<area href="classjones__optical.html" alt="jones_optical" shape="rect" coords="672,168,758,192"/>
+<area href="classstable.html" title="A system that attempts to reach an equilibrium." alt="stable" shape="rect" coords="672,224,758,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -155,18 +150,6 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:aec3d056988f0b215a7f45bfae82f90d2"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#aec3d056988f0b215a7f45bfae82f90d2">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="separator:aec3d056988f0b215a7f45bfae82f90d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a569eb08923d5a28860e5531dc627dedb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a569eb08923d5a28860e5531dc627dedb"></a>
-<a class="el" href="classengineimp.html">engineimp</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>holder</b></td></tr>
-<tr class="separator:a569eb08923d5a28860e5531dc627dedb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
-Protected Attributes</h2></td></tr>
-<tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13fa7212061bd53e0db1f52c39a3f339"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
-<tr class="separator:a13fa7212061bd53e0db1f52c39a3f339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -218,7 +201,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Pointer to the created item </dd></dl>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00213">213</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00212">212</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -237,7 +220,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
 <p>Returns the name of the variable </p>
 <dl class="section return"><dt>Returns</dt><dd>name of the variable </dd></dl>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00059">59</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00058">58</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -277,7 +260,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
 
 <p>Reimplemented in <a class="el" href="classvariable.html#a4e45e011ec83ae967f5866b6df6b5631">variable</a>, <a class="el" href="classinteger.html#aee90f31b133d8b94e7a28a0f7a3e2d85">integer</a>, <a class="el" href="classstring.html#a843ee111c183f133bdb1e447daf9f5bc">string</a>, and <a class="el" href="classreal8.html#a72545f845ecd515af78c9a273e57bf9d">real8</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00020">20</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00019">19</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -302,7 +285,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00052">52</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00051">51</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -328,9 +311,9 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
 </div><div class="memdoc">
 <p>Updates structures that are held in the class. This is called after each iteration of the control algorithms so that items can update internal parameters such as matrices and whatnot. The controller updates the actual values for parameters so if a class only depends on the direct values than the function need not be re-implemented </p>
 
-<p>Reimplemented in <a class="el" href="classexample__rhs.html#a208070216fb91612ec4b26fe2cf6719e">example_rhs</a>, and <a class="el" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">jones_matrix</a>.</p>
+<p>Reimplemented in <a class="el" href="classexample__rhs.html#a208070216fb91612ec4b26fe2cf6719e">example_rhs</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00031">31</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00030">30</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -341,7 +324,7 @@ class&#160;</td><td class="memItemRight" valign="bottom"><b>variable</b></td></t
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:49 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

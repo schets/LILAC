@@ -96,9 +96,9 @@ Inheritance diagram for objective:</div>
  <div class="center">
   <img src="classobjective.png" usemap="#objective_map" alt=""/>
   <map id="objective_map" name="objective_map">
-<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="0,56,72,80"/>
-<area href="classitem.html" alt="item" shape="rect" coords="0,0,72,24"/>
-<area href="classcnls__pulse.html" alt="cnls_pulse" shape="rect" coords="0,168,72,192"/>
+<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="0,56,95,80"/>
+<area href="classitem.html" alt="item" shape="rect" coords="0,0,95,24"/>
+<area href="classn__pulse__score.html" alt="n_pulse_score" shape="rect" coords="0,168,95,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -107,10 +107,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a61d5ba5005fb53a953d46e764875784a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61d5ba5005fb53a953d46e764875784a"></a>
 virtual double&#160;</td><td class="memItemRight" valign="bottom"><b>score</b> (comp *invals)=0</td></tr>
 <tr class="separator:a61d5ba5005fb53a953d46e764875784a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c2914f279fd2556006d439d141a6e52"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjective.html#a8c2914f279fd2556006d439d141a6e52">dependencies</a> () const </td></tr>
-<tr class="separator:a8c2914f279fd2556006d439d141a6e52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc1b283996e17fa1ca5567143bc982e6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjective.html#adc1b283996e17fa1ca5567143bc982e6">postprocess</a> (std::map&lt; std::string, <a class="el" href="classitem.html">item</a> * &gt; &amp;inval)</td></tr>
-<tr class="separator:adc1b283996e17fa1ca5567143bc982e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23873118c60a24edb7ddb675d44a26bd"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjective.html#a23873118c60a24edb7ddb675d44a26bd">dependencies</a> () const =0</td></tr>
+<tr class="separator:a23873118c60a24edb7ddb675d44a26bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e3dda5e0e8fecde7fb17b7f7267b1e8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobjective.html#a8e3dda5e0e8fecde7fb17b7f7267b1e8">postprocess</a> (std::map&lt; std::string, <a class="el" href="classitem.html">item</a> * &gt; &amp;inval)=0</td></tr>
+<tr class="separator:a8e3dda5e0e8fecde7fb17b7f7267b1e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09ac3b112e7779219f2079f140c703b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a09ac3b112e7779219f2079f140c703b6"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>parse</b> (std::string inval)</td></tr>
 <tr class="separator:a09ac3b112e7779219f2079f140c703b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,12 +131,18 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td><
 <tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13fa7212061bd53e0db1f52c39a3f339"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
 <tr class="separator:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0020fe4550f089fdd232945685f0751c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_write_name</b></td></tr>
+<tr class="separator:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19c29c4c00e11827b4a2f09b7d0575e5"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>has_write_name</b></td></tr>
+<tr class="separator:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="controller_2objective_8h_source.html#l00003">3</a> of file <a class="el" href="controller_2objective_8h_source.html">objective.h</a>.</p>
+<p>Definition at line <a class="el" href="objective_8h_source.html#l00006">6</a> of file <a class="el" href="objective_8h_source.html">objective.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a8c2914f279fd2556006d439d141a6e52"></a>
+<a class="anchor" id="a23873118c60a24edb7ddb675d44a26bd"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -152,7 +158,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -162,13 +168,13 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Implements <a class="el" href="classitem__dim.html#a466c79634e0deeb7bd7d7b45e9bc399d">item_dim</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classcnls__pulse.html#a9a89814ade9f1137c7ddf7ec2698f886">cnls_pulse</a>.</p>
+<p>Implemented in <a class="el" href="classn__pulse__score.html#adfc7d46136caaf90ad9579fe11a291f9">n_pulse_score</a>.</p>
 
-<p>Definition at line <a class="el" href="objective_8cpp_source.html#l00010">10</a> of file <a class="el" href="objective_8cpp_source.html">objective.cpp</a>.</p>
+<p>Definition at line <a class="el" href="objective_8cpp_source.html#l00011">11</a> of file <a class="el" href="objective_8cpp_source.html">objective.cpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="adc1b283996e17fa1ca5567143bc982e6"></a>
+<a class="anchor" id="a8e3dda5e0e8fecde7fb17b7f7267b1e8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -185,7 +191,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -200,21 +206,20 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented from <a class="el" href="classitem__dim.html">item_dim</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classcnls__pulse.html#a374cba5f6f9129dad832b70a72a2ebed">cnls_pulse</a>.</p>
+<p>Implemented in <a class="el" href="classn__pulse__score.html#aa49ee4c7bc271ff88d9c643bdbf4b002">n_pulse_score</a>.</p>
 
-<p>Definition at line <a class="el" href="objective_8cpp_source.html#l00019">19</a> of file <a class="el" href="objective_8cpp_source.html">objective.cpp</a>.</p>
+<p>Definition at line <a class="el" href="objective_8cpp_source.html#l00020">20</a> of file <a class="el" href="objective_8cpp_source.html">objective.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>controller/<a class="el" href="controller_2objective_8h_source.html">objective.h</a></li>
-<li>objective/<a class="el" href="objective_2objective_8h_source.html">objective.h</a></li>
+<li>objective/<a class="el" href="objective_8h_source.html">objective.h</a></li>
 <li>objective/<a class="el" href="objective_8cpp_source.html">objective.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

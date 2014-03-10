@@ -92,207 +92,353 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;set&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;ctime&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">double</span> mom4(comp invals[], <span class="keywordtype">double</span>* kvals, <span class="keywordtype">int</span> len);</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="class__unique__name.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="class__unique__name.html">_unique_name</a>{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    std::set&lt;std::string&gt; names;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    std::string get_unique_name(std::string nbase){</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        nbase.push_back(<span class="charliteral">&#39;_&#39;</span>);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">while</span>(names.count(nbase)){</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;            nbase.push_back(1 | (<span class="keywordtype">char</span>)(rand()));</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        }</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        names.insert(nbase);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <span class="comment">//ensure that the name will not be alread in the engine</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        nbase.push_back(<span class="charliteral">&#39;!&#39;</span>);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordflow">return</span> nbase;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class__unique__name.html">_unique_name</a>(){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        srand(time(0));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;std::string get_unique_name(std::string base){</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <span class="keyword">static</span> <a class="code" href="class__unique__name.html">_unique_name</a> nn;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">return</span> nn.get_unique_name(base);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classjones__matrix.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classjones__matrix.html">jones_matrix</a>:<span class="keyword">public</span> <a class="code" href="classreal8.html" title="Stores a real-valued input.">real8</a>{</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordtype">double</span> a1, a2, a3, ap;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    Eigen::Matrix&lt;comp, 2, 2&gt; wq, wh, wp, j1, j2, j3, jp;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    Eigen::Matrix&lt;comp, 2, 2&gt; mvals;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    Eigen::Matrix&lt;comp, 2, 2&gt; rmat(<span class="keywordtype">double</span> alpha){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Eigen::Matrix&lt;comp, 2, 2&gt; in;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        in(0, 0) = cos(alpha);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        in(0, 1) = -1*sin(alpha);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        in(1, 0)=sin(alpha);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        in(1, 1)=cos(alpha);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">return</span> in;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno"><a class="code" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">   48</a></span>&#160;    <span class="keyword">virtual</span> std::string <a class="code" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">type</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="stringliteral">&quot;jones_matrix&quot;</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">   51</a></span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">update</a>(){</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        j1=rmat(a1)*wq*rmat(-1*a1);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        j2=rmat(a2)*wq*rmat(-1*a2);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        j3=rmat(a3)*wh*rmat(-1*a3);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        jp=rmat(ap)*wp*rmat(-1*ap);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        mvals = j1*jp*j2*j3;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="classjones__matrix.html">jones_matrix</a>(std::vector&lt;variable*&gt; avars, std::string n){</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a>(n);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        wq(1, 0) = wq (0, 1) = 0;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        wq(0, 0)=(comp)cexp(-1*I*3.14159*0.25);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        wq(1, 1)=(comp)cexp(1.0*I*3.14159*0.25);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        wh(1, 0)=wh(0, 1)=0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        wh(0, 0)=-1.0*I;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        wh(1, 1)=1.0*I;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        wp(0, 1)=wp(1, 0)=0;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        wp(0, 0)=1;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        wp(1, 1)=0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        avars[0]-&gt;retrieve(&amp;a1, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        avars[1]-&gt;retrieve(&amp;a2, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        avars[2]-&gt;retrieve(&amp;a3, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        avars[3]-&gt;retrieve(&amp;ap, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">update</a>();</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;};</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">   76</a></span>&#160;std::vector&lt;std::string&gt; <a class="code" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">jones_optical::dependencies</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    std::string deps[] = {<span class="stringliteral">&quot;num_jones_segments&quot;</span>};</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> appendvec(<a class="code" href="classstable__ode.html#a33edb6392535f9d260b625d98713bda5">stable_ode::dependencies</a>(), std::vector&lt;std::string&gt;(deps, deps+1));</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">void</span> jones_optical::postprocess(std::map&lt;std::string, item*&gt;&amp; invals){</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    stable_ode::postprocess(invals);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">if</span>(dimension%2){</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        err(<span class="stringliteral">&quot;System jones_optical requires an even dimension&quot;</span>, <span class="stringliteral">&quot;jones_optical::postprocess&quot;</span>,</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                <span class="stringliteral">&quot;system/jones_optical.cpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">int</span> num_segments;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    invals[<span class="stringliteral">&quot;num_jones_segments&quot;</span>]-&gt;retrieve(&amp;num_segments, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span>(num_segments &lt; 0){</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        err(<span class="stringliteral">&quot;Number of jones segments must be greater than or equal to zero&quot;</span>,</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="stringliteral">&quot;jones_optical::postprocess&quot;</span>, <span class="stringliteral">&quot;system/jones_optical.cpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    help = (<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*dimension/2);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    t = (<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*dimension/2);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    kurtosis_help=(comp*)al_malloc(<span class="keyword">sizeof</span>(comp)*dimension/2);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    phold=(<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*dimension/2);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    nts=dimension/2;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    fback = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_BACKWARD, FFTW_MEASURE);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    ffor = fftw_plan_dft_1d(nts, ucur+nts, ucur+nts, FFTW_FORWARD, FFTW_MEASURE);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordtype">double</span> dt = 60.0/nts;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        t[i] = dt*((double)i-nts/2.0);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    }</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        help[i] = _real(ucur[i]);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">//generate variables for the jones matrices</span></div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="comment">//create jones matrices</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    std::string name_base = <span class="stringliteral">&quot;jones_system_vars&quot;</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    std::string mat_base = <span class="stringliteral">&quot;jones_system_matrices&quot;</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; num_segments; i++){</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        std::vector&lt;variable*&gt; vv(4, (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)0);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++){</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;            vv[j] = <span class="keyword">new</span> <a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>();</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            vv[j]-&gt;holder=holder;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            vv[j]-&gt;setname(get_unique_name(name_base));</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            vv[j]-&gt;set(0);</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;            vv[j]-&gt;parse(<span class="stringliteral">&quot;0.1&quot;</span>);</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;            std::cout &lt;&lt; <span class="stringliteral">&quot;variable name is &quot;</span> &lt;&lt; vv[j]-&gt;name() &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;            invals[vv[j]-&gt;name()]=vv[j];</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;            <span class="keywordflow">if</span>(j != 2){</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                cont-&gt;addvar(vv[j]);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            }</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        <a class="code" href="classjones__matrix.html">jones_matrix</a>* m = <span class="keyword">new</span> <a class="code" href="classjones__matrix.html">jones_matrix</a>(vv, get_unique_name(mat_base));</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;        invals[m-&gt;<a class="code" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>()]=m;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        jones_matrices.push_back(m);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00136"></a><span class="lineno"><a class="code" href="classjones__optical.html#a31387a59d4e2aa0ecd5217bc64bbc0af">  136</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classjones__optical.html#a31387a59d4e2aa0ecd5217bc64bbc0af">jones_optical::pre_integration_operations</a>(){</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    fft(ffor, ucur, ucur, nts);</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    fft(ffor, ucur+nts, ucur+nts, nts);</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;}</div>
-<div class="line"><a name="l00140"></a><span class="lineno"><a class="code" href="classjones__optical.html#a9db3e13eae1309eeb41d9a4942e6fd93">  140</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classjones__optical.html#a9db3e13eae1309eeb41d9a4942e6fd93" title="This applies operations ofter the integration occurs.">jones_optical::post_integration_operations</a>(){</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    Eigen::Map&lt;Eigen::Matrix&lt;comp, 2, Eigen::Dynamic, Eigen::RowMajor&gt;, Eigen::Aligned&gt; dmap(ucur, 2, nts);</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    ifft(fback, ucur, ucur, nts);</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    ifft(fback, ucur+nts, ucur+nts, nts);</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    <span class="comment">//apply the jones matrices</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; jones_matrices.size(); i++){</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        dmap = jones_matrices[i]-&gt;mvals*dmap;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    }</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="code" href="classjones__optical.html#ae3693d14353d62ecb0f711f8f1f9c8a2">  149</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classjones__optical.html#ae3693d14353d62ecb0f711f8f1f9c8a2" title="Returns the difference between the two most recent iterations.">jones_optical::get_change</a>(){</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordtype">double</span> norm, change_norm;</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    norm = change_norm = 0;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; nts; j++){</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        <span class="keywordtype">double</span> fsq = _sqabs(ulast[j]) + _sqabs(ulast[j+nts]);</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        norm += fsq; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        <span class="keywordtype">double</span> cfsq = sqrt(_sqabs(ucur[j]) + _sqabs(ucur[j+nts])) - sqrt(fsq);</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        change_norm += cfsq*cfsq;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">if</span>(norm &lt; 1e-3){</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;            help[i] = _real(ucur[i]);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        }</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">double</span> mom4(comp invals[], <span class="keywordtype">double</span>* kvals, <span class="keywordtype">int</span> len);</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="class__unique__name.html">    8</a></span>&#160;<span class="keyword">class </span><a class="code" href="class__unique__name.html">_unique_name</a>{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::set&lt;std::string&gt; names;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::string get_unique_name(std::string nbase){</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        nbase.push_back(<span class="charliteral">&#39;_&#39;</span>);</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordflow">while</span>(names.count(nbase)){</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;            nbase.push_back(1 | (<span class="keywordtype">char</span>)(rand()));</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        }</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        names.insert(nbase);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">//ensure that the name will not be alread in the engine</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        nbase.push_back(<span class="charliteral">&#39;!&#39;</span>);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">return</span> nbase;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class__unique__name.html">_unique_name</a>(){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        srand(time(0));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;};</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;std::string get_unique_name(std::string base){</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">static</span> <a class="code" href="class__unique__name.html">_unique_name</a> nn;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">return</span> nn.get_unique_name(base);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keywordtype">double</span> gaussrand()</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">double</span> U, V;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keyword">static</span> <span class="keywordtype">int</span> phase = 0;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">double</span> Z;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keywordflow">if</span>(phase == 0) {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        U = (rand() + 1.) / (RAND_MAX + 2.);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        V = rand() / (RAND_MAX + 1.);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        Z = sqrt(-2 * log(U)) * sin(2 * PI * V);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    } <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Z = sqrt(-2 * log(U)) * cos(2 * PI * V);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    phase = 1 - phase;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> Z;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> noise(comp* inval, <span class="keywordtype">double</span> norm, <span class="keywordtype">size_t</span> len){</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        inval[i] = gaussrand() + I*gaussrand();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordtype">double</span> n = 0;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        n += _sqabs(inval[i]);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    n = sqrt(n);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> mval = norm/n;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        inval[i] *= mval;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classjones__matrix.html">   66</a></span>&#160;<span class="keyword">class </span><a class="code" href="classjones__matrix.html">jones_matrix</a>:<span class="keyword">public</span> <a class="code" href="classreal8.html" title="Stores a real-valued input.">real8</a>{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordtype">double</span> a1, a2, a3, ap;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        Eigen::Matrix&lt;comp, 2, 2&gt; wq, wh, wp, j1, j2, j3, jp;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        Eigen::Matrix&lt;comp, 2, 2&gt; mvals;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        Eigen::Matrix&lt;comp, 2, 2&gt; rmat(<span class="keywordtype">double</span> alpha){</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            Eigen::Matrix&lt;comp, 2, 2&gt; in;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            in(0, 0) = cos(alpha);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            in(0, 1) = -1*sin(alpha);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            in(1, 0)=sin(alpha);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            in(1, 1)=cos(alpha);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> in;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">   80</a></span>&#160;        <span class="keyword">virtual</span> std::string <a class="code" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">type</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <span class="keywordflow">return</span> <span class="stringliteral">&quot;jones_matrix&quot;</span>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        }</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">   83</a></span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">update</a>(){</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">/*  a1=2.6562;</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">                a2=1.274936;</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">                a3=5.003272;</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">                ap=2.871042;</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment">                a1=a2 = 0;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment">                a2=.12;</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">                a3=1.2;</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment">                ap=3.4;*/</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            j1=rmat(a1)*wq*rmat(-1*a1);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            j2=rmat(a2)*wq*rmat(-1*a2);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            j3=rmat(a3)*wh*rmat(-1*a3);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;            jp=rmat(ap)*wp*rmat(-1*ap);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            mvals = j1*jp*j2*j3;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        }</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="classjones__matrix.html">jones_matrix</a>(std::vector&lt;variable*&gt; avars, std::string n){</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;            <a class="code" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a>(n);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            wq(1, 0) = wq (0, 1) = 0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            wq(0, 0)=(comp)cexp(-1*I*3.14159*0.25);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            wq(1, 1)=(comp)cexp(1.0*I*3.14159*0.25);</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            wh(1, 0)=wh(0, 1)=0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            wh(0, 0)=-1.0*I;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            wh(1, 1)=1.0*I;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            wp(0, 1)=wp(1, 0)=0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;            wp(0, 0)=1;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            wp(1, 1)=0;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            avars[0]-&gt;retrieve(&amp;a1, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            avars[1]-&gt;retrieve(&amp;a2, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;            avars[2]-&gt;retrieve(&amp;a3, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            avars[3]-&gt;retrieve(&amp;ap, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            <a class="code" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f">update</a>();</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;};</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">  116</a></span>&#160;std::vector&lt;std::string&gt; <a class="code" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">jones_optical::dependencies</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    std::string deps[] = {<span class="stringliteral">&quot;num_jones_segments&quot;</span>, <span class="stringliteral">&quot;jones_int_dist&quot;</span>};</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">return</span> appendvec(<a class="code" href="classstable__spectral__pde__1d.html#a27c2acd1021b3a6cda45c9f1b71425bb">stable_spectral_pde_1d::dependencies</a>(), std::vector&lt;std::string&gt;(deps, deps+2));</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;}</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> jones_optical::postprocess(std::map&lt;std::string, item*&gt;&amp; invals){</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#ifdef gen_t_dat</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;<span class="preprocessor"></span>    func_dat=fopen(<span class="stringliteral">&quot;python/grad_data2.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    func_score = fopen(<span class="stringliteral">&quot;python/score_data2.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="preprocessor"></span>    func_dat=fopen(<span class="stringliteral">&quot;python/grad_data.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    func_score = fopen(<span class="stringliteral">&quot;python/score_data.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor"></span>    stable_spectral_pde_1d::postprocess(invals);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">if</span>(dimension%2){</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        err(<span class="stringliteral">&quot;System jones_optical requires an even dimension&quot;</span>, <span class="stringliteral">&quot;jones_optical::postprocess&quot;</span>,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                <span class="stringliteral">&quot;system/jones_optical.cpp&quot;</span>, FATAL_ERROR);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    }</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    <span class="keywordtype">int</span> num_segments;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    invals[<span class="stringliteral">&quot;num_jones_segments&quot;</span>]-&gt;retrieve(&amp;num_segments, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    <span class="keywordflow">if</span>(num_segments &lt; 0){</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        err(<span class="stringliteral">&quot;Number of jones segments must be greater than or equal to zero&quot;</span>,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                <span class="stringliteral">&quot;jones_optical::postprocess&quot;</span>, <span class="stringliteral">&quot;system/jones_optical.cpp&quot;</span>, FATAL_ERROR);</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    }</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    invals[<span class="stringliteral">&quot;jones_int_dist&quot;</span>]-&gt;retrieve(&amp;jones_int_dist, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    <span class="keywordflow">if</span>(jones_int_dist&lt;0){</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        err(<span class="stringliteral">&quot;The distance between jones segments, jones_int_dist,  must be greater than or equal to zero&quot;</span>,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                <span class="stringliteral">&quot;jones_optical::postprocess&quot;</span>, <span class="stringliteral">&quot;system/jones_optical.cpp&quot;</span>, FATAL_ERROR);</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    help = (<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*nts);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    t = (<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*nts);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    kurtosis_help=(comp*)al_malloc(<span class="keyword">sizeof</span>(comp)*nts);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    phold=(<span class="keywordtype">double</span>*)al_malloc(<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>)*nts);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    nvec1= (comp*)al_malloc(dimension*<span class="keyword">sizeof</span>(comp));</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    nvec2= (<span class="keywordtype">double</span>*)al_malloc(nts*<span class="keyword">sizeof</span>(<span class="keywordtype">double</span>));</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    <span class="keywordtype">double</span> dt = 60.0/nts;</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    noise(ucur, 0.2, dimension); </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        t[i] = dt*((double)i-nts/2.0);</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        help[i] = _real(ucur[i]);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        nvec1[i] = ucur[i];</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; num_pulses; i++){</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        fft(ffor, nvec1 + i*nts, nvec1 +1*nts, nts);</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">return</span> sqrt(change_norm/norm);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;}</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keywordtype">double</span> jones_optical::score(){</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordtype">double</span> ener=0;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    help[0] = sqrt(_sqabs(ucur[0]) + _sqabs(ucur[nts]));</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    ener = help[0];</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    kurtosis_help[0] = help[0];</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 1; i &lt; nts-1; i++){</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        help[i] = _sqabs(ucur[i]) + _sqabs(ucur[nts+i]);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        ener += 2*help[i];</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        help[i]=sqrt(help[i]);</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        kurtosis_help[i] = help[i];</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    help[nts-1]= _sqabs(ucur[nts-1]) + _sqabs(ucur[2*nts-1]);</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    ener += help[nts-1];</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    help[nts-1]=sqrt(help[nts-1]);</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    kurtosis_help[nts-1]=help[nts-1];</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    ener = sqrt(ener);</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    fft(ffor, kurtosis_help, kurtosis_help, nts);</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordtype">double</span> kurtosis_v = 1.0/(mom4(kurtosis_help, 0, nts));</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordtype">double</span> score = log10(fabs(kurtosis_v* ener));</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    <span class="keywordflow">if</span>(score &gt; best_score){</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        best_score = score;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;            phold[i] = help[i];</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        }</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    }</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">return</span> score;</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;}</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;jones_optical::~jones_optical(){</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    FILE* pmax = fopen(<span class="stringliteral">&quot;pmax_sys.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;        fprintf(pmax, <span class="stringliteral">&quot;%d, %lf\n&quot;</span>, i, phold[i]);</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    }</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    fclose(pmax);</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    al_free(help);</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    al_free(t);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    al_free(kurtosis_help);</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    al_free(phold);</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    fftw_destroy_plan(ffor);</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    fftw_destroy_plan(fback);</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;}</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;std::string jones_optical::type()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;jones_optical&quot;</span>;</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;}</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">//generate variables for the jones matrices</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="comment">//create jones matrices</span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    std::string name_base = <span class="stringliteral">&quot;jones_system_vars&quot;</span>;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    std::string mat_base = <span class="stringliteral">&quot;jones_system_matrices&quot;</span>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; num_segments; i++){</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        std::vector&lt;variable*&gt; vv(4, (<a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>*)0);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> j = 0; j &lt; 4; j++){</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            vv[j] = <span class="keyword">new</span> <a class="code" href="classvariable.html" title="stores a real number that is varied during the simulation">variable</a>();</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            vv[j]-&gt;holder=holder;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;            vv[j]-&gt;setname(get_unique_name(name_base));</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;            vv[j]-&gt;parse(<span class="stringliteral">&quot;0.1&quot;</span>);</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;<span class="preprocessor">#ifdef gen_t_dat</span></div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;<span class="preprocessor"></span>            vv[j]-&gt;set(0*2*3.1415*(rand()*1.0/RAND_MAX));</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;<span class="preprocessor"></span>            vv[j]-&gt;set(0);</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;<span class="preprocessor"></span>            invals[vv[j]-&gt;name()]=vv[j];</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            cont-&gt;addvar(vv[j]);</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        }</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <a class="code" href="classjones__matrix.html">jones_matrix</a>* m = <span class="keyword">new</span> <a class="code" href="classjones__matrix.html">jones_matrix</a>(vv, get_unique_name(mat_base));</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;        invals[m-&gt;<a class="code" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>()]=m;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        jones_matrices.push_back(m);</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    }</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keywordtype">double</span> sign(<span class="keywordtype">double</span> v){</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">if</span>(v &lt; 0){</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    }</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;}</div>
+<div class="line"><a name="l00200"></a><span class="lineno"><a class="code" href="classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286">  200</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286">jones_optical::pre_fft_operations</a>(){</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    <span class="keywordflow">if</span>(round==0){</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 0; i &lt; nts; i++){</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;            help[i] = _real(ucur[i]);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;        }</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    <span class="keywordflow">if</span>(round == 1){</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; num_pulses; j++){</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;            fft(ffor, ucur+j*nts, ucur+j*nts, nts);</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;        }</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; dimension; i++){</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;            nvec1[i] = ucur[i];</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        }</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; num_pulses; j++){</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;            ifft(fback, ucur+j*nts, ucur+j*nts, nts);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;        }</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    }</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;<span class="comment">/*    if(round==num_min){</span></div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;<span class="comment">        for(size_t j = 0; j &lt; num_pulses; j++){</span></div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;<span class="comment">            fft(ffor, ucur+j*nts, ucur+j*nts, nts);</span></div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;<span class="comment">        for(size_t i = 0; i &lt; nts; i++){</span></div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;<span class="comment">            nvec2[i] = _sqabs(ucur[i]);        </span></div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;<span class="comment">            for(size_t j = 0; j &lt; num_pulses; j++){</span></div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;<span class="comment">                nvec2[i] += _sqabs(ucur[i+j*nts]);</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;<span class="comment">            }</span></div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;<span class="comment">            nvec2[i] = sqrt(nvec2[i]);</span></div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;<span class="comment">        for(size_t i = 0; i &lt; nts; i++){</span></div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;<span class="comment">            fprintf(func_dat, &quot;%lf &quot;, nvec2[i]);</span></div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;<span class="comment">        fprintf(func_dat, &quot;\n&quot;);</span></div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;<span class="comment">        for(size_t j = 0; j &lt; num_pulses; j++){</span></div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;<span class="comment">            ifft(fback, ucur+j*nts, ucur+j*nts, nts);</span></div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;<span class="comment">        }</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">    }*/</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;}</div>
+<div class="line"><a name="l00240"></a><span class="lineno"><a class="code" href="classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3">  240</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3" title="Applies operations after the integration and ifft()">jones_optical::post_ifft_operations</a>(){</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="comment">//apply the jones matrices, and integration between them</span></div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;    <span class="keywordflow">if</span>(!jones_matrices.empty()){</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;        Eigen::Map&lt;Eigen::Matrix&lt;comp, 2, Eigen::Dynamic, Eigen::RowMajor&gt;, Eigen::Aligned&gt; dmap(ucur, 2, nts);</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;        dmap = jones_matrices[0]-&gt;mvals*dmap;</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">int</span> i = 1; i &lt; jones_matrices.size(); i++){</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; num_pulses; j++){</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                fft(ffor, ucur+j*nts, ucur+j*nts, nts);</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <a class="code" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226" title="This defines the integrator being used.">inter</a>-&gt;<a class="code" href="classintegrator.html#a8bf070f16a46a50ac2cfcd4807ab17b8" title="Integrates the function rh.">integrate</a>(<a class="code" href="classstable__ode.html#a7922535c172528fa46a867434017ec16" title="This defines the rhs that is being integrated.">rh</a>, ucur, tcur, tcur+jones_int_dist);</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; num_pulses; j++){</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;                ifft(fback, ucur+j*nts, ucur+j*nts, nts);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            }</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;            tcur+=jones_int_dist;</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;            dmap = jones_matrices[i]-&gt;mvals*dmap;</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        }</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    }</div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;}</div>
+<div class="line"><a name="l00259"></a><span class="lineno"><a class="code" href="classjones__optical.html#ae3693d14353d62ecb0f711f8f1f9c8a2">  259</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="classjones__optical.html#ae3693d14353d62ecb0f711f8f1f9c8a2" title="Returns the difference between the two most recent iterations.">jones_optical::get_change</a>(){</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">double</span> norm, change_norm;</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    norm = change_norm = 0;</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; nts; j++){</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        <span class="keywordtype">double</span> fsq = _sqabs(ulast[j]);</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 1; i &lt; num_pulses; i++){</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;            fsq += _sqabs(ulast[j+i*nts]);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        }</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        norm += fsq; </div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordtype">double</span> cfsq = _sqabs(ucur[j]) ;</div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 1; i &lt; num_pulses; i++){</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            cfsq += _sqabs(ucur[j+i*nts]);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;        }</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        cfsq = sqrt(cfsq)-sqrt(fsq);</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        change_norm += cfsq*cfsq;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="keywordflow">if</span>(norm &lt; 1e-4){</div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;        <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordtype">double</span> ss = sqrt(change_norm/norm);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;    <span class="keywordflow">if</span>(round &lt; 45 &amp;&amp; ss &lt; 1e-3){</div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        std::cout &lt;&lt; <span class="stringliteral">&quot;stable solution reached, norm not zero&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    }</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    <span class="keywordflow">return</span> ss;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;}</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;<span class="keywordtype">double</span> jones_optical::score(){</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordtype">double</span> score = obj-&gt;score(ucur);</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    data_store dat;</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    dat.avals.resize(4*jones_matrices.size());</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; jones_matrices.size(); i++){</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;        dat.avals[i*4]=jones_matrices[i]-&gt;a1;</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        dat.avals[i*4+1]=jones_matrices[i]-&gt;a2;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        dat.avals[i*4+2]=jones_matrices[i]-&gt;a3;</div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        dat.avals[i*4+3]=jones_matrices[i]-&gt;ap;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;    }</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    dat.score = score;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    out_dat.push_back(dat);</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    <span class="keywordflow">if</span>(score &gt; best_score){</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        best_score = score;</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;        ba1=jones_matrices[0]-&gt;a1;</div>
+<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;        ba2=jones_matrices[0]-&gt;a2;</div>
+<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        ba3=jones_matrices[0]-&gt;a3;</div>
+<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;        bap=jones_matrices[0]-&gt;ap;</div>
+<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; nts; i++){</div>
+<div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;            phold[i] = _sqabs(ucur[i]);</div>
+<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 1; j &lt; num_pulses; j++){</div>
+<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;                phold[i] += _sqabs(ucur[i+j*nts]);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            }</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            phold[i] = sqrt(phold[i]);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        }       </div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    }</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span>(round &lt; max_iterations - 1 &amp;&amp; score &gt; .05){</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        fprintf(func_score, <span class="stringliteral">&quot;%lf 1\n&quot;</span>, score);</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    }</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        fprintf(func_score, <span class="stringliteral">&quot;%lf 0\n&quot;</span>, score);</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">return</span> score;</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;}</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;jones_optical::~jones_optical(){</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;    FILE* pmax;</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    pmax = fopen(out_f_name.c_str(), <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;    std::list&lt;data_store&gt;::iterator it = out_dat.begin();</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;    it++;<span class="comment">//discard this first since it has been replicated</span></div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    <span class="comment">//This also provides a more chaotic base for the later simulations and increases accuracy</span></div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;    <span class="keywordflow">for</span>(; it != out_dat.end(); it++){</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; it-&gt;avals.size(); i++){</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            fprintf(pmax, <span class="stringliteral">&quot;%lf &quot;</span>, it-&gt;avals[i]);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        fprintf(pmax, <span class="stringliteral">&quot;%lf\n&quot;</span>, it-&gt;score);</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;    }</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;    fclose(pmax);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    printf(<span class="stringliteral">&quot;%f, %f, %f, %f\n&quot;</span>, ba1, ba2, ba3, bap);</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;    pmax = fopen(<span class="stringliteral">&quot;pmax.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; nts; i++){</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        fprintf(pmax, <span class="stringliteral">&quot;%d, %lf\n&quot;</span>, (<span class="keywordtype">int</span>)i, phold[i]);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;    }</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    pmax = fopen(<span class="stringliteral">&quot;diff.out&quot;</span>, <span class="stringliteral">&quot;w&quot;</span>);</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; dimension*2; i++){</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        fprintf(pmax, <span class="stringliteral">&quot;%d, %lf\n&quot;</span>, (<span class="keywordtype">int</span>)i, ((<span class="keywordtype">double</span>*)nvec2)[i]);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    }</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    fclose(pmax);</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;    al_free(help);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;    al_free(t);</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    al_free(kurtosis_help);</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    al_free(phold);</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    al_free(nvec1);</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    al_free(nvec2);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    fclose(func_dat);</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;    fclose(func_score);</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;</div>
+<div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;std::string jones_optical::type()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00355"></a><span class="lineno">  355</span>&#160;    <span class="keywordflow">return</span> <span class="stringliteral">&quot;jones_optical&quot;</span>;</div>
+<div class="line"><a name="l00356"></a><span class="lineno">  356</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:23 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

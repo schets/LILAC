@@ -85,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classcontroller-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -127,6 +128,12 @@ virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><b>type</
 <tr class="memitem:a48a0f4d9a92e4c976942e9bc85b3aa37"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a48a0f4d9a92e4c976942e9bc85b3aa37"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>control</b> (comp *u, <a class="el" href="classobjective.html">objective</a> *obj)=0</td></tr>
 <tr class="separator:a48a0f4d9a92e4c976942e9bc85b3aa37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ba8a8ccac0cb7c07e8ea8de46b43cb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6ba8a8ccac0cb7c07e8ea8de46b43cb4"></a>
+virtual char&#160;</td><td class="memItemRight" valign="bottom"><b>is_good</b> ()=0</td></tr>
+<tr class="separator:a6ba8a8ccac0cb7c07e8ea8de46b43cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb85d8f417c37432c5a8a6b87968fb30"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abb85d8f417c37432c5a8a6b87968fb30"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>pre_set</b> ()</td></tr>
+<tr class="separator:abb85d8f417c37432c5a8a6b87968fb30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -134,18 +141,25 @@ Static Public Member Functions</h2></td></tr>
 static <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>create</b> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>)</td></tr>
 <tr class="separator:ab4f7e2c11f394543826e28d190d951f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a8dfaeba3ef7dacae66f455393c33f7c0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8dfaeba3ef7dacae66f455393c33f7c0"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><b>index</b></td></tr>
+<tr class="separator:a8dfaeba3ef7dacae66f455393c33f7c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classitem__dim"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem__dim')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classitem__dim.html">item_dim</a></td></tr>
+<tr class="memitem:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cbb20c8a55447ada9f905599040a7e3"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td></tr>
+<tr class="separator:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
+<tr class="memitem:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a569eb08923d5a28860e5531dc627dedb"></a>
+<a class="el" href="classengineimp.html">engineimp</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>holder</b></td></tr>
+<tr class="separator:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aa42036ac7883f96e470424ebff6d2440"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa42036ac7883f96e470424ebff6d2440"></a>
 std::vector&lt; <a class="el" href="classvariable.html">variable</a> * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vars</b></td></tr>
 <tr class="separator:aa42036ac7883f96e470424ebff6d2440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pub_attribs_classitem__dim"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem__dim')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classitem__dim.html">item_dim</a></td></tr>
-<tr class="memitem:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3cbb20c8a55447ada9f905599040a7e3"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td></tr>
-<tr class="separator:a3cbb20c8a55447ada9f905599040a7e3 inherit pub_attribs_classitem__dim"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This is the base class for the control type classes. </p>
@@ -231,7 +245,7 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td><
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:23 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

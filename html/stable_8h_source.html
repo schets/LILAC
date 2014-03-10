@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: simulation/stable.h Source File</title>
+<title>LILAC: system/stable.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +79,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_7487f41de01cca700e4de80b884d7106.html">simulation</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_e8522150b400a43ebfdbd1fed060b8e2.html">system</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -89,51 +89,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef stable_h</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define stable_h</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;simulation.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;rhs/rhs.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;integrator/integrator.h&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classstable.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstable.html" title="A system that attempts to reach an equilibrium.">stable</a>:<span class="keyword">public</span> <a class="code" href="classsimulation.html">simulation</a>{</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="classstable.html#a8158b1ab70f08c3fa59e01bb043641b7">   15</a></span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classstable.html#a8158b1ab70f08c3fa59e01bb043641b7" title="Maximum number of times the system is iterated before assuming an unstable state.">max_iterations</a>;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classstable.html#ac769a346e2cc948b18ac3f836b006698">   17</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classstable.html#ac769a346e2cc948b18ac3f836b006698" title="The threshold of change between two iterations for which the system will be considered stable...">change_threshold</a>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classstable.html#a4319a1a34ba1c731f8da063d6a4a2333" title="Returns the difference between the two most recent iterations.">get_change</a>() = 0;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//iterates the system forwards in time</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> iterate_system() = 0;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keyword">virtual</span> std::vector&lt;std::string&gt; <a class="code" href="classstable.html#a23034870f1989c0e655f29493ef95f0d">dependencies</a>() <span class="keyword">const</span> = 0;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> postprocess(std::map&lt;std::string, item*&gt;&amp; invals) = 0;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classstable.html#a79279beb50f624ba987b39f890d7d9fc">simulate</a>();</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classstable.html" title="A system that attempts to reach an equilibrium.">stable</a>(){};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;};</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classstable__ode.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability.">stable_ode</a>:<span class="keyword">public</span> <a class="code" href="classstable.html" title="A system that attempts to reach an equilibrium.">stable</a>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">double</span> tcur;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        comp* restr ucur, * restr ulast;</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa">   40</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classstable__ode.html#aca9e5c37012d2bf3dbb199bea49edbaa" title="This is the length of integration for each step.">int_len</a>;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classstable__ode.html#ac7b59df4eb514aebbba3ab85c13b55c3">   42</a></span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classstable__ode.html#ac7b59df4eb514aebbba3ab85c13b55c3" title="This is the starting time.">t0</a>; </div>
-<div class="line"><a name="l00044"></a><span class="lineno"><a class="code" href="classstable__ode.html#a7922535c172528fa46a867434017ec16">   44</a></span>&#160;        <a class="code" href="classrhs.html" title="The rhs base class.">rhs</a>* <a class="code" href="classstable__ode.html#a7922535c172528fa46a867434017ec16" title="This defines the rhs that is being integrated.">rh</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226">   46</a></span>&#160;        <a class="code" href="classintegrator.html" title="This class defines the integration base class.">integrator</a>* <a class="code" href="classstable__ode.html#a3c0d31b5e70e95dccb389b0f357ac226" title="This defines the integrator being used.">inter</a>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="comment">//T!his applies operations before the integration occurs</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> pre_integration_operations();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classstable__ode.html#a67a680b684324b1157d3497992c2b961" title="This applies operations ofter the integration occurs.">post_integration_operations</a>();</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classstable__ode.html#aea94e3860f24457a6cc7119ce6ddcb5f">iterate_system</a>();</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">virtual</span> std::vector&lt;std::string&gt; <a class="code" href="classstable__ode.html#a33edb6392535f9d260b625d98713bda5">dependencies</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> postprocess(std::map&lt;std::string, item*&gt;&amp; invals);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">virtual</span> std::string type() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability.">stable_ode</a>();</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d.html">   65</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstable__spectral__pde__1d.html" title="This class represents the spectral integration of a PDE.">stable_spectral_pde_1d</a>:<span class="keyword">public</span> <a class="code" href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability.">stable_ode</a>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="classstable.html">    7</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstable.html" title="A system that attempts to reach an equilibrium.">stable</a>:<span class="keyword">public</span> <a class="code" href="classsystem.html">system</a>:</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <span class="keywordtype">double</span> get_diff(comp* ucur, comp* u_last) = 0;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="keywordtype">void</span> _iterate_system();</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;        <span class="keywordtype">double</span> simulate();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;};</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:49 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

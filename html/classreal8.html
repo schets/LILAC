@@ -71,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,9 +101,8 @@ Inheritance diagram for real8:</div>
  <div class="center">
   <img src="classreal8.png" usemap="#real8_map" alt=""/>
   <map id="real8_map" name="real8_map">
-<area href="classitem.html" alt="item" shape="rect" coords="46,0,128,24"/>
-<area href="classjones__matrix.html" alt="jones_matrix" shape="rect" coords="0,112,82,136"/>
-<area href="classvariable.html" title="stores a real number that is varied during the simulation" alt="variable" shape="rect" coords="92,112,174,136"/>
+<area href="classitem.html" alt="item" shape="rect" coords="0,0,58,24"/>
+<area href="classvariable.html" title="stores a real number that is varied during the simulation" alt="variable" shape="rect" coords="0,112,58,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -143,19 +142,11 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&#160;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
 <tr class="memitem:aec3d056988f0b215a7f45bfae82f90d2 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#aec3d056988f0b215a7f45bfae82f90d2">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="separator:aec3d056988f0b215a7f45bfae82f90d2 inherit pub_static_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a569eb08923d5a28860e5531dc627dedb"></a>
-<a class="el" href="classengineimp.html">engineimp</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>holder</b></td></tr>
-<tr class="separator:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pro_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitem')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13fa7212061bd53e0db1f52c39a3f339"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
-<tr class="separator:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores a real-valued input. </p>
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00038">38</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="item_8h_source.html#l00036">36</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a35fe48fd04fbca4d382338a7680a983a"></a>
 <div class="memitem">
@@ -182,7 +173,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented from <a class="el" href="classitem.html#a136f583a65c94f9bf565ce9ca7d076b3">item</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00089">89</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00088">88</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -212,7 +203,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented in <a class="el" href="classvariable.html#aaf81d0dce887591c60f396aa03715af6">variable</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00096">96</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00095">95</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +250,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented in <a class="el" href="classvariable.html#a4e45e011ec83ae967f5866b6df6b5631">variable</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00073">73</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00072">72</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -288,9 +279,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Implements <a class="el" href="classitem.html">item</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">jones_matrix</a>.</p>
-
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00081">81</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00080">80</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +290,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 16:04:20 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Feb 4 2014 00:19:50 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

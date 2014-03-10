@@ -101,10 +101,11 @@ Inheritance diagram for rhs:</div>
  <div class="center">
   <img src="classrhs.png" usemap="#rhs_map" alt=""/>
   <map id="rhs_map" name="rhs_map">
-<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="46,56,129,80"/>
-<area href="classitem.html" alt="item" shape="rect" coords="46,0,129,24"/>
+<area href="classitem__dim.html" alt="item_dim" shape="rect" coords="93,56,176,80"/>
+<area href="classitem.html" alt="item" shape="rect" coords="93,0,176,24"/>
 <area href="classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="example_rhs" shape="rect" coords="0,168,83,192"/>
 <area href="classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="rhs_CNLS" shape="rect" coords="93,168,176,192"/>
+<area href="classrhs___s_q_g_l_e.html" alt="rhs_SQGLE" shape="rect" coords="186,168,269,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -138,6 +139,12 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>dimension</b></td><
 <tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13fa7212061bd53e0db1f52c39a3f339"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
 <tr class="separator:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0020fe4550f089fdd232945685f0751c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_write_name</b></td></tr>
+<tr class="separator:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19c29c4c00e11827b4a2f09b7d0575e5"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>has_write_name</b></td></tr>
+<tr class="separator:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The rhs base class. </p>
@@ -177,7 +184,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 <dl class="section return"><dt>Returns</dt><dd>A pointer to the rhs object </dd></dl>
 <dl class="section see"><dt>See Also</dt><dd><a class="el" href="classitem.html#aec3d056988f0b215a7f45bfae82f90d2">item::create</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00020">20</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
+<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00021">21</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
 
 </div>
 </div>
@@ -207,9 +214,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Implements <a class="el" href="classitem__dim.html#a466c79634e0deeb7bd7d7b45e9bc399d">item_dim</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classexample__rhs.html#a3dc4f9a14a9340fb2a12f8bcf3349ce0">example_rhs</a>, and <a class="el" href="classrhs___c_n_l_s.html#a40eaa32cb5b2d1d8478f0fdf289b1898">rhs_CNLS</a>.</p>
+<p>Reimplemented in <a class="el" href="classexample__rhs.html#a3dc4f9a14a9340fb2a12f8bcf3349ce0">example_rhs</a>, <a class="el" href="classrhs___c_n_l_s.html#a40eaa32cb5b2d1d8478f0fdf289b1898">rhs_CNLS</a>, and <a class="el" href="classrhs___s_q_g_l_e.html#af520b94de5c27d5c5d43da8c78b0ef43">rhs_SQGLE</a>.</p>
 
-<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00036">36</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
+<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00040">40</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
 
 </div>
 </div>
@@ -245,9 +252,9 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented from <a class="el" href="classitem__dim.html">item_dim</a>.</p>
 
-<p>Reimplemented in <a class="el" href="classexample__rhs.html#a09f34a92c250bd67adcd2642f4367c95">example_rhs</a>, and <a class="el" href="classrhs___c_n_l_s.html#a5248b4ce9c58312c459dbfc6f5f55a58">rhs_CNLS</a>.</p>
+<p>Reimplemented in <a class="el" href="classexample__rhs.html#a09f34a92c250bd67adcd2642f4367c95">example_rhs</a>, <a class="el" href="classrhs___c_n_l_s.html#a5248b4ce9c58312c459dbfc6f5f55a58">rhs_CNLS</a>, and <a class="el" href="classrhs___s_q_g_l_e.html#a5a18d918a9b7d955f443c212e4ed2112">rhs_SQGLE</a>.</p>
 
-<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00011">11</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
+<p>Definition at line <a class="el" href="rhs_8cpp_source.html#l00012">12</a> of file <a class="el" href="rhs_8cpp_source.html">rhs.cpp</a>.</p>
 
 </div>
 </div>
@@ -258,7 +265,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

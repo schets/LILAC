@@ -129,8 +129,14 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>postprocess</
 <tr class="separator:ab2fe701fc632b52bb9a1ad84965c7b44 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const std::string n)</td></tr>
 <tr class="separator:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a064fd6a60dae7e171b40c913b2a4f5a7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>set_write_name</b> (std::string wname)</td></tr>
+<tr class="separator:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a> () const </td></tr>
 <tr class="separator:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a72060014e9571651db88ffc035f37086"></a>
+const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>write_name</b> () const </td></tr>
+<tr class="separator:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -151,11 +157,17 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a13fa7212061bd53e0db1f52c39a3f339"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td></tr>
 <tr class="separator:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0020fe4550f089fdd232945685f0751c"></a>
+std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_write_name</b></td></tr>
+<tr class="separator:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19c29c4c00e11827b4a2f09b7d0575e5"></a>
+char&#160;</td><td class="memItemRight" valign="bottom"><b>has_write_name</b></td></tr>
+<tr class="separator:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stores a real-valued input. </p>
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00038">38</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="item_8h_source.html#l00043">43</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a35fe48fd04fbca4d382338a7680a983a"></a>
 <div class="memitem">
@@ -182,7 +194,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented from <a class="el" href="classitem.html#a136f583a65c94f9bf565ce9ca7d076b3">item</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00089">89</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00102">102</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -212,7 +224,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented in <a class="el" href="classvariable.html#aaf81d0dce887591c60f396aa03715af6">variable</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00096">96</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00109">109</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +271,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented in <a class="el" href="classvariable.html#a4e45e011ec83ae967f5866b6df6b5631">variable</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00073">73</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00086">86</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,7 +302,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 
 <p>Reimplemented in <a class="el" href="classjones__matrix.html#a3a3b371aa3d53a813a7a12bcea62b3cc">jones_matrix</a>.</p>
 
-<p>Definition at line <a class="el" href="item_8cpp_source.html#l00081">81</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
+<p>Definition at line <a class="el" href="item_8cpp_source.html#l00094">94</a> of file <a class="el" href="item_8cpp_source.html">item.cpp</a>.</p>
 
 </div>
 </div>
@@ -301,7 +313,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>_name</b></td>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Feb 9 2014 15:51:24 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Mar 10 2014 15:15:57 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

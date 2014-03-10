@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['change_5fthreshold',['change_threshold',['../classstable.html#ac769a346e2cc948b18ac3f836b006698',1,'stable']]],
   ['cnls_5fpulse',['cnls_pulse',['../classcnls__pulse.html',1,'']]],
   ['controller',['controller',['../classcontroller.html',1,'']]],
   ['copy',['copy',['../classvariable.html#a5e5ac831bed3a7fe2dd9bd6b447a79a4',1,'variable']]],
