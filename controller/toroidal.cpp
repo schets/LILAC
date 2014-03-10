@@ -53,6 +53,13 @@ std::string toroidal::type() const{
 void toroidal::control(comp* u, objective* obj){
     double curinc = initial_inc;
     num_int++;
+    if(vars.size() == 4 || 1){
+        vars[0]->inc(sqrt(0.11)*100.0*PI/1000.0);
+        vars[1]->inc(sqrt(0.13)*100.0*PI/1000.0);
+        vars[2]->inc(sqrt(0.17)*100.0*PI/1000.0);
+        vars[3]->inc(sqrt(0.19)*100.0*PI/1000.0);
+        return;
+    }
     for(int i = 0; i < vars.size(); i++){
         vars[i]->inc(curinc);
         curinc *= mul_fac;

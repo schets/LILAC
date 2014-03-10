@@ -4,7 +4,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-#define gen_t_dat
 double mom4(comp invals[], double* kvals, int len);
 class _unique_name{
     std::set<std::string> names;
@@ -29,20 +28,20 @@ std::string get_unique_name(std::string base){
 }
 double gaussrand()
 {
-	static double U, V;
-	static int phase = 0;
-	double Z;
+    static double U, V;
+    static int phase = 0;
+    double Z;
 
-	if(phase == 0) {
-		U = (rand() + 1.) / (RAND_MAX + 2.);
-		V = rand() / (RAND_MAX + 1.);
-		Z = sqrt(-2 * log(U)) * sin(2 * PI * V);
-	} else
-		Z = sqrt(-2 * log(U)) * cos(2 * PI * V);
+    if(phase == 0) {
+        U = (rand() + 1.) / (RAND_MAX + 2.);
+        V = rand() / (RAND_MAX + 1.);
+        Z = sqrt(-2 * log(U)) * sin(2 * PI * V);
+    } else
+        Z = sqrt(-2 * log(U)) * cos(2 * PI * V);
 
-	phase = 1 - phase;
+    phase = 1 - phase;
 
-	return Z;
+    return Z;
 }
 void noise(comp* inval, double norm, size_t len){
     for(size_t i = 0; i < len; i++){
@@ -82,14 +81,14 @@ class jones_matrix:public real8{
             return "jones_matrix";
         }
         virtual void update(){
-          /*  a1=2.6562;
-            a2=1.274936;
-            a3=5.003272;
-            ap=2.871042;
-            a1=a2 = 0;
-            a2=.12;
-            a3=1.2;
-            ap=3.4;*/
+            /*  a1=2.6562;
+                a2=1.274936;
+                a3=5.003272;
+                ap=2.871042;
+                a1=a2 = 0;
+                a2=.12;
+                a3=1.2;
+                ap=3.4;*/
             j1=rmat(a1)*wq*rmat(-1*a1);
             j2=rmat(a2)*wq*rmat(-1*a2);
             j3=rmat(a3)*wh*rmat(-1*a3);
@@ -150,9 +149,16 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     phold=(double*)al_malloc(sizeof(double)*nts);
     nvec1= (comp*)al_malloc(dimension*sizeof(comp));
     nvec2= (double*)al_malloc(nts*sizeof(double));
-
+    double dt = 60.0/nts;
     noise(ucur, 0.2, dimension); 
-
+    for(int i = 0; i < nts; i++){
+        t[i] = dt*((double)i-nts/2.0);
+    }
+    for(int i = 0; i < nts; i++){
+        ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
+        help[i] = _real(ucur[i]);
+        nvec1[i] = ucur[i];
+    }
     for(int i = 0; i < num_pulses; i++){
         fft(ffor, nvec1 + i*nts, nvec1 +1*nts, nts);
     }
@@ -169,7 +175,7 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
             vv[j]->setname(get_unique_name(name_base));
             vv[j]->parse("0.1");
 #ifdef gen_t_dat
-            vv[j]->set(2*3.1415*(rand()*1.0/RAND_MAX));
+            vv[j]->set(0*2*3.1415*(rand()*1.0/RAND_MAX));
 #else
             vv[j]->set(0);
 #endif
@@ -193,7 +199,10 @@ double sign(double v){
  */
 void jones_optical::pre_fft_operations(){
     if(round==0){
-        noise(ucur, 5.0, dimension);
+        for(int i = 0; i < nts; i++){
+            ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
+            help[i] = _real(ucur[i]);
+        }
     }
     if(round == 1){
         for(size_t j = 0; j < num_pulses; j++){
@@ -206,7 +215,7 @@ void jones_optical::pre_fft_operations(){
             ifft(fback, ucur+j*nts, ucur+j*nts, nts);
         }
     }
-    if(round==num_min){
+/*    if(round==num_min){
         for(size_t j = 0; j < num_pulses; j++){
             fft(ffor, ucur+j*nts, ucur+j*nts, nts);
         }
@@ -226,7 +235,7 @@ void jones_optical::pre_fft_operations(){
         for(size_t j = 0; j < num_pulses; j++){
             ifft(fback, ucur+j*nts, ucur+j*nts, nts);
         }
-    }
+    }*/
 }
 void jones_optical::post_ifft_operations(){
     //apply the jones matrices, and integration between them
@@ -315,9 +324,8 @@ jones_optical::~jones_optical(){
     //This also provides a more chaotic base for the later simulations and increases accuracy
     for(; it != out_dat.end(); it++){
         for(size_t i = 0; i < it->avals.size(); i++){
-            break;
+
             fprintf(pmax, "%lf ", it->avals[i]);
-            break;
         }
         fprintf(pmax, "%lf\n", it->score);
     }
