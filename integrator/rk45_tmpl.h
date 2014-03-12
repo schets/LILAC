@@ -4,6 +4,7 @@
 #include "integrator.h"
 #include "comp_funcs.cpp"
 #include "rk45.h"
+#include "rhs/rhs_type.h"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the
