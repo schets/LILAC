@@ -1,5 +1,5 @@
 #include "rhs/rhs.h"
-#include "rhs_imp.h"
+#include "rhs_CNLS.h"
 #include "defs.h"
 #include "comp_funcs.h"
 #include <cstring>

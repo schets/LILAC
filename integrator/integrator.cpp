@@ -11,7 +11,10 @@
  * \sa item_dim::dependencies
  */
 std::vector<std::string> integrator::dependencies() const {
-    return item_dim::dependencies();
+    std::string rhsval = "rhs";
+    std::vector<std::string> temp= item_dim::dependencies();
+    temp.push_back(rhsval);
+    return temp;
 }
 
 //! Initiates the integrator from input values
@@ -23,6 +26,7 @@ std::vector<std::string> integrator::dependencies() const {
  */
 void integrator::postprocess(std::map<std::string, item*>& dat){
     item_dim::postprocess(dat); 
+    dat["rhs"]->retrieve(&rh_val, this);
 }
 //!Returns an integrator* corresponding to the string passed
 /*!
@@ -34,7 +38,7 @@ void integrator::postprocess(std::map<std::string, item*>& dat){
  */
 item* integrator::create(std::string inval){
     if(inval=="rk4"){
-        return new rk4();
+        return 0;//new rk4();
     }
     if(inval=="rk45"){
         return new rk45();

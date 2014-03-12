@@ -6,6 +6,7 @@
 #include <sstream>
 #include "../eigen3/Eigen/Eigen"
 #include <memory>
+#include <typeinfo>
 extern "C" {
 #include <complex.h>
 #include "fftw3.h"

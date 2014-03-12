@@ -65,7 +65,7 @@ void stable_ode::iterate_system(){
         ulast[i] = ucur[i];
     }
     this->pre_integration_operations(); 
-    int res = inter->integrate(rh, ucur, tcur, tcur+int_len);
+    int res = inter->integrate(ucur, tcur, tcur+int_len);
     tcur += int_len;
     this->post_integration_operations();
     if(res < 0){

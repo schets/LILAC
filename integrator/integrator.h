@@ -9,11 +9,13 @@
  * the engine to integrate differential equations
  */
 class integrator:public item_dim{
+    protected:
+        rhs* rh_val;
     public:
         static item* create(std::string inval);
         virtual void postprocess(std::map<std::string, item*>& inval);
         //!Deprecated
-        virtual void parse(std::string inval) = 0;
+        virtual void parse(std::string inval){};
         virtual std::vector<std::string> dependencies() const = 0;
         //!Returns the name of the integrator
         virtual std::string type() const = 0;
@@ -25,11 +27,9 @@ class integrator:public item_dim{
          * @param t0 The initial time
          * @param tf The ending time
          */
-        virtual int integrate(rhs* rh, comp* restr u, double t0, double tf) = 0;
+        virtual int integrate(void* restr u, double t0, double tf) = 0;
         //!Blank destructor for integrator
         virtual ~integrator(){}
 };
-//fixed step runge kutta integrator
-
 
 #endif

@@ -70,6 +70,12 @@ void engineimp::needs_updating(std::string name){
     }
     needs_updating(pos->second);
 }
+/*!
+ * Adds an item to the list of items that require updating
+ * Goes by pointer so that items that are not part of the engine
+ * can be updated. Useful for wrapper classes such as the integrators
+ * @param inval Pointer to the item that requires updating
+ */
 void engineimp::needs_updating(item* inval){
     if(!inval){
         err("Null pointer passed to needs_updating", "engineimp::needs_updating",

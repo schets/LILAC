@@ -9,7 +9,18 @@ extern "C"{
 }
 //These are over twice as fast as using the standard library functions,
 //or even using intrinsics. They allow vectorizing
-
+inline double abs(const comp inval){
+        double r, i;
+        r = ((double* restr)&inval)[0];
+        i = ((double* restr)&inval)[1];
+        return std::sqrt(r*r + i*i);
+    }
+inline double abs(const double inval){
+    return std::abs(inval);
+}
+inline float abs(const float inval){
+    return std::abs(inval);
+}
 inline comp cmul(comp _in1, comp _in2){
     double* restr in1 = (double* restr)&_in1;
     double* restr in2 = (double* restr)&_in2;
@@ -69,7 +80,7 @@ inline double energy(double* v, size_t s){
 
 inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
     fftw_execute_dft(pp, in, out);
-    
+
 }
 inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
     fftw_execute_dft(pp, in, out);
@@ -108,5 +119,36 @@ inline void ltoken(std::string& tok, std::string& str, std::string delim=" "){
     tok=str.substr(0, tpos);
     str.erase(0, tpos + delim.length());
 }
-
+//!Hides the contents from the rest of the program
+namespace __HIDER__{
+    //!Create a unique name that cannot already exist in the engine, should never reference directly
+    class _unique_name{
+        std::set<std::string> names;
+        public:
+        std::string get_unique_name(std::string nbase){
+            nbase.push_back('_');
+            while(names.count(nbase)){
+                nbase.push_back(1 | (char)(rand()));
+            }
+            names.insert(nbase);
+            //ensure that the name will not be alread in the engine
+            nbase.push_back('!');
+            return nbase;
+        }
+        _unique_name(){
+            srand(time(0));
+        }
+    };
+}
+/*!
+ * Generates a unique name for an object that is promised never to exist in the engine
+ * as long as all extra names are generated using this function
+ *
+ * @param base The base string with which to generate the name
+ * @return A unique name based on the input string
+ */
+/*inline std::string get_unique_name(std::string base){
+    static __HIDER__::_unique_name nn;
+    return nn.get_unique_name(base);
+}*/
 #endif

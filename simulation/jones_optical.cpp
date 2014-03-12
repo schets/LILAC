@@ -247,7 +247,7 @@ void jones_optical::post_ifft_operations(){
             for(size_t j = 0; j < num_pulses; j++){
                 fft(ffor, ucur+j*nts, ucur+j*nts, nts);
             }
-            inter->integrate(rh, ucur, tcur, tcur+jones_int_dist);
+            inter->integrate(ucur, tcur, tcur+jones_int_dist);
             for(size_t j = 0; j < num_pulses; j++){
                 ifft(fback, ucur+j*nts, ucur+j*nts, nts);
             }

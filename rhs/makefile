@@ -15,12 +15,12 @@ $(LIB_PATH)/rhs_main.o: rhs.cpp $(INLINE_HEADERS)
 	@mkdir -p $(LIB_PATH)
 	@rm -f $(LIB_PATH)/rhs_main.o
 	$(CPP) -c rhs.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_main.o $(CFLAGS)
-$(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp $(INLINE_HEADERS)
+$(LIB_PATH)/rhs_CNLS.o: rhs_CNLS.cpp rhs_type.h $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_CNLS.o
-	$(CPP) -c rhs_CNLS.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_CNLS.o $(FAST_FLAGS) $(CFLAGS)
-$(LIB_PATH)/example_rhs.o: example_rhs.cpp $(INLINE_HEADERS)
+	$(CPP) -c rhs_CNLS.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_CNLS.o  $(CFLAGS) $(FASTMATH)
+$(LIB_PATH)/example_rhs.o: example_rhs.cpp rhs_type.h $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/example_rhs.o
 	$(CPP) -c example_rhs.cpp $(INC_PATH)  -o $(LIB_PATH)/example_rhs.o $(CFLAGS)
-$(LIB_PATH)/rhs_SQGLE.o: rhs_SQGLE.cpp $(INLINE_HEADERS)
+$(LIB_PATH)/rhs_SQGLE.o: rhs_SQGLE.cpp rhs_type.h $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_SQGLE.o
-	$(CPP) -c rhs_SQGLE.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_SQGLE.o $(FAST_FLAGS) $(CFLAGS)
+	$(CPP) -c rhs_SQGLE.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_SQGLE.o $(CFLAGS) $(FASTMATH) 

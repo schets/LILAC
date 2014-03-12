@@ -1,5 +1,5 @@
 #include "rhs.h"
-#include "rhs_imp.h"
+#include "rhs_CNLS.h"
 #include "rhs_SQGLE.h"
 #include "example_rhs.h"
 #include <cstring>

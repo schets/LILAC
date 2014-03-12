@@ -9,7 +9,7 @@
 #include "defs.h"//This file contains many headers that are useful in C/C++, especially for mathematical functions
 
 #include "rhs.h" //This file contains the base class for rhs-type classes
-
+#include "rhs_type.h"//This file contains the template for the base class type
 //The way this works is through polymorphism, which basically means that the engine sees a class of rhs, but is really accessing a class of type example_rhs
 
 
@@ -25,9 +25,12 @@
 /*!This class is an example of a function rhs class.
  * It implements all of the functions needed, and can even be called from
  * the input file. Make sure to read the source file, as it contains a large amount of documentations that is not present in the documentation
+ * Notice that it inherits from rhs_comp, since it is a complex value rhs
+ * Non-complex functions can inherit from rhs_comp as well as long as they provide the proper interface,
+ * but there will be a significant performance and memory penalty for doing so
  * \sa example_rhs.cpp, example_rhs.h, rhs, and item 
  */
-class example_rhs:public rhs{
+class example_rhs:public rhs_type<comp>{
     //up here declare variables that are used internally by the function
     //These may be akin to various parameters, tunable or not
     
