@@ -4,7 +4,7 @@ ifeq ($(CPP), gcc)
 FASTMATH=-funroll-loops -ffast-math -funsafe-loop-optimizations -fstrict-aliasing -O3 
 CFLAGS=-I../ -I./utils -std=c++03 -DGCC -m64 -O3 -march=native
 LD=gcc
-LFLAGS= -lstdc++ -lfftw3 -lm 
+LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm 
 endif
 ifeq ($(CPP), CC)
 export FAST_FLAGS= -ansi-alias -fargument-noalias -fno-alias -funroll-loops -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions
