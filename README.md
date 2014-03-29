@@ -15,12 +15,12 @@ On Linux:
 2. Run the command: git clone https://github.com/schets/LILAC lilac
 3. Enter the lilac directory (cd lilac)
 4. Compile the code by running make
-5. Upon successful compilation, the lilac binary can be found in ithe directory bin
+5. Upon successful compilation, the lilac binary can be found in the directory bin
 
+Or, from to installation directory, copy and paste this into the command line
 
-See the wiki for a tutorial on writing input files, and extending the engine in various manners. The engine is designed so that only a cursory knowledge of C/C++ is needed to write most extensions, and in general extending the code will not involve editing the engine itself.
+git clone https://github.com/schets/LILAC lilac && cd lilac && make
 
-A nice tutorial on C++ can be found at www.cplusplus.com/tutorial, and a tutorial on pointers (arrays in C/C++) can be found at http://pw1.netcom.com/~tjensen/ptr/pointers.htm
 
 TODO (kinda ordered by priority):
 
@@ -30,5 +30,7 @@ TODO (kinda ordered by priority):
 4. Implement stochastic integrators (possibly adaptive/implicit)
 5. Get documentation up to date
 6. Write tutorial files for classes besides rhs.
-7. Allow referring to variables by name in input files
-8. Allow passing specific parameters to variables
+7. Document configuration files
+8. Allow referring to variables by name in input files
+9. Allow passing specific parameters to variables
+10. Remove uneeded dependencies, refactor code
