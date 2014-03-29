@@ -1,8 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="317,5,381,35"/>
-<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a7a2f3a44e13a05372c948dda7685a4b1" title="energy" alt="" coords="204,31,265,60"/>
-<area shape="rect" id="node8" href="$comp__funcs_8hpp.html#a39f683bbe63316ed41170799058a780a" title="This function returns a fourier transform in the forward direction." alt="" coords="216,84,253,113"/>
-<area shape="rect" id="node10" href="$comp__funcs_8hpp.html#a4e1e437d2d5dc78933bdcb1cd149d25e" title="_abs" alt="" coords="209,137,260,167"/>
-<area shape="rect" id="node12" href="$n__pulse__score_8cpp.html#a7cf0c20d7293d7de9dc9f2b430cedd3d" title="kurtosis" alt="" coords="201,191,268,220"/>
-<area shape="rect" id="node14" href="$jones__optical_8cpp.html#a03e97a3c66adb9392c34850e80846095" title="mom4" alt="" coords="320,191,379,220"/>
-</map>
