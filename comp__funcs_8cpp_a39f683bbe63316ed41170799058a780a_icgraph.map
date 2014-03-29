@@ -1,0 +1,9 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$classn__pulse__score.html#a3e5dbebf9482045d538e7cddfcca33cf" title="n_pulse_score::score" alt="" coords="131,5,277,35"/>
+<area shape="rect" id="node5" href="$classrhs___c_n_l_s.html#a052dd3580e873cc7bbc9511c1ac703e4" title="rhs_CNLS::dxdt" alt="" coords="147,59,261,88"/>
+<area shape="rect" id="node7" href="$classrhs___s_q_g_l_e.html#ae902351cd375c45a13275aaca59f6fb1" title="rhs_SQGLE::dxdt" alt="" coords="141,112,267,141"/>
+<area shape="rect" id="node9" href="$classjones__optical.html#a126dfa4c756ead405913b77882c808f0" title="jones_optical::postprocess" alt="" coords="116,165,292,195"/>
+<area shape="rect" id="node11" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre_fft_operations" alt="" coords="99,219,309,248"/>
+<area shape="rect" id="node13" href="$classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3" title="Applies operations after the integration and ifft()" alt="" coords="95,272,313,301"/>
+<area shape="rect" id="node15" href="$comp__funcs_8cpp.html#ac31cb974b2a4aa011a119fe5af67304a" title="Wrapper function for compatibility." alt="" coords="185,325,223,355"/>
+</map>

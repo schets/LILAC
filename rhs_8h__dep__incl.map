@@ -1,0 +1,24 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$integrator_8h.html" title="integrator/integrator.h" alt="" coords="443,83,587,112"/>
+<area shape="rect" id="node9" href="$rk4_8cpp.html" title="integrator/rk4.cpp" alt="" coords="5,237,128,267"/>
+<area shape="rect" id="node15" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="451,315,581,344"/>
+<area shape="rect" id="node23" href="$item_8cpp.html" title="parser/item.cpp" alt="" coords="552,160,664,189"/>
+<area shape="rect" id="node25" href="$jones__optical_8h.html" title="simulation/jones_optical.h" alt="" coords="1028,237,1199,267"/>
+<area shape="rect" id="node31" href="$stable_8h.html" title="simulation/stable.h" alt="" coords="915,160,1045,189"/>
+<area shape="rect" id="node37" href="$main_8cpp.html" title="utils/main.cpp" alt="" coords="688,160,789,189"/>
+<area shape="rect" id="node41" href="$rhs__type_8h.html" title="rhs/rhs_type.h" alt="" coords="1309,83,1413,112"/>
+<area shape="rect" id="node44" href="$example__rhs_8h.html" title="rhs/example_rhs.h" alt="" coords="1171,160,1299,189"/>
+<area shape="rect" id="node48" href="$rhs_8cpp.html" title="rhs/rhs.cpp" alt="" coords="1388,237,1473,267"/>
+<area shape="rect" id="node50" href="$rhs___c_n_l_s_8h.html" title="rhs/rhs_CNLS.h" alt="" coords="1373,160,1488,189"/>
+<area shape="rect" id="node53" href="$rhs___c_n_l_s_8cpp.html" title="rhs/rhs_CNLS.cpp" alt="" coords="1499,237,1629,267"/>
+<area shape="rect" id="node55" href="$rhs___s_q_g_l_e_8h.html" title="rhs/rhs_SQGLE.h" alt="" coords="1512,160,1637,189"/>
+<area shape="rect" id="node58" href="$rhs___s_q_g_l_e_8cpp.html" title="rhs/rhs_SQGLE.cpp" alt="" coords="1655,237,1793,267"/>
+<area shape="rect" id="node5" href="$int__imp_8h.html" title="integrator/int_imp.h" alt="" coords="104,160,237,189"/>
+<area shape="rect" id="node7" href="$integrator_8cpp.html" title="integrator/integrator.cpp" alt="" coords="156,237,313,267"/>
+<area shape="rect" id="node12" href="$rk45_8h.html" title="integrator/rk45.h" alt="" coords="312,160,427,189"/>
+<area shape="rect" id="node17" href="$rk45__tmpl_8h.html" title="integrator/rk45_tmpl.h" alt="" coords="388,237,535,267"/>
+<area shape="rect" id="node27" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="1099,315,1285,344"/>
+<area shape="rect" id="node29" href="$simulation_8cpp.html" title="simulation/simulation.cpp" alt="" coords="907,315,1075,344"/>
+<area shape="rect" id="node35" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="809,237,953,267"/>
+<area shape="rect" id="node46" href="$example__rhs_8cpp.html" title="rhs/example_rhs.cpp" alt="" coords="1223,237,1364,267"/>
+</map>
