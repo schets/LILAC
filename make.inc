@@ -15,6 +15,6 @@ endif
 
 LIB_MAIN=../lib
 MAIN_PATH=..
-INLINE_HEADERS=../utils/*.cpp
+INLINE_HEADERS=../utils/*.hpp
 INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/
 #export FAST_FLAGS= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -guide-vec -scalar-rep -no-prec-div

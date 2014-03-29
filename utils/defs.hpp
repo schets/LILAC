@@ -1,6 +1,8 @@
 #ifndef DEF_H
 #define DEF_H
 //#include <eigen3/Eigen/Eigen>
+
+#include <cstdlib>
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -58,7 +60,6 @@ inline void err(std::string message, std::string function, std::string file, _fa
 }
 inline void err(std::string message, std::string function, std::string file, _warning w){
     std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
-#include <cstdlib>
         "\nError message is:\n"<<message<<"\nContinuing program\n";
 }
 inline void err(std::string message, std::string function, std::string file, item* p, _fatal f){

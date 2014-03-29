@@ -10,7 +10,7 @@
  * iterate_system, which iterates the system forwards one time step
  */
 
-const static size_t num_min = 10;
+const static int num_min = 10;
 class stable:public simulation{
     protected:
         //!Maximum number of times the system is iterated before assuming an unstable state
@@ -35,7 +35,11 @@ class stable:public simulation{
  * This class represents an ODE system that undergoes integration.
  * This class doesn't add too much, but since simple ode systems are so ubiquitous,
  * I think having it encapsulated in a class is important so one doesn't have to
- * rewrite a system every time they want to integrate an ode
+ * rewrite a system every time they want to integrate an ode.
+ *
+ * Note that this class is really a wrapper to a statically typed template class.
+ * This allows the system to choose the type at runtime, and generally be ignorant of the
+ *  variable type of the defined problem. 
  */
 class stable_ode:public stable{
     protected:
@@ -45,8 +49,6 @@ class stable_ode:public stable{
         double int_len;
         //!This is the starting time
         double t0; 
-        //!This defines the rhs that is being integrated
-        rhs* rh;
         //!This defines the integrator being used
         integrator* inter;
         //T!his applies operations before the integration occurs

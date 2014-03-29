@@ -1,3 +1,4 @@
+#pragma once
 #ifndef COMP_FUNCS_H
 #define COMP_FUNCS_H
 #include "defs.h"
@@ -76,19 +77,48 @@ inline double energy(double* v, size_t s){
     return sqrt(sum/2);
 }
 
-//This function returns a normalized fourier transform in either direction
+//!This function returns a fourier transform in the forward direction
 
-inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
-    fftw_execute_dft(pp, in, out);
-
+inline void fft(comp* restr in, comp* restr out, const size_t len){
+    static std::map<size_t, fftw_plan> in_place, out_place;
+    if(in == out){
+        if(!in_place.count(len)){
+            in_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+        }
+        fftw_execute_dft(in_place[len], in, out);
+        return;
+    }
+    if(!out_place.count(len)){
+        out_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+    }
+    fftw_execute_dft(out_place[len], in, out);
 }
-inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
-    fftw_execute_dft(pp, in, out);
+//!Wrapper function for compatibility
+inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
+    fft(in, out, len);
+}
+inline void ifft(comp* restr in, comp* restr out, const size_t len){
+    static std::map<size_t, fftw_plan> in_place, out_place;
+    if(in == out){
+        if(!in_place.count(len)){
+            in_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+        }
+        fftw_execute_dft(in_place[len], in, out);
+    }
+    else{
+        if(!out_place.count(len)){
+            out_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+        }
+        fftw_execute_dft(out_place[len], in, out);
+    }
     double nval;
     nval=1.00/len;
     for(size_t i = 0; i < len; i++){
         out[i]*=nval;
     }
+}
+inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
+    ifft(in, out, len);
 }
 template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b){
     a.insert(a.begin(), b.begin(), b.end());
@@ -148,7 +178,7 @@ namespace __HIDER__{
  * @return A unique name based on the input string
  */
 /*inline std::string get_unique_name(std::string base){
-    static __HIDER__::_unique_name nn;
-    return nn.get_unique_name(base);
-}*/
+  static __HIDER__::_unique_name nn;
+  return nn.get_unique_name(base);
+  }*/
 #endif

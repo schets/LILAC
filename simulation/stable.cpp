@@ -1,6 +1,6 @@
 #include "stable.h"
 #include "objective/objective.h"
-#include "comp_funcs.h"
+#include "utils/comp_funcs.h"
 /*!
  * This function iterates the system forwards in time until it reaches a stable state
  * or a certain number of iterations, 
@@ -75,7 +75,6 @@ void stable_ode::iterate_system(){
 
 void stable_ode::postprocess(std::map<std::string, item*>& invals){
     stable::postprocess(invals);
-    invals["rhs"]->retrieve(&rh, this);
     invals["integrator"]->retrieve(&inter, this);
     invals["t0"]->retrieve(&t0, this);
     tcur = t0;
@@ -100,8 +99,8 @@ std::string stable_ode::type() const{
     return "stable_ode";
 }
 std::vector<std::string> stable_ode::dependencies() const{
-    std::string deps[] = {"rhs", "integrator", "t0", "int_len"};
-    return appendvec(std::vector<std::string>(deps, deps+4), stable::dependencies());
+    std::string deps[] = {"integrator", "t0", "int_len"};
+    return appendvec(std::vector<std::string>(deps, deps+3), stable::dependencies());
 }
 double stable_ode::score(){
     return obj->score(ucur);

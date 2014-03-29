@@ -1,8 +1,8 @@
 #ifndef RK45_TMPL
 #define RK45_TMPL
-#include "../utils/defs.h"
+#include "utils/defs.hpp"
 #include "integrator.h"
-#include "comp_funcs.cpp"
+#include "utils/comp_funcs.hpp"
 #include "rk45.h"
 #include "rhs/rhs_type.h"
 //!Dormand-Prince integrator

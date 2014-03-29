@@ -26,7 +26,7 @@ rhs* rhs::create(std::string tname){
         return new rhs_SQGLE();
     }
     else if(tname=="example_rhs"){
-        err("Example_rhs created", "rhs::create", "rhs/rhs.cpp", WARNING);
+        err("Example_rhs created, mysteriously fails on some architectures", "rhs::create", "rhs/rhs.cpp", WARNING);
         return new example_rhs();
     }
     return 0;

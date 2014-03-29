@@ -1,6 +1,6 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
-#include "defs.h"
+#include "utils/defs.h"
 #include "parser/item.h"
 #include "controller/controller.h"
 #include "objective/objective.h"
