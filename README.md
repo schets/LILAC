@@ -29,8 +29,10 @@ TODO (kinda ordered by priority):
 3. Implement neural network model
 4. Implement stochastic integrators (possibly adaptive/implicit)
 5. Get documentation up to date
-6. Write tutorial files for classes besides rhs.
+6. Write tutorial files for classes besides rhs
 7. Document configuration files
 8. Allow referring to variables by name in input files
 9. Allow passing specific parameters to variables
-10. Remove uneeded dependencies, refactor code
+10. Write map/fold scripts for analyzing output
+11. Refactor LSODA to run in integrator system
+12. Remove uneeded dependencies, refactor code
