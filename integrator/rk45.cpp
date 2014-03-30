@@ -20,18 +20,18 @@ std::string rk45::type() const{
 }
 void rk45::postprocess(std::map<std::string, item*>& dat){
     integrator::postprocess(dat);
-    if(rh_val->val_type() == typeid(comp).name()){
+    if(rh_val->compare<comp>()){
         actual = new rk45_tmpl<comp>();
     }
-    else if(rh_val->val_type() == typeid(double).name()){
+    else if(rh_val->compare<double>()){
         actual = new rk45_tmpl<double>();
     }
-    else if(rh_val->val_type() == typeid(float).name()){
+    else if(rh_val->compare<float>()){
         actual = new rk45_tmpl<float>();
     }
     else{
         std::string errmess = "rhs type ";
-        errmess.append(rh_val->val_type());
+        errmess.append(rh_val->vname());
         errmess.append(" not recognized");
         err(errmess, "rk45::postprocess", "integrator/rk45.cpp", FATAL_ERROR);
     }

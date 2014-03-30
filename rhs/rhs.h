@@ -2,6 +2,7 @@
 #define RHS_H
 #include "../utils/defs.h"
 #include "../parser/item.h"
+#include "../utils/vartype.hpp"
 //!The rhs base class
 /*! \class rhs
  * The RHS class provides the RHS of an equation du/dt = f(u)
@@ -14,13 +15,13 @@
  * \sa integrator  
  * 
  * */
-class rhs:public item_dim{
+class rhs:public item_dim, public vartype{
 
         public:
         static rhs* create(std::string tname);
-        virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, item*>& dat);
-        virtual std::string val_type() const = 0;
+        std::vector<std::string> dependencies() const;
+        void postprocess(std::map<std::string, item*>& dat);
+         
         /*!\brief
          * Creates the base rhs class with a dimension=dimen
          */

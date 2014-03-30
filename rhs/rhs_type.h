@@ -14,16 +14,16 @@
  */
 template<typename T> class rhs_type:public rhs{
     public:
-    virtual std::string val_type() const{
-        return typeid(T).name();
+    const std::type_info& vtype() const{
+        return typeid(T);
     }
-    virtual std::vector<std::string> dependencies() const{
+    std::vector<std::string> dependencies() const{
         return rhs::dependencies();
     }
     void postprocess(std::map<std::string, item*>& dat){
         rhs::postprocess(dat);
     }
-    inline int dxdt(void* restr x, void* restr dx, double t){
+    int dxdt(void* restr x, void* restr dx, double t){
         return dxdt((T* restr)x, (T* restr)dx, t);
     }
     virtual int dxdt(T* restr x, T* restr dx, double t) = 0;

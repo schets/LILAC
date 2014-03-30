@@ -20,11 +20,14 @@ class vartype{
         inline bool compare(const vartype& in) const{
             return vtype() == in.vtype();
         }
-        template<typename T> inline bool compare(){
+        template<typename T> inline bool compare() const{
+            return vtype() == typeid(T);
+        } 
+        template<typename T> inline bool compare(const T& in) const{
             return vtype() == typeid(T);
         }
-        template<typename T> inline bool compare(const T& in){
-            return vtype() == typeid(T);
+        inline std::string vname() const{
+            return vtype().name();
         }
         virtual ~vartype(){};
 };
