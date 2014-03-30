@@ -126,20 +126,15 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
     dat["g0"]->retrieve(&g0, this);
     dat["e0"]->retrieve(&e0, this);
     u1 = (comp*)al_malloc(NUM_TIME_STEPS*(6*sizeof(comp)));
-    u2 = u1+NUM_TIME_STEPS;//(comp*)al_malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_in = u2+NUM_TIME_STEPS;//(comp*)al_malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_out = comp_in+NUM_TIME_STEPS;//(comp*)al_malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_out_r = comp_out+NUM_TIME_STEPS;//(comp*)al_malloc(NUM_TIME_STEPS*sizeof(comp));
-    comp_in_r = comp_out_r+NUM_TIME_STEPS;//(comp*)al_malloc(NUM_TIME_STEPS*sizeof(comp));
-    sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
+    u2 = u1+NUM_TIME_STEPS;
+    comp_in = u2+NUM_TIME_STEPS;
+    comp_in_r = comp_in+NUM_TIME_STEPS;
+    comp_out = comp_in_r+NUM_TIME_STEPS;
+    comp_out_r = comp_out+NUM_TIME_STEPS;
+    sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double) * 4);
     sq2 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     k = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    //input arrays don't really matter here because the plan
-    //is executed against specific input arrays at runtime
-    //and not with the initialization arrays
-    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
-    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
     //create k values
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);

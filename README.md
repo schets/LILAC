@@ -7,6 +7,8 @@ You can find documentation on the [wiki](http://github.com/schets/LILAC/wiki), a
 Installation:
 This project depends on [FFTW](www.fftw.org), and the makefile has configurations for GCC and the Intel C++ Compiler. These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
 
+The library Eigen3 is included with the source. This is done to simplify installation, especially on NERSC which is iffy about non-standard libraries. Eigen3 is a set of headers, so no work is required on the aprt of the user.
+
 Once you have installed FFTW, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
 
 On Linux:
@@ -28,11 +30,12 @@ TODO (kinda ordered by priority):
 2. Implement generic data storage and io modules
 3. Implement neural network model
 4. Implement stochastic integrators (possibly adaptive/implicit)
-5. Remove uneeded dependencies, refactor code
-6. Write tutorial files for classes besides rhs
-7. Document configuration files
-8. Allow referring to variables by name in input files
-9. Allow passing specific parameters to variables
-10. Write map/fold scripts for analyzing output
-11. Refactor LSODA to run in integrator system
-12. Get documentation up to date
+5. Implement memory pool for aligned and 'local' memory
+6. Remove uneeded dependencies, refactor code
+7. Write tutorial files for classes besides rhs
+8. Document configuration files
+9. Allow referring to variables by name in input files
+10. Allow passing specific parameters to variables
+11. Write map-fold scripts for analyzing output
+12. Refactor LSODA to run in integrator system
+13. Get documentation up to date

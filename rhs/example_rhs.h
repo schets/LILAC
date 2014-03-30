@@ -1,5 +1,5 @@
 //! This files is the example header
-/*! \file This is an example file for how to add a new function that can be integrated
+/*! \file This is an example file for how to add a new function that can be integrated, for someone new to C++
 * As of now, this represents the current state of the engine.
 * Since the engine is still being developed, this example will change with it.
 * For example, I already have some semi-significant changes planned to facilitate
@@ -25,9 +25,10 @@
 /*!This class is an example of a function rhs class.
  * It implements all of the functions needed, and can even be called from
  * the input file. Make sure to read the source file, as it contains a large amount of documentations that is not present in the documentation
- * Notice that it inherits from rhs_comp, since it is a complex value rhs
- * Non-complex functions can inherit from rhs_comp as well as long as they provide the proper interface,
- * but there will be a significant performance and memory penalty for doing so
+ * Notice that it inherits from rhs_type<comp>, since it is a complex value rhs.
+ * An rhs that dealt with real variables would inherit from rhs_type<double>.
+ * A class does not have to inherit from rhs_type, as long as it implements a type function.
+ * It would also have to implement dxdt in terms of void* instead of comp* or double* or whatever.
  * \sa example_rhs.cpp, example_rhs.h, rhs, and item 
  */
 class example_rhs:public rhs_type<comp>{

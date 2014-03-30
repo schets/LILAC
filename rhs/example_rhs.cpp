@@ -1,5 +1,5 @@
 //! This file is the source file for the example header
-/*! \file This is the .cpp file for the example rhs function
+/*! \file This is the .cpp file for the example rhs function, with docs for someone new to C++
  * It contains some basic test functions, as well as extra in-function
  * documentation explaining most steps and various details
  * */
