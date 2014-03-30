@@ -1,0 +1,14 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$integrator_8h.html" title="integrator.h" alt="" coords="449,237,535,267"/>
+<area shape="rect" id="node49" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="377,315,463,344"/>
+<area shape="rect" id="node57" href="$comp__funcs_8h.html" title="../utils/comp_funcs.h" alt="" coords="804,83,948,112"/>
+<area shape="rect" id="node68" href="$rk45_8h.html" title="rk45.h" alt="" coords="529,160,588,189"/>
+<area shape="rect" id="node72" href="$rk45__tmpl_8h.html" title="rk45_tmpl.h" alt="" coords="613,83,704,112"/>
+<area shape="rect" id="node5" href="$defs_8h.html" title="../utils/defs.h" alt="" coords="523,392,621,421"/>
+<area shape="rect" id="node35" href="$item_8h.html" title="../parser/item.h" alt="" coords="35,547,144,576"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html" title="defs.hpp" alt="" coords="700,469,772,499"/>
+<area shape="rect" id="node25" href="$fftw3_8h.html" title="fftw3.h" alt="" coords="1269,547,1331,576"/>
+<area shape="rect" id="node53" href="$vartype_8hpp.html" title="../utils/vartype.hpp" alt="" coords="225,469,356,499"/>
+<area shape="rect" id="node59" href="$comp__funcs_8hpp.html" title="comp_funcs.hpp" alt="" coords="991,315,1108,344"/>
+<area shape="rect" id="node78" href="$rhs__type_8h.html" title="rhs/rhs_type.h" alt="" coords="609,237,713,267"/>
+</map>

@@ -1,0 +1,12 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="636,392,735,421"/>
+<area shape="rect" id="node45" href="$integrator_8h.html" title="integrator.h" alt="" coords="801,160,887,189"/>
+<area shape="rect" id="node58" href="$comp__funcs_8hpp.html" title="utils/comp_funcs.hpp" alt="" coords="105,237,252,267"/>
+<area shape="rect" id="node66" href="$rk45_8h.html" title="rk45.h" alt="" coords="739,83,797,112"/>
+<area shape="rect" id="node70" href="$rhs__type_8h.html" title="rhs/rhs_type.h" alt="" coords="911,160,1015,189"/>
+<area shape="rect" id="node21" href="$fftw3_8h.html" title="fftw3.h" alt="" coords="55,469,116,499"/>
+<area shape="rect" id="node31" href="$item_8h.html" title="../parser/item.h" alt="" coords="1241,469,1351,499"/>
+<area shape="rect" id="node47" href="$defs_8h.html" title="../utils/defs.h" alt="" coords="723,315,821,344"/>
+<area shape="rect" id="node50" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="920,237,1005,267"/>
+<area shape="rect" id="node54" href="$vartype_8hpp.html" title="../utils/vartype.hpp" alt="" coords="999,392,1129,421"/>
+</map>
