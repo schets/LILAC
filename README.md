@@ -7,11 +7,10 @@ You can find documentation on the [wiki](http://github.com/schets/LILAC/wiki), a
 Installation:
 This project depends on [FFTW](www.fftw.org), and the makefile has configurations for GCC and the Intel C++ Compiler. These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
 
-The library Eigen3 is included with the source. This is done to simplify installation, especially on NERSC which is iffy about non-standard libraries. Eigen3 is a set of headers, so no work is required on the aprt of the user.
+The library Eigen3 is included with the source. This is done to simplify installation, especially on NERSC which is iffy about non-standard libraries. Eigen3 is a set of headers, so no work is required on the part of the user.
 
-Once you have installed FFTW, you can proceed to download and compile LILAC. LILAC can be downloaded without git by going to the github page and manually downloading the file, but using git as a version control is much more convinient and less error prone.
 
-On Linux:
+Installation on Linux:
 
 1. From the command line, proceed to the directory in which you want to have lilac installed.
 2. Run the command: git clone https://github.com/schets/LILAC lilac

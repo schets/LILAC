@@ -13,7 +13,19 @@
  */
 class vartype{
     public:
-        virtual const std::type_info& vtype() = 0;
+        virtual const std::type_info& vtype() const = 0;
+        inline bool compare(const vartype* in) const{
+            return vtype() == in->vtype();
+        }
+        inline bool compare(const vartype& in) const{
+            return vtype() == in.vtype();
+        }
+        template<typename T> inline bool compare(){
+            return vtype() == typeid(T);
+        }
+        template<typename T> inline bool compare(const T& in){
+            return vtype() == typeid(T);
+        }
         virtual ~vartype(){};
 };
 
