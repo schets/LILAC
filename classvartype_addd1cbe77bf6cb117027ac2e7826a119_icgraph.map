@@ -1,6 +1,0 @@
-<map id="vartype::vtype" name="vartype::vtype">
-<area shape="rect" id="node3" href="$classvartype.html#af737847af21866d6ca14949b67683f42" title="vartype::compare" alt="" coords="160,5,283,35"/>
-<area shape="rect" id="node10" href="$classvartype.html#a29b5d676675f9fb86d757791ec9777f7" title="vartype::vname" alt="" coords="165,59,277,88"/>
-<area shape="rect" id="node5" href="$classtype__constructor.html#a96576ad090a175c68ce60b308b085fea" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="331,32,493,61"/>
-<area shape="rect" id="node7" href="$classrk45.html#abe4bcde81ff2ed80cdf5f3144cd91c90" title="Initiates the integrator from input values." alt="" coords="543,32,668,61"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="rk45_tmpl&lt; T &gt;" name="rk45_tmpl&lt; T &gt;">
-<area shape="rect" id="node2" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="37,453,83,483"/>
-<area shape="rect" id="node4" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="45,357,120,387"/>
-<area shape="rect" id="node6" href="$classitem__dim.html" title="item_dim" alt="" coords="123,181,197,211"/>
-<area shape="rect" id="node14" href="$classrhs.html" title="The rhs base class." alt="" coords="19,261,59,291"/>
-<area shape="rect" id="node8" href="$classitem.html" title="item" alt="" coords="137,101,183,131"/>
-<area shape="rect" id="node10" href="$classengineimp.html" title="engineimp" alt="" coords="120,5,200,35"/>
-<area shape="rect" id="node12" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="19,181,83,211"/>
-</map>
