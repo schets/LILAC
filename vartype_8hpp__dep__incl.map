@@ -1,0 +1,28 @@
+<map id="utils/vartype.hpp" name="utils/vartype.hpp">
+<area shape="rect" id="node3" href="$rhs_8h.html" title="rhs/rhs.h" alt="" coords="1072,83,1144,112"/>
+<area shape="rect" id="node5" href="$integrator_8h.html" title="integrator/integrator.h" alt="" coords="427,160,571,189"/>
+<area shape="rect" id="node78" href="$type__constructor_8hpp.html" title="utils/type_constructor.hpp" alt="" coords="52,83,223,112"/>
+<area shape="rect" id="node11" href="$rk4_8cpp.html" title="integrator/rk4.cpp" alt="" coords="60,315,183,344"/>
+<area shape="rect" id="node17" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="523,392,653,421"/>
+<area shape="rect" id="node28" href="$item_8cpp.html" title="parser/item.cpp" alt="" coords="759,237,871,267"/>
+<area shape="rect" id="node30" href="$jones__optical_8h.html" title="simulation/jones_optical.h" alt="" coords="864,315,1035,344"/>
+<area shape="rect" id="node36" href="$stable_8h.html" title="simulation/stable.h" alt="" coords="1047,237,1177,267"/>
+<area shape="rect" id="node42" href="$main_8cpp.html" title="utils/main.cpp" alt="" coords="633,237,735,267"/>
+<area shape="rect" id="node46" href="$rhs__type_8h.html" title="rhs/rhs_type.h" alt="" coords="1289,160,1393,189"/>
+<area shape="rect" id="node49" href="$example__rhs_8h.html" title="rhs/example_rhs.h" alt="" coords="1225,237,1353,267"/>
+<area shape="rect" id="node53" href="$rhs_8cpp.html" title="rhs/rhs.cpp" alt="" coords="1443,315,1528,344"/>
+<area shape="rect" id="node55" href="$rhs___c_n_l_s_8h.html" title="rhs/rhs_CNLS.h" alt="" coords="1428,237,1543,267"/>
+<area shape="rect" id="node58" href="$rhs___c_n_l_s_8cpp.html" title="rhs/rhs_CNLS.cpp" alt="" coords="1553,315,1684,344"/>
+<area shape="rect" id="node60" href="$rhs___s_q_g_l_e_8h.html" title="rhs/rhs_SQGLE.h" alt="" coords="1567,237,1692,267"/>
+<area shape="rect" id="node63" href="$rhs___s_q_g_l_e_8cpp.html" title="rhs/rhs_SQGLE.cpp" alt="" coords="1709,315,1848,344"/>
+<area shape="rect" id="node72" href="$rhs__type_8hpp.html" title="rhs/rhs_type.hpp" alt="" coords="1097,160,1215,189"/>
+<area shape="rect" id="node7" href="$int__imp_8h.html" title="integrator/int_imp.h" alt="" coords="135,237,268,267"/>
+<area shape="rect" id="node9" href="$integrator_8cpp.html" title="integrator/integrator.cpp" alt="" coords="207,315,364,344"/>
+<area shape="rect" id="node14" href="$rk45_8h.html" title="integrator/rk45.h" alt="" coords="393,237,508,267"/>
+<area shape="rect" id="node19" href="$rk45__tmpl_8h.html" title="integrator/rk45_tmpl.h" alt="" coords="625,315,772,344"/>
+<area shape="rect" id="node22" href="$rk45__tmpl_8hpp.html" title="integrator/rk45_tmpl.hpp" alt="" coords="388,315,551,344"/>
+<area shape="rect" id="node32" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="856,392,1043,421"/>
+<area shape="rect" id="node34" href="$simulation_8cpp.html" title="simulation/simulation.cpp" alt="" coords="1111,392,1279,421"/>
+<area shape="rect" id="node40" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="1059,315,1203,344"/>
+<area shape="rect" id="node51" href="$example__rhs_8cpp.html" title="rhs/example_rhs.cpp" alt="" coords="1277,315,1419,344"/>
+</map>

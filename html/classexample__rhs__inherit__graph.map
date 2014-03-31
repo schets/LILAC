@@ -1,0 +1,7 @@
+<map id="example_rhs" name="example_rhs">
+<area shape="rect" id="node2" href="$classrhs__type.html" title="rhs_type\&lt; comp \&gt;" alt="" coords="25,237,153,267"/>
+<area shape="rect" id="node4" href="$classrhs.html" title="The rhs base class." alt="" coords="69,160,109,189"/>
+<area shape="rect" id="node6" href="$classitem__dim.html" title="item_dim" alt="" coords="5,83,80,112"/>
+<area shape="rect" id="node8" href="$classitem.html" title="item" alt="" coords="20,5,65,35"/>
+<area shape="rect" id="node10" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="104,83,168,112"/>
+</map>

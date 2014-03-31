@@ -1,0 +1,13 @@
+<map id="simulation/jones_optical.h" name="simulation/jones_optical.h">
+<area shape="rect" id="node3" href="$integrator_8h.html" title="integrator/integrator.h" alt="" coords="888,237,1032,267"/>
+<area shape="rect" id="node5" href="$defs_8h.html" title="../utils/defs.h" alt="" coords="915,392,1013,421"/>
+<area shape="rect" id="node49" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="784,315,869,344"/>
+<area shape="rect" id="node60" href="$controller_8h.html" title="controller/controller.h" alt="" coords="1259,237,1400,267"/>
+<area shape="rect" id="node64" href="$objective_8h.html" title="objective/objective.h" alt="" coords="1208,315,1349,344"/>
+<area shape="rect" id="node72" href="$stable_8h.html" title="stable.h" alt="" coords="856,83,923,112"/>
+<area shape="rect" id="node35" href="$item_8h.html" title="../parser/item.h" alt="" coords="1240,547,1349,576"/>
+<area shape="rect" id="node53" href="$vartype_8hpp.html" title="../utils/vartype.hpp" alt="" coords="333,469,464,499"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html" title="defs.hpp" alt="" coords="696,469,768,499"/>
+<area shape="rect" id="node25" href="$fftw3_8h.html" title="fftw3.h" alt="" coords="53,547,115,576"/>
+<area shape="rect" id="node74" href="$simulation_8h.html" title="simulation.h" alt="" coords="1075,160,1165,189"/>
+</map>

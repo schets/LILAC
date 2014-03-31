@@ -1,0 +1,15 @@
+<map id="controller/controller.h" name="controller/controller.h">
+<area shape="rect" id="node3" href="$controller_8cpp.html" title="controller/controller.cpp" alt="" coords="5,169,163,199"/>
+<area shape="rect" id="node5" href="$toroidal_8h.html" title="controller/toroidal.h" alt="" coords="195,83,325,112"/>
+<area shape="rect" id="node10" href="$engine__run_8cpp.html" title="parser/engine_run.cpp" alt="" coords="408,169,557,199"/>
+<area shape="rect" id="node12" href="$simulation_8h.html" title="simulation/simulation.h" alt="" coords="565,83,720,112"/>
+<area shape="rect" id="node15" href="$item_8cpp.html" title="parser/item.cpp" alt="" coords="581,169,693,199"/>
+<area shape="rect" id="node19" href="$jones__optical_8h.html" title="simulation/jones_optical.h" alt="" coords="516,256,687,285"/>
+<area shape="rect" id="node32" href="$rhs___s_q_g_l_e_8cpp.html" title="rhs/rhs_SQGLE.cpp" alt="" coords="744,83,883,112"/>
+<area shape="rect" id="node8" href="$toroidal_8cpp.html" title="controller/toroidal.cpp" alt="" coords="187,169,333,199"/>
+<area shape="rect" id="node17" href="$stable_8h.html" title="simulation/stable.h" alt="" coords="717,169,848,199"/>
+<area shape="rect" id="node23" href="$simulation_8cpp.html" title="simulation/simulation.cpp" alt="" coords="808,333,976,363"/>
+<area shape="rect" id="node29" href="$stable__ode__tmpl_8hpp.html" title="simulation/stable_ode\l_tmpl.hpp" alt="" coords="872,161,1019,207"/>
+<area shape="rect" id="node26" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="711,256,855,285"/>
+<area shape="rect" id="node21" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="508,333,695,363"/>
+</map>
