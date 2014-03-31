@@ -64,68 +64,81 @@ template<template<class> class Tin>
 class type_constructor{
     //! This is an internal polymorphic base class. It returns a pointer of type tout.
     template<class Tout>
-    class _ttype{
-        public:
-            virtual Tout* create() = 0;
-            virtual ~_ttype(){}
-    };
+        class _ttype{
+            public:
+                virtual Tout* create() = 0;
+                virtual ~_ttype(){}
+        };
     //!This is the actual creator class. It creates a pointer of Tin with the template parameter Tval
     template<class Tval, class Tout>
-    class ttype: public _ttype<Tout>{
-        public:
-            //!Returns a Tin<Tval>* casted up to a Tout*
-            Tout* create(){
-                return new Tin<Tval>();
-            }
-            virtual ~ttype(){}
-    };
+        class ttype: public _ttype<Tout>{
+            public:
+                //!Returns a Tin<Tval>* casted up to a Tout*
+                Tout* create(){
+                    return new Tin<Tval>();
+                }
+                virtual ~ttype(){}
+        };
     public:
-        //!Creates a Tout* pointing to a Tin<type>*, where type is the type of the vartype tval.
-        /*!
-         *
-         * This function is the core of the type constructor. If the type of the parameter tval is
-         * type, then it returns a Tin<type>* casted up to a Tout. Notice that all instances of Tin
-         * must be able to be casted up to a Tout. This is also only useful if the needed functionality
-         * is polymorphic.
-         *
-         * This version of the function is nice because it doesn't require that the user specify a second
-         * template parameter, namely the Tout parameter.
-         *
-         * Supported types are currently: comp, double, float. To add your own, simply add another
-         * if statement to the list. Hopefully, this will soon be done by iterating over a typelist
-         * instead of this list of if statements
-         *
-         *
-         */
-        template<class Tout, class = typename std::enable_if<std::is_base_of<vartype, Tout>::value >::type>
-        static void create(Tout** in, const vartype* tval){
-            _ttype<Tout>* temp;
-            //Replace with typelist iteration
-            if(tval->compare<comp>()){
-                temp = new ttype<comp, Tout>();
+    //!Class for iterating over a list of types
+    template<class ...P>
+        class typelist{
+            template<class Tout, class Tf, class ...Tl>
+                static  _ttype<Tout>* __create(const vartype* tval){
+                    if(tval->compare<Tf>()){
+                        return new ttype<Tf, Tout>();
+                    }
+                    else return __create<Tout, Tl...>(tval);
+                }
+            template<class Tout>
+                static  _ttype<Tout>* __create(const vartype* tval){
+                    //has failed creation process
+                    std::string val("Type ");
+                    val.append(tval->vname());
+                    val.append(" is not recognized as a valid input type for ");
+                    val.append(typeid(Tout).name());
+                    err(val, "typelist::__create", "utils/type_constructor.hpp", FATAL_ERROR);
+                    return 0;//This simply satisfies static analyzers, err will always exit in this case
+                }
+            template<class Tout>
+                static void create(_ttype<Tout>** in, const vartype* val){
+                    (*in)= __create<Tout, P...>(val);
+                }
+
+            friend class type_constructor<Tin>;
+        };
+    typedef typelist<comp, double, float, long double> std_type_list;
+
+    //!Creates a Tout* pointing to a Tin<type>*, where type is the type of the vartype tval.
+    /*!
+     *
+     * This function is the core of the type constructor. If the type of the parameter tval is
+     * type, then it returns a Tin<type>* casted up to a Tout. Notice that all instances of Tin
+     * must be able to be casted up to a Tout. This is also only useful if the needed functionality
+     * is polymorphic.
+     *
+     * This version of the function is nice because it doesn't require that the user specify a second
+     * template parameter, namely the Tout parameter.
+     *
+     * Supported types are currently: comp, double, float. To add your own, simply add another
+     * if statement to the list. Hopefully, this will soon be done by iterating over a typelist
+     * instead of this list of if statements
+     *
+     *
+     */
+    template<class Tout, class Tl = std_type_list,
+        class = typename std::enable_if<std::is_base_of<vartype, Tout>::value >::type>
+            static void create(Tout** in, const vartype* tval){
+                _ttype<Tout>* temp;
+                Tl::create(&temp, tval);
+                (*in) = temp->create();
+                delete temp;
             }
-            else if(tval->compare<double>()){
-                temp = new ttype<double, Tout>();
-            }
-            else if(tval->compare<float>()){
-                temp = new ttype<float, Tout>();
-            }
-            else{
-                std::string val("Type ");
-                val.append(tval->vname());
-                val.append(" is not recognized as a valid input type for ");
-                val.append(typeid(Tout).name());
-                err(val, "type_constructor::create", "utils/type_constructor.hpp", FATAL_ERROR);
-                return;//This simply satisfies static analyzers, err will always exit in this case
-            }
-            (*in) = temp->create();
-            delete temp;
-        }
-        //!Version of create that requires more template parameters, but directly returns a value
-        template<class Tout> static Tout* create(const vartype* tval){
-           Tout* rval;
-           type_constructor<Tin>::create<Tout>(&rval, tval);
-           return rval;
-        }
+    //!Version of create that requires more template parameters, but directly returns a value
+    template<class Tout, class Tl = std_type_list> static Tout* create(const vartype* tval){
+        Tout* rval;
+        type_constructor<Tin>::create<Tout, Tl>(&rval, tval);
+        return rval;
+    }
 };
 #endif

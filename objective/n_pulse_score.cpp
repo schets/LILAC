@@ -37,7 +37,7 @@ double n_pulse_score::score(comp* ucur){
     double ener = energy(help, nts);
     fft(ffor, kurtosis_help, kurtosis_help, nts);
     for(size_t i = 0; i < nts; i++){
-        help[i] = _abs(kurtosis_help[i]);
+        help[i] = abs(kurtosis_help[i]);
     }
     double kurtosis_v = 1.0/(kurtosis(help, nts));
     double score = kurtosis_v* ener;

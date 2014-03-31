@@ -9,6 +9,7 @@ bin/*
 lib/*
 bin
 html
+latex
 lib
 *~
 rundir/*.*

@@ -63,7 +63,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     double tcur=t0;
     double tauv = 0;
     for(size_t i = 0; i < dimension; i++){
-        double taum = abs(u0[i]);
+        double taum = std::abs(u0[i]);
         if(taum > tau){
             taui = taum;
         }
@@ -161,7 +161,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
                     c5[4]*f4[i] + c5[5]*f5[i] + c5[6]*f6[i]);
 
-            u_calc2[i] = abs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
+            u_calc2[i] = std::abs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
                         c4[4]*f4[i] + c4[5]*f5[i] + c4[6]*f6[i]) - u_calc[i]);
         }
 
@@ -205,7 +205,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
         }
         // #define give_out
         for(size_t i = 0; i < dimension; i++){
-            double val = abs(u_calc[i]);
+            double val = double(std::abs(u_calc[i]));
             if(val > taui){
                 taui = val;
             }

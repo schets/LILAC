@@ -10,35 +10,7 @@ extern "C"{
 }
 //These are over twice as fast as using the standard library functions,
 //or even using intrinsics. They allow vectorizing
-inline double abs(const comp inval){
-        double r, i;
-        r = ((double* restr)&inval)[0];
-        i = ((double* restr)&inval)[1];
-        return std::sqrt(r*r + i*i);
-    }
-inline double abs(const double inval){
-    return std::abs(inval);
-}
-inline float abs(const float inval){
-    return std::abs(inval);
-}
-/*inline comp cmul(comp _in1, comp _in2){
-    double* restr in1 = (double* restr)&_in1;
-    double* restr in2 = (double* restr)&_in2;
-    double out[2] = {in1[0]*in2[0] - in1[1]*in2[1], in1[0]*in2[1]+in1[1]*in2[0]};
-    return *(comp*)out;
-}*/
-/*
-inline comp cmul(comp _in1, double in2){
-    double* restr in1 = (double* restr)&_in1;
-    double out[2] = {in1[0]*in2, in1[1]*in2};
-    return *(comp*)out;
-}
-inline comp cmul(double in1, comp _in2){
-    double* restr in2 = (double* restr)&_in2;
-    double out[2] = {in1*in2[0], in1*in2[1]};
-    return *(comp*)out;
-}*/
+using std::abs;
 inline comp _conj(comp inval){
     ((double* restr)&inval)[1] *= -1;
     return inval;
@@ -48,12 +20,6 @@ inline double _real(comp inval){
 }
 inline double _imag(comp inval){
     return ((double* restr)&inval)[1];
-}
-inline double _abs(comp inval){
-    double r, i;
-    r = ((double* restr)&inval)[0];
-    i = ((double* restr)&inval)[1];
-    return std::sqrt(r*r + i*i);
 }
 inline double _sqabs(comp inval){
     double r, i;
