@@ -32,8 +32,9 @@
  * such as a rk45 integrator of type complex, or double. 
  * 
  * With templates, we can implement that in C++ as well, and as a bonus for arbitrary template and base classes
- * As long as they inherit from one another, and as long as they inherit from vartype.
- * The series of if statements is consolidated into one function
+ * as long as they inherit from one another, and as long as they inherit from vartype.
+ * The series of if statements is also consolidated into one function, and will hopefully be replaced
+ * by iterating over a typelist
  *
  * For example, say you want to initiate an rk45 integrator to the same type as an rhs functions.
  * 
@@ -47,7 +48,14 @@
  * make a single function call.
  *
  * You can do either:
- *
+ * 
+ * \code
+ * rk45* integ, *integ2;
+ * rhs* some_typed_rhs; //in real code will have been instantiated
+ * type_constructor<rk45_tmpl>::create(&integ, some_typed_rhs);
+ * //or
+ * integ2 = type_constructor<rk45_tmpl>::create<rk45>(some_typed_rhs);
+ * \endcode  
  *
  * \param Tin the template class that is being instaniated
  *  
