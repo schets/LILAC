@@ -26,7 +26,8 @@ extern "C" {
 #endif
 //#define restr
 //typedef complex<double> comp;
-typedef fftw_complex comp;
+typedef std::complex<double> comp;
+const static comp I = comp(0, 1);
 //#define NUM_TIME_STEPS (256) //number of time points
 //#define LENGTH_T (60) //length of t-domain
 //parameters taken from matlab main file

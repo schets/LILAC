@@ -57,7 +57,6 @@ void n_pulse_score::postprocess(std::map<std::string, item*>& invals){
     nts = dimension/n_pulse;
     help = (double*)al_malloc(nts*sizeof(double));
     kurtosis_help = (comp*)al_malloc(nts*sizeof(comp));
-    ffor = fftw_plan_dft_1d(nts, kurtosis_help, kurtosis_help, FFTW_FORWARD, FFTW_ESTIMATE);
 }
 n_pulse_score::~n_pulse_score(){
     al_free(help);

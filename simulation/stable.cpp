@@ -132,8 +132,6 @@ void stable_spectral_pde_1d::postprocess(std::map<std::string, item*>& invals){
     }
     nts=dimension/num_pulses;
 
-    ffor = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_FORWARD, FFTW_ESTIMATE);
-    fback = fftw_plan_dft_1d(nts, ucur, ucur, FFTW_BACKWARD, FFTW_ESTIMATE);
     t=new double[nts];
     double dt=60.0/nts;
     for(int i = 0; i < nts; i++){

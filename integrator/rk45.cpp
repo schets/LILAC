@@ -3,7 +3,7 @@
 #include "../rhs/rhs.h"
 #include "rk45.h"
 #include "rk45_tmpl.h"
-
+#include "utils/type_constructor.hpp"
 int rk45::integrate(void* restr u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
@@ -20,21 +20,9 @@ std::string rk45::type() const{
 }
 void rk45::postprocess(std::map<std::string, item*>& dat){
     integrator::postprocess(dat);
-    if(rh_val->compare<comp>()){
-        actual = new rk45_tmpl<comp>();
-    }
-    else if(rh_val->compare<double>()){
-        actual = new rk45_tmpl<double>();
-    }
-    else if(rh_val->compare<float>()){
-        actual = new rk45_tmpl<float>();
-    }
-    else{
-        std::string errmess = "rhs type ";
-        errmess.append(rh_val->vname());
-        errmess.append(" not recognized");
-        err(errmess, "rk45::postprocess", "integrator/rk45.cpp", FATAL_ERROR);
-    }
+    type_constructor<rk45_tmpl>::create(&actual, rh_val);
+    //or
+    //actual = type_constructor<rk45_tmpl>::create<rk45>(rh_val);
     actual->postprocess(dat);
 }
 void rk45::parse(std::string inval){
@@ -42,3 +30,6 @@ void rk45::parse(std::string inval){
 };
 void rk45::print() const{
 };
+const std::type_info& rk45::vtype() const{
+    return actual->vtype();
+}

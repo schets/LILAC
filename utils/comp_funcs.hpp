@@ -22,12 +22,13 @@ inline double abs(const double inval){
 inline float abs(const float inval){
     return std::abs(inval);
 }
-inline comp cmul(comp _in1, comp _in2){
+/*inline comp cmul(comp _in1, comp _in2){
     double* restr in1 = (double* restr)&_in1;
     double* restr in2 = (double* restr)&_in2;
     double out[2] = {in1[0]*in2[0] - in1[1]*in2[1], in1[0]*in2[1]+in1[1]*in2[0]};
     return *(comp*)out;
-}
+}*/
+/*
 inline comp cmul(comp _in1, double in2){
     double* restr in1 = (double* restr)&_in1;
     double out[2] = {in1[0]*in2, in1[1]*in2};
@@ -37,7 +38,7 @@ inline comp cmul(double in1, comp _in2){
     double* restr in2 = (double* restr)&_in2;
     double out[2] = {in1*in2[0], in1*in2[1]};
     return *(comp*)out;
-}
+}*/
 inline comp _conj(comp inval){
     ((double* restr)&inval)[1] *= -1;
     return inval;
@@ -76,10 +77,17 @@ inline double energy(double* v, size_t s){
     sum += v[s-1]*v[s-1];
     return sqrt(sum/2);
 }
+//These fourier transforms have to do a dirty pointer transform from std::complex
+//to fftw_complex. Since std::complex<double> is bitwise the same as the C complex, and fftw_complex is
+//the same as the C complex, this works. simply using fftw_complex works in c++03, but c++11 has some
+//very nice template features for dealing with runtime type construction and inheritance validation
+//
 
 //!This function returns a fourier transform in the forward direction
 
-inline void fft(comp* restr in, comp* restr out, const size_t len){
+inline void fft(comp* _in, comp* _out, const size_t len){
+    fftw_complex* in = (fftw_complex*)_in;
+    fftw_complex* out = (fftw_complex*)_out;
     static std::map<size_t, fftw_plan> in_place, out_place;
     if(in == out){
         if(!in_place.count(len)){
@@ -94,10 +102,12 @@ inline void fft(comp* restr in, comp* restr out, const size_t len){
     fftw_execute_dft(out_place[len], in, out);
 }
 //!Wrapper function for compatibility
-inline void fft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){
+inline void fft(fftw_plan pp, comp* in, comp* out, const size_t len){
     fft(in, out, len);
 }
-inline void ifft(comp* restr in, comp* restr out, const size_t len){
+inline void ifft(comp* _in, comp* _out, const size_t len){
+    fftw_complex*  in = (fftw_complex*)_in;
+    fftw_complex*  out = (fftw_complex*)_out;
     static std::map<size_t, fftw_plan> in_place, out_place;
     if(in == out){
         if(!in_place.count(len)){
@@ -114,7 +124,7 @@ inline void ifft(comp* restr in, comp* restr out, const size_t len){
     double nval;
     nval=1.00/len;
     for(size_t i = 0; i < len; i++){
-        out[i]*=nval;
+        _out[i]*=nval;
     }
 }
 inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){

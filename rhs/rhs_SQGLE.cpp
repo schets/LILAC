@@ -1,11 +1,10 @@
 #include "rhs/rhs.h"
 #include "rhs_SQGLE.h"
 #include "defs.h"
-#include "inline_trig.h"
-#include "comp_funcs.h"
+#include "utils/inline_trig.h"
+#include "utils/comp_funcs.h"
 #include "controller/controller.h"
 #include <cstring>
-
 comp trap(comp * restr v, size_t s);
 double trap(double * restr v, size_t s);
 /*!
@@ -47,11 +46,11 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
     comp expr1 = (2.0*g0/(1.0+trap(sq1, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts, helper arrays for the rhs
     double help_mul=B*sin(2*a1-ap);
-    comp ce1 = cexp(-1*I*K);
-    comp ce2 = cexp(I*K);
+    comp ce1 = std::exp(I*K*(-1.0));
+    comp ce2 = std::exp(I*K);
     ce1=ce1*(cos(2*(a2-a3)-ap)+I*cos(2*a3-ap));
     ce2=ce2*(sin(2*(a2-a3)-ap)+I*sin(2*a3-ap));
-    float avals[4] __attribute__((aligned(16))) = {a1, a2, a3, ap};
+    float avals[4] __attribute__((aligned(16))) = {float(a1), float(a2), float(a3), float(ap)};
     float trigvals1[4] __attribute__((aligned(16)));
     float trigvals2[4] __attribute__((aligned(16)));
     v4sf _trigout1 __attribute__((aligned(16)));
@@ -75,19 +74,19 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
         _trigout2=cos_ps(*(v4sf*)&trigvals2);
         trigout1 = (float*)&_trigout1;
         trigout2 = (float*)&_trigout2;
-        comp_in_r[i] = ce1*(I*trigout1[0] - trigout2[0]);
-        comp_in_r[i+1] = ce1*(I*trigout1[1] - trigout2[1]);
-        comp_in_r[i+2] = ce1*(I*trigout1[2] - trigout2[2]);
-        comp_in_r[i+3] = ce1*(I*trigout1[3] - trigout2[3]);
+        comp_in_r[i] = ce1*(I*(double)trigout1[0] - (double)trigout2[0]);
+        comp_in_r[i+1] = ce1*(I*(double)trigout1[1] - (double)trigout2[1]);
+        comp_in_r[i+2] = ce1*(I*(double)trigout1[2] - (double)trigout2[2]);
+        comp_in_r[i+3] = ce1*(I*(double)trigout1[3] - (double)trigout2[3]);
 
         _trigout1=sin_ps(*(v4sf*)&trigvals1);
         _trigout2=sin_ps(*(v4sf*)&trigvals2);
 
 
-        comp_in_r[i] += ce2*(I*trigout2[0] - trigout1[0]);
-        comp_in_r[i+1] += ce2*(I*trigout2[1] - trigout1[1]);
-        comp_in_r[i+2] += ce2*(I*trigout2[2] - trigout1[2]);
-        comp_in_r[i+3] += ce2*(I*trigout2[3] - trigout1[3]);
+        comp_in_r[i] += ce2*(I*(double)trigout2[0] - (double)trigout1[0]);
+        comp_in_r[i+1] += ce2*(I*(double)trigout2[1] - (double)trigout1[1]);
+        comp_in_r[i+2] += ce2*(I*(double)trigout2[2] - (double)trigout1[2]);
+        comp_in_r[i+3] += ce2*(I*(double)trigout2[3] - (double)trigout1[3]);
 
 
         i+=4;
@@ -116,7 +115,7 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
 #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        dx[i] = -1*I*((D/2 - I * expr1*tau)*ksq[i]*uf1[i] + comp_out[i]);
+        dx[i] = -1.0*I*((D/2 - I * expr1*tau)*ksq[i]*uf1[i] + comp_out[i]);
     }
     return 0;
 }
@@ -154,19 +153,14 @@ void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
     sq2 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     k = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    //input arrays don't really matter here because the plan
-    //is executed against specific input arrays at runtime
-    //and not with the initialization arrays
-    ffor=fftw_plan_dft_1d(NUM_TIME_STEPS, u1, u2,FFTW_FORWARD, FFTW_ESTIMATE); 
-    fback=fftw_plan_dft_1d(NUM_TIME_STEPS, comp_in, comp_out, FFTW_BACKWARD, FFTW_ESTIMATE); 
     //create k values
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
-    for(int i=0; i<NUM_TIME_STEPS/2; i++){
+    for(size_t i=0; i<NUM_TIME_STEPS/2; i++){
         k[i] = mulval * (2.0*i/(1.0*NUM_TIME_STEPS));
         ksq[i] = k[i]*k[i];
     }
-    for(int i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
+    for(size_t i=NUM_TIME_STEPS/2; i<NUM_TIME_STEPS; i++){
         k[i] = mulval * 2.0*(i-(int)NUM_TIME_STEPS)/(NUM_TIME_STEPS*1.0);
         ksq[i] = k[i]*k[i];
     }

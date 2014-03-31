@@ -17,6 +17,7 @@ class rk45:public integrator{
     double* restr u_calc2;*/
     rk45* actual;
     public:
+    const std::type_info& vtype() const;
     //!Dummy print function
     void print() const;
     void postprocess(std::map<std::string, item*>& dat);

@@ -29,12 +29,13 @@ TODO (kinda ordered by priority):
 2. Implement generic data storage and io modules
 3. Implement neural network model
 4. Implement stochastic integrators (possibly adaptive/implicit)
-5. Implement memory pool for aligned and 'local' memory
-6. Remove uneeded dependencies, refactor code
-7. Write tutorial files for classes besides rhs
+5. Implement template typelists and type black/whitelists for type_constructor class
+6. Implement memory pool for aligned and 'local' memory
+7. Remove uneeded dependencies, refactor code
 8. Document configuration files
-9. Allow referring to variables by name in input files
-10. Allow passing specific parameters to variables
-11. Write map-fold scripts for analyzing output
-12. Refactor LSODA to run in integrator system
-13. Get documentation up to date
+9. Find better method of transferring data from item* to value than void*
+10. Allow referring to variables by name in input files
+11. Allow passing specific parameters to variables
+12. Write map-fold scripts for analyzing output
+13. Refactor LSODA to run in integrator system
+14. Get documentation up to date

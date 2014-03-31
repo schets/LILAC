@@ -2,6 +2,7 @@
 #ifndef VARTYPE_HPP
 #define VARTYPE_HPP
 #include <typeinfo>
+#include <string>
 //!Interface class to signal that an object deals with typed variables
 /*!
  * This class forces the children classes to implement this method. Since most of the classes
@@ -28,6 +29,9 @@ class vartype{
         }
         inline std::string vname() const{
             return vtype().name();
+        }
+        virtual bool compatible_type(const std::type_info& tref){
+            return true;
         }
         virtual ~vartype(){};
 };

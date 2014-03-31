@@ -98,8 +98,8 @@ class jones_matrix:public real8{
         jones_matrix(std::vector<variable*> avars, std::string n){
             setname(n);
             wq(1, 0) = wq (0, 1) = 0;
-            wq(0, 0)=(comp)cexp(-1*I*3.14159*0.25);
-            wq(1, 1)=(comp)cexp(1.0*I*3.14159*0.25);
+            wq(0, 0)=std::exp(-1.0*I*3.14159*0.25);
+            wq(1, 1)=std::exp(1.0*I*3.14159*0.25);
             wh(1, 0)=wh(0, 1)=0;
             wh(0, 0)=-1.0*I;
             wh(1, 1)=1.0*I;

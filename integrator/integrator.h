@@ -3,12 +3,13 @@
 #include "../utils/defs.h"
 #include "../rhs/rhs.h"
 #include "../parser/item.h"
+#include "utils/vartype.hpp"
 //!This class defines the integration base class
 /*!
  * This class defines the base integration class, the interface that is used by
  * the engine to integrate differential equations
  */
-class integrator:public item_dim{
+class integrator:public item_dim, public vartype{
     protected:
         rhs* rh_val;
     public:
