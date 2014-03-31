@@ -1,7 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a34a891e4a1b95f2be949795f6e4c25f0" title="ifft" alt="" coords="184,5,221,35"/>
-<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="171,59,235,88"/>
-<area shape="rect" id="node7" href="$rhs___c_n_l_s_8cpp.html#a37e365f6eb73c531f19c6958327bca46" title="trap" alt="" coords="181,112,224,141"/>
-<area shape="rect" id="node9" href="$comp__funcs_8hpp.html#a82a3c2f7ce5b70a2c5e795cce932eab3" title="_conj" alt="" coords="176,165,229,195"/>
-<area shape="rect" id="node11" href="$comp__funcs_8hpp.html#a39f683bbe63316ed41170799058a780a" title="This function returns a fourier transform in the forward direction." alt="" coords="184,219,221,248"/>
-</map>

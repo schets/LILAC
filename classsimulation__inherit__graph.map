@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node7" href="$classstable.html" title="stable" alt="" coords="140,237,196,267"/>
-<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="131,83,205,112"/>
-<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="145,5,191,35"/>
-<area shape="rect" id="node9" href="$classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="125,315,211,344"/>
-<area shape="rect" id="node11" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; T \&gt;" alt="" coords="5,392,155,421"/>
-<area shape="rect" id="node13" href="$classstable__spectral__pde__1d.html" title="This class represents the spectral integration of a PDE." alt="" coords="179,392,336,421"/>
-<area shape="rect" id="node15" href="$classjones__optical.html" title="jones_optical" alt="" coords="208,469,307,499"/>
-</map>

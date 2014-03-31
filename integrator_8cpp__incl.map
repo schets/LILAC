@@ -1,9 +1,0 @@
-<map id="G" name="G">
-<area shape="rect" id="node3" href="$integrator_8h.html" title="integrator.h" alt="" coords="12563,160,12648,189"/>
-<area shape="rect" id="node15" href="$int__imp_8h.html" title="int_imp.h" alt="" coords="4427,83,4502,112"/>
-<area shape="rect" id="node101" href="$rk45_8h.html" title="rk45.h" alt="" coords="12610,83,12668,112"/>
-<area shape="rect" id="node105" href="$comp__funcs_8h.html" title="comp_funcs.h" alt="" coords="12692,83,12796,112"/>
-<area shape="rect" id="node5" href="$defs_8h.html" title="../utils/defs.h" alt="" coords="12586,315,12684,344"/>
-<area shape="rect" id="node7" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="12512,237,12598,267"/>
-<area shape="rect" id="node10" href="$item_8h.html" title="../parser/item.h" alt="" coords="12420,315,12530,344"/>
-</map>
