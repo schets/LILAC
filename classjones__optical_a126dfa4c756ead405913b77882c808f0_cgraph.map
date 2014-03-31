@@ -1,0 +1,18 @@
+<map id="jones_optical::postprocess" name="jones_optical::postprocess">
+<area shape="rect" id="node3" href="$classstable__spectral__pde__1d.html#a71ccb1ec0363d8e600623c3b22f1a547" title="stable_spectral_pde\l_1d::postprocess" alt="" coords="232,129,371,175"/>
+<area shape="rect" id="node13" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="1279,119,1316,148"/>
+<area shape="rect" id="node17" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="712,248,789,277"/>
+<area shape="rect" id="node21" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="501,196,552,225"/>
+<area shape="rect" id="node25" href="$jones__optical_8cpp.html#aa48bec3e396bce8590dcb2aec86c305c" title="noise" alt="" coords="275,300,328,329"/>
+<area shape="rect" id="node32" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function returns a fourier transform in the forward direction." alt="" coords="283,353,320,383"/>
+<area shape="rect" id="node34" href="$jones__optical_8cpp.html#a168316b7104170039906ba3db1ad8c5f" title="get_unique_name" alt="" coords="240,407,363,436"/>
+<area shape="rect" id="node38" href="$classcontroller.html#a11c098cf244f02c8dfd3205d0427a97c" title="controller::addvar" alt="" coords="240,460,363,489"/>
+<area shape="rect" id="node40" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="259,513,344,543"/>
+<area shape="rect" id="node5" href="$classstable__ode.html#a2be4aa9a142387610194036e425afb4c" title="stable_ode::postprocess" alt="" coords="445,143,608,172"/>
+<area shape="rect" id="node7" href="$classstable.html#a39a3d0a743482a82179ef5d9d11c7499" title="stable::postprocess" alt="" coords="683,143,819,172"/>
+<area shape="rect" id="node9" href="$classsimulation.html#adb93b1c6b176aa9be5b58e503e19a202" title="simulation::postprocess" alt="" coords="867,144,1027,173"/>
+<area shape="rect" id="node11" href="$classitem__dim.html#a87926effd319e8b061be5dea90fd57e3" title="item_dim::postprocess" alt="" coords="1075,144,1229,173"/>
+<area shape="rect" id="node27" href="$jones__optical_8cpp.html#adde0f41c4b3395738eb20e9f2c33a385" title="gaussrand" alt="" coords="485,300,568,329"/>
+<area shape="rect" id="node29" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="495,353,559,383"/>
+<area shape="rect" id="node36" href="$class__unique__name.html#a5af3109f23545985ba578ad752eb0335" title="_unique_name::get_unique_name" alt="" coords="419,407,635,436"/>
+</map>
