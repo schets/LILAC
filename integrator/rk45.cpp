@@ -7,7 +7,9 @@
 int rk45::integrate(void* restr u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
-
+const std::type_info& rk45::vtype() const{
+    return actual->vtype();
+}
 rk45::~rk45(){
     delete actual;
 }
@@ -21,8 +23,6 @@ std::string rk45::type() const{
 void rk45::postprocess(std::map<std::string, item*>& dat){
     integrator::postprocess(dat);
     type_constructor<rk45_tmpl>::create(&actual, rh_val);
-    //or
-    //actual = type_constructor<rk45_tmpl>::create<rk45>(rh_val);
     actual->postprocess(dat);
 }
 void rk45::parse(std::string inval){
@@ -30,6 +30,3 @@ void rk45::parse(std::string inval){
 };
 void rk45::print() const{
 };
-const std::type_info& rk45::vtype() const{
-    return actual->vtype();
-}

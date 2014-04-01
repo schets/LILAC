@@ -10,7 +10,6 @@ using namespace std;
 int main(int argc, char** argv){
     std::string outfile;
     std::string index;
-    printf("%d, %d\n", (int)sizeof(comp), (int)sizeof(fftw_complex));
     if(argc == 2){
         outfile = argv[1];
         std::cout << outfile << ", " << argv[1] << std::endl;

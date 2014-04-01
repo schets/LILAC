@@ -12,8 +12,8 @@ include make.inc
 all:
 	@mkdir -p bin
 	@mkdir -p lib
-	@$(MAKE) -C rhs
 	@$(MAKE) -C integrator
+	@$(MAKE) -C rhs
 	@$(MAKE) -C controller
 	@$(MAKE) -C parser
 	@$(MAKE) -C objective

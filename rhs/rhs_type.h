@@ -14,7 +14,7 @@
  */
 template<typename T> class rhs_type:public rhs{
     public:
-    const std::type_info& vtype() const{
+    const std::type_info& vtype() const final {
         return typeid(T);
     }
     std::vector<std::string> dependencies() const{
@@ -23,7 +23,7 @@ template<typename T> class rhs_type:public rhs{
     void postprocess(std::map<std::string, item*>& dat){
         rhs::postprocess(dat);
     }
-    int dxdt(void* restr x, void* restr dx, double t){
+    int dxdt(void* restr x, void* restr dx, double t) final {
         return dxdt((T* restr)x, (T* restr)dx, t);
     }
     virtual int dxdt(T* restr x, T* restr dx, double t) = 0;
