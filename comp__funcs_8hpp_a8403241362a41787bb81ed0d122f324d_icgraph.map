@@ -1,8 +1,0 @@
-<map id="_real" name="_real">
-<area shape="rect" id="node3" href="$classexample__rhs.html#a0af4157f8fd225ec72cf317da29b220d" title="This is the rhs function that calculates the derivative." alt="" coords="109,5,237,35"/>
-<area shape="rect" id="node5" href="$rhs___s_q_g_l_e_8cpp.html#a10385d956bb6dc6b90b9c40a4ce9b09c" title="_clog" alt="" coords="147,59,200,88"/>
-<area shape="rect" id="node7" href="$classrhs___s_q_g_l_e.html#ae902351cd375c45a13275aaca59f6fb1" title="rhs_SQGLE::dxdt" alt="" coords="111,112,236,141"/>
-<area shape="rect" id="node9" href="$classjones__optical.html#a126dfa4c756ead405913b77882c808f0" title="jones_optical::postprocess" alt="" coords="292,229,468,259"/>
-<area shape="rect" id="node11" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre\l_fft_operations" alt="" coords="112,215,235,262"/>
-<area shape="rect" id="node13" href="$classstable__spectral__pde__1d.html#a71ccb1ec0363d8e600623c3b22f1a547" title="stable_spectral_pde\l_1d::postprocess" alt="" coords="104,285,243,331"/>
-</map>
