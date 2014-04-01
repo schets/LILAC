@@ -1,0 +1,5 @@
+<map id="stable::simulate" name="stable::simulate">
+<area shape="rect" id="node3" href="$classstable.html#a99df92d0ce26d40e696bf2e2c82a85fa" title="stable::iterate_system" alt="" coords="169,5,319,35"/>
+<area shape="rect" id="node5" href="$classstable.html#a4319a1a34ba1c731f8da063d6a4a2333" title="Returns the difference between the two most recent iterations." alt="" coords="179,59,309,88"/>
+<area shape="rect" id="node7" href="$classsimulation.html#a3b2c1972a4367753fd8a0057efd0512f" title="simulation::score" alt="" coords="184,112,304,141"/>
+</map>

@@ -1,0 +1,11 @@
+<map id="rhs_SQGLE::dxdt" name="rhs_SQGLE::dxdt">
+<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="ifft" alt="" coords="192,5,229,35"/>
+<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="179,59,243,88"/>
+<area shape="rect" id="node7" href="$rhs___c_n_l_s_8cpp.html#a37e365f6eb73c531f19c6958327bca46" title="trap" alt="" coords="189,112,232,141"/>
+<area shape="rect" id="node9" href="$inline__trig_8h.html#a29465b363a810a95789e636e83ad4acf" title="cos_ps" alt="" coords="179,165,243,195"/>
+<area shape="rect" id="node11" href="$inline__trig_8h.html#a0478f51dacc8f4d49f8c258c35c21343" title="sin_ps" alt="" coords="181,219,240,248"/>
+<area shape="rect" id="node13" href="$inline__trig_8h.html#a105f22fc857992c01c2822fea48a9d3b" title="log_ps" alt="" coords="181,272,240,301"/>
+<area shape="rect" id="node15" href="$comp__funcs_8hpp.html#a0190174fd4e334f6127740d25155d675" title="_imag" alt="" coords="183,325,239,355"/>
+<area shape="rect" id="node17" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="185,379,236,408"/>
+<area shape="rect" id="node19" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function returns a fourier transform in the forward direction." alt="" coords="192,432,229,461"/>
+</map>
