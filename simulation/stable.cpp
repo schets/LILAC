@@ -1,6 +1,7 @@
 #include "stable.h"
 #include "objective/objective.h"
 #include "utils/comp_funcs.h"
+#include "stable_ode_tmpl.hpp"
 /*!
  * This function iterates the system forwards in time until it reaches a stable state
  * or a certain number of iterations, 
@@ -11,7 +12,6 @@ double stable::simulate(){
     for (round = 0; round < max_iterations; round++){
 
         this->iterate_system();
-
         if(bad_res<0){
             return 0;
         }
@@ -52,59 +52,7 @@ void stable::postprocess(std::map<std::string, item*>& invals){
     }
 }
 
-//stable_ode functions
 
-/*!
- * This is the function that iterates the ODE system forwards.
- * It applies the operator pre_integration_operations, then integrates
- * from tcur to tcur+tlen, and then applies the operator post_integration_operations.
- * \sa stable::simulate
- */
-void stable_ode::iterate_system(){
-    for(size_t i = 0; i < dimension; i++){
-        ulast[i] = ucur[i];
-    }
-    this->pre_integration_operations(); 
-    int res = inter->integrate(ucur, tcur, tcur+int_len);
-    tcur += int_len;
-    this->post_integration_operations();
-    if(res < 0){
-        bad_res=1;
-    }
-}
-
-void stable_ode::postprocess(std::map<std::string, item*>& invals){
-    stable::postprocess(invals);
-    invals["integrator"]->retrieve(&inter, this);
-    invals["t0"]->retrieve(&t0, this);
-    tcur = t0;
-    invals["int_len"]->retrieve(&int_len, this);
-    const double eps_val = 1e-12;
-    if(int_len < eps_val){
-        err("Variable int_len is too small, int_len must be greater than 1e-12",
-                "stable_ode::postprocess", "system/stable.cpp", FATAL_ERROR);
-    }
-    ucur = (comp*)al_malloc(2*dimension*sizeof(comp));
-    ulast=ucur+dimension;
-}
-
-stable_ode::~stable_ode(){
-    al_free(ucur);
-}
-void stable_ode::pre_integration_operations(){
-}
-void stable_ode::post_integration_operations(){
-}
-std::string stable_ode::type() const{
-    return "stable_ode";
-}
-std::vector<std::string> stable_ode::dependencies() const{
-    std::string deps[] = {"integrator", "t0", "int_len"};
-    return appendvec(std::vector<std::string>(deps, deps+3), stable::dependencies());
-}
-double stable_ode::score(){
-    return obj->score(ucur);
-}
 
 //stable_spectral_pde_1d functions
 

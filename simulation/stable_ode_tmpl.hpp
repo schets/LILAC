@@ -19,6 +19,7 @@ class stable_ode_tmpl:public stable_ode{
         virtual void iterate_system();
     public:
         double score();
+        const std::type_info& vtype() const;
         virtual void postprocess(std::map<std::string, item*>& invals);
         virtual std::string type() const;
         virtual ~stable_ode_tmpl();
@@ -64,22 +65,28 @@ void stable_ode_tmpl<T>::postprocess(std::map<std::string, item*>& invals){
 }
 
 template <class T>
-void stable_ode_tmpl<T>::~stable_ode_tmpl(){
+stable_ode_tmpl<T>::~stable_ode_tmpl(){
     al_free(ucur);
 }
-void template <class T>
+template <class T>
 void stable_ode_tmpl<T>::pre_integration_operations(){
 }
-void template <class T>
+template <class T>
 void stable_ode_tmpl<T>::post_integration_operations(){
 }
-std::string template <class T>
-void stable_ode_tmpl<T>::type() const{
-    return std::string("stable_ode_tmpl").append(typeid(T).name);
+template <class T>
+std::string stable_ode_tmpl<T>::type() const{
+    std::string val = "stable_ode_tmpl";
+    val.append(typeid(T).name());
+    return val;
 }
 template <class T>
 double stable_ode_tmpl<T>::score(){
     return obj->score((comp*)ucur);
 }
 
+template<class T>
+const std::type_info& stable_ode_tmpl<T>::vtype() const{
+    return typeid(T);
+}
 #endif

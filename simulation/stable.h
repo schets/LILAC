@@ -3,6 +3,7 @@
 #include "simulation.h"
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
+#include "utils/vartype.hpp"
 //!A system that attempts to reach an equilibrium
 /*! This class defines a system that tries to reach an equilibrium
  * The actual implementation lets the user define a function get_change, which
@@ -11,7 +12,7 @@
  */
 
 const static int num_min = 10;
-class stable:public simulation{
+class stable:public simulation, public vartype{
     protected:
         //!Maximum number of times the system is iterated before assuming an unstable state
         int max_iterations;
@@ -42,6 +43,8 @@ class stable:public simulation{
  *  variable type of the defined problem. 
  */
 class stable_ode:public stable{
+    private:
+        stable_ode* actual;
     protected:
         double tcur;
         comp* restr ucur, * restr ulast;
@@ -57,6 +60,7 @@ class stable_ode:public stable{
         virtual void post_integration_operations();
         virtual void iterate_system();
     public:
+        const std::type_info& vtype() const;
         double score();
         virtual std::vector<std::string> dependencies() const;
         virtual void postprocess(std::map<std::string, item*>& invals);
