@@ -1,5 +1,6 @@
 #include "engineimp.h"
 #include "graph.h"
+#include "utils/defs.hpp"
 #include <iostream>
 #include <stdlib.h>
 void graph::insert(item* it_p){
@@ -19,9 +20,8 @@ graph::graphnode& graph::_insert(item* it_p){
     return g;
 }
 void graph::ins_extra_deps(){
-    std::map<std::string, graphnode>::iterator beg;
-    for(beg=nodes.begin(); beg!= nodes.end(); beg++){
-        graphnode& g = beg->second;
+    for(auto& node : nodes){
+        graphnode& g = node.second;
         if(!g.processed){
             proc_node_deps(g);
         }
@@ -31,55 +31,47 @@ void graph::ins_extra_deps(){
 //input variables later if need be
 void graph::proc_node_deps(graph::graphnode& g){
     g.processed=1;
-    std::list<std::string>::iterator beg;
-    for(beg = g.pointsto.begin(); beg != g.pointsto.end(); beg++){
-        if(!nodes.count(*beg)){
-            std::cout<<g.p->name()<<" depends on "<<*beg<<", which has not been inserted\n";
+    for(auto& val : g.pointsto){
+        if(!nodes.count(val)){
+            std::cout<<g.p->name()<<" depends on "<<val<<", which has not been inserted\n";
             exit(EXIT_FAILURE);
         }
             
-        nodes[*beg].pointedat.push_back(g.p->name());
+        nodes[val].pointedat.push_back(g.p->name());
     }
 }
 //returns sorted list, all items in list are added to the graph
-int graph::sort(std::list<item*>& l){
-    std::list<graphnode*> queuelist;
-    std::list<item*>::iterator begl = l.begin();
-    for(; begl != l.end(); begl++){
-        insert(*begl);
+std::list<item*> graph::sort(const std::list<item*>& l){
+    std::list<item*> outlist;
+    std::list<const graphnode*> queuelist;
+    for(const auto& val: l){
+        insert(val);
     }
-    l.clear(); 
     ins_extra_deps();
-    std::map<std::string, graphnode>::iterator beg = nodes.begin();
     //populate the list of nodes without dependencies
-    for(; beg != nodes.end(); beg++){
-        graphnode& g = beg->second;
+    for(const auto& node : nodes){
+        const graphnode& g = node.second;
         if(g.pointedat.empty()){
             queuelist.push_back(&g);
         }
     }
     //perform topological sort algorithm
     while(!queuelist.empty()){
-        graphnode& g = *queuelist.front();
+        const graphnode& g = *queuelist.front();
         queuelist.pop_front();
-        l.push_front(g.p);
-        std::list<std::string>::iterator sbeg = g.pointsto.begin();
-        for(; sbeg != g.pointsto.end(); sbeg++){
-            graphnode& gn = nodes[*sbeg];
+        outlist.push_front(g.p);
+        for(const auto& val : g.pointsto){
+            graphnode& gn = nodes[val];
             gn.pointedat.remove(g.p->name());
             if(gn.pointedat.empty()){
                 queuelist.push_back(&gn);
             }
         }
-        g.pointsto.clear();
     }
-    //check to see if any edges remain in the graph
-    for(beg=nodes.begin(); beg != nodes.end(); beg++){
-        graphnode& g = beg->second;
-        if(!g.pointedat.empty()){
-            std::cout << "Topological sort has failed" << std::endl;
-            return SORT_FAILED;
-        }
+    //check to see if list was fully sorted 
+    if(l.size() != outlist.size()){
+        err("Topological sort has failed, check for cyclical input dependencies",
+                "graph::sort", "parser/graph.cpp", FATAL_ERROR);
     }
-    return SORT_SUCCESS;
+    return outlist;
 }

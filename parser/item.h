@@ -99,5 +99,30 @@ class variable:public real8{
     void inc(double i);
     void set(double v);
 };
+
+
+//classes for testing graphsort, mainly to ensure that it finds cyclical and unsatisfied dependencies
+class ftest1 : public real8{
+    public:
+        virtual std::vector<std::string> dependencies() const{
+            std::string deps[] = {"var1"};
+            return std::vector<std::string>(deps, deps+1);
+        }
+};
+
+class ftest2 : public real8{
+    public:
+        virtual std::vector<std::string> dependencies() const{
+            std::string deps[] = {"var2"};
+            return std::vector<std::string>(deps, deps+1);
+        }
+};
+class ftest3 : public real8{
+    public:
+        virtual std::vector<std::string> dependencies() const{
+            std::string deps[] = {"var3", "var4"};
+            return std::vector<std::string>(deps, deps+2);
+        }
+};
 #endif
 

@@ -17,8 +17,6 @@ class graph{
     graphnode& _insert(item* p);
     public:
     void insert(item* p);
-    int sort(std::list<item*>& l);
-    const static int SORT_FAILED=-1;
-    const static int SORT_SUCCESS=1;
+    std::list<item*> sort(const std::list<item*>& l);
 };
 #endif

@@ -66,24 +66,13 @@ void engineimp::_read(std::ifstream& fstr){
  */
 void engineimp::sort_pp(){
     std::list<item*> post_order;
-    std::map<std::string, item*>::iterator beg;
-    for(beg = values.begin(); beg != values.end(); beg++){
-        post_order.push_back(beg->second);
+    for(const auto& val : values){
+        post_order.push_back(val.second);
     }
     graph gg;
-    //topologically sort the variables
-    //so that variables can only depend
-    //on items previously in the list
-    gg.sort(post_order);
-    std::list<item*>::iterator lbeg;
-    for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
-   //     std::cout << (*lbeg)->name() << std::endl;
-        std::vector<std::string> deps = (*lbeg)->dependencies();
-        for(int i = 0; i < deps.size(); i++){
-  //          std::cout << deps[i] << ", ";
-        }
-   //     std::cout << std::endl;
-        (*lbeg)->postprocess(values);
+    auto sorted = gg.sort(post_order);
+    for(auto val:sorted){
+        val->postprocess(values);
     }
 }
 

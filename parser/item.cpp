@@ -240,6 +240,15 @@ item* item::create(std::string name, engineimp* in){
         rval->holder=in;
         return rval;
     }
+    if(name == "ftest1"){
+        return new ftest1();
+    }
+    if(name == "ftest2"){
+        return new ftest2();
+    }
+    if(name == "ftest3"){
+        return new ftest3();
+    }
     if(name == "var"){
         rval = new variable();
         rval->holder=in;
