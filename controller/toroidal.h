@@ -9,8 +9,8 @@
  * successfully examined
  */
 class toroidal:public controller{
-    int iterations;
-    int num_int;
+    size_t iterations;
+    size_t num_int;
     double initial_inc;
     double mul_fac;
     public:

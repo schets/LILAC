@@ -81,14 +81,6 @@ class jones_matrix:public real8{
             return "jones_matrix";
         }
         virtual void update(){
-            /*  a1=2.6562;
-                a2=1.274936;
-                a3=5.003272;
-                ap=2.871042;
-                a1=a2 = 0;
-                a2=.12;
-                a3=1.2;
-                ap=3.4;*/
             j1=rmat(a1)*wq*rmat(-1*a1);
             j2=rmat(a2)*wq*rmat(-1*a2);
             j3=rmat(a3)*wh*rmat(-1*a3);
@@ -151,15 +143,15 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     nvec2= (double*)al_malloc(nts*sizeof(double));
     double dt = 60.0/nts;
     noise(ucur, 0.2, dimension); 
-    for(int i = 0; i < nts; i++){
-        t[i] = dt*((double)i-nts/2.0);
+    for(size_t i = 0; i < nts; i++){
+        t[i] = dt*(i-nts/2.0);
     }
-    for(int i = 0; i < nts; i++){
+    for(size_t i = 0; i < nts; i++){
         ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
         help[i] = _real(ucur[i]);
         nvec1[i] = ucur[i];
     }
-    for(int i = 0; i < num_pulses; i++){
+    for(size_t i = 0; i < num_pulses; i++){
         fft(ffor, nvec1 + i*nts, nvec1 +1*nts, nts);
     }
     //generate variables for the jones matrices
@@ -169,18 +161,18 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
 
     for(int i = 0; i < num_segments; i++){
         std::vector<variable*> vv(4, (variable*)0);
-        for(int j = 0; j < 4; j++){
-            vv[j] = new variable();
-            vv[j]->holder=holder;
-            vv[j]->setname(get_unique_name(name_base));
-            vv[j]->parse("0.1");
+        for(auto& val : vv){
+            val = new variable();
+            val->holder=holder;
+            val->setname(get_unique_name(name_base));
+            val->parse("0.1");
 #ifdef gen_t_dat
-            vv[j]->set(0*2*3.1415*(rand()*1.0/RAND_MAX));
+            val->set(0*2*3.1415*(rand()*1.0/RAND_MAX));
 #else
-            vv[j]->set(0);
+            val->set(0);
 #endif
-            invals[vv[j]->name()]=vv[j];
-            cont->addvar(vv[j]);
+            invals[val->name()]=val;
+            cont->addvar(val);
         }
 
         jones_matrix* m = new jones_matrix(vv, get_unique_name(mat_base));
@@ -242,8 +234,9 @@ void jones_optical::post_ifft_operations(){
 
     if(!jones_matrices.empty()){
         Eigen::Map<Eigen::Matrix<comp, 2, Eigen::Dynamic, Eigen::RowMajor>, Eigen::Aligned> dmap(ucur, 2, nts);
+        //this is a more complicated structure but will save an fft/ifft combination
         dmap = jones_matrices[0]->mvals*dmap;
-        for(int i = 1; i < jones_matrices.size(); i++){
+        for(size_t i = 1; i < jones_matrices.size(); i++){
             for(size_t j = 0; j < num_pulses; j++){
                 fft(ffor, ucur+j*nts, ucur+j*nts, nts);
             }
@@ -323,9 +316,9 @@ jones_optical::~jones_optical(){
     it++;//discard this first since it has been replicated
     //This also provides a more chaotic base for the later simulations and increases accuracy
     for(; it != out_dat.end(); it++){
-        for(size_t i = 0; i < it->avals.size(); i++){
+        for(auto& val : it->avals){
 
-            fprintf(pmax, "%lf ", it->avals[i]);
+            fprintf(pmax, "%lf ", val);
         }
         fprintf(pmax, "%lf\n", it->score);
     }

@@ -70,7 +70,7 @@ void engineimp::sort_pp(){
         post_order.push_back(val.second);
     }
     graph gg;
-    auto sorted = gg.sort(post_order);
+    auto sorted(gg.sort(post_order));
     for(auto val:sorted){
         val->postprocess(values);
     }

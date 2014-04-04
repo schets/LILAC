@@ -14,7 +14,7 @@ graph::graphnode& graph::_insert(item* it_p){
     graphnode& g = nodes[it_p->name()];
     g.p = it_p;
     g.processed=0;
-    std::vector<std::string> deps = it_p->dependencies();
+    std::vector<std::string> deps(it_p->dependencies());
     g.pointsto.clear();
     g.pointsto.insert(g.pointsto.begin(), deps.begin(), deps.end());
     return g;

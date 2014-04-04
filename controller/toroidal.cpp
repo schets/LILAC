@@ -26,7 +26,9 @@ std::vector<std::string> toroidal::dependencies() const{
 void toroidal::postprocess(std::map<std::string, item*>& dat){
     controller::postprocess(dat);
     num_int=0;
-    dat["iterations"]->retrieve(&iterations, this);
+    int _iterations;
+    dat["iterations"]->retrieve(&_iterations, this);
+    iterations = _iterations;
     dat["mul_fac"]->retrieve(&mul_fac, this);
     if(mul_fac==0){
         err("Multiply factor, mul_fac, must not be equal to zero", 
@@ -60,8 +62,8 @@ void toroidal::control(comp* u, objective* obj){
         vars[3]->inc(sqrt(0.19)*100.0*PI/1000.0);
         return;
     }
-    for(int i = 0; i < vars.size(); i++){
-        vars[i]->inc(curinc);
+    for(auto& cvar : vars){
+        cvar->inc(curinc);
         curinc *= mul_fac;
     }
 }
