@@ -75,9 +75,14 @@ void engineimp::sort_pp(){
     //so that variables can only depend
     //on items previously in the list
     gg.sort(post_order);
-
     std::list<item*>::iterator lbeg;
     for(lbeg=post_order.begin(); lbeg != post_order.end(); lbeg++){
+   //     std::cout << (*lbeg)->name() << std::endl;
+        std::vector<std::string> deps = (*lbeg)->dependencies();
+        for(int i = 0; i < deps.size(); i++){
+  //          std::cout << deps[i] << ", ";
+        }
+   //     std::cout << std::endl;
         (*lbeg)->postprocess(values);
     }
 }

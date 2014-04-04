@@ -59,6 +59,7 @@ class stable_ode:public stable{
         //!This applies operations ofter the integration occurs
         virtual void post_integration_operations();
         virtual void iterate_system();
+        virtual double get_change();
     public:
         const std::type_info& vtype() const;
         double score();
@@ -68,34 +69,4 @@ class stable_ode:public stable{
         virtual ~stable_ode();
 };
 
-//!This class represents the spectral integration of a PDE
-/*!
- * This class will represent the integration of a 1d spectral ODE.
- * I'm not sure how to properly generalize it to multiple variables,
- * so I'll just leave it blank for now
- */
-class stable_spectral_pde_1d:public stable_ode{
-    private:
-        virtual void pre_integration_operations();
-        virtual void post_integration_operations();
-    protected:
-        double* t;
-        double* help;
-        size_t nts;
-        size_t num_pulses;
-        fftw_plan ffor, fback;
-        //!Applies operations prior to the fft and integration
-        virtual void pre_fft_operations();
-        //!Applies operations after the fft but before the integrations
-        virtual void post_fft_operations();
-        //!Applies operations after the integration but prior to the ifft
-        virtual void pre_ifft_operations();
-        //!Applies operations after the integration and ifft()
-        virtual void post_ifft_operations();
-    public:
-        virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, item*>& invals);
-        virtual std::string type() const;
-        virtual ~stable_spectral_pde_1d();
-};
 #endif

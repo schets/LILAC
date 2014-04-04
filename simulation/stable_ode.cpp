@@ -15,6 +15,7 @@ void stable_ode::iterate_system(){
 }
 
 void stable_ode::postprocess(std::map<std::string, item*>& invals){
+    stable::postprocess(invals);
     invals["integrator"]->retrieve(&inter, this);
     type_constructor<stable_ode_tmpl>::create(&actual, inter);
     actual->postprocess(invals);
@@ -44,5 +45,5 @@ const std::type_info& stable_ode::vtype() const{
     return actual->vtype();
 }
 double stable_ode::get_change(){
-    return 0;
+    return actual->get_change();
 }

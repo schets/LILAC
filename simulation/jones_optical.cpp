@@ -115,7 +115,7 @@ class jones_matrix:public real8{
 };
 std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments", "jones_int_dist"};
-    return appendvec(stable_spectral_pde_1d::dependencies(), std::vector<std::string>(deps, deps+2));
+    return appendvec(stable_spectral_pde_1d_tmpl<comp>::dependencies(), std::vector<std::string>(deps, deps+2));
 }
 void jones_optical::postprocess(std::map<std::string, item*>& invals){
 #ifdef gen_t_dat
@@ -125,7 +125,7 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     func_dat=fopen("python/grad_data.out", "w");
     func_score = fopen("python/score_data.out", "w");
 #endif
-    stable_spectral_pde_1d::postprocess(invals);
+    stable_spectral_pde_1d_tmpl<comp>::postprocess(invals);
 
     if(dimension%2){
         err("System jones_optical requires an even dimension", "jones_optical::postprocess",

@@ -17,6 +17,7 @@ class stable_ode_tmpl:public stable_ode{
         //!This applies operations ofter the integration occurs
         virtual void post_integration_operations();
         virtual void iterate_system();
+        virtual double get_change();
     public:
         double score();
         const std::type_info& vtype() const;
@@ -60,7 +61,7 @@ void stable_ode_tmpl<T>::postprocess(std::map<std::string, item*>& invals){
         err("Variable int_len is too small, int_len must be greater than 1e-12",
                 "stable_ode::postprocess", "system/stable.cpp", FATAL_ERROR);
     }
-    ucur = (comp*)al_malloc(2*dimension*sizeof(comp));
+    ucur = (T*)al_malloc(2*dimension*sizeof(T));
     ulast=ucur+dimension;
 }
 
@@ -88,5 +89,15 @@ double stable_ode_tmpl<T>::score(){
 template<class T>
 const std::type_info& stable_ode_tmpl<T>::vtype() const{
     return typeid(T);
+}
+template<class T>
+double stable_ode_tmpl<T>::get_change(){
+    //standard difference is the L2 norm
+    double sabs=0;
+    for(size_t i = 0; i < dimension; i++){
+        double aval = abs(ucur[i]-ulast[i]);
+        sabs+= aval*aval;
+    }
+    return sqrt(sabs);
 }
 #endif

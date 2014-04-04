@@ -20,6 +20,7 @@ class rk45_tmpl:public rk45 {
     rhs_type<T>* func;
     double* restr u_calc2;
     public:
+    virtual const std::type_info& vtype() const;
     //!Dummy print function
     void print() const;
     void postprocess(std::map<std::string, item*>& dat);
@@ -30,6 +31,10 @@ class rk45_tmpl:public rk45 {
     int integrate(void* restr u, double t0, double tf);
     ~rk45_tmpl();
 };
+template<class T>
+const std::type_info& rk45_tmpl<T>::vtype() const {
+    return typeid(T);
+}
 template<class T>
 int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     T* restr u0 = (T* restr)_u0;

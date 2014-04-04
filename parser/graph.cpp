@@ -62,7 +62,7 @@ int graph::sort(std::list<item*>& l){
     while(!queuelist.empty()){
         graphnode& g = *queuelist.front();
         queuelist.pop_front();
-        l.push_back(g.p);
+        l.push_front(g.p);
         std::list<std::string>::iterator sbeg = g.pointsto.begin();
         for(; sbeg != g.pointsto.end(); sbeg++){
             graphnode& gn = nodes[*sbeg];

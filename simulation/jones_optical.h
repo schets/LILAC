@@ -5,11 +5,11 @@
 #include "controller/controller.h"
 #include "objective/objective.h"
 #include "defs.h"
-#include "stable.h"
+#include "stable_spectral_ode_tmpl.hpp"
 #include <list>
 //!jones matrix class, inherits from real8 since there is no meaningful functions for most of it
 class jones_matrix;
-class jones_optical:public stable_spectral_pde_1d{
+class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     double* help, *t, *phold;
     comp* nvec1;
     double *nvec2;
