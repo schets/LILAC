@@ -37,7 +37,7 @@ void variable::set(double p){
     std::map<item*, std::set<double*> >::iterator mit, mremove;
 
     for(mit = modifiers.begin(); mit!= modifiers.end();){
-        if(!(holder->item_exists(mit->first)) && mit->first){
+        if(!(holder->item_exists(mit->first->name())) && mit->first){
             mremove = mit;
             mit++;
             modifiers.erase(mremove);
@@ -48,7 +48,7 @@ void variable::set(double p){
             *(*sit) = value;
         }
         if(mit->first){
-            holder->needs_updating(mit->first);
+            holder->needs_updating(mit->first->name());
         }
         mit++;
     }

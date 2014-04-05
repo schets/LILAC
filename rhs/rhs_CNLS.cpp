@@ -33,8 +33,6 @@ rhs_CNLS::~rhs_CNLS(){
     al_free(sq2);
     al_free(k);
     al_free(ksq);
-    fftw_destroy_plan(ffor);
-    fftw_destroy_plan(fback);
 }
 
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
@@ -63,7 +61,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
         sq2[i] = _sqabs(u2[i]);
         comp_in_r[i] = sq1[i] + sq2[i];
     }
-    comp expr1 = I*(2.0*g0/(1.0+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
+    comp expr1 = Id*(2.0*g0/(1.0+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts for the rhs
     #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
@@ -76,7 +74,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
-                - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/I;
+                - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/Id;
     }
     //Do the fft work for the other half of the calculations
     #pragma vector aligned
@@ -89,7 +87,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
-                - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/I;
+                - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/Id;
     }
     //printar(dx, NUM_TIME_STEPS*2);
     //
@@ -109,7 +107,7 @@ std::string rhs_CNLS::type() const {
 /*!
  * Initializes the rhs_CNLS class  
  */
-void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
+void rhs_CNLS::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension/2;
     if(NUM_TIME_STEPS*2 != dimension){
@@ -131,7 +129,7 @@ void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){
     comp_in_r = comp_in+NUM_TIME_STEPS;
     comp_out = comp_in_r+NUM_TIME_STEPS;
     comp_out_r = comp_out+NUM_TIME_STEPS;
-    sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double) * 4);
+    sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     sq2 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     k = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));

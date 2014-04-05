@@ -60,7 +60,7 @@ std::vector<std::string> example_rhs::dependencies() const{
  * All of the names returned in the dependencies file exist and have been processed
  * @param dat The data structure containing the variable names
  */
-void example_rhs::postprocess(std::map<std::string, item*>& dat){
+void example_rhs::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     rhs::postprocess(dat);//always postprocess the parent class first
     //Any class that inherits from rhs, or item_dim, has access to a variable
     //called dimension, which represents the dimension of the problem at hand
@@ -107,7 +107,7 @@ void example_rhs::postprocess(std::map<std::string, item*>& dat){
     //aligned memory and plays nicely with fftw and Eigen.
     value_holder = (comp*)al_malloc(dimension*sizeof(comp));
     for(size_t i = 0; i < dimension; i++){
-        value_holder[i] = I*(double)i*val1 + (dimension-i)*val2;
+        value_holder[i] = Id*(double)i*val1 + (dimension-i)*val2;
     }
 }
 //!Update function for example_rhs
@@ -121,7 +121,7 @@ void example_rhs::postprocess(std::map<std::string, item*>& dat){
  */
 void example_rhs::update(){
     for(size_t i = 0; i < dimension; i++){
-        value_holder[i] = I*(double)i*val1 + (dimension-i)*val2;
+        value_holder[i] = Id*(double)i*val1 + (dimension-i)*val2;
     }
 }
 

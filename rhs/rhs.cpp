@@ -9,7 +9,7 @@
  * @param dat The map containing the io data, may be modified by function
  * \sa item_dim::postprocess
  */
-void rhs::postprocess(std::map<std::string, item*>& dat){
+void rhs::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     item_dim::postprocess(dat);
 }
 /*!

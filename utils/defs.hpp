@@ -1,7 +1,7 @@
 #ifndef DEF_H
 #define DEF_H
 //#include <eigen3/Eigen/Eigen>
-
+#include <complex>
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -27,7 +27,7 @@ extern "C" {
 //#define restr
 //typedef complex<double> comp;
 typedef std::complex<double> comp;
-const static comp I = comp(0, 1);
+const static comp Id = comp(0, 1);
 //#define NUM_TIME_STEPS (256) //number of time points
 //#define LENGTH_T (60) //length of t-domain
 //parameters taken from matlab main file
@@ -71,6 +71,19 @@ inline void err(std::string message, std::string function, std::string file, ite
     exit(1);
 }
 inline void err(std::string message, std::string function, std::string file, item* p, _warning f){
+    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\n";
+    p->print();
+    std::cout << "\nContinuing program\n";
+}
+inline void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f){
+    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+        "\nError message is:\n"<<message<<"\n";
+    p->print();
+    std::cout << "\nExiting program\n";
+    exit(1);
+}
+inline void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f){
     std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();

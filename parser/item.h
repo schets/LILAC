@@ -6,6 +6,7 @@
 #include <set>
 #include <list>
 #include <iostream>
+#include <memory>
 class engineimp;
 class item{
     protected:
@@ -15,16 +16,16 @@ class item{
     public:
 
     engineimp* holder;
-    static item* create(std::string name, engineimp* rval);
+    static std::shared_ptr<item> create(std::string name, engineimp* rval);
     virtual void print() const;
     virtual void parse(std::string inval) = 0;
     virtual void retrieve(void* inval, item* caller);
-    virtual void postprocess(std::map<std::string, item*>& indat){};
+    virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& indat){};
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const = 0;
     virtual void update();
     item();
-    virtual ~item(){};
+    virtual ~item();
     void setname(const std::string n);
     void set_write_name(std::string wname);
     const std::string& name()const;
@@ -36,7 +37,7 @@ class item{
 class item_dim:public item{
     public:
         size_t dimension;
-        virtual void postprocess(std::map<std::string, item*>& dat);
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& dat);
         virtual std::vector<std::string> dependencies() const = 0;
 };
 //!Stores a real-valued input

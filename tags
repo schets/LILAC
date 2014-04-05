@@ -1,0 +1,826 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+A	utils/defs.hpp	38;"	d
+ALIGN16_BEG	utils/inline_trig.h	37;"	d
+ALIGN16_BEG	utils/inline_trig.h	40;"	d
+ALIGN16_END	utils/inline_trig.h	38;"	d
+ALIGN16_END	utils/inline_trig.h	41;"	d
+ALIGNED	utils/defs.hpp	20;"	d
+ALIGNED	utils/defs.hpp	24;"	d
+B	utils/defs.hpp	39;"	d
+BEGIN	writer/writer.h	/^        BEGIN=FINAL_SCORE,$/;"	e	enum:writer::__anon1
+CNLS_H	simulation/jones_optical.h	2;"	d
+CNLS_PULSE_H	objective/n_pulse_score.h	2;"	d
+CNLS_fft_rhs	matlab/CNLS_fft_rhs.m	/^function rhs=CNLS_fft_rhs(z,U,kt,D,K,A,B,g0,e0,tau,Gamma,dt,t,nt);$/;"	f
+COMP_FUNCS_H	utils/comp_funcs.hpp	3;"	d
+CONTROLLER_H	controller/controller.h	2;"	d
+CONT_OBJ	controller/makefile	/^CONT_OBJ = $(LIB_PATH)\/controller.o $(LIB_PATH)\/toroidal.o$/;"	m
+CONT_OBJ	simulation/makefile	/^CONT_OBJ = $(LIB_PATH)\/simulation.o $(LIB_PATH)\/stable.o $(LIB_PATH)\/stable_ode.o $(LIB_PATH)\/jones_optical.o $/;"	m
+COPY_MM_TO_XMM	utils/inline_trig.h	103;"	d
+COPY_XMM_TO_MM	utils/inline_trig.h	97;"	d
+D	utils/defs.hpp	36;"	d
+DATA_H	writer/data.hpp	89;"	d
+DEF_H	utils/defs.hpp	2;"	d
+END	writer/writer.h	/^        END=OTHER} w_type;$/;"	e	enum:writer::__anon1
+ENGINEIMP_H	parser/engineimp.h	2;"	d
+ENGINE_H	parser/engine.h	2;"	d
+ENG_OBJ	parser/makefile	/^ENG_OBJ= $(LIB_PATH)\/engine_main.o $(LIB_PATH)\/item.o $(LIB_PATH)\/engine_read.o $(LIB_PATH)\/graph.o $(LIB_PATH)\/engine_run.o$/;"	m
+ETA	integrator/lsoda.cpp	589;"	d	file:
+FATAL_ERROR	utils/defs.hpp	/^const static _fatal FATAL_ERROR;$/;"	v
+FFTW3_H	utils/fftw3.h	48;"	d
+FFTW_ALLOW_LARGE_GENERIC	utils/fftw3.h	397;"	d
+FFTW_ALLOW_PRUNING	utils/fftw3.h	404;"	d
+FFTW_BACKWARD	utils/fftw3.h	375;"	d
+FFTW_BELIEVE_PCOST	utils/fftw3.h	392;"	d
+FFTW_CONCAT	utils/fftw3.h	65;"	d
+FFTW_CONSERVE_MEMORY	utils/fftw3.h	383;"	d
+FFTW_DEFINE_API	utils/fftw3.h	120;"	d
+FFTW_DEFINE_COMPLEX	utils/fftw3.h	368;"	d
+FFTW_DEFINE_COMPLEX	utils/fftw3.h	369;"	d
+FFTW_DEFINE_COMPLEX	utils/fftw3.h	60;"	d
+FFTW_DEFINE_COMPLEX	utils/fftw3.h	62;"	d
+FFTW_DESTROY_INPUT	utils/fftw3.h	381;"	d
+FFTW_DHT	utils/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_ESTIMATE	utils/fftw3.h	387;"	d
+FFTW_ESTIMATE_PATIENT	utils/fftw3.h	391;"	d
+FFTW_EXHAUSTIVE	utils/fftw3.h	384;"	d
+FFTW_EXTERN	utils/fftw3.h	81;"	d
+FFTW_EXTERN	utils/fftw3.h	83;"	d
+FFTW_EXTERN	utils/fftw3.h	86;"	d
+FFTW_FORWARD	utils/fftw3.h	374;"	d
+FFTW_HC2R	utils/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_MANGLE_DOUBLE	utils/fftw3.h	66;"	d
+FFTW_MANGLE_FLOAT	utils/fftw3.h	67;"	d
+FFTW_MANGLE_LONG_DOUBLE	utils/fftw3.h	68;"	d
+FFTW_MANGLE_QUAD	utils/fftw3.h	69;"	d
+FFTW_MEASURE	utils/fftw3.h	380;"	d
+FFTW_NO_BUFFERING	utils/fftw3.h	395;"	d
+FFTW_NO_DFT_R2HC	utils/fftw3.h	393;"	d
+FFTW_NO_FIXED_RADIX_LARGE_N	utils/fftw3.h	403;"	d
+FFTW_NO_INDIRECT_OP	utils/fftw3.h	396;"	d
+FFTW_NO_NONTHREADED	utils/fftw3.h	394;"	d
+FFTW_NO_RANK_SPLITS	utils/fftw3.h	398;"	d
+FFTW_NO_SIMD	utils/fftw3.h	401;"	d
+FFTW_NO_SLOW	utils/fftw3.h	402;"	d
+FFTW_NO_TIMELIMIT	utils/fftw3.h	377;"	d
+FFTW_NO_VRANK_SPLITS	utils/fftw3.h	399;"	d
+FFTW_NO_VRECURSE	utils/fftw3.h	400;"	d
+FFTW_PATIENT	utils/fftw3.h	386;"	d
+FFTW_PRESERVE_INPUT	utils/fftw3.h	385;"	d
+FFTW_R2HC	utils/fftw3.h	/^     FFTW_R2HC=0, FFTW_HC2R=1, FFTW_DHT=2,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT00	utils/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT01	utils/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT10	utils/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_REDFT11	utils/fftw3.h	/^     FFTW_REDFT00=3, FFTW_REDFT01=4, FFTW_REDFT10=5, FFTW_REDFT11=6,$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT00	utils/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT01	utils/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT10	utils/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_RODFT11	utils/fftw3.h	/^     FFTW_RODFT00=7, FFTW_RODFT01=8, FFTW_RODFT10=9, FFTW_RODFT11=10$/;"	e	enum:fftw_r2r_kind_do_not_use_me
+FFTW_UNALIGNED	utils/fftw3.h	382;"	d
+FFTW_WISDOM_ONLY	utils/fftw3.h	388;"	d
+FINAL_FUNC	writer/writer.h	/^        FINAL_FUNC,$/;"	e	enum:writer::__anon1
+FINAL_SCORE	writer/writer.h	/^        FINAL_SCORE,$/;"	e	enum:writer::__anon1
+Gamma	utils/defs.hpp	41;"	d
+HASHER_H	optimal-frequencies/hasher.h	2;"	d
+I	utils/defs.hpp	/^const static comp I = comp(0, 1);$/;"	v
+INTERMEDIATE_FUNC	writer/writer.h	/^        INTERMEDIATE_FUNC,$/;"	e	enum:writer::__anon1
+INTERMEDIATE_SCORE	writer/writer.h	/^        INTERMEDIATE_SCORE,$/;"	e	enum:writer::__anon1
+INT_IMP_H	integrator/int_imp.h	2;"	d
+INT_OBJ	integrator/makefile	/^INT_OBJ =  $(LIB_PATH)\/rk45.o $(LIB_PATH)\/integrator.o #$(LIB_PATH)\/rk45_double.o $(LIB_PATH)\/rk4.o$/;"	m
+ITEM_H	parser/item.h	2;"	d
+K	utils/defs.hpp	37;"	d
+LENGTH_T	rhs/rhs_CNLS.h	/^    double LENGTH_T;$/;"	m	class:rhs_CNLS
+LENGTH_T	rhs/rhs_SQGLE.h	/^    double LENGTH_T;$/;"	m	class:rhs_SQGLE
+LIB_MAIN	integrator/makefile	/^LIB_MAIN=..\/lib$/;"	m
+LIB_MAIN	utils/makefile	/^LIB_MAIN = ..\/lib$/;"	m
+LIB_PATH	controller/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+LIB_PATH	integrator/makefile	/^LIB_PATH=$(LIB_MAIN)$/;"	m
+LIB_PATH	objective/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+LIB_PATH	parser/makefile	/^LIB_PATH=$(LIB_MAIN)$/;"	m
+LIB_PATH	rhs/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+LIB_PATH	simulation/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+LIB_PATH	utils/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+LIB_PATH	writer/makefile	/^LIB_PATH= $(LIB_MAIN)$/;"	m
+MAKE_ALIGNED	utils/defs.hpp	21;"	d
+MAKE_ALIGNED	utils/defs.hpp	25;"	d
+NUM_TIME_STEPS	rhs/rhs_CNLS.h	/^    size_t NUM_TIME_STEPS;$/;"	m	class:rhs_CNLS
+NUM_TIME_STEPS	rhs/rhs_SQGLE.h	/^    size_t NUM_TIME_STEPS;$/;"	m	class:rhs_SQGLE
+OBJECTIVE_H	objective/objective.h	2;"	d
+OBJS	makefile	/^OBJS = lib\/rhs.o  lib\/controller.o lib\/integrator.o lib\/main.o lib\/engine.o lib\/objective.o lib\/simulation.o$/;"	m
+OBJ_OBJ	objective/makefile	/^OBJ_OBJ = $(LIB_PATH)\/objective.o $(LIB_PATH)\/n_pulse_score.o$/;"	m
+OTHER	writer/writer.h	/^        OTHER,$/;"	e	enum:writer::__anon1
+PI	utils/defs.hpp	43;"	d
+PRINTABLE_HPP	utils/printable.hpp	3;"	d
+RHS_H	rhs/rhs.h	2;"	d
+RHS_IMP_H	rhs/rhs_CNLS.h	2;"	d
+RHS_OBJ	rhs/makefile	/^RHS_OBJ = $(LIB_PATH)\/rhs_main.o $(LIB_PATH)\/rhs_CNLS.o $(LIB_PATH)\/rhs_SQGLE.o $(LIB_PATH)\/example_rhs.o$/;"	m
+RHS_TYPE_H	rhs/rhs_type.h	2;"	d
+RHS_TYPE_H	rhs/rhs_type.hpp	2;"	d
+RK45_H	integrator/rk45.h	2;"	d
+RK45_TMPL	integrator/rk45_tmpl.h	2;"	d
+RK45_TMPL	integrator/rk45_tmpl.hpp	2;"	d
+RTlength	utils/defs.hpp	42;"	d
+R_matrix	matlab/R_matrix.m	/^function rhs=R_matrix(alpha);$/;"	f
+SOLVER_HPP	integrator/integrator.h	2;"	d
+STABLE_ODE_TMPL_HPP	simulation/stable_ode_tmpl.hpp	2;"	d
+SYSTEM_H	simulation/simulation.h	2;"	d
+TOROIDAL_H	controller/toroidal.h	2;"	d
+TYPE_CONSTRUCTOR_HPP	utils/type_constructor.hpp	3;"	d
+USE_SSE2	utils/inline_trig.h	33;"	d
+UTIL_OBJ	utils/makefile	/^UTIL_OBJ=$(LIB_PATH)\/utils.o $(LIB_PATH)\/main.o$/;"	m
+VARTYPE_HPP	utils/vartype.hpp	3;"	d
+WARNING	utils/defs.hpp	/^const static _warning WARNING;$/;"	v
+WRITER_H	writer/writer.h	3;"	d
+WRITE_OBJ	writer/makefile	/^WRITE_OBJ = $(LIB_PATH)\/writer.o $/;"	m
+Y	python/learn-grad.py	/^Y=grads #don't perform dimensionality reduction$/;"	v
+_PI32_CONST	utils/inline_trig.h	57;"	d
+_PS_CONST	utils/inline_trig.h	55;"	d
+_PS_CONST_TYPE	utils/inline_trig.h	59;"	d
+__HIDER__	utils/comp_funcs.hpp	/^namespace __HIDER__{$/;"	n
+__check	utils/type_constructor.hpp	/^        static  bool __check(const vartype* tval){$/;"	f	class:blacklist
+__create	utils/type_constructor.hpp	/^        static  Toh<Tout>* __create(const vartype* tval){$/;"	f	class:typelist
+_clog	rhs/rhs_SQGLE.cpp	/^inline comp _clog(comp inval){$/;"	f
+_conj	utils/comp_funcs.hpp	/^inline comp _conj(comp inval){$/;"	f
+_fatal	utils/defs.hpp	/^    _fatal(){};$/;"	f	class:_fatal
+_fatal	utils/defs.hpp	/^class _fatal{$/;"	c
+_freevectors	integrator/lsoda.cpp	/^static void _freevectors(void)$/;"	f	file:
+_imag	utils/comp_funcs.hpp	/^inline double _imag(comp inval){$/;"	f
+_insert	parser/graph.cpp	/^graph::graphnode& graph::_insert(item* it_p){$/;"	f	class:graph
+_lsoda_f	integrator/lsoda.cpp	/^typedef void    (*_lsoda_f) (double, double *, double *, void *);$/;"	t	file:
+_name	parser/item.h	/^    std::string _name;$/;"	m	class:item
+_read	parser/engine_read.cpp	/^void engineimp::_read(std::ifstream& fstr){$/;"	f	class:engineimp
+_real	utils/comp_funcs.hpp	/^inline double _real(comp inval){$/;"	f
+_sqabs	utils/comp_funcs.hpp	/^inline double _sqabs(comp inval){$/;"	f
+_ttype	utils/type_constructor.hpp	/^        class _ttype{$/;"	c	class:type_constructor
+_unique_name	simulation/jones_optical.cpp	/^    _unique_name(){$/;"	f	class:_unique_name
+_unique_name	simulation/jones_optical.cpp	/^class _unique_name{$/;"	c	file:
+_unique_name	utils/comp_funcs.hpp	/^        _unique_name(){$/;"	f	class:__HIDER__::_unique_name
+_unique_name	utils/comp_funcs.hpp	/^    class _unique_name{$/;"	c	namespace:__HIDER__
+_warning	utils/defs.hpp	/^    _warning(){};$/;"	f	class:_warning
+_warning	utils/defs.hpp	/^class _warning{$/;"	c
+_write_name	parser/item.h	/^    std::string _write_name;$/;"	m	class:item
+a1	rhs/rhs_SQGLE.h	/^    double a1, a2, a3, ap;$/;"	m	class:rhs_SQGLE
+a1	simulation/jones_optical.cpp	/^        double a1, a2, a3, ap;$/;"	m	class:jones_matrix	file:
+a2	rhs/rhs_SQGLE.h	/^    double a1, a2, a3, ap;$/;"	m	class:rhs_SQGLE
+a2	simulation/jones_optical.cpp	/^        double a1, a2, a3, ap;$/;"	m	class:jones_matrix	file:
+a3	rhs/rhs_SQGLE.h	/^    double a1, a2, a3, ap;$/;"	m	class:rhs_SQGLE
+a3	simulation/jones_optical.cpp	/^        double a1, a2, a3, ap;$/;"	m	class:jones_matrix	file:
+abserr	integrator/rk45.h	/^    double dt_init, dt_min, dt_max, relerr, abserr;$/;"	m	class:rk45
+acor	integrator/lsoda.cpp	/^static double **yh, **wm, *ewt, *savf, *acor;$/;"	v	file:
+actual	integrator/rk45.h	/^    integrator* actual;$/;"	m	class:rk45
+actual	simulation/stable.h	/^        stable_ode* actual;$/;"	m	class:stable_ode
+add_data	writer/writer.cpp	/^void writer::add_data(const data* inval, const std::string dat_t){$/;"	f	class:writer
+add_data	writer/writer.cpp	/^void writer::add_data(const data* inval, const w_type dat_t){$/;"	f	class:writer
+add_scores	optimal-frequencies/hasher.cpp	/^void hasher::add_scores(const cmf& hvals){$/;"	f	class:hasher
+add_vecs	optimal-frequencies/hasher.cpp	/^void hasher::add_vecs(const rmf& invecs){$/;"	f	class:hasher
+add_writer	parser/engine_write.cpp	/^void engineimp::add_writer(writer* wval){$/;"	f	class:engineimp
+addelem	writer/data.hpp	/^        inline void addelem(const T& inval){$/;"	f	class:data
+addelem	writer/data.hpp	/^        inline void addelem(const T& inval, const strfnc<T>& tostr){$/;"	f	class:data
+addvar	controller/toroidal.cpp	/^void toroidal::addvar(variable* v){$/;"	f	class:toroidal
+al_free	utils/defs.hpp	/^inline void al_free(void* ss){$/;"	f
+al_malloc	utils/defs.hpp	/^inline void* al_malloc(size_t ss){$/;"	f
+ap	rhs/rhs_SQGLE.h	/^    double a1, a2, a3, ap;$/;"	m	class:rhs_SQGLE
+ap	simulation/jones_optical.cpp	/^        double a1, a2, a3, ap;$/;"	m	class:jones_matrix	file:
+appendvec	utils/comp_funcs.hpp	/^template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b){$/;"	f
+avals	simulation/jones_optical.h	/^        std::vector<double> avals;$/;"	m	struct:jones_optical::data_store
+ave_good_score	python/learn-grad.py	/^ave_good_score = sum(missed_stab_arr)\/len(missed_stab_arr);$/;"	v
+ave_score	python/learn-grad.py	/^ave_score = sum(missed_stab_arr)\/len(missed_stab_arr);$/;"	v
+ba1	simulation/jones_optical.h	/^    double ba1, ba2, bap, ba3;$/;"	m	class:jones_optical
+ba2	simulation/jones_optical.h	/^    double ba1, ba2, bap, ba3;$/;"	m	class:jones_optical
+ba3	simulation/jones_optical.h	/^    double ba1, ba2, bap, ba3;$/;"	m	class:jones_optical
+bad_res	simulation/stable.h	/^        int bad_res;$/;"	m	class:stable
+bap	simulation/jones_optical.h	/^    double ba1, ba2, bap, ba3;$/;"	m	class:jones_optical
+best_score	simulation/jones_optical.h	/^    double best_score;$/;"	m	class:jones_optical
+blacklist	utils/type_constructor.hpp	/^        blacklist(){};$/;"	f	class:blacklist
+blacklist	utils/type_constructor.hpp	/^class blacklist:public blacklist_checker{$/;"	c
+blacklist_checker	utils/type_constructor.hpp	/^class blacklist_checker{};$/;"	c
+ccmax	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+cfode	integrator/lsoda.cpp	/^static void cfode(int meth)$/;"	f	file:
+change_threshold	simulation/stable.h	/^        double change_threshold;$/;"	m	class:stable
+check	utils/type_constructor.hpp	/^    static bool check(const vartype* val){$/;"	f	class:blacklist
+cm1	integrator/lsoda.cpp	/^static double   pdest, pdlast, ratio, cm1[13], cm2[6];$/;"	v	file:
+cm2	integrator/lsoda.cpp	/^static double   pdest, pdlast, ratio, cm1[13], cm2[6];$/;"	v	file:
+cmf	optimal-frequencies/hasher.h	/^typedef Matrix<float, Dynamic, Dynamic, ColMajor> cmf;$/;"	t
+comp	utils/defs.hpp	/^typedef std::complex<double> comp;$/;"	t
+comp_in	rhs/rhs_CNLS.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_CNLS
+comp_in	rhs/rhs_SQGLE.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_SQGLE
+comp_in_r	rhs/rhs_CNLS.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_CNLS
+comp_in_r	rhs/rhs_SQGLE.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_SQGLE
+comp_out	rhs/rhs_CNLS.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_CNLS
+comp_out	rhs/rhs_SQGLE.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_SQGLE
+comp_out_r	rhs/rhs_CNLS.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_CNLS
+comp_out_r	rhs/rhs_SQGLE.h	/^         * restr comp_out, * restr comp_out_r, * restr comp_in_r;$/;"	m	class:rhs_SQGLE
+compare	utils/vartype.hpp	/^        inline bool compare(const vartype& in) const{$/;"	f	class:vartype
+compare	utils/vartype.hpp	/^        inline bool compare(const vartype* in) const{$/;"	f	class:vartype
+compare	utils/vartype.hpp	/^        template<typename T> inline bool compare() const{$/;"	f	class:vartype
+compare	utils/vartype.hpp	/^        template<typename T> inline bool compare(const T& in) const{$/;"	f	class:vartype
+compatible_type	utils/vartype.hpp	/^        virtual bool compatible_type(const std::type_info& tref){$/;"	f	class:vartype
+conit	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+cont	simulation/simulation.h	/^        controller* cont;$/;"	m	class:simulation
+control	controller/toroidal.cpp	/^void toroidal::control(comp* u, objective* obj){$/;"	f	class:toroidal
+controller	controller/controller.h	/^class controller:public item_dim{$/;"	c
+copy	parser/variable.cpp	/^void variable::copy(double* inval){$/;"	f	class:variable
+corfailure	integrator/lsoda.cpp	/^static void corfailure(double *told, double *rh, int *ncf, int *corflag)$/;"	f	file:
+correction	integrator/lsoda.cpp	/^static void correction(int neq, double *y, _lsoda_f f, int *corflag, double pnorm, double *del, double *delp, double *told,$/;"	f	file:
+cos_ps	utils/inline_trig.h	/^v4sf cos_ps(v4sf x) { \/\/ any x$/;"	f
+crate	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+create	controller/controller.cpp	/^item* controller::create(std::string name){$/;"	f	class:controller
+create	integrator/integrator.cpp	/^item* integrator::create(std::string inval){$/;"	f	class:integrator
+create	objective/objective.cpp	/^item* objective::create(std::string name){$/;"	f	class:objective
+create	parser/item.cpp	/^item* item::create(std::string name, engineimp* in){$/;"	f	class:item
+create	rhs/rhs.cpp	/^rhs* rhs::create(std::string tname){$/;"	f	class:rhs
+create	simulation/simulation.cpp	/^item* simulation::create(std::string name){$/;"	f	class:simulation
+create	utils/type_constructor.hpp	/^                Tout* create(){$/;"	f	class:type_constructor::ttype
+create	utils/type_constructor.hpp	/^            static void create(Tout** in, const vartype* tval){$/;"	f	class:type_constructor
+create	utils/type_constructor.hpp	/^        static Tout* create(const vartype* tval){$/;"	f	class:type_constructor
+create	utils/type_constructor.hpp	/^        static Tout* create(const vartype* tval, const Tl blist){$/;"	f	class:type_constructor
+create	utils/type_constructor.hpp	/^        static void create(Toh<Tout>** in, const vartype* val){$/;"	f	class:typelist
+create	writer/data.hpp	/^        static const inline data* create(const std::string _name, T* invals, size_t len){$/;"	f	class:data
+create	writer/data.hpp	/^        static const inline data* create(const std::string _name, T* invals, size_t len, const strfnc<T>& tostr){$/;"	f	class:data
+create	writer/data.hpp	/^        static const inline data* create(const std::string name, const T& inval){$/;"	f	class:data
+create	writer/data.hpp	/^        static const inline data* create(const std::string name, const T& inval, const strfnc<T>& tostr){$/;"	f	class:data
+create	writer/data.hpp	/^        static const inline data* create(const std::string name, in_iter<T> b,$/;"	f	class:data
+curdir	parser/engineimp.h	/^    std::string curdir;$/;"	m	class:engineimp
+d_test	optimal-frequencies/hasher.h	/^    vector<float> d_test;$/;"	m	class:hasher
+dat	writer/data.hpp	/^    std::stringstream dat;$/;"	m	class:data
+data	writer/data.hpp	/^        data(const std::string _name, T* invals, size_t len): data(_name, invals, invals+len){}$/;"	f	class:data
+data	writer/data.hpp	/^        data(const std::string _name, T* invals, size_t len, const strfnc<T>& tostr): data(_name, invals, invals+len, tostr){}$/;"	f	class:data
+data	writer/data.hpp	/^        data(const std::string _name, in_iter<T> b, in_iter<T> e):name(_name){$/;"	f	class:data
+data	writer/data.hpp	/^        data(const std::string _name, in_iter<T> b,$/;"	f	class:data
+data	writer/data.hpp	/^        data(const std::string& _name, const T& inval):name(_name){$/;"	f	class:data
+data	writer/data.hpp	/^        data(const std::string& _name, const T& inval, const strfnc<T>& tostr):name(_name){$/;"	f	class:data
+data	writer/data.hpp	/^class data{$/;"	c
+data_store	simulation/jones_optical.h	/^    struct data_store{$/;"	s	class:jones_optical
+dats	parser/engineimp.h	/^    std::list<writer*> dats;$/;"	m	class:engineimp
+daxpy	integrator/lsoda.cpp	/^daxpy(size_t n, double da, double* restr dx, size_t incx, double* restr dy, size_t incy)$/;"	f	file:
+ddot	integrator/lsoda.cpp	/^ddot(size_t n, double* dx, size_t incx, double* dy, size_t incy)$/;"	f	file:
+dependencies	controller/controller.cpp	/^std::vector<std::string> controller::dependencies() const{$/;"	f	class:controller
+dependencies	controller/toroidal.cpp	/^std::vector<std::string> toroidal::dependencies() const{$/;"	f	class:toroidal
+dependencies	integrator/integrator.cpp	/^std::vector<std::string> integrator::dependencies() const {$/;"	f	class:integrator
+dependencies	integrator/rk4.cpp	/^std::vector<std::string> rk4::dependencies()const{$/;"	f	class:rk4
+dependencies	integrator/rk45.cpp	/^std::vector<std::string> rk45::dependencies() const{$/;"	f	class:rk45
+dependencies	integrator/rk45_tmpl.h	/^std::vector<std::string> rk45_tmpl<T>::dependencies() const{$/;"	f	class:rk45_tmpl
+dependencies	integrator/rk45_tmpl.hpp	/^std::vector<std::string> rk45_tmpl<T>::dependencies() const{$/;"	f	class:rk45_tmpl
+dependencies	objective/n_pulse_score.cpp	/^std::vector<std::string> n_pulse_score::dependencies() const {$/;"	f	class:n_pulse_score
+dependencies	objective/objective.cpp	/^std::vector<std::string> objective::dependencies() const{$/;"	f	class:objective
+dependencies	parser/item.cpp	/^std::vector<std::string> integer::dependencies() const{$/;"	f	class:integer
+dependencies	parser/item.cpp	/^std::vector<std::string> item::dependencies()const{$/;"	f	class:item
+dependencies	parser/item.cpp	/^std::vector<std::string> item_dim::dependencies()const{$/;"	f	class:item_dim
+dependencies	parser/item.cpp	/^std::vector<std::string> real8::dependencies() const{$/;"	f	class:real8
+dependencies	parser/item.cpp	/^std::vector<std::string> string::dependencies() const {$/;"	f	class:string
+dependencies	parser/item.h	/^        virtual std::vector<std::string> dependencies() const{$/;"	f	class:ftest1
+dependencies	parser/item.h	/^        virtual std::vector<std::string> dependencies() const{$/;"	f	class:ftest2
+dependencies	parser/item.h	/^        virtual std::vector<std::string> dependencies() const{$/;"	f	class:ftest3
+dependencies	rhs/example_rhs.cpp	/^std::vector<std::string> example_rhs::dependencies() const{$/;"	f	class:example_rhs
+dependencies	rhs/rhs.cpp	/^std::vector<std::string> rhs::dependencies()const {$/;"	f	class:rhs
+dependencies	rhs/rhs_CNLS.cpp	/^std::vector<std::string> rhs_CNLS::dependencies() const{$/;"	f	class:rhs_CNLS
+dependencies	rhs/rhs_SQGLE.cpp	/^std::vector<std::string> rhs_SQGLE::dependencies() const{$/;"	f	class:rhs_SQGLE
+dependencies	rhs/rhs_type.h	/^    std::vector<std::string> dependencies() const{$/;"	f	class:rhs_type
+dependencies	rhs/rhs_type.hpp	/^    virtual std::vector<std::string> dependencies() const{$/;"	f	class:rhs_type
+dependencies	simulation/jones_optical.cpp	/^std::vector<std::string> jones_optical::dependencies() const{$/;"	f	class:jones_optical
+dependencies	simulation/simulation.cpp	/^std::vector<std::string> simulation::dependencies() const{$/;"	f	class:simulation
+dependencies	simulation/stable.cpp	/^std::vector<std::string> stable::dependencies() const{$/;"	f	class:stable
+dependencies	simulation/stable_ode.cpp	/^std::vector<std::string> stable_ode::dependencies() const{$/;"	f	class:stable_ode
+dependencies	simulation/stable_spectral_ode_tmpl.hpp	/^std::vector<std::string> stable_spectral_pde_1d_tmpl<T>::dependencies() const{$/;"	f	class:stable_spectral_pde_1d_tmpl
+dgefa	integrator/lsoda.cpp	/^dgefa(double** a, int n, int* ipvt, int* info)$/;"	f
+dgesl	integrator/lsoda.cpp	/^dgesl(double *restr * restr a, int n, int* ipvt, double* restr b, int job)$/;"	f	file:
+dimension	parser/item.h	/^        size_t dimension;$/;"	m	class:item_dim
+dscal	integrator/lsoda.cpp	/^dscal(size_t n, double da, double* dx, size_t incx)$/;"	f
+dt	rhs/rhs_CNLS.h	/^    double dt;$/;"	m	class:rhs_CNLS
+dt	rhs/rhs_SQGLE.h	/^    double dt;$/;"	m	class:rhs_SQGLE
+dt_init	integrator/rk45.h	/^    double dt_init, dt_min, dt_max, relerr, abserr;$/;"	m	class:rk45
+dt_max	integrator/rk45.h	/^    double dt_init, dt_min, dt_max, relerr, abserr;$/;"	m	class:rk45
+dt_min	integrator/rk45.h	/^    double dt_init, dt_min, dt_max, relerr, abserr;$/;"	m	class:rk45
+dvals	writer/writer.h	/^    std::list<const data*> dvals;$/;"	m	class:writer
+dxdt	rhs/example_rhs.cpp	/^int example_rhs::dxdt(comp* restr x, comp* restr dx, double t){$/;"	f	class:example_rhs
+dxdt	rhs/rhs_CNLS.cpp	/^int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){$/;"	f	class:rhs_CNLS
+dxdt	rhs/rhs_SQGLE.cpp	/^int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){$/;"	f	class:rhs_SQGLE
+dxdt	rhs/rhs_type.hpp	/^    inline int dxdt(void* restr x, void* restr dx, double t){$/;"	f	class:rhs_type
+e0	rhs/rhs_CNLS.h	/^    double e0;$/;"	m	class:rhs_CNLS
+e0	rhs/rhs_SQGLE.h	/^    double e0;$/;"	m	class:rhs_SQGLE
+el	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+el0	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+elco	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+endstoda	integrator/lsoda.cpp	/^static void endstoda()$/;"	f	file:
+energy	utils/comp_funcs.hpp	/^inline double energy(comp* v, size_t s){$/;"	f
+energy	utils/comp_funcs.hpp	/^inline double energy(double* v, size_t s){$/;"	f
+eng	parser/engine.h	/^    engineimp* eng;$/;"	m	class:engine
+engine	parser/engine.cpp	/^engine::engine(const std::string fname, const std::string outname, std::string index){$/;"	f	class:engine
+engine	parser/engine.h	/^class engine{$/;"	c
+engineimp	parser/engine.cpp	/^engineimp::engineimp(const std::string fname, const std::string outname, const std::string index){$/;"	f	class:engineimp
+engineimp	parser/engineimp.h	/^class engineimp{$/;"	c
+err	utils/defs.hpp	/^inline void err(std::string message, std::string function, std::string file, _fatal f){$/;"	f
+err	utils/defs.hpp	/^inline void err(std::string message, std::string function, std::string file, _warning w){$/;"	f
+err	utils/defs.hpp	/^inline void err(std::string message, std::string function, std::string file, item* p, _fatal f){$/;"	f
+err	utils/defs.hpp	/^inline void err(std::string message, std::string function, std::string file, item* p, _warning f){$/;"	f
+ewset	integrator/lsoda.cpp	/^static void ewset(int itol, double *rtol, double *atol, double *ycur)$/;"	f	file:
+ewt	integrator/lsoda.cpp	/^static double **yh, **wm, *ewt, *savf, *acor;$/;"	v	file:
+example_rhs	rhs/example_rhs.h	/^class example_rhs:public rhs_type<comp>{$/;"	c
+execute_command	parser/engine_read.cpp	/^void engineimp::execute_command(std::string inval){$/;"	f	class:engineimp
+exp_ps	utils/inline_trig.h	/^v4sf exp_ps(v4sf x) {$/;"	f
+f0	integrator/int_imp.h	/^    comp* restr f0, * restr f2, * restr f3, * restr f1;$/;"	m	class:rk4
+f0	integrator/rk45_tmpl.h	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f0	integrator/rk45_tmpl.hpp	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f1	integrator/int_imp.h	/^    comp* restr f0, * restr f2, * restr f3, * restr f1;$/;"	m	class:rk4
+f1	integrator/rk45_tmpl.h	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f1	integrator/rk45_tmpl.hpp	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f2	integrator/int_imp.h	/^    comp* restr f0, * restr f2, * restr f3, * restr f1;$/;"	m	class:rk4
+f2	integrator/rk45_tmpl.h	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f2	integrator/rk45_tmpl.hpp	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f3	integrator/int_imp.h	/^    comp* restr f0, * restr f2, * restr f3, * restr f1;$/;"	m	class:rk4
+f3	integrator/rk45_tmpl.h	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f3	integrator/rk45_tmpl.hpp	/^    T* restr f0, * restr f1, * restr f2, * restr f3;$/;"	m	class:rk45_tmpl
+f4	integrator/rk45_tmpl.h	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f4	integrator/rk45_tmpl.hpp	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f5	integrator/rk45_tmpl.h	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f5	integrator/rk45_tmpl.hpp	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f6	integrator/rk45_tmpl.h	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f6	integrator/rk45_tmpl.hpp	/^    T* restr f4, * restr f5, * restr f6;$/;"	m	class:rk45_tmpl
+f_is_empty	parser/engine.cpp	/^char f_is_empty(std::ifstream& fstr){$/;"	f
+fback	rhs/rhs_CNLS.h	/^    fftw_plan ffor, fback;$/;"	m	class:rhs_CNLS
+fback	rhs/rhs_SQGLE.h	/^    fftw_plan ffor, fback;$/;"	m	class:rhs_SQGLE
+fback	simulation/stable_spectral_ode_tmpl.hpp	/^        fftw_plan ffor, fback;$/;"	m	class:stable_spectral_pde_1d_tmpl
+fex	integrator/lsoda.cpp	/^static void fex(double t, double *y, double *ydot, void *data)$/;"	f	file:
+ffor	objective/n_pulse_score.h	/^    fftw_plan ffor;$/;"	m	class:n_pulse_score
+ffor	rhs/rhs_CNLS.h	/^    fftw_plan ffor, fback;$/;"	m	class:rhs_CNLS
+ffor	rhs/rhs_SQGLE.h	/^    fftw_plan ffor, fback;$/;"	m	class:rhs_SQGLE
+ffor	simulation/stable_spectral_ode_tmpl.hpp	/^        fftw_plan ffor, fback;$/;"	m	class:stable_spectral_pde_1d_tmpl
+fft	utils/comp_funcs.hpp	/^inline void fft(comp* _in, comp* _out, const size_t len){$/;"	f
+fft	utils/comp_funcs.hpp	/^inline void fft(fftw_plan pp, comp* in, comp* out, const size_t len){$/;"	f
+fftw_iodim64_do_not_use_me	utils/fftw3.h	/^struct fftw_iodim64_do_not_use_me {$/;"	s
+fftw_iodim_do_not_use_me	utils/fftw3.h	/^struct fftw_iodim_do_not_use_me {$/;"	s
+fftw_r2r_kind_do_not_use_me	utils/fftw3.h	/^enum fftw_r2r_kind_do_not_use_me {$/;"	g
+fftw_read_char_func_do_not_use_me	utils/fftw3.h	/^typedef int (*fftw_read_char_func_do_not_use_me)(void *);$/;"	t
+fftw_write_char_func_do_not_use_me	utils/fftw3.h	/^typedef void (*fftw_write_char_func_do_not_use_me)(char c, void *);$/;"	t
+fnorm	integrator/lsoda.cpp	/^static double fnorm(int n, double **a, double *w)$/;"	f	file:
+freevectors	integrator/lsoda.cpp	/^static void freevectors(void)$/;"	f	file:
+from_name	writer/writer.cpp	/^writer::w_type writer::from_name(const std::string inval){$/;"	f	class:writer
+from_name_strict	writer/writer.cpp	/^writer::w_type writer::from_name_strict(const std::string inval){$/;"	f	class:writer
+ftest1	parser/item.h	/^class ftest1 : public real8{$/;"	c
+ftest2	parser/item.h	/^class ftest2 : public real8{$/;"	c
+ftest3	parser/item.h	/^class ftest3 : public real8{$/;"	c
+func	integrator/rk45_tmpl.h	/^    rhs_type<T>* func;$/;"	m	class:rk45_tmpl
+func	integrator/rk45_tmpl.hpp	/^    rhs* func;$/;"	m	class:rk45_tmpl
+func_dat	simulation/jones_optical.h	/^    FILE* func_dat, *func_score;$/;"	m	class:jones_optical
+func_score	simulation/jones_optical.h	/^    FILE* func_dat, *func_score;$/;"	m	class:jones_optical
+g0	rhs/rhs_CNLS.h	/^    double g0;$/;"	m	class:rhs_CNLS
+g0	rhs/rhs_SQGLE.h	/^    double g0;$/;"	m	class:rhs_SQGLE
+g_lenyh	integrator/lsoda.cpp	/^static int      g_nyh = 0, g_lenyh = 0;$/;"	v	file:
+g_nyh	integrator/lsoda.cpp	/^static int      g_nyh = 0, g_lenyh = 0;$/;"	v	file:
+gaussrand	simulation/jones_optical.cpp	/^double gaussrand()$/;"	f
+get_bin	optimal-frequencies/hasher.cpp	/^inline size_t hasher::get_bin(float hval, size_t n_bins){$/;"	f	class:hasher
+get_change	simulation/jones_optical.cpp	/^double jones_optical::get_change(){$/;"	f	class:jones_optical
+get_change	simulation/stable_ode.cpp	/^double stable_ode::get_change(){$/;"	f	class:stable_ode
+get_change	simulation/stable_ode_tmpl.hpp	/^double stable_ode_tmpl<T>::get_change(){$/;"	f	class:stable_ode_tmpl
+get_cur_scores	optimal-frequencies/hasher.cpp	/^vector<float> hasher::get_cur_scores(){$/;"	f	class:hasher
+get_unique_name	simulation/jones_optical.cpp	/^    std::string get_unique_name(std::string nbase){$/;"	f	class:_unique_name
+get_unique_name	simulation/jones_optical.cpp	/^std::string get_unique_name(std::string base){$/;"	f
+get_unique_name	utils/comp_funcs.hpp	/^        std::string get_unique_name(std::string nbase){$/;"	f	class:__HIDER__::_unique_name
+grads	python/learn-grad.py	/^grads = scaler.transform(grads)$/;"	v
+grads2	python/learn-grad.py	/^grads2 = scaler.transform(grads2)$/;"	v
+graph	parser/graph.h	/^class graph{$/;"	c
+graph_h	parser/graph.h	2;"	d
+graphnode	parser/graph.h	/^    class graphnode{$/;"	c	class:graph
+h	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+has_write_name	parser/item.h	/^    char has_write_name;$/;"	m	class:item
+hash	optimal-frequencies/hasher.cpp	/^void hasher::hash(const rmf& invecs, cmf& hashes){$/;"	f	class:hasher
+hasher	optimal-frequencies/hasher.cpp	/^hasher::hasher(size_t num_hash, size_t num_rand, vector<float> lens, size_t d_vals, float min_interest):hashmat(lens.size(), num_hash),  tor_hashes(d_vals+2), rand_scores(num_rand, num_hash),  rand_vecs(num_rand, lens.size()),d_test(d_vals, 0){$/;"	f	class:hasher
+hasher	optimal-frequencies/hasher.h	/^class hasher{$/;"	c
+hashmat	optimal-frequencies/hasher.h	/^    cmf hashmat;$/;"	m	class:hasher
+help	objective/n_pulse_score.h	/^    double* restr help;$/;"	m	class:n_pulse_score
+help	simulation/jones_optical.h	/^    double* help, *t, *phold;$/;"	m	class:jones_optical
+help	simulation/stable_spectral_ode_tmpl.hpp	/^        double* help;$/;"	m	class:stable_spectral_pde_1d_tmpl
+high_bound	parser/item.h	/^    double low_bound, high_bound, inc_size;$/;"	m	class:variable
+hmin	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+hmxi	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+hold	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+holder	parser/item.h	/^    engineimp* holder;$/;"	m	class:item
+hu	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+ialth	integrator/lsoda.cpp	/^static int      ialth, ipup, lmax, nslp;$/;"	v	file:
+icount	integrator/lsoda.cpp	/^static int      icount, irflag;$/;"	v	file:
+idamax	integrator/lsoda.cpp	/^idamax(size_t n, double* dx, size_t incx)$/;"	f	file:
+ierpj	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+iersl	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+ifft	utils/comp_funcs.hpp	/^inline void ifft(comp* _in, comp* _out, const size_t len){$/;"	f
+ifft	utils/comp_funcs.hpp	/^inline void ifft(fftw_plan pp, comp* restr in, comp* restr out, const size_t len){$/;"	f
+illin	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+imxer	integrator/lsoda.cpp	/^static int      ml, mu, imxer;$/;"	v	file:
+in_vecs	optimal-frequencies/hasher.h	/^    list<rmf> in_vecs;$/;"	m	class:hasher
+inc	parser/variable.cpp	/^void variable::inc(){$/;"	f	class:variable
+inc	parser/variable.cpp	/^void variable::inc(double p){$/;"	f	class:variable
+inc_size	parser/item.h	/^    double low_bound, high_bound, inc_size;$/;"	m	class:variable
+index	controller/controller.h	/^    int index;$/;"	m	class:controller
+init	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+initial_inc	controller/toroidal.h	/^    double initial_inc;$/;"	m	class:toroidal
+ins_extra_deps	parser/graph.cpp	/^void graph::ins_extra_deps(){$/;"	f	class:graph
+insert	parser/graph.cpp	/^void graph::insert(item* it_p){$/;"	f	class:graph
+int_len	simulation/stable.h	/^        double int_len;$/;"	m	class:stable_ode
+int_len	simulation/stable_ode_tmpl.hpp	/^        double int_len;$/;"	m	class:stable_ode_tmpl
+intdy	integrator/lsoda.cpp	/^static void intdy(double t, int k, double *dky, int *iflag)$/;"	f	file:
+integer	parser/item.h	/^class integer:public item{$/;"	c
+integrate	integrator/rk4.cpp	/^int rk4::integrate(rhs* func, comp* restr u0, double t0, double tf)$/;"	f	class:rk4
+integrate	integrator/rk45.cpp	/^int rk45::integrate(void* restr u, double t0, double tf){$/;"	f	class:rk45
+integrate	integrator/rk45_tmpl.h	/^int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){$/;"	f	class:rk45_tmpl
+integrate	integrator/rk45_tmpl.hpp	/^int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){$/;"	f	class:rk45_tmpl
+integrator	integrator/integrator.h	/^class integrator:public item_dim, public vartype{$/;"	c
+inter	simulation/stable.h	/^        integrator* inter;$/;"	m	class:stable_ode
+inter	simulation/stable_ode_tmpl.hpp	/^        integrator* inter;$/;"	m	class:stable_ode_tmpl
+ipup	integrator/lsoda.cpp	/^static int      ialth, ipup, lmax, nslp;$/;"	v	file:
+ipvt	integrator/lsoda.cpp	/^static int     *ipvt;$/;"	v	file:
+irflag	integrator/lsoda.cpp	/^static int      icount, irflag;$/;"	v	file:
+is	utils/fftw3.h	/^     int is;			\/* input stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me
+is	utils/fftw3.h	/^     ptrdiff_t is;			\/* input stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me
+is_good	controller/toroidal.cpp	/^char toroidal::is_good(){$/;"	f	class:toroidal
+is_w_type	writer/writer.cpp	/^bool writer::is_w_type(int inval){$/;"	f	class:writer
+item	parser/item.cpp	/^item::item(){$/;"	f	class:item
+item	parser/item.h	/^class item{$/;"	c
+item_dim	parser/item.h	/^class item_dim:public item{$/;"	c
+item_exists	parser/engine.cpp	/^char engineimp::item_exists(item* p) const{$/;"	f	class:engineimp
+iterate_system	simulation/stable_ode.cpp	/^void stable_ode::iterate_system(){$/;"	f	class:stable_ode
+iterate_system	simulation/stable_ode_tmpl.hpp	/^void stable_ode_tmpl<T>::iterate_system(){$/;"	f	class:stable_ode_tmpl
+iterations	controller/toroidal.h	/^    size_t iterations;$/;"	m	class:toroidal
+ixpr	integrator/lsoda.cpp	/^static int      ixpr = 0, jtyp, mused, mxordn, mxords;$/;"	v	file:
+j1	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+j2	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+j3	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+jcur	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+jones_int_dist	simulation/jones_optical.h	/^    double jones_int_dist;$/;"	m	class:jones_optical
+jones_matrices	simulation/jones_optical.h	/^    std::vector<jones_matrix*> jones_matrices;$/;"	m	class:jones_optical
+jones_matrix	simulation/jones_optical.cpp	/^        jones_matrix(std::vector<variable*> avars, std::string n){$/;"	f	class:jones_matrix
+jones_matrix	simulation/jones_optical.cpp	/^class jones_matrix:public real8{$/;"	c	file:
+jones_optical	simulation/jones_optical.h	/^class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{$/;"	c
+jp	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+jstart	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+jtyp	integrator/lsoda.cpp	/^static int      ixpr = 0, jtyp, mused, mxordn, mxords;$/;"	v	file:
+k	rhs/rhs_CNLS.h	/^    double* restr k;$/;"	m	class:rhs_CNLS
+k	rhs/rhs_SQGLE.h	/^    double* restr k;$/;"	m	class:rhs_SQGLE
+kflag	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+ksq	rhs/rhs_CNLS.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_CNLS
+ksq	rhs/rhs_SQGLE.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_SQGLE
+kurtosis	objective/n_pulse_score.cpp	/^double kurtosis(double in[], size_t len){$/;"	f
+kurtosis_help	objective/n_pulse_score.h	/^    comp* restr kurtosis_help;$/;"	m	class:n_pulse_score
+kurtosis_help	simulation/jones_optical.h	/^    comp* kurtosis_help;$/;"	m	class:jones_optical
+l	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+lmax	integrator/lsoda.cpp	/^static int      ialth, ipup, lmax, nslp;$/;"	v	file:
+log_ps	utils/inline_trig.h	/^v4sf log_ps(v4sf x) {$/;"	f
+low_bound	parser/item.h	/^    double low_bound, high_bound, inc_size;$/;"	m	class:variable
+lsoda	integrator/lsoda.cpp	/^void lsoda(_lsoda_f f, int neq, double *y, double *t, double tout, int itol, double *rtol, double *atol,$/;"	f
+ltoken	utils/comp_funcs.hpp	/^inline void ltoken(std::string& tok, std::string& str, std::string delim=" "){$/;"	f
+main	integrator/lsoda.cpp	/^int main(void)$/;"	f
+main	optimal-frequencies/hasher.cpp	/^int main()$/;"	f
+main	utils/main.cpp	/^int main(int argc, char** argv){$/;"	f
+max	integrator/lsoda.cpp	586;"	d	file:
+maxTrips	utils/defs.hpp	44;"	d
+max_good_score	python/learn-grad.py	/^max_good_score = max(missed_stab_arr)$/;"	v
+max_iterations	simulation/stable.h	/^        int max_iterations;$/;"	m	class:stable
+max_score	python/learn-grad.py	/^max_score = max(missed_stab_arr)$/;"	v
+maxcor	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+maxord	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+meth	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+methodswitch	integrator/lsoda.cpp	/^static void methodswitch(double dsm, double pnorm, double *pdh, double *rh)$/;"	f	file:
+mf	optimal-frequencies/hasher.h	/^typedef Matrix<float, Dynamic, Dynamic> mf;$/;"	t
+min	integrator/lsoda.cpp	587;"	d	file:
+missed_stab	python/learn-grad.py	/^missed_stab = len(missed_stab_arr)$/;"	v
+missed_stab_arr	python/learn-grad.py	/^missed_stab_arr = [s[0] for t, s, in zip(Y, scores) if s[1]==1 and test_svm.predict(t) != s[1]]$/;"	v
+missed_stab_arr	python/learn-grad.py	/^missed_stab_arr = [s[0] for t, s, in zip(Y, scores) if s[1]==1 and test_svm.predict(t) == s[1]]$/;"	v
+missed_unstab	python/learn-grad.py	/^missed_unstab = sum(1 for t, s in zip(Y, scores) if s[1] == 0 and test_svm.predict(t) != s[1])$/;"	v
+miter	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+ml	integrator/lsoda.cpp	/^static int      ml, mu, imxer;$/;"	v	file:
+mm	utils/inline_trig.h	/^  __m64 mm[2];$/;"	m	union:xmm_mm_union
+mnorm	optimal-frequencies/hasher.h	/^    float mnorm;$/;"	m	class:hasher
+modifiers	parser/item.h	/^    std::map<item*, std::set<double*> > modifiers;$/;"	m	class:variable
+mord	integrator/lsoda.cpp	/^static int      mord[3] = {0, 12, 5};$/;"	v	file:
+msbp	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+mu	integrator/lsoda.cpp	/^static int      ml, mu, imxer;$/;"	v	file:
+mul_fac	controller/toroidal.h	/^    double mul_fac;$/;"	m	class:toroidal
+mused	integrator/lsoda.cpp	/^static int      ixpr = 0, jtyp, mused, mxordn, mxords;$/;"	v	file:
+mvals	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> mvals;$/;"	m	class:jones_matrix	file:
+mxhnil	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+mxncf	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+mxordn	integrator/lsoda.cpp	/^static int      ixpr = 0, jtyp, mused, mxordn, mxords;$/;"	v	file:
+mxords	integrator/lsoda.cpp	/^static int      ixpr = 0, jtyp, mused, mxordn, mxords;$/;"	v	file:
+mxstep	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+n	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+n	utils/fftw3.h	/^     int n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim_do_not_use_me
+n	utils/fftw3.h	/^     ptrdiff_t n;                     \/* dimension size *\/$/;"	m	struct:fftw_iodim64_do_not_use_me
+n_components	python/learn-grad.py	/^n_components=15$/;"	v
+n_lsoda	integrator/lsoda.cpp	/^int n_lsoda(double y[], int n, double *x, double xout, double eps, const double yscal[], _lsoda_f devis, void *data)$/;"	f
+n_lsoda_terminate	integrator/lsoda.cpp	/^void n_lsoda_terminate(void)$/;"	f
+n_neighbors	python/learn-grad.py	/^n_neighbors=50$/;"	v
+n_pulse	objective/n_pulse_score.h	/^    int n_pulse;$/;"	m	class:n_pulse_score
+n_pulse_score	objective/n_pulse_score.h	/^class n_pulse_score:public objective{$/;"	c
+name	parser/item.cpp	/^const std::string& item::name()const {$/;"	f	class:item
+names	simulation/jones_optical.cpp	/^    std::set<std::string> names;$/;"	m	class:_unique_name	file:
+names	utils/comp_funcs.hpp	/^        std::set<std::string> names;$/;"	m	class:__HIDER__::_unique_name
+needs_updating	parser/engine.cpp	/^void engineimp::needs_updating(item* inval){$/;"	f	class:engineimp
+needs_updating	parser/engine.cpp	/^void engineimp::needs_updating(std::string name){$/;"	f	class:engineimp
+nfe	integrator/lsoda.cpp	/^                nfe, nje, nqu;$/;"	v	file:
+nhnil	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+nje	integrator/lsoda.cpp	/^                nfe, nje, nqu;$/;"	v	file:
+nodes	parser/graph.h	/^    std::map<std::string, graphnode> nodes;$/;"	m	class:graph
+noise	simulation/jones_optical.cpp	/^void noise(comp* inval, double norm, size_t len){$/;"	f
+nq	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+nqu	integrator/lsoda.cpp	/^                nfe, nje, nqu;$/;"	v	file:
+nslast	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+nslp	integrator/lsoda.cpp	/^static int      ialth, ipup, lmax, nslp;$/;"	v	file:
+nst	integrator/lsoda.cpp	/^                jcur, jstart, kflag, l, meth, miter, maxord, maxcor, msbp, mxncf, n, nq, nst,$/;"	v	file:
+ntrep	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+nts	objective/n_pulse_score.h	/^    size_t nts;$/;"	m	class:n_pulse_score
+nts	simulation/stable_spectral_ode_tmpl.hpp	/^        size_t nts;$/;"	m	class:stable_spectral_pde_1d_tmpl
+num_gone	simulation/stable.h	/^        int num_gone;$/;"	m	class:stable
+num_int	controller/toroidal.h	/^    size_t num_int;$/;"	m	class:toroidal
+num_min	simulation/stable.h	/^const static int num_min = 10;$/;"	v
+num_pulses	simulation/stable_spectral_ode_tmpl.hpp	/^        size_t num_pulses;$/;"	m	class:stable_spectral_pde_1d_tmpl
+num_stab	python/learn-grad.py	/^num_stab = sum(1 for s in scores if s[1] == 1)$/;"	v
+num_unstab	python/learn-grad.py	/^num_unstab = sum(1 for s in scores if s[1] == 0)$/;"	v
+nvec1	simulation/jones_optical.h	/^    comp* nvec1;$/;"	m	class:jones_optical
+nvec2	simulation/jones_optical.h	/^    double *nvec2;$/;"	m	class:jones_optical
+nyh	integrator/lsoda.cpp	/^static int      illin = 0, init = 0, mxstep, mxhnil, nhnil, ntrep = 0, nslast, nyh, ierpj, iersl,$/;"	v	file:
+obj	simulation/simulation.h	/^        objective* obj;$/;"	m	class:simulation
+objective	objective/objective.h	/^class objective:public item_dim{$/;"	c
+orderswitch	integrator/lsoda.cpp	/^static void orderswitch(double *rhup, double dsm, double *pdh, double *rh, int *orderflag)$/;"	f	file:
+os	utils/fftw3.h	/^     int os;			\/* output stride *\/$/;"	m	struct:fftw_iodim_do_not_use_me
+os	utils/fftw3.h	/^     ptrdiff_t os;			\/* output stride *\/$/;"	m	struct:fftw_iodim64_do_not_use_me
+out_dat	simulation/jones_optical.h	/^    std::list<data_store> out_dat;$/;"	m	class:jones_optical
+out_f_name	simulation/simulation.h	/^        std::string out_f_name;$/;"	m	class:simulation
+p	parser/graph.h	/^            item* p;$/;"	m	class:graph::graphnode
+parse	controller/controller.cpp	/^void controller::parse(std::string inval){$/;"	f	class:controller
+parse	integrator/integrator.h	/^        virtual void parse(std::string inval){};$/;"	f	class:integrator
+parse	integrator/rk4.cpp	/^void rk4::parse(std::string instr) {}$/;"	f	class:rk4
+parse	integrator/rk45.cpp	/^void rk45::parse(std::string inval){$/;"	f	class:rk45
+parse	integrator/rk45_tmpl.h	/^void rk45_tmpl<T>::parse(std::string inval){$/;"	f	class:rk45_tmpl
+parse	integrator/rk45_tmpl.hpp	/^void rk45_tmpl<T>::parse(std::string inval){$/;"	f	class:rk45_tmpl
+parse	objective/objective.h	/^        virtual void parse(std::string inval){};$/;"	f	class:objective
+parse	parser/item.cpp	/^void integer::parse(std::string inval){$/;"	f	class:integer
+parse	parser/item.cpp	/^void real8::parse(std::string inval){$/;"	f	class:real8
+parse	parser/item.cpp	/^void string::parse(std::string inval){$/;"	f	class:string
+parse	parser/variable.cpp	/^void variable::parse(std::string inval){$/;"	f	class:variable
+parse	rhs/example_rhs.cpp	/^void example_rhs::parse(std::string inval){$/;"	f	class:example_rhs
+parse	rhs/rhs_CNLS.cpp	/^void rhs_CNLS::parse(std::string inval){$/;"	f	class:rhs_CNLS
+parse	rhs/rhs_SQGLE.cpp	/^void rhs_SQGLE::parse(std::string inval){$/;"	f	class:rhs_SQGLE
+parse	simulation/simulation.h	/^        virtual void parse(std::string inval){};$/;"	f	class:simulation
+pdest	integrator/lsoda.cpp	/^static double   pdest, pdlast, ratio, cm1[13], cm2[6];$/;"	v	file:
+pdlast	integrator/lsoda.cpp	/^static double   pdest, pdlast, ratio, cm1[13], cm2[6];$/;"	v	file:
+pdnorm	integrator/lsoda.cpp	/^static double   tsw, pdnorm;$/;"	v	file:
+phold	simulation/jones_optical.h	/^    double* help, *t, *phold;$/;"	m	class:jones_optical
+pointedat	parser/graph.h	/^            std::list<std::string> pointedat;$/;"	m	class:graph::graphnode
+pointsto	parser/graph.h	/^            std::list<std::string> pointsto;$/;"	m	class:graph::graphnode
+post_fft_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::post_fft_operations(){};$/;"	f	class:stable_spectral_pde_1d_tmpl
+post_ifft_operations	simulation/jones_optical.cpp	/^void jones_optical::post_ifft_operations(){$/;"	f	class:jones_optical
+post_ifft_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::post_ifft_operations(){};$/;"	f	class:stable_spectral_pde_1d_tmpl
+post_integration_operations	simulation/stable_ode.cpp	/^void stable_ode::post_integration_operations(){$/;"	f	class:stable_ode
+post_integration_operations	simulation/stable_ode_tmpl.hpp	/^void stable_ode_tmpl<T>::post_integration_operations(){$/;"	f	class:stable_ode_tmpl
+post_integration_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::post_integration_operations(){$/;"	f	class:stable_spectral_pde_1d_tmpl
+postprocess	controller/controller.cpp	/^void controller::postprocess(std::map<std::string, item*>& inval){$/;"	f	class:controller
+postprocess	controller/toroidal.cpp	/^void toroidal::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:toroidal
+postprocess	integrator/integrator.cpp	/^void integrator::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:integrator
+postprocess	integrator/rk4.cpp	/^void rk4::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rk4
+postprocess	integrator/rk45.cpp	/^void rk45::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rk45
+postprocess	integrator/rk45_tmpl.h	/^void rk45_tmpl<T>::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rk45_tmpl
+postprocess	integrator/rk45_tmpl.hpp	/^void rk45_tmpl<T>::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rk45_tmpl
+postprocess	objective/n_pulse_score.cpp	/^void n_pulse_score::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:n_pulse_score
+postprocess	objective/objective.cpp	/^void objective::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:objective
+postprocess	parser/item.cpp	/^void item_dim::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:item_dim
+postprocess	parser/item.h	/^    virtual void postprocess(std::map<std::string, item*>& indat){};$/;"	f	class:item
+postprocess	rhs/example_rhs.cpp	/^void example_rhs::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:example_rhs
+postprocess	rhs/rhs.cpp	/^void rhs::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rhs
+postprocess	rhs/rhs_CNLS.cpp	/^void rhs_CNLS::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rhs_CNLS
+postprocess	rhs/rhs_SQGLE.cpp	/^void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rhs_SQGLE
+postprocess	rhs/rhs_type.h	/^    void postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rhs_type
+postprocess	rhs/rhs_type.hpp	/^    void postprocess(std::map<std::string, item*>& dat){$/;"	f	class:rhs_type
+postprocess	simulation/jones_optical.cpp	/^void jones_optical::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:jones_optical
+postprocess	simulation/simulation.cpp	/^void simulation::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:simulation
+postprocess	simulation/stable.cpp	/^void stable::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:stable
+postprocess	simulation/stable_ode.cpp	/^void stable_ode::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:stable_ode
+postprocess	simulation/stable_ode_tmpl.hpp	/^void stable_ode_tmpl<T>::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:stable_ode_tmpl
+postprocess	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, item*>& invals){$/;"	f	class:stable_spectral_pde_1d_tmpl
+pre_fft_operations	simulation/jones_optical.cpp	/^void jones_optical::pre_fft_operations(){$/;"	f	class:jones_optical
+pre_fft_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::pre_fft_operations(){};$/;"	f	class:stable_spectral_pde_1d_tmpl
+pre_ifft_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::pre_ifft_operations(){};$/;"	f	class:stable_spectral_pde_1d_tmpl
+pre_integration_operations	simulation/stable_ode.cpp	/^void stable_ode::pre_integration_operations(){$/;"	f	class:stable_ode
+pre_integration_operations	simulation/stable_ode_tmpl.hpp	/^void stable_ode_tmpl<T>::pre_integration_operations(){$/;"	f	class:stable_ode_tmpl
+pre_integration_operations	simulation/stable_spectral_ode_tmpl.hpp	/^void stable_spectral_pde_1d_tmpl<T>::pre_integration_operations(){$/;"	f	class:stable_spectral_pde_1d_tmpl
+pre_set	controller/controller.h	/^    virtual void pre_set(){};$/;"	f	class:controller
+pre_set	controller/toroidal.cpp	/^void toroidal::pre_set(){$/;"	f	class:toroidal
+print	integrator/rk45.cpp	/^void rk45::print() const{$/;"	f	class:rk45
+print	integrator/rk45_tmpl.h	/^void rk45_tmpl<T>::print() const{$/;"	f	class:rk45_tmpl
+print	integrator/rk45_tmpl.hpp	/^void rk45_tmpl<T>::print() const{$/;"	f	class:rk45_tmpl
+print	parser/item.cpp	/^void integer::print() const{$/;"	f	class:integer
+print	parser/item.cpp	/^void item::print() const{$/;"	f	class:item
+print	parser/item.cpp	/^void real8::print() const{$/;"	f	class:real8
+print	parser/item.cpp	/^void string::print() const{$/;"	f	class:string
+print	parser/variable.cpp	/^void variable::print() const{$/;"	f	class:variable
+printable	utils/printable.hpp	/^class printable{$/;"	c
+prja	integrator/lsoda.cpp	/^static void prja(int neq, double *y, _lsoda_f f, void *_data)$/;"	f	file:
+proc_node_deps	parser/graph.cpp	/^void graph::proc_node_deps(graph::graphnode& g){$/;"	f	class:graph
+processed	parser/graph.h	/^            char processed;$/;"	m	class:graph::graphnode
+pulse_check	matlab/pulse_check.m	/^function ind=pulse_check(solution_end,t,nt);$/;"	f
+rand_scores	optimal-frequencies/hasher.h	/^    cmf rand_scores;$/;"	m	class:hasher
+rand_vecs	optimal-frequencies/hasher.h	/^    rmf rand_vecs;$/;"	m	class:hasher
+random_info	rhs/example_rhs.h	/^    std::string random_info;$/;"	m	class:example_rhs
+ratio	integrator/lsoda.cpp	/^static double   pdest, pdlast, ratio, cm1[13], cm2[6];$/;"	v	file:
+rc	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+read	parser/engine_read.cpp	/^void engineimp::read(std::ifstream& fstr){$/;"	f	class:engineimp
+read_data	python/learn-grad.py	/^def read_data(gradname, scorename):$/;"	f
+real8	parser/item.h	/^class real8:public item{$/;"	c
+relerr	integrator/rk45.h	/^    double dt_init, dt_min, dt_max, relerr, abserr;$/;"	m	class:rk45
+resetcoeff	integrator/lsoda.cpp	/^static void resetcoeff()$/;"	f	file:
+restr	utils/defs.hpp	19;"	d
+restr	utils/defs.hpp	23;"	d
+retrieve	integrator/rk4.cpp	/^void rk4::retrieve(void* p)const{}$/;"	f	class:rk4
+retrieve	parser/item.cpp	/^void integer::retrieve(void* p, item* caller){$/;"	f	class:integer
+retrieve	parser/item.cpp	/^void item::retrieve(void* p, item* caller){$/;"	f	class:item
+retrieve	parser/item.cpp	/^void real8::retrieve(void* inval, item* caller){$/;"	f	class:real8
+retrieve	parser/item.cpp	/^void string::retrieve(void* inval, item* caller){$/;"	f	class:string
+retrieve	parser/variable.cpp	/^void variable::retrieve(void* inval, item* caller){$/;"	f	class:variable
+rh_val	integrator/integrator.h	/^        rhs* rh_val;$/;"	m	class:integrator
+rhs	rhs/rhs.h	/^        rhs(){};$/;"	f	class:rhs
+rhs	rhs/rhs.h	/^class rhs:public item_dim, public vartype{$/;"	c
+rhs_CNLS	rhs/rhs_CNLS.h	/^    rhs_CNLS(){};$/;"	f	class:rhs_CNLS
+rhs_CNLS	rhs/rhs_CNLS.h	/^class rhs_CNLS: public rhs_type<comp>{$/;"	c
+rhs_SQGLE	rhs/rhs_SQGLE.h	/^    rhs_SQGLE(){};$/;"	f	class:rhs_SQGLE
+rhs_SQGLE	rhs/rhs_SQGLE.h	/^class rhs_SQGLE: public rhs_type<comp>{$/;"	c
+rhs_type	rhs/rhs_type.h	/^template<typename T> class rhs_type:public rhs{$/;"	c
+rhs_type	rhs/rhs_type.hpp	/^template<typename T> class rhs_type:public rhs{$/;"	c
+rk4	integrator/int_imp.h	/^class rk4:public integrator{$/;"	c
+rk45	integrator/rk45.h	/^class rk45:public integrator{$/;"	c
+rk45_tmpl	integrator/rk45_tmpl.h	/^class rk45_tmpl:public rk45 {$/;"	c
+rk45_tmpl	integrator/rk45_tmpl.hpp	/^class rk45_tmpl:public rk45 {$/;"	c
+rmat	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> rmat(double alpha){$/;"	f	class:jones_matrix
+rmax	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+rmf	optimal-frequencies/hasher.h	/^typedef Matrix<float, Dynamic, Dynamic, RowMajor> rmf;$/;"	t
+round	simulation/stable.h	/^        int round;$/;"	m	class:stable
+run	parser/engine.cpp	/^void engine::run(){$/;"	f	class:engine
+run	parser/engine_run.cpp	/^void engineimp::run(){$/;"	f	class:engineimp
+savf	integrator/lsoda.cpp	/^static double **yh, **wm, *ewt, *savf, *acor;$/;"	v	file:
+scaleh	integrator/lsoda.cpp	/^static void scaleh(double *rh, double *pdh)$/;"	f	file:
+scaler	python/learn-grad.py	/^scaler =preprocessing.StandardScaler().fit(grads);$/;"	v
+score	objective/n_pulse_score.cpp	/^double n_pulse_score::score(comp* ucur){$/;"	f	class:n_pulse_score
+score	simulation/jones_optical.cpp	/^double jones_optical::score(){$/;"	f	class:jones_optical
+score	simulation/jones_optical.h	/^        double score;$/;"	m	struct:jones_optical::data_store
+score	simulation/stable_ode.cpp	/^double stable_ode::score(){$/;"	f	class:stable_ode
+score	simulation/stable_ode_tmpl.hpp	/^double stable_ode_tmpl<T>::score(){$/;"	f	class:stable_ode_tmpl
+set	parser/variable.cpp	/^void variable::set(double p){$/;"	f	class:variable
+set_rule	writer/writer.cpp	/^void writer::set_rule(std::string inval, bool rule){$/;"	f	class:writer
+set_rule	writer/writer.cpp	/^void writer::set_rule(w_type inval, bool rule){$/;"	f	class:writer
+set_write_name	parser/item.cpp	/^void item::set_write_name(std::string wname){$/;"	f	class:item
+setname	parser/item.cpp	/^void item::setname(const std::string n){$/;"	f	class:item
+sign	simulation/jones_optical.cpp	/^double sign(double v){$/;"	f
+simulate	simulation/stable.cpp	/^double stable::simulate(){$/;"	f	class:stable
+simulation	simulation/simulation.h	/^class simulation:public item_dim{$/;"	c
+sin_ps	utils/inline_trig.h	/^v4sf sin_ps(v4sf x) { \/\/ any x$/;"	f
+sincos_ps	utils/inline_trig.h	/^void sincos_ps(v4sf x, v4sf *s, v4sf *c) {$/;"	f
+sm1	integrator/lsoda.cpp	/^static double   sm1[13] = {0., 0.5, 0.575, 0.55, 0.45, 0.35, 0.25, 0.2, 0.15, 0.1, 0.075, 0.05, 0.025};$/;"	v	file:
+solsy	integrator/lsoda.cpp	/^static void solsy(double *y)$/;"	f	file:
+something_useless	rhs/example_rhs.h	/^    comp something_useless;$/;"	m	class:example_rhs
+sort	parser/graph.cpp	/^std::list<item*> graph::sort(const std::list<item*>& l){$/;"	f	class:graph
+sort_pp	parser/engine_read.cpp	/^void engineimp::sort_pp(){$/;"	f	class:engineimp
+sq1	rhs/rhs_CNLS.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_CNLS
+sq1	rhs/rhs_SQGLE.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_SQGLE
+sq2	rhs/rhs_CNLS.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_CNLS
+sq2	rhs/rhs_SQGLE.h	/^    double * restr sq1, * restr sq2,  * restr ksq;$/;"	m	class:rhs_SQGLE
+sqrteta	integrator/lsoda.cpp	/^static double   sqrteta, *yp1, *yp2;$/;"	v	file:
+stable	simulation/stable.h	/^class stable:public simulation, public vartype{$/;"	c
+stable_h	simulation/stable.h	2;"	d
+stable_ode	simulation/stable.h	/^class stable_ode:public stable{$/;"	c
+stable_ode_tmpl	simulation/stable_ode_tmpl.hpp	/^class stable_ode_tmpl:public stable_ode{$/;"	c
+stable_spectral_pde_1d_tmpl	simulation/stable_spectral_ode_tmpl.hpp	/^class stable_spectral_pde_1d_tmpl:public stable_ode_tmpl<T>{$/;"	c
+std_type_list	utils/type_constructor.hpp	/^    typedef typelist<comp, double, float, long double> std_type_list;$/;"	t	class:type_constructor
+stepsize	integrator/int_imp.h	/^    double stepsize;$/;"	m	class:rk4
+stoda	integrator/lsoda.cpp	/^static void stoda(int neq, double *y, _lsoda_f f, void *_data)$/;"	f	file:
+string	parser/item.h	/^class string:public item{$/;"	c
+successreturn	integrator/lsoda.cpp	/^static void successreturn(double *y, double *t, int itask, int ihit, double tcrit, int *istate)$/;"	f	file:
+t	simulation/jones_optical.h	/^    double* help, *t, *phold;$/;"	m	class:jones_optical
+t	simulation/stable_spectral_ode_tmpl.hpp	/^        double* t;$/;"	m	class:stable_spectral_pde_1d_tmpl
+t0	simulation/stable.h	/^        double t0; $/;"	m	class:stable_ode
+t0	simulation/stable_ode_tmpl.hpp	/^        double t0; $/;"	m	class:stable_ode_tmpl
+tau	utils/defs.hpp	40;"	d
+tcur	simulation/stable.h	/^        double tcur;$/;"	m	class:stable_ode
+tcur	simulation/stable_ode_tmpl.hpp	/^        double tcur;$/;"	m	class:stable_ode_tmpl
+terminate	integrator/lsoda.cpp	/^static void terminate(int *istate)$/;"	f	file:
+terminate2	integrator/lsoda.cpp	/^static void terminate2(double *y, double *t)$/;"	f	file:
+tesco	integrator/lsoda.cpp	/^static double   conit, crate, el[14], elco[13][14], hold, rmax, tesco[13][4];$/;"	v	file:
+test_svm	python/learn-grad.py	/^test_svm = svm.SVC(kernel='rbf', C=20, gamma=0.15, probability=True)$/;"	v
+test_svm	python/learn-grad.py	/^test_svm=test_svm.fit(Y, scores[:, 1])$/;"	v
+tn	integrator/lsoda.cpp	/^static double   ccmax, el0, h, hmin, hmxi, hu, rc, tn;$/;"	v	file:
+to_string	writer/data.hpp	/^    virtual std::string to_string(){$/;"	f	class:data
+tor_hashes	optimal-frequencies/hasher.h	/^    vector<vector<vector<size_t> > > tor_hashes;$/;"	m	class:hasher
+toroidal	controller/toroidal.h	/^class toroidal:public controller{$/;"	c
+trap	rhs/rhs_CNLS.cpp	/^comp trap(comp * restr v, size_t s){$/;"	f
+trap	rhs/rhs_CNLS.cpp	/^double trap(double * restr v, size_t s){$/;"	f
+trim	utils/comp_funcs.hpp	/^inline void trim(std::string& curline){$/;"	f
+trim	utils/comp_funcs.hpp	/^inline void trim(std::string& curline, char val){$/;"	f
+tsw	integrator/lsoda.cpp	/^static double   tsw, pdnorm;$/;"	v	file:
+ttype	utils/type_constructor.hpp	/^        class ttype: public _ttype<Tout>{$/;"	c	class:type_constructor
+type	controller/toroidal.cpp	/^std::string toroidal::type() const{$/;"	f	class:toroidal
+type	integrator/rk4.cpp	/^std::string rk4::type()const{$/;"	f	class:rk4
+type	integrator/rk45.cpp	/^std::string rk45::type() const{$/;"	f	class:rk45
+type	integrator/rk45_tmpl.h	/^std::string rk45_tmpl<T>::type() const{$/;"	f	class:rk45_tmpl
+type	integrator/rk45_tmpl.hpp	/^std::string rk45_tmpl<T>::type() const{$/;"	f	class:rk45_tmpl
+type	objective/n_pulse_score.cpp	/^std::string n_pulse_score::type() const{$/;"	f	class:n_pulse_score
+type	parser/item.cpp	/^std::string integer::type() const{$/;"	f	class:integer
+type	parser/item.cpp	/^std::string real8::type() const{$/;"	f	class:real8
+type	parser/item.cpp	/^std::string string::type() const {$/;"	f	class:string
+type	rhs/example_rhs.cpp	/^std::string example_rhs::type() const{$/;"	f	class:example_rhs
+type	rhs/rhs_CNLS.cpp	/^std::string rhs_CNLS::type() const {$/;"	f	class:rhs_CNLS
+type	rhs/rhs_SQGLE.cpp	/^std::string rhs_SQGLE::type() const {$/;"	f	class:rhs_SQGLE
+type	simulation/jones_optical.cpp	/^        virtual std::string type() const{$/;"	f	class:jones_matrix
+type	simulation/jones_optical.cpp	/^std::string jones_optical::type() const{$/;"	f	class:jones_optical
+type	simulation/stable_ode.cpp	/^std::string stable_ode::type() const{$/;"	f	class:stable_ode
+type	simulation/stable_ode_tmpl.hpp	/^std::string stable_ode_tmpl<T>::type() const{$/;"	f	class:stable_ode_tmpl
+type	simulation/stable_spectral_ode_tmpl.hpp	/^std::string stable_spectral_pde_1d_tmpl<T>::type() const{$/;"	f	class:stable_spectral_pde_1d_tmpl
+type_constructor	utils/type_constructor.hpp	/^class type_constructor{$/;"	c
+typelist	utils/type_constructor.hpp	/^    typelist(){};$/;"	f	class:typelist
+typelist	utils/type_constructor.hpp	/^class typelist:public typelist_checker{$/;"	c
+typelist_checker	utils/type_constructor.hpp	/^class typelist_checker{};$/;"	c
+u1	rhs/rhs_CNLS.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_CNLS
+u1	rhs/rhs_SQGLE.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_SQGLE
+u2	rhs/rhs_CNLS.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_CNLS
+u2	rhs/rhs_SQGLE.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_SQGLE
+u_calc	integrator/int_imp.h	/^    comp* restr u_calc;$/;"	m	class:rk4
+u_calc	integrator/rk45_tmpl.h	/^    T* restr u_calc;$/;"	m	class:rk45_tmpl
+u_calc	integrator/rk45_tmpl.hpp	/^    T* restr u_calc;$/;"	m	class:rk45_tmpl
+u_calc2	integrator/rk45_tmpl.h	/^    double* restr u_calc2;$/;"	m	class:rk45_tmpl
+u_calc2	integrator/rk45_tmpl.hpp	/^    double* restr u_calc2;$/;"	m	class:rk45_tmpl
+ucur	simulation/stable.h	/^        comp* restr ucur, * restr ulast;$/;"	m	class:stable_ode
+ucur	simulation/stable_ode_tmpl.hpp	/^        T* restr ucur, * restr ulast;$/;"	m	class:stable_ode_tmpl
+uf1	rhs/rhs_CNLS.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_CNLS
+uf1	rhs/rhs_SQGLE.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_SQGLE
+uf2	rhs/rhs_CNLS.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_CNLS
+uf2	rhs/rhs_SQGLE.h	/^    comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,$/;"	m	class:rhs_SQGLE
+ulast	simulation/stable.h	/^        comp* restr ucur, * restr ulast;$/;"	m	class:stable_ode
+ulast	simulation/stable_ode_tmpl.hpp	/^        T* restr ucur, * restr ulast;$/;"	m	class:stable_ode_tmpl
+update	parser/engine.cpp	/^void engineimp::update(){$/;"	f	class:engineimp
+update	parser/item.cpp	/^void item::update(){$/;"	f	class:item
+update	rhs/example_rhs.cpp	/^void example_rhs::update(){$/;"	f	class:example_rhs
+update	rhs/rhs_SQGLE.cpp	/^void rhs_SQGLE::update(){}$/;"	f	class:rhs_SQGLE
+update	simulation/jones_optical.cpp	/^        virtual void update(){$/;"	f	class:jones_matrix
+update_count	parser/item.h	/^    size_t update_count;$/;"	m	class:variable
+update_vars	parser/engineimp.h	/^    std::set<item*> update_vars;$/;"	m	class:engineimp
+v2si	utils/inline_trig.h	/^typedef __m64 v2si;   \/\/ vector of 2 int (mmx)$/;"	t
+v4sf	utils/inline_trig.h	/^typedef __m128 v4sf;  \/\/ vector of 4 float (sse1)$/;"	t
+v4si	utils/inline_trig.h	/^typedef __m128i v4si; \/\/ vector of 4 int (sse2)$/;"	t
+val1	rhs/example_rhs.h	/^    double val1, val2;$/;"	m	class:example_rhs
+val2	rhs/example_rhs.h	/^    double val1, val2;$/;"	m	class:example_rhs
+val_type	rhs/rhs_type.hpp	/^    virtual std::string val_type() const{$/;"	f	class:rhs_type
+value	parser/item.h	/^    double value;$/;"	m	class:real8
+value	parser/item.h	/^    int value;$/;"	m	class:integer
+value	parser/item.h	/^    std::string value;$/;"	m	class:string
+value_holder	rhs/example_rhs.h	/^    comp* value_holder;$/;"	m	class:example_rhs
+values	parser/engineimp.h	/^    std::map<std::string, item*> values;$/;"	m	class:engineimp
+variable	parser/item.h	/^class variable:public real8{$/;"	c
+vars	controller/controller.h	/^    std::vector<variable*> vars;$/;"	m	class:controller
+vartype	utils/vartype.hpp	/^class vartype{$/;"	c
+vmnorm	integrator/lsoda.cpp	/^static double vmnorm(int n, double *v, double *w)$/;"	f	file:
+vname	utils/vartype.hpp	/^        inline std::string vname() const{$/;"	f	class:vartype
+vtype	integrator/rk45.cpp	/^const std::type_info& rk45::vtype() const{$/;"	f	class:rk45
+vtype	integrator/rk45_tmpl.h	/^const std::type_info& rk45_tmpl<T>::vtype() const {$/;"	f	class:rk45_tmpl
+vtype	integrator/rk45_tmpl.hpp	/^const std::type_info& rk45<T>::vtype() const{$/;"	f	class:rk45
+vtype	simulation/stable_ode.cpp	/^const std::type_info& stable_ode::vtype() const{$/;"	f	class:stable_ode
+vtype	simulation/stable_ode_tmpl.hpp	/^const std::type_info& stable_ode_tmpl<T>::vtype() const{$/;"	f	class:stable_ode_tmpl
+w_type	writer/writer.h	/^        END=OTHER} w_type;$/;"	t	class:writer	typeref:enum:writer::__anon1
+wh	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+will_write	writer/writer.h	/^    std::map<int, bool> will_write;$/;"	m	class:writer
+wm	integrator/lsoda.cpp	/^static double **yh, **wm, *ewt, *savf, *acor;$/;"	v	file:
+wp	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+wq	simulation/jones_optical.cpp	/^        Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;$/;"	m	class:jones_matrix	file:
+write_dat	parser/engine_write.cpp	/^void engineimp::write_dat(){$/;"	f	class:engineimp
+write_name	parser/item.cpp	/^const std::string& item::write_name() const{$/;"	f	class:item
+writer	writer/writer.cpp	/^writer::writer(bool def){$/;"	f	class:writer
+writer	writer/writer.cpp	/^writer::writer(const std::map<int, bool>& writevals, bool def){$/;"	f	class:writer
+writer	writer/writer.h	/^class writer{$/;"	c
+xmm	utils/inline_trig.h	/^  __m128 xmm;$/;"	m	union:xmm_mm_union
+xmm_mm_union	utils/inline_trig.h	/^typedef union xmm_mm_union {$/;"	u
+xmm_mm_union	utils/inline_trig.h	/^} xmm_mm_union;$/;"	t	typeref:union:xmm_mm_union
+yh	integrator/lsoda.cpp	/^static double **yh, **wm, *ewt, *savf, *acor;$/;"	v	file:
+yp1	integrator/lsoda.cpp	/^static double   sqrteta, *yp1, *yp2;$/;"	v	file:
+yp2	integrator/lsoda.cpp	/^static double   sqrteta, *yp1, *yp2;$/;"	v	file:
+~_ttype	utils/type_constructor.hpp	/^                virtual ~_ttype(){}$/;"	f	class:type_constructor::_ttype
+~data	writer/data.hpp	/^    virtual ~data(){}$/;"	f	class:data
+~engine	parser/engine.cpp	/^engine::~engine(){$/;"	f	class:engine
+~engineimp	parser/engine.cpp	/^engineimp::~engineimp(){$/;"	f	class:engineimp
+~example_rhs	rhs/example_rhs.cpp	/^example_rhs::~example_rhs(){$/;"	f	class:example_rhs
+~hasher	optimal-frequencies/hasher.cpp	/^hasher::~hasher(){$/;"	f	class:hasher
+~integrator	integrator/integrator.h	/^        virtual ~integrator(){}$/;"	f	class:integrator
+~item	parser/item.h	/^    virtual ~item(){};$/;"	f	class:item
+~jones_optical	simulation/jones_optical.cpp	/^jones_optical::~jones_optical(){$/;"	f	class:jones_optical
+~n_pulse_score	objective/n_pulse_score.cpp	/^n_pulse_score::~n_pulse_score(){$/;"	f	class:n_pulse_score
+~printable	utils/printable.hpp	/^        virtual ~printable(){};$/;"	f	class:printable
+~rhs	rhs/rhs.h	/^        virtual ~rhs(){};$/;"	f	class:rhs
+~rhs_CNLS	rhs/rhs_CNLS.cpp	/^rhs_CNLS::~rhs_CNLS(){$/;"	f	class:rhs_CNLS
+~rhs_SQGLE	rhs/rhs_SQGLE.cpp	/^rhs_SQGLE::~rhs_SQGLE(){$/;"	f	class:rhs_SQGLE
+~rk4	integrator/rk4.cpp	/^rk4::~rk4(){$/;"	f	class:rk4
+~rk45	integrator/rk45.cpp	/^rk45::~rk45(){$/;"	f	class:rk45
+~rk45_tmpl	integrator/rk45_tmpl.h	/^rk45_tmpl<T>::~rk45_tmpl(){$/;"	f	class:rk45_tmpl
+~rk45_tmpl	integrator/rk45_tmpl.hpp	/^rk45_tmpl<T>::~rk45_tmpl(){$/;"	f	class:rk45_tmpl
+~stable	simulation/stable.h	/^        virtual ~stable(){};$/;"	f	class:stable
+~stable_ode	simulation/stable_ode.cpp	/^stable_ode::~stable_ode(){$/;"	f	class:stable_ode
+~stable_ode_tmpl	simulation/stable_ode_tmpl.hpp	/^stable_ode_tmpl<T>::~stable_ode_tmpl(){$/;"	f	class:stable_ode_tmpl
+~stable_spectral_pde_1d_tmpl	simulation/stable_spectral_ode_tmpl.hpp	/^stable_spectral_pde_1d_tmpl<T>::~stable_spectral_pde_1d_tmpl()$/;"	f	class:stable_spectral_pde_1d_tmpl
+~ttype	utils/type_constructor.hpp	/^                virtual ~ttype(){}$/;"	f	class:type_constructor::ttype
+~vartype	utils/vartype.hpp	/^        virtual ~vartype(){};$/;"	f	class:vartype
+~writer	writer/writer.cpp	/^writer::~writer(){$/;"	f	class:writer

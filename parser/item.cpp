@@ -9,6 +9,7 @@
 #include <iostream>
 #include "comp_funcs.h"
 #include "variable.cpp"
+item::~item(){}
 item::item(){
     has_write_name=0;
 }
@@ -191,13 +192,13 @@ void integer::retrieve(void* p, item* caller){
 /*
  * Postprocesses the item_dim class, which sets the dimension to the input variable dimension
  */
-void item_dim::postprocess(std::map<std::string, item*>& dat){
+void item_dim::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     int dimt;
     dat["dimension"]->retrieve(&dimt, this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
         err(errmess, "int_dim::postprocess", "item/item.cpp",
-                dat["dimension"], FATAL_ERROR);
+                dat["dimension"].get(), FATAL_ERROR);
     }
     dimension = (size_t)dimt;
 }
@@ -223,61 +224,61 @@ std::vector<std::string> item_dim::dependencies()const{
  * @param name Name of the item to be created
  * @return Pointer to the created item
  */
-item* item::create(std::string name, engineimp* in){
+std::shared_ptr<item> item::create(std::string name, engineimp* in){
     item* rval=0;
     if(name == "real8"){
         rval = new real8();
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     if(name == "string"){
         rval = new string();
         rval->holder = in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     if(name == "integer"){
         rval = new integer();
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     if(name == "ftest1"){
-        return new ftest1();
+        return std::make_shared<ftest1>();
     }
     if(name == "ftest2"){
-        return new ftest2();
+        return std::make_shared<ftest2>();
     }
     if(name == "ftest3"){
-        return new ftest3();
+        return std::make_shared<ftest3>();
     }
     if(name == "var"){
         rval = new variable();
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     rval=rhs::create(name);
     if(rval){
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     rval=integrator::create(name);
     if(rval){
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     rval=controller::create(name);
     if(rval){
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     rval=simulation::create(name);
     if(rval){
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
     rval=objective::create(name);
     if(rval){
         rval->holder=in;
-        return rval;
+        return std::shared_ptr<item>(rval);
     }
 
     name.append(" does not name a valid type");

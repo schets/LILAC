@@ -3,14 +3,14 @@
 #include "utils/defs.hpp"
 #include <iostream>
 #include <stdlib.h>
-void graph::insert(item* it_p){
+void graph::insert(std::shared_ptr<item>  it_p){
     if(nodes.count(it_p->name())){
         std::cout << "Warning: variable " << it_p->name() << "has already been entered\n";
         std::cout <<"Overwriting with new value\n";
     }
     _insert(it_p);
 }
-graph::graphnode& graph::_insert(item* it_p){
+graph::graphnode& graph::_insert(std::shared_ptr<item>  it_p){
     graphnode& g = nodes[it_p->name()];
     g.p = it_p;
     g.processed=0;
@@ -41,8 +41,8 @@ void graph::proc_node_deps(graph::graphnode& g){
     }
 }
 //returns sorted list, all items in list are added to the graph
-std::list<item*> graph::sort(const std::list<item*>& l){
-    std::list<item*> outlist;
+std::list<std::shared_ptr<item> > graph::sort(const std::list<std::shared_ptr<item> >& l){
+    std::list<std::shared_ptr<item> > outlist;
     std::list<const graphnode*> queuelist;
     for(const auto& val: l){
         insert(val);

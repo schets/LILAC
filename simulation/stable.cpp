@@ -2,6 +2,9 @@
 #include "objective/objective.h"
 #include "utils/comp_funcs.h"
 #include "stable_ode_tmpl.hpp"
+#include "writer/writer.h"
+#include "parser/engineimp.h"
+const static int num_min = 10;
 /*!
  * This function iterates the system forwards in time until it reaches a stable state
  * or a certain number of iterations, 
@@ -9,6 +12,8 @@
  */
 double stable::simulate(){
     bad_res=0;
+    cur_writer = std::shared_ptr<writer>(new writer(true));
+    cur_writer->add_data(data::create("index", cont->num_cont), writer::INDEX);
     for (round = 0; round < max_iterations; round++){
 
         this->iterate_system();
@@ -21,14 +26,14 @@ double stable::simulate(){
                 break;
             }
         }
-
     }
     double v = this->score();
+    cur_writer->add_data(data::create("score", v), writer::FINAL_SCORE);
     if(1 || !num_gone || !(num_gone%1)){
         printf("System:%d, test# %d,  took %d iterations, score was %e\n",
-                cont->index, num_gone, round, v);
+                cont->index, (int)cont->num_cont, round, v);
     }
-
+    holder->add_writer(cur_writer);
     num_gone++;
     return v;
 }
@@ -37,7 +42,7 @@ std::vector<std::string> stable::dependencies() const{
     return appendvec(simulation::dependencies(), std::vector<std::string>(deps, deps+2));
 }
 
-void stable::postprocess(std::map<std::string, item*>& invals){
+void stable::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
     num_gone=0;
     simulation::postprocess(invals);
     invals["change_threshold"]->retrieve(&change_threshold, this);

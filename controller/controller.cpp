@@ -30,9 +30,10 @@ std::vector<std::string> controller::dependencies() const{
  * @param inval A map containing the input data
  * \sa item_dim::postprocess
  */
-void controller::postprocess(std::map<std::string, item*>& inval){
+void controller::postprocess(std::map<std::string, std::shared_ptr<item> >& inval){
     item_dim::postprocess(inval);
     std::string names;
+    num_cont = 0;
     inval["names"]->retrieve(&names, this);
     inval["!start_ind"]->retrieve(&index, this);
     //perform processing on the names

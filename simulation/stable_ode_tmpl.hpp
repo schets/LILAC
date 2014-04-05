@@ -1,6 +1,7 @@
 #ifndef STABLE_ODE_TMPL_HPP
 #define STABLE_ODE_TMPL_HPP
 #include "simulation.h"
+#include "stable.h"
 template<class T>
 class stable_ode_tmpl:public stable_ode{
     protected:
@@ -21,7 +22,7 @@ class stable_ode_tmpl:public stable_ode{
     public:
         double score();
         const std::type_info& vtype() const;
-        virtual void postprocess(std::map<std::string, item*>& invals);
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
         virtual std::string type() const;
         virtual ~stable_ode_tmpl();
 };
@@ -37,7 +38,7 @@ class stable_ode_tmpl:public stable_ode{
  */
 template <class T>
 void stable_ode_tmpl<T>::iterate_system(){
-    for(size_t i = 0; i < dimension; i++){
+    for(size_t i = 0; i < this->dimension; i++){
         ulast[i] = ucur[i];
     }
     this->pre_integration_operations(); 
@@ -45,12 +46,12 @@ void stable_ode_tmpl<T>::iterate_system(){
     tcur += int_len;
     this->post_integration_operations();
     if(res < 0){
-        bad_res=1;
+        this->bad_res=1;
     }
 }
 
 template <class T>
-void stable_ode_tmpl<T>::postprocess(std::map<std::string, item*>& invals){
+void stable_ode_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
     stable::postprocess(invals);
     invals["integrator"]->retrieve(&inter, this);
     invals["t0"]->retrieve(&t0, this);
@@ -61,8 +62,8 @@ void stable_ode_tmpl<T>::postprocess(std::map<std::string, item*>& invals){
         err("Variable int_len is too small, int_len must be greater than 1e-12",
                 "stable_ode::postprocess", "system/stable.cpp", FATAL_ERROR);
     }
-    ucur = (T*)al_malloc(2*dimension*sizeof(T));
-    ulast=ucur+dimension;
+    ucur = (T*)al_malloc(2*this->dimension*sizeof(T));
+    ulast=ucur+this->dimension;
 }
 
 template <class T>
@@ -83,7 +84,7 @@ std::string stable_ode_tmpl<T>::type() const{
 }
 template <class T>
 double stable_ode_tmpl<T>::score(){
-    return obj->score((comp*)ucur);
+    return this->obj->score((comp*)ucur);
 }
 
 template<class T>
@@ -94,7 +95,7 @@ template<class T>
 double stable_ode_tmpl<T>::get_change(){
     //standard difference is the L2 norm
     double sabs=0;
-    for(size_t i = 0; i < dimension; i++){
+    for(size_t i = 0; i < this->dimension; i++){
         double aval = abs(ucur[i]-ulast[i]);
         sabs+= aval*aval;
     }

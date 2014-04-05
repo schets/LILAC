@@ -20,7 +20,7 @@ class rhs:public item_dim, public vartype{
         public:
         static rhs* create(std::string tname);
         std::vector<std::string> dependencies() const;
-        void postprocess(std::map<std::string, item*>& dat);
+        void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
          
         /*!\brief
          * Creates the base rhs class with a dimension=dimen

@@ -1,15 +1,15 @@
 #ifndef RK45_TMPL
 #define RK45_TMPL
-#include "../utils/defs.h"
+#include "utils/defs.hpp"
 #include "integrator.h"
-#include "comp_funcs.cpp"
+#include "utils/comp_funcs.hpp"
 #include "rk45.h"
+#include "rhs/rhs_type.h"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the
  * Matlab function ODE45. This is the actual template implementation,
- * which allows for definitions using multiple variables. This is hidden
- * to help reduce compile times
+ * which allows for definitions using multiple variables
  */
 template<class T>
 class rk45_tmpl:public rk45 {
@@ -17,13 +17,13 @@ class rk45_tmpl:public rk45 {
     T* restr f0, * restr f1, * restr f2, * restr f3;
     T* restr f4, * restr f5, * restr f6;
     T* restr u_calc;
-    rhs* func;
+    rhs_type<T>* func;
     double* restr u_calc2;
     public:
-    const std::type_info& vtype() const;
+    virtual const std::type_info& vtype() const;
     //!Dummy print function
     void print() const;
-    void postprocess(std::map<std::string, item*>& dat);
+    void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
     //!Deprecated
     void parse(std::string inval);
     std::vector<std::string> dependencies() const;
@@ -31,9 +31,10 @@ class rk45_tmpl:public rk45 {
     int integrate(void* restr u, double t0, double tf);
     ~rk45_tmpl();
 };
-/*!
- * Integrates the input _u0 from t0 to tf using an adaptive Dormand-Prince Runge-Kutta method
- */
+template<class T>
+const std::type_info& rk45_tmpl<T>::vtype() const {
+    return typeid(T);
+}
 template<class T>
 int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     T* restr u0 = (T* restr)_u0;
@@ -63,7 +64,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     double tcur=t0;
     double tauv = 0;
     for(size_t i = 0; i < dimension; i++){
-        double taum = std::abs(u0[i]);
+        double taum = abs(u0[i]);
         if(taum > tau){
             taui = taum;
         }
@@ -98,7 +99,6 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     int tries=0;
 
     //while this seems odd, it helps streamline the inner integrator loop
-    //It 'pre-swaps' f0 and f6
     func->dxdt(u0, f6, tcur);
     while(tcur < tf){
         //this function=lol at compiler loop unrolling
@@ -161,7 +161,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
                     c5[4]*f4[i] + c5[5]*f5[i] + c5[6]*f6[i]);
 
-            u_calc2[i] = std::abs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
+            u_calc2[i] = abs(u0[i] + dt*(c4[0]*f0[i] + c4[1] * f1[i] + c4[2] * f2[i] + c4[3] * f3[i] + 
                         c4[4]*f4[i] + c4[5]*f5[i] + c4[6]*f6[i]) - u_calc[i]);
         }
 
@@ -205,7 +205,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
         }
         // #define give_out
         for(size_t i = 0; i < dimension; i++){
-            double val = double(std::abs(u_calc[i]));
+            double val = abs(u_calc[i]);
             if(val > taui){
                 taui = val;
             }
@@ -257,13 +257,13 @@ std::string rk45_tmpl<T>::type() const{
     return typeid(*this).name();
 }
 template<class T>
-void rk45_tmpl<T>::postprocess(std::map<std::string, item*>& dat){
+void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
-    if(!dynamic_cast<rhs_type<T>*>(rh_val)){
+    func = dynamic_cast<rhs_type<T>*>(rh_val);
+    if(!func){
         err("Bad rhs type passed to rk45 integrator", "rk45_tmpl::integrate",
                 "rhs/rk45_tmpl.h", FATAL_ERROR);
     }
-    func=rh_val;
     dat["dt_init"]->retrieve((void*)&dt_init, this);
     if(dt_init <= 0){
         err("dt_init is invalid, must be >= 0", "rk45::postprocess",
@@ -306,8 +306,4 @@ void rk45_tmpl<T>::parse(std::string inval){
 template<class T>
 void rk45_tmpl<T>::print() const{
 };
-template<class T>
-const std::type_info& rk45<T>::vtype() const{
-    return typeid(T);
-}
 #endif

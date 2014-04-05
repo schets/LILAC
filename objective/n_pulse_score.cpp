@@ -35,7 +35,7 @@ double n_pulse_score::score(comp* ucur){
         kurtosis_help[i] = help[i];
     }
     double ener = energy(help, nts);
-    fft(ffor, kurtosis_help, kurtosis_help, nts);
+    fft(kurtosis_help, kurtosis_help, nts);
     for(size_t i = 0; i < nts; i++){
         help[i] = abs(kurtosis_help[i]);
     }
@@ -47,7 +47,7 @@ std::vector<std::string> n_pulse_score::dependencies() const {
     std::string deps[] = {"num_pulses"};
     return appendvec(objective::dependencies(), std::vector<std::string>(deps, deps+1));
 }
-void n_pulse_score::postprocess(std::map<std::string, item*>& invals){
+void n_pulse_score::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
     objective::postprocess(invals);
     invals["num_pulses"]->retrieve(&n_pulse, this);
     if(dimension%n_pulse){
@@ -61,7 +61,6 @@ void n_pulse_score::postprocess(std::map<std::string, item*>& invals){
 n_pulse_score::~n_pulse_score(){
     al_free(help);
     al_free(kurtosis_help);
-    fftw_destroy_plan(ffor);
 }
 std::string n_pulse_score::type() const{
     return "n_pulse_score";

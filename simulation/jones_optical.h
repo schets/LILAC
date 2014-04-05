@@ -16,7 +16,7 @@ class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     double best_score;
     double ba1, ba2, bap, ba3;
     comp* kurtosis_help;
-    std::vector<jones_matrix*> jones_matrices;
+    std::vector<std::shared_ptr<jones_matrix> > jones_matrices;
     struct data_store{
         std::vector<double> avals;
         double score;
@@ -30,7 +30,7 @@ class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     virtual double get_change();
     public:
     virtual double score();
-    virtual void postprocess(std::map<std::string, item*>& invals);
+    virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual ~jones_optical();

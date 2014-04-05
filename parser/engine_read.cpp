@@ -23,7 +23,7 @@ void engineimp::_read(std::ifstream& fstr){
         //get current line
         std::getline(fstr, curline);
         line++;
-        item* curit;
+        std::shared_ptr<item> curit;
         //remove comments
         size_t cpos = curline.find(comment);
         if(cpos != std::string::npos){
@@ -65,7 +65,7 @@ void engineimp::_read(std::ifstream& fstr){
  * Sorts the items in order of dependencies and performs all of the postprocessing
  */
 void engineimp::sort_pp(){
-    std::list<item*> post_order;
+    std::list<std::shared_ptr<item> > post_order;
     for(const auto& val : values){
         post_order.push_back(val.second);
     }

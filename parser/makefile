@@ -1,6 +1,6 @@
 include ../make.inc
 LIB_PATH=$(LIB_MAIN)
-ENG_OBJ= $(LIB_PATH)/engine_main.o $(LIB_PATH)/item.o $(LIB_PATH)/engine_read.o $(LIB_PATH)/graph.o $(LIB_PATH)/engine_run.o
+ENG_OBJ= $(LIB_PATH)/engine_main.o $(LIB_PATH)/item.o $(LIB_PATH)/engine_read.o $(LIB_PATH)/graph.o $(LIB_PATH)/engine_run.o $(LIB_PATH)/engine_write.o 
 all: $(ENG_OBJ)
 
 
@@ -24,3 +24,7 @@ $(LIB_PATH)/item.o:item.cpp variable.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/engine_run.o: engine_run.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/engine_run.o
 	$(CPP) -c engine_run.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_run.o
+
+$(LIB_PATH)/engine_write.o:engine_write.cpp $(INLINE_HEADERS) 
+	@rm -f $(LIB_PATH)/engine_write.o
+	$(CPP) -c engine_write.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_write.o

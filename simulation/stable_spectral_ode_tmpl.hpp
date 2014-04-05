@@ -17,7 +17,6 @@ class stable_spectral_pde_1d_tmpl:public stable_ode_tmpl<T>{
         double* help;
         size_t nts;
         size_t num_pulses;
-        fftw_plan ffor, fback;
         //!Applies operations prior to the fft and integration
         virtual void pre_fft_operations();
         //!Applies operations after the fft but before the integrations
@@ -28,7 +27,7 @@ class stable_spectral_pde_1d_tmpl:public stable_ode_tmpl<T>{
         virtual void post_ifft_operations();
     public:
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, item*>& invals);
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
         virtual std::string type() const;
         virtual ~stable_spectral_pde_1d_tmpl();
 };
@@ -46,7 +45,7 @@ std::vector<std::string> stable_spectral_pde_1d_tmpl<T>::dependencies() const{
 };
 
 template<class T>
-void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, item*>& invals){
+void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
     stable_ode_tmpl<T>::postprocess(invals);
     int _num;
     invals["num_pulses"]->retrieve(&_num, this);

@@ -43,6 +43,17 @@ inline double energy(double* v, size_t s){
     sum += v[s-1]*v[s-1];
     return sqrt(sum/2);
 }
+class fftw_plan_holder{
+    public: 
+        fftw_plan p;
+        fftw_plan_holder():p(0){}
+        fftw_plan_holder(fftw_plan h):p(h){}
+        ~fftw_plan_holder(){
+            if(p){
+                fftw_destroy_plan(p);
+            }
+        }
+};
 //These fourier transforms have to do a dirty pointer transform from std::complex
 //to fftw_complex. Since std::complex<double> is bitwise the same as the C complex, and fftw_complex is
 //the same as the C complex, this works. simply using fftw_complex works in c++03, but c++11 has some
@@ -54,18 +65,18 @@ inline double energy(double* v, size_t s){
 inline void fft(comp* _in, comp* _out, const size_t len){
     fftw_complex* in = (fftw_complex*)_in;
     fftw_complex* out = (fftw_complex*)_out;
-    static std::map<size_t, fftw_plan> in_place, out_place;
+    static std::map<size_t, fftw_plan_holder> in_place, out_place;
     if(in == out){
         if(!in_place.count(len)){
-            in_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+            in_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
         }
-        fftw_execute_dft(in_place[len], in, out);
+        fftw_execute_dft(in_place[len].p, in, out);
         return;
     }
     if(!out_place.count(len)){
-        out_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
+        out_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
     }
-    fftw_execute_dft(out_place[len], in, out);
+    fftw_execute_dft(out_place[len].p, in, out);
 }
 //!Wrapper function for compatibility
 inline void fft(fftw_plan pp, comp* in, comp* out, const size_t len){
@@ -74,18 +85,18 @@ inline void fft(fftw_plan pp, comp* in, comp* out, const size_t len){
 inline void ifft(comp* _in, comp* _out, const size_t len){
     fftw_complex*  in = (fftw_complex*)_in;
     fftw_complex*  out = (fftw_complex*)_out;
-    static std::map<size_t, fftw_plan> in_place, out_place;
+    static std::map<size_t, fftw_plan_holder> in_place, out_place;
     if(in == out){
         if(!in_place.count(len)){
-            in_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+            in_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
         }
-        fftw_execute_dft(in_place[len], in, out);
+        fftw_execute_dft(in_place[len].p, in, out);
     }
     else{
         if(!out_place.count(len)){
-            out_place[len] = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
+            out_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
         }
-        fftw_execute_dft(out_place[len], in, out);
+        fftw_execute_dft(out_place[len].p, in, out);
     }
     double nval;
     nval=1.00/len;
@@ -153,8 +164,8 @@ namespace __HIDER__{
  * @param base The base string with which to generate the name
  * @return A unique name based on the input string
  */
-/*inline std::string get_unique_name(std::string base){
+inline std::string get_unique_name(std::string base){
   static __HIDER__::_unique_name nn;
   return nn.get_unique_name(base);
-  }*/
+  }
 #endif

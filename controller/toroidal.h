@@ -14,9 +14,9 @@ class toroidal:public controller{
     double initial_inc;
     double mul_fac;
     public:
-    virtual void addvar(variable* v); 
+    virtual void addvar(std::weak_ptr<variable> v); 
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, item*>& inval);
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& inval);
         virtual std::string type() const;
         virtual void control(comp* u, objective* obj);
         virtual char is_good();

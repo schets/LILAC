@@ -5,8 +5,10 @@
 #include <string>
 #include <iostream>
 #include <fstream>
+#include <memory>
 #include "item.h"
 class engine;
+class writer;
 /*!
  *
  * This class is the actual engime implementation. It is kept separate from
@@ -19,23 +21,28 @@ class engine;
  *
  */
 class engineimp{
-    std::map<std::string, item*> values;
     void read(std::ifstream& fstr);
     void _read(std::ifstream& fstr);
     void sort_pp();
-    std::string curdir;
     void execute_command(std::string inval);
-    std::set<item*> update_vars;
     void update();
+    std::string curdir;
+    std::map<std::string, std::shared_ptr<item>> values;
+    std::set<std::shared_ptr<item>> update_vars;
+    std::list<std::shared_ptr<const writer>> dats;
+    void write_data(std::shared_ptr<const writer> inval, std::ofstream& fwrite);
     public:
+    void add_writer(std::shared_ptr<const writer> wval);
+    void write_dat();
     void needs_updating(std::string name);
-    void needs_updating(item* p);
+    void needs_updating(std::shared_ptr<item> p);
     //! Returns the current count for updating, aka removing items
     void remove_item(std::string name);
     //!Runs the engine
     void run();
     //!Queries whether an item exists or not
-    char item_exists(item* val) const;
+    bool item_exists(std::shared_ptr<item> val) const;
+    bool item_exists(const std::string& val) const;
     //!Constructor, reads from an input file
     engineimp(const std::string fname, const std::string outname, const std::string index);
     //!Deletes data

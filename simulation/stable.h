@@ -4,6 +4,8 @@
 #include "rhs/rhs.h"
 #include "integrator/integrator.h"
 #include "utils/vartype.hpp"
+#include <memory>
+class writer;
 //!A system that attempts to reach an equilibrium
 /*! This class defines a system that tries to reach an equilibrium
  * The actual implementation lets the user define a function get_change, which
@@ -11,7 +13,6 @@
  * iterate_system, which iterates the system forwards one time step
  */
 
-const static int num_min = 10;
 class stable:public simulation, public vartype{
     protected:
         //!Maximum number of times the system is iterated before assuming an unstable state
@@ -23,10 +24,11 @@ class stable:public simulation, public vartype{
         //iterates the system forwards in time
         virtual void iterate_system() = 0;
         virtual std::vector<std::string> dependencies() const = 0;
-        virtual void postprocess(std::map<std::string, item*>& invals) = 0;
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& invals) = 0;
         int num_gone;
         int round;
         int bad_res;
+        std::shared_ptr<writer> cur_writer;
     public:
         double simulate();
         virtual ~stable(){};
@@ -64,7 +66,7 @@ class stable_ode:public stable{
         const std::type_info& vtype() const;
         double score();
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, item*>& invals);
+        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
         virtual std::string type() const;
         virtual ~stable_ode();
 };

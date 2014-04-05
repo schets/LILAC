@@ -7,10 +7,12 @@ char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
 engineimp::engineimp(const std::string fname, const std::string outname, const std::string index){
-    values["!out_file"] = new string();
+    values["!out_file"] =  std::make_shared<string>();
     values["!out_file"]->parse(outname);
     values["!out_file"]->setname("!out_file");
-    integer* p = new integer();
+    std::ofstream f_clear(outname.c_str(), std::ofstream::trunc);
+    f_clear.close();
+    std::shared_ptr<integer> p = std::make_shared<integer>();
     p->parse(index);
     p->setname("!start_ind");
     values["!start_ind"]=p;
@@ -23,35 +25,31 @@ engineimp::engineimp(const std::string fname, const std::string outname, const s
 };
 
 engineimp::~engineimp(){
-    std::map<std::string, item*>::iterator beg;
-    for(beg=values.begin(); beg != values.end(); beg++){
-        if(beg->second){
-            //      std::cout << "Starting deletion for " << beg->second->name() << std::endl;
-            delete beg->second;
-        }
-    }
+    this->write_dat();
 }
 
-char engineimp::item_exists(item* p) const{
+bool engineimp::item_exists(std::shared_ptr<item> p) const{
     if(!p){
-        return 1;
+        return false;
     }
-    std::map<std::string, item*>::const_iterator mbeg;
-    for(mbeg = values.begin(); mbeg != values.end(); mbeg++){
-        if(p == mbeg->second){
-            return 1;
+    for(auto& val : values){
+        if(p == val.second){
+            return true;
         }
     }
-    return 0;
+    return false;
+}
+bool engineimp::item_exists(const std::string& val) const{
+    return values.count(val);
 }
 /*!
  * Updates items which reference variables that require changing,
  * and resets the list of items which require updating
  */
 void engineimp::update(){
-    std::set<item*>::iterator beg;
-    for(beg = update_vars.begin(); beg != update_vars.end(); beg++){
-        (*beg)->update();
+    std::set<std::shared_ptr<item> >::iterator beg;
+    for(auto& val : update_vars){
+        val->update();
     }
     update_vars.clear();
 }
@@ -60,7 +58,7 @@ void engineimp::update(){
  * @param name Name of the item that requires updating
  */
 void engineimp::needs_updating(std::string name){
-    std::map<std::string, item*>::iterator pos = values.find(name);
+    std::map<std::string, std::shared_ptr<item> >::iterator pos = values.find(name);
     if(pos == values.end()){
         std::string errmess = "Lookup for item \"";
         errmess.append(name);
@@ -76,7 +74,7 @@ void engineimp::needs_updating(std::string name){
  * can be updated. Useful for wrapper classes such as the integrators
  * @param inval Pointer to the item that requires updating
  */
-void engineimp::needs_updating(item* inval){
+void engineimp::needs_updating(std::shared_ptr<item> inval){
     if(!inval){
         err("Null pointer passed to needs_updating", "engineimp::needs_updating",
                 "parser/engine.cpp", WARNING);
@@ -101,6 +99,7 @@ engine::engine(const std::string fname, const std::string outname, std::string i
     eng = new engineimp(fname, outname, index);
 }
 engine::~engine(){
+    int x;
     if(eng){
         delete eng;
     }

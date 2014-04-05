@@ -25,11 +25,11 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 
 TODO (kinda ordered by priority):
 
-1. Make all simulation/integrator classes type independent
-2. Implement generic data storage and io modules
-3. Implement neural network model
-4. Implement stochastic integrators (possibly adaptive/implicit)
-5. Implement memory pool for aligned and 'local' memory
+1. Implement generic data storage and io modules
+2. Implement neural network model
+3. Implement stochastic integrators (possibly adaptive/implicit)
+4. Implement memory pool for aligned and 'local' memory
+5. Find mystery fftw_plan leak
 6. Remove uneeded dependencies, refactor code
 7. Document configuration files
 8. Find better method of transferring data from item* to value than void*

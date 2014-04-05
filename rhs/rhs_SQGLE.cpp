@@ -21,7 +21,7 @@ rhs_SQGLE::~rhs_SQGLE(){
 }
 
 inline comp _clog(comp inval){
-    return 0.5*log(_sqabs(inval)) + I*atan2(_imag(inval), _real(inval));
+    return 0.5*log(_sqabs(inval)) + Id*atan2(_imag(inval), _real(inval));
 }
 int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
 
@@ -46,10 +46,10 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
     comp expr1 = (2.0*g0/(1.0+trap(sq1, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts, helper arrays for the rhs
     double help_mul=B*sin(2*a1-ap);
-    comp ce1 = std::exp(I*K*(-1.0));
-    comp ce2 = std::exp(I*K);
-    ce1=ce1*(cos(2*(a2-a3)-ap)+I*cos(2*a3-ap));
-    ce2=ce2*(sin(2*(a2-a3)-ap)+I*sin(2*a3-ap));
+    comp ce1 = std::exp(Id*K*(-1.0));
+    comp ce2 = std::exp(Id*K);
+    ce1=ce1*(cos(2*(a2-a3)-ap)+Id*cos(2*a3-ap));
+    ce2=ce2*(sin(2*(a2-a3)-ap)+Id*sin(2*a3-ap));
     float avals[4] __attribute__((aligned(16))) = {float(a1), float(a2), float(a3), float(ap)};
     float trigvals1[4] __attribute__((aligned(16)));
     float trigvals2[4] __attribute__((aligned(16)));
@@ -74,19 +74,19 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
         _trigout2=cos_ps(*(v4sf*)&trigvals2);
         trigout1 = (float*)&_trigout1;
         trigout2 = (float*)&_trigout2;
-        comp_in_r[i] = ce1*(I*(double)trigout1[0] - (double)trigout2[0]);
-        comp_in_r[i+1] = ce1*(I*(double)trigout1[1] - (double)trigout2[1]);
-        comp_in_r[i+2] = ce1*(I*(double)trigout1[2] - (double)trigout2[2]);
-        comp_in_r[i+3] = ce1*(I*(double)trigout1[3] - (double)trigout2[3]);
+        comp_in_r[i] = ce1*(Id*(double)trigout1[0] - (double)trigout2[0]);
+        comp_in_r[i+1] = ce1*(Id*(double)trigout1[1] - (double)trigout2[1]);
+        comp_in_r[i+2] = ce1*(Id*(double)trigout1[2] - (double)trigout2[2]);
+        comp_in_r[i+3] = ce1*(Id*(double)trigout1[3] - (double)trigout2[3]);
 
         _trigout1=sin_ps(*(v4sf*)&trigvals1);
         _trigout2=sin_ps(*(v4sf*)&trigvals2);
 
 
-        comp_in_r[i] += ce2*(I*(double)trigout2[0] - (double)trigout1[0]);
-        comp_in_r[i+1] += ce2*(I*(double)trigout2[1] - (double)trigout1[1]);
-        comp_in_r[i+2] += ce2*(I*(double)trigout2[2] - (double)trigout1[2]);
-        comp_in_r[i+3] += ce2*(I*(double)trigout2[3] - (double)trigout1[3]);
+        comp_in_r[i] += ce2*(Id*(double)trigout2[0] - (double)trigout1[0]);
+        comp_in_r[i+1] += ce2*(Id*(double)trigout2[1] - (double)trigout1[1]);
+        comp_in_r[i+2] += ce2*(Id*(double)trigout2[2] - (double)trigout1[2]);
+        comp_in_r[i+3] += ce2*(Id*(double)trigout2[3] - (double)trigout1[3]);
 
 
         i+=4;
@@ -100,22 +100,22 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
         trigvals1[2] = _sqabs(comp_in_r[i+2]);
         trigvals1[3] = _sqabs(comp_in_r[i+3]);
         _trigout1 = log_ps(*(v4sf*)&trigvals1);
-        comp_in_r[i] = 0.5*trigout1[0] + atan2(_imag(comp_in_r[i]), _real(comp_in_r[i]))*I + log(0.5);
-        comp_in_r[i+1] = 0.5*trigout1[1] + atan2(_imag(comp_in_r[i+1]), _real(comp_in_r[i+1]))*I + log(0.5);
-        comp_in_r[i+2] = 0.5*trigout1[2] + atan2(_imag(comp_in_r[i+2]), _real(comp_in_r[i+2]))*I + log(0.5);
-        comp_in_r[i+3] = 0.5*trigout1[3] + atan2(_imag(comp_in_r[i+3]), _real(comp_in_r[i+3]))*I + log(0.5);
+        comp_in_r[i] = 0.5*trigout1[0] + atan2(_imag(comp_in_r[i]), _real(comp_in_r[i]))*Id + log(0.5);
+        comp_in_r[i+1] = 0.5*trigout1[1] + atan2(_imag(comp_in_r[i+1]), _real(comp_in_r[i+1]))*Id + log(0.5);
+        comp_in_r[i+2] = 0.5*trigout1[2] + atan2(_imag(comp_in_r[i+2]), _real(comp_in_r[i+2]))*Id + log(0.5);
+        comp_in_r[i+3] = 0.5*trigout1[3] + atan2(_imag(comp_in_r[i+3]), _real(comp_in_r[i+3]))*Id + log(0.5);
         i+= 4;
     }
 #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         //fft helper
-        comp_in[i] = u1[i]*I*(expr1 + comp_in_r[i] + I*sq1[i]-Gamma);
+        comp_in[i] = u1[i]*Id*(expr1 + comp_in_r[i] + Id*sq1[i]-Gamma);
     }
     //fourier transform forwards nonlinear equations
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
 #pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
-        dx[i] = -1.0*I*((D/2 - I * expr1*tau)*ksq[i]*uf1[i] + comp_out[i]);
+        dx[i] = -1.0*Id*((D/2 - Id * expr1*tau)*ksq[i]*uf1[i] + comp_out[i]);
     }
     return 0;
 }
@@ -131,7 +131,7 @@ std::string rhs_SQGLE::type() const {
 /*!
  * Initializes the rhs_SQGLE class  
  */
-void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
+void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension;
     dat["t_int"]->retrieve(&LENGTH_T, this);
@@ -167,7 +167,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
     controller* cont;
     dat["controller"]->retrieve(&cont, this);
     a1=a2=a3=ap=0;
-    variable* vv = new variable();
+    std::shared_ptr<variable> vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a1");
     vv->set(a1);
@@ -175,8 +175,9 @@ void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
     dat[vv->name()]=vv;
     vv->retrieve(&a1, this);
     cont->addvar(vv);
+
     //a2
-    vv = new variable();
+    vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a2");
     vv->set(a2);
@@ -185,7 +186,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
     cont->addvar(vv);
     vv->retrieve(&a2, this);
     //a3
-    vv = new variable();
+    vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a3");
     vv->set(a3);
@@ -194,7 +195,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, item*>& dat){
     cont->addvar(vv);
     vv->retrieve(&a3, this);
     //ap
-    vv = new variable();
+    vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a4");
     vv->set(ap);

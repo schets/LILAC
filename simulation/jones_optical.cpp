@@ -1,3 +1,4 @@
+#include "writer/writer.h"
 #include "jones_optical.h"
 #include "comp_funcs.h"
 #include <set>
@@ -5,27 +6,6 @@
 #include <ctime>
 #include <cmath>
 double mom4(comp invals[], double* kvals, int len);
-class _unique_name{
-    std::set<std::string> names;
-    public:
-    std::string get_unique_name(std::string nbase){
-        nbase.push_back('_');
-        while(names.count(nbase)){
-            nbase.push_back(1 | (char)(rand()));
-        }
-        names.insert(nbase);
-        //ensure that the name will not be alread in the engine
-        nbase.push_back('!');
-        return nbase;
-    }
-    _unique_name(){
-        srand(time(0));
-    }
-};
-std::string get_unique_name(std::string base){
-    static _unique_name nn;
-    return nn.get_unique_name(base);
-}
 double gaussrand()
 {
     static double U, V;
@@ -45,7 +25,7 @@ double gaussrand()
 }
 void noise(comp* inval, double norm, size_t len){
     for(size_t i = 0; i < len; i++){
-        inval[i] = gaussrand() + I*gaussrand();
+        inval[i] = gaussrand() + Id*gaussrand();
     }
     double n = 0;
     for(size_t i = 0; i < len; i++){
@@ -87,14 +67,14 @@ class jones_matrix:public real8{
             jp=rmat(ap)*wp*rmat(-1*ap);
             mvals = j1*jp*j2*j3;
         }
-        jones_matrix(std::vector<variable*> avars, std::string n){
+        jones_matrix(std::vector<std::shared_ptr<variable> > avars, std::string n){
             setname(n);
             wq(1, 0) = wq (0, 1) = 0;
-            wq(0, 0)=std::exp(-1.0*I*3.14159*0.25);
-            wq(1, 1)=std::exp(1.0*I*3.14159*0.25);
+            wq(0, 0)=std::exp(-1.0*Id*3.14159*0.25);
+            wq(1, 1)=std::exp(1.0*Id*3.14159*0.25);
             wh(1, 0)=wh(0, 1)=0;
-            wh(0, 0)=-1.0*I;
-            wh(1, 1)=1.0*I;
+            wh(0, 0)=-1.0*Id;
+            wh(1, 1)=1.0*Id;
             wp(0, 1)=wp(1, 0)=0;
             wp(0, 0)=1;
             wp(1, 1)=0;
@@ -109,7 +89,7 @@ std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments", "jones_int_dist"};
     return appendvec(stable_spectral_pde_1d_tmpl<comp>::dependencies(), std::vector<std::string>(deps, deps+2));
 }
-void jones_optical::postprocess(std::map<std::string, item*>& invals){
+void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
 #ifdef gen_t_dat
     func_dat=fopen("python/grad_data2.out", "w");
     func_score = fopen("python/score_data2.out", "w");
@@ -152,7 +132,7 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
         nvec1[i] = ucur[i];
     }
     for(size_t i = 0; i < num_pulses; i++){
-        fft(ffor, nvec1 + i*nts, nvec1 +1*nts, nts);
+        fft(nvec1 + i*nts, nvec1 +1*nts, nts);
     }
     //generate variables for the jones matrices
     //create jones matrices
@@ -160,9 +140,9 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
     std::string mat_base = "jones_system_matrices";
 
     for(int i = 0; i < num_segments; i++){
-        std::vector<variable*> vv(4, (variable*)0);
+        std::vector<std::shared_ptr<variable> > vv(4);
         for(auto& val : vv){
-            val = new variable();
+            val = std::make_shared<variable>();
             val->holder=holder;
             val->setname(get_unique_name(name_base));
             val->parse("0.1");
@@ -171,12 +151,12 @@ void jones_optical::postprocess(std::map<std::string, item*>& invals){
 #else
             val->set(0);
 #endif
-            invals[val->name()]=val;
+
+            invals[val->name()]= val;
             cont->addvar(val);
         }
-
-        jones_matrix* m = new jones_matrix(vv, get_unique_name(mat_base));
-        invals[m->name()]=m;
+        std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(vv, get_unique_name(mat_base));
+        invals[m->name()]= m;
         jones_matrices.push_back(m);
     }
 }
@@ -191,20 +171,20 @@ double sign(double v){
  */
 void jones_optical::pre_fft_operations(){
     if(round==0){
-        for(int i = 0; i < nts; i++){
+        for(size_t i = 0; i < nts; i++){
             ucur[i] = ucur[i+nts] = 1.00/cosh(t[i]/2.0);
             help[i] = _real(ucur[i]);
         }
     }
     if(round == 1){
         for(size_t j = 0; j < num_pulses; j++){
-            fft(ffor, ucur+j*nts, ucur+j*nts, nts);
+            fft(ucur+j*nts, ucur+j*nts, nts);
         }
         for(size_t i = 0; i < dimension; i++){
             nvec1[i] = ucur[i];
         }
         for(size_t j = 0; j < num_pulses; j++){
-            ifft(fback, ucur+j*nts, ucur+j*nts, nts);
+            ifft(ucur+j*nts, ucur+j*nts, nts);
         }
     }
 /*    if(round==num_min){
@@ -238,11 +218,11 @@ void jones_optical::post_ifft_operations(){
         dmap = jones_matrices[0]->mvals*dmap;
         for(size_t i = 1; i < jones_matrices.size(); i++){
             for(size_t j = 0; j < num_pulses; j++){
-                fft(ffor, ucur+j*nts, ucur+j*nts, nts);
+                fft(ucur+j*nts, ucur+j*nts, nts);
             }
             inter->integrate(ucur, tcur, tcur+jones_int_dist);
             for(size_t j = 0; j < num_pulses; j++){
-                ifft(fback, ucur+j*nts, ucur+j*nts, nts);
+                ifft(ucur+j*nts, ucur+j*nts, nts);
             }
             tcur+=jones_int_dist;
             dmap = jones_matrices[i]->mvals*dmap;
@@ -310,30 +290,6 @@ double jones_optical::score(){
     return score;
 }
 jones_optical::~jones_optical(){
-    FILE* pmax;
-    pmax = fopen(out_f_name.c_str(), "w");
-    std::list<data_store>::iterator it = out_dat.begin();
-    it++;//discard this first since it has been replicated
-    //This also provides a more chaotic base for the later simulations and increases accuracy
-    for(; it != out_dat.end(); it++){
-        for(auto& val : it->avals){
-
-            fprintf(pmax, "%lf ", val);
-        }
-        fprintf(pmax, "%lf\n", it->score);
-    }
-    fclose(pmax);
-    printf("%f, %f, %f, %f\n", ba1, ba2, ba3, bap);
-    pmax = fopen("pmax.out", "w");
-    for(size_t i = 0; i < nts; i++){
-        fprintf(pmax, "%d, %lf\n", (int)i, phold[i]);
-    }
-    pmax = fopen("diff.out", "w");
-    for(size_t i = 0; i < dimension*2; i++){
-        fprintf(pmax, "%d, %lf\n", (int)i, ((double*)nvec2)[i]);
-    }
-
-    fclose(pmax);
     al_free(help);
     al_free(t);
     al_free(kurtosis_help);

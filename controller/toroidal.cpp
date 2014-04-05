@@ -23,7 +23,7 @@ std::vector<std::string> toroidal::dependencies() const{
  * @param dat Map containing the input values
  * \sa controller::postprocess, item_dim::postprocess
  */
-void toroidal::postprocess(std::map<std::string, item*>& dat){
+void toroidal::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     controller::postprocess(dat);
     num_int=0;
     int _iterations;
@@ -55,20 +55,25 @@ std::string toroidal::type() const{
 void toroidal::control(comp* u, objective* obj){
     double curinc = initial_inc;
     num_int++;
-    if(vars.size() == 4 || 1){
-        vars[0]->inc(sqrt(0.11)*100.0*PI/1000.0);
-        vars[1]->inc(sqrt(0.13)*100.0*PI/1000.0);
-        vars[2]->inc(sqrt(0.17)*100.0*PI/1000.0);
-        vars[3]->inc(sqrt(0.19)*100.0*PI/1000.0);
+    num_cont++;
+    if(vars.size() == 4){
+        //hard coded to test against matlab code
+        vars[0].lock()->inc(sqrt(0.11)*100.0*PI/1000.0);
+        vars[1].lock()->inc(sqrt(0.13)*100.0*PI/1000.0);
+        vars[2].lock()->inc(sqrt(0.17)*100.0*PI/1000.0);
+        vars[3].lock()->inc(sqrt(0.19)*100.0*PI/1000.0);
         return;
     }
-    for(auto& cvar : vars){
-        cvar->inc(curinc);
-        curinc *= mul_fac;
+    for(auto _cvar : vars){
+        std::shared_ptr<variable> cvar = _cvar.lock();
+        if(cvar.use_count()){
+            cvar->inc(curinc);
+            curinc *= mul_fac;
+        }
     }
 }
 
-void toroidal::addvar(variable* v){
+void toroidal::addvar(std::weak_ptr<variable> v){
     vars.push_back(v);
 }
 char toroidal::is_good(){
@@ -77,9 +82,12 @@ char toroidal::is_good(){
 void toroidal::pre_set(){
     for(size_t i = 0; i < index*iterations; i++){
         double curinc=initial_inc;
-        for(size_t j = 0; j < vars.size(); j++){
-            vars[j]->inc(curinc);
-            curinc *= mul_fac;
+        for(auto _val : vars){
+            std::shared_ptr<variable> var = _val.lock();
+            if(var.use_count()){
+                var->inc(curinc);
+                curinc *= mul_fac;
+            }
         }
     }
 }

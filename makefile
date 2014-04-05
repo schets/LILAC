@@ -19,6 +19,7 @@ all:
 	@$(MAKE) -C objective
 	@$(MAKE) -C simulation
 	@$(MAKE) -C utils
+	@$(MAKE) -C writer
 	$(LD)  lib/*.o -o bin/lilac $(LFLAGS) 
 	@cp bin/lilac rundir/lilac
 
