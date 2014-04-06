@@ -45,9 +45,8 @@ class stable:public simulation, public vartype{
  *  variable type of the defined problem. 
  */
 class stable_ode:public stable{
-    private:
-        stable_ode* actual;
     protected:
+        std::shared_ptr<stable_ode> actual;
         double tcur;
         comp* restr ucur, * restr ulast;
         //!This is the length of integration for each step

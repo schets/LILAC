@@ -11,7 +11,6 @@ const std::type_info& rk45::vtype() const{
     return actual->vtype();
 }
 rk45::~rk45(){
-    delete actual;
 }
 std::vector<std::string> rk45::dependencies() const{
     std::string deps[] = {"dt_init", "dt_min", "dt_max", "relerr", "abserr"};

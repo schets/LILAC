@@ -15,7 +15,7 @@ class rk45:public integrator{
       comp* restr f4, * restr f5, * restr f6;
       comp* restr u_calc;
       double* restr u_calc2;*/
-    rk45* actual;
+    std::shared_ptr<rk45> actual;
     public:
     const std::type_info& vtype() const;
     //!Dummy print function

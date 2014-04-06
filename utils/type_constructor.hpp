@@ -133,7 +133,7 @@ class type_constructor{
     template<class Tout>
         class _ttype{
             public:
-                virtual Tout* create() = 0;
+                virtual std::shared_ptr<Tout> create() = 0;
                 virtual ~_ttype(){}
         };
     //!This is the actual creator class. It creates a pointer of Tin with the template parameter Tval
@@ -141,9 +141,8 @@ class type_constructor{
         class ttype: public _ttype<Tout>{
             public:
                 //!Returns a Tin<Tval>* casted up to a Tout*
-                Tout* create(){
-                    return new Tin<Tval>();
-                    _ttype<int>** x;
+                std::shared_ptr<Tout> create(){
+                    return std::make_shared<Tin<Tval> >();
                 }
                 virtual ~ttype(){}
         };
@@ -174,7 +173,7 @@ class type_constructor{
      */
     template<class Tout, 
         class = typename std::enable_if<std::is_base_of<vartype, Tout>::value >::type>
-            static void create(Tout** in, const vartype* tval){
+            static void create(std::shared_ptr<Tout>* in, const vartype* tval){
                 _ttype<Tout>* temp;
                 std_type_list::create<Tout, _ttype, ttype>(&temp, tval);
                 (*in) = temp->create();
@@ -184,7 +183,7 @@ class type_constructor{
     template<class Tl,class Tout, 
         class = typename std::enable_if<std::is_base_of<vartype, Tout>::value >::type,
         class = typename std::enable_if<std::is_base_of<blacklist_checker, Tl>::value >::type>
-            static void create(Tout** in, const vartype* tval){
+            static void create(std::shared_ptr<Tout>* in, const vartype* tval){
                 _ttype<Tout>* temp;
                 if(Tl::check(tval)){
                     std::string val("Type ");
@@ -201,16 +200,16 @@ class type_constructor{
     //!Version of create that requires more template parameters, but directly returns a value
     //The list type is unspecified, so you can call this with a blacklist, a whitelist, or neither
     template<class Tout>
-        static Tout* create(const vartype* tval){
-            Tout* rval;
+        static std::shared_ptr<Tout> create(const vartype* tval){
+            std::shared_ptr<Tout> rval;
             type_constructor<Tin>::create<Tout>(&rval, tval);
             return rval;
         }
     //!shortened version of blacklist function
     template<class Tl, class Tout>
-        static Tout* create(const vartype* tval, const Tl blist){
-            Tout* rval;
-            //type_constructor<Tin>::create<Tl, Tout>(&rval, tval, blist);
+        static std::shared_ptr<Tout> create(const vartype* tval, const Tl blist){
+            std::shared_ptr<Tout> rval;
+            type_constructor<Tin>::create<Tl, Tout>(&rval, tval, blist);
             return rval;
         }
 };

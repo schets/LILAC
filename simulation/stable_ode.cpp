@@ -21,7 +21,6 @@ void stable_ode::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
 }
 
 stable_ode::~stable_ode(){
-    delete actual;
 }
 void stable_ode::pre_integration_operations(){
     actual->pre_integration_operations();
