@@ -17,7 +17,18 @@ void variable::retrieve(void* inval, item* caller){
     double* d = (double*)inval;
     *d = value;
     //add pointer to the list of pointer for the given class
-    modifiers[caller].insert(d);
+    if(caller && holder->item_exists(caller->name())){
+        safe_mods[std::weak_ptr<item>(holder->values[caller->name()])].insert(d);
+    }
+    else{
+        modifiers[caller].insert(d);
+        if(caller){
+            err(std::string("Unsafe item ") + caller->name() + 
+                    std::string(" being added to a variable modifier list"), 
+                    "variable::retrieve", "parser/variable.cpp",
+                    WARNING);
+        }
+    }
 }
 
 /*!
@@ -34,23 +45,41 @@ void variable::set(double p){
     }
     //add items to engine's list of items that require updating
     //Removes items from list if they no longer exist in the engine
-    std::map<item*, std::set<double*> >::iterator mit, mremove;
+    {
+        std::map<item*, std::set<double*> >::iterator mit, mremove;
 
-    for(mit = modifiers.begin(); mit!= modifiers.end();){
-        if(!(holder->item_exists(mit->first->name())) && mit->first){
-            mremove = mit;
+        for(mit = modifiers.begin(); mit!= modifiers.end();){
+            if(mit->first && !holder->item_exists(mit->first->name())){
+                mremove = mit;
+                mit++;
+                modifiers.erase(mremove);
+                continue;
+            }
+            for(auto& sit:mit->second){
+                (*sit) = value;
+            }
+            if(mit->first){
+                holder->needs_updating(mit->first->name());
+            }
             mit++;
-            modifiers.erase(mremove);
-            continue;
         }
-        std::set<double*>::iterator sit;
-        for(sit=mit->second.begin(); sit!= mit->second.end(); sit++){
-            *(*sit) = value;
+    }
+    {
+        std::map<std::weak_ptr<item>, std::set<double*> >::iterator mit, mremove;
+
+        for(mit = safe_mods.begin(); mit!= safe_mods.end();){
+            if(!mit->first.use_count()){
+                mremove = mit;
+                mit++;
+                safe_mods.erase(mremove);
+                continue;
+            }
+            for(auto& sit:mit->second){
+                (*sit) = value;
+            }
+            holder->needs_updating(mit->first.lock()->name());
+            mit++;
         }
-        if(mit->first){
-            holder->needs_updating(mit->first->name());
-        }
-        mit++;
     }
 }
 void variable::inc(double p){

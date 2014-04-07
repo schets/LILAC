@@ -89,7 +89,9 @@ class integer:public item{
  */
 class variable:public real8{
     size_t update_count;
+    //double* are not use by std since they are mostly to stack allocated mem
     std::map<item*, std::set<double*> > modifiers;
+    std::map<std::weak_ptr<item>, std::set<double*>, std::owner_less<std::weak_ptr<item> > > safe_mods;
     public:
     double low_bound, high_bound, inc_size;
     virtual void print() const;

@@ -67,8 +67,11 @@ class jones_matrix:public real8{
             jp=rmat(ap)*wp*rmat(-1*ap);
             mvals = j1*jp*j2*j3;
         }
-        jones_matrix(std::vector<std::shared_ptr<variable> > avars, std::string n){
+        jones_matrix(std::string n){
             setname(n);
+
+        }
+        void setup(std::vector<std::shared_ptr<variable> > avars){
             wq(1, 0) = wq (0, 1) = 0;
             wq(0, 0)=std::exp(-1.0*Id*3.14159*0.25);
             wq(1, 1)=std::exp(1.0*Id*3.14159*0.25);
@@ -143,20 +146,20 @@ void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& i
         std::vector<std::shared_ptr<variable> > vv(4);
         for(auto& val : vv){
             val = std::make_shared<variable>();
-            val->holder=holder;
             val->setname(get_unique_name(name_base));
+            val->holder=holder;
             val->parse("0.1");
 #ifdef gen_t_dat
             val->set(0*2*3.1415*(rand()*1.0/RAND_MAX));
 #else
             val->set(0);
 #endif
-
             invals[val->name()]= val;
             cont->addvar(val);
         }
-        std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(vv, get_unique_name(mat_base));
+        std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(get_unique_name(mat_base));
         invals[m->name()]= m;
+        m->setup(vv);
         jones_matrices.push_back(m);
     }
 }
@@ -187,27 +190,27 @@ void jones_optical::pre_fft_operations(){
             ifft(ucur+j*nts, ucur+j*nts, nts);
         }
     }
-/*    if(round==num_min){
-        for(size_t j = 0; j < num_pulses; j++){
-            fft(ffor, ucur+j*nts, ucur+j*nts, nts);
-        }
+    /*    if(round==num_min){
+          for(size_t j = 0; j < num_pulses; j++){
+          fft(ffor, ucur+j*nts, ucur+j*nts, nts);
+          }
 
-        for(size_t i = 0; i < nts; i++){
-            nvec2[i] = _sqabs(ucur[i]);        
-            for(size_t j = 0; j < num_pulses; j++){
-                nvec2[i] += _sqabs(ucur[i+j*nts]);
-            }
-            nvec2[i] = sqrt(nvec2[i]);
-        }
+          for(size_t i = 0; i < nts; i++){
+          nvec2[i] = _sqabs(ucur[i]);        
+          for(size_t j = 0; j < num_pulses; j++){
+          nvec2[i] += _sqabs(ucur[i+j*nts]);
+          }
+          nvec2[i] = sqrt(nvec2[i]);
+          }
 
-        for(size_t i = 0; i < nts; i++){
-            fprintf(func_dat, "%lf ", nvec2[i]);
-        }
-        fprintf(func_dat, "\n");
-        for(size_t j = 0; j < num_pulses; j++){
-            ifft(fback, ucur+j*nts, ucur+j*nts, nts);
-        }
-    }*/
+          for(size_t i = 0; i < nts; i++){
+          fprintf(func_dat, "%lf ", nvec2[i]);
+          }
+          fprintf(func_dat, "\n");
+          for(size_t j = 0; j < num_pulses; j++){
+          ifft(fback, ucur+j*nts, ucur+j*nts, nts);
+          }
+          }*/
 }
 void jones_optical::post_ifft_operations(){
     //apply the jones matrices, and integration between them

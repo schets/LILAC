@@ -8,7 +8,6 @@
 #include <vector>
 #include <iostream>
 #include "comp_funcs.h"
-#include "variable.cpp"
 item::~item(){}
 item::item(){
     has_write_name=0;

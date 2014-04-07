@@ -17,7 +17,9 @@ class writer;
  * access to the internals of the engine.
  *
  * In the future, there may be different types of engine (MPI-based engines, 
- * pure learning engines, etc) and his will make it much easier to implement those
+ * pure learning engines, etc) and his will make it much easier to implement and work on those
+ * w/o exposing the logic to the rest of the program. I do need to move some of the engineimp functions
+ * to the engine class however
  *
  */
 class engineimp{
@@ -49,6 +51,7 @@ class engineimp{
     ~engineimp();
     friend class engine;
     friend class item;
+    friend class variable;
 };
 
 #endif
