@@ -2,6 +2,7 @@
 #define RHS_IMP_H
 #include "rhs.h"
 #include "rhs_type.h"
+#include "utils/mempool.hpp"
 //!The class defining the CNLS equations
 /*!
  * This class provides an implementation of the coupled nonlinear schrodinger equations
@@ -18,6 +19,7 @@ class rhs_CNLS: public rhs_type<comp>{
     double dt;
     double LENGTH_T;
     size_t NUM_TIME_STEPS;
+    mempool memp;
     public:
     double* restr k;
     virtual void parse(std::string inval);

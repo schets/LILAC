@@ -1,5 +1,4 @@
 !#include sqgle.in !ignore sqgle for now, is slow and likely not accurate
-!#include fail_cyclical.in
 #include rhs_CNLS.in
 #include rk45.in
 #include toroidal.in

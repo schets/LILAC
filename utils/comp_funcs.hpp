@@ -5,6 +5,7 @@
 #include <cmath>
 #include <vector>
 #include <string>
+#include "mempool.hpp"
 extern "C"{
 #include <fftw3.h>
 }

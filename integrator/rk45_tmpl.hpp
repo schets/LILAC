@@ -19,6 +19,7 @@ class rk45_tmpl:public rk45 {
     T* restr u_calc;
     rhs_type<T>* func;
     double* restr u_calc2;
+    mempool mp;
     public:
     virtual const std::type_info& vtype() const;
     //!Dummy print function
@@ -242,8 +243,6 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
 }
 template<class T>
 rk45_tmpl<T>::~rk45_tmpl(){
-    al_free(f0);
-    al_free(u_calc2);
 }
 template<class T>
 std::vector<std::string> rk45_tmpl<T>::dependencies() const{
@@ -290,15 +289,7 @@ void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& da
                 "integrator/rk45.cpp", dat["abserr"], FATAL_ERROR);
     }
 
-    f0 = (T*) al_malloc(8*sizeof(T)*dimension);
-    f1=f0+dimension;
-    f2=f1+dimension;
-    f3=f2+dimension;
-    f4=f3+dimension;
-    f5=f4+dimension;
-    f6=f5+dimension;
-    u_calc=f6+dimension;
-    u_calc2 = (double*) al_malloc(dimension*sizeof(double));
+    mp.create<32>(dimension, &f0, &f1, &f2, &f3, &f4, &f5, &f6, &u_calc, &u_calc2);
 }
 template<class T>
 void rk45_tmpl<T>::parse(std::string inval){

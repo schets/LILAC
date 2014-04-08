@@ -16,7 +16,7 @@ $(LIB_PATH)/rk4.o: rk4.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/integrator.o: integrator.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/integrator.o
 	$(CPP) -c integrator.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/integrator.o
-$(LIB_PATH)/rk45.o: rk45.cpp rk45_tmpl.h $(INLINE_HEADERS)
+$(LIB_PATH)/rk45.o: rk45.cpp rk45_tmpl.hpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rk45.o
 	$(CPP) -c rk45.cpp $(INC_PATH) $(FASTMATH) $(CFLAGS) -o $(LIB_PATH)/rk45.o
 $(LIB_PATH)/lsoda.o: lsoda.cpp $(INLINE_HEADERS)

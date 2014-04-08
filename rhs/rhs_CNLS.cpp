@@ -1,6 +1,5 @@
 #include "rhs/rhs.h"
 #include "rhs_CNLS.h"
-#include "defs.h"
 #include "comp_funcs.h"
 #include <cstring>
 
@@ -28,15 +27,14 @@ double trap(double * restr v, size_t s){
  * Destructor for rhs_CNLS
  * */
 rhs_CNLS::~rhs_CNLS(){
-    al_free(u1);
-    al_free(sq1);
-    al_free(sq2);
-    al_free(k);
-    al_free(ksq);
+  //  al_free(u1);
+//    al_free(sq1);
+//    al_free(sq2);
+//    al_free(k);
+//    al_free(ksq);
 }
 
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
-
     uf1= (comp* restr)x;
     uf2=(comp* restr)(x+NUM_TIME_STEPS);
     //take the inverse fourier transform
@@ -89,10 +87,6 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/Id;
     }
-    //printar(dx, NUM_TIME_STEPS*2);
-    //
-    //all values have been set
-    //return success code
     return 0;
 }
 
@@ -123,16 +117,17 @@ void rhs_CNLS::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     dt = LENGTH_T/NUM_TIME_STEPS;
     dat["g0"]->retrieve(&g0, this);
     dat["e0"]->retrieve(&e0, this);
-    u1 = (comp*)al_malloc(NUM_TIME_STEPS*(6*sizeof(comp)));
-    u2 = u1+NUM_TIME_STEPS;
-    comp_in = u2+NUM_TIME_STEPS;
+ //   u1 = (comp*)al_malloc(NUM_TIME_STEPS*(6*sizeof(comp)));
+ //   u2 = u1+NUM_TIME_STEPS;
+/*    comp_in = u2+NUM_TIME_STEPS;
     comp_in_r = comp_in+NUM_TIME_STEPS;
     comp_out = comp_in_r+NUM_TIME_STEPS;
     comp_out_r = comp_out+NUM_TIME_STEPS;
     sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     sq2 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
     k = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
+    ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));*/
+      memp.create<32>(NUM_TIME_STEPS, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
     //create k values
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
