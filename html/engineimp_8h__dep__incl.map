@@ -1,9 +1,0 @@
-<map id="parser/engineimp.h" name="parser/engineimp.h">
-<area shape="rect" id="node3" href="$engine_8cpp.html" title="parser/engine.cpp" alt="" coords="5,83,131,112"/>
-<area shape="rect" id="node5" href="$engine__read_8cpp.html" title="parser/engine_read.cpp" alt="" coords="155,83,312,112"/>
-<area shape="rect" id="node7" href="$engine__run_8cpp.html" title="parser/engine_run.cpp" alt="" coords="336,83,485,112"/>
-<area shape="rect" id="node9" href="$engine__write_8cpp.html" title="parser/engine_write.cpp" alt="" coords="509,83,669,112"/>
-<area shape="rect" id="node11" href="$graph_8cpp.html" title="parser/graph.cpp" alt="" coords="693,83,811,112"/>
-<area shape="rect" id="node13" href="$variable_8cpp.html" title="parser/variable.cpp" alt="" coords="835,83,965,112"/>
-<area shape="rect" id="node15" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="989,83,1133,112"/>
-</map>

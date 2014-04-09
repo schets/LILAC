@@ -1,5 +1,0 @@
-<map id="simulation::dependencies" name="simulation::dependencies">
-<area shape="rect" id="node3" href="$classstable.html#a23034870f1989c0e655f29493ef95f0d" title="stable::dependencies" alt="" coords="225,13,369,43"/>
-<area shape="rect" id="node5" href="$classstable__ode.html#a33edb6392535f9d260b625d98713bda5" title="stable_ode::dependencies" alt="" coords="419,13,592,43"/>
-<area shape="rect" id="node7" href="$classstable__spectral__pde__1d__tmpl.html#affe3e36f8633d19f26da601297dcc8c5" title="stable_spectral_pde\l_1d_tmpl::dependencies" alt="" coords="640,5,803,51"/>
-</map>
