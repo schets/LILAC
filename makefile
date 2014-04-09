@@ -6,7 +6,6 @@
 #www.github.com/schets/lasers
 
 
-OBJS = lib/rhs.o  lib/controller.o lib/integrator.o lib/main.o lib/engine.o lib/objective.o lib/simulation.o
 include make.inc
 .PHONY: all
 all: integrator rhs controller parser objective simulation utils writer
