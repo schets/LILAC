@@ -1,0 +1,5 @@
+<map id="jones_optical::post_ifft_operations" name="jones_optical::post_ifft_operations">
+<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function returns a fourier transform in the forward direction." alt="" coords="233,5,271,35"/>
+<area shape="rect" id="node5" href="$classintegrator.html#a14bc60f941e2ab5e6bf36456da19deb5" title="Integrates the function rh." alt="" coords="185,59,319,88"/>
+<area shape="rect" id="node7" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="ifft" alt="" coords="233,112,271,141"/>
+</map>

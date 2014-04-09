@@ -1,0 +1,19 @@
+<map id="vartype" name="vartype">
+<area shape="rect" id="node3" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="121,59,196,88"/>
+<area shape="rect" id="node11" href="$classrhs.html" title="The rhs base class." alt="" coords="139,139,179,168"/>
+<area shape="rect" id="node25" href="$classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="131,232,187,261"/>
+<area shape="rect" id="node5" href="$classrk4.html" title="rk4" alt="" coords="289,5,329,35"/>
+<area shape="rect" id="node7" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="287,59,332,88"/>
+<area shape="rect" id="node9" href="$classrk45__tmpl.html" title="Dormand&#45;Prince integrator." alt="" coords="453,59,563,88"/>
+<area shape="rect" id="node13" href="$classrhs__type.html" title="Type interface for the rhs class." alt="" coords="257,112,361,141"/>
+<area shape="rect" id="node16" href="$classrhs__type.html" title="rhs_type\&lt; comp \&gt;" alt="" coords="245,165,373,195"/>
+<area shape="rect" id="node18" href="$classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="" coords="460,112,556,141"/>
+<area shape="rect" id="node20" href="$classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="" coords="467,165,549,195"/>
+<area shape="rect" id="node22" href="$classrhs___s_q_g_l_e.html" title="rhs_SQGLE" alt="" coords="463,219,553,248"/>
+<area shape="rect" id="node27" href="$classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="267,272,352,301"/>
+<area shape="rect" id="node29" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; T \&gt;" alt="" coords="433,272,583,301"/>
+<area shape="rect" id="node33" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; comp \&gt;" alt="" coords="421,329,595,359"/>
+<area shape="rect" id="node31" href="$classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE." alt="" coords="643,259,781,306"/>
+<area shape="rect" id="node35" href="$classstable__spectral__pde__1d__tmpl.html" title="stable_spectral_pde\l_1d_tmpl\&lt; comp \&gt;" alt="" coords="643,329,781,375"/>
+<area shape="rect" id="node37" href="$classjones__optical.html" title="jones_optical" alt="" coords="829,337,928,367"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="appendvec" name="appendvec">
+<area shape="rect" id="node3" href="$classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4" title="controller::dependencies" alt="" coords="155,5,317,35"/>
+<area shape="rect" id="node5" href="$classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889" title="toroidal::dependencies" alt="" coords="381,32,533,61"/>
+<area shape="rect" id="node8" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="169,109,303,139"/>
+<area shape="rect" id="node10" href="$classrk45__tmpl.html#aa620e3e2a46807d1d85ed12c2cc5793c" title="rk45_tmpl::dependencies" alt="" coords="153,163,319,192"/>
+<area shape="rect" id="node12" href="$classn__pulse__score.html#adfc7d46136caaf90ad9579fe11a291f9" title="n_pulse_score::dependencies" alt="" coords="139,216,333,245"/>
+<area shape="rect" id="node14" href="$classexample__rhs.html#a3dc4f9a14a9340fb2a12f8bcf3349ce0" title="This function returns a list of the dependencies needed to initialize the class." alt="" coords="144,269,328,299"/>
+<area shape="rect" id="node16" href="$classrhs___c_n_l_s.html#a40eaa32cb5b2d1d8478f0fdf289b1898" title="rhs_CNLS::dependencies" alt="" coords="151,323,321,352"/>
+<area shape="rect" id="node18" href="$classrhs___s_q_g_l_e.html#af520b94de5c27d5c5d43da8c78b0ef43" title="rhs_SQGLE::dependencies" alt="" coords="147,376,325,405"/>
+<area shape="rect" id="node20" href="$classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df" title="jones_optical::dependencies" alt="" coords="143,429,329,459"/>
+<area shape="rect" id="node22" href="$classsimulation.html#a166cf85cd6e92fde6ad08e9104733c72" title="simulation::dependencies" alt="" coords="152,483,320,512"/>
+<area shape="rect" id="node24" href="$classstable.html#a23034870f1989c0e655f29493ef95f0d" title="stable::dependencies" alt="" coords="385,533,529,563"/>
+<area shape="rect" id="node26" href="$classstable__ode.html#a33edb6392535f9d260b625d98713bda5" title="stable_ode::dependencies" alt="" coords="581,584,755,613"/>
+<area shape="rect" id="node28" href="$classstable__spectral__pde__1d__tmpl.html#affe3e36f8633d19f26da601297dcc8c5" title="stable_spectral_pde\l_1d_tmpl::dependencies" alt="" coords="803,602,965,649"/>
+</map>
