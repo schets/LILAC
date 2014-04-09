@@ -1,0 +1,8 @@
+<map id="item_dim::dependencies" name="item_dim::dependencies">
+<area shape="rect" id="node3" href="$classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4" title="controller::dependencies" alt="" coords="220,5,383,35"/>
+<area shape="rect" id="node7" href="$classsimulation.html#a166cf85cd6e92fde6ad08e9104733c72" title="simulation::dependencies" alt="" coords="217,59,385,88"/>
+<area shape="rect" id="node5" href="$classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889" title="toroidal::dependencies" alt="" coords="435,5,587,35"/>
+<area shape="rect" id="node9" href="$classstable.html#a23034870f1989c0e655f29493ef95f0d" title="stable::dependencies" alt="" coords="439,59,583,88"/>
+<area shape="rect" id="node11" href="$classstable__ode.html#a33edb6392535f9d260b625d98713bda5" title="stable_ode::dependencies" alt="" coords="635,59,808,88"/>
+<area shape="rect" id="node13" href="$classstable__spectral__pde__1d__tmpl.html#affe3e36f8633d19f26da601297dcc8c5" title="stable_spectral_pde\l_1d_tmpl::dependencies" alt="" coords="856,50,1019,97"/>
+</map>
