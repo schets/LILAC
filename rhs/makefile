@@ -23,3 +23,8 @@ $(LIB_PATH)/example_rhs.o: example_rhs.cpp rhs_type.h $(INLINE_HEADERS)
 $(LIB_PATH)/rhs_SQGLE.o: rhs_SQGLE.cpp rhs_type.h $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/rhs_SQGLE.o
 	$(CPP) -c rhs_SQGLE.cpp $(INC_PATH)  -o $(LIB_PATH)/rhs_SQGLE.o $(CFLAGS) $(FASTMATH) 
+
+.PHONY: clean
+
+clean:
+	rm -f $(RHS_OBJ)

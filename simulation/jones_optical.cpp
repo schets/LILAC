@@ -1,6 +1,7 @@
 #include "writer/writer.h"
 #include "jones_optical.h"
 #include "comp_funcs.h"
+#include "utils/noise.h"
 #include <set>
 #include <cstdlib>
 #include <ctime>
@@ -22,20 +23,6 @@ double gaussrand()
     phase = 1 - phase;
 
     return Z;
-}
-void noise(comp* inval, double norm, size_t len){
-    for(size_t i = 0; i < len; i++){
-        inval[i] = gaussrand() + Id*gaussrand();
-    }
-    double n = 0;
-    for(size_t i = 0; i < len; i++){
-        n += _sqabs(inval[i]);
-    }
-    n = sqrt(n);
-    double mval = norm/n;
-    for(size_t i = 0; i < len; i++){
-        inval[i] *= mval;
-    }
 }
 
 /*!
@@ -121,7 +108,7 @@ void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& i
     memp.add(dimension, &nvec1);
     memp.add(nts, &help, &t, &kurtosis_help, &phold, &nvec2);
     double dt = 60.0/nts;
-    noise(ucur, 0.2, dimension); 
+    gaussian_noise_double(ucur, dimension, 0.2); 
     for(size_t i = 0; i < nts; i++){
         t[i] = dt*(i-nts/2.0);
     }

@@ -17,4 +17,7 @@ $(LIB_PATH)/toroidal.o: toroidal.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/toroidal.o
 	$(CPP) -c toroidal.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/toroidal.o
 
+.PHONY: clean
 
+clean:
+	rm -f $(CONT_OBJ)

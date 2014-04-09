@@ -4,7 +4,7 @@ LIB_MAIN = ../lib
 
 LIB_PATH= $(LIB_MAIN)
 
-UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o
+UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o $(LIB_PATH)/noise.o
 
 all: $(UTIL_OBJ)
 
@@ -15,3 +15,11 @@ $(LIB_PATH)/utils.o: utils.cpp $(INLINE HEADERS)
 $(LIB_PATH)/main.o: main.cpp $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/main.o
 	$(CPP) -c main.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/main.o
+
+$(LIB_PATH)/noise.o: noise.cpp noise.h $(INLINE HEADERS)
+	@rm -f $(LIB_PATH)/noise.o
+	$(CPP) -c noise.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/noise.o
+
+.PHONY: clean
+clean:
+	rm -f $(UTIL_OBJ)

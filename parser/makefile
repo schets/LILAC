@@ -32,3 +32,8 @@ $(LIB_PATH)/engine_write.o:engine_write.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/variable.o:variable.cpp $(INLINE_HEADERS) 
 	@rm -f $(LIB_PATH)/variable.o
 	$(CPP) -c variable.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/variable.o
+
+.PHONY: clean
+
+clean:
+	rm -f $(ENG_OBJ)
