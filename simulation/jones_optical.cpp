@@ -118,12 +118,8 @@ void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& i
                 "jones_optical::postprocess", "system/jones_optical.cpp", FATAL_ERROR);
     }
 
-    help = (double*)al_malloc(sizeof(double)*nts);
-    t = (double*)al_malloc(sizeof(double)*nts);
-    kurtosis_help=(comp*)al_malloc(sizeof(comp)*nts);
-    phold=(double*)al_malloc(sizeof(double)*nts);
-    nvec1= (comp*)al_malloc(dimension*sizeof(comp));
-    nvec2= (double*)al_malloc(nts*sizeof(double));
+    memp.add(dimension, &nvec1);
+    memp.add(nts, &help, &t, &kurtosis_help, &phold, &nvec2);
     double dt = 60.0/nts;
     noise(ucur, 0.2, dimension); 
     for(size_t i = 0; i < nts; i++){
@@ -293,12 +289,12 @@ double jones_optical::score(){
     return score;
 }
 jones_optical::~jones_optical(){
-    al_free(help);
+  /*  al_free(help);
     al_free(t);
     al_free(kurtosis_help);
     al_free(phold);
     al_free(nvec1);
-    al_free(nvec2);
+    al_free(nvec2);*/
     fclose(func_dat);
     fclose(func_score);
 }

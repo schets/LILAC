@@ -6,7 +6,7 @@
 comp trap(comp * restr v, size_t s){
     ALIGNED(v);
     comp sum = 0;
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
@@ -16,7 +16,7 @@ comp trap(comp * restr v, size_t s){
 double trap(double * restr v, size_t s){
     ALIGNED(v);
     double sum = 0;
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i=1; i < s-1; i++){
         sum += v[i];
     }
@@ -26,13 +26,7 @@ double trap(double * restr v, size_t s){
 /*!
  * Destructor for rhs_CNLS
  * */
-rhs_CNLS::~rhs_CNLS(){
-  //  al_free(u1);
-//    al_free(sq1);
-//    al_free(sq2);
-//    al_free(k);
-//    al_free(ksq);
-}
+rhs_CNLS::~rhs_CNLS(){}
 
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     uf1= (comp* restr)x;
@@ -53,7 +47,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     ALIGNED(comp_out_r);
     ALIGNED(k);
     ALIGNED(ksq);
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         sq1[i] = _sqabs(u1[i]);
         sq2[i] = _sqabs(u2[i]);
@@ -61,7 +55,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     }
     comp expr1 = Id*(2.0*g0/(1.0+trap(comp_in_r, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts for the rhs
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (sq1[i] + A*sq2[i])*u1[i];
         comp_in[i] = u2[i] * u2[i] * _conj(u1[i]);
@@ -69,20 +63,20 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     //fourier transform forwards nonlinear equations
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = (((D/2) * ksq[i] + K) * uf1[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*uf1[i]*(1-tau*ksq[i]) - Gamma*uf1[i])/Id;
     }
     //Do the fft work for the other half of the calculations
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         comp_in_r[i] = (A*sq1[i] + sq2[i])*u2[i];
         comp_in[i] = u1[i] * u1[i] * _conj(u2[i]);
     }
     fft(ffor, comp_in, comp_out, NUM_TIME_STEPS);
     fft(ffor, comp_in_r, comp_out_r, NUM_TIME_STEPS);
-    #pragma vector aligned
+#pragma vector aligned
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i+NUM_TIME_STEPS] = (((D/2) * ksq[i] - K) * uf2[i] - comp_out_r[i]
                 - B*comp_out[i] + expr1*(uf2[i]-tau*ksq[i]*uf2[i]) - Gamma*uf2[i])/Id;
@@ -117,17 +111,7 @@ void rhs_CNLS::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     dt = LENGTH_T/NUM_TIME_STEPS;
     dat["g0"]->retrieve(&g0, this);
     dat["e0"]->retrieve(&e0, this);
- //   u1 = (comp*)al_malloc(NUM_TIME_STEPS*(6*sizeof(comp)));
- //   u2 = u1+NUM_TIME_STEPS;
-/*    comp_in = u2+NUM_TIME_STEPS;
-    comp_in_r = comp_in+NUM_TIME_STEPS;
-    comp_out = comp_in_r+NUM_TIME_STEPS;
-    comp_out_r = comp_out+NUM_TIME_STEPS;
-    sq1 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    sq2 = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    k = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));
-    ksq = (double*)al_malloc(NUM_TIME_STEPS*sizeof(double));*/
-      memp.create<32>(NUM_TIME_STEPS, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
+    memp.create(NUM_TIME_STEPS, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
     //create k values
 
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);

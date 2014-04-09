@@ -62,14 +62,11 @@ void stable_ode_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item>
         err("Variable int_len is too small, int_len must be greater than 1e-12",
                 "stable_ode::postprocess", "system/stable.cpp", FATAL_ERROR);
     }
-    ucur = (T*)al_malloc(2*this->dimension*sizeof(T));
-    ulast=ucur+this->dimension;
+    memp.add(dimension, &ucur, &ulast);
 }
 
 template <class T>
-stable_ode_tmpl<T>::~stable_ode_tmpl(){
-    al_free(ucur);
-}
+stable_ode_tmpl<T>::~stable_ode_tmpl(){}
 template <class T>
 void stable_ode_tmpl<T>::pre_integration_operations(){
 }

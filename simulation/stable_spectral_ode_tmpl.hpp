@@ -59,14 +59,11 @@ void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, std::shar
                 "simulation/stable.cpp", FATAL_ERROR);
     }
     nts=this->dimension/num_pulses;
-    this->ucur = (T*) al_malloc(this->dimension*2*sizeof(T));
-    this->ulast = this->ucur+this->dimension;
-    t=new double[nts];
     double dt=60.0/nts;
+    this->memp.add(nts, &t, &help);
     for(int i = 0; i < nts; i++){
         t[i] = dt*((double)i-nts/2.0);
     }
-    help = new double[nts];
     for(int i = 0; i < nts; i++){
         this->ucur[i] = this->ucur[i+nts] = 1.00/cosh(t[i]/2.0);
         this->help[i] = _real(this->ucur[i]);
@@ -109,6 +106,4 @@ void stable_spectral_pde_1d_tmpl<T>::post_ifft_operations(){};
 template<class T>
 stable_spectral_pde_1d_tmpl<T>::~stable_spectral_pde_1d_tmpl()
 {
-    delete[] t;
-    delete[] help;
 }

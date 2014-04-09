@@ -8,6 +8,11 @@
 #include <vector>
 #include <iostream>
 #include "comp_funcs.h"
+void item_dim::_do_mem_update(){
+    err(this->name() + std::string(" of type ") + this->type() +
+        std::string(" does not support a changing dimension."),
+        "item_dim::_do_mem_update()", "parser/item.cpp", FATAL_ERROR);
+}
 item::~item(){}
 item::item(){
     has_write_name=0;

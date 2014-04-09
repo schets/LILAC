@@ -5,6 +5,7 @@
 #include "utils/comp_funcs.hpp"
 #include "rk45.h"
 #include "rhs/rhs_type.h"
+#include "utils/mempool.hpp"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the
@@ -19,7 +20,7 @@ class rk45_tmpl:public rk45 {
     T* restr u_calc;
     rhs_type<T>* func;
     double* restr u_calc2;
-    mempool mp;
+//    mempool memp;
     public:
     virtual const std::type_info& vtype() const;
     //!Dummy print function
@@ -289,7 +290,7 @@ void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& da
                 "integrator/rk45.cpp", dat["abserr"], FATAL_ERROR);
     }
 
-    mp.create<32>(dimension, &f0, &f1, &f2, &f3, &f4, &f5, &f6, &u_calc, &u_calc2);
+    memp.create(dimension, &f0, &f1, &f2, &f3, &f4, &f5, &f6, &u_calc, &u_calc2);
 }
 template<class T>
 void rk45_tmpl<T>::parse(std::string inval){

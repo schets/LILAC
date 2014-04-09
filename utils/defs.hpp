@@ -42,8 +42,7 @@ const static comp Id = comp(0, 1);
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50
-#include "../parser/item.h"
-
+class item;
 class _fatal{
     public:
     _fatal(){};
@@ -54,60 +53,18 @@ class _warning{
 };
 const static _fatal FATAL_ERROR;
 const static _warning WARNING;
-inline void err(std::string message, std::string function, std::string file, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\nExiting program\n";
-    exit(1);
-}
-inline void err(std::string message, std::string function, std::string file, _warning w){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\nContinuing program\n";
-}
-inline void err(std::string message, std::string function, std::string file, item* p, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\n";
-    p->print();
-    std::cout << "\nExiting program\n";
-    exit(1);
-}
-inline void err(std::string message, std::string function, std::string file, item* p, _warning f){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\n";
-    p->print();
-    std::cout << "\nContinuing program\n";
-}
-inline void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\n";
-    p->print();
-    std::cout << "\nExiting program\n";
-    exit(1);
-}
-inline void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
-        "\nError message is:\n"<<message<<"\n";
-    p->print();
-    std::cout << "\nContinuing program\n";
-}
+void err(std::string message, std::string function, std::string file, _fatal f);
+void err(std::string message, std::string function, std::string file, _warning w);
+void err(std::string message, std::string function, std::string file, item* p, _fatal f);
+void err(std::string message, std::string function, std::string file, item* p, _warning f);
+void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f);
+void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f);
 
 
 //Alligned malloc
 //also ensures return value is valid
-inline void* al_malloc(size_t ss){
-    void* rv = fftw_malloc(ss);
-    if(!rv){
-        std::stringstream str;
-        str << "Memory allocation of " << ss << " bytes of data failed";
-        err(str.str(), "malloc", "defs.h", FATAL_ERROR);
-    }
-    return rv;
-}
-inline void al_free(void* ss){
-    if(!ss){
-        err("Attempt to free a null pointer", "free", "defs.h", WARNING);
-    }
-    fftw_free(ss);
-}
+void* al_malloc(size_t ss);
+void al_free(void* ss);
 extern "C"{
 #include <malloc.h>
 }

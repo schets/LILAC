@@ -25,16 +25,14 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 
 TODO (kinda ordered by priority):
 
-1. Implement generic data storage and io modules
+1. Implement stochastic integrators (possibly adaptive/implicit)
 2. Implement neural network model
-3. Implement stochastic integrators (possibly adaptive/implicit)
-4. Implement memory pool for aligned and 'local' memory
-5. Find mystery fftw_plan leak
-6. Remove uneeded dependencies, refactor code
-7. Document configuration files
-8. Find better method of transferring data from item* to value than void*
-9. Allow referring to variables by name in input files
-10. Allow passing specific parameters to variables
-11. Write map-fold scripts for analyzing output
-12. Refactor LSODA to run in integrator system
-13. Get documentation up to date
+3. Remove uneeded dependencies, refactor code
+4. Document configuration files
+5. Find better method of transferring data from item* to value than void*
+6. Allow referring to variables by name in input files
+7. Allow passing specific parameters to variables
+8. Implement effecient way to reserve many different dimensions in the mempool
+9. Write map-fold scripts for analyzing output
+10. Refactor LSODA to run in integrator system
+11. Get documentation up to date

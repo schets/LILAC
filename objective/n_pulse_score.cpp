@@ -55,13 +55,10 @@ void n_pulse_score::postprocess(std::map<std::string, std::shared_ptr<item>>& in
                 "bi_pulse_score::postprocess", "objective/bi_pulse_score.cpp", FATAL_ERROR);
     }
     nts = dimension/n_pulse;
-    help = (double*)al_malloc(nts*sizeof(double));
-    kurtosis_help = (comp*)al_malloc(nts*sizeof(comp));
+    memp.create(nts, &help, &kurtosis_help);
 }
-n_pulse_score::~n_pulse_score(){
-    al_free(help);
-    al_free(kurtosis_help);
-}
+n_pulse_score::~n_pulse_score(){}
+
 std::string n_pulse_score::type() const{
     return "n_pulse_score";
 }

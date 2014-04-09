@@ -1,7 +1,7 @@
 #ifndef MEMPOOL_HPP
 #define MEMPOOL_HPP
-#pragma once
 #include "defs.hpp"
+#include "comp_funcs.hpp"
 #include <list>
 #include <stdint.h>
 class mempool;
@@ -87,10 +87,10 @@ class mempool{
      */
     char* izard;//charizard lol.
     size_t total_bytes;
-    std::list<size_t> csizes;
-    std::list<void**> cptrs;
-    template<size_t mal, class ...Tl>
-        void make_this(size_t dim, Tl* restr *... args){
+    std::list<size_t> csizes, vsizes;
+    std::list<void**> cptrs; 
+    template<class ...Tl>
+        void make_this(size_t mal, size_t dim, Tl* restr *... args){
             csizes.clear();
             cptrs.clear();
             auto val = __HIDER__::Impl<Tl...>::_create();
@@ -99,6 +99,7 @@ class mempool{
             std::list<char*> held_ptrs;
             for(auto s : val){
                 csizes.push_back(dim*s);
+                vsizes.push_back(s);
                 total_bytes += dim * s;
             }
             bool is_done=false;
@@ -125,16 +126,75 @@ class mempool{
                 c++;
             }
         }
+    template<class ...Tl>
+        void make_this(size_t dim, Tl* restr *... args){
+            make_this(32, dim, args...);
+        }
+
     public:
-    template<size_t mal = 32, class ...Tl>
+    template<class ...Tl>
         void create(size_t dim, Tl* restr *... args){
-            make_this<mal, Tl...>(dim, args...);
+            clear();
+            make_this(32, dim, args...);
         }
-    template<size_t mal=32, class ...Tl>
+    template<class ...Tl>
+        void create(size_t mal, size_t dim, Tl* restr *... args){
+            clear();
+            make_this(mal, dim, args...);
+        }
+    template<class ...Tl>
+        void add(size_t mal, size_t dim, Tl* restr * ... args){
+            auto val = __HIDER__::Impl<Tl...>::_create();
+            //for now, just allocate (n+1)*n_align + size_total
+            size_t new_bytes = (val.size() +1)*mal;
+            std::list<char*> held_ptrs;
+            for(auto s : val){
+                csizes.push_back(dim*s);
+                new_bytes += dim * s;
+            }
+            total_bytes+=new_bytes;
+            bool is_done=false;
+            if(izard){
+                al_free(izard);
+            }
+            while(!is_done){
+                is_done=true;
+                izard= (char*)al_malloc(total_bytes);
+                try{
+                    _create(mal, izard, izard+total_bytes,
+                            csizes, held_ptrs);
+                }
+                catch(std::exception& e){
+                    std::cout << "Needs more memory" << std::endl;
+                    is_done=false;
+                    al_free(izard);
+                    total_bytes *= 2;
+                }
+            }
+            __HIDER__::lmake<Tl...>::_create(held_ptrs, cptrs, args...);
+            auto h = held_ptrs.begin();
+            auto c = cptrs.begin();
+            for(; h != held_ptrs.end() && c != cptrs.end();){
+                *(*c) = *h;
+                h++;
+                c++;
+            }
+        }
+    template<class ...Tl>
         void add(size_t dim, Tl* restr * ... args){
-            size_t nbytes;
-            std::list<size_t> sizes;
+            add(32, dim, args...);
         }
+    void add_dim(size_t num){
+
+    }
+    void clear(){
+        if(izard){
+            al_free(izard);
+            izard = 0;
+        }
+        csizes.clear();
+        cptrs.clear();
+    }
     mempool():izard(0){}
     ~mempool(){
         if(izard){

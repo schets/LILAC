@@ -2,9 +2,11 @@
 #ifndef COMP_FUNCS_H
 #define COMP_FUNCS_H
 #include "defs.h"
+#include <set>
+#include <map>
 #include <cmath>
-#include <vector>
 #include <string>
+#include <vector>
 #include "mempool.hpp"
 extern "C"{
 #include <fftw3.h>

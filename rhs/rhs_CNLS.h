@@ -19,7 +19,6 @@ class rhs_CNLS: public rhs_type<comp>{
     double dt;
     double LENGTH_T;
     size_t NUM_TIME_STEPS;
-    mempool memp;
     public:
     double* restr k;
     virtual void parse(std::string inval);

@@ -98,14 +98,17 @@ void example_rhs::postprocess(std::map<std::string, std::shared_ptr<item> >& dat
     dat["random_info"]->retrieve(&random_info, this);
 
     //now, we are going to allocate some memory to something
-    //This may be useful for storing temporary calculations during the RHS
-    //You should allocate pointers here, and then deallocate them in the dstructor.
-    //allocating/unallocating on each call to dxdt is a great way to increase computation time
-    //by an order of magnitude for most cases of dxdt
+    //This may be useful for storing temporary calculations during the RHS.
+    //Inheriting from item_dim provides access to a memory pool, memp.
+    //just pass memp.create the dimension of the problem and the
+    //addresses of the pointers and the alignment, allocation, and deallocation is
+    //taken care of!
     //
-    //I use al_malloc here instead of malloc or new, since it provides
-    //aligned memory and plays nicely with fftw and Eigen.
-    value_holder = (comp*)al_malloc(dimension*sizeof(comp));
+    //memp.create(dimension, &ptr1, &ptr2, &ptr3, etc)
+    //for custom alignment(standard is 32 byte)
+    //memp.create(alignment, dimension, &ptr1, &prt2, etc)
+    //
+    memp.create(32, dimension, &value_holder);
     for(size_t i = 0; i < dimension; i++){
         value_holder[i] = Id*(double)i*val1 + (dimension-i)*val2;
     }
@@ -127,12 +130,12 @@ void example_rhs::update(){
 
 //!Destructor for example_rhs
 /*!
- * This is the destructor for example_rhs. Whenever the class is deleted by the engine,
- * this frees the memory used by the class
- * Use it to deallocate pointers and other reources (fftw plans, for example)
+ * This is the destructor for example_rhs. Whenever the class is deleted by the engine, this
+ * frees resources. The destructor for the memory pool is called here, so don't worry
+ * about deallocations
  */
 example_rhs::~example_rhs(){
-    al_free(value_holder);
+    //this->free_various_resources();
 }
 
 

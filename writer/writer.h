@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <map>
 #include <list>
 #include "utils/defs.hpp"
 #include "data.hpp"
