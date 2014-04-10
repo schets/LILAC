@@ -1,5 +1,5 @@
 #include "integrator.h"
-#include "int_imp.h"
+#include "rk4.h"
 #include "rk45.h"
 #include "comp_funcs.h"
 /*!
@@ -38,7 +38,7 @@ void integrator::postprocess(std::map<std::string, std::shared_ptr<item> >& dat)
  */
 item* integrator::create(std::string inval){
     if(inval=="rk4"){
-        return 0;//new rk4();
+        return new rk4();
     }
     if(inval=="rk45"){
         return new rk45();

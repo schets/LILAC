@@ -19,7 +19,7 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
 
     uf1= (comp* restr)x;
     //take the inverse fourier transform
-    ifft(fback, uf1, u1, NUM_TIME_STEPS);
+    ifft(uf1, u1, NUM_TIME_STEPS);
     //Inform compiler of alignment, if supported
     ALIGNED(uf1);
     ALIGNED(u1);
@@ -28,11 +28,10 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
     ALIGNED(comp_out);
     ALIGNED(k);
     ALIGNED(ksq);
-    #pragma vector aligned
+
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         sq1[i] = _sqabs(u1[i]);
     }
-    double In=trap(sq1, NUM_TIME_STEPS);
     comp expr1 = (2.0*g0/(1.0+trap(sq1, NUM_TIME_STEPS)*dt/e0));
     //calculate the ffts, helper arrays for the rhs
     double help_mul=B*sin(2*a1-ap);
@@ -40,14 +39,13 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
     comp ce2 = std::exp(Id*K);
     ce1=ce1*(cos(2*(a2-a3)-ap)+Id*cos(2*a3-ap));
     ce2=ce2*(sin(2*(a2-a3)-ap)+Id*sin(2*a3-ap));
-    float avals[4] __attribute__((aligned(16))) = {float(a1), float(a2), float(a3), float(ap)};
     float trigvals1[4] __attribute__((aligned(16)));
     float trigvals2[4] __attribute__((aligned(16)));
     v4sf _trigout1 __attribute__((aligned(16)));
     v4sf _trigout2 __attribute__((aligned(16)));
     float* restr trigout1, * restr trigout2;
-        //vector inlines for the win
-#pragma vector aligned
+    //vector inlines for the win
+
     for(size_t i = 0; i < NUM_TIME_STEPS;) {
         //try vector inlines on the first one
 
@@ -82,7 +80,7 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
         i+=4;
     }
 
-#pragma vector aligned
+
     //can just reuse trigout here
     for(size_t i = 0; i < NUM_TIME_STEPS;){
         trigvals1[0] = _sqabs(comp_in[i]);
@@ -96,14 +94,14 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
         comp_in[i+3] = 0.5*trigout1[3] + atan2(_imag(comp_in[i+3]), _real(comp_in[i+3]))*Id + log(0.5);
         i+= 4;
     }
-#pragma vector aligned
+
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         //fft helper
         comp_in[i] = u1[i]*Id*(expr1 + comp_in[i] + Id*sq1[i]-Gamma);
     }
     //fourier transform forwards nonlinear equations
     fft(comp_in, comp_out, NUM_TIME_STEPS);
-#pragma vector aligned
+
     for(size_t i = 0; i < NUM_TIME_STEPS; i++){
         dx[i] = -1.0*Id*((D/2 - Id * expr1*tau)*ksq[i]*uf1[i] + comp_out[i]);
     }

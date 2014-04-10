@@ -13,7 +13,6 @@ class rhs_CNLS: public rhs_type<comp>{
     comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,
          * restr comp_out, * restr comp_out_r, * restr comp_in_r;
     double * restr sq1, * restr sq2,  * restr ksq;
-    fftw_plan ffor, fback;
     double g0;
     double e0;
     double dt;
@@ -21,7 +20,6 @@ class rhs_CNLS: public rhs_type<comp>{
     size_t NUM_TIME_STEPS;
     public:
     double* restr k;
-    virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
     virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& dat);

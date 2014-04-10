@@ -4,7 +4,7 @@ LIB_MAIN=../lib
 
 LIB_PATH=$(LIB_MAIN)
 
-INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o #$(LIB_PATH)/rk45_double.o $(LIB_PATH)/rk4.o
+INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/rk4.o
 
 all: $(INT_OBJ)
 

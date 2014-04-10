@@ -61,18 +61,18 @@ void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, std::shar
     nts=this->dimension/num_pulses;
     double dt=60.0/nts;
     this->memp.add(nts, &t, &help);
-    for(int i = 0; i < nts; i++){
+    for(size_t i = 0; i < nts; i++){
         t[i] = dt*((double)i-nts/2.0);
     }
-    for(int i = 0; i < nts; i++){
+    for(size_t i = 0; i < nts; i++){
         this->ucur[i] = this->ucur[i+nts] = 1.00/cosh(t[i]/2.0);
         this->help[i] = _real(this->ucur[i]);
     }
 }
 template<class T>
 void stable_spectral_pde_1d_tmpl<T>::pre_integration_operations(){
-    if(round==0){
-        for(int i = 0; i < nts; i++){
+    if(stable::round==0){
+        for(size_t i = 0; i < nts; i++){
             this->ucur[i] = this->ucur[i+nts] = 1.00/cosh(t[i]/2.0);
         }
     }

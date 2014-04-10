@@ -19,7 +19,7 @@ class item{
     engineimp* holder;
     static std::shared_ptr<item> create(std::string name, engineimp* rval);
     virtual void print() const;
-    virtual void parse(std::string inval) = 0;
+    virtual void parse(std::string inval);
     virtual void retrieve(void* inval, item* caller);
     virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& indat){};
     virtual std::vector<std::string> dependencies() const;

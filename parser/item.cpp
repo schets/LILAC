@@ -8,6 +8,8 @@
 #include <vector>
 #include <iostream>
 #include "comp_funcs.h"
+void item::parse(std::string inval){
+}
 void item_dim::_do_mem_update(){
     err(this->name() + std::string(" of type ") + this->type() +
         std::string(" does not support a changing dimension."),

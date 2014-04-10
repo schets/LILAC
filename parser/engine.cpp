@@ -99,7 +99,6 @@ engine::engine(const std::string fname, const std::string outname, std::string i
     eng = new engineimp(fname, outname, index);
 }
 engine::~engine(){
-    int x;
     if(eng){
         delete eng;
     }
