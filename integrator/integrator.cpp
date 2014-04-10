@@ -1,6 +1,7 @@
 #include "integrator.h"
 #include "rk4.h"
 #include "rk45.h"
+#include "euler_sde.h"
 #include "comp_funcs.h"
 /*!
  * This function returns the dependencies of the integrator class
@@ -40,8 +41,11 @@ item* integrator::create(std::string inval){
     if(inval=="rk4"){
         return new rk4();
     }
-    if(inval=="rk45"){
+    else if(inval=="rk45"){
         return new rk45();
+    }
+    else if(inval == "euler_sde"){
+        return new euler_sde();
     }
     return 0;
 }

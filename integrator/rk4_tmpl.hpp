@@ -7,13 +7,10 @@ class rk4_tmpl:public rk4 {
     T* restr f0, * restr f1, * restr f2, * restr f3;
     T* restr u_calc;
     rhs* func;
-    size_t stepsize;
+    double stepsize;
     public:
     virtual const std::type_info& vtype() const;
-    //!Dummy print function
     void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
-    //!Deprecated
-    std::vector<std::string> dependencies() const;
     std::string type() const;
     int integrate(void* restr u, double t0, double tf);
     virtual ~rk4_tmpl();
@@ -142,22 +139,16 @@ int rk4_tmpl<T>::integrate(void* restr _u0, double t0, double tf)
     return 0;
 }
 template<class T>
-std::vector<std::string> rk4_tmpl<T>::dependencies()const{
-    std::vector<std::string> tvec = integrator::dependencies();
-    tvec.push_back("stepsize");
-    return tvec;
-}
-template<class T>
 std::string rk4_tmpl<T>::type()const{
-    return std::string("rk4_tmpl<") + typeid(T).name() + ">";
+    return std::string("rk4_tmpl<") + this->vname() + ">";
 }
 template<class T>
 void rk4_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
     dat["stepsize"]->retrieve((void*)&stepsize, this);
     if(stepsize <= 0){
-        err("stepsize is invalid, must be >= 0", "rk4::postprocess",
-                "integrator/rk4.cpp", dat["stepsize"], FATAL_ERROR);
+        err("stepsize is invalid, must be >= 0", "rk4_tmpl::postprocess",
+                "integrator/rk4.hpp", dat["stepsize"], FATAL_ERROR);
     }
     memp.create(dimension, &f0, &f1, &f2, &f3, &u_calc);
 }

@@ -25,8 +25,8 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 
 TODO (kinda ordered by priority):
 
-1. Implement stochastic integrators (possibly adaptive/implicit)
-2. Implement neural network model
+1. Implement neural network model
+2. Implement method for dynamically changing dimension
 3. Remove uneeded dependencies, refactor code
 4. Document configuration files
 5. Find better method of transferring data from item* to value than void*

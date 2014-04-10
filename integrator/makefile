@@ -4,7 +4,7 @@ LIB_MAIN=../lib
 
 LIB_PATH=$(LIB_MAIN)
 
-INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/rk4.o
+INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/rk4.o $(LIB_PATH)/euler_sde.o
 
 all: $(INT_OBJ)
 
@@ -25,6 +25,11 @@ $(LIB_PATH)/rk45.o: rk45.cpp rk45_tmpl.hpp $(INLINE_HEADERS)
 $(LIB_PATH)/lsoda.o: lsoda.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/lsoda.o
 	$(CPP) -c lsoda.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/lsoda.o 
+
+$(LIB_PATH)/euler_sde.o: euler_sde.cpp euler_sde_tmpl.hpp $(INLINE_HEADERS)
+	@rm -f $(LIB_PATH)/euler_sde.o
+	$(CPP) -c euler_sde.cpp $(INC_PATH) $(FASTMATH) $(CFLAGS) -o $(LIB_PATH)/euler_sde.o
+
 
 .PHONY: clean
 

@@ -6,24 +6,6 @@
 #include <cstdlib>
 #include <ctime>
 #include <cmath>
-double mom4(comp invals[], double* kvals, int len);
-double gaussrand()
-{
-    static double U, V;
-    static int phase = 0;
-    double Z;
-
-    if(phase == 0) {
-        U = (rand() + 1.) / (RAND_MAX + 2.);
-        V = rand() / (RAND_MAX + 1.);
-        Z = sqrt(-2 * log(U)) * sin(2 * PI * V);
-    } else
-        Z = sqrt(-2 * log(U)) * cos(2 * PI * V);
-
-    phase = 1 - phase;
-
-    return Z;
-}
 
 /*!
  * class to allow automatic updating of the matrices involved
@@ -108,7 +90,7 @@ void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& i
     memp.add(dimension, &nvec1);
     memp.add(nts, &help, &t, &kurtosis_help, &phold, &nvec2);
     double dt = 60.0/nts;
-    gaussian_noise_double(ucur, dimension, 0.2); 
+    gaussian_noise(ucur, dimension, 0.2); 
     for(size_t i = 0; i < nts; i++){
         t[i] = dt*(i-nts/2.0);
     }
@@ -234,11 +216,7 @@ double jones_optical::get_change(){
     if(norm < 1e-4){
         return 0;
     }
-    double ss = sqrt(change_norm/norm);
-    if(round < 45 && ss < 1e-3){
-        std::cout << "stable solution reached, norm not zero" << std::endl;
-    }
-    return ss;
+    return sqrt(change_norm/norm);
 }
 double jones_optical::score(){
     double score = obj->score(ucur);
