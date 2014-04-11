@@ -39,7 +39,7 @@ double stable::simulate(){
 }
 std::vector<std::string> stable::dependencies() const{
     std::string deps[] = {"change_threshold", "max_iterations"};
-    return appendvec(simulation::dependencies(), std::vector<std::string>(deps, deps+2));
+    return make_append(deps, simulation::dependencies());
 }
 
 void stable::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){

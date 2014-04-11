@@ -85,7 +85,7 @@ int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
 
 std::vector<std::string> rhs_CNLS::dependencies() const{
     std::string deps[] = {"g0", "e0", "t_int"};
-    return appendvec(std::vector<std::string>(deps, deps+3), rhs::dependencies());
+    return make_append(deps, rhs::dependencies());
 }
 
 std::string rhs_CNLS::type() const {

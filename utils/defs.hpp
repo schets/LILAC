@@ -11,7 +11,6 @@
 #include <typeinfo>
 extern "C" {
 #include <complex.h>
-#include "fftw3.h"
 #include <math.h>
 #include <time.h>
 }
@@ -21,18 +20,26 @@ extern "C" {
 #define MAKE_ALIGNED __declspec(align(16))
 #else
 #define restr __restrict__
-#define ALIGNED(x)
+template<class T>
+inline T* restr ___make_aligned___(T* restr ival){
+#ifdef GCC
+    return (T*)__builtin_assume_aligned(ival, 16);
+#else
+    return inval
+#endif
+}
+#define ALIGNED(x) x=___make_aligned___(x)
 #define MAKE_ALIGNED
 #endif
-//#define restr
-//typedef complex<double> comp;
-typedef std::complex<double> comp;
-const static comp Id = comp(0, 1);
-//#define NUM_TIME_STEPS (256) //number of time points
-//#define LENGTH_T (60) //length of t-domain
-//parameters taken from matlab main file
-//can move to input parameters as well
-//but for now these are defines
+        //#define restr
+        //typedef complex<double> comp;
+        typedef std::complex<double> comp;
+    const static comp Id = comp(0, 1);
+    //#define NUM_TIME_STEPS (256) //number of time points
+    //#define LENGTH_T (60) //length of t-domain
+    //parameters taken from matlab main file
+    //can move to input parameters as well
+    //but for now these are defines
 #define D (-.4)
 #define K (.1)
 #define A (2.0/3.0)
@@ -42,30 +49,30 @@ const static comp Id = comp(0, 1);
 #define RTlength (1.5)
 #define PI (3.14159)
 #define maxTrips 50
-class item;
-class _fatal{
-    public:
-    _fatal(){};
-};
-class _warning{
-    public:
-    _warning(){};
-};
-const static _fatal FATAL_ERROR;
-const static _warning WARNING;
-void err(std::string message, std::string function, std::string file, _fatal f);
-void err(std::string message, std::string function, std::string file, _warning w);
-void err(std::string message, std::string function, std::string file, item* p, _fatal f);
-void err(std::string message, std::string function, std::string file, item* p, _warning f);
-void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f);
-void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f);
+    class item;
+    class _fatal{
+        public:
+            _fatal(){};
+    };
+    class _warning{
+        public:
+            _warning(){};
+    };
+    const static _fatal FATAL_ERROR;
+    const static _warning WARNING;
+    void err(std::string message, std::string function, std::string file, _fatal f);
+    void err(std::string message, std::string function, std::string file, _warning w);
+    void err(std::string message, std::string function, std::string file, item* p, _fatal f);
+    void err(std::string message, std::string function, std::string file, item* p, _warning f);
+    void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f);
+    void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f);
 
 
-//Alligned malloc
-//also ensures return value is valid
-void* al_malloc(size_t ss);
-void al_free(void* ss);
-extern "C"{
+    //Alligned malloc
+    //also ensures return value is valid
+    void* al_malloc(size_t ss);
+    void al_free(void* ss);
+    extern "C"{
 #include <malloc.h>
 }
 #endif

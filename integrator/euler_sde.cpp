@@ -9,7 +9,7 @@ euler_sde::~euler_sde(){
 }
 std::vector<std::string> euler_sde::dependencies() const{
     std::string deps[] = {"step_size"};
-    return appendvec(std::vector<std::string>(deps, deps+1), integrator::dependencies());
+    return make_append(deps, integrator::dependencies());
 }
 std::string euler_sde::type() const{
     return "euler_sde";

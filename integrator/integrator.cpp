@@ -12,10 +12,8 @@
  * \sa item_dim::dependencies
  */
 std::vector<std::string> integrator::dependencies() const {
-    std::string rhsval = "rhs";
-    std::vector<std::string> temp= item_dim::dependencies();
-    temp.push_back(rhsval);
-    return temp;
+    std::string rhsval[] = {"rhs"};
+    return make_append(rhsval, item_dim::dependencies());
 }
 
 //! Initiates the integrator from input values

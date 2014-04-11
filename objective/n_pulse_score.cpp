@@ -45,7 +45,7 @@ double n_pulse_score::score(comp* ucur){
 }
 std::vector<std::string> n_pulse_score::dependencies() const {
     std::string deps[] = {"num_pulses"};
-    return appendvec(objective::dependencies(), std::vector<std::string>(deps, deps+1));
+    return make_append(deps, objective::dependencies());
 }
 void n_pulse_score::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
     objective::postprocess(invals);

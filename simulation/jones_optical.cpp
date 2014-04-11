@@ -59,7 +59,7 @@ class jones_matrix:public real8{
 };
 std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments", "jones_int_dist"};
-    return appendvec(stable_spectral_pde_1d_tmpl<comp>::dependencies(), std::vector<std::string>(deps, deps+2));
+    return make_append(deps, stable_spectral_pde_1d_tmpl<comp>::dependencies());
 }
 void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
 #ifdef gen_t_dat

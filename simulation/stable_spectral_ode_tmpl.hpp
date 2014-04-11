@@ -41,7 +41,7 @@ std::string stable_spectral_pde_1d_tmpl<T>::type() const{
 template<class T>
 std::vector<std::string> stable_spectral_pde_1d_tmpl<T>::dependencies() const{
     std::string deps[] = {"num_pulses"};
-    return appendvec(std::vector<std::string>(deps, deps+1), stable_ode::dependencies());
+    return make_append(deps, stable_ode_tmpl<T>::dependencies());
 };
 
 template<class T>

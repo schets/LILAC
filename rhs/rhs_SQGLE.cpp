@@ -110,7 +110,7 @@ int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
 
 std::vector<std::string> rhs_SQGLE::dependencies() const{
     std::string deps[] = {"g0", "e0", "t_int", "controller"};
-    return appendvec(std::vector<std::string>(deps, deps+4), rhs::dependencies());
+    return make_append(deps, rhs::dependencies());
 }
 
 std::string rhs_SQGLE::type() const {

@@ -43,14 +43,12 @@ std::string example_rhs::type() const{
 * @return List of dependencies
 */
 std::vector<std::string> example_rhs::dependencies() const{
-    int dep_num=3;//number of dependencies
     std::string deps[] = {"val1", "val2", "random_info"};
     //this array holds the dependencies
 
-    //this moves the dependencies into a container
-    std::vector<std::string> strvec = std::vector<std::string>(deps, deps+dep_num);
-    
-    return appendvec(strvec, rhs::dependencies());
+    //This function appenps an array of strings and a vector of strings,
+    //returning a vector of the results
+    return make_append(deps, rhs::dependencies());
     //return the dependencies for this class along with any dependencies the parent classes have
 }
 

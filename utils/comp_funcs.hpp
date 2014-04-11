@@ -50,24 +50,26 @@ inline double energy(double* v, size_t s){
 //very nice template features for dealing with runtime type construction and inheritance validation
 //
 
-//!This function returns a fourier transform in the forward direction
-
+//!This function performs a fourier transform in the forward direction
 void fft(comp* _in, comp* _out, const size_t len);
+//!This functions performs a normalized fourier transform in the backwards direction
 void ifft(comp* _in, comp* _out, const size_t len);
-template<typename T> std::vector<T> appendvec(std::vector<T> a, std::vector<T> b){
+
+template<typename T>
+inline std::vector<T> appendvec(std::vector<T> a, const std::vector<T>& b){
     a.insert(a.begin(), b.begin(), b.end());
     return a;
+}
+template<class T, size_t N>
+inline std::vector<T> makevec(const T(& array)[N]){
+    return std::vector<T>(array, array+N);
+}
+template<class T, size_t N>
+inline std::vector<T> make_append(const T (&array)[N], const std::vector<T>& b){
+    return appendvec(makevec(array), b);
 }
 void trim(std::string& curline);
 void trim(std::string& curline, char val);
 void ltoken(std::string& tok, std::string& str, std::string delim=" ");
-//!Hides the contents from the rest of the program
-/*!
- * Generates a unique name for an object that is promised never to exist in the engine
- * as long as all extra names are generated using this function
- *
- * @param base The base string with which to generate the name
- * @return A unique name based on the input string
- */
 std::string get_unique_name(std::string base);
 #endif

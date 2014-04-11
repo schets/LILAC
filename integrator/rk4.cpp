@@ -9,7 +9,7 @@ rk4::~rk4(){
 }
 std::vector<std::string> rk4::dependencies() const{
     std::string deps[] = {"step_size"};
-    return appendvec(std::vector<std::string>(deps, deps+1), integrator::dependencies());
+    return make_append(deps, integrator::dependencies());
 }
 std::string rk4::type() const{
     return "rk4";

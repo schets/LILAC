@@ -16,7 +16,7 @@ void controller::parse(std::string inval){
  */
 std::vector<std::string> controller::dependencies() const{
     std::string deps[] = {"names"};
-    return appendvec(std::vector<std::string>(deps, deps+1), item_dim::dependencies());
+    return make_append(deps, item_dim::dependencies());
 }
 
 

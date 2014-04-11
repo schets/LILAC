@@ -23,12 +23,7 @@ class rk45_tmpl:public rk45 {
 //    mempool memp;
     public:
     virtual const std::type_info& vtype() const;
-    //!Dummy print function
-    void print() const;
     void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
-    //!Deprecated
-    void parse(std::string inval);
-    std::vector<std::string> dependencies() const;
     std::string type() const;
     int integrate(void* restr u, double t0, double tf);
     ~rk45_tmpl();
@@ -245,12 +240,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
 template<class T>
 rk45_tmpl<T>::~rk45_tmpl(){
 }
-template<class T>
-std::vector<std::string> rk45_tmpl<T>::dependencies() const{
-    //Dependencies are really taken care of by the actual rk45 class
-    std::string deps[] = {"dt_init", "dt_min", "dt_max", "relerr", "abserr"};
-    return appendvec(std::vector<std::string>(deps, deps+5), integrator::dependencies());
-}
+
 
 template<class T>
 std::string rk45_tmpl<T>::type() const{
@@ -292,10 +282,5 @@ void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& da
 
     memp.create(dimension, &f0, &f1, &f2, &f3, &f4, &f5, &f6, &u_calc, &u_calc2);
 }
-template<class T>
-void rk45_tmpl<T>::parse(std::string inval){
-};
-template<class T>
-void rk45_tmpl<T>::print() const{
-};
+
 #endif

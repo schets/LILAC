@@ -19,7 +19,7 @@ void simulation::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
  */
 std::vector<std::string> simulation::dependencies() const{
     std::string sys_deps[]={"controller", "objective"};
-    return appendvec(std::vector<std::string>(sys_deps, sys_deps+2), item_dim::dependencies());
+    return make_append(sys_deps, item_dim::dependencies());
 }
 
 item* simulation::create(std::string name){

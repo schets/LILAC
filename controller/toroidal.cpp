@@ -13,7 +13,7 @@
  */
 std::vector<std::string> toroidal::dependencies() const{
     std::string deps[] = {"iterations", "initial_inc", "mul_fac"};
-    return appendvec(std::vector<std::string>(deps, deps+3), controller::dependencies());
+    return make_append(deps, controller::dependencies());
 }
 
 

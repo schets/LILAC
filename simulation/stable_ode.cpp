@@ -34,7 +34,7 @@ std::string stable_ode::type() const{
 }
 std::vector<std::string> stable_ode::dependencies() const{
     std::string deps[] = {"integrator", "t0", "int_len"};
-    return appendvec(std::vector<std::string>(deps, deps+3), stable::dependencies());
+    return make_append(deps, stable::dependencies());
 }
 double stable_ode::score(){
     return actual->score();

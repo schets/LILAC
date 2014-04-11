@@ -14,7 +14,7 @@ rk45::~rk45(){
 }
 std::vector<std::string> rk45::dependencies() const{
     std::string deps[] = {"dt_init", "dt_min", "dt_max", "relerr", "abserr"};
-    return appendvec(std::vector<std::string>(deps, deps+5), integrator::dependencies());
+    return make_append(deps, integrator::dependencies());
 }
 std::string rk45::type() const{
     return "rk45";
