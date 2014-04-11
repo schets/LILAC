@@ -17,6 +17,9 @@ void stable_ode::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
     invals["integrator"]->retrieve(&inter, this);
     type_constructor<stable_ode_tmpl>::create(&actual, inter);
     actual->postprocess(invals);
+    actual->setname(this->name() + "_actual");
+    this->add_as_parent(actual);
+    this->print_upstream();
 }
 
 stable_ode::~stable_ode(){

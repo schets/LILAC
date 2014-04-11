@@ -18,6 +18,7 @@ void euler_sde::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
     type_constructor<euler_sde_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);
+    actual->setname(this->name() + "_actual");
 }
 
 const std::type_info& euler_sde::vtype() const{

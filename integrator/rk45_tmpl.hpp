@@ -249,6 +249,7 @@ void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& da
         err("Bad rhs type passed to rk45 integrator", "rk45_tmpl::postprocess",
                 "rhs/rk45_tmpl.h", FATAL_ERROR);
     }
+    this->add_as_parent(rh_val);
     dat["dt_init"]->retrieve((void*)&dt_init, this);
     if(dt_init <= 0){
         err("dt_init is invalid, must be >= 0", "rk45::postprocess",

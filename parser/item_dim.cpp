@@ -1,14 +1,15 @@
 #include "item_dim.h"
 void item_dim::_do_mem_update(){
-    err(this->name() + std::string(" of type ") + this->type() +
+ /*   err(this->name() + std::string(" of type ") + this->type() +
         std::string(" does not support a changing dimension."),
-        "item_dim::_do_mem_update()", "parser/item.cpp", FATAL_ERROR);
+        "item_dim::_do_mem_update()", "parser/item.cpp", FATAL_ERROR);*/
 }
 /*
  * Postprocesses the item_dim class, which sets the dimension to the input variable dimension
  */
 void item_dim::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     int dimt;
+    parent=0;
     dat["dimension"]->retrieve(&dimt, this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
@@ -28,4 +29,54 @@ std::vector<std::string> item_dim::dependencies()const{
     std::vector<std::string> de;
     de.push_back("dimension");
     return de;
+}
+
+
+void item_dim::add_as_parent(item_dim* p){
+    if(parent){
+        err(this->name() + " is already a child of " +
+                parent->name() + ", not adding as a child of " +
+                p->name(), "item_dim::add_as_parent", "parser/item_dim.cpp",
+                WARNING);
+    }
+    else{
+        if(!p->children.count(this)){
+            p->children.insert(this);
+            parent=p;
+        }
+    }
+}
+
+void item_dim::add_as_parent(std::shared_ptr<item_dim> p){
+    add_as_parent(p.get());
+}
+
+
+void item_dim::update_dim(size_t dim_new){
+    if(parent){
+        err(std::string("Item_dim* ") + this->name() + " is not the head of the \
+                dimension dependency tree", "item_dim::update_dim(size_t)", 
+                "parser/item_dim.cpp", WARNING);
+        print_upstream();
+    }
+    else{
+        update_dim(dim_new, 0);
+    }
+}
+void item_dim::update_dim(size_t dim_new, size_t dummy){
+    dimension = dim_new;
+    _do_mem_update();
+    for(auto child : children){
+        child->update_dim(dim_new, dummy);
+    }
+}
+void item_dim::print_upstream(){
+    std::cout << this->name();
+    if(parent){
+        std::cout << " -> ";
+        parent->print_upstream();
+    }
+    else{
+        std::cout << std::endl;
+    }
 }

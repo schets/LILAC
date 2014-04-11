@@ -18,6 +18,8 @@ void rk4::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
     type_constructor<rk4_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);
+    this->add_as_parent(actual);
+    actual->setname(this->name() + "_actual");
 }
 
 const std::type_info& rk4::vtype() const{

@@ -22,4 +22,6 @@ void rk45::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
     type_constructor<rk45_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);
+    this->add_as_parent(actual);
+    actual->setname(this->name() + "_actual");
 }
