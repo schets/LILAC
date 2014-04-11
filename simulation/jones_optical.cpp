@@ -1,8 +1,8 @@
+#include "eigen3/Eigen/Eigen"
 #include "writer/writer.h"
 #include "jones_optical.h"
 #include "utils/comp_funcs.h"
 #include "utils/noise.h"
-
 /*!
  * class to allow automatic updating of the matrices involved
  * It's hacky but there isn't a generic operator-creator made

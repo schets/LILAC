@@ -43,7 +43,7 @@ class engineimp{
     bool item_exists(std::shared_ptr<item> val) const;
     bool item_exists(const std::string& val) const;
     //!Constructor, reads from an input file
-    engineimp(const std::string fname, const std::string outname, const std::string index);
+    engineimp(const std::string& fname, const std::string& outname, const std::string& index);
     //!Deletes data
     ~engineimp();
     friend class engine;

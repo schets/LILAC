@@ -50,7 +50,7 @@ void variable::set(double p){
         for(mit = modifiers.begin(); mit!= modifiers.end();){
             if(mit->first && !holder->item_exists(mit->first->name())){
                 mremove = mit;
-                mit++;
+                ++mit;
                 modifiers.erase(mremove);
                 continue;
             }
@@ -60,7 +60,7 @@ void variable::set(double p){
             if(mit->first){
                 holder->needs_updating(mit->first->name());
             }
-            mit++;
+            ++mit;
         }
     }
     {

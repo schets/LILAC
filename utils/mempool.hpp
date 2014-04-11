@@ -49,8 +49,7 @@ namespace __HIDER__{
         template <>
             struct lmake<>
             {
-                static void  _create(std::list<char*> pval, std::list<void**>& ival){
-                }
+                static void  _create(std::list<char*> pval, std::list<void**>& ival){}
             };
 
 }

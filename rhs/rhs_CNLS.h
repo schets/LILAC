@@ -23,7 +23,6 @@ class rhs_CNLS: public rhs_type<comp>{
     virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& dat);
    // virtual void parse(std::string inval);
   //  virtual void retrieve(void* inval) const ;
-    rhs_CNLS(){};
     ~rhs_CNLS();
     virtual int dxdt(comp* restr x, comp* restr dx, double t);
 };

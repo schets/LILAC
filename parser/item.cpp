@@ -11,6 +11,7 @@ void item::parse(std::string inval){
 item::~item(){}
 item::item(){
     has_write_name=0;
+    holder=0;
 }
 void item::set_write_name(std::string wname){
     has_write_name=1;

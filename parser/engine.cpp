@@ -4,7 +4,7 @@
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
-engineimp::engineimp(const std::string fname, const std::string outname, const std::string index){
+engineimp::engineimp(const std::string& fname, const std::string& outname, const std::string& index){
     values["!out_file"] =  std::make_shared<string>();
     values["!out_file"]->parse(outname);
     values["!out_file"]->setname("!out_file");
