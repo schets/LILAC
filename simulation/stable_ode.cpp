@@ -19,7 +19,6 @@ void stable_ode::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
     actual->postprocess(invals);
     actual->setname(this->name() + "_actual");
     this->add_as_parent(actual);
-    this->print_upstream();
 }
 
 stable_ode::~stable_ode(){

@@ -58,7 +58,6 @@ void stable_ode_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item>
                 "simulation/stable_ode_tmpl.hpp", FATAL_ERROR);
     }
     this->add_as_parent(inter);
-    this->print_upstream();
     invals["t0"]->retrieve(&t0, this);
     tcur = t0;
     invals["int_len"]->retrieve(&int_len, this);

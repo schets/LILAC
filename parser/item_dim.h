@@ -18,8 +18,8 @@ class item_dim:public item{
     size_t dimension;
     void add_as_parent(item_dim* p);
     void add_as_parent(std::shared_ptr<item_dim> p);
-    public:
     void update_dim(size_t dim_new);
+    public:
     inline size_t get_dimension() const{
         return dimension;
     }
