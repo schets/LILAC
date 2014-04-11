@@ -1,4 +1,3 @@
-#include "rhs/rhs.h"
 #include "integrator.h"
 #include "rk4.h"
 template<class T>
@@ -145,6 +144,10 @@ std::string rk4_tmpl<T>::type()const{
 template<class T>
 void rk4_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
+    if(!rh_val->compare<T>()){
+        err("Bad rhs type passed to rk4 integrator", "rk4_tmpl::postprocess",
+                "integrator/rk4_tmpl.h", FATAL_ERROR);
+    }
     dat["stepsize"]->retrieve((void*)&stepsize, this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "rk4_tmpl::postprocess",

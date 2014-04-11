@@ -1,6 +1,5 @@
 #ifndef ENGINE_H
 #define ENGINE_H
-#include <string>
 #include "item.h"
 class engineimp;
 class engine{

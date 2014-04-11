@@ -2,7 +2,6 @@
 #include "rhs_CNLS.h"
 #include "rhs_SQGLE.h"
 #include "example_rhs.h"
-#include <cstring>
 /*!
  * Provides the default postprocessing for the rhs base class
  * which simply calls the postprocessing for item_dim
@@ -26,7 +25,7 @@ rhs* rhs::create(std::string tname){
         return new rhs_SQGLE();
     }
     else if(tname=="example_rhs"){
-        err("Example_rhs created, mysteriously fails on some architectures", "rhs::create", "rhs/rhs.cpp", WARNING);
+        err("Example_rhs created, mysteriously fails on some architectures seemingly from AVX instructions. Also does nothing useful", "rhs::create", "rhs/rhs.cpp", WARNING);
         return new example_rhs();
     }
     return 0;

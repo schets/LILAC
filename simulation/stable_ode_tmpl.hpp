@@ -1,6 +1,5 @@
 #ifndef STABLE_ODE_TMPL_HPP
 #define STABLE_ODE_TMPL_HPP
-#include "simulation.h"
 #include "stable.h"
 template<class T>
 class stable_ode_tmpl:public stable_ode{
@@ -54,6 +53,10 @@ template <class T>
 void stable_ode_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
     stable::postprocess(invals);
     invals["integrator"]->retrieve(&inter, this);
+    if(!inter->compare<T>()){
+        err("Bad integrator type passed to stable_ode_tmpl", "stable_ode_tmpl:postprocess",
+                "simulation/stable_ode_tmpl.hpp", FATAL_ERROR);
+    }
     invals["t0"]->retrieve(&t0, this);
     tcur = t0;
     invals["int_len"]->retrieve(&int_len, this);

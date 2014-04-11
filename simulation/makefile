@@ -7,7 +7,7 @@ LIB_PATH= $(LIB_MAIN)
 
 SIM_OBJ = $(LIB_PATH)/simulation.o $(LIB_PATH)/stable.o $(LIB_PATH)/stable_ode.o $(LIB_PATH)/jones_optical.o 
 
-S_HEADS= stable_ode_tmpl.hpp stable_spectral_ode_tmpl.hpp
+S_HEADS= stable_ode_tmpl.hpp stable_spectral_pde_1d_tmpl.hpp
 
 all: $(SIM_OBJ) 
 

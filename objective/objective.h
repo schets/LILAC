@@ -1,8 +1,7 @@
 #ifndef OBJECTIVE_H
 #define OBJECTIVE_H
 #include "parser/item.h"
-#include "defs.h"
-#include <map>
+#include "parser/item_dim.h"
 class objective:public item_dim{
     public:
         virtual double score(comp* invals) = 0;

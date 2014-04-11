@@ -1,0 +1,3803 @@
+%!PS-Adobe-3.0
+%%Creator: graphviz version 2.26.3 (20100126.1600)
+%%Title: source tree
+%%Pages: (atend)
+%%BoundingBox: (atend)
+%%EndComments
+save
+%%BeginProlog
+/DotDict 200 dict def
+DotDict begin
+
+/setupLatin1 {
+mark
+/EncodingVector 256 array def
+ EncodingVector 0
+
+ISOLatin1Encoding 0 255 getinterval putinterval
+EncodingVector 45 /hyphen put
+
+% Set up ISO Latin 1 character encoding
+/starnetISO {
+        dup dup findfont dup length dict begin
+        { 1 index /FID ne { def }{ pop pop } ifelse
+        } forall
+        /Encoding EncodingVector def
+        currentdict end definefont
+} def
+/Times-Roman starnetISO def
+/Times-Italic starnetISO def
+/Times-Bold starnetISO def
+/Times-BoldItalic starnetISO def
+/Helvetica starnetISO def
+/Helvetica-Oblique starnetISO def
+/Helvetica-Bold starnetISO def
+/Helvetica-BoldOblique starnetISO def
+/Courier starnetISO def
+/Courier-Oblique starnetISO def
+/Courier-Bold starnetISO def
+/Courier-BoldOblique starnetISO def
+cleartomark
+} bind def
+
+%%BeginResource: procset graphviz 0 0
+/coord-font-family /Times-Roman def
+/default-font-family /Times-Roman def
+/coordfont coord-font-family findfont 8 scalefont def
+
+/InvScaleFactor 1.0 def
+/set_scale {
+       dup 1 exch div /InvScaleFactor exch def
+       scale
+} bind def
+
+% styles
+/solid { [] 0 setdash } bind def
+/dashed { [9 InvScaleFactor mul dup ] 0 setdash } bind def
+/dotted { [1 InvScaleFactor mul 6 InvScaleFactor mul] 0 setdash } bind def
+/invis {/fill {newpath} def /stroke {newpath} def /show {pop newpath} def} bind def
+/bold { 2 setlinewidth } bind def
+/filled { } bind def
+/unfilled { } bind def
+/rounded { } bind def
+/diagonals { } bind def
+
+% hooks for setting color 
+/nodecolor { sethsbcolor } bind def
+/edgecolor { sethsbcolor } bind def
+/graphcolor { sethsbcolor } bind def
+/nopcolor {pop pop pop} bind def
+
+/beginpage {	% i j npages
+	/npages exch def
+	/j exch def
+	/i exch def
+	/str 10 string def
+	npages 1 gt {
+		gsave
+			coordfont setfont
+			0 0 moveto
+			(\() show i str cvs show (,) show j str cvs show (\)) show
+		grestore
+	} if
+} bind def
+
+/set_font {
+	findfont exch
+	scalefont setfont
+} def
+
+% draw text fitted to its expected width
+/alignedtext {			% width text
+	/text exch def
+	/width exch def
+	gsave
+		width 0 gt {
+			[] 0 setdash
+			text stringwidth pop width exch sub text length div 0 text ashow
+		} if
+	grestore
+} def
+
+/boxprim {				% xcorner ycorner xsize ysize
+		4 2 roll
+		moveto
+		2 copy
+		exch 0 rlineto
+		0 exch rlineto
+		pop neg 0 rlineto
+		closepath
+} bind def
+
+/ellipse_path {
+	/ry exch def
+	/rx exch def
+	/y exch def
+	/x exch def
+	matrix currentmatrix
+	newpath
+	x y translate
+	rx ry scale
+	0 0 1 0 360 arc
+	setmatrix
+} bind def
+
+/endpage { showpage } bind def
+/showpage { } def
+
+/layercolorseq
+	[	% layer color sequence - darkest to lightest
+		[0 0 0]
+		[.2 .8 .8]
+		[.4 .8 .8]
+		[.6 .8 .8]
+		[.8 .8 .8]
+	]
+def
+
+/layerlen layercolorseq length def
+
+/setlayer {/maxlayer exch def /curlayer exch def
+	layercolorseq curlayer 1 sub layerlen mod get
+	aload pop sethsbcolor
+	/nodecolor {nopcolor} def
+	/edgecolor {nopcolor} def
+	/graphcolor {nopcolor} def
+} bind def
+
+/onlayer { curlayer ne {invis} if } def
+
+/onlayers {
+	/myupper exch def
+	/mylower exch def
+	curlayer mylower lt
+	curlayer myupper gt
+	or
+	{invis} if
+} def
+
+/curlayer 0 def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+14 default-font-family set_font
+1 setmiterlimit
+% /arrowlength 10 def
+% /arrowwidth 5 def
+
+% make sure pdfmark is harmless for PS-interpreters other than Distiller
+/pdfmark where {pop} {userdict /pdfmark /cleartomark load put} ifelse
+% make '<<' and '>>' safe on PS Level 1 devices
+/languagelevel where {pop languagelevel}{1} ifelse
+2 lt {
+    userdict (<<) cvn ([) cvn load put
+    userdict (>>) cvn ([) cvn load put
+} if
+
+%%EndSetup
+setupLatin1
+%%Page: 1 1
+%%PageBoundingBox: 36 36 612 745
+%%PageOrientation: Portrait
+0 0 1 beginpage
+gsave
+36 36 576 709 boxprim clip newpath
+0.148605 0.148605 set_scale 0 rotate 246.254 247.254 translate
+% jones_optical.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+349 4654 94.05 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+290.5 4650.4 moveto 117 (jones_optical.cpp) alignedtext
+grestore
+% writer.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+991 1346 50.2 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+963.5 1342.4 moveto 55 (writer.h) alignedtext
+grestore
+% jones_optical.cpp->writer.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 346.86 4635.36 moveto
+329.77 4480.62 221.89 3394.02 463 2568 curveto
+516.75 2383.84 594.08 2365.94 675 2192 curveto
+819.81 1880.74 948.07 1483.03 982.16 1374.46 curveto
+stroke
+0 0 0 edgecolor
+newpath 985.6 1375.18 moveto
+985.25 1364.59 lineto
+978.92 1373.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 985.6 1375.18 moveto
+985.25 1364.59 lineto
+978.92 1373.09 lineto
+closepath stroke
+grestore
+% jones_optical.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1090 4240 84.15 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1038.5 4236.4 moveto 103 (jones_optical.h) alignedtext
+grestore
+% jones_optical.cpp->jones_optical.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 380.37 4636.48 moveto
+498.73 4570.34 918.23 4335.97 1050.05 4262.32 curveto
+stroke
+0 0 0 edgecolor
+newpath 1052.01 4265.23 moveto
+1059.04 4257.3 lineto
+1048.6 4259.12 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1052.01 4265.23 moveto
+1059.04 4257.3 lineto
+1048.6 4259.12 lineto
+closepath stroke
+grestore
+% comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+550 2587 77.78 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+503 2583.4 moveto 94 (comp_funcs.h) alignedtext
+grestore
+% jones_optical.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 348.17 4635.23 moveto
+342.49 4499.44 313.16 3653.56 430 2981 curveto
+454.51 2839.9 514.12 2678.42 538.91 2614.81 curveto
+stroke
+0 0 0 edgecolor
+newpath 542.18 2616.05 moveto
+542.57 2605.46 lineto
+535.66 2613.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 542.18 2616.05 moveto
+542.57 2605.46 lineto
+535.66 2613.49 lineto
+closepath stroke
+grestore
+% noise.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+46 2587 46.17 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+21 2583.4 moveto 50 (noise.h) alignedtext
+grestore
+% jones_optical.cpp->noise.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 337.56 4635.58 moveto
+284.61 4548.53 66 4168.44 66 3827 curveto
+66 3827 66 3827 66 3414 curveto
+66 3101.21 51.52 2722.07 47.2 2615.86 curveto
+stroke
+0 0 0 edgecolor
+newpath 50.69 2615.48 moveto
+46.78 2605.63 lineto
+43.7 2615.76 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 50.69 2615.48 moveto
+46.78 2605.63 lineto
+43.7 2615.76 lineto
+closepath stroke
+grestore
+% defs.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+845 520 51.83 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+816 516.4 moveto 58 (defs.hpp) alignedtext
+grestore
+% writer.h->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 995.01 1327.23 moveto
+1007.27 1266.64 1041.57 1071.14 1010 914 curveto
+980.75 768.43 896.32 609.55 860.92 547.23 curveto
+stroke
+0 0 0 edgecolor
+newpath 863.88 545.35 moveto
+855.87 538.41 lineto
+857.8 548.83 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 863.88 545.35 moveto
+855.87 538.41 lineto
+857.8 548.83 lineto
+closepath stroke
+grestore
+% data.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+947 933 53.95 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+916.5 929.4 moveto 61 (data.hpp) alignedtext
+grestore
+% writer.h->data.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 989.02 1327.45 moveto
+982.04 1261.94 958.52 1041.12 950.06 961.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 953.51 961.07 moveto
+948.97 951.5 lineto
+946.55 961.81 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 953.51 961.07 moveto
+948.97 951.5 lineto
+946.55 961.81 lineto
+closepath stroke
+grestore
+% mempool.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+225 2587 77.07 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+178.5 2583.4 moveto 93 (mempool.hpp) alignedtext
+grestore
+% comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+445 2173 89.1 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+390 2169.4 moveto 110 (comp_funcs.hpp) alignedtext
+grestore
+% mempool.hpp->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 234.88 2568.41 moveto
+269.92 2502.47 388.37 2279.57 430.21 2200.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 433.54 2202.01 moveto
+435.15 2191.54 lineto
+427.36 2198.73 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 433.54 2202.01 moveto
+435.15 2191.54 lineto
+427.36 2198.73 lineto
+closepath stroke
+grestore
+% mempool.hpp->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 227.04 2568.39 moveto
+236.65 2478.98 277 2084.4 277 1760 curveto
+277 1760 277 1760 277 1346 curveto
+277 964.45 693.58 630.61 813.23 542.6 curveto
+stroke
+0 0 0 edgecolor
+newpath 815.31 545.42 moveto
+821.32 536.69 lineto
+811.18 539.77 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 815.31 545.42 moveto
+821.32 536.69 lineto
+811.18 539.77 lineto
+closepath stroke
+grestore
+% defs.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+663 1760 41.01 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+642 1756.4 moveto 42 (defs.h) alignedtext
+grestore
+% comp_funcs.hpp->defs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 454.79 2154.45 moveto
+489.59 2088.52 607.42 1865.29 648.63 1787.23 curveto
+stroke
+0 0 0 edgecolor
+newpath 651.91 1788.51 moveto
+653.48 1778.03 lineto
+645.72 1785.24 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 651.91 1788.51 moveto
+653.48 1778.03 lineto
+645.72 1785.24 lineto
+closepath stroke
+grestore
+% fftw3.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+748 933 48.08 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+722 929.4 moveto 52 (fftw3.h) alignedtext
+grestore
+% comp_funcs.hpp->fftw3.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 449.52 2154.51 moveto
+483.55 2015.22 699.49 1131.52 741.08 961.34 curveto
+stroke
+0 0 0 edgecolor
+newpath 744.48 962.14 moveto
+743.46 951.6 lineto
+737.68 960.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 744.48 962.14 moveto
+743.46 951.6 lineto
+737.68 960.48 lineto
+closepath stroke
+grestore
+% controller.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3577 3000 77.07 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3530.5 2996.4 moveto 93 (controller.cpp) alignedtext
+grestore
+% controller.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3309 2173 65.97 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3270 2169.4 moveto 78 (controller.h) alignedtext
+grestore
+% controller.cpp->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3576.21 2981.41 moveto
+3573.19 2920.59 3559.9 2722.56 3510 2568 curveto
+3462.57 2421.09 3366.03 2261.84 3326.48 2199.82 curveto
+stroke
+0 0 0 edgecolor
+newpath 3329.42 2197.92 moveto
+3321.08 2191.39 lineto
+3323.53 2201.7 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3329.42 2197.92 moveto
+3321.08 2191.39 lineto
+3323.53 2201.7 lineto
+closepath stroke
+grestore
+% toroidal.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3658 2587 57.98 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3625 2583.4 moveto 66 (toroidal.h) alignedtext
+grestore
+% controller.cpp->toroidal.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3580.64 2981.45 moveto
+3593.49 2915.94 3636.79 2695.12 3652.37 2615.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 3655.88 2615.98 moveto
+3654.37 2605.5 lineto
+3649.01 2614.64 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3655.88 2615.98 moveto
+3654.37 2605.5 lineto
+3649.01 2614.64 lineto
+closepath stroke
+grestore
+% item_dim.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2899 1346 65.76 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2860.5 1342.4 moveto 77 (item_dim.h) alignedtext
+grestore
+% controller.h->item_dim.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3302.43 2154.49 moveto
+3280.72 2093.89 3208.21 1896.47 3131 1741 curveto
+3059.86 1597.75 2957.32 1435.8 2916.61 1372.93 curveto
+stroke
+0 0 0 edgecolor
+newpath 2919.45 1370.87 moveto
+2911.07 1364.39 lineto
+2913.58 1374.69 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2919.45 1370.87 moveto
+2911.07 1364.39 lineto
+2913.58 1374.69 lineto
+closepath stroke
+grestore
+% item.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2899 933 43.13 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2876.5 929.4 moveto 45 (item.h) alignedtext
+grestore
+% controller.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3302.89 2154.51 moveto
+3256.83 2015.22 2964.64 1131.52 2908.37 961.34 curveto
+stroke
+0 0 0 edgecolor
+newpath 2911.61 959.99 moveto
+2905.15 951.6 lineto
+2904.97 962.19 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2911.61 959.99 moveto
+2905.15 951.6 lineto
+2904.97 962.19 lineto
+closepath stroke
+grestore
+% objective.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3057 1760 65.05 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3019 1756.4 moveto 76 (objective.h) alignedtext
+grestore
+% controller.h->objective.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3297.85 2154.72 moveto
+3257.85 2089.17 3121.45 1865.62 3073.68 1787.34 curveto
+stroke
+0 0 0 edgecolor
+newpath 3076.51 1785.25 moveto
+3068.31 1778.54 lineto
+3070.53 1788.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3076.51 1785.25 moveto
+3068.31 1778.54 lineto
+3070.53 1788.9 lineto
+closepath stroke
+grestore
+% main.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1233 3000 55.15 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1202 2996.4 moveto 62 (main.cpp) alignedtext
+grestore
+% main.cpp->defs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1197.43 2985.85 moveto
+1099.23 2944.65 824.29 2814.29 713 2606 curveto
+693.34 2569.2 669.26 1933.37 664.03 1789 curveto
+stroke
+0 0 0 edgecolor
+newpath 667.52 1788.6 moveto
+663.66 1778.73 lineto
+660.53 1788.85 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 667.52 1788.6 moveto
+663.66 1778.73 lineto
+660.53 1788.85 lineto
+closepath stroke
+grestore
+% integrator.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1715 2173 68.8 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1674 2169.4 moveto 82 (integrator.h) alignedtext
+grestore
+% main.cpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1235.67 2981.18 moveto
+1245.14 2918.83 1280.97 2714.61 1363 2568 curveto
+1453.29 2406.62 1619.25 2254.78 1686.04 2197.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 1688.36 2199.9 moveto
+1693.68 2190.74 lineto
+1683.8 2194.58 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1688.36 2199.9 moveto
+1693.68 2190.74 lineto
+1683.8 2194.58 lineto
+closepath stroke
+grestore
+% rhs.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2285 1760 36.77 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2267 1756.4 moveto 36 (rhs.h) alignedtext
+grestore
+% main.cpp->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1235.17 2981.5 moveto
+1242.9 2920.12 1272.36 2718.6 1342 2568 curveto
+1436.83 2362.93 1471.53 2307.84 1637 2154 curveto
+1838.27 1966.87 2142.13 1822.96 2247.47 1776.2 curveto
+stroke
+0 0 0 edgecolor
+newpath 2249.01 1779.34 moveto
+2256.75 1772.1 lineto
+2246.19 1772.94 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2249.01 1779.34 moveto
+2256.75 1772.1 lineto
+2246.19 1772.94 lineto
+closepath stroke
+grestore
+% main.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1206.23 2983.81 moveto
+1100.36 2919.79 710.74 2684.2 587.58 2609.72 curveto
+stroke
+0 0 0 edgecolor
+newpath 589.21 2606.62 moveto
+578.84 2604.44 lineto
+585.59 2612.61 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 589.21 2606.62 moveto
+578.84 2604.44 lineto
+585.59 2612.61 lineto
+closepath stroke
+grestore
+% engine.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2138 1346 53.95 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2107.5 1342.4 moveto 61 (engine.h) alignedtext
+grestore
+% main.cpp->engine.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1234.49 2981.17 moveto
+1239.85 2919.62 1261.35 2719.59 1324 2568 curveto
+1543.38 2037.17 2007.18 1494.1 2115.19 1371.57 curveto
+stroke
+0 0 0 edgecolor
+newpath 2118.06 1373.61 moveto
+2122.06 1363.8 lineto
+2112.81 1368.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2118.06 1373.61 moveto
+2122.06 1363.8 lineto
+2112.81 1368.97 lineto
+closepath stroke
+grestore
+% defs.h->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 661.31 1741.27 moveto
+653.5 1649.58 624.09 1239.31 691 914 curveto
+720.62 769.97 798.11 610.22 830.47 547.45 curveto
+stroke
+0 0 0 edgecolor
+newpath 833.58 549.05 moveto
+835.09 538.56 lineto
+827.37 545.83 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 833.58 549.05 moveto
+835.09 538.56 lineto
+827.37 545.83 lineto
+closepath stroke
+grestore
+% graph.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3513 1760 58.9 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3479 1756.4 moveto 68 (graph.cpp) alignedtext
+grestore
+% graph.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3345 1346 49 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3318 1342.4 moveto 54 (graph.h) alignedtext
+grestore
+% graph.cpp->graph.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3505.46 1741.41 moveto
+3478.7 1675.47 3388.24 1452.57 3356.29 1373.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 3359.53 1372.49 moveto
+3352.52 1364.54 lineto
+3353.04 1375.12 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3359.53 1372.49 moveto
+3352.52 1364.54 lineto
+3353.04 1375.12 lineto
+closepath stroke
+grestore
+% engineimp.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3498 1346 70.92 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3455.5 1342.4 moveto 85 (engineimp.h) alignedtext
+grestore
+% graph.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3512.33 1741.41 moveto
+3509.95 1675.74 3501.93 1454.38 3499.04 1374.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 3502.53 1374.41 moveto
+3498.67 1364.54 lineto
+3495.54 1374.66 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3502.53 1374.41 moveto
+3498.67 1364.54 lineto
+3495.54 1374.66 lineto
+closepath stroke
+grestore
+% graph.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3326.4 1328.78 moveto
+3256.11 1263.69 3006.51 1032.56 2924.97 957.05 curveto
+stroke
+0 0 0 edgecolor
+newpath 2926.9 954.06 moveto
+2917.18 949.84 lineto
+2922.14 959.2 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2926.9 954.06 moveto
+2917.18 949.84 lineto
+2922.14 959.2 lineto
+closepath stroke
+grestore
+% integrator.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1644 3000 79.9 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1595.5 2996.4 moveto 97 (integrator.cpp) alignedtext
+grestore
+% rk45.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1554 2587 43.84 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1531 2583.4 moveto 46 (rk45.h) alignedtext
+grestore
+% integrator.cpp->rk45.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1639.96 2981.45 moveto
+1625.68 2915.94 1577.56 2695.12 1560.26 2615.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 1563.58 2614.52 moveto
+1558.03 2605.5 lineto
+1556.74 2616.01 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1563.58 2614.52 moveto
+1558.03 2605.5 lineto
+1556.74 2616.01 lineto
+closepath stroke
+grestore
+% integrator.cpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1644.61 2981.44 moveto
+1646.68 2921.52 1654.07 2727.77 1668 2568 curveto
+1679.99 2430.49 1701.91 2266.92 1710.94 2201.81 curveto
+stroke
+0 0 0 edgecolor
+newpath 1714.41 2202.26 moveto
+1712.33 2191.87 lineto
+1707.48 2201.29 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1714.41 2202.26 moveto
+1712.33 2191.87 lineto
+1707.48 2201.29 lineto
+closepath stroke
+grestore
+% euler_sde.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+790 2587 67.88 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+750 2583.4 moveto 80 (euler_sde.h) alignedtext
+grestore
+% integrator.cpp->euler_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1609.46 2983.3 moveto
+1474.35 2917.96 981.69 2679.7 832.86 2607.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 834.09 2604.44 moveto
+823.57 2603.23 lineto
+831.04 2610.74 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 834.09 2604.44 moveto
+823.57 2603.23 lineto
+831.04 2610.74 lineto
+closepath stroke
+grestore
+% rk4.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1747 2587 36.98 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1728.5 2583.4 moveto 37 (rk4.h) alignedtext
+grestore
+% integrator.cpp->rk4.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1648.63 2981.45 moveto
+1665 2915.81 1720.26 2694.22 1739.96 2615.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 1743.36 2616.05 moveto
+1742.39 2605.5 lineto
+1736.57 2614.35 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1743.36 2616.05 moveto
+1742.39 2605.5 lineto
+1736.57 2614.35 lineto
+closepath stroke
+grestore
+% rk45.h->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1561.13 2568.68 moveto
+1586.58 2503.23 1673.12 2280.7 1703.97 2201.37 curveto
+stroke
+0 0 0 edgecolor
+newpath 1707.41 2202.17 moveto
+1707.77 2191.58 lineto
+1700.89 2199.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1707.41 2202.17 moveto
+1707.77 2191.58 lineto
+1700.89 2199.63 lineto
+closepath stroke
+grestore
+% jones_optical.h->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1160.31 4229.82 moveto
+1492.32 4177.55 2909.75 3906.35 3453 3019 curveto
+3625.14 2737.83 3392.11 2310.65 3325.73 2199.95 curveto
+stroke
+0 0 0 edgecolor
+newpath 3328.71 2198.12 moveto
+3320.54 2191.37 lineto
+3322.72 2201.74 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3328.71 2198.12 moveto
+3320.54 2191.37 lineto
+3322.72 2201.74 lineto
+closepath stroke
+grestore
+% jones_optical.h->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1098.28 4221.59 moveto
+1122.84 4166.11 1195.8 3995.2 1231 3846 curveto
+1319.9 3469.13 1244.81 3357.56 1335 2981 curveto
+1380.52 2790.94 1403.12 2744.99 1486 2568 curveto
+1553.61 2423.63 1656.32 2262.32 1697.25 2199.78 curveto
+stroke
+0 0 0 edgecolor
+newpath 1700.27 2201.56 moveto
+1702.84 2191.28 lineto
+1694.42 2197.72 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1700.27 2201.56 moveto
+1702.84 2191.28 lineto
+1694.42 2197.72 lineto
+closepath stroke
+grestore
+% stable_spectral_pde_1d_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+865 3827 173.24 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+750.5 3823.4 moveto 229 (stable_spectral_pde_1d_tmpl.hpp) alignedtext
+grestore
+% jones_optical.h->stable_spectral_pde_1d_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1079.9 4221.45 moveto
+1043.99 4155.54 922.42 3932.4 879.86 3854.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 882.93 3852.6 moveto
+875.08 3845.5 lineto
+876.79 3855.95 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 882.93 3852.6 moveto
+875.08 3845.5 lineto
+876.79 3855.95 lineto
+closepath stroke
+grestore
+% integrator.h->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1739.13 2155.52 moveto
+1830.65 2089.21 2156.21 1853.31 2255.83 1781.14 curveto
+stroke
+0 0 0 edgecolor
+newpath 2257.91 1783.95 moveto
+2263.95 1775.25 lineto
+2253.8 1778.29 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2257.91 1783.95 moveto
+2263.95 1775.25 lineto
+2253.8 1778.29 lineto
+closepath stroke
+grestore
+% integrator.h->item_dim.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1779.83 2166.42 moveto
+1958.04 2144.96 2460.55 2061.19 2739 1779 curveto
+2855.15 1661.29 2888.01 1452.01 2896.39 1375.26 curveto
+stroke
+0 0 0 edgecolor
+newpath 2899.91 1375.23 moveto
+2897.45 1364.92 lineto
+2892.95 1374.51 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2899.91 1375.23 moveto
+2897.45 1364.92 lineto
+2892.95 1374.51 lineto
+closepath stroke
+grestore
+% integrator.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1732.19 2154.99 moveto
+1864.61 2016.31 2721.24 1119.17 2875.29 957.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 2878.11 959.95 moveto
+2882.48 950.3 lineto
+2873.05 955.11 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2878.11 959.95 moveto
+2882.48 950.3 lineto
+2873.05 955.11 lineto
+closepath stroke
+grestore
+% vartype.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1715 1346 70.21 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1673 1342.4 moveto 84 (vartype.hpp) alignedtext
+grestore
+% integrator.h->vartype.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1715 2154.17 moveto
+1715 2046.25 1715 1506.37 1715 1374.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 1718.5 1374.8 moveto
+1715 1364.8 lineto
+1711.5 1374.8 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1718.5 1374.8 moveto
+1715 1364.8 lineto
+1711.5 1374.8 lineto
+closepath stroke
+grestore
+% rhs_SQGLE.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2440 3000 85.77 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2387 2996.4 moveto 106 (rhs_SQGLE.cpp) alignedtext
+grestore
+% rhs_SQGLE.cpp->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2500.76 2986.84 moveto
+2646.15 2952.06 3015.87 2843.61 3203 2606 curveto
+3301.58 2480.82 3310.16 2276.94 3309.74 2201.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 3313.24 2201.75 moveto
+3309.62 2191.79 lineto
+3306.24 2201.83 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3313.24 2201.75 moveto
+3309.62 2191.79 lineto
+3306.24 2201.83 lineto
+closepath stroke
+grestore
+% rhs_SQGLE.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2379.52 2986.78 moveto
+2097.76 2925.22 915.03 2666.76 617.93 2601.84 curveto
+stroke
+0 0 0 edgecolor
+newpath 618.26 2598.33 moveto
+607.74 2599.62 lineto
+616.76 2605.17 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 618.26 2598.33 moveto
+607.74 2599.62 lineto
+616.76 2605.17 lineto
+closepath stroke
+grestore
+% rhs_SQGLE.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2208 2587 75.87 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2162 2583.4 moveto 92 (rhs_SQGLE.h) alignedtext
+grestore
+% rhs_SQGLE.cpp->rhs_SQGLE.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2429.58 2981.45 moveto
+2392.56 2915.54 2267.21 2692.4 2223.33 2614.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2226.34 2612.5 moveto
+2218.39 2605.5 lineto
+2220.24 2615.93 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2226.34 2612.5 moveto
+2218.39 2605.5 lineto
+2220.24 2615.93 lineto
+closepath stroke
+grestore
+% inline_trig.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2044 2587 70 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2002.5 2583.4 moveto 83 (inline_trig.h) alignedtext
+grestore
+% rhs_SQGLE.cpp->inline_trig.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2422.47 2981.72 moveto
+2359.09 2915.62 2141.66 2688.85 2068.35 2612.4 curveto
+stroke
+0 0 0 edgecolor
+newpath 2070.77 2609.86 moveto
+2061.32 2605.07 lineto
+2065.72 2614.71 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2070.77 2609.86 moveto
+2061.32 2605.07 lineto
+2065.72 2614.71 lineto
+closepath stroke
+grestore
+% engine_run.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3358 3000 85.77 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3305 2996.4 moveto 106 (engine_run.cpp) alignedtext
+grestore
+% engine_run.cpp->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3366.09 2981.53 moveto
+3391.23 2921.88 3464.79 2728.86 3439 2568 curveto
+3416.11 2425.23 3349.46 2264.08 3321.54 2200.7 curveto
+stroke
+0 0 0 edgecolor
+newpath 3324.66 2199.1 moveto
+3317.4 2191.38 lineto
+3318.26 2201.94 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3324.66 2199.1 moveto
+3317.4 2191.38 lineto
+3318.26 2201.94 lineto
+closepath stroke
+grestore
+% engine_run.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3365.34 2981.29 moveto
+3409.3 2867.05 3634.06 2251.58 3581 1741 curveto
+3566.52 1601.69 3524.06 1439.13 3506.13 1374.55 curveto
+stroke
+0 0 0 edgecolor
+newpath 3509.44 1373.38 moveto
+3503.38 1364.69 lineto
+3502.7 1375.27 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3509.44 1373.38 moveto
+3503.38 1364.69 lineto
+3502.7 1375.27 lineto
+closepath stroke
+grestore
+% engine_run.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3296 2987.11 moveto
+3285.03 2984.96 3273.69 2982.84 3263 2981 curveto
+2225.71 2802.08 955.85 2638.24 629.43 2596.96 curveto
+stroke
+0 0 0 edgecolor
+newpath 629.49 2593.44 moveto
+619.13 2595.66 lineto
+628.61 2600.39 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 629.49 2593.44 moveto
+619.13 2595.66 lineto
+628.61 2600.39 lineto
+closepath stroke
+grestore
+% simulation.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3359 2587 70.92 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3316.5 2583.4 moveto 85 (simulation.h) alignedtext
+grestore
+% engine_run.cpp->simulation.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3358.04 2981.45 moveto
+3358.2 2916.09 3358.74 2696.13 3358.93 2616.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 3362.43 2615.98 moveto
+3358.95 2605.97 lineto
+3355.43 2615.96 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3362.43 2615.98 moveto
+3358.95 2605.97 lineto
+3355.43 2615.96 lineto
+closepath stroke
+grestore
+% engineimp.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3472.64 1328.52 moveto
+3376.7 1262.36 3035.96 1027.43 2930.41 954.65 curveto
+stroke
+0 0 0 edgecolor
+newpath 2932.29 951.7 moveto
+2922.07 948.91 lineto
+2928.32 957.47 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2932.29 951.7 moveto
+2922.07 948.91 lineto
+2928.32 957.47 lineto
+closepath stroke
+grestore
+% stable_ode.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1139 3827 82.94 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1088 3823.4 moveto 102 (stable_ode.cpp) alignedtext
+grestore
+% stable_ode.cpp->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1106.53 3809.96 moveto
+1018.81 3762.32 774.71 3618.98 642 3433 curveto
+349.67 3023.32 421.16 2347.76 440.85 2201.49 curveto
+stroke
+0 0 0 edgecolor
+newpath 444.33 2201.9 moveto
+442.23 2191.52 lineto
+437.4 2200.94 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 444.33 2201.9 moveto
+442.23 2191.52 lineto
+437.4 2200.94 lineto
+closepath stroke
+grestore
+% stable_ode_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1709 3414 111.22 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1638 3410.4 moveto 142 (stable_ode_tmpl.hpp) alignedtext
+grestore
+% stable_ode.cpp->stable_ode_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1163.49 3809.25 moveto
+1254.27 3743.48 1571.66 3513.51 1675.7 3438.13 curveto
+stroke
+0 0 0 edgecolor
+newpath 1677.91 3440.85 moveto
+1683.96 3432.15 lineto
+1673.81 3435.18 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1677.91 3440.85 moveto
+1683.96 3432.15 lineto
+1673.81 3435.18 lineto
+closepath stroke
+grestore
+% type_constructor.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+970 3000 114.05 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+897 2996.4 moveto 146 (type_constructor.hpp) alignedtext
+grestore
+% stable_ode.cpp->type_constructor.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1135.15 3808.17 moveto
+1113.1 3700.25 1002.77 3160.37 975.91 3028.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 979.27 3027.89 moveto
+973.84 3018.8 lineto
+972.41 3029.3 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 979.27 3027.89 moveto
+973.84 3018.8 lineto
+972.41 3029.3 lineto
+closepath stroke
+grestore
+% stable.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3204 3000 50.2 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3176.5 2996.4 moveto 55 (stable.h) alignedtext
+grestore
+% stable_ode_tmpl.hpp->stable.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1769.46 3398.37 moveto
+1967.55 3346.94 2614.77 3177.22 3145 3019 curveto
+3148.83 3017.86 3152.8 3016.64 3156.78 3015.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 3158.14 3018.65 moveto
+3166.62 3012.31 lineto
+3156.03 3011.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3158.14 3018.65 moveto
+3166.62 3012.31 lineto
+3156.03 3011.97 lineto
+closepath stroke
+grestore
+% rk4.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1532 3414 48.08 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1506 3410.4 moveto 52 (rk4.cpp) alignedtext
+grestore
+% rk4_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1894 3000 75.87 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1848 2996.4 moveto 92 (rk4_tmpl.hpp) alignedtext
+grestore
+% rk4.cpp->rk4_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1547.55 3396.21 moveto
+1604.75 3330.8 1803.55 3103.44 1871.23 3026.04 curveto
+stroke
+0 0 0 edgecolor
+newpath 1874.15 3028.02 moveto
+1878.1 3018.19 lineto
+1868.88 3023.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1874.15 3028.02 moveto
+1878.1 3018.19 lineto
+1868.88 3023.41 lineto
+closepath stroke
+grestore
+% rk4.cpp->type_constructor.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1509.62 3397.52 moveto
+1422.55 3333.37 1106.08 3100.25 1002.83 3024.18 curveto
+stroke
+0 0 0 edgecolor
+newpath 1004.76 3021.26 moveto
+994.63 3018.15 lineto
+1000.61 3026.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1004.76 3021.26 moveto
+994.63 3018.15 lineto
+1000.61 3026.9 lineto
+closepath stroke
+grestore
+% rk4.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1516.12 3396.54 moveto
+1460.65 3335.98 1269.39 3130.51 1093 2981 curveto
+911.75 2827.37 674.57 2668.4 585.68 2610.15 curveto
+stroke
+0 0 0 edgecolor
+newpath 587.34 2607.06 moveto
+577.06 2604.51 lineto
+583.51 2612.92 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 587.34 2607.06 moveto
+577.06 2604.51 lineto
+583.51 2612.92 lineto
+closepath stroke
+grestore
+% rk4.cpp->rk4.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1547.35 3396.34 moveto
+1592.03 3343.59 1721.67 3180.82 1766 3019 curveto
+1806.38 2871.62 1770.53 2685.49 1754.15 2615.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 1757.52 2614.47 moveto
+1751.79 2605.56 lineto
+1750.72 2616.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1757.52 2614.47 moveto
+1751.79 2605.56 lineto
+1750.72 2616.1 lineto
+closepath stroke
+grestore
+% rk4_tmpl.hpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1889.93 2981.17 moveto
+1866.57 2873.25 1749.71 2333.37 1721.25 2201.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 1724.6 2200.83 moveto
+1719.07 2191.8 lineto
+1717.76 2202.31 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1724.6 2200.83 moveto
+1719.07 2191.8 lineto
+1717.76 2202.31 lineto
+closepath stroke
+grestore
+% rk4_tmpl.hpp->rk4.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1887.4 2981.45 moveto
+1864.03 2915.81 1785.16 2694.22 1757.05 2615.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 1760.23 2613.74 moveto
+1753.58 2605.5 lineto
+1753.64 2616.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1760.23 2613.74 moveto
+1753.58 2605.5 lineto
+1753.64 2616.09 lineto
+closepath stroke
+grestore
+% euler_sde.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+771 3414 77.78 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+724 3410.4 moveto 94 (euler_sde.cpp) alignedtext
+grestore
+% euler_sde.cpp->type_constructor.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 779.94 3395.41 moveto
+811.63 3329.47 918.78 3106.57 956.62 3027.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 959.91 3029.07 moveto
+961.09 3018.54 lineto
+953.6 3026.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 959.91 3029.07 moveto
+961.09 3018.54 lineto
+953.6 3026.04 lineto
+closepath stroke
+grestore
+% euler_sde.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 771.63 3395.46 moveto
+773.24 3334.77 774.7 3137.01 733 2981 curveto
+694.01 2835.11 604.07 2676.41 566.72 2614.19 curveto
+stroke
+0 0 0 edgecolor
+newpath 569.57 2612.13 moveto
+561.4 2605.38 lineto
+563.58 2615.75 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 569.57 2612.13 moveto
+561.4 2605.38 lineto
+563.58 2615.75 lineto
+closepath stroke
+grestore
+% euler_sde_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+617 3000 106.77 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+549.5 2996.4 moveto 135 (euler_sde_tmpl.hpp) alignedtext
+grestore
+% euler_sde.cpp->euler_sde_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 764.08 3395.41 moveto
+739.61 3329.6 656.98 3107.48 627.53 3028.31 curveto
+stroke
+0 0 0 edgecolor
+newpath 630.66 3026.69 moveto
+623.9 3018.54 lineto
+624.1 3029.13 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 630.66 3026.69 moveto
+623.9 3018.54 lineto
+624.1 3029.13 lineto
+closepath stroke
+grestore
+% euler_sde.cpp->euler_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 771.43 3395.17 moveto
+773.91 3287.25 786.32 2747.37 789.34 2615.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 792.84 2615.88 moveto
+789.57 2605.8 lineto
+785.84 2615.71 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 792.84 2615.88 moveto
+789.57 2605.8 lineto
+785.84 2615.71 lineto
+closepath stroke
+grestore
+% type_constructor.hpp->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 967.12 2981.19 moveto
+958.59 2924.61 933.23 2750.93 921 2606 curveto
+850.2 1767.31 845.31 733.44 845.01 548.86 curveto
+stroke
+0 0 0 edgecolor
+newpath 848.51 548.62 moveto
+845 538.62 lineto
+841.51 548.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 848.51 548.62 moveto
+845 538.62 lineto
+841.51 548.63 lineto
+closepath stroke
+grestore
+% type_constructor.hpp->vartype.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 966.32 2981.12 moveto
+943.64 2859.36 832.36 2176.18 1100 1741 curveto
+1233.17 1524.47 1534.51 1404.94 1659.28 1363.2 curveto
+stroke
+0 0 0 edgecolor
+newpath 1660.63 1366.44 moveto
+1669.03 1359.98 lineto
+1658.43 1359.79 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1660.63 1366.44 moveto
+1669.03 1359.98 lineto
+1658.43 1359.79 lineto
+closepath stroke
+grestore
+% rhs.h->item_dim.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2307.22 1745.02 moveto
+2399.53 1682.78 2753.2 1444.31 2864.95 1368.96 curveto
+stroke
+0 0 0 edgecolor
+newpath 2867.15 1371.7 moveto
+2873.49 1363.2 lineto
+2863.24 1365.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2867.15 1371.7 moveto
+2873.49 1363.2 lineto
+2863.24 1365.89 lineto
+closepath stroke
+grestore
+% rhs.h->vartype.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2263.7 1744.53 moveto
+2177.2 1681.7 1851.94 1445.46 1747.5 1369.6 curveto
+stroke
+0 0 0 edgecolor
+newpath 1749.37 1366.64 moveto
+1739.22 1363.59 lineto
+1745.26 1372.3 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1749.37 1366.64 moveto
+1739.22 1363.59 lineto
+1745.26 1372.3 lineto
+closepath stroke
+grestore
+% item_dim.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2899 1327.45 moveto
+2899 1262.09 2899 1042.13 2899 962.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2902.5 961.97 moveto
+2899 951.97 lineto
+2895.5 961.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2902.5 961.97 moveto
+2899 951.97 lineto
+2895.5 961.97 lineto
+closepath stroke
+grestore
+% item.h->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2859.8 925.12 moveto
+2606.3 874.15 1199.67 591.31 900.82 531.22 curveto
+stroke
+0 0 0 edgecolor
+newpath 901.16 527.72 moveto
+890.66 529.18 lineto
+899.78 534.58 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 901.16 527.72 moveto
+890.66 529.18 lineto
+899.78 534.58 lineto
+closepath stroke
+grestore
+% stable.h->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3187.77 2982.44 moveto
+3128.28 2918.92 2914.34 2697.95 2700 2568 curveto
+2373.74 2370.21 1930.8 2233.95 1773.42 2189.09 curveto
+stroke
+0 0 0 edgecolor
+newpath 1774.05 2185.63 moveto
+1763.47 2186.27 lineto
+1772.14 2192.37 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1774.05 2185.63 moveto
+1763.47 2186.27 lineto
+1772.14 2192.37 lineto
+closepath stroke
+grestore
+% stable.h->simulation.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3210.96 2981.45 moveto
+3235.6 2915.81 3318.76 2694.22 3348.4 2615.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 3351.82 2616.09 moveto
+3352.06 2605.5 lineto
+3345.27 2613.63 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3351.82 2616.09 moveto
+3352.06 2605.5 lineto
+3345.27 2613.63 lineto
+closepath stroke
+grestore
+% comp_funcs.h->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 545.28 2568.41 moveto
+528.6 2502.6 472.26 2280.48 452.18 2201.31 curveto
+stroke
+0 0 0 edgecolor
+newpath 455.55 2200.37 moveto
+449.7 2191.54 lineto
+448.77 2202.1 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 455.55 2200.37 moveto
+449.7 2191.54 lineto
+448.77 2202.1 lineto
+closepath stroke
+grestore
+% objective.h->item_dim.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3049.9 1741.41 moveto
+3024.79 1675.6 2940.02 1453.48 2909.81 1374.31 curveto
+stroke
+0 0 0 edgecolor
+newpath 2912.91 1372.64 moveto
+2906.08 1364.54 lineto
+2906.37 1375.13 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2912.91 1372.64 moveto
+2906.08 1364.54 lineto
+2906.37 1375.13 lineto
+closepath stroke
+grestore
+% objective.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3053.4 1741.17 moveto
+3032.76 1633.13 2929.42 1092.2 2904.44 961.47 curveto
+stroke
+0 0 0 edgecolor
+newpath 2907.84 960.6 moveto
+2902.52 951.44 lineto
+2900.96 961.92 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2907.84 960.6 moveto
+2902.52 951.44 lineto
+2900.96 961.92 lineto
+closepath stroke
+grestore
+% noise.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+189 3000 56.07 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+157 2996.4 moveto 64 (noise.cpp) alignedtext
+grestore
+% noise.cpp->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 194.72 2981.54 moveto
+212.16 2925.23 266.21 2750.68 311 2606 curveto
+358.26 2453.34 414.86 2270.41 436.25 2201.29 curveto
+stroke
+0 0 0 edgecolor
+newpath 439.64 2202.16 moveto
+439.25 2191.57 lineto
+432.95 2200.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 439.64 2202.16 moveto
+439.25 2191.57 lineto
+432.95 2200.09 lineto
+closepath stroke
+grestore
+% noise.cpp->noise.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 182.58 2981.45 moveto
+159.85 2915.81 83.12 2694.22 55.78 2615.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 58.98 2613.8 moveto
+52.4 2605.5 lineto
+52.37 2616.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 58.98 2613.8 moveto
+52.4 2605.5 lineto
+52.37 2616.09 lineto
+closepath stroke
+grestore
+% toroidal.h->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3642.78 2568.94 moveto
+3587.34 2503.17 3396.02 2276.23 3330.9 2198.98 curveto
+stroke
+0 0 0 edgecolor
+newpath 3333.42 2196.54 moveto
+3324.3 2191.15 lineto
+3328.07 2201.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3333.42 2196.54 moveto
+3324.3 2191.15 lineto
+3328.07 2201.05 lineto
+closepath stroke
+grestore
+% euler_sde_tmpl.hpp->noise.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 592.1 2981.99 moveto
+499.91 2915.31 178.13 2682.57 76.8 2609.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 78.67 2606.31 moveto
+68.51 2603.28 lineto
+74.56 2611.98 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 78.67 2606.31 moveto
+68.51 2603.28 lineto
+74.56 2611.98 lineto
+closepath stroke
+grestore
+% rhs_sde.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1898 2587 57.98 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1865 2583.4 moveto 66 (rhs_sde.h) alignedtext
+grestore
+% euler_sde_tmpl.hpp->rhs_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 667.61 2983.68 moveto
+872.91 2917.49 1642.39 2669.41 1847.49 2603.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 1848.67 2606.58 moveto
+1857.11 2600.18 lineto
+1846.52 2599.92 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1848.67 2606.58 moveto
+1857.11 2600.18 lineto
+1846.52 2599.92 lineto
+closepath stroke
+grestore
+% euler_sde_tmpl.hpp->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 579.01 2982.64 moveto
+484.12 2936.93 237.28 2803.05 139 2606 curveto
+53.03 2433.62 120 2365.63 120 2173 curveto
+120 2173 120 2173 120 1346 curveto
+120 926.89 653.73 618.89 805.3 539.88 curveto
+stroke
+0 0 0 edgecolor
+newpath 807.04 542.92 moveto
+814.31 535.22 lineto
+803.82 536.71 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 807.04 542.92 moveto
+814.31 535.22 lineto
+803.82 536.71 lineto
+closepath stroke
+grestore
+% euler_sde_tmpl.hpp->euler_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 624.77 2981.45 moveto
+652.32 2915.67 745.47 2693.31 778.37 2614.76 curveto
+stroke
+0 0 0 edgecolor
+newpath 781.62 2616.07 moveto
+782.25 2605.5 lineto
+775.16 2613.37 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 781.62 2616.07 moveto
+782.25 2605.5 lineto
+775.16 2613.37 lineto
+closepath stroke
+grestore
+% noise.h->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 46.71 2568.37 moveto
+50.03 2478.85 64 2083.84 64 1760 curveto
+64 1760 64 1760 64 1346 curveto
+64 1153.09 -1.16 1074.41 106 914 curveto
+271.83 665.77 647.03 562.27 789.08 531.02 curveto
+stroke
+0 0 0 edgecolor
+newpath 789.87 534.44 moveto
+798.9 528.9 lineto
+788.39 527.59 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 789.87 534.44 moveto
+798.9 528.9 lineto
+788.39 527.59 lineto
+closepath stroke
+grestore
+% rhs_sde.h->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1906.63 2568.57 moveto
+1956.9 2461.14 2211.92 1916.17 2272.21 1787.33 curveto
+stroke
+0 0 0 edgecolor
+newpath 2275.45 1788.66 moveto
+2276.52 1778.12 lineto
+2269.11 1785.69 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2275.45 1788.66 moveto
+2276.52 1778.12 lineto
+2269.11 1785.69 lineto
+closepath stroke
+grestore
+% Eigen
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1425 106 38.89 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1405.5 102.4 moveto 39 (Eigen) alignedtext
+grestore
+% defs.hpp->Eigen
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 868.46 503.26 moveto
+959.89 437.99 1292.39 200.65 1394.78 127.57 curveto
+stroke
+0 0 0 edgecolor
+newpath 1397.03 130.26 moveto
+1403.14 121.61 lineto
+1392.96 124.57 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1397.03 130.26 moveto
+1403.14 121.61 lineto
+1392.96 124.57 lineto
+closepath stroke
+grestore
+% simulation.h->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3356.75 2568.41 moveto
+3348.82 2502.74 3322.09 2281.38 3312.48 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 3315.91 2201.05 moveto
+3311.24 2191.54 lineto
+3308.96 2201.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3315.91 2201.05 moveto
+3311.24 2191.54 lineto
+3308.96 2201.89 lineto
+closepath stroke
+grestore
+% simulation.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3380.97 2569.13 moveto
+3483.13 2483.74 3903.11 2106.36 3815 1741 curveto
+3766.54 1540.04 3746.45 1475.85 3603 1327 curveto
+3498.11 1218.16 3069.61 1012.76 2937.78 951 curveto
+stroke
+0 0 0 edgecolor
+newpath 2938.99 947.71 moveto
+2928.45 946.64 lineto
+2936.03 954.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2938.99 947.71 moveto
+2928.45 946.64 lineto
+2936.03 954.05 lineto
+closepath stroke
+grestore
+% rhs.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2764 3000 46.17 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2739 2996.4 moveto 50 (rhs.cpp) alignedtext
+grestore
+% rhs.cpp->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2747.57 2982.32 moveto
+2699.45 2929.55 2557.61 2766.8 2485 2606 curveto
+2449.85 2528.16 2320.5 1926.57 2291.01 1788.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2294.42 1787.48 moveto
+2288.91 1778.43 lineto
+2287.57 1788.94 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2294.42 1787.48 moveto
+2288.91 1778.43 lineto
+2287.57 1788.94 lineto
+closepath stroke
+grestore
+% example_rhs.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2576 2587 82.23 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2525.5 2583.4 moveto 101 (example_rhs.h) alignedtext
+grestore
+% rhs.cpp->example_rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2755.68 2981.72 moveto
+2725.9 2916.3 2624.49 2693.53 2588.66 2614.82 curveto
+stroke
+0 0 0 edgecolor
+newpath 2591.77 2613.19 moveto
+2584.44 2605.54 lineto
+2585.4 2616.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2591.77 2613.19 moveto
+2584.44 2605.54 lineto
+2585.4 2616.09 lineto
+closepath stroke
+grestore
+% rhs_CNLS.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2370 2587 68.09 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2329.5 2583.4 moveto 81 (rhs_CNLS.h) alignedtext
+grestore
+% rhs.cpp->rhs_CNLS.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2747.32 2982.52 moveto
+2685.3 2917.5 2467.77 2689.48 2394.39 2612.56 curveto
+stroke
+0 0 0 edgecolor
+newpath 2396.78 2610 moveto
+2387.35 2605.18 lineto
+2391.72 2614.84 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2396.78 2610 moveto
+2387.35 2605.18 lineto
+2391.72 2614.84 lineto
+closepath stroke
+grestore
+% rhs.cpp->rhs_SQGLE.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2741.86 2983.56 moveto
+2655.52 2919.42 2341.2 2685.94 2239.78 2610.61 curveto
+stroke
+0 0 0 edgecolor
+newpath 2241.86 2607.79 moveto
+2231.74 2604.64 lineto
+2237.68 2613.41 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2241.86 2607.79 moveto
+2231.74 2604.64 lineto
+2237.68 2613.41 lineto
+closepath stroke
+grestore
+% rhs_type.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2285 2173 74.95 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2240 2169.4 moveto 90 (rhs_type.hpp) alignedtext
+grestore
+% rhs_CNLS.h->rhs_type.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2366.18 2568.41 moveto
+2352.7 2502.74 2307.25 2281.38 2290.91 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 2294.25 2200.63 moveto
+2288.81 2191.54 lineto
+2287.39 2202.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2294.25 2200.63 moveto
+2288.81 2191.54 lineto
+2287.39 2202.04 lineto
+closepath stroke
+grestore
+% rhs_type.hpp->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2285 2154.45 moveto
+2285 2089.09 2285 1869.13 2285 1789.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2288.5 1788.97 moveto
+2285 1778.97 lineto
+2281.5 1788.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2288.5 1788.97 moveto
+2285 1778.97 lineto
+2281.5 1788.97 lineto
+closepath stroke
+grestore
+% objective.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2903 2587 74.95 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2858 2583.4 moveto 90 (objective.cpp) alignedtext
+grestore
+% objective.cpp->objective.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2904.64 2568.31 moveto
+2910.1 2507.97 2929.04 2313.04 2959 2154 curveto
+2985.08 2015.55 3030.18 1853.12 3048.69 1788.55 curveto
+stroke
+0 0 0 edgecolor
+newpath 3052.13 1789.27 moveto
+3051.53 1778.69 lineto
+3045.4 1787.33 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3052.13 1789.27 moveto
+3051.53 1778.69 lineto
+3045.4 1787.33 lineto
+closepath stroke
+grestore
+% n_pulse_score.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3057 2173 89.1 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3002 2169.4 moveto 110 (n_pulse_score.h) alignedtext
+grestore
+% objective.cpp->n_pulse_score.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2909.92 2568.41 moveto
+2934.39 2502.6 3017.02 2280.48 3046.47 2201.31 curveto
+stroke
+0 0 0 edgecolor
+newpath 3049.9 2202.13 moveto
+3050.1 2191.54 lineto
+3043.34 2199.69 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3049.9 2202.13 moveto
+3050.1 2191.54 lineto
+3043.34 2199.69 lineto
+closepath stroke
+grestore
+% utils.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+785 1346 51.83 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+756 1342.4 moveto 58 (utils.cpp) alignedtext
+grestore
+% utils.cpp->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 830.62 1337.09 moveto
+1107.61 1282.97 2561.44 998.95 2849.41 942.69 curveto
+stroke
+0 0 0 edgecolor
+newpath 2850.4 946.06 moveto
+2859.54 940.71 lineto
+2849.06 939.19 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2850.4 946.06 moveto
+2859.54 940.71 lineto
+2849.06 939.19 lineto
+closepath stroke
+grestore
+% utils.cpp->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 786.37 1327.2 moveto
+794.2 1219.4 833.36 680.18 842.9 548.86 curveto
+stroke
+0 0 0 edgecolor
+newpath 846.4 549 moveto
+843.64 538.77 lineto
+839.42 548.49 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 846.4 549 moveto
+843.64 538.77 lineto
+839.42 548.49 lineto
+closepath stroke
+grestore
+% utils.cpp->fftw3.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 783.34 1327.45 moveto
+777.47 1261.94 757.69 1041.12 750.57 961.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 754.04 961.14 moveto
+749.66 951.5 lineto
+747.06 961.77 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 754.04 961.14 moveto
+749.66 951.5 lineto
+747.06 961.77 lineto
+closepath stroke
+grestore
+% n_pulse_score.h->objective.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3057 2154.45 moveto
+3057 2089.09 3057 1869.13 3057 1789.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 3060.5 1788.97 moveto
+3057 1778.97 lineto
+3053.5 1788.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3060.5 1788.97 moveto
+3057 1778.97 lineto
+3053.5 1788.97 lineto
+closepath stroke
+grestore
+% stable.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1709 3827 60.81 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1674 3823.4 moveto 70 (stable.cpp) alignedtext
+grestore
+% stable.cpp->writer.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1683.35 3810.06 moveto
+1569.08 3732.34 1112 3396.65 1112 3000 curveto
+1112 3000 1112 3000 1112 2587 curveto
+1112 2099.61 1018.4 1509.6 995.85 1374.48 curveto
+stroke
+0 0 0 edgecolor
+newpath 999.28 1373.8 moveto
+994.17 1364.52 lineto
+992.38 1374.96 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 999.28 1373.8 moveto
+994.17 1364.52 lineto
+992.38 1374.96 lineto
+closepath stroke
+grestore
+% stable.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1758.52 3815.95 moveto
+2052.15 3749.36 3560.64 3391.81 3817 3019 curveto
+4013.17 2733.72 3583.49 1570.36 3508.83 1374.16 curveto
+stroke
+0 0 0 edgecolor
+newpath 3512 1372.66 moveto
+3505.17 1364.57 lineto
+3505.46 1375.16 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3512 1372.66 moveto
+3505.17 1364.57 lineto
+3505.46 1375.16 lineto
+closepath stroke
+grestore
+% stable.cpp->stable_ode_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1709 3808.45 moveto
+1709 3743.09 1709 3523.13 1709 3443.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 1712.5 3442.97 moveto
+1709 3432.97 lineto
+1705.5 3442.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1712.5 3442.97 moveto
+1709 3432.97 lineto
+1705.5 3442.97 lineto
+closepath stroke
+grestore
+% stable.cpp->stable.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1738.53 3810.67 moveto
+1926.8 3706.52 2958.3 3135.92 3167.12 3020.4 curveto
+stroke
+0 0 0 edgecolor
+newpath 3169.11 3023.3 moveto
+3176.16 3015.4 lineto
+3165.72 3017.18 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3169.11 3023.3 moveto
+3176.16 3015.4 lineto
+3165.72 3017.18 lineto
+closepath stroke
+grestore
+% stable.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1651.83 3820.43 moveto
+1482.15 3798.06 975.18 3710.19 684 3433 curveto
+527.02 3283.57 487.6 3197.31 501 2981 curveto
+509.52 2843.49 534.6 2680.53 545.2 2615.68 curveto
+stroke
+0 0 0 edgecolor
+newpath 548.65 2616.22 moveto
+546.82 2605.79 lineto
+541.75 2615.09 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 548.65 2616.22 moveto
+546.82 2605.79 lineto
+541.75 2615.09 lineto
+closepath stroke
+grestore
+% rhs_SQGLE.h->rhs_type.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2211.46 2568.41 moveto
+2223.67 2502.74 2264.84 2281.38 2279.64 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 2283.16 2202.01 moveto
+2281.55 2191.54 lineto
+2276.28 2200.73 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2283.16 2202.01 moveto
+2281.55 2191.54 lineto
+2276.28 2200.73 lineto
+closepath stroke
+grestore
+% rk45_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1426 3000 82.23 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1375.5 2996.4 moveto 101 (rk45_tmpl.hpp) alignedtext
+grestore
+% rk45_tmpl.hpp->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1380.94 2984.4 moveto
+1260.35 2940.87 925.06 2807.83 713 2606 curveto
+580.89 2480.26 487.66 2275.99 456.44 2201.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 459.51 2199.67 moveto
+452.45 2191.77 lineto
+453.04 2202.35 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 459.51 2199.67 moveto
+452.45 2191.77 lineto
+453.04 2202.35 lineto
+closepath stroke
+grestore
+% rk45_tmpl.hpp->rk45.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1431.75 2981.45 moveto
+1452.09 2915.81 1520.77 2694.22 1545.25 2615.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 1548.65 2616.08 moveto
+1548.27 2605.5 lineto
+1541.96 2614.01 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1548.65 2616.08 moveto
+1548.27 2605.5 lineto
+1541.96 2614.01 lineto
+closepath stroke
+grestore
+% rk45_tmpl.hpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1427.08 2981.36 moveto
+1431.06 2920.37 1447.57 2721.89 1501 2568 curveto
+1552.33 2420.18 1654.65 2261.44 1696.5 2199.69 curveto
+stroke
+0 0 0 edgecolor
+newpath 1699.48 2201.53 moveto
+1702.23 2191.3 lineto
+1693.7 2197.59 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1699.48 2201.53 moveto
+1702.23 2191.3 lineto
+1693.7 2197.59 lineto
+closepath stroke
+grestore
+% engine_read.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3345 1760 91.22 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3288.5 1756.4 moveto 113 (engine_read.cpp) alignedtext
+grestore
+% engine_read.cpp->graph.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3345 1741.41 moveto
+3345 1675.74 3345 1454.38 3345 1374.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 3348.5 1374.54 moveto
+3345 1364.54 lineto
+3341.5 1374.54 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3348.5 1374.54 moveto
+3345 1364.54 lineto
+3341.5 1374.54 lineto
+closepath stroke
+grestore
+% engine_read.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3351.87 1741.41 moveto
+3376.19 1675.6 3458.28 1453.48 3487.54 1374.31 curveto
+stroke
+0 0 0 edgecolor
+newpath 3490.96 1375.14 moveto
+3491.15 1364.54 lineto
+3484.4 1372.71 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3490.96 1375.14 moveto
+3491.15 1364.54 lineto
+3484.4 1372.71 lineto
+closepath stroke
+grestore
+% simulation.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1090 4654 82.02 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1040 4650.4 moveto 100 (simulation.cpp) alignedtext
+grestore
+% simulation.cpp->jones_optical.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1090 4635.41 moveto
+1090 4569.74 1090 4348.38 1090 4268.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 1093.5 4268.54 moveto
+1090 4258.54 lineto
+1086.5 4268.54 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1093.5 4268.54 moveto
+1090 4258.54 lineto
+1086.5 4268.54 lineto
+closepath stroke
+grestore
+% simulation.cpp->stable.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1113.02 4635.99 moveto
+1325.06 4470.09 2935.81 3209.83 3174.48 3023.1 curveto
+stroke
+0 0 0 edgecolor
+newpath 3176.67 3025.83 moveto
+3182.39 3016.91 lineto
+3172.36 3020.32 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3176.67 3025.83 moveto
+3182.39 3016.91 lineto
+3172.36 3020.32 lineto
+closepath stroke
+grestore
+% simulation.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1060.56 4636.57 moveto
+934.19 4559.27 444 4233.28 444 3827 curveto
+444 3827 444 3827 444 3414 curveto
+444 3098.42 520.88 2720.57 543.69 2615.38 curveto
+stroke
+0 0 0 edgecolor
+newpath 547.13 2616.04 moveto
+545.84 2605.52 lineto
+540.29 2614.54 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 547.13 2616.04 moveto
+545.84 2605.52 lineto
+540.29 2614.54 lineto
+closepath stroke
+grestore
+% euler_sde.h->defs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 787.11 2568.17 moveto
+770.54 2460.25 687.63 1920.37 667.44 1788.9 curveto
+stroke
+0 0 0 edgecolor
+newpath 670.86 1788.15 moveto
+665.89 1778.8 lineto
+663.95 1789.21 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 670.86 1788.15 moveto
+665.89 1778.8 lineto
+663.95 1789.21 lineto
+closepath stroke
+grestore
+% euler_sde.h->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 825.41 2571.15 moveto
+969.21 2506.79 1509.38 2265.03 1669.8 2193.23 curveto
+stroke
+0 0 0 edgecolor
+newpath 1671.68 2196.22 moveto
+1679.37 2188.94 lineto
+1668.82 2189.84 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1671.68 2196.22 moveto
+1679.37 2188.94 lineto
+1668.82 2189.84 lineto
+closepath stroke
+grestore
+% rk45.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1412 3414 53.95 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1381.5 3410.4 moveto 61 (rk45.cpp) alignedtext
+grestore
+% rk45.cpp->rk45.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1418.21 3395.35 moveto
+1436.63 3339.19 1491.28 3166.5 1517 3019 curveto
+1543.2 2868.72 1551.11 2685.64 1553.26 2615.88 curveto
+stroke
+0 0 0 edgecolor
+newpath 1556.77 2615.77 moveto
+1553.56 2605.68 lineto
+1549.77 2615.57 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1556.77 2615.77 moveto
+1553.56 2605.68 lineto
+1549.77 2615.57 lineto
+closepath stroke
+grestore
+% rk45.cpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1433.79 3396.9 moveto
+1495.52 3346.91 1671.05 3193.45 1733 3019 curveto
+1738.65 3003.08 1733.72 2997.87 1733 2981 curveto
+1725.17 2797.06 1697.74 2752.08 1701 2568 curveto
+1703.43 2430.83 1710.6 2266.99 1713.63 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 1717.14 2201.66 moveto
+1714.11 2191.5 lineto
+1710.15 2201.33 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1717.14 2201.66 moveto
+1714.11 2191.5 lineto
+1710.15 2201.33 lineto
+closepath stroke
+grestore
+% rk45.cpp->type_constructor.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1393.29 3396.48 moveto
+1323.65 3331.25 1079.25 3102.33 997.14 3025.42 curveto
+stroke
+0 0 0 edgecolor
+newpath 999.4 3022.75 moveto
+989.71 3018.46 lineto
+994.62 3027.85 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 999.4 3022.75 moveto
+989.71 3018.46 lineto
+994.62 3027.85 lineto
+closepath stroke
+grestore
+% rk45.cpp->comp_funcs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1382.57 3398.46 moveto
+1293.99 3350.72 1025.08 3198.48 847 3019 curveto
+714.79 2885.75 602.84 2686.82 564.32 2614.52 curveto
+stroke
+0 0 0 edgecolor
+newpath 567.35 2612.76 moveto
+559.58 2605.56 lineto
+561.16 2616.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 567.35 2612.76 moveto
+559.58 2605.56 lineto
+561.16 2616.04 lineto
+closepath stroke
+grestore
+% rk45.cpp->rk45_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1412.63 3395.41 moveto
+1414.85 3329.74 1422.33 3108.38 1425.03 3028.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 1428.53 3028.65 moveto
+1425.37 3018.54 lineto
+1421.54 3028.42 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1428.53 3028.65 moveto
+1425.37 3018.54 lineto
+1421.54 3028.42 lineto
+closepath stroke
+grestore
+% data.hpp->defs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 942.42 914.45 moveto
+926.21 848.81 871.48 627.22 851.98 548.24 curveto
+stroke
+0 0 0 edgecolor
+newpath 855.36 547.37 moveto
+849.57 538.5 lineto
+848.57 549.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 855.36 547.37 moveto
+849.57 538.5 lineto
+848.57 549.04 lineto
+closepath stroke
+grestore
+% item.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3083 3000 53.03 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3053.5 2996.4 moveto 59 (item.cpp) alignedtext
+grestore
+% item.cpp->controller.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3091.71 2981.59 moveto
+3117.61 2926.14 3194.89 2755.27 3236 2606 curveto
+3277.02 2457.05 3298.84 2272.57 3306.15 2202.16 curveto
+stroke
+0 0 0 edgecolor
+newpath 3309.67 2202.17 moveto
+3307.2 2191.86 lineto
+3302.71 2201.46 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3309.67 2202.17 moveto
+3307.2 2191.86 lineto
+3302.71 2201.46 lineto
+closepath stroke
+grestore
+% item.cpp->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3066.67 2982.21 moveto
+2995.65 2904.92 2715 2600.75 2667 2568 curveto
+2362.55 2360.26 1931.71 2231.1 1774.97 2188.56 curveto
+stroke
+0 0 0 edgecolor
+newpath 1775.61 2185.1 moveto
+1765.04 2185.88 lineto
+1773.79 2191.86 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1775.61 2185.1 moveto
+1765.04 2185.88 lineto
+1773.79 2191.86 lineto
+closepath stroke
+grestore
+% item.cpp->rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3068.34 2982.07 moveto
+3023.78 2927.26 2886.84 2756.51 2786 2606 curveto
+2576.87 2293.86 2357 1893.07 2299.45 1786.82 curveto
+stroke
+0 0 0 edgecolor
+newpath 2302.53 1785.15 moveto
+2294.69 1778.02 lineto
+2296.37 1788.48 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2302.53 1785.15 moveto
+2294.69 1778.02 lineto
+2296.37 1788.48 lineto
+closepath stroke
+grestore
+% item.cpp->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3065.4 2982.42 moveto
+3014.87 2930.54 2869.7 2771.31 2819 2606 curveto
+2622.94 1966.73 2843.65 1126.05 2890.59 961.58 curveto
+stroke
+0 0 0 edgecolor
+newpath 2894.03 962.32 moveto
+2893.43 951.74 lineto
+2887.3 960.38 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2894.03 962.32 moveto
+2893.43 951.74 lineto
+2887.3 960.38 lineto
+closepath stroke
+grestore
+% item.cpp->simulation.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3095.22 2981.72 moveto
+3139.11 2916.03 3289.02 2691.71 3341.05 2613.87 curveto
+stroke
+0 0 0 edgecolor
+newpath 3343.97 2615.8 moveto
+3346.61 2605.54 lineto
+3338.15 2611.91 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3343.97 2615.8 moveto
+3346.61 2605.54 lineto
+3338.15 2611.91 lineto
+closepath stroke
+grestore
+% rhs_sde.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2268 3000 68.09 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2227.5 2996.4 moveto 81 (rhs_sde.cpp) alignedtext
+grestore
+% rhs_sde.cpp->rhs_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2251.86 2981.99 moveto
+2193.08 2916.38 1990.26 2689.98 1921.22 2612.92 curveto
+stroke
+0 0 0 edgecolor
+newpath 1923.5 2610.22 moveto
+1914.22 2605.11 lineto
+1918.29 2614.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1923.5 2610.22 moveto
+1914.22 2605.11 lineto
+1918.29 2614.89 lineto
+closepath stroke
+grestore
+% item_dim.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2899 1760 75.16 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2853.5 1756.4 moveto 91 (item_dim.cpp) alignedtext
+grestore
+% item_dim.cpp->item_dim.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2899 1741.41 moveto
+2899 1675.74 2899 1454.38 2899 1374.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 2902.5 1374.54 moveto
+2899 1364.54 lineto
+2895.5 1374.54 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2902.5 1374.54 moveto
+2899 1364.54 lineto
+2895.5 1374.54 lineto
+closepath stroke
+grestore
+% n_pulse_score.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3095 2587 98.99 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3033 2583.4 moveto 124 (n_pulse_score.cpp) alignedtext
+grestore
+% n_pulse_score.cpp->n_pulse_score.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3093.29 2568.41 moveto
+3087.27 2502.74 3066.95 2281.38 3059.64 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 3063.1 2201.18 moveto
+3058.7 2191.54 lineto
+3056.13 2201.82 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3063.1 2201.18 moveto
+3058.7 2191.54 lineto
+3056.13 2201.82 lineto
+closepath stroke
+grestore
+% rk4.h->integrator.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1745.56 2568.41 moveto
+1740.49 2502.74 1723.38 2281.38 1717.23 2201.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 1720.69 2201.24 moveto
+1716.43 2191.54 lineto
+1713.71 2201.78 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1720.69 2201.24 moveto
+1716.43 2191.54 lineto
+1713.71 2201.78 lineto
+closepath stroke
+grestore
+% engine.h->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2166.9 1330.31 moveto
+2285.28 1266.07 2733 1023.09 2863.25 952.4 curveto
+stroke
+0 0 0 edgecolor
+newpath 2864.95 955.46 moveto
+2872.07 947.61 lineto
+2861.61 949.31 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2864.95 955.46 moveto
+2872.07 947.61 lineto
+2861.61 949.31 lineto
+closepath stroke
+grestore
+% engine.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2666 1760 63.85 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2628.5 1756.4 moveto 75 (engine.cpp) alignedtext
+grestore
+% engine.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2698.36 1743.9 moveto
+2827.91 1679.43 3309.19 1439.95 3455.52 1367.14 curveto
+stroke
+0 0 0 edgecolor
+newpath 3457.28 1370.17 moveto
+3464.67 1362.58 lineto
+3454.16 1363.91 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3457.28 1370.17 moveto
+3464.67 1362.58 lineto
+3454.16 1363.91 lineto
+closepath stroke
+grestore
+% engine.cpp->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2668.05 1741.13 moveto
+2674.97 1680.25 2699.48 1483.88 2744 1327 curveto
+2784.19 1185.37 2856.37 1024.19 2885.88 960.74 curveto
+stroke
+0 0 0 edgecolor
+newpath 2889.18 961.95 moveto
+2890.24 951.41 lineto
+2882.84 958.99 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2889.18 961.95 moveto
+2890.24 951.41 lineto
+2882.84 958.99 lineto
+closepath stroke
+grestore
+% engine.cpp->engine.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2643.65 1742.48 moveto
+2559.72 1676.67 2263.3 1444.25 2167.85 1369.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 2169.8 1366.49 moveto
+2159.77 1363.07 lineto
+2165.48 1371.99 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2169.8 1366.49 moveto
+2159.77 1363.07 lineto
+2165.48 1371.99 lineto
+closepath stroke
+grestore
+% variable.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3736 1760 70 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3694.5 1756.4 moveto 83 (variable.cpp) alignedtext
+grestore
+% variable.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3725.47 1741.68 moveto
+3687.69 1675.96 3558.87 1451.88 3513.76 1373.41 curveto
+stroke
+0 0 0 edgecolor
+newpath 3516.7 1371.51 moveto
+3508.68 1364.58 lineto
+3510.63 1375 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3516.7 1371.51 moveto
+3508.68 1364.58 lineto
+3510.63 1375 lineto
+closepath stroke
+grestore
+% variable.cpp->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3733.76 1741.29 moveto
+3725.17 1676.66 3689.01 1459.48 3578 1327 curveto
+3483.64 1214.39 3066.6 1011.99 2937.34 950.92 curveto
+stroke
+0 0 0 edgecolor
+newpath 2938.72 947.71 moveto
+2928.18 946.61 lineto
+2935.73 954.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2938.72 947.71 moveto
+2928.18 946.61 lineto
+2935.73 954.04 lineto
+closepath stroke
+grestore
+% hasher.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3023 933 63.14 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2986 929.4 moveto 74 (hasher.cpp) alignedtext
+grestore
+% hasher.h
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2005 520 53.24 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1975 516.4 moveto 60 (hasher.h) alignedtext
+grestore
+% hasher.cpp->hasher.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2985.87 917.93 moveto
+2828.72 854.18 2218.7 606.7 2049.01 537.86 curveto
+stroke
+0 0 0 edgecolor
+newpath 2050.22 534.57 moveto
+2039.64 534.05 lineto
+2047.59 541.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2050.22 534.57 moveto
+2039.64 534.05 lineto
+2047.59 541.05 lineto
+closepath stroke
+grestore
+% hasher.h->Eigen
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1981.54 503.26 moveto
+1890.11 437.99 1557.61 200.65 1455.22 127.57 curveto
+stroke
+0 0 0 edgecolor
+newpath 1457.04 124.57 moveto
+1446.86 121.61 lineto
+1452.97 130.26 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1457.04 124.57 moveto
+1446.86 121.61 lineto
+1452.97 130.26 lineto
+closepath stroke
+grestore
+% engine_write.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+1204 1760 94.96 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+1144.5 1756.4 moveto 119 (engine_write.cpp) alignedtext
+grestore
+% engine_write.cpp->writer.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1194.43 1741.41 moveto
+1160.51 1675.47 1045.83 1452.57 1005.32 1373.83 curveto
+stroke
+0 0 0 edgecolor
+newpath 1008.23 1371.83 moveto
+1000.54 1364.54 lineto
+1002 1375.04 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1008.23 1371.83 moveto
+1000.54 1364.54 lineto
+1002 1375.04 lineto
+closepath stroke
+grestore
+% engine_write.cpp->engineimp.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 1275.29 1747.72 moveto
+1550.15 1700.26 2567.49 1523.58 3403 1365 curveto
+3412.38 1363.22 3422.28 1361.29 3431.99 1359.38 curveto
+stroke
+0 0 0 edgecolor
+newpath 3432.9 1362.76 moveto
+3442.02 1357.39 lineto
+3431.54 1355.9 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3432.9 1362.76 moveto
+3442.02 1357.39 lineto
+3431.54 1355.9 lineto
+closepath stroke
+grestore
+% lsoda.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+610 2173 56.07 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+578 2169.4 moveto 64 (lsoda.cpp) alignedtext
+grestore
+% lsoda.cpp->defs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 612.38 2154.45 moveto
+620.79 2088.94 649.13 1868.12 659.31 1788.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 662.82 1788.86 moveto
+660.63 1778.5 lineto
+655.88 1787.97 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 662.82 1788.86 moveto
+660.63 1778.5 lineto
+655.88 1787.97 lineto
+closepath stroke
+grestore
+% rhs_CNLS.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2622 3000 77.99 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2574.5 2996.4 moveto 95 (rhs_CNLS.cpp) alignedtext
+grestore
+% rhs_CNLS.cpp->rhs_CNLS.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2610.68 2981.45 moveto
+2570.47 2915.54 2434.31 2692.4 2386.65 2614.28 curveto
+stroke
+0 0 0 edgecolor
+newpath 2389.48 2612.21 moveto
+2381.29 2605.5 lineto
+2383.51 2615.86 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2389.48 2612.21 moveto
+2381.29 2605.5 lineto
+2383.51 2615.86 lineto
+closepath stroke
+grestore
+% rhs_sde_type.hpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2085 3000 96.87 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2024.5 2996.4 moveto 121 (rhs_sde_type.hpp) alignedtext
+grestore
+% rhs_sde_type.hpp->rhs_sde.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2076.6 2981.45 moveto
+2046.82 2915.67 1946.14 2693.31 1910.57 2614.76 curveto
+stroke
+0 0 0 edgecolor
+newpath 1913.69 2613.16 moveto
+1906.38 2605.5 lineto
+1907.31 2616.05 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1913.69 2613.16 moveto
+1906.38 2605.5 lineto
+1907.31 2616.05 lineto
+closepath stroke
+grestore
+% stable_spectral_pde_1d_tmpl.hpp->comp_funcs.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 825.12 3808.93 moveto
+728.73 3762.75 484.27 3629.95 392 3433 curveto
+285.09 3204.8 413.3 2368.2 440.23 2201.87 curveto
+stroke
+0 0 0 edgecolor
+newpath 443.71 2202.33 moveto
+441.86 2191.9 lineto
+436.8 2201.2 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 443.71 2202.33 moveto
+441.86 2191.9 lineto
+436.8 2201.2 lineto
+closepath stroke
+grestore
+% stable_spectral_pde_1d_tmpl.hpp->stable_ode_tmpl.hpp
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 902.08 3808.85 moveto
+1038.75 3741.98 1514.1 3509.37 1663.61 3436.21 curveto
+stroke
+0 0 0 edgecolor
+newpath 1665.54 3439.16 moveto
+1672.98 3431.62 lineto
+1662.46 3432.88 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 1665.54 3439.16 moveto
+1672.98 3431.62 lineto
+1662.46 3432.88 lineto
+closepath stroke
+grestore
+% toroidal.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+3740 3000 67.88 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+3700 2996.4 moveto 80 (toroidal.cpp) alignedtext
+grestore
+% toroidal.cpp->item.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3742.64 2981.36 moveto
+3750.58 2920.36 3771.02 2721.86 3725 2568 curveto
+3607.38 2174.75 3429.94 2145.44 3245 1779 curveto
+3164.69 1619.86 2958.86 1088.47 2909.67 960.77 curveto
+stroke
+0 0 0 edgecolor
+newpath 2912.89 959.37 moveto
+2906.03 951.3 lineto
+2906.35 961.89 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2912.89 959.37 moveto
+2906.03 951.3 lineto
+2906.35 961.89 lineto
+closepath stroke
+grestore
+% toroidal.cpp->toroidal.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 3736.32 2981.45 moveto
+3723.31 2915.94 3679.47 2695.12 3663.7 2615.73 curveto
+stroke
+0 0 0 edgecolor
+newpath 3667.05 2614.62 moveto
+3661.67 2605.5 lineto
+3660.19 2615.99 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 3667.05 2614.62 moveto
+3661.67 2605.5 lineto
+3660.19 2615.99 lineto
+closepath stroke
+grestore
+% example_rhs.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+2920 3000 92.13 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+2862.5 2996.4 moveto 115 (example_rhs.cpp) alignedtext
+grestore
+% example_rhs.cpp->example_rhs.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 2904.77 2981.72 moveto
+2849.95 2915.9 2662.46 2690.8 2597.98 2613.39 curveto
+stroke
+0 0 0 edgecolor
+newpath 2600.53 2610.98 moveto
+2591.44 2605.54 lineto
+2595.15 2615.46 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 2600.53 2610.98 moveto
+2591.44 2605.54 lineto
+2595.15 2615.46 lineto
+closepath stroke
+grestore
+% writer.cpp
+gsave
+1 setlinewidth
+0 0 0 nodecolor
+954 1760 60.81 18.38 ellipse_path stroke
+0 0 0 nodecolor
+14 /Times-Roman set_font
+919 1756.4 moveto 70 (writer.cpp) alignedtext
+grestore
+% writer.cpp->writer.h
+gsave
+1 setlinewidth
+0 0 0 edgecolor
+newpath 955.66 1741.41 moveto
+961.53 1675.74 981.31 1454.38 988.43 1374.8 curveto
+stroke
+0 0 0 edgecolor
+newpath 991.94 1374.81 moveto
+989.34 1364.54 lineto
+984.97 1374.19 lineto
+closepath fill
+1 setlinewidth
+solid
+0 0 0 edgecolor
+newpath 991.94 1374.81 moveto
+989.34 1364.54 lineto
+984.97 1374.19 lineto
+closepath stroke
+grestore
+endpage
+showpage
+grestore
+%%PageTrailer
+%%EndPage: 1
+%%Trailer
+%%Pages: 1
+%%BoundingBox: 36 36 612 745
+end
+restore
+%%EOF

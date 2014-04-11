@@ -1,11 +1,7 @@
 #ifndef stable_h
 #define stable_h
 #include "simulation.h"
-#include "rhs/rhs.h"
 #include "integrator/integrator.h"
-#include "utils/vartype.hpp"
-#include <memory>
-class writer;
 //!A system that attempts to reach an equilibrium
 /*! This class defines a system that tries to reach an equilibrium
  * The actual implementation lets the user define a function get_change, which
@@ -47,12 +43,6 @@ class stable:public simulation, public vartype{
 class stable_ode:public stable{
     protected:
         std::shared_ptr<stable_ode> actual;
-        double tcur;
-        comp* restr ucur, * restr ulast;
-        //!This is the length of integration for each step
-        double int_len;
-        //!This is the starting time
-        double t0; 
         //!This defines the integrator being used
         integrator* inter;
         //T!his applies operations before the integration occurs

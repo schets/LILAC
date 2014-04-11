@@ -1,8 +1,6 @@
 #include "engine.h"
 #include "engineimp.h"
 #include "item.h"
-#include "defs.h"
-#include <stdlib.h>
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }

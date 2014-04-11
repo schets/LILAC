@@ -1,8 +1,6 @@
 #ifndef RHS_IMP_H
 #define RHS_IMP_H
-#include "rhs.h"
-#include "rhs_type.h"
-#include "utils/mempool.hpp"
+#include "rhs_type.hpp"
 //!The class defining the CNLS equations
 /*!
  * This class provides an implementation of the coupled nonlinear schrodinger equations

@@ -1,10 +1,7 @@
-#include "rhs/rhs.h"
 #include "rhs_SQGLE.h"
-#include "defs.h"
 #include "utils/inline_trig.h"
 #include "utils/comp_funcs.h"
 #include "controller/controller.h"
-#include <cstring>
 comp trap(comp * restr v, size_t s);
 double trap(double * restr v, size_t s);
 /*!
@@ -15,6 +12,11 @@ rhs_SQGLE::~rhs_SQGLE(){}
 inline comp _clog(comp inval){
     return 0.5*log(_sqabs(inval)) + Id*atan2(_imag(inval), _real(inval));
 }
+
+//This is still a hacky class, proably won't see much use anywhere
+//since it is slow. As I result, clenaign it up isn't a big priority
+
+
 int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
 
     uf1= (comp* restr)x;

@@ -6,10 +6,7 @@
 * an effective method for referencing variables throughout the input file
 * It still has good input on how to make an rhs-type class
 */
-#include "defs.h"//This file contains many headers that are useful in C/C++, especially for mathematical functions
-
-#include "rhs.h" //This file contains the base class for rhs-type classes
-#include "rhs_type.h"//This file contains the template for the base class type
+#include "rhs_type.hpp"//This file contains the template for the base class type, along with most basic headers
 //The way this works is through polymorphism, which basically means that the engine sees a class of rhs, but is really accessing a class of type example_rhs
 
 

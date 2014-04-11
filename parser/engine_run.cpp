@@ -1,10 +1,6 @@
 #include "engineimp.h"
-#include "engine.h"
-#include <iostream>
 #include "utils/comp_funcs.h"
-#include "controller/controller.h"
 #include "simulation/simulation.h"
-#include <stdio.h>
 void engineimp::run(){
     simulation* sys;
     values["simulation"]->retrieve(&sys, 0);
@@ -17,5 +13,5 @@ void engineimp::run(){
         cont->control(0, 0);
         update();
     }
-    fftw_cleanup();
+    fft_cleanup();
 }

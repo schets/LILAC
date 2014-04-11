@@ -1,9 +1,5 @@
 #include "engineimp.h"
-#include <string>
-#include <map>
-#include <list>
 #include "graph.h"
-#include "item.h"
 #include "comp_funcs.h"
 void engineimp::read(std::ifstream& fstr){
     _read(fstr);

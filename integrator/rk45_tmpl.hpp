@@ -1,11 +1,8 @@
 #ifndef RK45_TMPL
 #define RK45_TMPL
-#include "utils/defs.hpp"
 #include "integrator.h"
 #include "utils/comp_funcs.hpp"
 #include "rk45.h"
-#include "rhs/rhs_type.h"
-#include "utils/mempool.hpp"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the
@@ -15,12 +12,11 @@
 template<class T>
 class rk45_tmpl:public rk45 {
     protected:
+    double dt_init, dt_min, dt_max, relerr, abserr;
     T* restr f0, * restr f1, * restr f2, * restr f3;
     T* restr f4, * restr f5, * restr f6;
     T* restr u_calc;
-    rhs_type<T>* func;
     double* restr u_calc2;
-//    mempool memp;
     public:
     virtual const std::type_info& vtype() const;
     void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
@@ -91,12 +87,12 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
     if((tcur + dt) > tf){
         dt = tf - tcur;
         err("t0-tf <= dt, consider decreasing the initial timestep. Otherwise mileage may vary",
-                "rk45::integrate", "integrator/rh45.cpp", (item*)func, WARNING);
+                "rk45::integrate", "integrator/rh45.cpp", (item*)rh_val, WARNING);
     }
     int tries=0;
 
     //while this seems odd, it helps streamline the inner integrator loop
-    func->dxdt(u0, f6, tcur);
+    rh_val->dxdt(u0, f6, tcur);
     while(tcur < tf){
         //this function=lol at compiler loop unrolling
         if((tcur + dt) > tf){
@@ -112,39 +108,39 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
             u_calc[i] = u0[i] + b1*f0[i]*dt;
         }
         tcur = ts + a[0]*dt;
-        func->dxdt(u_calc, f1, tcur); 
+        rh_val->dxdt(u_calc, f1, tcur); 
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b2[0]*f0[i] + b2[1] * f1[i]);
         }
         tcur = ts + a[1]*dt;
-        func->dxdt(u_calc, f2, tcur);
+        rh_val->dxdt(u_calc, f2, tcur);
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b3[0]*f0[i] + b3[1] * f1[i] + b3[2]*f2[i]);
         }
         tcur = ts + a[2]*dt;
-        func->dxdt(u_calc, f3, tcur);
+        rh_val->dxdt(u_calc, f3, tcur);
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b4[0]*f0[i] + b4[1] * f1[i] + b4[2]*f2[i] + b4[3]*f3[i]);
         }
         tcur = ts + a[3]*dt;
-        func->dxdt(u_calc, f4, tcur);
+        rh_val->dxdt(u_calc, f4, tcur);
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b5[0]*f0[i] + b5[1] * f1[i] + b5[2]*f2[i] + 
                     b5[3]*f3[i] + b5[4]*f4[i]);
         }
         tcur = ts + a[4]*dt;
-        func->dxdt(u_calc, f5, tcur);   
+        rh_val->dxdt(u_calc, f5, tcur);   
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(b6[0]*f0[i] + b6[1] * f1[i] + b6[2]*f2[i] + 
                     b6[3]*f3[i] + b6[4]*f4[i] + b6[5]*f5[i]);
         }
         tcur = ts + a[5]*dt;
-        func->dxdt(u_calc, f6, tcur);   
+        rh_val->dxdt(u_calc, f6, tcur);   
         tcur = ts;
         //calculate the magnitude of the error, and the fourth/5th order arrays
         //The references that I found are for real values
@@ -177,7 +173,7 @@ int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
             num_fail++;
             if(num_fail > 10){
                 err("Estimated timestep is smaller than minimum timestep too many times, exiting",
-                        "rk45::integrate", "integrator/rk45.cpp", (item*)func, WARNING);
+                        "rk45::integrate", "integrator/rk45.cpp", (item*)rh_val, WARNING);
                 f0=tmp;
                 f6 = tmp6;
                 u_calc=tmpc;
@@ -244,14 +240,13 @@ rk45_tmpl<T>::~rk45_tmpl(){
 
 template<class T>
 std::string rk45_tmpl<T>::type() const{
-    return typeid(*this).name();
+    return std::string("rk45_tmpl<") + this->vname() + ">";
 }
 template<class T>
 void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     integrator::postprocess(dat);
-    func = dynamic_cast<rhs_type<T>*>(rh_val);
-    if(!func){
-        err("Bad rhs type passed to rk45 integrator", "rk45_tmpl::integrate",
+    if(!rh_val->compare<T>()){
+        err("Bad rhs type passed to rk45 integrator", "rk45_tmpl::postprocess",
                 "rhs/rk45_tmpl.h", FATAL_ERROR);
     }
     dat["dt_init"]->retrieve((void*)&dt_init, this);

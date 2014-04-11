@@ -1,7 +1,5 @@
 #ifndef graph_h
 #define graph_h
-#include <list>
-#include <memory>
 #include "item.h"
 class graph{
     class graphnode{

@@ -1,11 +1,8 @@
 #ifndef ENGINEIMP_H
 #define ENGINEIMP_H
-#include <map>
 #include <list>
-#include <string>
 #include <iostream>
 #include <fstream>
-#include <memory>
 #include "item.h"
 class engine;
 class writer;

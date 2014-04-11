@@ -1,5 +1,4 @@
 #include "stable.h"
-#include "objective/objective.h"
 #include "utils/comp_funcs.h"
 #include "stable_ode_tmpl.hpp"
 #include "writer/writer.h"

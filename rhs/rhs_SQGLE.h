@@ -1,13 +1,10 @@
-#include "rhs.h"
-#include "rhs_type.h"
-#include "defs.h"
+#include "rhs_type.hpp"
 
 class rhs_SQGLE: public rhs_type<comp>{
     //This class defines the rhs equations for the coupled CNLS
     comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,
          * restr comp_out, * restr comp_out_r, * restr comp_in_r;
     double * restr sq1, * restr sq2,  * restr ksq;
-    fftw_plan ffor, fback;
     double a1, a2, a3, ap;
     double g0;
     double e0;

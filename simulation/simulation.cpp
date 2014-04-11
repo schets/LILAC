@@ -1,4 +1,3 @@
-#include "simulation.h"
 #include "stable.h"
 #include "jones_optical.h"
 #include "utils/comp_funcs.h"

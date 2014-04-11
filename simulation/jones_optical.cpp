@@ -1,11 +1,7 @@
 #include "writer/writer.h"
 #include "jones_optical.h"
-#include "comp_funcs.h"
+#include "utils/comp_funcs.h"
 #include "utils/noise.h"
-#include <set>
-#include <cstdlib>
-#include <ctime>
-#include <cmath>
 
 /*!
  * class to allow automatic updating of the matrices involved

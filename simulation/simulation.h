@@ -1,9 +1,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
-#include "utils/defs.h"
 #include "parser/item.h"
 #include "controller/controller.h"
-#include "objective/objective.h"
 class writer;
 /*!
  * This class defines the system being simulated. It simulates a run of the system

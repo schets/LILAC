@@ -1,6 +1,5 @@
 #ifndef EULER_SDE_H
 #define EULER_SDE_H
-
 #include "../utils/defs.h"
 #include "integrator.h"
 //!Dormand-Prince integrator

@@ -2,6 +2,10 @@
 #include "parser/item.h"
 #include <map>
 #include <set>
+extern "C"{
+#include <complex.h>
+#include "fftw3.h"
+}
 void* al_malloc(size_t ss){
     void* rv = fftw_malloc(ss);
     if(!rv){
@@ -102,6 +106,10 @@ void ifft(comp* _in, comp* _out, const size_t len){
     }
 }
 
+void fft_cleanup(){
+    fftw_cleanup();
+}
+
 void trim(std::string& curline){
     size_t startpos = curline.find_first_not_of("\n\r\t ");
     if(startpos != std::string::npos){
@@ -147,7 +155,7 @@ namespace __HIDER__{
         }
     };
 }
- std::string get_unique_name(std::string base){
-  static __HIDER__::_unique_name nn;
-  return nn.get_unique_name(base);
-  }
+std::string get_unique_name(std::string base){
+    static __HIDER__::_unique_name nn;
+    return nn.get_unique_name(base);
+}

@@ -1,7 +1,5 @@
-#include "rhs/rhs.h"
 #include "rhs_CNLS.h"
-#include "comp_funcs.h"
-#include <cstring>
+#include "comp_funcs.hpp"
 
 comp trap(comp * restr v, size_t s){
     ALIGNED(v);

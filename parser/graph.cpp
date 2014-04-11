@@ -1,8 +1,5 @@
 #include "engineimp.h"
 #include "graph.h"
-#include "utils/defs.hpp"
-#include <iostream>
-#include <stdlib.h>
 void graph::insert(std::shared_ptr<item>  it_p){
     if(nodes.count(it_p->name())){
         std::cout << "Warning: variable " << it_p->name() << "has already been entered\n";

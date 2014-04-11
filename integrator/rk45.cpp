@@ -1,6 +1,5 @@
 #include "integrator.h"
 #include "../utils/comp_funcs.h"
-#include "../rhs/rhs.h"
 #include "rk45.h"
 #include "rk45_tmpl.hpp"
 #include "utils/type_constructor.hpp"
@@ -24,8 +23,3 @@ void rk45::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     type_constructor<rk45_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);
 }
-void rk45::parse(std::string inval){
-    inval[0]=0;//This prevents unused parameter warnings
-};
-void rk45::print() const{
-};

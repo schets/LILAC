@@ -5,15 +5,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
-#include <sstream>
 #include "../eigen3/Eigen/Eigen"
 #include <memory>
-#include <typeinfo>
-extern "C" {
-#include <complex.h>
-#include <math.h>
-#include <time.h>
-}
 #ifdef ICC
 #define restr restrict
 #define ALIGNED(x) __assume_aligned(x, 16)

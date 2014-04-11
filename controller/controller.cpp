@@ -1,6 +1,4 @@
-#include "parser/item.h"
 #include "controller.h"
-#include <vector>
 #include "comp_funcs.h"
 #include "toroidal.h"
 //!Deprecated
@@ -37,8 +35,8 @@ void controller::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
     inval["names"]->retrieve(&names, this);
     inval["!start_ind"]->retrieve(&index, this);
     //perform processing on the names
-    //will actually do this right over the weekend
     //also with typechecking
+    //will do this right sometime
  /*   vars.resize(4);
     vars[0] = (variable*)inval["a1"];
     vars[1] = (variable*)inval["a2"];

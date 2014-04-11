@@ -1,4 +1,3 @@
-#include "defs.h"
 #include "item.h"
 #include "engineimp.h"
 /*!

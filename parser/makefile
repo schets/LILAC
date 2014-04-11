@@ -1,6 +1,6 @@
 include ../make.inc
 LIB_PATH=$(LIB_MAIN)
-ENG_OBJ= $(LIB_PATH)/engine_main.o $(LIB_PATH)/item.o $(LIB_PATH)/engine_read.o $(LIB_PATH)/graph.o $(LIB_PATH)/engine_run.o $(LIB_PATH)/engine_write.o $(LIB_PATH)/variable.o 
+ENG_OBJ= $(LIB_PATH)/engine_main.o $(LIB_PATH)/item.o $(LIB_PATH)/engine_read.o $(LIB_PATH)/graph.o $(LIB_PATH)/engine_run.o $(LIB_PATH)/engine_write.o $(LIB_PATH)/variable.o  $(LIB_PATH)/item_dim.o
 all: $(ENG_OBJ)
 
 
@@ -32,6 +32,11 @@ $(LIB_PATH)/engine_write.o:engine_write.cpp $(INLINE_HEADERS)
 $(LIB_PATH)/variable.o:variable.cpp $(INLINE_HEADERS) 
 	@rm -f $(LIB_PATH)/variable.o
 	$(CPP) -c variable.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/variable.o
+
+$(LIB_PATH)/item_dim.o:item_dim.cpp $(INLINE_HEADERS)
+	@rm -f $(LIB_PATH)/item_dim.o
+	$(CPP) -c item_dim.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/item_dim.o
+
 
 .PHONY: clean
 

@@ -1,7 +1,5 @@
 #ifndef RK4_H
 #define RK4_H
-
-#include "../utils/defs.h"
 #include "integrator.h"
 //!Dormand-Prince integrator
 /*!

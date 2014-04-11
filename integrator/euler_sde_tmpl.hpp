@@ -55,6 +55,10 @@ void euler_sde_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> 
         err(std::string("The rhs, ") + rh_val->name() + ", is not part of the rhs_sde inheritance heirarchy",
                 this->type() + "::postprocess", "integrator/euler_sde_tmpl.hpp", FATAL_ERROR);
     }
+    if(!func->compare<T>()){
+        err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
+                "integrator/euler_sde_tmpl.h", FATAL_ERROR);
+    }
     dat["stepsize"]->retrieve((void*)&stepsize, this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "euler_sde_tmpl::postprocess",

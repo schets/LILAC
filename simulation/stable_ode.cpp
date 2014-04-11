@@ -1,4 +1,3 @@
-#include "stable.h"
 #include "stable_ode_tmpl.hpp"
 #include "utils/type_constructor.hpp"
 #include "utils/comp_funcs.hpp"

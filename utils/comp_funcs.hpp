@@ -2,12 +2,6 @@
 #ifndef COMP_FUNCS_H
 #define COMP_FUNCS_H
 #include "defs.h"
-#include <cmath>
-#include <string>
-#include <vector>
-extern "C"{
-#include <fftw3.h>
-}
 //These are over twice as fast as using the standard library functions,
 //or even using intrinsics. They allow vectorizing
 using std::abs;
@@ -54,7 +48,7 @@ inline double energy(double* v, size_t s){
 void fft(comp* _in, comp* _out, const size_t len);
 //!This functions performs a normalized fourier transform in the backwards direction
 void ifft(comp* _in, comp* _out, const size_t len);
-
+void fft_cleanup();
 template<typename T>
 inline std::vector<T> appendvec(std::vector<T> a, const std::vector<T>& b){
     a.insert(a.begin(), b.begin(), b.end());
