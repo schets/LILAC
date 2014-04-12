@@ -10,6 +10,10 @@ void mempool::set_dim(size_t num, size_t mal){
     total_bytes += (1+vsizes.size())*mal;
     std::list<char*> held_ptrs;
     bool is_done = false;
+    if(izard){
+        al_free(izard);
+        izard = 0;
+    }
     while(!is_done){
         //try setting aligned pointers in currently allocated memory
         is_done=true;

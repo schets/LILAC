@@ -24,7 +24,7 @@ double trap(double * restr v, size_t s){
  * Destructor for rhs_CNLS
  * */
 rhs_CNLS::~rhs_CNLS(){}
-
+    
 int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
     uf1= (comp* restr)x;
     uf2=(comp* restr)(x+NUM_TIME_STEPS);
@@ -108,9 +108,9 @@ void rhs_CNLS::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     dt = LENGTH_T/NUM_TIME_STEPS;
     dat["g0"]->retrieve(&g0, this);
     dat["e0"]->retrieve(&e0, this);
-    memp.create(NUM_TIME_STEPS, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
+    memp.create(NUM_TIME_STEPS - 10, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
     //create k values
-
+    memp.set_dim(NUM_TIME_STEPS);
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);
     for(size_t i=0; i<NUM_TIME_STEPS/2; i++){
         k[i] = mulval * (2.0*i/(1.0*NUM_TIME_STEPS));

@@ -1,8 +1,6 @@
 #include "item_dim.h"
-void item_dim::_do_mem_update(){
- /*   err(this->name() + std::string(" of type ") + this->type() +
-        std::string(" does not support a changing dimension."),
-        "item_dim::_do_mem_update()", "parser/item.cpp", FATAL_ERROR);*/
+void item_dim::_do_mem_update(size_t dim_old){
+    memp.set_dim(dimension);
 }
 /*
  * Postprocesses the item_dim class, which sets the dimension to the input variable dimension
@@ -40,10 +38,8 @@ void item_dim::add_as_parent(item_dim* p){
                 WARNING);
     }
     else{
-        if(!p->children.count(this)){
-            p->children.insert(this);
-            parent=p;
-        }
+        p->children.insert(this);
+        parent=p;
     }
 }
 
@@ -64,8 +60,9 @@ void item_dim::update_dim(size_t dim_new){
     }
 }
 void item_dim::update_dim(size_t dim_new, size_t dummy){
+    size_t dim_old = dimension;
     dimension = dim_new;
-    _do_mem_update();
+    _do_mem_update(dim_old);
     for(auto child : children){
         child->update_dim(dim_new, dummy);
     }

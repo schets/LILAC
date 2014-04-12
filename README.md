@@ -26,13 +26,12 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 TODO (kinda ordered by priority):
 
 1. Implement neural network model
-2. Implement method for dynamically changing dimension
-3. Remove uneeded dependencies, refactor code
-4. Document configuration files
-5. Find better method of transferring data from item* to value than void*
-6. Allow referring to variables by name in input files
-7. Allow passing specific parameters to variables
-8. Implement effecient way to reserve many different dimensions in the mempool
-9. Write map-fold scripts for analyzing output
-10. Refactor LSODA to run in integrator system
-11. Get documentation up to date
+2. Remove uneeded dependencies, refactor code
+3. Document configuration files
+4. Find better method of transferring data from item* to value than void*
+5. Allow referring to variables by name in input files
+6. Allow passing specific parameters to variables
+7. Implement effecient way to reserve many different dimensions in the mempool
+8. Write map-fold scripts for analyzing output
+9. Refactor LSODA to run in integrator system
+10. Get documentation up to date

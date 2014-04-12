@@ -11,7 +11,7 @@ class item_dim:public item{
 
     protected:
     void print_upstream();
-    virtual void _do_mem_update();
+    virtual void _do_mem_update(size_t dim_old);
     mempool memp;
     std::set<item_dim*> children;
     item_dim* parent;
