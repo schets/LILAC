@@ -1,7 +1,8 @@
 #include "integrator.h"
-#include "../utils/comp_funcs.hpp"
 #include "rk45.h"
 #include "rk45_tmpl.hpp"
+#include "utils/item_heads.hpp"
+#include "../utils/comp_funcs.hpp"
 #include "utils/type_constructor.hpp"
 int rk45::integrate(void* restr u, double t0, double tf){
     return actual->integrate(u, t0, tf);
@@ -18,7 +19,7 @@ std::vector<std::string> rk45::dependencies() const{
 std::string rk45::type() const{
     return "rk45";
 }
-void rk45::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rk45::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<rk45_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);

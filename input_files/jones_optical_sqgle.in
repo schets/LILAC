@@ -1,9 +1,9 @@
 jones_optical simulation 
-real8 t0 0
-real8 int_len 1.5
-real8 change_threshold 1e-3
+double t0 0
+double int_len 1.5
+double change_threshold 1e-3
 integer num_jones_segments 0
-real8 jones_int_dist 0.2
+double jones_int_dist 0.2
 integer num_pulses 1
 integer max_iterations 50
 n_pulse_score objective

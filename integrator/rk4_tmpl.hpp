@@ -1,5 +1,6 @@
 #include "integrator.h"
 #include "rk4.h"
+#include "item_heads.hpp"
 template<class T>
 class rk4_tmpl:public rk4 {
     protected:
@@ -9,7 +10,7 @@ class rk4_tmpl:public rk4 {
     double stepsize;
     public:
     virtual const std::type_info& vtype() const;
-    void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
+    void postprocess(input& dat);
     std::string type() const;
     int integrate(void* restr u, double t0, double tf);
     virtual ~rk4_tmpl();
@@ -142,7 +143,7 @@ std::string rk4_tmpl<T>::type()const{
     return std::string("rk4_tmpl<") + this->vname() + ">";
 }
 template<class T>
-void rk4_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rk4_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
     if(!rh_val->compare<T>()){
         err("Bad rhs type passed to rk4 integrator", "rk4_tmpl::postprocess",
@@ -152,7 +153,7 @@ void rk4_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat
     retrieve(stepsize, dat["stepsize"], this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "rk4_tmpl::postprocess",
-                "integrator/rk4.hpp", dat["stepsize"], FATAL_ERROR);
+                "integrator/rk4.hpp", dat["stepsize"].get(), FATAL_ERROR);
     }
     memp.create(dimension, &f0, &f1, &f2, &f3, &u_calc);
 }

@@ -1,6 +1,7 @@
 #ifndef STABLE_ODE_TMPL_HPP
 #define STABLE_ODE_TMPL_HPP
 #include "stable.h"
+#include "item_heads.hpp"
 template<class T>
 class stable_ode_tmpl:public stable_ode{
     protected:
@@ -21,7 +22,7 @@ class stable_ode_tmpl:public stable_ode{
     public:
         double score();
         const std::type_info& vtype() const;
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
+        virtual void postprocess(input& invals);
         virtual std::string type() const;
         virtual ~stable_ode_tmpl();
 };
@@ -50,7 +51,7 @@ void stable_ode_tmpl<T>::iterate_system(){
 }
 
 template <class T>
-void stable_ode_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void stable_ode_tmpl<T>::postprocess(input& invals){
     stable::postprocess(invals);
     retrieve(inter, invals["integrator"], this);
     if(!inter->compare<T>()){

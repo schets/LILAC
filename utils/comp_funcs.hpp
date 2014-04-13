@@ -6,7 +6,7 @@
 //Although I usually want to remove redundnant headers, this header is going to be included by
 //99% of the files that include comp_funcs.hpp"
 //If that stops being true in the future, I'll change it
-#include "retrieve_checker.hpp"
+#include "item_heads.hpp"
 //These are over twice as fast as using the standard library functions,
 //or even using intrinsics. They allow vectorizing
 using std::abs;

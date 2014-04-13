@@ -10,7 +10,7 @@ class n_pulse_score:public objective{
     virtual std::string type() const;
     virtual double score(comp* invals);
     virtual std::vector<std::string> dependencies() const;
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& inval);
+    virtual void postprocess(input& inval);
     ~n_pulse_score();
 };
 #endif

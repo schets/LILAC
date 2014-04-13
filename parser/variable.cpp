@@ -1,6 +1,6 @@
 #include "item.h"
 #include "engineimp.h"
-#include "retrieve_checker.hpp"
+#include "item_heads.hpp"
 /*!
  * This function prints the value of the current variable
  */
@@ -98,10 +98,14 @@ void variable::copy(double* inval){
     *inval = value;
 }
 
-//! Deprecated, won't be around too long
-void variable::parse(std::string inval){
-    real8::parse(inval);
+void variable::parse(const std::string& inval){
+    _double::parse(inval);
     inc_size=value;
     low_bound=0;
     high_bound=6.2382;
 }
+
+std::string variable::type()const{
+    return "variable";
+}
+

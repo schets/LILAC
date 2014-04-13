@@ -17,7 +17,7 @@ template<typename T> class rhs_type:public rhs{
     virtual const std::type_info& vtype() const final{
         return typeid(T);
     }
-    void postprocess(std::map<std::string, item*>& dat){
+    void postprocess(input& dat){
         rhs::postprocess(dat);
     }
     int dxdt(void* restr x, void* restr dx, double t) final{

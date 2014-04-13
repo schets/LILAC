@@ -92,7 +92,7 @@ std::string rhs_CNLS::type() const {
 /*!
  * Initializes the rhs_CNLS class  
  */
-void rhs_CNLS::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rhs_CNLS::postprocess(input& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension/2;
     if(NUM_TIME_STEPS*2 != dimension){

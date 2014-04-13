@@ -26,7 +26,7 @@ class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     virtual double get_change();
     public:
     virtual double score();
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
+    virtual void postprocess(input& invals);
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual ~jones_optical();

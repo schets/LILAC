@@ -1,12 +1,19 @@
 #include "engineimp.h"
 #include "graph.h"
 #include "comp_funcs.hpp"
-
+#include "input.h"
 void engineimp::read(std::ifstream& fstr){
     _read(fstr);
     sort_pp();
 }
 void engineimp::_read(std::ifstream& fstr){
+    static std::set<std::string> native_names = {
+        "double",
+        "float",
+        "integer",
+        "unsigned",
+        "string",
+        "var"};
     const std::string delim=" ";
     const std::string comment="!";
     const char command = '#';
@@ -44,6 +51,7 @@ void engineimp::_read(std::ifstream& fstr){
         ltoken(token, curline);
         //this token should be the variable type
         curit = item::create(token, this);
+        std::string type_tok = token;
         if(curline.empty()){
             std::cout<<"Variables need a name and a value, "<<
                 "error on line " << line << std::endl;
@@ -52,7 +60,13 @@ void engineimp::_read(std::ifstream& fstr){
         //get next token, should be variable name
         ltoken(token, curline);
         curit->setname(token);
-        curit->parse(curline);
+        if(native_names.count(type_tok)){
+            //if token is one of the native types, parse the input
+            std::static_pointer_cast<native_item>(curit)->parse(curline);
+        }
+        else{
+            //add input string to input somehow?
+        }
         values[token]=curit; 
         //get the current line from the string
     }
@@ -69,7 +83,8 @@ void engineimp::sort_pp(){
     graph gg;
     auto sorted(gg.sort(post_order));
     for(auto val:sorted){
-        val->postprocess(values);
+        input inv = input(values);
+        val->postprocess(inv);
     }
 }
 

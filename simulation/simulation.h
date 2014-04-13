@@ -20,7 +20,7 @@ class simulation:public item_dim{
         //i!This function returns the score of the system in its current state
         virtual double score() = 0;
         static item* create(std::string name);
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& inval)=0;
+        virtual void postprocess(input& inval)=0;
         virtual std::vector<std::string> dependencies() const = 0;
 };
 #endif

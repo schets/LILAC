@@ -14,7 +14,7 @@ std::vector<std::string> euler_sde::dependencies() const{
 std::string euler_sde::type() const{
     return "euler_sde";
 }
-void euler_sde::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void euler_sde::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<euler_sde_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);

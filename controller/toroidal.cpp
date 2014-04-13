@@ -23,7 +23,7 @@ std::vector<std::string> toroidal::dependencies() const{
  * @param dat Map containing the input values
  * \sa controller::postprocess, item_dim::postprocess
  */
-void toroidal::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void toroidal::postprocess(input& dat){
     controller::postprocess(dat);
     num_int=0;
     int _iterations;

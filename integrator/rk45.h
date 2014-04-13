@@ -12,7 +12,7 @@ class rk45:public integrator{
     std::shared_ptr<rk45> actual;
     public:
     const std::type_info& vtype() const;
-    void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
+    void postprocess(input& dat);
     std::vector<std::string> dependencies() const;
     std::string type() const;
     int integrate(void* restr u, double t0, double tf);

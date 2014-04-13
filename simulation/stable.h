@@ -20,7 +20,7 @@ class stable:public simulation, public vartype{
         //iterates the system forwards in time
         virtual void iterate_system() = 0;
         virtual std::vector<std::string> dependencies() const = 0;
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& invals) = 0;
+        virtual void postprocess(input& invals) = 0;
         int num_gone;
         int round;
         int bad_res;
@@ -55,7 +55,7 @@ class stable_ode:public stable{
         const std::type_info& vtype() const;
         double score();
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
+        virtual void postprocess(input& invals);
         virtual std::string type() const;
         virtual ~stable_ode();
 };

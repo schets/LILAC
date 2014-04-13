@@ -14,7 +14,7 @@ std::vector<std::string> rk4::dependencies() const{
 std::string rk4::type() const{
     return "rk4";
 }
-void rk4::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rk4::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<rk4_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);

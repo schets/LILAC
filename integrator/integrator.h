@@ -14,7 +14,7 @@ class integrator:public item_dim, public vartype{
         rhs* rh_val;
     public:
         static item* create(std::string inval);
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& inval);
+        virtual void postprocess(input& inval);
         //!Deprecated
         virtual void parse(std::string inval){};
         virtual std::vector<std::string> dependencies() const = 0;

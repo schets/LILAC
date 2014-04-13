@@ -23,7 +23,7 @@ std::vector<std::string> integrator::dependencies() const {
  * at the appropriate level of detail
  * \sa item_dim::postprocess
  */
-void integrator::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void integrator::postprocess(input& dat){
     item_dim::postprocess(dat); 
     retrieve(rh_val, dat["rhs"], this);
 }

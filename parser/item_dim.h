@@ -23,7 +23,7 @@ class item_dim:public item{
     inline size_t get_dimension() const{
         return dimension;
     }
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& dat);
+    virtual void postprocess(input& dat);
     virtual std::vector<std::string> dependencies() const = 0;
 };
 #endif

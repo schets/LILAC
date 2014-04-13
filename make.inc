@@ -1,10 +1,20 @@
 export
-CPP=gcc
+CPP=clang
+#CPP=gcc
+#CPP=icc
 ifeq ($(CPP), gcc)
-FASTMATH=-funroll-loops -ffast-math -funsafe-loop-optimizations -fstrict-aliasing -fomit-frame-pointer 
+FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer 
 CFLAGS=-I../ -I./utils -std=c++11 -g -DGCC  -m64 -O3 -march=native -Wall -Werror
 LD=gcc
 LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm 
+endif
+ifeq ($(CPP), clang)
+#clang generates significantly worse code than gcc for this project, but compiles faster
+#so might as well make it a default debug build
+FASTMATH=
+CFLAGS=-I../ -I./utils -std=c++11 -g -DCLANG -DNDEBUG -DDEBUG -m64 -Werror -W
+LD=clang
+LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm 
 endif
 ifeq ($(CPP), CC)
 export FAST_FLAGS= -ansi-alias -fargument-noalias -fno-alias -funroll-loops -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions

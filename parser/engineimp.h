@@ -26,7 +26,7 @@ class engineimp{
     void execute_command(std::string inval);
     void update();
     std::string curdir;
-    std::map<std::string, std::shared_ptr<item>> values;
+    std::map<std::string, std::shared_ptr<item> > values;
     std::set<std::shared_ptr<item>> update_vars;
     std::list<std::shared_ptr<const writer>> dats;
     void write_data(std::shared_ptr<const writer> inval, std::ofstream& fwrite);

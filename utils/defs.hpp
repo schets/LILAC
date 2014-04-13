@@ -1,5 +1,11 @@
 #ifndef DEF_H
 #define DEF_H
+#ifdef CLANG
+//this allows Eigen to compile under -Wall
+#pragma clang diagnostic ignored "-Wdeprecated-register"
+//Not every function uses the full interface
+#pragma clang diagnostic ignored "-Wunused-parameter"
+#endif
 #include <complex>
 #include <cstdlib>
 #include <iostream>
@@ -8,20 +14,13 @@
 //#include "../eigen3/Eigen/Eigen"
 #include <memory>
 #ifdef ICC
+//only worrying about mega-aligned stuff like this for icc, rest is blank for easier compatibility
 #define restr restrict
 #define ALIGNED(x) __assume_aligned(x, 16)
 #define MAKE_ALIGNED __declspec(align(16))
 #else
 #define restr __restrict__
-template<class T>
-inline T* restr ___make_aligned___(T* restr ival){
-#ifdef GCC
-    return (T*)__builtin_assume_aligned(ival, 16);
-#else
-    return inval
-#endif
-}
-#define ALIGNED(x) x=___make_aligned___(x)
+#define ALIGNED(x) 
 #define MAKE_ALIGNED
 #endif
 //#define restr

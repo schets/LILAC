@@ -13,7 +13,7 @@ void stable_ode::iterate_system(){
     actual->iterate_system();
 }
 
-void stable_ode::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void stable_ode::postprocess(input& invals){
     retrieve(inter, invals["integrator"], this);
     type_constructor<stable_ode_tmpl>::create(&actual, inter);
     actual->postprocess(invals);

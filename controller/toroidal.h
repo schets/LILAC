@@ -16,7 +16,7 @@ class toroidal:public controller{
     public:
     virtual void addvar(std::weak_ptr<variable> v); 
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& inval);
+        virtual void postprocess(input& inval);
         virtual std::string type() const;
         virtual void control(comp* u, objective* obj);
         virtual char is_good();

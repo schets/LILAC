@@ -5,14 +5,13 @@
 #include "../simulation/simulation.h"
 #include <sstream>
 #include "comp_funcs.hpp"
-#include "retrieve_checker.hpp"
-void item::parse(std::string inval){
-}
-
+#include "item_heads.hpp"
 item::~item(){}
 item::item(){
     has_write_name=0;
     holder=0;
+}
+void item::postprocess(input& indat){
 }
 void item::set_write_name(std::string wname){
     has_write_name=1;
@@ -23,6 +22,12 @@ const std::string& item::write_name() const{
         return _write_name;
     }
     return _name;
+}
+
+std::vector<std::string> native_item::dependencies() const{
+    return std::vector<std::string>();
+}
+void native_item::postprocess(input& inval){
 }
 /*!
  * This sets the value of object passed equal to the 
@@ -75,8 +80,7 @@ const std::string& item::name()const {
     return _name;
 }
 
-//!Deprecated
-void real8::parse(std::string inval){
+void _double::parse(const std::string& inval){
     std::stringstream convert(inval);
     convert >> value;
 }
@@ -85,7 +89,7 @@ void real8::parse(std::string inval){
  * Stores the value in the address pointed to by inval
  * @param inval Address where the value of the real8 is stored
  */
-void real8::_retrieve(retrieve_wrapper&& inval, item* caller){
+void _double::_retrieve(retrieve_wrapper&& inval, item* caller){
     inval.check_and_get_type(typeid(double), &value);
 }
 
@@ -93,32 +97,50 @@ void real8::_retrieve(retrieve_wrapper&& inval, item* caller){
  * Returns the type of real8
  * @return Type of real8 class, which is "real8"
  */
-std::string real8::type() const{
-    return "real8";
+std::string _double::type() const{
+    return "double";
 }
 
-/*!
- * Returns dependencies for real8 class
- * @return Dependencies of real8 type, for which there are none
- */
-std::vector<std::string> real8::dependencies() const{
-    std::vector<std::string> w;
-    return w;
-}
 /*!
  *Prints the value, along with the name
  */
-void real8::print() const{
+void _double::print() const{
     std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
 }
 
+//_float functions
+//
+void _float::parse(const std::string& inval){
+    std::stringstream convert(inval);
+    convert >> value;
+}
+
+/*!
+ * Stores the value in the address pointed to by inval
+ * @param inval Address where the value of the real8 is stored
+ */
+void _float::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(float), &value);
+}
+
+/*!
+ * Returns the type of real8
+ * @return Type of real8 class, which is "real8"
+ */
+std::string _float::type() const{
+    return "float";
+}
+
+/*!
+ *Prints the value, along with the name
+ */
+void _float::print() const{
+    std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
+}
 
 //string functions
 
-/*
- * Parse the string input, deprecated
- */
-void string::parse(std::string inval){
+void string::parse(const std::string& inval){
     value = inval;
 }
 /*!
@@ -137,14 +159,6 @@ std::string string::type() const {
     return "string";
 }
 /*!
- * Returns the list of dependencies for the string type, for which there are none
- * @return vector containging dependencies of string type, for which there are none
- */
-std::vector<std::string> string::dependencies() const {
-    std::vector<std::string> w;
-    return w;
-}
-/*!
  * Prints the string
  */
 void string::print() const{
@@ -157,7 +171,7 @@ void string::print() const{
 /*!
  * Parses the input int, deprecated
  */
-void integer::parse(std::string inval){
+void integer::parse(const std::string& inval){
     std::stringstream convert(inval);
     convert >> value;
 }
@@ -176,18 +190,44 @@ std::string integer::type() const{
     return "integer";
 }
 
-/*!
- * Returns the dependencies of the integer type, for which there are none
- */
-std::vector<std::string> integer::dependencies() const{
-    return std::vector<std::string>();
-}
 
 /*!
  * Sets the input pointer to the value of the integer
  */
 void integer::_retrieve(retrieve_wrapper&& inval, item* caller){
     inval.check_and_get_type(typeid(int), &value);
+}
+
+//unisgned functions
+//
+/*!
+ * Parses the input int, deprecated
+ */
+void _unsigned::parse(const std::string& inval){
+    std::stringstream convert(inval);
+    convert >> value;
+}
+/*!
+ * Prints the int
+ */
+void _unsigned::print() const{
+    std::cout << this->type()<<" "<<this->name() << "=" << value << std::endl;
+}
+
+/*!
+ * Returns the name of the _unsigned type
+ * @return Name of the _unsigned type, "unsigned"
+ */
+std::string _unsigned::type() const{
+    return "unsigned";
+}
+
+
+/*!
+ * Sets the input pointer to the value of the _unsigned
+ */
+void _unsigned::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(size_t), &value);
 }
 
 
@@ -202,8 +242,13 @@ void integer::_retrieve(retrieve_wrapper&& inval, item* caller){
  */
 std::shared_ptr<item> item::create(std::string name, engineimp* in){
     item* rval=0;
-    if(name == "real8"){
-        rval = new real8();
+    if(name == "double"){
+        rval = new _double();
+        rval->holder=in;
+        return std::shared_ptr<item>(rval);
+    }
+    if(name == "float"){
+        rval = new _float();
         rval->holder=in;
         return std::shared_ptr<item>(rval);
     }
@@ -214,6 +259,11 @@ std::shared_ptr<item> item::create(std::string name, engineimp* in){
     }
     if(name == "integer"){
         rval = new integer();
+        rval->holder=in;
+        return std::shared_ptr<item>(rval);
+    }
+    if(name == "unsigned"){
+        rval = new _unsigned();
         rval->holder=in;
         return std::shared_ptr<item>(rval);
     }

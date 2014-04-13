@@ -48,7 +48,7 @@ std::vector<std::string> n_pulse_score::dependencies() const {
     std::string deps[] = {"num_pulses"};
     return make_append(deps, objective::dependencies());
 }
-void n_pulse_score::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
+void n_pulse_score::postprocess(input& invals){
     objective::postprocess(invals);
     int _n_pulse = 0;
     retrieve(_n_pulse, invals["num_pulses"], this);

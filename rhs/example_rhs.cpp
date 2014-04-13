@@ -59,7 +59,7 @@ std::vector<std::string> example_rhs::dependencies() const{
  * All of the names returned in the dependencies file exist and have been processed
  * @param dat The data structure containing the variable names
  */
-void example_rhs::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void example_rhs::postprocess(input& dat){
     rhs::postprocess(dat);//always postprocess the parent class first
     //Any class that inherits from rhs, or item_dim, has access to a variable
     //called dimension, which represents the dimension of the problem at hand

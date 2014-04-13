@@ -1,7 +1,7 @@
 #include "controller.h"
 #include "comp_funcs.hpp"
 
-#include "retrieve_checker.hpp"
+#include "item_heads.hpp"
 #include "toroidal.h"
 //!Deprecated
 void controller::parse(std::string inval){
@@ -30,7 +30,7 @@ std::vector<std::string> controller::dependencies() const{
  * @param inval A map containing the input data
  * \sa item_dim::postprocess
  */
-void controller::postprocess(std::map<std::string, std::shared_ptr<item> >& inval){
+void controller::postprocess(input& inval){
     item_dim::postprocess(inval);
     std::string names;
     num_cont = 0;

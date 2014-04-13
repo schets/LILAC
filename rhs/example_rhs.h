@@ -65,7 +65,7 @@ class example_rhs:public rhs_type<comp>{
 
     virtual std::string type() const;
     virtual std::vector<std::string> dependencies() const;
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& indat);
+    virtual void postprocess(input& indat);
     virtual void update();
 
     virtual void parse(std::string nval); //ignor for now, will be going away soon

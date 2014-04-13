@@ -13,7 +13,7 @@ class euler_sde_tmpl: public euler_sde{
     rhs_sde* func;
     public:
     const std::type_info& vtype() const;
-    void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
+    void postprocess(input& dat);
     std::string type() const;
     int integrate(void* u, double t0, double tf);
 
@@ -48,7 +48,7 @@ std::string euler_sde_tmpl<T>::type() const{
     return std::string("euler_sde_tmpl<") + this->vname() + ">";
 }
 template<class T>
-void euler_sde_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void euler_sde_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
     func = dynamic_cast<rhs_sde*>(rh_val);
     if(func == 0){

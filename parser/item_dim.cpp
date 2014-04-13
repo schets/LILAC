@@ -1,15 +1,15 @@
 #include "item_dim.h"
-#include "retrieve_checker.hpp"
+#include "utils/item_heads.hpp"
 void item_dim::_do_mem_update(size_t dim_old){
     memp.set_dim(dimension);
 }
 /*
  * Postprocesses the item_dim class, which sets the dimension to the input variable dimension
  */
-void item_dim::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void item_dim::postprocess(input& dat){
     int dimt;
     parent=0;
-    ::retrieve(dimt, dat["dimension"], this);
+    retrieve(dimt, dat["dimension"], this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
         err(errmess, "int_dim::postprocess", "item/item.cpp",

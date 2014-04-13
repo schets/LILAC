@@ -1,7 +1,7 @@
 rk45 integrator
-real8 relerr 1e-4
-real8 abserr 1e-3
-real8 dt_init .01
-real8 dt_min 1E-10
-real8 dt_max 0.1
+double relerr 1e-4
+double abserr 1e-3
+double dt_init .01
+double dt_min 1E-10
+double dt_max 0.1
 

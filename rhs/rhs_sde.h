@@ -4,7 +4,7 @@
 class rhs_sde: public rhs{
     public:
         std::vector<std::string> dependencies() const;
-        void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
+        void postprocess(input& dat);
         /*!\brief
          * Stores the stochastic portion of the derivative in dw (calculates b(x) in dx = a(x)dt + b(x)dw
          */

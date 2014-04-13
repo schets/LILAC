@@ -16,7 +16,7 @@ class controller:public item_dim{
     size_t num_cont;
     virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& inval);
+    virtual void postprocess(input& inval);
     virtual void addvar(std::weak_ptr<variable> v)=0;
     virtual std::string type() const = 0;
     virtual void control(comp* u, objective* obj) = 0;

@@ -17,7 +17,7 @@ std::vector<std::string> objective::dependencies() const{
  * @param invals The map containing the postprocessed values
  * \sa item_dim::postprocessing
  */
-void objective::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void objective::postprocess(input& invals){
     item_dim::postprocess(invals);
 } 
 

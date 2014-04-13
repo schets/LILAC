@@ -1,3 +1,6 @@
+#ifdef CLANG
+#pragma clang diagnostic ignored "-Wdeprecated-register"
+#endif
 #include "eigen3/Eigen/Eigen"
 #include "writer/writer.h"
 #include "jones_optical.h"
@@ -8,7 +11,7 @@
  * It's hacky but there isn't a generic operator-creator made
  * for creating elements in the post processor of items yet
  */
-class jones_matrix:public real8{
+class jones_matrix:public _double{
 
     public:
         double a1, a2, a3, ap;
@@ -57,7 +60,7 @@ std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments", "jones_int_dist"};
     return make_append(deps, stable_spectral_pde_1d_tmpl<comp>::dependencies());
 }
-void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void jones_optical::postprocess(input& invals){
 #ifdef gen_t_dat
     func_dat=fopen("python/grad_data2.out", "w");
     func_score = fopen("python/score_data2.out", "w");

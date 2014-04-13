@@ -42,7 +42,7 @@ std::vector<std::string> stable::dependencies() const{
     return make_append(deps, simulation::dependencies());
 }
 
-void stable::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
+void stable::postprocess(input& invals){
     num_gone=0;
     simulation::postprocess(invals);
     retrieve(change_threshold, invals["change_threshold"], this);

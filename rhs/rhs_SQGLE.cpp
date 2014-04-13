@@ -121,7 +121,7 @@ std::string rhs_SQGLE::type() const {
 /*!
  * Initializes the rhs_SQGLE class  
  */
-void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rhs_SQGLE::postprocess(input& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension;
     retrieve(LENGTH_T, dat["t_int"], this);

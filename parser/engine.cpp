@@ -1,16 +1,17 @@
 #include "engine.h"
 #include "engineimp.h"
 #include "item.h"
+#include "input.h"
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
 engineimp::engineimp(const std::string& fname, const std::string& outname, const std::string& index){
     values["!out_file"] =  std::make_shared<string>();
-    values["!out_file"]->parse(outname);
+    ((native_item*)(values["!out_file"].get()))->parse(outname);
     values["!out_file"]->setname("!out_file");
     std::ofstream f_clear(outname.c_str(), std::ofstream::trunc);
     f_clear.close();
-    std::shared_ptr<integer> p = std::make_shared<integer>();
+    auto p = std::make_shared<integer>();
     p->parse(index);
     p->setname("!start_ind");
     values["!start_ind"]=p;
@@ -45,7 +46,6 @@ bool engineimp::item_exists(const std::string& val) const{
  * and resets the list of items which require updating
  */
 void engineimp::update(){
-    std::set<std::shared_ptr<item> >::iterator beg;
     for(auto& val : update_vars){
         val->update();
     }
@@ -56,7 +56,7 @@ void engineimp::update(){
  * @param name Name of the item that requires updating
  */
 void engineimp::needs_updating(std::string name){
-    std::map<std::string, std::shared_ptr<item> >::iterator pos = values.find(name);
+    auto pos = values.find(name);
     if(pos == values.end()){
         std::string errmess = "Lookup for item \"";
         errmess.append(name);

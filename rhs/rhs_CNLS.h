@@ -20,7 +20,7 @@ class rhs_CNLS: public rhs_type<comp>{
     double* restr k;
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& dat);
+    virtual void postprocess(input& dat);
    // virtual void parse(std::string inval);
   //  virtual void retrieve(void* inval) const ;
     ~rhs_CNLS();

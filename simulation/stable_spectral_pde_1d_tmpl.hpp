@@ -1,5 +1,5 @@
-#ifndef STABLE_SPECTRA_PDE_1D_TMPL_HPP
-#define STABLE_SPECTRAL_PDE_1D_TMPL
+#ifndef STABLE_SPECTRAL_PDE_1D_TMPL_HPP
+#define STABLE_SPECTRAL_PDE_1D_TMPL_HPP
 //!This class represents the spectral integration of a PDE
 /*!
  * This class will represent the integration of a 1d spectral ODE.
@@ -28,7 +28,7 @@ class stable_spectral_pde_1d_tmpl:public stable_ode_tmpl<T>{
         virtual void post_ifft_operations();
     public:
         virtual std::vector<std::string> dependencies() const;
-        virtual void postprocess(std::map<std::string, std::shared_ptr<item> >& invals);
+        virtual void postprocess(input& invals);
         virtual std::string type() const;
         virtual ~stable_spectral_pde_1d_tmpl();
 };
@@ -46,7 +46,7 @@ std::vector<std::string> stable_spectral_pde_1d_tmpl<T>::dependencies() const{
 };
 
 template<class T>
-void stable_spectral_pde_1d_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void stable_spectral_pde_1d_tmpl<T>::postprocess(input& invals){
     stable_ode_tmpl<T>::postprocess(invals);
     int _num;
     retrieve(_num, invals["num_pulses"], this);

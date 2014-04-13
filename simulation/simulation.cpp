@@ -2,7 +2,7 @@
 #include "jones_optical.h"
 #include "utils/comp_funcs.hpp"
 
-void simulation::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
+void simulation::postprocess(input& invals){
     item_dim::postprocess(invals);
     retrieve(cont, invals["controller"], this);
     retrieve(obj, invals["objective"], this);

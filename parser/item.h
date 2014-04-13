@@ -10,7 +10,7 @@ class item;
 
 template<class T>
 void retrieve(T& inval, item* sender, item* caller);
-
+class input;
 class item{
     protected:
     //_retrieve should never be called by itself, only through the retrieve function
@@ -28,9 +28,8 @@ class item{
     engineimp* holder;
     static std::shared_ptr<item> create(std::string name, engineimp* rval);
     virtual void print() const;
-    virtual void parse(std::string inval);
 
-    virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& indat){};
+    virtual void postprocess(input& indat);
     virtual std::vector<std::string> dependencies() const;
     virtual void update();
 
@@ -42,36 +41,61 @@ class item{
 
     template<class T> friend void retrieve(T& inval, item* setter, item* caller);
 };
+class native_item:public item{
+    public:
+        virtual void parse(const std::string& inval) = 0;
+        //native items can't have dependencies or perform postprocessing
+        std::vector<std::string> dependencies() const final;
+        void postprocess(input& inval) final;
+};
 //!Stores a real-valued input
-class real8:public item{
+class _double:public native_item{
     double value;
     public:
     virtual void print() const;
-    virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
-    virtual void parse(std::string inval);
+    virtual void parse(const std::string& inval);
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     friend class variable;
 };
+//!Stores a reduced-precision real valued input
+class _float:public native_item{
+    size_t value;
+    public:
+    virtual void print() const;
+    virtual std::string type() const;
+    virtual void parse(const std::string& inval);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
+    friend class engineimp;
+};
+
 //!stores a string valued input
-class string:public item{
+class string:public native_item{
     std::string value;
     public:
     virtual void print() const;
-    virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
-    virtual void parse(std::string inval);
+    virtual void parse(const std::string& inval);
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
 };
 
 //!Stores an integer valued input
-class integer:public item{
+class integer:public native_item{
     int value;
     public:
     virtual void print() const;
-    virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
-    virtual void parse(std::string inval);
+    virtual void parse(const std::string& inval);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
+    friend class engineimp;
+};
+//!Stores an unsigned integer as input
+class _unsigned:public native_item{
+    size_t value;
+    public:
+    virtual void print() const;
+    virtual std::string type() const;
+    virtual void parse(const std::string& inval);
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     friend class engineimp;
 };
@@ -89,8 +113,7 @@ class integer:public item{
  * will be generalized to be useful for general pruposes, not simply plain toroidal searches
  * \sa real
  */
-class variable:public real8{
-    size_t update_count;
+class variable:public _double{
     //double* are not use by std since they are mostly to stack allocated mem
     std::map<item*, std::set<double*> > modifiers;
     std::map<std::weak_ptr<item>, std::set<double*>, std::owner_less<std::weak_ptr<item> > > safe_mods;
@@ -99,7 +122,8 @@ class variable:public real8{
     virtual void print() const;
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     virtual void copy(double* inval);
-    virtual void parse(std::string inval);
+    virtual void parse(const std::string& inval);
+    virtual std::string type() const;
     void inc();
     void inc(double i);
     void set(double v);
@@ -107,26 +131,35 @@ class variable:public real8{
 
 
 //classes for testing graphsort, mainly to ensure that it finds cyclical and unsatisfied dependencies
-class ftest1 : public real8{
+class ftest1 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var1"};
             return std::vector<std::string>(deps, deps+1);
         }
+        virtual std::string type() const{
+            return "ftest1";
+        }
 };
 
-class ftest2 : public real8{
+class ftest2 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var2"};
             return std::vector<std::string>(deps, deps+1);
         }
+        virtual std::string type() const{
+            return "ftest2";
+        }
 };
-class ftest3 : public real8{
+class ftest3 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var3", "var4"};
             return std::vector<std::string>(deps, deps+2);
+        }
+        virtual std::string type() const{
+            return "ftest3";
         }
 };
 #endif

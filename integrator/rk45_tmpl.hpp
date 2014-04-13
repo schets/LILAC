@@ -19,7 +19,7 @@ class rk45_tmpl:public rk45 {
     double* restr u_calc2;
     public:
     virtual const std::type_info& vtype() const;
-    void postprocess(std::map<std::string, std::shared_ptr<item> >& dat);
+    void postprocess(input& dat);
     std::string type() const;
     int integrate(void* restr u, double t0, double tf);
     ~rk45_tmpl();
@@ -243,7 +243,7 @@ std::string rk45_tmpl<T>::type() const{
     return std::string("rk45_tmpl<") + this->vname() + ">";
 }
 template<class T>
-void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
+void rk45_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
     if(!rh_val->compare<T>()){
         err("Bad rhs type passed to rk45 integrator", "rk45_tmpl::postprocess",
