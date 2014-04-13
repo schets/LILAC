@@ -59,7 +59,7 @@ void euler_sde_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> 
         err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.h", FATAL_ERROR);
     }
-    dat["stepsize"]->retrieve((void*)&stepsize, this);
+    retrieve(stepsize, dat["stepsize"], this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.hpp", dat["stepsize"], FATAL_ERROR);

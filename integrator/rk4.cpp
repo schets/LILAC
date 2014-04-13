@@ -1,7 +1,7 @@
-#include "../utils/comp_funcs.h"
 #include "rk4.h"
 #include "rk4_tmpl.hpp"
 #include "utils/type_constructor.hpp"
+#include "utils/comp_funcs.hpp"
 int rk4::integrate(void* restr u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }

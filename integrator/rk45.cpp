@@ -1,5 +1,5 @@
 #include "integrator.h"
-#include "../utils/comp_funcs.h"
+#include "../utils/comp_funcs.hpp"
 #include "rk45.h"
 #include "rk45_tmpl.hpp"
 #include "utils/type_constructor.hpp"

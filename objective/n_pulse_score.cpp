@@ -1,5 +1,6 @@
 #include "n_pulse_score.h"
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
+
 double kurtosis(double in[], size_t len){
     double mean, mom4, mom2;
     mean = mom4 = mom2 = 0;
@@ -49,7 +50,9 @@ std::vector<std::string> n_pulse_score::dependencies() const {
 }
 void n_pulse_score::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
     objective::postprocess(invals);
-    invals["num_pulses"]->retrieve(&n_pulse, this);
+    int _n_pulse = 0;
+    retrieve(_n_pulse, invals["num_pulses"], this);
+    n_pulse = _n_pulse;
     if(dimension%n_pulse){
         err("n_pulse_score requires a dimension divisible by the number of pulses", 
                 "bi_pulse_score::postprocess", "objective/bi_pulse_score.cpp", FATAL_ERROR);

@@ -1,4 +1,4 @@
-#include "../utils/comp_funcs.h"
+#include "../utils/comp_funcs.hpp"
 #include "euler_sde.h"
 #include "euler_sde_tmpl.hpp"
 #include "utils/type_constructor.hpp"

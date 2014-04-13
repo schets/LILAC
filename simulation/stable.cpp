@@ -1,6 +1,6 @@
 #include "stable.h"
 #include "objective/objective.h"
-#include "utils/comp_funcs.h"
+#include "utils/comp_funcs.hpp"
 #include "stable_ode_tmpl.hpp"
 #include "writer/writer.h"
 #include "parser/engineimp.h"
@@ -45,12 +45,12 @@ std::vector<std::string> stable::dependencies() const{
 void stable::postprocess(std::map<std::string, std::shared_ptr<item>>& invals){
     num_gone=0;
     simulation::postprocess(invals);
-    invals["change_threshold"]->retrieve(&change_threshold, this);
+    retrieve(change_threshold, invals["change_threshold"], this);
     if(change_threshold < 0){
         err("Input parameter change_threshold must be greater than or equal to zero",
                 "stable::postprocess", "system/stable.cpp", FATAL_ERROR);
     }
-    invals["max_iterations"]->retrieve(&max_iterations, this);
+    retrieve(max_iterations, invals["max_iterations"], this);
     if(max_iterations <= 0){
         err("Input parameter max_iterations must be greater than or equal to zero",
                 "stable::postprocess", "system/stable.cpp", FATAL_ERROR);

@@ -1,7 +1,7 @@
+#pragma once
 #ifndef MEMPOOL_HPP
 #define MEMPOOL_HPP
 #include "defs.hpp"
-#include "comp_funcs.hpp"
 #include <list>
 #include <stdint.h>
 class mempool;

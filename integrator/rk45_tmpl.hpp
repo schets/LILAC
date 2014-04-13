@@ -250,32 +250,31 @@ void rk45_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& da
                 "rhs/rk45_tmpl.h", FATAL_ERROR);
     }
     this->add_as_parent(rh_val);
-    dat["dt_init"]->retrieve((void*)&dt_init, this);
+    retrieve(dt_init, dat["dt_init"], this);
     if(dt_init <= 0){
         err("dt_init is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_init"], FATAL_ERROR);
     }
-    dat["dt_min"]->retrieve((void*)&dt_min, this);
+    retrieve(dt_min, dat["dt_min"], this);
     if(dt_min <= 0){
         err("dt_min is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_min"], FATAL_ERROR);
     }
-    dat["dt_max"]->retrieve((void*)&dt_max, this);
+    retrieve(dt_max, dat["dt_max"], this);
     if(dt_max <= 0){
         err("dt_max is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_max"], FATAL_ERROR);
     }
-    dat["relerr"]->retrieve((void*)&relerr, this);
+    retrieve(relerr, dat["relerr"], this);
     if(relerr <= 0){
         err("relerr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["relerr"], FATAL_ERROR);
     }
-    dat["abserr"]->retrieve((void*)&abserr, this);
+    retrieve(abserr, dat["abserr"], this);
     if(abserr <= 0){
         err("abserr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["abserr"], FATAL_ERROR);
     }
-
     memp.create(dimension, &f0, &f1, &f2, &f3, &f4, &f5, &f6, &u_calc, &u_calc2);
 }
 

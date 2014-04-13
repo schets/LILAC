@@ -4,7 +4,8 @@
 #include "../integrator/integrator.h"
 #include "../simulation/simulation.h"
 #include <sstream>
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
+#include "retrieve_checker.hpp"
 void item::parse(std::string inval){
 }
 
@@ -31,8 +32,8 @@ const std::string& item::write_name() const{
  * which will comprise most of the item types here.
  * This function can be rewritten for native types such as ints, etc
  */
-void item::retrieve(void* p, item* caller){
-    *((const item**)p) = this;
+void item::_retrieve(retrieve_wrapper&& p, item* caller){
+    p.check_and_get_type(this);
 }
 /*!
  * Updates structures that are held in the class.
@@ -84,8 +85,8 @@ void real8::parse(std::string inval){
  * Stores the value in the address pointed to by inval
  * @param inval Address where the value of the real8 is stored
  */
-void real8::retrieve(void* inval, item* caller){
-    *(double*)inval = value;
+void real8::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(double), &value);
 }
 
 /*!
@@ -124,8 +125,8 @@ void string::parse(std::string inval){
  * Sets the value stored at inval equal to the string
  * @param inval The address of the string
  */
-void string::retrieve(void* inval, item* caller){
-    *(std::string*)inval = value;
+void string::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(std::string), &value);
 }
 
 /*!
@@ -185,9 +186,8 @@ std::vector<std::string> integer::dependencies() const{
 /*!
  * Sets the input pointer to the value of the integer
  */
-void integer::retrieve(void* p, item* caller){
-    int* qq = (int*)p;
-    *qq = value;
+void integer::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(int), &value);
 }
 
 

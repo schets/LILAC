@@ -1,11 +1,12 @@
 #include "stable.h"
 #include "jones_optical.h"
-#include "utils/comp_funcs.h"
+#include "utils/comp_funcs.hpp"
+
 void simulation::postprocess(std::map<std::string, std::shared_ptr<item> >& invals){
     item_dim::postprocess(invals);
-    invals["controller"]->retrieve(&cont, this);
-    invals["objective"]->retrieve(&obj, this);
-    invals["!out_file"]->retrieve(&out_f_name, this);
+    retrieve(cont, invals["controller"], this);
+    retrieve(obj, invals["objective"], this);
+    retrieve(out_f_name, invals["!out_file"], this);
 }
 
 /*!

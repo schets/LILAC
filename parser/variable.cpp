@@ -1,5 +1,6 @@
 #include "item.h"
 #include "engineimp.h"
+#include "retrieve_checker.hpp"
 /*!
  * This function prints the value of the current variable
  */
@@ -12,9 +13,9 @@ void variable::print() const{
  * at by inval. It also keeps track of the pointer and updates it whenever
  * the variable has changed
  */
-void variable::retrieve(void* inval, item* caller){
-    double* d = (double*)inval;
-    *d = value;
+void variable::_retrieve(retrieve_wrapper&& inval, item* caller){
+    inval.check_and_get_type(typeid(double), &value);
+    double* d = (double*)inval.get_ptr();
     //add pointer to the list of pointer for the given class
     if(caller && holder->item_exists(caller->name())){
         safe_mods[std::weak_ptr<item>(holder->values[caller->name()])].insert(d);

@@ -1,6 +1,6 @@
 #include "parser/item.h"
 #include "toroidal.h"
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
 /*
  * This function returns the dependencies of the toroidal class
  * \note
@@ -27,15 +27,15 @@ void toroidal::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     controller::postprocess(dat);
     num_int=0;
     int _iterations;
-    dat["iterations"]->retrieve(&_iterations, this);
+    retrieve(_iterations, dat["iterations"], this);
+    retrieve(initial_inc, dat["initial_inc"], this);
+    retrieve(mul_fac, dat["mul_fac"], this);
     iterations = _iterations;
-    dat["mul_fac"]->retrieve(&mul_fac, this);
     if(mul_fac==0){
         err("Multiply factor, mul_fac, must not be equal to zero", 
                "toroidal::postprocess", "controller/toroidal.cpp",
                FATAL_ERROR);
     }
-    dat["initial_inc"]->retrieve(&initial_inc, this);
     if(initial_inc==0){
         err("The initial increment, initial_inc, must not be equal to zero", 
                "toroidal::postprocess", "controller/toroidal.cpp",

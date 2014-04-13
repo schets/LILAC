@@ -149,7 +149,7 @@ void rk4_tmpl<T>::postprocess(std::map<std::string, std::shared_ptr<item> >& dat
                 "integrator/rk4_tmpl.h", FATAL_ERROR);
     }
     this->add_as_parent(rh_val);
-    dat["stepsize"]->retrieve((void*)&stepsize, this);
+    retrieve(stepsize, dat["stepsize"], this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "rk4_tmpl::postprocess",
                 "integrator/rk4.hpp", dat["stepsize"], FATAL_ERROR);

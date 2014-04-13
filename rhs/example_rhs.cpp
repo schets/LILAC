@@ -4,7 +4,8 @@
  * documentation explaining most steps and various details
  * */
 #include "example_rhs.h"
-#include "comp_funcs.h" //includes various functions for complex variables
+#include "comp_funcs.hpp" //includes various functions for complex variables, and some random template ones
+//The random tempalte ones in comp_funcs should get moved sometime or other though
 //****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
 //To have code that compiles with the engine, you need to edit the makefile in
 //the rhs directory. It is the file that controls when pieces of code are built.
@@ -91,9 +92,9 @@ void example_rhs::postprocess(std::map<std::string, std::shared_ptr<item> >& dat
     //an item*. Then this pointer is called to retrieve the value, and is passed the address
     //of val1
 
-    dat["val1"]->retrieve(&val1, this);
-    dat["val2"]->retrieve(&val2, this);
-    dat["random_info"]->retrieve(&random_info, this);
+    retrieve(val1, dat["val1"], this);
+    retrieve(val2, dat["val2"], this);
+    retrieve(random_info, dat["random_info"], this);
 
     //now, we are going to allocate some memory to something
     //This may be useful for storing temporary calculations during the RHS.

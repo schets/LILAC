@@ -1,5 +1,7 @@
 #include "controller.h"
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
+
+#include "retrieve_checker.hpp"
 #include "toroidal.h"
 //!Deprecated
 void controller::parse(std::string inval){
@@ -32,8 +34,8 @@ void controller::postprocess(std::map<std::string, std::shared_ptr<item> >& inva
     item_dim::postprocess(inval);
     std::string names;
     num_cont = 0;
-    inval["names"]->retrieve(&names, this);
-    inval["!start_ind"]->retrieve(&index, this);
+    retrieve(names, inval["names"], this);
+    retrieve(index, inval["!start_ind"], this);
     //perform processing on the names
     //also with typechecking
     //will do this right sometime

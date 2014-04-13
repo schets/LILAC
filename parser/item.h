@@ -5,31 +5,43 @@
 #include <iostream>
 #include "utils/defs.hpp"
 class engineimp;
+class retrieve_wrapper;
+class item;
+
+template<class T>
+void retrieve(T& inval, item* sender, item* caller);
+
 class item{
     protected:
+    //_retrieve should never be called by itself, only through the retrieve function
+    //It doesn't really matter whether retrieve is public/private/whatever,
+    //since nothing besides safe_retrieve can construct __retrieve_checkers
+    //Any class overloading this should think carefully about what it's purpose is,
+    //since anything that doesn't hold a native value is likely better off as an item*
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     std::string _name;
     std::string _write_name;
     char has_write_name;
     public:
-
+    item();
+    virtual ~item();
     engineimp* holder;
     static std::shared_ptr<item> create(std::string name, engineimp* rval);
     virtual void print() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval, item* caller);
+
     virtual void postprocess(std::map<std::string, std::shared_ptr<item>>& indat){};
     virtual std::vector<std::string> dependencies() const;
-    virtual std::string type() const = 0;
     virtual void update();
-    item();
-    virtual ~item();
+
+    virtual std::string type() const = 0;
     void setname(const std::string n);
     void set_write_name(std::string wname);
     const std::string& name()const;
     const std::string& write_name() const;
-    friend class variable;
-};
 
+    template<class T> friend void retrieve(T& inval, item* setter, item* caller);
+};
 //!Stores a real-valued input
 class real8:public item{
     double value;
@@ -38,7 +50,7 @@ class real8:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval, item* caller);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     friend class variable;
 };
 //!stores a string valued input
@@ -49,7 +61,7 @@ class string:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval, item* caller);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
 };
 
 //!Stores an integer valued input
@@ -60,7 +72,7 @@ class integer:public item{
     virtual std::vector<std::string> dependencies() const;
     virtual std::string type() const;
     virtual void parse(std::string inval);
-    virtual void retrieve(void* inval, item* caller);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     friend class engineimp;
 };
 //!stores a real number that is varied during the simulation
@@ -85,7 +97,7 @@ class variable:public real8{
     public:
     double low_bound, high_bound, inc_size;
     virtual void print() const;
-    virtual void retrieve(void* inval, item* caller);
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     virtual void copy(double* inval);
     virtual void parse(std::string inval);
     void inc();

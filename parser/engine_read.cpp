@@ -1,6 +1,7 @@
 #include "engineimp.h"
 #include "graph.h"
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
+
 void engineimp::read(std::ifstream& fstr){
     _read(fstr);
     sort_pp();

@@ -1,4 +1,5 @@
 #include "mempool.hpp"
+#include "comp_funcs.hpp"
 void mempool::set_dim(size_t num, size_t mal){
     total_bytes = 0;
     for(auto& v : csizes){

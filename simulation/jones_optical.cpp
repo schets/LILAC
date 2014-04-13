@@ -1,7 +1,7 @@
 #include "eigen3/Eigen/Eigen"
 #include "writer/writer.h"
 #include "jones_optical.h"
-#include "utils/comp_funcs.h"
+#include "utils/comp_funcs.hpp"
 #include "utils/noise.h"
 /*!
  * class to allow automatic updating of the matrices involved
@@ -46,10 +46,10 @@ class jones_matrix:public real8{
             wp(0, 1)=wp(1, 0)=0;
             wp(0, 0)=1;
             wp(1, 1)=0;
-            avars[0]->retrieve(&a1, this);
-            avars[1]->retrieve(&a2, this);
-            avars[2]->retrieve(&a3, this);
-            avars[3]->retrieve(&ap, this);
+            retrieve(a1, avars[0], this);
+            retrieve(a2, avars[1], this);
+            retrieve(a3, avars[2], this);
+            retrieve(ap, avars[3], this);
             update();
         }
 };
@@ -72,12 +72,12 @@ void jones_optical::postprocess(std::map<std::string, std::shared_ptr<item> >& i
                 "system/jones_optical.cpp", FATAL_ERROR);
     }
     int num_segments;
-    invals["num_jones_segments"]->retrieve(&num_segments, this);
+    retrieve(num_segments, invals["num_jones_segments"], this);
     if(num_segments < 0){
         err("Number of jones segments must be greater than or equal to zero",
                 "jones_optical::postprocess", "system/jones_optical.cpp", FATAL_ERROR);
     }
-    invals["jones_int_dist"]->retrieve(&jones_int_dist, this);
+    retrieve(jones_int_dist, invals["jones_int_dist"], this);
     if(jones_int_dist<0){
         err("The distance between jones segments, jones_int_dist,  must be greater than or equal to zero",
                 "jones_optical::postprocess", "system/jones_optical.cpp", FATAL_ERROR);

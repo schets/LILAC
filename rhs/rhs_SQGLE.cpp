@@ -1,6 +1,6 @@
 #include "rhs_SQGLE.h"
 #include "utils/inline_trig.h"
-#include "utils/comp_funcs.h"
+#include "utils/comp_funcs.hpp"
 #include "controller/controller.h"
 comp trap(comp * restr v, size_t s);
 double trap(double * restr v, size_t s);
@@ -124,15 +124,15 @@ std::string rhs_SQGLE::type() const {
 void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension;
-    dat["t_int"]->retrieve(&LENGTH_T, this);
+    retrieve(LENGTH_T, dat["t_int"], this);
     if(LENGTH_T <= 0){
         std::string errmess = "t_int is invalid, must be >= 0";
         err(errmess, "rhs_SQGLE::postprocess", "rhs/rhs_SQGLE.cpp",
                 dat["t_int"], FATAL_ERROR);
     }
     dt = LENGTH_T/NUM_TIME_STEPS;
-    dat["g0"]->retrieve(&g0, this);
-    dat["e0"]->retrieve(&e0, this);
+    retrieve(g0, dat["g0"], this);
+    retrieve(e0, dat["e0"], this);
     memp.create(dimension, &u1, &u2, &comp_in, &comp_out, &sq1, &ksq, &k);
     //create k values
 
@@ -146,7 +146,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
         ksq[i] = k[i]*k[i];
     }
     controller* cont;
-    dat["controller"]->retrieve(&cont, this);
+    retrieve(cont, dat["controller"], this);
     a1=a2=a3=ap=0;
     std::shared_ptr<variable> vv = std::make_shared<variable>();
     vv->holder=holder;
@@ -154,7 +154,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     vv->set(a1);
     vv->parse("0.1");
     dat[vv->name()]=vv;
-    vv->retrieve(&a1, this);
+    retrieve(a1, vv, this);
     cont->addvar(vv);
 
     //a2
@@ -165,7 +165,7 @@ void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     vv->parse("0.1");
     dat[vv->name()]=vv;
     cont->addvar(vv);
-    vv->retrieve(&a2, this);
+    retrieve(a2, vv, this);
     //a3
     vv = std::make_shared<variable>();
     vv->holder=holder;
@@ -174,16 +174,16 @@ void rhs_SQGLE::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     vv->parse("0.1");
     dat[vv->name()]=vv;
     cont->addvar(vv);
-    vv->retrieve(&a3, this);
+    retrieve(a3, vv, this);
     //ap
     vv = std::make_shared<variable>();
     vv->holder=holder;
-    vv->setname("a4");
+    vv->setname("ap");
     vv->set(ap);
     vv->parse("0.1");
     dat[vv->name()]=vv;
     cont->addvar(vv);
-    vv->retrieve(&ap, this); 
+    retrieve(ap, vv, this); 
     //temporary solution, add variables directly to controller
 }
 void rhs_SQGLE::parse(std::string inval){

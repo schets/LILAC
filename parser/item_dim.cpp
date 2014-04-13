@@ -1,4 +1,5 @@
 #include "item_dim.h"
+#include "retrieve_checker.hpp"
 void item_dim::_do_mem_update(size_t dim_old){
     memp.set_dim(dimension);
 }
@@ -8,7 +9,7 @@ void item_dim::_do_mem_update(size_t dim_old){
 void item_dim::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     int dimt;
     parent=0;
-    dat["dimension"]->retrieve(&dimt, this);
+    ::retrieve(dimt, dat["dimension"], this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
         err(errmess, "int_dim::postprocess", "item/item.cpp",

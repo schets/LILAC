@@ -2,7 +2,7 @@
 #include "rk4.h"
 #include "rk45.h"
 #include "euler_sde.h"
-#include "comp_funcs.h"
+#include "comp_funcs.hpp"
 /*!
  * This function returns the dependencies of the integrator class
  * \note
@@ -25,7 +25,7 @@ std::vector<std::string> integrator::dependencies() const {
  */
 void integrator::postprocess(std::map<std::string, std::shared_ptr<item> >& dat){
     item_dim::postprocess(dat); 
-    dat["rhs"]->retrieve(&rh_val, this);
+    retrieve(rh_val, dat["rhs"], this);
 }
 //!Returns an integrator* corresponding to the string passed
 /*!
