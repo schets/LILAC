@@ -29,7 +29,7 @@ TODO (kinda ordered by priority):
 2. Remove uneeded dependencies, refactor code
 3. Document configuration files
 4. Allow referring to variables by name in input files
-5. Allow passing specific parameters to variables
+5. Make input lisp a functioning lisp (inc. macros and functions)
 6. Implement effecient way to reserve many different dimensions in the mempool
 7. Write map-fold scripts for analyzing output
 8. Refactor LSODA to run in integrator system
