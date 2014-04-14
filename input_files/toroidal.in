@@ -1,5 +1,5 @@
-string names doesntmatter
-integer iterations 1
-double initial_inc .14
-double mul_fac 1.24784622373
-toroidal controller
+(string names doesntmatter)
+(integer iterations 1)
+(double initial_inc .14)
+(double mul_fac 1.24784622373)
+(toroidal controller)

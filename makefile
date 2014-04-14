@@ -8,7 +8,7 @@
 
 include make.inc
 .PHONY: all
-all: integrator rhs controller parser objective simulation utils writer
+all: integrator rhs controller engine objective simulation utils writer lisp
 	@mkdir -p bin
 	@mkdir -p lib
 	$(LD)  lib/*.o -o bin/lilac $(LFLAGS) 
@@ -17,6 +17,7 @@ all: integrator rhs controller parser objective simulation utils writer
 .PHONY: integrator
 integrator:
 	@$(MAKE) -C integrator
+
 .PHONY: rhs
 rhs:
 	@$(MAKE) -C rhs
@@ -25,9 +26,9 @@ rhs:
 controller:
 	@$(MAKE) -C controller
 
-.PHONY: parser
-parser:
-	@$(MAKE) -C parser
+.PHONY: engine
+engine:
+	@$(MAKE) -C engine
 
 .PHONY: objective
 objective:
@@ -44,6 +45,11 @@ writer:
 .PHONY: utils
 utils:
 	@$(MAKE) -C utils
+	
+.PHONY: lisp
+lisp:
+	@$(MAKE) -C lisp
+
 	
 .PHONY: clean
 clean:

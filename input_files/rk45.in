@@ -1,7 +1,7 @@
-rk45 integrator
-double relerr 1e-4
-double abserr 1e-3
-double dt_init .01
-double dt_min 1E-10
-double dt_max 0.1
+(rk45 integrator)
+(double relerr 1e-4)
+(double abserr 1e-3)
+(double dt_init .01)
+(double dt_min 1E-10)
+(double dt_max 0.1)
 

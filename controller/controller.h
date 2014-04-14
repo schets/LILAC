@@ -1,7 +1,7 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
-#include "../parser/item.h"
-#include "parser/item_dim.h"
+#include "../engine/item.h"
+#include "engine/item_dim.h"
 #include "objective/objective.h"
 //!This is the base class for the control type classes
 /*!

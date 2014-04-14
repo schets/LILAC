@@ -1,6 +1,6 @@
 #ifndef RHS_H
 #define RHS_H
-#include "parser/item_dim.h"
+#include "engine/item_dim.h"
 #include "../utils/vartype.hpp"
 //!The rhs base class
 /*! \class rhs

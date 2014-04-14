@@ -67,8 +67,5 @@ template<class T, size_t N>
 inline std::vector<T> make_append(const T (&array)[N], const std::vector<T>& b){
     return appendvec(makevec(array), b);
 }
-void trim(std::string& curline);
-void trim(std::string& curline, char val);
-void ltoken(std::string& tok, std::string& str, std::string delim=" ");
-std::string get_unique_name(std::string base);
+
 #endif

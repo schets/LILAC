@@ -3,7 +3,7 @@
 #include "utils/comp_funcs.hpp"
 #include "stable_ode_tmpl.hpp"
 #include "writer/writer.h"
-#include "parser/engineimp.h"
+#include "engine/engineimp.h"
 const static int num_min = 10;
 /*!
  * This function iterates the system forwards in time until it reaches a stable state

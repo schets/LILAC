@@ -1,7 +1,7 @@
 #include <time.h>
 #include "utils/comp_funcs.hpp"
 #include "integrator/integrator.h"
-#include "parser/engine.h"
+#include "engine/engine.h"
 #include <chrono>
 using namespace std;
 int main(int argc, char** argv){

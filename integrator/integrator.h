@@ -1,8 +1,8 @@
 #ifndef SOLVER_HPP
 #define SOLVER_HPP
 #include "../rhs/rhs.h"
-#include "../parser/item.h"
-#include "parser/item_dim.h"
+#include "../engine/item.h"
+#include "engine/item_dim.h"
 #include "utils/vartype.hpp"
 //!This class defines the integration base class
 /*!

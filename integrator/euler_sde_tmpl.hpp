@@ -50,6 +50,8 @@ std::string euler_sde_tmpl<T>::type() const{
 template<class T>
 void euler_sde_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
+    //since the rh_val is already obtained by the map,
+    //may as well just check instead of going through retrieve
     func = dynamic_cast<rhs_sde*>(rh_val);
     if(func == 0){
         err(std::string("The rhs, ") + rh_val->name() + ", is not part of the rhs_sde inheritance heirarchy",

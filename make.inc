@@ -12,7 +12,7 @@ ifeq ($(CPP), clang)
 #clang generates significantly worse code than gcc for this project, but compiles faster
 #so might as well make it a default debug build
 FASTMATH=
-CFLAGS=-I../ -I./utils -std=c++11 -g -DCLANG -DNDEBUG -DDEBUG -m64 -Werror -W
+CFLAGS=-I../ -I./utils -std=c++11 -g -DCLANG -DNDEBUG -DDEBUG -m64 -Werror -W -Wall
 LD=clang
 LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm 
 endif
