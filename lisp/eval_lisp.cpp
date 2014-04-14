@@ -3,6 +3,7 @@
 #include "utils/defs.hpp"
 #include "engine/item.h"
 #include "engine/engineimp.h"
+static std::set<std::string> keywords = {"@map"};
 param_val split_into_toks(std::string param_vals, bool has_paren){
     trim(param_vals);
     param_val p_ret;
@@ -55,6 +56,7 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
         return std::shared_ptr<item>();
     }
     auto invals = split_into_toks(in_cmd);
+
     auto curit = item::create(invals.type, en);
     if(invals.name.empty()){
         std::cout<<"Variables need a name and a type, "<<
@@ -73,7 +75,6 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
     input& inval = inv[curit->name()];
     item_wrapper c_wrap(curit); 
     auto native_ptr = std::dynamic_pointer_cast<native_item>(curit);
-
     if(native_ptr.use_count()){
         //if token is one of the native types, parse the input
         native_ptr->parse(invals.params);
@@ -81,13 +82,29 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
     else{
         //recursively evaluate whatever expression is passed on
         for(auto& str : split_into_sepxr(invals.params)){
-            item_wrapper child_item = eval_lisp(str, n_prefix + invals.name, inv, en);
-            if(child_item.get_shared().use_count()){
-                //replace named dependencies with new fake names
-                param_val pp = split_into_toks(str);
-                c_wrap.replace_dep(child_item->name(), pp.name);
-                //add re-direction to the input class
-                inval.add_redir(pp.name, child_item);
+            //this will check if special commands are being done
+            auto exp_tok=split_into_toks(str);
+            if(keywords.count(exp_tok.type)){
+                //remap the passed variable names to single name
+                if(exp_tok.type == "@map"){
+                    std::string tok;
+                    trim(exp_tok.params);
+                    while(!exp_tok.params.empty()){
+                        ltoken(tok, exp_tok.params);
+                        inval.add_remap(exp_tok.name, tok);
+                        c_wrap.replace_dep(exp_tok.name, tok);
+                    }
+                }
+            }
+            else{
+                item_wrapper child_item = eval_lisp(str, n_prefix + invals.name, inv, en);
+                if(child_item.get_shared().use_count()){
+                    //replace named dependencies with new fake names
+                    param_val pp = split_into_toks(str);
+                    c_wrap.replace_dep(child_item->name(), pp.name);
+                    //add re-direction to the input class
+                    inval.add_redir(pp.name, child_item);
+                }
             }
         }
     }

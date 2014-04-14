@@ -133,7 +133,12 @@ void trim(std::string& curline, char val){
 void ltoken(std::string& tok, std::string& str, std::string delim){
     size_t tpos = str.find(delim);
     tok=str.substr(0, tpos);
-    str.erase(0, tpos + delim.length());
+    if(tpos == std::string::npos || tpos+delim.length() >= str.size()){
+        str.clear();
+    }
+    else{
+        str.erase(0, tpos + delim.length());
+    }
 }
 namespace __HIDER__{
     //!Create a unique name that cannot already exist in the engine, should never reference directly

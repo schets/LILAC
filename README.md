@@ -26,11 +26,12 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 TODO (kinda ordered by priority):
 
 1. Implement neural network model
-2. Remove uneeded dependencies, refactor code
-3. Document configuration files
-4. Allow referring to variables by name in input files
-5. Make input lisp a functioning lisp (inc. macros and functions)
+2. Allow basic numerical operations to be done with lilac-lisp
+3. Remove uneeded dependencies, refactor code
+4. Document configuration files
+5. Add functions and macros to lilac-lisp
 6. Implement effecient way to reserve many different dimensions in the mempool
 7. Write map-fold scripts for analyzing output
 8. Refactor LSODA to run in integrator system
 9. Get documentation up to date
+10. Write REPL to interact directly with system through lilac-lisp
