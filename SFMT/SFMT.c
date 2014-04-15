@@ -56,7 +56,6 @@ static void period_certification(sfmt_t * sfmt);
 #if defined(BIG_ENDIAN64) && !defined(ONLY64)
 inline static void swap(w128_t *array, int size);
 #endif
-
 #if defined(HAVE_ALTIVEC)
   #include "SFMT-alti.h"
 #elif defined(HAVE_SSE2)
