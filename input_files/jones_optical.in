@@ -1,6 +1,6 @@
 #testing the euler integrator
-(jones_optical simulation (euler_sde integrator (double stepsize 0.001) (integer calc_dw 0) ( double dw_weight 1)))
-#(jones_optical simulation)
+#(jones_optical simulation (euler_sde integrator (double stepsize 0.001) (integer calc_dw 0) ( double dw_weight 1)))
+(jones_optical simulation)
 (double t0 0)
 (double int_len 1.5)
 (double change_threshold 1e-3)

@@ -4,6 +4,7 @@
 #include "defs.hpp"
 #include <list>
 #include <stdint.h>
+#include <assert.h>
 class mempool;
 namespace __HIDER__{
     template <typename... Args>
@@ -103,6 +104,7 @@ class mempool{
 
 template<class ...Tl>
 void mempool::make_this(size_t mal, size_t dim, Tl* restr *... args){
+    assert(mal >= 16);
     csizes.clear();
     cptrs.clear();
     auto val = __HIDER__::Impl<Tl...>::_create();
@@ -141,6 +143,7 @@ void mempool::make_this(size_t mal, size_t dim, Tl* restr *... args){
 
 template<class ...Tl>
 void mempool::add(size_t mal, size_t dim, Tl* restr * ... args){
+    assert(mal >= 16);
     auto val = __HIDER__::Impl<Tl...>::_create();
     //for now, just allocate (n+1)*n_align + size_total
     size_t new_bytes = (val.size() +1)*mal;

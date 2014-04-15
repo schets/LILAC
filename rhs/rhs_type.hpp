@@ -17,12 +17,14 @@ template<typename T> class rhs_type:public rhs{
     virtual const std::type_info& vtype() const final{
         return typeid(T);
     }
-    void postprocess(input& dat){
-        rhs::postprocess(dat);
-    }
+    void postprocess(input& dat)=0;
     int dxdt(void* restr x, void* restr dx, double t) final{
         return dxdt((T* restr)x, (T* restr)dx, t);
     }
     virtual int dxdt(T* restr x, T* restr dx, double t) = 0;
 };
+template<class T>
+void rhs_type<T>::postprocess(input& dat){
+    rhs::postprocess(dat);
+}
 #endif

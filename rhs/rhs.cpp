@@ -1,6 +1,7 @@
 #include "rhs.h"
 #include "rhs_CNLS.h"
 #include "rhs_SQGLE.h"
+#include "c_elegans.h"
 #include "example_rhs.h"
 /*!
  * Provides the default postprocessing for the rhs base class
@@ -23,6 +24,9 @@ rhs* rhs::create(std::string tname){
     }
     else if(tname == "SQGLE"){
         return new rhs_SQGLE();
+    }
+    else if(tname == "c_elegans"){
+        return new c_elegans();
     }
     else if(tname=="example_rhs"){
         err("Example_rhs created, mysteriously fails on some architectures seemingly from AVX instructions. Also does nothing useful", "rhs::create", "rhs/rhs.cpp", WARNING);
