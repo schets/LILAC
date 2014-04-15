@@ -18,13 +18,14 @@
 #define restr restrict
 #define ALIGNED(x) __assume_aligned(x, 16)
 #define MAKE_ALIGNED __declspec(align(16))
+#define PREDICT(x, val) __builtin_expect(x, val)
 #else
 #define restr __restrict__
 #define ALIGNED(x) 
+#define PREDICT(x, val) x
 #define MAKE_ALIGNED
 #endif
-//#define restr
-//typedef complex<double> comp;
+class item;
 typedef std::complex<double> comp;
 const static comp Id = comp(0, 1);
 //#define NUM_TIME_STEPS (256) //number of time points
@@ -32,15 +33,14 @@ const static comp Id = comp(0, 1);
 //parameters taken from matlab main file
 //can move to input parameters as well
 //but for now these are defines
-#define D (-.4)
-#define K (.1)
-#define A (2.0/3.0)
-#define B (1.0/3.0) //need to find a real value for this
-#define tau (.1)
-#define Gamma (.1)
-#define RTlength (1.5)
-#define PI (3.14159)
-#define maxTrips 50
+constexpr double D =-.4;
+constexpr double K =(.1);
+constexpr double A =(2.0/3.0);
+constexpr double B =(1.0/3.0); //need to find a real value for this
+constexpr double tau= (.1);
+constexpr double Gamma= (.1);
+constexpr double RTlength= (1.5);
+constexpr double PI =(3.14159);
 class item;
 class _fatal{
     public:

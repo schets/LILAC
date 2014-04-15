@@ -27,7 +27,7 @@ TODO (kinda ordered by priority):
 
 1. Implement neural network model
 2. Allow basic numerical operations to be done with lilac-lisp
-3. Remove uneeded dependencies, refactor code
+3. Remove uneeded dependencies, refactor code (especially interpreter)
 4. Document configuration files
 5. Add functions and macros to lilac-lisp
 6. Implement effecient way to reserve many different dimensions in the mempool

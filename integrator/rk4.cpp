@@ -8,7 +8,7 @@ int rk4::integrate(void* restr u, double t0, double tf){
 rk4::~rk4(){
 }
 std::vector<std::string> rk4::dependencies() const{
-    std::string deps[] = {"step_size"};
+    std::string deps[] = {"stepsize"};
     return make_append(deps, integrator::dependencies());
 }
 std::string rk4::type() const{

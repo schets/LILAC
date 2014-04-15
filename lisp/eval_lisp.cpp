@@ -97,13 +97,13 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
                 }
             }
             else{
-                item_wrapper child_item = eval_lisp(str, n_prefix + invals.name, inv, en);
+                item_wrapper child_item = eval_lisp(str, n_prefix+invals.name, inv, en);
                 if(child_item.get_shared().use_count()){
                     //replace named dependencies with new fake names
                     param_val pp = split_into_toks(str);
                     c_wrap.replace_dep(child_item->name(), pp.name);
-                    //add re-direction to the input class
                     inval.add_redir(pp.name, child_item);
+                    en->values[child_item->name()] = child_item;
                 }
             }
         }

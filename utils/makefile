@@ -18,7 +18,7 @@ $(LIB_PATH)/main.o: main.cpp $(INLINE HEADERS)
 
 $(LIB_PATH)/noise.o: noise.cpp noise.h $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/noise.o
-	$(CPP) -c noise.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/noise.o
+	$(CPP) -c noise.cpp $(CFLAGS) $(FASTMATH) -msse2 $(INC_PATH) -o $(LIB_PATH)/noise.o
 
 $(LIB_PATH)/mempool.o: mempool.cpp $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/mempool.o

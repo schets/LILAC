@@ -45,6 +45,3 @@ item_wrapper::item_wrapper(const item_wrapper& inv):ptr(inv.ptr),
     }
 item_wrapper::item_wrapper(){
 }
-//item_wrapper::item_wrapper(item_wrapper&& inv):ptr(std::move(inv.ptr)),
-//    deps(std::move(inv.deps)){
-//    }

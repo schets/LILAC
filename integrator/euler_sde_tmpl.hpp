@@ -11,6 +11,8 @@ class euler_sde_tmpl: public euler_sde{
     double stepsize;
     T* restr f0, * restr w0, *restr bfnc;
     rhs_sde* func;
+    int calc_dw;
+    double dw_weight;
     public:
     const std::type_info& vtype() const;
     void postprocess(input& dat);
@@ -29,11 +31,20 @@ int euler_sde_tmpl<T>::integrate(void* u0, double ts, double tf){
     ALIGNED(w0);
     ALIGNED(bfnc);
     for(size_t i = 0; i < steps; i++){
-        gaussian_noise(w0, dimension, dt);
-        func->dxdt(vals, f0, tc);
-        func->dwdt(vals, bfnc, tc);
-        for(size_t j = 0; j < dimension; j++){
-            vals[j] += dt*f0[j] + bfnc[j]*w0[j];
+        gaussian_noise(w0, dimension, dt*dw_weight);
+        //only calculate coefficients for dw if needed
+        if(calc_dw){
+            func->dxdt(vals, f0, tc);
+            func->dwdt(vals, bfnc, tc);
+            for(size_t j = 0; j < dimension; j++){
+                vals[j] += dt*f0[j] + bfnc[j]*w0[j];
+            }
+        }
+        else{
+            rh_val->dxdt(vals, f0, tc);
+            for(size_t j = 0; j < dimension; j++){
+                vals[j] += dt*f0[j] + w0[j];
+            }
         }
         tc += dt;
     }
@@ -52,15 +63,20 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
     //since the rh_val is already obtained by the map,
     //may as well just check instead of going through retrieve
-    func = dynamic_cast<rhs_sde*>(rh_val);
-    if(func == 0){
-        err(std::string("The rhs, ") + rh_val->name() + ", is not part of the rhs_sde inheritance heirarchy",
-                this->type() + "::postprocess", "integrator/euler_sde_tmpl.hpp", FATAL_ERROR);
+    retrieve(calc_dw, dat["calc_dw"], this);
+    if(calc_dw){
+        func = dynamic_cast<rhs_sde*>(rh_val);
+        if(func == 0){
+            err(std::string("The rhs, ") + rh_val->name() + ", is not part of the rhs_sde inheritance heirarchy." +
+                    " Consider setting calc_dw to 0 to allow for a constant multiple of the noise factor",
+                    this->type() + "::postprocess", "integrator/euler_sde_tmpl.hpp", FATAL_ERROR);
+        }
     }
-    if(!func->compare<T>()){
+    if(!rh_val->compare<T>()){
         err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.h", FATAL_ERROR);
     }
+    retrieve(dw_weight, dat["dw_weight"], this);
     retrieve(stepsize, dat["stepsize"], this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "euler_sde_tmpl::postprocess",

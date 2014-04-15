@@ -1,8 +1,8 @@
 #ifdef CLANG
 #pragma clang diagnostic ignored "-Wdeprecated-register"
 #endif
-#include "eigen3/Eigen/Eigen"
 #include "writer/writer.h"
+#include "eigen3/Eigen/Eigen"
 #include "jones_optical.h"
 #include "utils/comp_funcs.hpp"
 #include "utils/noise.h"

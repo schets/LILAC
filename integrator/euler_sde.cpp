@@ -8,7 +8,7 @@ int euler_sde::integrate(void* restr u, double t0, double tf){
 euler_sde::~euler_sde(){
 }
 std::vector<std::string> euler_sde::dependencies() const{
-    std::string deps[] = {"step_size"};
+    std::string deps[] = {"stepsize", "calc_dw", "dw_weight"};
     return make_append(deps, integrator::dependencies());
 }
 std::string euler_sde::type() const{
