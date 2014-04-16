@@ -16,7 +16,7 @@ $(LIB_PATH)/engine_run.o: engine_run.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/engine_run.o
 	$(CPP) -c engine_run.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_run.o
 
-$(LIB_PATH)/engine_write.o:engine_write.cpp $(INLINE_HEADERS) 
+$(LIB_PATH)/engine_write.o:engine_write.cpp ../writer/data.hpp $(INLINE_HEADERS) 
 	@rm -f $(LIB_PATH)/engine_write.o
 	$(CPP) -c engine_write.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/engine_write.o
 

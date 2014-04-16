@@ -29,6 +29,10 @@ double stable::simulate(){
     }
     double v = this->score();
     cur_writer->add_data(data::create("score", v), writer::FINAL_SCORE);
+    comp* uc = ((stable_ode_tmpl<comp>*)this)->ucur;
+    cur_writer->add_data(
+            data::create("final function", uc, dimension),
+                writer::FINAL_FUNC);
     if(1 || !num_gone || !(num_gone%1)){
         printf("System:%d, test# %d,  took %d iterations, score was %e\n",
                 cont->index, (int)cont->num_cont, round, v);

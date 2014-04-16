@@ -17,5 +17,5 @@ void engineimp::write_dat(){
 }
 void engineimp::write_data(std::shared_ptr<const writer> dat, std::ofstream& ofile){
     dat->write(ofile);
-    ofile << "****\n";
+    ofile << "&\n";
 }

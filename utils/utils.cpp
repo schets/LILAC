@@ -4,7 +4,7 @@
 #include <set>
 extern "C"{
 #include <complex.h>
-#include "fftw3.h"
+#include "eigen3/fftw3.h"
 }
 void* al_malloc(size_t ss){
     void* rv = fftw_malloc(ss);

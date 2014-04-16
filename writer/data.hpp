@@ -1,5 +1,6 @@
 #pragma once
 #ifndef DATA_H
+#define DATA_H
 #include "utils/defs.hpp"
 #include <string>
 #include <iterator>
@@ -33,7 +34,7 @@ class data{
     public:
     //not a template but might as well eliminate the cpp file
     virtual std::string to_string() const{
-        return name + std::string(": ") + std::string("\n") + dat.str();
+        return name + ": " + dat.str();
     }
     //instead of exposing constructors directly, call through creation functions
     //to enforce unmodifiable data
@@ -48,6 +49,11 @@ class data{
     template<class T>
         static inline std::shared_ptr<const data> create(const std::string name, in_iter<T> b,
                 in_iter<T> e){
+            return std::make_shared<const data>(this_is_private(), name, b, e);
+        }
+    template<class T>
+        static inline std::shared_ptr<const data> create(const std::string name, T* b,
+               T* e){
             return std::make_shared<const data>(this_is_private(), name, b, e);
         }
     //custom string function creators
@@ -67,7 +73,11 @@ class data{
 
     //public but not really constructors
     template<class T>
-        data(const this_is_private& dummy, const std::string _name, T* invals, size_t len): data(_name, invals, invals+len){}
+        data(const this_is_private& dummy, const std::string _name, T* invals, size_t len):name(_name){
+            std::for_each(invals, invals + len, [&](const T& val){
+                    addelem(val);
+        });
+        }
     template<class T>
         data(const this_is_private& dummy, const std::string& _name, const T& inval):name(_name){
             addelem(inval);
@@ -78,18 +88,16 @@ class data{
         }
     //constructors taking a custom string function
     template<class T>
-        data(const this_is_private& dummy, const std::string _name, T* invals, size_t len, const strfnc<T>& tostr): data(_name, invals, invals+len, tostr){}
+        data(const this_is_private& dummy, const std::string _name, T* invals, size_t len, const strfnc<T>& tostr):name(_name){
+            std::for_each(invals, invals+len, [&](const T& val){
+                    addelem(val, tostr);
+                    });
+        }
     template<class T>
         data(const this_is_private& dummy, const std::string& _name, const T& inval, const strfnc<T>& tostr):name(_name){
             addelem(inval, tostr);
         }
-    template<class T>
-        data(const this_is_private& dummy, const std::string _name, in_iter<T> b,
-                in_iter<T> e, const strfnc<T>& tostr):name(_name){
-            std::for_each(b, e, [&](const T& val){addelem(val, tostr);});
-        }
 
+#endif
     virtual ~data(){}
 };
-#define DATA_H
-#endif

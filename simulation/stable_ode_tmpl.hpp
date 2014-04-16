@@ -25,6 +25,7 @@ class stable_ode_tmpl:public stable_ode{
         virtual void postprocess(input& invals);
         virtual std::string type() const;
         virtual ~stable_ode_tmpl();
+        friend class stable;
 };
 
 

@@ -4,9 +4,9 @@ CPP=clang
 #CPP=icc
 ifeq ($(CPP), gcc)
 FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer -funsafe-loop-optimizations 
-CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -flto -march=native -Wall -Werror
+CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -march=native -Wall -Werror
 LD=gcc
-LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -flto  -march=native -m64 $(FASTMATH)
+LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -march=native -m64 $(FASTMATH)
 endif
 ifeq ($(CPP), clang)
 #clang generates significantly worse code than gcc for this project, but compiles faster

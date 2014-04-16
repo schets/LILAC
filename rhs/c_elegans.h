@@ -14,6 +14,7 @@ class c_elegans:public rhs_sde_type<double>{
     double cur_inj;
     public:
     std::string type() const;
+    void postprocess(input& in);
     int dxdt(double* restr x, double* restr dx, double dt);
     int dwdt(double* restr x, double* restr dx, double dt);
 };

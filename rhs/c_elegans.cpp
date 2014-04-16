@@ -31,3 +31,6 @@ int c_elegans::dwdt(double* restr x, double* restr dx, double dt){
 std::string c_elegans::type() const{
     return "c_elegans";
 }
+void c_elegans::postprocess(input& in){
+    rhs_sde::postprocess(in);
+}

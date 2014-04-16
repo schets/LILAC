@@ -19,7 +19,7 @@ $(LIB_PATH)/jones_optical.o: jones_optical.cpp $(S_HEADS) ../utils/noise.h $(INL
 	@rm -f $(LIB_PATH)/jones_optical.o
 	$(CPP) -c jones_optical.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/jones_optical.o
 
-$(LIB_PATH)/stable.o: stable.cpp $(INLINE_HEADERS)
+$(LIB_PATH)/stable.o: stable.cpp ../writer/data.hpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/stable.o
 	$(CPP) -c stable.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/stable.o
 

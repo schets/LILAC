@@ -71,6 +71,6 @@ writer::w_type writer::from_name_strict(const std::string inval){
 void writer::write(std::ostream& ofile) const{
     for(const auto& val : dvals){
         ofile << val->to_string();
-        ofile << "\n";//std::endl;
+        ofile << std::endl;
     }
 }
