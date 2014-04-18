@@ -10,6 +10,8 @@ extern "C"{
 #include "SFMT/SFMT.h"
 #include "SFMT/dSFMT.h"
 }
+//defines the alignment value for these classes
+constexpr size_t CACHE_BLOCK=16;
 //classes for block fills of random numbers
 class vector_rng{
         //this is the number of RNGS that are statically held
@@ -20,22 +22,21 @@ class vector_rng{
         constexpr static size_t num_64 = 64;
         constexpr static size_t num_32 = num_64*2;
     private:
-        constexpr static size_t double_prefetch_level = 1;
-        constexpr static size_t uint_prefetch_level = 1;
-        constexpr static size_t d_num_ahead=1;
-        constexpr static size_t i_num_ahead=1;
-        double * restr d_rands;
-        uint32_t * restr i_rands; 
-        size_t d_ind, i_ind;
+        //both i_cur and d_cur are actually aliased, but they are the only ones that actually access the memory
+        //in this classes routines
+        double * restr d_cur, * const restr d_end;
+        uint32_t * restr i_cur, * const restr i_end; 
+        //large alignments likely put it on a cache boundary
+        alignas(CACHE_BLOCK) double d_rands[num_64];
+        alignas(CACHE_BLOCK) uint32_t i_rands[num_32];
         dsfmt_t * dsm;
         sfmt_t * sm;
         dsfmt_t act_dsm;
         sfmt_t act_sm;
     public:
-        vector_rng(){
-            i_ind = d_ind = 0;
-            d_rands=(double*)al_malloc(num_64*sizeof(double));
-            i_rands=(uint32_t*)al_malloc(num_32*sizeof(uint32_t));
+        vector_rng():d_end(d_rands+num_64), i_end(i_rands+num_32){
+            d_cur = d_rands;
+            i_cur = i_rands;
             dsm = & act_dsm;
             sm = & act_sm;
             try{
@@ -55,27 +56,23 @@ class vector_rng{
             dsfmt_fill_array_close_open(dsm, d_rands, num_64);
             sfmt_fill_array32(sm, i_rands, num_32);
         }
-        ~vector_rng(){
-            al_free(d_rands);
-            al_free(i_rands);
-        }
         inline double real_64(){
-            if(PREDICT(d_ind < num_64, 1)){
-                return d_rands[d_ind++];
+            if(PREDICT(d_cur < d_end, 1)){
+                return *d_cur++;
             }
+            d_cur = d_rands+1;
             //need to refill array
             dsfmt_fill_array_close_open(dsm, d_rands, num_64);
-            d_ind=1;
-            return *d_rands;
+            return d_rands[0];
         }
         inline uint32_t uint_32(){
-            if(PREDICT(i_ind < num_32, 1)){
-                return i_rands[i_ind++];
+            if(PREDICT(i_cur < i_end, 1)){
+                return *i_cur++;
             }
+            i_cur = i_rands+1;
             //need to refill array
             sfmt_fill_array32(sm, i_rands, num_32);
-            i_ind=1;
-            return *i_rands;
+            return i_rands[0];
         }
 };
 
@@ -110,9 +107,8 @@ class vector_rng{
 
 /* position of right-most step */
 #define PARAM_R 3.44428647676
-
 /* tabulated values for the heigt of the Ziggurat levels */
-MAKE_ALIGNED static const double ytab[128] = {
+alignas(CACHE_BLOCK) static const double ytab[128] = {
     1, 0.963598623011, 0.936280813353, 0.913041104253,
     0.892278506696, 0.873239356919, 0.855496407634, 0.838778928349,
     0.822902083699, 0.807732738234, 0.793171045519, 0.779139726505,
@@ -149,7 +145,8 @@ MAKE_ALIGNED static const double ytab[128] = {
 
 /* tabulated values for 2^24 times x[i]/x[i+1],
  * used to accept for U*x[i+1]<=x[i] without any floating point operations */
-MAKE_ALIGNED static const unsigned long ktab[128] = {
+
+alignas(CACHE_BLOCK) static const unsigned long ktab[128] = {
     0, 12590644, 14272653, 14988939,
     15384584, 15635009, 15807561, 15933577,
     16029594, 16105155, 16166147, 16216399,
@@ -185,7 +182,7 @@ MAKE_ALIGNED static const unsigned long ktab[128] = {
 };
 
 /* tabulated values of 2^{-24}*x[i] */
-MAKE_ALIGNED static const double wtab[128] = {
+alignas(CACHE_BLOCK) static const double wtab[128] = {
     1.62318314817e-08, 2.16291505214e-08, 2.54246305087e-08, 2.84579525938e-08,
     3.10340022482e-08, 3.33011726243e-08, 3.53439060345e-08, 3.72152672658e-08,
     3.8950989572e-08, 4.05763964764e-08, 4.21101548915e-08, 4.35664624904e-08,

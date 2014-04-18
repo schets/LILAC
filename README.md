@@ -28,10 +28,9 @@ TODO (kinda ordered by priority):
 1. Implement neural network model
 2. Allow basic numerical operations to be done with lilac-lisp
 3. Remove uneeded dependencies, refactor code (especially interpreter)
-4. Document configuration files
-5. Add functions and macros to lilac-lisp
-6. Implement effecient way to reserve many different dimensions in the mempool
-7. Write map-fold scripts for analyzing output
-8. Refactor LSODA to run in integrator system
-9. Get documentation up to date
-10. Write REPL to interact directly with system through lilac-lisp
+4. Add testing framework
+5. Get documentation up to date
+6. Add functions and macros to lilac-lisp
+7. Implement effecient way to reserve many different dimensions in the mempool
+8. Write map-fold scripts for analyzing output
+9. Refactor LSODA to run in integrator system

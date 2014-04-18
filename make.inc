@@ -1,6 +1,6 @@
 export
 CPP=clang
-#CPP=gcc
+CPP=gcc
 #CPP=icc
 ifeq ($(CPP), gcc)
 FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer -funsafe-loop-optimizations 
