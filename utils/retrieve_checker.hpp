@@ -115,7 +115,8 @@ template<class T> class __retrieve_checker:public retrieve_wrapper{
 
 //This function removes the need to call item->retrieve AND retrieve checker,
 //allowing for cleaner code. It also may help to abstract this operation,
-//should it change.
+//should it change. Finally, it blocks access to the retrieve function and the
+//retrieve_checker class;
 template<class T> inline void retrieve(T& inval, item* sender, item* caller){
     sender->_retrieve(__retrieve_checker<T>(inval), caller);
 }
