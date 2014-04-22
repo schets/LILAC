@@ -109,21 +109,62 @@ template<class T> class __retrieve_checker:public retrieve_wrapper{
         __HIDER__::__retrieve_helper<T, is_ptr && is_item_ptr && is_item_ptr2>::check(inval, val);
     }
     friend void retrieve<T>(T& inval, item* setter, item* caller);
-    friend void retrieve<T>(T& inval, std::shared_ptr<item> setter, item* caller);
 };
 
 
-//This function removes the need to call item->retrieve AND retrieve checker,
+//This function removes the need to call item->retrieve AND retrieve checker while streamling standard values,
 //allowing for cleaner code. It also may help to abstract this operation,
 //should it change. Finally, it blocks access to the retrieve function and the
 //retrieve_checker class;
 template<class T> inline void retrieve(T& inval, item* sender, item* caller){
+    if(sender){
     sender->_retrieve(__retrieve_checker<T>(inval), caller);
+    }
+    else{
+        if(caller){
+            err(caller->name() + "Has requested an item that does not exist", "retrieve",
+                    "utils/retrieve_checker.hpp", caller, FATAL_ERROR);
+        }
+        else{
+            err("A nonexistent item has been requested", "retreive", "utils/retrieve_checker.hpp",
+                    FATAL_ERROR);
+        }
+    }
 }
 
 template<class T> inline void retrieve(T& inval, std::shared_ptr<item> sender, item* caller){
-    retrieve(inval, sender.get(), caller);
+    if(sender.use_count()){
+        retrieve(inval, sender.get(), caller);
+    }
+    else{
+        if(caller){
+            err(caller->name() + "Has requested an item that does not exist", "retrieve",
+                    "utils/retrieve_checker.hpp", caller, FATAL_ERROR);
+        }
+        else{
+            err("A nonexistent item has been requested", "retreive", "utils/retrieve_checker.hpp",
+                    FATAL_ERROR);
+        }
+    }
 }
 
+//This allows for an optional value to be passed, and simply creates that 
+template<class T> inline void retrieve(T& inval, item* sender, item* caller, const T& standard){
+    if(sender){
+        retrieve(inval, sender, caller);
+    }
+    else{
+        inval = standard;
+    }
+}
+
+template<class T> inline void retrieve(T& inval, std::shared_ptr<item> sender, item* caller, const T& standard){
+    if(sender.use_count()){
+        retrieve(inval, sender.get(), caller);
+    }
+    else{
+        inval = standard;
+    }
+}
 
 #endif

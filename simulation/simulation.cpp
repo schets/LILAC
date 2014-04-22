@@ -28,3 +28,6 @@ item* simulation::create(std::string name){
     }
     return 0;
 }
+double simulation::score(){
+    return 0;
+}

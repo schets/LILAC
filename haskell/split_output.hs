@@ -27,5 +27,4 @@ extract_data dat_name fname =
     fmap (extract_data_name (CH.pack(dat_name++[':'])))  (split_byte_file '&' fname)
 
 --implement more specific parsing algorithms with ParSec
---sum_reals :: IO [BS.ByteString] -> Float
 

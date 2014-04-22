@@ -4,30 +4,34 @@
 #include "utils/item_heads.hpp"
 #include <vector>
 #include <fstream>
+#include "gaba_list.hpp"
+constexpr size_t c_elegans::num_neur;
+constexpr size_t c_elegans::dim_v;
+constexpr size_t c_elegans::dim_s;
 int c_elegans::dxdt(double* restr x, double* restr dx, double dt){
     double* restr dv = dx;
     double* restr v = x;
     double* restr ds = dv+dim_v;
     double* restr s = v+dim_v;
-    Map<Matrix<double, dim_v, 1>, Aligned > vmap(v);
-    Map<Matrix<double, dim_v, 1>, Aligned > dvmap(dv);
-    Map<Matrix<double, dim_v, 1>, Aligned > smap(s);
-    Map<Matrix<double, dim_v, 1>, Aligned > dsmap(ds);
-    //calculate sig vector (MUST VECTORIZE THIS PART LATER)
-    for(size_t i = 0; i < dim_v; i++){
-        sig[i] = 1.0 / (1.0 + std::exp(beta*(vmean[i] - v[i])));
-    }
-    Map<Matrix<double, dim_v, 1>, Aligned > sigmap(sig);
-    dsmap.array() = ar*(sigmap.array() * (1.0-smap.array())) - ad*smap.array();
-    //really should combine these to avoid temporary expressions,
-    //will do once this has been verified to be correct
-    Iohm.array() = memG*(vmap.array() - memV);
-    Ielec.noalias() = gelec*laplacian*vmap;
-    Ichem.array() = gchem *
-        (vmap.array()*(AEchem_trans*smap) .array()
-         - (AEchem_trans*(smap.array()*Echem.array()).matrix()).array());
-    dvmap = (-1/tau)*(Iohm+Ichem+Ielec);
-    //apply forcing at proper positions
+    Map<Array<double, dim_v, 1>, Aligned > vmap(v);
+    Map<Array<double, dim_v, 1>, Aligned > dvmap(dv);
+    Map<Array<double, dim_v, 1>, Aligned > smap(s);
+    Map<Array<double, dim_v, 1>, Aligned > dsmap(ds);
+
+    sig = 1.0 / (1.0 + (beta*(vmean -vmap)).exp());
+    dsmap = ar*(sig * (1.0-smap)) - ad*smap;
+    
+   // Iohm = (memG*(vmap - memV));
+   // Ielec.noalias() = gelec*laplacian*vmap;
+  //  Ichem = (gchem *
+  //      (vmap*(AEchem_trans*smap) 
+  //       - (AEchem_trans*(smap*Echem).matrix())));
+  
+    dvmap = (-1/tau)*((memG*(vmap - memV))
+            +(gelec*laplacian*vmap.matrix()).array()+
+            (gchem *(vmap*(AEchem_trans*smap.matrix()).array()
+              - (AEchem_trans*(smap*Echem).matrix()).array())));
+
     for(auto s : inj_nodes){
         dv[s] += (-1/tau)*cur_inj;
     }
@@ -58,7 +62,6 @@ void c_elegans::postprocess(input& in){
         err("Dimension must be 558, which is double the number of neurons",
                 "", "", FATAL_ERROR);
     }
-    memp.create(num_neur*2, &sig, &vmean);
     retrieve(beta, in["beta"], this);
     retrieve(memV, in["memV"], this);
     retrieve(memG, in["memG"], this);
@@ -95,6 +98,35 @@ void c_elegans::postprocess(input& in){
         Echem[i] = EchemEx;
         vmean[i] = EchemInh;
     }
+    for(size_t i = 0; i < num_neur; i++){
+        if(GABAergic[i]){
+            Echem[i] = EchemInh;
+        }
+        else{
+            Echem[i] = EchemEx;
+        }
+    }
+    sig.Constant(0.5);
+    Matrix<double, num_neur, 1> eqS;
+    eqS.array() = sig * (ar/(ar*sig + ad));
+    Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
+    ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
+    Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
+    aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
+    Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
+    C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
+    Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS); 
+    for(size_t i = 0; i < num_neur; i++){
+        C(i, i) += tmp(i);
+    }
+
+    Matrix<double, num_neur, 1> b;
+    b= gchem*aedense*(eqS.array() * Echem).matrix();
+    for(size_t i = 0; i < num_neur; i++){
+        b(i) += (1+memG*memV);
+    }
+    Matrix<double, num_neur, 1> eqV = C.inverse()*b;
+    vmean = eqV.array()+1.0/(beta * (1.0/sig - 1).log());
 }
 
 

@@ -1,6 +1,6 @@
 export
 CPP=clang
-CPP=gcc
+#CPP=gcc
 #CPP=icc
 ifeq ($(CPP), gcc)
 FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer -funsafe-loop-optimizations 
@@ -16,11 +16,11 @@ CFLAGS=-I../ -I./utils -std=c++11 -g -DCLANG  -DDEBUG -m64 -Werror -W -Wall
 LD=clang
 LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm 
 endif
-ifeq ($(CPP), CC)
-export FAST_FLAGS= -ansi-alias -fargument-noalias -flto -fno-alias -funroll-loops -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions
-export CFLAGS= -fast -no-ipo -restrict -O3 -flto -fpermissive -DICC -mkl=sequential
-export LD=CC
-export LFLAGS= -lfftw3 -mkl=sequential
+ifeq ($(CPP), icc)
+export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -funroll-loops -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions
+export CFLAGS= -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl
+export LD=$(CPP)
+export LFLAGS= -lfftw3 -lstdc++ -mkl
 endif
 
 LIB_MAIN=../lib

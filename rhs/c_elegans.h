@@ -8,8 +8,7 @@ class c_elegans:public rhs_sde_type<double>{
     constexpr static size_t num_neur = 279;
     typedef Eigen::SparseMatrix<double, RowMajor> sparse_type;
     sparse_type laplacian, AEchem_trans;
-    Matrix<double, num_neur, 1> Ielec, Ichem, Iohm, Echem;
-    double* restr vmean, * restr sig;
+    Array<double, num_neur, 1> vmean, sig, Echem;
     constexpr static size_t dim_v = num_neur;
     constexpr static size_t dim_s = dim_v;
     double beta, memV, memG, gchem, gelec, tau, EchemEx, EchemInh, ar, ad;

@@ -10,6 +10,9 @@ extern "C"{
 #include "SFMT/SFMT.h"
 #include "SFMT/dSFMT.h"
 }
+#ifdef ICC
+#define alignas(x) __declspec(align(x))
+#endif
 //defines the alignment value for these classes
 constexpr size_t CACHE_BLOCK=16;
 //classes for block fills of random numbers

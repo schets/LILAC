@@ -41,6 +41,11 @@ void item_dim::add_as_parent(item_dim* p){
     else{
         p->children.insert(this);
         parent=p;
+        if(dimension != p->dimension){
+            dimension=p->dimension;
+        }
+        err(std::string() + "Changing dimension of "+ name() + " to match " + p->name(),
+                "item_dim::add_as_parent", "engine/item_dim.cpp", FATAL_ERROR);
     }
 }
 
