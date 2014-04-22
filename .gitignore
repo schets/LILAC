@@ -4,6 +4,8 @@
 *.ER
 *.o
 *.a
+*.hi
+*.pyc
 html/*
 bin/*
 lib/*
