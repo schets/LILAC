@@ -1,10 +1,10 @@
 export
 CPP=clang
-#CPP=gcc
+CPP=gcc
 #CPP=icc
 ifeq ($(CPP), gcc)
-FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer -funsafe-loop-optimizations 
-CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -march=native -Wall -Werror
+FASTMATH=-funroll-loops -ffast-math -fstrict-aliasing -fomit-frame-pointer -funsafe-loop-optimizations -mfpmath=sse
+CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -march=native -Wall -Wno-strict-aliasing
 LD=gcc
 LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -march=native -m64 $(FASTMATH)
 endif

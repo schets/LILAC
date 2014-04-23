@@ -2,5 +2,5 @@
 #include rk45.in
 #include toroidal.in
 #include jones_optical.in
-(integer dimension 558)
+(integer dimension 512)
 
