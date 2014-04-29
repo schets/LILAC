@@ -1,0 +1,9 @@
+#!/bin/bash
+num_runs=4
+for ((n=0; n < num_runs; n++)) 
+do
+    fout=$( printf 'test/run%04d.out' $n)
+    ./lilac $fout $n
+done
+
+cat test/run*> final.out

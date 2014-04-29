@@ -1,8 +1,11 @@
-jones_optical simulation 
-real8 t0 0
-real8 int_len 1.5
-real8 change_threshold 1e-3
-integer num_jones_segments 1
-integer num_pulses 2
-integer max_iterations 50
-n_pulse_score objective
+!testing the euler integrator
+!(jones_optical simulation (c_elegans rhs) (euler_sde integrator (double stepsize 0.0001) (integer calc_dw 0) ( double dw_weight 0.1)))
+(jones_optical simulation)
+(double t0 0)
+(double int_len 1.5)
+(double change_threshold 1e-3)
+(integer num_jones_segments 1)
+(double jones_int_dist 0.0)
+(integer num_pulses 2)
+(integer max_iterations 50) 
+(n_pulse_score objective)

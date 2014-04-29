@@ -1,6 +1,0 @@
-#include rhs_CNLS.in
-#include rk45.in
-#include toroidal.in
-#include jones_optical.in
-(integer dimension 512)
-

@@ -1,0 +1,4 @@
+real8 g0 1.73
+real8 e0 4.23
+real8 t_int 60
+SQGLE rhs
