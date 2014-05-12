@@ -6,12 +6,13 @@
 #include <fstream>
 #include "gaba_list.hpp"
 #include <eigen3/Eigen/Core>
+#include "ptr_passer.hpp"
 constexpr size_t c_elegans::num_neur;
 constexpr size_t c_elegans::dim_v;
 constexpr size_t c_elegans::dim_s;
-int c_elegans::dxdt(double* restr x, double* restr dx, double dt){
-    double* restr dv = dx;
-    double* restr v = x;
+int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
+    double* restr v = x.get<double>();
+    double* restr dv = dx.get<double>();
     double* restr ds = dv+dim_v;
     double* restr s = v+dim_v;
     Map<Array<double, dim_v, 1>> vmap(v);
@@ -26,6 +27,7 @@ int c_elegans::dxdt(double* restr x, double* restr dx, double dt){
     Ichem = (gchem *
             (vmap*(AEchem_trans*smap.matrix()).array() 
              - (AEchem_trans*(smap*Echem).matrix()).array()));
+
    /* dvmap = (-1.0/tau)*((memG*(vmap - memV))
             +(gelec*laplacian*vmap.matrix()).array()+
             (gchem *(vmap*(AEchem_trans*smap.matrix()).array()
@@ -34,9 +36,16 @@ int c_elegans::dxdt(double* restr x, double* restr dx, double dt){
     for(auto s : inj_nodes){
         dv[s] += (-1.0/tau)*cur_inj;
     }
+    double amp = 2e4;
+    dv[276]+= (-1.0/tau)*amp;
+    
+    dv[278]+= (-1.0/tau)*amp;
+    int xx;
+    std::cin >> xx;
     return 0;
 }
-int c_elegans::dwdt(double* restr x, double* restr dx, double dt){
+int c_elegans::dwdt(ptr_passer x, ptr_passer _dx, double dt){
+    double* dx = _dx.get<double>();
     std::fill(dx, dx+num_neur*2, 1);
     return 0;
 }
@@ -56,7 +65,7 @@ void read_mat(std::string fname, sp_t& in_mat){
     in_mat.setFromTriplets(intr.begin(), intr.end());
 }
 void c_elegans::postprocess(input& in){
-    rhs_sde::postprocess(in);
+    rhs_type::postprocess(in);
     if(dimension != num_neur*2){
         err("Dimension must be 558, which is double the number of neurons",
                 "", "", FATAL_ERROR);
@@ -107,33 +116,49 @@ void c_elegans::postprocess(input& in){
     for(size_t i = 0; i < num_neur; i++){
         sig[i] = 0.5;
     }
-    Matrix<double, num_neur, 1> eqS;
-    eqS.array() = sig * (ar/(ar*sig + ad));
+    
+    eqS = sig * (ar/(ar*sig + ad));
     Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
     ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
     Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
     aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
     Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
     C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
-    Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS); 
+    Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS.matrix()); 
     for(size_t i = 0; i < num_neur; i++){
         C(i, i) += tmp(i);
     }
+    Matrix<double, num_neur, 1> Ivals;
+    Ivals.setZero();
+    double amp=2e4;
+    Ivals[276]=amp;
+    Ivals[278]=amp;
     Matrix<double, num_neur, 1> b;
-    b= gchem*aedense*(eqS.array() * Echem).matrix();
+    b= gchem*aedense*(eqS * Echem).matrix();
     for(size_t i = 0; i < num_neur; i++){
-        b(i) += (1+memG*memV);
+        b[i] += (memG*memV + Ivals[i]);
     }
-    Matrix<double, num_neur, 1> eqV = C.inverse()*b;
-    vmean = eqV.array()+(1.0/beta) * (1.0/sig - 1).log();
-    for(size_t i = 0; i < num_neur; i++){
-        vmean[i] = 0.1;
-    }
+    std::cout << b.sum() << std::endl;
+    eqV.matrix() = C.inverse()*b;
+    vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
 }
 
 
 std::vector<std::string> c_elegans::dependencies() const{
     std::string deps[] = {"beta", "memV", "memG", "gchem", "gelec",
         "tau", "EchemEx", "EchemInh", "ar", "ad", "ag_mat", "a_mat"};
-    return make_append(deps, rhs_sde::dependencies());
+    return make_append(deps, rhs_type::dependencies());
+}
+
+void c_elegans::initial_condition(ptr_passer in, size_t len){
+    if(len != dimension){
+        rhs_type<double>::initial_condition(in, len);
+    }
+    double* vals = in.get<double>();
+    for(size_t i = 0; i < num_neur; i++){
+        vals[i] = eqV[i];
+        vals[i+dim_v] = eqS[i];
+        vals[i] = 0.1;
+        vals[i+dim_v]=0.1;
+    }
 }

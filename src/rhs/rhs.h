@@ -2,6 +2,7 @@
 #define RHS_H
 #include "engine/item_dim.h"
 #include "../utils/vartype.hpp"
+#include "ptr_passer.hpp"
 //!The rhs base class
 /*! \class rhs
  * The RHS class provides the RHS of an equation du/dt = f(u)
@@ -25,10 +26,20 @@ class rhs:public item_dim, public vartype{
          * Creates the base rhs class with a dimension=dimen
          */
         rhs(){};
+
+        /*!
+         * Initializes the generic initial condition for the problem at hand
+         */
+        virtual void initial_condition(ptr_passer x, size_t len)=0;
+
+        //!Wrapper for intial_condition that assumes the length is equal to dimension
+        inline void initial_condition(ptr_passer x){
+            initial_condition(x, dimension);
+        }
         /*!\brief
          * Stores the derivative in dx given the time t and current x
          */
-        virtual int dxdt(void* restr x, void* restr dx, double t) = 0;
+        virtual int dxdt(ptr_passer x, ptr_passer dx, double t) = 0;
         virtual ~rhs(){};
 };
 

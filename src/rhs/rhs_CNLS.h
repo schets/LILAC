@@ -24,6 +24,6 @@ class rhs_CNLS: public rhs_type<comp>{
    // virtual void parse(std::string inval);
   //  virtual void retrieve(void* inval) const ;
     ~rhs_CNLS();
-    virtual int dxdt(comp* restr x, comp* restr dx, double t);
+    virtual int dxdt(ptr_passer x, ptr_passer dx, double t);
 };
 #endif

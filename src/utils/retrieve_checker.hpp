@@ -61,9 +61,11 @@ namespace __HIDER__{
 }
 
 
-//!Pointer wrapper to ensure type-safety in the retrieve function, while removing the need for a template
+//!Pointer wrapper to ensure type-safety in the retrieve function, while removing the need for a template in the rest of the code
 class retrieve_wrapper{
     public:
+        //Although void* is the opposite of type safety, it is simply an unparameterized wrapper
+        //to a type-safe function
         virtual void check_and_get_type(const std::type_info& type, void* inval) = 0;
         virtual void check_and_get_type(item* inval) = 0;
         virtual void* get_ptr() = 0;
@@ -102,11 +104,8 @@ template<class T> class __retrieve_checker:public retrieve_wrapper{
     inline void check_and_get_type(item* inval){
         //The type traits ensure that first, T is a pointer (hopefully an item *),
         //and second, that whatever type T is a pointer to is part of the item hierarchy
-        constexpr bool is_ptr = std::is_pointer<T>::value;
-        constexpr bool is_item_ptr = std::is_base_of<
-            item, typename std::remove_pointer<T>::type>::value;
-        constexpr bool is_item_ptr2 = std::is_convertible<T, item*>::value;
-        __HIDER__::__retrieve_helper<T, is_ptr && is_item_ptr && is_item_ptr2>::check(inval, val);
+        constexpr bool is_item_ptr = std::is_convertible<T, item*>::value;
+        __HIDER__::__retrieve_helper<T, is_item_ptr>::check(inval, val);
     }
     friend void retrieve<T>(T& inval, item* setter, item* caller);
 };

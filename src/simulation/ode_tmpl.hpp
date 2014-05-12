@@ -46,7 +46,6 @@ void ode_tmpl<T>::integrate_with_writes(){
     }
     write_t(tcur);
     inter->integrate(sol, tcur, tf);
-
 }
 
 template<class T>
@@ -78,9 +77,7 @@ void ode_tmpl<T>::postprocess(input& in){
         tw = t0;
     }
     this->memp.create(this->dimension, &sol);
-    for(size_t i = 0; i < this->dimension; i++){
-        sol[i] = .001;
-    }
+    inter->initial_condition(sol);
 }
 template<class T>
 double ode_tmpl<T>::simulate(){
@@ -96,7 +93,7 @@ double ode_tmpl<T>::simulate(){
     }
     std::shared_ptr<writer> dat_writer=std::shared_ptr<writer>(new writer(true));
     dat_writer->add_data(data::create("Final value", sol, this->dimension), writer::FINAL_FUNC);
-    this->holder->add_writer(dat_writer);
+    //this->holder->add_writer(dat_writer);
     return 0;
 }
 template<class T>

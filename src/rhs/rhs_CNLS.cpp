@@ -1,33 +1,17 @@
 #include "rhs_CNLS.h"
 #include "comp_funcs.hpp"
+#include "utils/ptr_passer.hpp"
 
-comp trap(comp * restr v, size_t s){
-    ALIGNED(v);
-    comp sum = 0;
-    for(size_t i=1; i < s-1; i++){
-        sum += v[i];
-    }
-    sum += (v[0] + v[s-1])/2.0;
-    return sum;
-}
-double trap(double * restr v, size_t s){
-    ALIGNED(v);
-    double sum = 0;
 
-    for(size_t i=1; i < s-1; i++){
-        sum += v[i];
-    }
-    sum += (v[0] + v[s-1])/2.0;
-    return sum;
-}
 /*!
  * Destructor for rhs_CNLS
  * */
 rhs_CNLS::~rhs_CNLS(){}
     
-int rhs_CNLS::dxdt(comp* restr x, comp* restr dx, double t){
-    uf1= (comp* restr)x;
-    uf2=(comp* restr)(x+NUM_TIME_STEPS);
+int rhs_CNLS::dxdt(ptr_passer x, ptr_passer _dx, double t){
+    comp* restr dx = _dx.get<comp>();
+    uf1= x.get<comp>();
+    uf2=uf1+NUM_TIME_STEPS;
     //take the inverse fourier transform
     ifft(uf1, u1, NUM_TIME_STEPS);
     ifft(uf2, u2, NUM_TIME_STEPS);

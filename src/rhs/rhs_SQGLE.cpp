@@ -2,8 +2,6 @@
 #include "utils/inline_trig.h"
 #include "utils/comp_funcs.hpp"
 #include "controller/controller.h"
-comp trap(comp * restr v, size_t s);
-double trap(double * restr v, size_t s);
 /*!
  * Destructor for rhs_SQGLE
  * */
@@ -17,9 +15,9 @@ inline comp _clog(comp inval){
 //since it is slow. As I result, clenaign it up isn't a big priority
 
 
-int rhs_SQGLE::dxdt(comp* restr x, comp* restr dx, double t){
-
-    uf1= (comp* restr)x;
+int rhs_SQGLE::dxdt(ptr_passer x, ptr_passer _dx, double t){
+    comp* restr dx = _dx.get<comp>();
+    uf1= x.get<comp>();
     //take the inverse fourier transform
     ifft(uf1, u1, NUM_TIME_STEPS);
     //Inform compiler of alignment, if supported

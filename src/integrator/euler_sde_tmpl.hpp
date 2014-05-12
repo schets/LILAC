@@ -31,6 +31,8 @@ int euler_sde_tmpl<T>::integrate(void* u0, double ts, double tf){
     ALIGNED(w0);
     ALIGNED(bfnc);
     for(size_t i = 0; i < steps; i++){
+
+    std::cout << "here\n";
         gaussian_noise(w0, dimension, dt*dw_weight);
         //only calculate coefficients for dw if needed
         if(calc_dw){

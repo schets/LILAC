@@ -42,6 +42,16 @@ inline double energy(double* v, size_t s){
     sum += v[s-1]*v[s-1];
     return sqrt(sum/2);
 }
+template<class T>
+T trap(T* restr v, size_t s){
+    ALIGNED(v);
+    T sum = T();
+    for(size_t i=1; i < s-1; i++){
+        sum += v[i];
+    }
+    sum += (v[0] + v[s-1])/2.0;
+    return sum;
+}
 
 //These fourier transforms have to do a dirty pointer transform from std::complex
 //to fftw_complex. Since std::complex<double> is bitwise the same as the C complex, and fftw_complex is

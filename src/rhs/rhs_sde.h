@@ -8,7 +8,7 @@ class rhs_sde: public rhs{
         /*!\brief
          * Stores the stochastic portion of the derivative in dw (calculates b(x) in dx = a(x)dt + b(x)dw
          */
-        virtual int dwdt(void* x, void* dw, double t) = 0;
+        virtual int dwdt(ptr_passer x, ptr_passer dw, double t) = 0;
         virtual ~rhs_sde(){}
 };
 #endif

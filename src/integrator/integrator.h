@@ -14,6 +14,10 @@ class integrator:public item_dim, public vartype{
         rhs* rh_val;
     public:
         static item* create(std::string inval);
+        virtual void initial_condition(void* in, size_t len);
+        inline void initial_condition(void* in){
+            initial_condition(in, dimension);
+        }
         virtual void postprocess(input& inval);
         //!Deprecated
         virtual void parse(std::string inval){};

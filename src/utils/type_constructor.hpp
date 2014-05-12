@@ -7,6 +7,11 @@
 //
 //There has to be a better way to combine this and satisfy the compiler...
 //
+
+/*
+ * Function to iterate over a list of types, helps satisfy the compiler 
+ */
+
 //!class to designate a whitelist creator
 class typelist_checker{};
 //!class to designate a blacklist
@@ -73,9 +78,15 @@ class blacklist:public blacklist_checker{
 /*!
  *
  * This engine faces two issues-the numerical type (complex, double, float) is decided at runtime.
+ * This problem is fairly simple to solve with runtime polymorphism-a base numerical class that
+ * makes virtual calls out to add, multiply, etc functions
+ *
+ *
  * However, all of the functions need to be instantiated at compile time, to ensure optimal performance.
- * A type-independent class then holds a pointer to the polymorphic template class, 
- * hiding the type-dependent functionality from the rest of the program.
+ * A solution based on runtime polymorphism would be unacceptably slow, probably by orders of magnitude
+ *
+ * To get past this, a type-independent class can hold a pointer to a template class,
+ * where this class is selected at runtime. This hides the type-dependent functionality from the rest of the program.
  *
  * There is still one problem, which is instantiating this template class. Currently,
  * this can just be with a series of if statements:
@@ -90,16 +101,14 @@ class blacklist:public blacklist_checker{
  * \endcode
  * This works, but has two big problems. We must statically list the types that can be
  * transformed to in every location where this occurs. This is a headache, and prone to different lists
- * in various places of code
+ * in various places of code. Imagine creating a new type, and having to trawl the entire codebase editing this list
  *
- * However, taking a note from Haskell, we can create a type constructor, of kind (*->*).
- * This means that it takes a concrete type, such as complex, double, etc and returns a new concrete type
+ * However, we can create a type constructor.
+ * This means that it takes a concrete type at runtime, such as complex, double, etc and returns a new concrete type
  * such as a rk45 integrator of type complex, or double. 
  * 
  * With templates, we can implement that in C++ as well, and as a bonus for arbitrary template and base classes
  * as long as they inherit from one another, and as long as they inherit from vartype.
- * The series of if statements is also consolidated into one function, and will hopefully be replaced
- * by iterating over a typelist
  *
  * For example, say you want to initiate an rk45 integrator to the same type as an rhs functions.
  * 
@@ -122,7 +131,8 @@ class blacklist:public blacklist_checker{
  * integ2 = type_constructor<rk45_tmpl>::create<rk45>(some_typed_rhs);
  * \endcode  
  * 
- * You can also pass your own non-standard list of types to check,
+ * You can also pass your own non-standard list of types to check, allowing for specialized
+ * routines that don't need to operate on the standard numerical types
  *
  * \param Tin the template class that is being instaniated
  *  

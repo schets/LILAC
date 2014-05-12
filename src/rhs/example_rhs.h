@@ -68,19 +68,14 @@ class example_rhs:public rhs_type<comp>{
     virtual void postprocess(input& indat);
     virtual void update();
 
-    virtual void parse(std::string nval); //ignor for now, will be going away soon
-    //but needs to be implemented to compile
-   
-
-
     //This function calculates the derivative given the current function value
-    //Currently, this only accepts pointers to complex variables but I am working on a
-    //way to make a version that accepts real valued variables while being invisible to
-    //the engine
-    //
-    //This isn't needed, but it will seriously improve performance
-    //when not dealing with complex variables
-    virtual int dxdt(comp* restr x, comp* restr dx, double t);
+    //Note that instead of pointers, this class takes in an object of type
+    //ptr_passer. This holds a pointer and type information to ensure that
+    //the rest of the engine, which is quite generic and type-independent,
+    //won't pass the wrong type of pointer to this function. Although the 
+    //rest of the type-checking is probably strict enough to allow the use of
+    //void*, this prevents a user from accidentally passing a bad pointer anyways.
+    virtual int dxdt(ptr_passer x, ptr_passer dx, double t);
     
     //This is a destructor, which frees all of your memory
     //if you allocate any memory, you must free it

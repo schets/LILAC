@@ -47,3 +47,7 @@ item* integrator::create(std::string inval){
     }
     return 0;
 }
+
+void integrator::initial_condition(void* in, size_t len){
+    rh_val->initial_condition(in, len);
+}

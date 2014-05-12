@@ -11,6 +11,7 @@
  * in each of the children classes without dealing with an interface. However, this is clearer and
  * more self documenting. In addition, if one needs to group objects only by type, this provides a
  * powerful interface to do so.
+ *
  */
 class vartype{
     public:
@@ -21,18 +22,48 @@ class vartype{
         inline bool compare(const vartype& in) const{
             return vtype() == in.vtype();
         }
+        inline bool compare(const std::type_info& tinf){
+            return vtype() == tinf;
+        }
         template<typename T> inline bool compare() const{
             return vtype() == typeid(T);
         } 
         template<typename T> inline bool compare(const T& in) const{
-            return vtype() == typeid(T);
+            //could call typeid(T), but this plays more nicely with static analysis tools
+            //and unused input parameters
+            return vtype() == typeid(in);
         }
         inline std::string vname() const{
             return vtype().name();
         }
-        virtual bool compatible_type(const std::type_info& tref){
-            return true;
+        /*
+         * Functions that compare type internally used by the object
+         * By default this is equal to the external type, but can be made different
+         */
+        virtual const std::type_info& vtype_internal() const{
+            return vtype();
         }
+        inline bool compare_internal(const vartype* in) const{
+            return vtype_internal() == in->vtype_internal();
+        }
+        inline bool compare_internal(const vartype& in) const{
+            return vtype_internal() == in.vtype_internal();
+        }
+        inline bool compare_internal(const std::type_info& tinf){
+            return vtype_internal() == tinf;
+        }
+        template<typename T> inline bool compare_internal() const{
+            return vtype_internal() == typeid(T);
+        } 
+        template<typename T> inline bool compare_internal(const T& in) const{
+            //could call typeid(T), but this plays more nicely with static analysis tools
+            //and unused input parameters
+            return vtype_internal() == typeid(in);
+        }
+        inline std::string vname_internal() const{
+            return vtype_internal().name();
+        }
+
         virtual ~vartype(){};
 };
 

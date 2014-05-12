@@ -4,8 +4,7 @@
  * documentation explaining most steps and various details
  * */
 #include "example_rhs.h"
-#include "comp_funcs.hpp" //includes various functions for complex variables, and some random template ones
-//The random tempalte ones in comp_funcs should get moved sometime or other though
+#include "comp_funcs.hpp" //includes various functions for complex variables and some template math ones
 //****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
 //To have code that compiles with the engine, you need to edit the makefile in
 //the rhs directory. It is the file that controls when pieces of code are built.
@@ -15,11 +14,6 @@
 //An example can be found, for this file, in the makefile in rhs.
 //You pretty much just need to copy and paste a version with your file names
 //instead of the example file names. Also, please don't remove the example build commands
-
-
-//!This is deprecated, just implement an empty version for now
-void example_rhs::parse(std::string inval){
-}
 
 
 //!This function returns the variable type
@@ -147,7 +141,14 @@ example_rhs::~example_rhs(){
  * @param dx The array i which the derivative is stored
  * @param t The current time
  */
-int example_rhs::dxdt(comp* restr x, comp* restr dx, double t){
+int example_rhs::dxdt(ptr_passer _x, ptr_passer _dx, double t){
+    //This pulls the pointer out of the ptr_passer object.
+    //The call requires a template argument with the desired pointer type,
+    //
+    //This function will throw a fatal error if the template type is different than the type
+    //that the ptr_passer was instantiated with
+    comp* restr x = _x.get<comp>();
+    comp* restr dx = _dx.get<comp>();
     //This doesn't really do anything useful
     //but showcases some of the compex variable functions
     //See detailed documentation for more
