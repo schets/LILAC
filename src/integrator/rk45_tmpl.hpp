@@ -21,7 +21,7 @@ class rk45_tmpl:public rk45 {
     virtual const std::type_info& vtype() const;
     void postprocess(input& dat);
     std::string type() const;
-    int integrate(void* restr u, double t0, double tf);
+    int integrate(ptr_passer u, double t0, double tf);
     ~rk45_tmpl();
 };
 template<class T>
@@ -29,8 +29,8 @@ const std::type_info& rk45_tmpl<T>::vtype() const {
     return typeid(T);
 }
 template<class T>
-int rk45_tmpl<T>::integrate(void* restr _u0, double t0, double tf){
-    T* restr u0 = (T* restr)_u0;
+int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
+    T* restr u0 = _u0.get<T>();
 
     size_t num_fail = 0;
     double dt = dt_init;

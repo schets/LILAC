@@ -17,12 +17,12 @@ class euler_sde_tmpl: public euler_sde{
     const std::type_info& vtype() const;
     void postprocess(input& dat);
     std::string type() const;
-    int integrate(void* u, double t0, double tf);
+    int integrate(ptr_passer u, double t0, double tf);
 
 };
 template<class T>
-int euler_sde_tmpl<T>::integrate(void* u0, double ts, double tf){
-    T* restr vals = (T* restr)u0;
+int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
+    T* restr vals = u0.get<T>();
     size_t steps =  ceil((tf-ts)/stepsize);
     double dt = (tf-ts)/steps;
     double tc = ts;
@@ -31,8 +31,6 @@ int euler_sde_tmpl<T>::integrate(void* u0, double ts, double tf){
     ALIGNED(w0);
     ALIGNED(bfnc);
     for(size_t i = 0; i < steps; i++){
-
-    std::cout << "here\n";
         gaussian_noise(w0, dimension, dt*dw_weight);
         //only calculate coefficients for dw if needed
         if(calc_dw){

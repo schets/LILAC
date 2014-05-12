@@ -12,7 +12,7 @@ class rk4_tmpl:public rk4 {
     virtual const std::type_info& vtype() const;
     void postprocess(input& dat);
     std::string type() const;
-    int integrate(void* restr u, double t0, double tf);
+    int integrate(ptr_passer u, double t0, double tf);
     virtual ~rk4_tmpl();
 };
 template<class T>
@@ -33,7 +33,7 @@ rk4_tmpl<T>::~rk4_tmpl(){
 //and fit into the solver object structure.
 //But the code mostly remains unchanged
 template<class T>
-int rk4_tmpl<T>::integrate(void* restr _u0, double t0, double tf)
+int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     //****************************************************************************80
     //
     //  Purpose:
@@ -83,7 +83,7 @@ int rk4_tmpl<T>::integrate(void* restr _u0, double t0, double tf)
     //
 {
     //get dt
-    T* restr u0 = (T* restr)_u0;
+    T* restr u0 = _u0.get<T>();
     ALIGNED(f0);
     ALIGNED(f1);
     ALIGNED(f2);

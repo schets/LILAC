@@ -14,7 +14,7 @@ class euler_sde:public integrator{
     void postprocess(input& dat);
     std::vector<std::string> dependencies() const;
     std::string type() const;
-    int integrate(void* restr u, double t0, double tf);
+    int integrate(ptr_passer u, double t0, double tf);
     ~euler_sde();
 };
 

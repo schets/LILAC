@@ -27,7 +27,6 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     Ichem = (gchem *
             (vmap*(AEchem_trans*smap.matrix()).array() 
              - (AEchem_trans*(smap*Echem).matrix()).array()));
-
    /* dvmap = (-1.0/tau)*((memG*(vmap - memV))
             +(gelec*laplacian*vmap.matrix()).array()+
             (gchem *(vmap*(AEchem_trans*smap.matrix()).array()
@@ -38,10 +37,8 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     }
     double amp = 2e4;
     dv[276]+= (-1.0/tau)*amp;
-    
     dv[278]+= (-1.0/tau)*amp;
-    int xx;
-    std::cin >> xx;
+    err("", "", "", FATAL_ERROR);
     return 0;
 }
 int c_elegans::dwdt(ptr_passer x, ptr_passer _dx, double dt){
@@ -128,6 +125,7 @@ void c_elegans::postprocess(input& in){
     for(size_t i = 0; i < num_neur; i++){
         C(i, i) += tmp(i);
     }
+    std::cout << C.colwise().sum() << std::endl;
     Matrix<double, num_neur, 1> Ivals;
     Ivals.setZero();
     double amp=2e4;
@@ -138,7 +136,6 @@ void c_elegans::postprocess(input& in){
     for(size_t i = 0; i < num_neur; i++){
         b[i] += (memG*memV + Ivals[i]);
     }
-    std::cout << b.sum() << std::endl;
     eqV.matrix() = C.inverse()*b;
     vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
 }

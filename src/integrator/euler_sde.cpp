@@ -2,7 +2,7 @@
 #include "euler_sde.h"
 #include "euler_sde_tmpl.hpp"
 #include "utils/type_constructor.hpp"
-int euler_sde::integrate(void* restr u, double t0, double tf){
+int euler_sde::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
 euler_sde::~euler_sde(){

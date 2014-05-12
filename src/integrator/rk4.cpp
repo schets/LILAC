@@ -2,7 +2,7 @@
 #include "rk4_tmpl.hpp"
 #include "utils/type_constructor.hpp"
 #include "utils/comp_funcs.hpp"
-int rk4::integrate(void* restr u, double t0, double tf){
+int rk4::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
 rk4::~rk4(){

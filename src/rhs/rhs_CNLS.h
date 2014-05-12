@@ -21,8 +21,6 @@ class rhs_CNLS: public rhs_type<comp>{
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
     virtual void postprocess(input& dat);
-   // virtual void parse(std::string inval);
-  //  virtual void retrieve(void* inval) const ;
     ~rhs_CNLS();
     virtual int dxdt(ptr_passer x, ptr_passer dx, double t);
 };

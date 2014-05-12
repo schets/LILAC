@@ -4,7 +4,7 @@
 #include "utils/item_heads.hpp"
 #include "../utils/comp_funcs.hpp"
 #include "utils/type_constructor.hpp"
-int rk45::integrate(void* restr u, double t0, double tf){
+int rk45::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
 const std::type_info& rk45::vtype() const{
