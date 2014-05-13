@@ -8,11 +8,14 @@
 
 include make.inc
 .PHONY: all
-all: integrator rhs controller engine objective simulation utils writer lisp SFMT
-	@mkdir -p ../bin
-	@mkdir -p ../lib
+all: init integrator rhs controller engine objective simulation utils writer lisp SFMT
 	$(LD)  ../lib/*.o -o ../bin/lilac $(LFLAGS) 
 	@cp ../bin/lilac ../rundir/lilac
+
+.PHONY: init
+init:
+	@mkdir -p ../bin
+	@mkdir -p ../lib
 
 .PHONY: integrator
 integrator:

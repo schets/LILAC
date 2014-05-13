@@ -301,40 +301,6 @@ void _fill_gaussian_noise(float* restr inv, size_t len, double sdev){
         inv[i] = ngen(gener);
     }
 }
-#ifdef ICC
-#include "mkl.h"
-class vsl_str{
-    public:
-        VSLStreamStatePtr stream;
-        vsl_str(){
-            try{
-                std::random_device rnd("/dev/urandom");
-                vslNewStream(&stream, VSL_BRNG_SFMT19937, rnd());
-            }
-            catch(...){
-#ifdef NDEBUG
-                std::cout << "The current platform does not support std::random_device(), try inserting special code into utils/noise.cpp to ensure proper RNG seeding. ";
-                std::cout << "With the current RNG, it is extremely possibly that two instances of lilac started very close to each other will have the same RNG seed and generate identical noise" << std::endl;
-#endif
-                vslNewStream(&stream, VSL_BRNG_SFMT19937,
-                        std::chrono::high_resolution_clock::now().time_since_epoch().count());
-            }
-        }
-        ~vsl_str(){
-            vslDeleteStream(stream);
-        }
-};
-void fill_gaussian_noise(double* restr inv, size_t len, double sdev){
-    ALIGNED(inv);
-    static vsl_str str;
-    vdRngGaussian(VSL_RNG_METHOD_GAUSSIAN_ICDF, str.stream, len, inv, 0, sdev);
-}
-void fill_gaussian_noise(float* restr inv, size_t len, double sdev){
-    static vsl_str str;
-    ALIGNED(inv);
-    vsRngGaussian(VSL_RNG_METHOD_GAUSSIAN_ICDF, str.stream, len, inv, 0, sdev);
-}
-#else
 void fill_gaussian_noise(double* restr inv, size_t len, double sdev){
     ALIGNED(inv);
     static vector_rng vrng;
@@ -347,4 +313,3 @@ void fill_gaussian_noise(float* restr inv, size_t len, double sdev){
         inv[i] = (float)gsl_ran_gaussian_ziggurat(vrng, sdev);
     }
 }
-#endif

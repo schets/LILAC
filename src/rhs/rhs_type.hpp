@@ -23,8 +23,11 @@ template<typename T> class rhs_type:public rhs{
         
         //!Generic initial condition, call default constructor for each element/
         virtual void initial_condition(ptr_passer in, size_t len){
+//ICC doesn't support default_constructible
+#ifndef ICC
             static_assert(std::is_default_constructible<T>::value,
                     "Type needs to be default constructable in rhs_type");
+#endif
             T* vals = in.get<T>();
             for(size_t j = 0; j < len; j++){
                 vals[j] = T();

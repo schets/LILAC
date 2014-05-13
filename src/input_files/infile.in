@@ -1,9 +1,9 @@
-!#include rhs_CNLS.in
-#include c_elegans.in
-#include euler_sde.in
-!#include rk45.in
+#include rhs_CNLS.in
+!#include c_elegans.in
+!#include euler_sde.in
+#include rk45.in
 #include toroidal.in
-!#include jones_optical.in
-#include ode_sim.in
-(integer dimension 558)
+#include jones_optical.in
+!#include ode_sim.in
+(integer dimension 512)
 
