@@ -1,8 +1,0 @@
-<map id="real8" name="real8">
-<area shape="rect" id="node5" href="$classftest1.html" title="ftest1" alt="" coords="5,160,59,189"/>
-<area shape="rect" id="node7" href="$classftest2.html" title="ftest2" alt="" coords="83,160,136,189"/>
-<area shape="rect" id="node9" href="$classftest3.html" title="ftest3" alt="" coords="160,160,213,189"/>
-<area shape="rect" id="node11" href="$classjones__matrix.html" title="jones_matrix" alt="" coords="237,160,333,189"/>
-<area shape="rect" id="node13" href="$classvariable.html" title="stores a real number that is varied during the simulation" alt="" coords="357,160,424,189"/>
-<area shape="rect" id="node2" href="$classitem.html" title="item" alt="" coords="164,5,209,35"/>
-</map>

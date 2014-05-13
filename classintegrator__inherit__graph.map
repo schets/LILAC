@@ -1,8 +1,0 @@
-<map id="integrator" name="integrator">
-<area shape="rect" id="node9" href="$classrk4.html" title="rk4" alt="" coords="36,237,76,267"/>
-<area shape="rect" id="node11" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="100,237,145,267"/>
-<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="5,83,80,112"/>
-<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="20,5,65,35"/>
-<area shape="rect" id="node6" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="104,83,168,112"/>
-<area shape="rect" id="node13" href="$classrk45__tmpl.html" title="Dormand&#45;Prince integrator." alt="" coords="68,315,177,344"/>
-</map>

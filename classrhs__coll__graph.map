@@ -1,7 +1,0 @@
-<map id="rhs" name="rhs">
-<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="69,197,144,227"/>
-<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="23,101,68,131"/>
-<area shape="rect" id="node6" href="$classengineimp.html" title="engineimp" alt="" coords="5,5,85,35"/>
-<area shape="rect" id="node8" href="$classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="92,101,167,131"/>
-<area shape="rect" id="node10" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="168,197,232,227"/>
-</map>
