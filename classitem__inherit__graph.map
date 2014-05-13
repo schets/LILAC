@@ -1,0 +1,45 @@
+<map id="item" name="item">
+<area shape="rect" id="node3" href="$classftest1.html" title="ftest1" alt="" coords="120,119,173,148"/>
+<area shape="rect" id="node5" href="$classftest2.html" title="ftest2" alt="" coords="120,172,173,201"/>
+<area shape="rect" id="node7" href="$classftest3.html" title="ftest3" alt="" coords="120,225,173,255"/>
+<area shape="rect" id="node9" href="$classitem__dim.html" title="item_dim" alt="" coords="109,279,184,308"/>
+<area shape="rect" id="node73" href="$classnative__item.html" title="native_item" alt="" coords="103,672,191,701"/>
+<area shape="rect" id="node11" href="$classcontroller.html" title="This is the base class for the control type classes." alt="" coords="244,45,319,75"/>
+<area shape="rect" id="node15" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="244,152,319,181"/>
+<area shape="rect" id="node29" href="$classobjective.html" title="objective" alt="" coords="244,232,319,261"/>
+<area shape="rect" id="node33" href="$classrhs.html" title="The rhs base class." alt="" coords="261,325,301,355"/>
+<area shape="rect" id="node53" href="$classsimulation.html" title="simulation" alt="" coords="241,485,321,515"/>
+<area shape="rect" id="node13" href="$classtoroidal.html" title="This class defines the toroidal search controller." alt="" coords="407,5,471,35"/>
+<area shape="rect" id="node17" href="$classeuler__sde.html" title="Dormand&#45;Prince integrator." alt="" coords="400,59,477,88"/>
+<area shape="rect" id="node21" href="$classrk4.html" title="Dormand&#45;Prince integrator." alt="" coords="419,112,459,141"/>
+<area shape="rect" id="node25" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="416,165,461,195"/>
+<area shape="rect" id="node19" href="$classeuler__sde__tmpl.html" title="euler_sde_tmpl\&lt; T \&gt;" alt="" coords="556,59,697,88"/>
+<area shape="rect" id="node23" href="$classrk4__tmpl.html" title="rk4_tmpl\&lt; T \&gt;" alt="" coords="575,112,679,141"/>
+<area shape="rect" id="node27" href="$classrk45__tmpl.html" title="Dormand&#45;Prince integrator." alt="" coords="572,165,681,195"/>
+<area shape="rect" id="node31" href="$classn__pulse__score.html" title="n_pulse_score" alt="" coords="385,219,492,248"/>
+<area shape="rect" id="node35" href="$classrhs__sde.html" title="rhs_sde" alt="" coords="405,272,472,301"/>
+<area shape="rect" id="node39" href="$classrhs__type.html" title="Type interface for the rhs class." alt="" coords="387,325,491,355"/>
+<area shape="rect" id="node41" href="$classrhs__type.html" title="rhs_type\&lt; comp \&gt;" alt="" coords="375,379,503,408"/>
+<area shape="rect" id="node49" href="$classrhs__type.html" title="rhs_type\&lt; double \&gt;" alt="" coords="372,432,505,461"/>
+<area shape="rect" id="node37" href="$classrhs__sde__type.html" title="rhs_sde_type\&lt; T \&gt;" alt="" coords="561,219,692,248"/>
+<area shape="rect" id="node43" href="$classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="" coords="579,272,675,301"/>
+<area shape="rect" id="node45" href="$classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="" coords="585,325,668,355"/>
+<area shape="rect" id="node47" href="$classrhs___s_q_g_l_e.html" title="rhs_SQGLE" alt="" coords="581,379,672,408"/>
+<area shape="rect" id="node51" href="$classc__elegans.html" title="c_elegans" alt="" coords="587,432,667,461"/>
+<area shape="rect" id="node55" href="$classode.html" title="ode" alt="" coords="417,485,460,515"/>
+<area shape="rect" id="node59" href="$classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="411,539,467,568"/>
+<area shape="rect" id="node57" href="$classode__tmpl.html" title="ode_tmpl\&lt; T \&gt;" alt="" coords="573,485,680,515"/>
+<area shape="rect" id="node61" href="$classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="584,539,669,568"/>
+<area shape="rect" id="node63" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; T \&gt;" alt="" coords="759,504,908,533"/>
+<area shape="rect" id="node67" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; comp \&gt;" alt="" coords="747,565,920,595"/>
+<area shape="rect" id="node65" href="$classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE." alt="" coords="968,491,1107,538"/>
+<area shape="rect" id="node69" href="$classstable__spectral__pde__1d__tmpl.html" title="stable_spectral_pde\l_1d_tmpl\&lt; comp \&gt;" alt="" coords="968,561,1107,607"/>
+<area shape="rect" id="node71" href="$classjones__optical.html" title="jones_optical" alt="" coords="1155,569,1253,599"/>
+<area shape="rect" id="node75" href="$class__double.html" title="Stores a real&#45;valued input." alt="" coords="248,592,315,621"/>
+<area shape="rect" id="node81" href="$class__float.html" title="Stores a reduced&#45;precision real valued input." alt="" coords="255,645,308,675"/>
+<area shape="rect" id="node83" href="$class__unsigned.html" title="Stores an unsigned integer as input." alt="" coords="241,699,321,728"/>
+<area shape="rect" id="node85" href="$classinteger.html" title="Stores an integer valued input." alt="" coords="251,752,312,781"/>
+<area shape="rect" id="node87" href="$classstring.html" title="stores a string valued input" alt="" coords="255,805,308,835"/>
+<area shape="rect" id="node77" href="$classjones__matrix.html" title="jones_matrix" alt="" coords="391,592,487,621"/>
+<area shape="rect" id="node79" href="$classvariable.html" title="stores a real number that is varied during the simulation" alt="" coords="405,645,472,675"/>
+</map>
