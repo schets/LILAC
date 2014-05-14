@@ -10,25 +10,20 @@
 //The way this works is through polymorphism, which basically means that the engine sees a class of rhs, but is really accessing a class of type example_rhs
 
 
-//****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
-//To allow this class to be created by the engine, you must add an if statement
-//into the function rhs::create in the file rhs/rhs.cpp
-//An example is there for this class. When adding your class to the creator list
-//don't forget that you need to include the header "my_class_header.h", with the proper name inserted
-//**********************************************************************
-
-
 //!This class is a basic example of how to write an rhs class
 /*!This class is an example of a function rhs class.
  * It implements all of the functions needed, and can even be called from
  * the input file. Make sure to read the source file, as it contains a large amount of documentations that is not present in the documentation
  * Notice that it inherits from rhs_type<comp>, since it is a complex value rhs.
  * An rhs that dealt with real variables would inherit from rhs_type<double>.
- * A class does not have to inherit from rhs_type, as long as it implements a type function.
- * It would also have to implement dxdt in terms of void* instead of comp* or double* or whatever.
+ *
+ * The inheritance from type_register<example_rhs> registers rhs into the itype creation system
+ * This inheritance means that if someone attempts to create a type in the input with the same string
+ * that is returned from the type function, then this class will be returned.
+ * Only do this inheritance for classes which can be instantiated from the input file
  * \sa example_rhs.cpp, example_rhs.h, rhs, and item 
  */
-class example_rhs:public rhs_type<comp>{
+class example_rhs:public rhs_type<comp>, type_register<example_rhs>{
     //up here declare variables that are used internally by the function
     //These may be akin to various parameters, tunable or not
     

@@ -71,7 +71,7 @@ std::vector<std::string> rhs_CNLS::dependencies() const{
 }
 
 std::string rhs_CNLS::type() const {
-    return "rhs_CNLS";
+    return "CNLS";
 }
 /*!
  * Initializes the rhs_CNLS class  

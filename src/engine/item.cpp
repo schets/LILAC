@@ -6,6 +6,7 @@
 #include <sstream>
 #include "comp_funcs.hpp"
 #include "item_heads.hpp"
+#include "utils/item_factory.h"
 item::~item(){}
 item::item(){
     has_write_name=0;
@@ -241,7 +242,9 @@ void _unsigned::_retrieve(retrieve_wrapper&& inval, item* caller){
  * @return Pointer to the created item
  */
 std::shared_ptr<item> item::create(std::string name, engineimp* in){
-    item* rval=0;
+    item* rval=item_factory::create_item(name);
+    rval->holder = in;
+    return std::shared_ptr<item>(rval);
     if(name == "double"){
         rval = new _double();
         rval->holder=in;

@@ -106,6 +106,6 @@ void variable::parse(const std::string& inval){
 }
 
 std::string variable::type()const{
-    return "variable";
+    return "var";
 }
 

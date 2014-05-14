@@ -114,7 +114,7 @@ std::vector<std::string> rhs_SQGLE::dependencies() const{
 }
 
 std::string rhs_SQGLE::type() const {
-    return "rhs_SQGLE";
+    return "SQGLE";
 }
 /*!
  * Initializes the rhs_SQGLE class  

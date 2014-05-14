@@ -1,7 +1,7 @@
 #ifndef RHS_TYPE_H
 #define RHS_TYPE_H
 #include "rhs.h"
-#include <type_traits>
+#include"type_register.hpp"
 //!Type interface for the rhs class
 /*!
  *

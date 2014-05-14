@@ -6,7 +6,7 @@
  * This class defines a Dormand-Prince integrator, the same type used by the
  * Matlab function ODE45
  */
-class euler_sde:public integrator{
+class euler_sde:public integrator, type_register<euler_sde>{
     protected:
     std::shared_ptr<euler_sde> actual;
     public:

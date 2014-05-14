@@ -1,12 +1,13 @@
 #ifndef RHS_IMP_H
 #define RHS_IMP_H
 #include "rhs_type.hpp"
+#include <type_register.hpp>
 //!The class defining the CNLS equations
 /*!
  * This class provides an implementation of the coupled nonlinear schrodinger equations
  * SHOULD ADD ACTUAL EQUATIONS
  */
-class rhs_CNLS: public rhs_type<comp>{
+class rhs_CNLS: public rhs_type<comp>, type_register<rhs_CNLS>{
     //This class defines the rhs equations for the coupled CNLS
     comp * restr u1, * restr u2, * restr uf1, *restr uf2, * restr comp_in,
          * restr comp_out, * restr comp_out_r, * restr comp_in_r;
