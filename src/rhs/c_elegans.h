@@ -6,9 +6,10 @@
 using namespace Eigen;
 class c_elegans:public rhs_type<double>{
     constexpr static size_t num_neur = 279;
+    constexpr static size_t al_num = 4;
     typedef Eigen::SparseMatrix<double, RowMajor> sparse_type;
     sparse_type laplacian, AEchem_trans;
-    Array<double, num_neur, 1> vmean, sig, Echem, Iohm, Ichem, Ielec, eqS, eqV;
+    Array<double, num_neur, 1> vmean, sig, Echem, eqS, eqV;
     constexpr static size_t dim_v = num_neur;
     constexpr static size_t dim_s = dim_v;
     double beta, memV, memG, gchem, gelec, tau, EchemEx, EchemInh, ar, ad;

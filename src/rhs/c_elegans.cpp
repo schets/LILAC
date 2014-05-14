@@ -20,6 +20,7 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     Map<Array<double, dim_v, 1>> dvmap(dv);
     Map<Array<double, dim_v, 1>> smap(s);
     Map<Array<double, dim_v, 1>> dsmap(ds);
+    Array<double, num_neur, 1> Ichem, Ielec, Iohm;
     //calculations from matlab file
     sig = 1.0 / (1.0 + (-1*beta*(vmap-vmean)).exp());
     dsmap = ar*(sig * (1.0-smap)) - ad*smap;
@@ -28,10 +29,6 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     Ichem = (gchem *
             (vmap*(AEchem_trans*smap.matrix()).array() 
              - (AEchem_trans*(smap*Echem).matrix()).array()));
-   /* dvmap = (-1.0/tau)*((memG*(vmap - memV))
-            +(gelec*laplacian*vmap.matrix()).array()+
-            (gchem *(vmap*(AEchem_trans*smap.matrix()).array()
-                     - (AEchem_trans*(smap*Echem).matrix()).array())));*/
     dvmap = (-1.0/tau)*(Iohm + Ielec + Ichem);
     //current injection-for now is hard coded below, inj_nodes is empty here
     for(auto s : inj_nodes){
@@ -40,11 +37,6 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     double amp = 2e4;
     dv[276]+= (1.0/tau)*amp;
     dv[278]+= (1.0/tau)*amp;
-    std::cout << (vmap-vmean).sum() << std::endl;
-    int xx;
-    std::cin >> xx;
-    //This lines ends after one call to dxdt, this make it easy to check the output of one call
-    //err("", "", "", FATAL_ERROR);
     return 0;
 }
 int c_elegans::dwdt(ptr_passer x, ptr_passer _dx, double dt){
@@ -78,7 +70,6 @@ void c_elegans::postprocess(input& in){
 		err("Dimension must be 558, which is double the number of neurons",
 				"", "", FATAL_ERROR);
 	}
-	std::cout << "here" << std::endl;
 	retrieve(beta, in["beta"], this);
 	retrieve(tau, in["tau"], this);
 	retrieve(gelec, in["gelec"], this);
@@ -155,7 +146,6 @@ void c_elegans::postprocess(input& in){
 	//calculate eqV
 	eqV.matrix() = C.inverse()*b;
 	vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
-	std::cout << vmean.sum() << std::endl;
 }
 
 

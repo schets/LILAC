@@ -29,16 +29,18 @@ class engineimp{
     void execute_command(std::string inval);
     void update();
     std::string curdir;
+    std::map<size_t, std::list<std::shared_ptr<writer>>> writers;
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;
     std::set<std::shared_ptr<item>> update_vars;
-    std::vector<std::shared_ptr<writer>> dats;
     void write_data(std::shared_ptr<writer> inval, std::ofstream& fwrite);
+    void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats);
     public:
-    void add_writer(std::shared_ptr<writer> wval);
+    void add_writer(const std::shared_ptr<writer>& wval);
     void write_dat();
     void needs_updating(std::string name);
     void needs_updating(std::shared_ptr<item> p);
+    size_t index;
     //! Returns the current count for updating, aka removing items
     void remove_item(std::string name);
     //!Runs the engine
@@ -54,7 +56,7 @@ class engineimp{
     friend class item;
     friend class variable;
     friend item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
-        std::map<std::string, input>& inv, engineimp* en);
+            std::map<std::string, input>& inv, engineimp* en);
 };
 
 #endif

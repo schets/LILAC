@@ -9,10 +9,12 @@ void engineimp::run(){
     retrieve(cont, values["controller"], 0);
     cont->pre_set();
     update();
+    index=0;
     while(cont->is_good()){
         sys->simulate();
         cont->control(0, 0);
         update();
+        index++;
     }
     fft_cleanup();
 }

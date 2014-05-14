@@ -22,7 +22,8 @@ std::string rk45::type() const{
 void rk45::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<rk45_tmpl>::create(&actual, rh_val);
+    actual->setname(this->name() + "_actual");
+    actual->holder = holder;
     actual->postprocess(dat);
     this->add_as_parent(actual);
-    actual->setname(this->name() + "_actual");
 }

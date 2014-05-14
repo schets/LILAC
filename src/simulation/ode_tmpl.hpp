@@ -29,12 +29,12 @@ class ode_tmpl:public ode{
 };
 template<class T>
 void ode_tmpl<T>::write_t(double tcur){
-    cur_writer=std::shared_ptr<writer>(new writer(true));
-    this->cur_writer->add_data(
+    std::shared_ptr<writer> dat_writer=std::shared_ptr<writer>(new writer(true));
+    dat_writer->add_data(
             data::create("Time", tcur), writer::INTERMEDIATE_SCORE);
-    this->cur_writer->add_data(
+    dat_writer->add_data(
             data::create("Func", sol, dimension), writer::INTERMEDIATE_FUNC);
-    this->holder->add_writer(cur_writer);
+    holder->add_writer(dat_writer);
 }
 template<class T>
 void ode_tmpl<T>::integrate_with_writes(){
@@ -89,11 +89,9 @@ double ode_tmpl<T>::simulate(){
         if(tw > t0){
             inter->integrate(sol, t0, tw);
         }
-
+        integrate_with_writes();
     }
-    std::shared_ptr<writer> dat_writer=std::shared_ptr<writer>(new writer(true));
-    dat_writer->add_data(data::create("Final value", sol, this->dimension), writer::FINAL_FUNC);
-    //this->holder->add_writer(dat_writer);
+    write_t(tf);
     return 0;
 }
 template<class T>

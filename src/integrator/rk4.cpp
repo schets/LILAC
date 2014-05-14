@@ -17,9 +17,10 @@ std::string rk4::type() const{
 void rk4::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<rk4_tmpl>::create(&actual, rh_val);
+    actual->setname(this->name() + "_actual");
+    actual->holder = holder;
     actual->postprocess(dat);
     this->add_as_parent(actual);
-    actual->setname(this->name() + "_actual");
 }
 
 const std::type_info& rk4::vtype() const{

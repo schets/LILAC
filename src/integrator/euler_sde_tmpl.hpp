@@ -5,6 +5,7 @@
 #include "utils/noise.h"
 #include "rhs/rhs_sde.h"
 #include "euler_sde.h"
+#include <limits>
 #include <stdlib.h>
 template<class T>
 class euler_sde_tmpl: public euler_sde{
@@ -31,21 +32,31 @@ int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
     ALIGNED(w0);
     ALIGNED(bfnc);
     for(size_t i = 0; i < steps; i++){
-        gaussian_noise(w0, dimension, dt*dw_weight);
-        //only calculate coefficients for dw if needed
-        if(calc_dw){
-            func->dxdt(vals, f0, tc);
-            func->dwdt(vals, bfnc, tc);
-            for(size_t j = 0; j < dimension; j++){
-                vals[j] += dt*f0[j] + bfnc[j]*w0[j];
+        if(std::abs(dw_weight) > std::numeric_limits<double>::epsilon())
+        {
+            gaussian_noise(w0, dimension, dt*dw_weight);
+            //only calculate coefficients for dw if needed
+            if(calc_dw){
+                func->dxdt(vals, f0, tc);
+                func->dwdt(vals, bfnc, tc);
+                for(size_t j = 0; j < dimension; j++){
+                    vals[j] += dt*f0[j] + bfnc[j]*w0[j];
+                }
+            }
+            else{
+                rh_val->dxdt(vals, f0, tc);
+                for(size_t j = 0; j < dimension; j++){
+                    vals[j] += dt*f0[j] + w0[j];
+                }
             }
         }
         else{
             rh_val->dxdt(vals, f0, tc);
             for(size_t j = 0; j < dimension; j++){
-                vals[j] += dt*f0[j] + w0[j];
+                vals[j] += dt*f0[j];
             }
         }
+
         tc += dt;
     }
     return 0;

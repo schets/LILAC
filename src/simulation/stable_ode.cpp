@@ -17,6 +17,7 @@ void stable_ode::postprocess(input& invals){
     retrieve(inter, invals["integrator"], this);
     type_constructor<stable_ode_tmpl>::create(&actual, inter);
     actual->setname(this->name() + "_actual");
+    actual->holder = holder;
     actual->postprocess(invals);
     add_as_parent(actual);
 }

@@ -37,23 +37,7 @@ void engineimp::_read(std::istream& fstr){
             execute_command(curline);
             continue;
         }
-       /* param_val invals = split_into_toks(curline);
-        curit = item::create(invals.type, this);
-        if(invals.name.empty()){
-            std::cout<<"Variables need a name and a type, "<<
-                "error on line " << line << std::endl;
-            continue;
-        }
-        //get next token, should be variable name
-        curit->setname(invals.name);
-        auto native_ptr = std::dynamic_pointer_cast<native_item>(curit);
-        if(native_ptr.use_count()){
-            //if token is one of the native types, parse the input
-            native_ptr->parse(invals.params);
-        }
-        else{
-            //add input string to input somehow?
-        }*/
+
         item_wrapper curit = eval_lisp(curline, std::string(), inputs, this);
         values[curit->name()] = item_wrapper(curit); 
     }

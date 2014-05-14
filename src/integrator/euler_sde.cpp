@@ -18,6 +18,7 @@ void euler_sde::postprocess(input& dat){
     integrator::postprocess(dat);
     type_constructor<euler_sde_tmpl>::create(&actual, rh_val);
     actual->postprocess(dat);
+    actual->holder = holder;
     actual->setname(this->name() + "_actual");
 }
 

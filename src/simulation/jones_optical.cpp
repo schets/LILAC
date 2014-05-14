@@ -154,27 +154,7 @@ void jones_optical::pre_fft_operations(){
             ifft(ucur+j*nts, ucur+j*nts, nts);
         }
     }
-    /*    if(round==num_min){
-          for(size_t j = 0; j < num_pulses; j++){
-          fft(ffor, ucur+j*nts, ucur+j*nts, nts);
-          }
-
-          for(size_t i = 0; i < nts; i++){
-          nvec2[i] = _sqabs(ucur[i]);        
-          for(size_t j = 0; j < num_pulses; j++){
-          nvec2[i] += _sqabs(ucur[i+j*nts]);
-          }
-          nvec2[i] = sqrt(nvec2[i]);
-          }
-
-          for(size_t i = 0; i < nts; i++){
-          fprintf(func_dat, "%lf ", nvec2[i]);
-          }
-          fprintf(func_dat, "\n");
-          for(size_t j = 0; j < num_pulses; j++){
-          ifft(fback, ucur+j*nts, ucur+j*nts, nts);
-          }
-          }*/
+    
 }
 void jones_optical::post_ifft_operations(){
     //apply the jones matrices, and integration between them
@@ -244,23 +224,11 @@ double jones_optical::score(){
             phold[i] = sqrt(phold[i]);
         }       
     }
-    if(round < max_iterations - 1 && score > .05){
-        fprintf(func_score, "%lf 1\n", score);
-    }
-    else{
-        fprintf(func_score, "%lf 0\n", score);
-    }
+
+    
     return score;
 }
 jones_optical::~jones_optical(){
-  /*  al_free(help);
-    al_free(t);
-    al_free(kurtosis_help);
-    al_free(phold);
-    al_free(nvec1);
-    al_free(nvec2);*/
-    fclose(func_dat);
-    fclose(func_score);
 }
 
 std::string jones_optical::type() const{
