@@ -14,7 +14,6 @@ class integrator:public item_dim, public vartype{
     protected:
         rhs* rh_val;
     public:
-        static item* create(std::string inval);
         virtual void initial_condition(ptr_passer in, size_t len);
         inline void initial_condition(ptr_passer in){
             initial_condition(in, dimension);

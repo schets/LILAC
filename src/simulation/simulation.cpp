@@ -22,15 +22,6 @@ std::vector<std::string> simulation::dependencies() const{
     return make_append(sys_deps, item_dim::dependencies());
 }
 
-item* simulation::create(std::string name){
-    if(name == "jones_optical"){
-        return new jones_optical();
-    }
-    if(name == "ode"){
-        return new ode();
-    }
-    return 0;
-}
 double simulation::score(){
     return 0;
 }

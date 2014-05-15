@@ -13,17 +13,10 @@ class type_register{
     static volatile bool regis;
     static bool init();
     static item* create();
-    public:
-    //this forces instantiation
-    virtual ~type_register(){
-       if(regis){
-           //more useless volatile stuff to stop overoptimization
-           volatile int x = 1;
-           x++;
-           if(x){
-               x=2;
-           }
-       }
+    //seems pointless but forces instantiation
+    //non virtual doesn't work
+    virtual bool get_regis(){
+        return type_register<T>::regis;
     }
 };
 
@@ -33,8 +26,10 @@ volatile bool type_register<T>::regis=type_register<T>::init();
 template<class T>
 bool type_register<T>::init(){
     static_assert(std::is_base_of<item, T>::value, "type_register can only be used on classes that inherit from item");
+    static_assert(std::is_base_of<type_register<T>, T>::value, "type_register can only be used on classes that inherit from it, \
+            using themselves as the template argument (class derived : type_register<derived>");
     static_assert(!std::is_abstract<T>::value, "type_register cannot be used with an abstract class");
-    //these two conditions also assert that T defines a type function
+    //these conditions also assert that T defines a type function
     T temp;
     item_factory::register_type(temp.type(), type_register<T>::create);
     return true;

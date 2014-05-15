@@ -20,10 +20,3 @@ std::vector<std::string> objective::dependencies() const{
 void objective::postprocess(input& invals){
     item_dim::postprocess(invals);
 } 
-
-item* objective::create(std::string name){
-    if(name=="n_pulse_score"){
-        return new n_pulse_score();
-    }
-    return 0;
-}

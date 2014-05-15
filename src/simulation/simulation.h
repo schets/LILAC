@@ -18,7 +18,6 @@ class simulation:public item_dim{
         virtual double simulate() = 0;
         //!This function returns the score of the system in its current state
         virtual double score();
-        static item* create(std::string name);
         virtual void postprocess(input& inval)=0;
         virtual std::vector<std::string> dependencies() const = 0;
 };

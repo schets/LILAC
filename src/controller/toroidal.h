@@ -1,6 +1,7 @@
 #ifndef TOROIDAL_H
 #define TOROIDAL_H
 #include "controller.h"
+#include "utils/type_register.hpp"
 //!This class defines the toroidal search controller
 /*!
  * This class defines a controller that can be used for searching a toroidal parameter space
@@ -8,7 +9,7 @@
  * this class will also be able to perform searches until the parameter space has been
  * successfully examined
  */
-class toroidal:public controller{
+class toroidal:public controller, type_register<toroidal>{
     size_t iterations;
     size_t num_int;
     double initial_inc;

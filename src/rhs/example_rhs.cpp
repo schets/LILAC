@@ -54,6 +54,10 @@ std::vector<std::string> example_rhs::dependencies() const{
  * @param dat The data structure containing the variable names
  */
 void example_rhs::postprocess(input& dat){
+    //warning so nobody ever actually constructs one of these
+    //please don't have warnings that always throw in your code ever
+    err("Example_rhs created, mysteriously fails on some architectures seemingly from AVX instructions. Also does nothing useful", "rhs::create", "rhs/rhs.cpp", WARNING);
+
     rhs::postprocess(dat);//always postprocess the parent class first
     //Any class that inherits from rhs, or item_dim, has access to a variable
     //called dimension, which represents the dimension of the problem at hand
@@ -130,7 +134,6 @@ void example_rhs::update(){
 example_rhs::~example_rhs(){
     //this->free_various_resources();
 }
-
 
 //!This is the rhs function that calculates the derivative
 /*!

@@ -45,10 +45,3 @@ void controller::postprocess(input& inval){
     vars[2] = (variable*)inval["a3"];
     vars[3] = (variable*)inval["ap"];*/
 }
-
-item* controller::create(std::string name){
-    if(name == "toroidal"){
-        return new toroidal();
-    }
-    return 0;
-}

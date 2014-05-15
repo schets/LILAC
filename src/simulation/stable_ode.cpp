@@ -32,7 +32,7 @@ void stable_ode::post_integration_operations(){
     actual->post_integration_operations();
 }
 std::string stable_ode::type() const{
-    return actual->type();
+    return "stable_ode";
 }
 std::vector<std::string> stable_ode::dependencies() const{
     std::string deps[] = {"integrator", "t0", "int_len"};

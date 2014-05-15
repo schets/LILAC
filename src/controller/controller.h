@@ -22,7 +22,6 @@ class controller:public item_dim{
     virtual void control(comp* u, objective* obj) = 0;
     virtual char is_good() = 0;
     virtual void pre_set(){};
-    static item* create(std::string name);
 };
 #endif
 

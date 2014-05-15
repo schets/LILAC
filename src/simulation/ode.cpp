@@ -2,7 +2,7 @@
 #include "ode_tmpl.hpp"
 #include "utils/type_constructor.hpp"
 std::string ode::type() const{
-    return actual->type();
+    return "ode";
 }
 const std::type_info& ode::vtype() const{
     return actual->vtype();
