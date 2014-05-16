@@ -25,11 +25,11 @@ git clone https://github.com/schets/LILAC lilac && cd lilac && make
 
 TODO (kinda ordered by priority):
 
-1. Implement neural network model
-2. Allow basic numerical operations to be done with lilac-lisp
-3. Remove uneeded dependencies, refactor code (especially interpreter)
+1. Re-verify rhs_CNLS
+2. Get documentation up to date
+3. Remove uneeded dependencies, refactor code (especially interpreter and engine/engineimp class)
 4. Add testing framework
-5. Get documentation up to date
+5. Allow basic numerical operations to be done with lilac-lisp
 6. Add functions and macros to lilac-lisp
 7. Implement effecient way to reserve many different dimensions in the mempool
 8. Write map-fold scripts for analyzing output

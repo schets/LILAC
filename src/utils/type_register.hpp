@@ -8,12 +8,10 @@
 class item;
 template<class T>
 class type_register final {
-    //by declaring regis as volatile,
     static bool regis;
     static bool init();
     static item* create();
-    //seems pointless but forces instantiation
-    //non virtual doesn't work
+    type_register(){};
 };
 
 template<class T>
