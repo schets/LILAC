@@ -2,6 +2,7 @@
 #include "engine/input.h"
 #include "utils/comp_funcs.hpp"
 #include "utils/item_heads.hpp"
+#include "utils/type_register.hpp"
 #include <vector>
 #include <fstream>
 #include "gaba_list.hpp"
@@ -10,6 +11,7 @@
 constexpr size_t c_elegans::num_neur;
 constexpr size_t c_elegans::dim_v;
 constexpr size_t c_elegans::dim_s;
+template class type_register<c_elegans>;
 int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     double* restr v = x.get<double>();
     double* restr dv = dx.get<double>();

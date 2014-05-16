@@ -5,7 +5,7 @@
 #include "stable_spectral_pde_1d_tmpl.hpp"
 //!jones matrix class, inherits from real8 since there is no meaningful functions for most of it
 class jones_matrix;
-class jones_optical:public stable_spectral_pde_1d_tmpl<comp>, type_register<jones_optical>{
+class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     double* help, *t, *phold;
     comp* nvec1;
     double *nvec2;

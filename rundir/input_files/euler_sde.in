@@ -1,4 +1,0 @@
-(euler_sde integrator)
-(double dw_weight .05)
-(integer calc_dw 0)
-(double stepsize 0.0001)

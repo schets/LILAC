@@ -1,5 +1,0 @@
-(double t0 0)
-(double tf 7)
-(ode simulation)
-(n_pulse_score objective)
-(integer num_pulses 2)

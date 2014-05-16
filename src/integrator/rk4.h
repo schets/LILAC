@@ -6,7 +6,7 @@
  * This class defines a Dormand-Prince integrator, the same type used by the
  * Matlab function ODE45
  */
-class rk4:public integrator, type_register<rk4>{
+class rk4:public integrator{
     protected:
     std::shared_ptr<rk4> actual;
     public:

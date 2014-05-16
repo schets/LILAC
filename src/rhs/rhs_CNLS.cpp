@@ -1,8 +1,9 @@
 #include "rhs_CNLS.h"
 #include "comp_funcs.hpp"
 #include "utils/ptr_passer.hpp"
+#include "utils/type_register.hpp"
 
-
+template class type_register<rhs_CNLS>;
 /*!
  * Destructor for rhs_CNLS
  * */

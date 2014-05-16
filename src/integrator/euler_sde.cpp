@@ -2,6 +2,9 @@
 #include "euler_sde.h"
 #include "euler_sde_tmpl.hpp"
 #include "utils/type_constructor.hpp"
+#include "utils/type_register.hpp"
+template class type_register<euler_sde>;
+
 int euler_sde::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }

@@ -2,7 +2,6 @@
 #define stable_h
 #include "simulation.h"
 #include "integrator/integrator.h"
-#include "type_register.hpp"
 //!A system that attempts to reach an equilibrium
 /*! This class defines a system that tries to reach an equilibrium
  * The actual implementation lets the user define a function get_change, which
@@ -41,7 +40,7 @@ class stable:public simulation, public vartype{
  * This allows the system to choose the type at runtime, and generally be ignorant of the
  *  variable type of the defined problem. 
  */
-class stable_ode:public stable, type_register<stable_ode>{
+class stable_ode:public stable{
     protected:
         std::shared_ptr<stable_ode> actual;
         //!This defines the integrator being used

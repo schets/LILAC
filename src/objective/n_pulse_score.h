@@ -1,8 +1,7 @@
 #ifndef CNLS_PULSE_H
 #define CNLS_PULSE_H
 #include "objective.h"
-#include "type_register.hpp"
-class n_pulse_score:public objective, type_register<n_pulse_score>{
+class n_pulse_score:public objective{
     size_t n_pulse;
     double* restr help;
     size_t nts;

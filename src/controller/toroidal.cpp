@@ -1,6 +1,8 @@
 #include "engine/item.h"
 #include "toroidal.h"
 #include "comp_funcs.hpp"
+#include "utils/type_register.hpp"
+template class type_register<toroidal>;
 /*
  * This function returns the dependencies of the toroidal class
  * \note

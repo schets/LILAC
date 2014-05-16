@@ -7,6 +7,17 @@
 #include "comp_funcs.hpp"
 #include "item_heads.hpp"
 #include "utils/item_factory.h"
+#include "utils/type_register.hpp"
+template class type_register<_double>;
+
+template class type_register<_float>;
+template class type_register<string>;
+template class type_register<integer>;
+template class type_register<_unsigned>;
+template class type_register<variable>;
+template class type_register<ftest1>;
+template class type_register<ftest2>;
+template class type_register<ftest3>;
 item::~item(){}
 item::item(){
     has_write_name=0;

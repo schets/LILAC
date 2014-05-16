@@ -17,13 +17,9 @@
  * Notice that it inherits from rhs_type<comp>, since it is a complex value rhs.
  * An rhs that dealt with real variables would inherit from rhs_type<double>.
  *
- * The inheritance from type_register<example_rhs> registers rhs into the itype creation system
- * This inheritance means that if someone attempts to create a type in the input with the same string
- * that is returned from the type function, then this class will be returned.
- * Only do this inheritance for classes which can be instantiated from the input file
  * \sa example_rhs.cpp, example_rhs.h, rhs, and item 
  */
-class example_rhs:public rhs_type<comp>, type_register<example_rhs>{
+class example_rhs:public rhs_type<comp>{
     //up here declare variables that are used internally by the function
     //These may be akin to various parameters, tunable or not
     
@@ -61,6 +57,10 @@ class example_rhs:public rhs_type<comp>, type_register<example_rhs>{
     virtual std::string type() const;
     virtual std::vector<std::string> dependencies() const;
     virtual void postprocess(input& indat);
+
+
+    //This function updates data inside the class whenever a variable it references changes
+    //use it to re-do any calculations that are done to initialize the class
     virtual void update();
 
     //This function calculates the derivative given the current function value
@@ -76,3 +76,4 @@ class example_rhs:public rhs_type<comp>, type_register<example_rhs>{
     //if you allocate any memory, you must free it
     virtual ~example_rhs();
 };
+

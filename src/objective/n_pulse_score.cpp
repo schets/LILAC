@@ -1,6 +1,7 @@
 #include "n_pulse_score.h"
 #include "comp_funcs.hpp"
-
+#include "type_register.hpp"
+template class type_register<n_pulse_score>;
 double kurtosis(double in[], size_t len){
     double mean, mom4, mom2;
     mean = mom4 = mom2 = 0;

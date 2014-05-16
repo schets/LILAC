@@ -2,6 +2,9 @@
 #include "rk4_tmpl.hpp"
 #include "utils/type_constructor.hpp"
 #include "utils/comp_funcs.hpp"
+#include "utils/type_register.hpp"
+template class type_register<rk4>;
+
 int rk4::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }

@@ -6,6 +6,9 @@
 #include "jones_optical.h"
 #include "utils/comp_funcs.hpp"
 #include "utils/noise.h"
+#include "type_register.hpp"
+
+template class type_register<jones_optical>;
 /*!
  * class to allow automatic updating of the matrices involved
  * It's hacky but there isn't a generic operator-creator made

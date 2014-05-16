@@ -4,7 +4,9 @@
  * documentation explaining most steps and various details
  * */
 #include "example_rhs.h"
+#include "utils/item_heads.hpp"//various headers important to dealing with items, see header for current content
 #include "comp_funcs.hpp" //includes various functions for complex variables and some template math ones
+#include "utils/type_register.hpp"//include file for the type_register class;
 //****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
 //To have code that compiles with the engine, you need to edit the makefile in
 //the rhs directory. It is the file that controls when pieces of code are built.
@@ -14,13 +16,23 @@
 //An example can be found, for this file, in the makefile in rhs.
 //You pretty much just need to copy and paste a version with your file names
 //instead of the example file names. Also, please don't remove the example build commands
+//
+//
+//*************************
+//IMPORTANT
+//the line of code below makes it so that you can create an instance of the class
+//through the input scripts
+template class type_register<example_rhs>;
+//If you don't do this, then you can't create this in the input file
+//
+//That is desirable behavior, for example it is used by the template backends of the integrators
 
 
 //!This function returns the variable type
 /*!
- * This function returns a string that has the typename of your variable. It is easiest to
- * simply have this match the name of your class, and it should definitely match the name 
- * that is used to create the class
+ * This function returns a string that has the typename of your variable. If the variable
+ * is meant to be instantiated in an input script, then this function must return the name
+ * which corresponds to this class. See rhs_CNLS for a case where that differs from the class name
  * @return Name of the class type
  */
 std::string example_rhs::type() const{
@@ -32,6 +44,7 @@ std::string example_rhs::type() const{
 * when they are used to initialize the class. An error occurs if the variables are not found
 * in the input or there is a loop of dependencies, this is a depends on b, which depends on c,
 * which in turn depends back on a.
+* 
 *
 * \note
 * This class depends on val1, val2, and random_info

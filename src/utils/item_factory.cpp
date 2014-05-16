@@ -1,16 +1,18 @@
 #include "item_factory.h"
-#include "engine/item.h"
 #include <map>
-#include <iostream>
 #include "defs.hpp"
 std::map<std::string, create_fnc>* types=0;
 class types_initer{
+    //had better luck with static initialization this way
+    //since by doing this the map is always instantiated upon entry to the function
     public:
         types_initer(){
             types = new std::map<std::string, create_fnc>();
         }
         ~types_initer(){
-            delete types;
+            if(types){
+                delete types;
+            }
         }
 };
 void item_factory::register_type(const std::string& name, const create_fnc& creator){

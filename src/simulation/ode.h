@@ -3,8 +3,7 @@
 #define ODE_H
 #include "simulation.h"
 #include "integrator/integrator.h"
-#include "type_register.hpp"
-class ode: public simulation, public vartype, type_register<ode>{
+class ode: public simulation, public vartype{
     std::shared_ptr<ode> actual;
     protected:
     integrator* inter;

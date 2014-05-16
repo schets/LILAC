@@ -1,6 +1,6 @@
 #include "rhs_type.hpp"
 
-class rhs_SQGLE: public rhs_type<comp>, type_register<rhs_SQGLE>{
+class rhs_SQGLE: public rhs_type<comp>{
     //This class defines the rhs equations for the coupled CNLS
     comp * restr u1, * restr u2, * restr uf1, * restr comp_in,
          * restr comp_out,  * restr comp_in_r;

@@ -1,6 +1,9 @@
 #include "stable_ode_tmpl.hpp"
 #include "utils/type_constructor.hpp"
 #include "utils/comp_funcs.hpp"
+#include "type_register.hpp"
+
+template class type_register<stable_ode>;
 //stable_ode functions
 
 /*!

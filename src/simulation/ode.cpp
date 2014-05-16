@@ -1,6 +1,8 @@
 #include "ode.h"
 #include "ode_tmpl.hpp"
 #include "utils/type_constructor.hpp"
+#include "type_register.hpp"
+template class type_register<ode>;
 std::string ode::type() const{
     return "ode";
 }

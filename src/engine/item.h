@@ -3,7 +3,6 @@
 #include <map>
 #include <set>
 #include <iostream>
-#include "type_register.hpp"
 #include "utils/defs.hpp"
 class engineimp;
 class retrieve_wrapper;
@@ -50,7 +49,7 @@ class native_item:public item{
         void postprocess(input& inval) final;
 };
 //!Stores a real-valued input
-class _double:public native_item, type_register<_double>{
+class _double:public native_item{
     double value;
     public:
     virtual void print() const;
@@ -60,7 +59,7 @@ class _double:public native_item, type_register<_double>{
     friend class variable;
 };
 //!Stores a reduced-precision real valued input
-class _float:public native_item, type_register<_float>{
+class _float:public native_item{
     size_t value;
     public:
     virtual void print() const;
@@ -71,7 +70,7 @@ class _float:public native_item, type_register<_float>{
 };
 
 //!stores a string valued input
-class string:public native_item, type_register<string>{
+class string:public native_item{
     std::string value;
     public:
     virtual void print() const;
@@ -81,7 +80,7 @@ class string:public native_item, type_register<string>{
 };
 
 //!Stores an integer valued input
-class integer:public native_item, type_register<integer>{
+class integer:public native_item{
     int value;
     public:
     virtual void print() const;
@@ -91,7 +90,7 @@ class integer:public native_item, type_register<integer>{
     friend class engineimp;
 };
 //!Stores an unsigned integer as input
-class _unsigned:public native_item, type_register<_unsigned>{
+class _unsigned:public native_item{
     size_t value;
     public:
     virtual void print() const;
@@ -114,7 +113,7 @@ class _unsigned:public native_item, type_register<_unsigned>{
  * will be generalized to be useful for general pruposes, not simply plain toroidal searches
  * \sa real
  */
-class variable:public _double, type_register<variable>{
+class variable:public _double{
     //double* are not use by std since they are mostly to stack allocated mem
     std::map<item*, std::set<double*> > modifiers;
     std::map<std::weak_ptr<item>, std::set<double*>, std::owner_less<std::weak_ptr<item> > > safe_mods;
@@ -132,7 +131,7 @@ class variable:public _double, type_register<variable>{
 
 
 //classes for testing graphsort, mainly to ensure that it finds cyclical and unsatisfied dependencies
-class ftest1 : public item, type_register<ftest1>{
+class ftest1 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var1"};
@@ -143,7 +142,7 @@ class ftest1 : public item, type_register<ftest1>{
         }
 };
 
-class ftest2 : public item, type_register<ftest2>{
+class ftest2 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var2"};
@@ -153,7 +152,7 @@ class ftest2 : public item, type_register<ftest2>{
             return "ftest2";
         }
 };
-class ftest3 : public item, type_register<ftest2>{
+class ftest3 : public item{
     public:
         virtual std::vector<std::string> dependencies() const{
             std::string deps[] = {"var3", "var4"};

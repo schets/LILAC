@@ -22,39 +22,39 @@ void al_free(void* ss){
     fftw_free(ss);
 }
 void err(std::string message, std::string function, std::string file, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\nExiting program\n";
     exit(1);
 }
 void err(std::string message, std::string function, std::string file, _warning w){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\nContinuing program\n";
 }
 void err(std::string message, std::string function, std::string file, item* p, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
-    std::cout << "\nExiting program\n";
+    std::cerr << "\nExiting program\n";
     exit(1);
 }
 void err(std::string message, std::string function, std::string file, item* p, _warning f){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
-    std::cout << "\nContinuing program\n";
+    std::cerr << "\nContinuing program\n";
 }
 void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f){
-    std::cout<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
-    std::cout << "\nExiting program\n";
+    std::cerr << "\nExiting program\n";
     exit(1);
 }
 void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f){
-    std::cout<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
+    std::cerr<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
-    std::cout << "\nContinuing program\n";
+    std::cerr << "\nContinuing program\n";
 }
 class fftw_plan_holder{
     public: 

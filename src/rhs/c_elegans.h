@@ -1,12 +1,10 @@
 #ifndef C_ELEGANS_H
 #define C_ELEGANS_H
 #include "rhs_type.hpp"
-#include "utils/type_register.hpp"
 #include "eigen3/Eigen/Eigen"
 #include "eigen3/Eigen/Sparse"
 using namespace Eigen;
-class c_elegans;
-class c_elegans:public rhs_type<double>, type_register<c_elegans>{
+class c_elegans:public rhs_type<double>{
     constexpr static size_t num_neur = 279;
     constexpr static size_t al_num = 4;
     typedef Eigen::SparseMatrix<double, RowMajor> sparse_type;

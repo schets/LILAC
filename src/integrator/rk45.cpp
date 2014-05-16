@@ -4,6 +4,10 @@
 #include "utils/item_heads.hpp"
 #include "../utils/comp_funcs.hpp"
 #include "utils/type_constructor.hpp"
+#include "utils/type_register.hpp"
+
+template class type_register<rk45>;
+
 int rk45::integrate(ptr_passer u, double t0, double tf){
     return actual->integrate(u, t0, tf);
 }
