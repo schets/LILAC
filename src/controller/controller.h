@@ -14,7 +14,6 @@ class controller:public item_dim{
     public:
     int index;
     size_t num_cont;
-    virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
     virtual void postprocess(input& inval);
     virtual void addvar(std::weak_ptr<variable> v)=0;

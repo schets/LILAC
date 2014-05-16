@@ -7,6 +7,5 @@ class objective:public item_dim{
         virtual double score(comp* invals) = 0;
         virtual std::vector<std::string> dependencies() const=0;
         virtual void postprocess(input& inval)=0;
-        virtual void parse(std::string inval){};
 };
 #endif

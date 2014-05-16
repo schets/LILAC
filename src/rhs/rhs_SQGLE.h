@@ -14,7 +14,6 @@ class rhs_SQGLE: public rhs_type<comp>{
     public:
     void update();
     double* restr k;
-    virtual void parse(std::string inval);
     virtual std::vector<std::string> dependencies() const;
     virtual  std::string type() const;
     virtual void postprocess(input& dat);

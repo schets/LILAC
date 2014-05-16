@@ -186,6 +186,4 @@ void rhs_SQGLE::postprocess(input& dat){
     retrieve(ap, vv, this); 
     //temporary solution, add variables directly to controller
 }
-void rhs_SQGLE::parse(std::string inval){
-}
 void rhs_SQGLE::update(){}
