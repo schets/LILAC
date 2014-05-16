@@ -1,0 +1,16 @@
+<map id="controller/toroidal.cpp" name="controller/toroidal.cpp">
+<area shape="rect" id="node3" href="$item_8h.html" title="engine/item.h" alt="" coords="285,392,384,421"/>
+<area shape="rect" id="node26" href="$toroidal_8h.html" title="toroidal.h" alt="" coords="212,83,287,112"/>
+<area shape="rect" id="node48" href="$comp__funcs_8hpp.html" title="comp_funcs.hpp" alt="" coords="461,83,579,112"/>
+<area shape="rect" id="node64" href="$type__register_8hpp.html" title="utils/type_register.hpp" alt="" coords="789,392,939,421"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="605,469,704,499"/>
+<area shape="rect" id="node28" href="$controller_8h.html" title="controller.h" alt="" coords="165,160,251,189"/>
+<area shape="rect" id="node31" href="$item__dim_8h.html" title="engine/item_dim.h" alt="" coords="60,315,188,344"/>
+<area shape="rect" id="node44" href="$objective_8h.html" title="objective/objective.h" alt="" coords="97,237,239,267"/>
+<area shape="rect" id="node34" href="$mempool_8hpp.html" title="mempool.hpp" alt="" coords="75,392,173,421"/>
+<area shape="rect" id="node51" href="$item__heads_8hpp.html" title="item_heads.hpp" alt="" coords="463,160,577,189"/>
+<area shape="rect" id="node53" href="$retrieve__checker_8hpp.html" title="utils/retrieve_checker.hpp" alt="" coords="364,315,535,344"/>
+<area shape="rect" id="node56" href="$input_8h.html" title="engine/input.h" alt="" coords="521,237,623,267"/>
+<area shape="rect" id="node59" href="$item__wrapper_8h.html" title="item_wrapper.h" alt="" coords="609,315,719,344"/>
+<area shape="rect" id="node68" href="$item__factory_8h.html" title="item_factory.h" alt="" coords="895,469,999,499"/>
+</map>

@@ -1,0 +1,15 @@
+<map id="stable_spectral_pde_1d_tmpl::postprocess" name="stable_spectral_pde_1d_tmpl::postprocess">
+<area shape="rect" id="node3" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="209,292,404,321"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="1081,188,1119,217"/>
+<area shape="rect" id="node14" href="$item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="retrieve" alt="" coords="505,397,569,427"/>
+<area shape="rect" id="node36" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="281,396,332,425"/>
+<area shape="rect" id="node5" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="469,111,605,140"/>
+<area shape="rect" id="node22" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="453,344,621,373"/>
+<area shape="rect" id="node26" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="697,240,801,269"/>
+<area shape="rect" id="node7" href="$classsimulation.html#a35314f30ad8650dcd7f46aa271f53a11" title="simulation::postprocess" alt="" coords="669,59,829,88"/>
+<area shape="rect" id="node9" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="877,59,1032,88"/>
+<area shape="rect" id="node16" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="697,397,801,427"/>
+<area shape="rect" id="node19" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="707,344,792,373"/>
+<area shape="rect" id="node28" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="924,213,985,243"/>
+<area shape="rect" id="node31" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="916,267,993,296"/>
+</map>

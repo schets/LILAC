@@ -1,0 +1,15 @@
+<map id="stable_ode_tmpl&lt; T &gt;" name="stable_ode_tmpl&lt; T &gt;">
+<area shape="rect" id="node2" href="$classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="99,565,185,595"/>
+<area shape="rect" id="node4" href="$classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="126,469,182,499"/>
+<area shape="rect" id="node6" href="$classsimulation.html" title="simulation" alt="" coords="250,373,330,403"/>
+<area shape="rect" id="node8" href="$classitem__dim.html" title="item_dim" alt="" coords="239,197,314,227"/>
+<area shape="rect" id="node19" href="$classobjective.html" title="objective" alt="" coords="239,277,314,307"/>
+<area shape="rect" id="node22" href="$classcontroller.html" title="This is the base class for the control type classes." alt="" coords="338,277,413,307"/>
+<area shape="rect" id="node27" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="9,469,83,499"/>
+<area shape="rect" id="node31" href="$classrhs.html" title="The rhs base class." alt="" coords="23,373,63,403"/>
+<area shape="rect" id="node10" href="$classitem.html" title="item" alt="" coords="193,101,238,131"/>
+<area shape="rect" id="node12" href="$classengineimp.html" title="engineimp" alt="" coords="175,5,255,35"/>
+<area shape="rect" id="node14" href="$classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="262,101,337,131"/>
+<area shape="rect" id="node17" href="$classwriter.html" title="writer" alt="" coords="162,277,215,307"/>
+<area shape="rect" id="node25" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="74,277,138,307"/>
+</map>

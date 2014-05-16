@@ -1,0 +1,23 @@
+<map id="simulation/stable_ode.cpp" name="simulation/stable_ode.cpp">
+<area shape="rect" id="node3" href="$stable__ode__tmpl_8hpp.html" title="stable_ode_tmpl.hpp" alt="" coords="757,83,898,112"/>
+<area shape="rect" id="node82" href="$type__constructor_8hpp.html" title="utils/type_constructor.hpp" alt="" coords="973,392,1144,421"/>
+<area shape="rect" id="node87" href="$comp__funcs_8hpp.html" title="utils/comp_funcs.hpp" alt="" coords="865,237,1012,267"/>
+<area shape="rect" id="node91" href="$type__register_8hpp.html" title="type_register.hpp" alt="" coords="1120,469,1242,499"/>
+<area shape="rect" id="node5" href="$stable_8h.html" title="stable.h" alt="" coords="372,160,438,189"/>
+<area shape="rect" id="node69" href="$item__heads_8hpp.html" title="item_heads.hpp" alt="" coords="776,315,890,344"/>
+<area shape="rect" id="node7" href="$simulation_8h.html" title="simulation.h" alt="" coords="157,237,248,267"/>
+<area shape="rect" id="node52" href="$integrator_8h.html" title="integrator/integrator.h" alt="" coords="333,315,477,344"/>
+<area shape="rect" id="node9" href="$item_8h.html" title="engine/item.h" alt="" coords="358,547,457,576"/>
+<area shape="rect" id="node32" href="$controller_8h.html" title="controller/controller.h" alt="" coords="132,315,273,344"/>
+<area shape="rect" id="node17" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="785,624,884,653"/>
+<area shape="rect" id="node35" href="$item__dim_8h.html" title="engine/item_dim.h" alt="" coords="138,469,266,499"/>
+<area shape="rect" id="node48" href="$objective_8h.html" title="objective/objective.h" alt="" coords="24,392,165,421"/>
+<area shape="rect" id="node38" href="$mempool_8hpp.html" title="mempool.hpp" alt="" coords="153,547,252,576"/>
+<area shape="rect" id="node54" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="442,392,528,421"/>
+<area shape="rect" id="node57" href="$vartype_8hpp.html" title="../utils/vartype.hpp" alt="" coords="634,469,765,499"/>
+<area shape="rect" id="node62" href="$ptr__passer_8hpp.html" title="ptr_passer.hpp" alt="" coords="402,469,509,499"/>
+<area shape="rect" id="node71" href="$retrieve__checker_8hpp.html" title="utils/retrieve_checker.hpp" alt="" coords="552,392,722,421"/>
+<area shape="rect" id="node74" href="$input_8h.html" title="engine/input.h" alt="" coords="797,392,898,421"/>
+<area shape="rect" id="node77" href="$item__wrapper_8h.html" title="item_wrapper.h" alt="" coords="789,469,898,499"/>
+<area shape="rect" id="node95" href="$item__factory_8h.html" title="item_factory.h" alt="" coords="1232,547,1336,576"/>
+</map>

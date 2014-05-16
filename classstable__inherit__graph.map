@@ -1,0 +1,12 @@
+<map id="stable" name="stable">
+<area shape="rect" id="node11" href="$classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="129,315,215,344"/>
+<area shape="rect" id="node2" href="$classsimulation.html" title="simulation" alt="" coords="84,160,164,189"/>
+<area shape="rect" id="node4" href="$classitem__dim.html" title="item_dim" alt="" coords="87,83,161,112"/>
+<area shape="rect" id="node6" href="$classitem.html" title="item" alt="" coords="101,5,147,35"/>
+<area shape="rect" id="node8" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="188,160,252,189"/>
+<area shape="rect" id="node13" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; T \&gt;" alt="" coords="5,392,155,421"/>
+<area shape="rect" id="node17" href="$classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; comp \&gt;" alt="" coords="179,392,352,421"/>
+<area shape="rect" id="node15" href="$classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE." alt="" coords="11,470,149,517"/>
+<area shape="rect" id="node19" href="$classstable__spectral__pde__1d__tmpl.html" title="stable_spectral_pde\l_1d_tmpl\&lt; comp \&gt;" alt="" coords="196,470,335,517"/>
+<area shape="rect" id="node21" href="$classjones__optical.html" title="jones_optical" alt="" coords="216,565,315,595"/>
+</map>

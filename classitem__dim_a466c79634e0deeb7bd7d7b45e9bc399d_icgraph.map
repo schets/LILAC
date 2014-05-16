@@ -1,0 +1,20 @@
+<map id="item_dim::dependencies" name="item_dim::dependencies">
+<area shape="rect" id="node3" href="$classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4" title="controller::dependencies" alt="" coords="220,45,383,75"/>
+<area shape="rect" id="node7" href="$classintegrator.html#a5314ff7d5a35e730cb8279a81bb07c08" title="integrator::dependencies" alt="" coords="220,139,383,168"/>
+<area shape="rect" id="node15" href="$classobjective.html#a23873118c60a24edb7ddb675d44a26bd" title="objective::dependencies" alt="" coords="220,219,383,248"/>
+<area shape="rect" id="node19" href="$classrhs.html#a0eee78a024976d37b6948237b3e7963a" title="rhs::dependencies" alt="" coords="237,352,365,381"/>
+<area shape="rect" id="node31" href="$classsimulation.html#a166cf85cd6e92fde6ad08e9104733c72" title="simulation::dependencies" alt="" coords="217,539,385,568"/>
+<area shape="rect" id="node5" href="$classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889" title="toroidal::dependencies" alt="" coords="456,5,608,35"/>
+<area shape="rect" id="node9" href="$classeuler__sde.html#af8fef552b8fd07eb162639cd8f1cdaba" title="euler_sde::dependencies" alt="" coords="449,59,615,88"/>
+<area shape="rect" id="node11" href="$classrk4.html#a8356569d094120e01707af26b24f9ee5" title="rk4::dependencies" alt="" coords="468,112,596,141"/>
+<area shape="rect" id="node13" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="465,165,599,195"/>
+<area shape="rect" id="node17" href="$classn__pulse__score.html#adfc7d46136caaf90ad9579fe11a291f9" title="n_pulse_score::dependencies" alt="" coords="435,219,629,248"/>
+<area shape="rect" id="node21" href="$classc__elegans.html#a8efbd8369417e1a8fd36a0f522036321" title="c_elegans::dependencies" alt="" coords="448,272,616,301"/>
+<area shape="rect" id="node23" href="$classexample__rhs.html#a3dc4f9a14a9340fb2a12f8bcf3349ce0" title="This function returns a list of the dependencies needed to initialize the class." alt="" coords="440,325,624,355"/>
+<area shape="rect" id="node25" href="$classrhs___c_n_l_s.html#a40eaa32cb5b2d1d8478f0fdf289b1898" title="rhs_CNLS::dependencies" alt="" coords="447,379,617,408"/>
+<area shape="rect" id="node27" href="$classrhs__sde.html#aa04f106652ccc539045fddfa1d5ca6ba" title="rhs_sde::dependencies" alt="" coords="455,432,609,461"/>
+<area shape="rect" id="node29" href="$classrhs___s_q_g_l_e.html#af520b94de5c27d5c5d43da8c78b0ef43" title="rhs_SQGLE::dependencies" alt="" coords="443,485,621,515"/>
+<area shape="rect" id="node33" href="$classode.html#abca470e488473e9842fb63ec47fd0e31" title="ode::dependencies" alt="" coords="467,539,597,568"/>
+<area shape="rect" id="node35" href="$classstable.html#a23034870f1989c0e655f29493ef95f0d" title="stable::dependencies" alt="" coords="460,592,604,621"/>
+<area shape="rect" id="node37" href="$classstable__ode.html#a33edb6392535f9d260b625d98713bda5" title="stable_ode::dependencies" alt="" coords="677,592,851,621"/>
+</map>
