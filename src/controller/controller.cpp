@@ -1,8 +1,6 @@
 #include "controller.h"
 #include "comp_funcs.hpp"
-
 #include "item_heads.hpp"
-#include "toroidal.h"
 /*!
  * This function returns the dependencies of the controller class
  * \note This class depends on the variable names, as well as the dependencies for

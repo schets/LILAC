@@ -13,7 +13,7 @@
  *
  * I am choosing in this case (and doing my best to with the other specialized template types)
  * to consolidate complexity into one location and allow the user to take advantage of generic programming
- * without ealing with the in's and out's of it.
+ * without dealing with the in's and out's of it.
  *
  * Maybe if a newer C++ version allows for template specialization inside of a template class this would be
  * simpler. Also, there's probably a better way and I just don't know template metaprogramming that well
@@ -147,7 +147,7 @@ template<class T> inline void retrieve(T& inval, std::shared_ptr<item> sender, i
     }
 }
 
-//This allows for an optional value to be passed, and simply creates that 
+//This allows for an optional value to be passed, and simply creates that if the requested item does not exist
 template<class T> inline void retrieve(T& inval, item* sender, item* caller, const T& standard){
     if(sender){
         retrieve(inval, sender, caller);

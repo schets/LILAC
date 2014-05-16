@@ -1,7 +1,4 @@
 #include "integrator.h"
-#include "rk4.h"
-#include "rk45.h"
-#include "euler_sde.h"
 #include "comp_funcs.hpp"
 /*!
  * This function returns the dependencies of the integrator class

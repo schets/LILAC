@@ -18,7 +18,6 @@
 class rhs:public item_dim, public vartype{
 
         public:
-        static rhs* create(std::string tname);
         std::vector<std::string> dependencies() const;
         void postprocess(input& dat);
          

@@ -3,6 +3,7 @@
 #define TYPE_REGISTER_HPP
 #include <type_traits>
 #include <string>
+#include <iostream>
 #include "item_factory.h"
 #include "defs.hpp"
 class item;
@@ -19,6 +20,7 @@ bool type_register<T>::regis=type_register<T>::init();
 
 template<class T>
 bool type_register<T>::init(){
+    std::ios_base::Init init_output;
     static bool has_been_called=false;
     static_assert(std::is_base_of<item, T>::value, "type_register can only be used on classes that inherit from item");
     static_assert(!std::is_abstract<T>::value, "type_register cannot be used with an abstract class");

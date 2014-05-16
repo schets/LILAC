@@ -6,6 +6,7 @@
 #include "utils/item_heads.hpp"
 #include "writer/writer.h"
 #include "engine/engineimp.h"
+#include <limits>
 template<class T>
 class ode_tmpl:public ode{
     void integrate_with_writes();
@@ -81,7 +82,7 @@ void ode_tmpl<T>::postprocess(input& in){
 }
 template<class T>
 double ode_tmpl<T>::simulate(){
-    if(w_step < 0){
+    if(w_step < 0 || abs(w_step) <= std::numeric_limits<double>::epsilon()){
         //don't do any intermittent recording
         inter->integrate(sol, t0, tf);
     }

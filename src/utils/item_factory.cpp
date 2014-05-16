@@ -8,7 +8,7 @@ void item_factory::register_type(const std::string& name, create_fnc creator){
     static std::map<std::string, create_fnc> make_types;
     types = &make_types;
     if(types->count(name)){
-        err(name + "has already been registered in the type system",
+        err(name + " has already been registered in the type system",
                 "item_factory::register_type", "utils/item_factory.cpp",
                 FATAL_ERROR);
     }

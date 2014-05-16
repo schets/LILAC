@@ -1,7 +1,5 @@
-#include "stable.h"
-#include "jones_optical.h"
+#include "simulation.h"
 #include "utils/comp_funcs.hpp"
-#include "ode.h"
 void simulation::postprocess(input& invals){
     item_dim::postprocess(invals);
     retrieve(cont, invals["controller"], this);

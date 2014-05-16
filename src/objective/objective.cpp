@@ -1,6 +1,4 @@
 #include "objective.h"
-#include "n_pulse_score.h"
-//#include <gsl/gsl_stats_double.h>
 
 /*!
  * This function returns the dependencies of the objective class
