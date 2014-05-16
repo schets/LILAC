@@ -1,5 +1,0 @@
-<map id="c_elegans::initial_condition" name="c_elegans::initial_condition">
-<area shape="rect" id="node3" href="$classrhs__type.html#a7e927f5083fbe0b17bf5f124c746df22" title="Generic initial condition, call default constructor for each element/." alt="" coords="175,5,343,35"/>
-<area shape="rect" id="node5" href="$classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="204,59,313,88"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="393,59,431,88"/>
-</map>

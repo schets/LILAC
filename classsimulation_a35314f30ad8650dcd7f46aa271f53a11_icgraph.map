@@ -1,8 +1,0 @@
-<map id="simulation::postprocess" name="simulation::postprocess">
-<area shape="rect" id="node3" href="$classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="229,5,352,35"/>
-<area shape="rect" id="node5" href="$classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="213,59,368,88"/>
-<area shape="rect" id="node7" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="223,112,359,141"/>
-<area shape="rect" id="node9" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="417,112,612,141"/>
-<area shape="rect" id="node11" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="661,103,816,150"/>
-<area shape="rect" id="node13" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="865,112,1041,141"/>
-</map>

@@ -1,6 +1,0 @@
-<map id="n_pulse_score::score" name="n_pulse_score::score">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="317,5,381,35"/>
-<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a7a2f3a44e13a05372c948dda7685a4b1" title="energy" alt="" coords="204,31,265,60"/>
-<area shape="rect" id="node8" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="216,84,253,113"/>
-<area shape="rect" id="node10" href="$n__pulse__score_8cpp.html#a7cf0c20d7293d7de9dc9f2b430cedd3d" title="kurtosis" alt="" coords="201,137,268,167"/>
-</map>

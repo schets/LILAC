@@ -1,8 +1,0 @@
-<map id="controller/toroidal.h" name="controller/toroidal.h">
-<area shape="rect" id="node3" href="$controller_8h.html" title="controller.h" alt="" coords="159,83,244,112"/>
-<area shape="rect" id="node5" href="$item_8h.html" title="../engine/item.h" alt="" coords="116,315,228,344"/>
-<area shape="rect" id="node28" href="$item__dim_8h.html" title="engine/item_dim.h" alt="" coords="209,237,337,267"/>
-<area shape="rect" id="node41" href="$objective_8h.html" title="objective/objective.h" alt="" coords="131,160,272,189"/>
-<area shape="rect" id="node13" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="249,392,348,421"/>
-<area shape="rect" id="node31" href="$mempool_8hpp.html" title="mempool.hpp" alt="" coords="341,315,440,344"/>
-</map>

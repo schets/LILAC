@@ -1,6 +1,0 @@
-<map id="mempool::add" name="mempool::add">
-<area shape="rect" id="node3" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="607,5,783,35"/>
-<area shape="rect" id="node5" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="159,31,353,60"/>
-<area shape="rect" id="node10" href="$classmempool.html#a93aed953bb58e8c58516cc485a0695f8" title="mempool::add" alt="" coords="204,84,308,113"/>
-<area shape="rect" id="node7" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="403,26,557,73"/>
-</map>

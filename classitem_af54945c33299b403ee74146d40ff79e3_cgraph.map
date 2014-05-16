@@ -1,8 +1,0 @@
-<map id="item::create" name="item::create">
-<area shape="rect" id="node3" href="$classrhs.html#a8d2a9457e888d86af53687dcc2f91b07" title="rhs::create" alt="" coords="165,5,248,35"/>
-<area shape="rect" id="node5" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="319,32,356,61"/>
-<area shape="rect" id="node7" href="$classintegrator.html#a1085a91a624224c5832224003f55cb1d" title="Returns an integrator* corresponding to the string passed." alt="" coords="147,109,267,139"/>
-<area shape="rect" id="node9" href="$classcontroller.html#ab4f7e2c11f394543826e28d190d951f9" title="controller::create" alt="" coords="148,163,265,192"/>
-<area shape="rect" id="node11" href="$classsimulation.html#a9e2293caa95e8a72564971517d3ab8bf" title="simulation::create" alt="" coords="144,216,269,245"/>
-<area shape="rect" id="node13" href="$classobjective.html#a056d2cb3dd7d234278ce85de9f79e40b" title="objective::create" alt="" coords="148,269,265,299"/>
-</map>

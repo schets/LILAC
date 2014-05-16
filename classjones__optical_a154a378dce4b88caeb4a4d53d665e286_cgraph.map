@@ -1,5 +1,0 @@
-<map id="jones_optical::pre_fft_operations" name="jones_optical::pre_fft_operations">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="179,5,229,35"/>
-<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="185,59,223,88"/>
-<area shape="rect" id="node7" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="185,112,223,141"/>
-</map>

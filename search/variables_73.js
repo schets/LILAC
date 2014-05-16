@@ -1,8 +1,0 @@
-var searchData=
-[
-  ['scaler',['scaler',['../namespacelearn-grad.html#ab7c952dbe77ed7d99c1a06fd9081f705',1,'learn-grad']]],
-  ['source_5fextensions',['SOURCE_EXTENSIONS',['../controller_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../engine_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../integrator_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../lisp_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../objective_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../rhs_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../_s_f_m_t_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../simulation_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../utils_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py'],['../writer_2_8ycm__extra__conf_8py.html#a47014996e1e517071cd0412a22adb123',1,'SOURCE_EXTENSIONS():&#160;.ycm_extra_conf.py']]],
-  ['state',['state',['../struct_s_f_m_t___t.html#a7bf9ad40f20e770d1e703b70248a5386',1,'SFMT_T']]],
-  ['status',['status',['../struct_d_s_f_m_t___t.html#a5c8aa0aa96ec3fcd5f4776c7e83f9cd0',1,'DSFMT_T']]],
-  ['stepsize',['stepsize',['../classrk4__tmpl.html#aa0e72a21d8b00b1b09e1a40263d7cd86',1,'rk4_tmpl']]]
-];

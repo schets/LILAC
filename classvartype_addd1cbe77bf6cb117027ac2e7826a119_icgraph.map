@@ -1,7 +1,0 @@
-<map id="vartype::vtype" name="vartype::vtype">
-<area shape="rect" id="node3" href="$classvartype.html#af737847af21866d6ca14949b67683f42" title="vartype::compare" alt="" coords="176,5,299,35"/>
-<area shape="rect" id="node5" href="$classvartype.html#a29b5d676675f9fb86d757791ec9777f7" title="vartype::vname" alt="" coords="181,59,293,88"/>
-<area shape="rect" id="node7" href="$classvartype.html#a61ece164329afa4ba5184ed093262492" title="vartype::vtype_internal" alt="" coords="160,112,315,141"/>
-<area shape="rect" id="node9" href="$classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05" title="vartype::compare_internal" alt="" coords="364,85,535,115"/>
-<area shape="rect" id="node11" href="$classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006" title="vartype::vname_internal" alt="" coords="369,139,529,168"/>
-</map>
