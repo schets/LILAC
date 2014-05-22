@@ -26,7 +26,6 @@ engineimp::engineimp(const std::string& fname, const std::string& outname, const
 engineimp::~engineimp(){
     this->write_dat();
 }
-
 bool engineimp::item_exists(std::shared_ptr<item> p) const{
     if(!p){
         return false;

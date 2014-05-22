@@ -7,6 +7,7 @@
 #include "writer/writer.h"
 #include "engine/engineimp.h"
 #include <limits>
+#include <time.h>
 template<class T>
 class ode_tmpl:public ode{
     void integrate_with_writes();
@@ -82,6 +83,7 @@ void ode_tmpl<T>::postprocess(input& in){
 }
 template<class T>
 double ode_tmpl<T>::simulate(){
+    clock_t cval = clock();
     if(w_step < 0 || abs(w_step) <= std::numeric_limits<double>::epsilon()){
         //don't do any intermittent recording
         inter->integrate(sol, t0, tf);
@@ -93,6 +95,7 @@ double ode_tmpl<T>::simulate(){
         integrate_with_writes();
     }
     write_t(tf);
+    std::cout << "Simulation took " << ((double)(clock()-cval))/CLOCKS_PER_SEC << " seconds" << std::endl;
     return 0;
 }
 template<class T>

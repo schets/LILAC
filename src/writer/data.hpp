@@ -12,8 +12,6 @@ class data{
     //utility typedefs
     template<class T>
         using strfnc = std::function<std::string(T)>;
-    template<class T>
-        using in_iter=std::iterator<std::input_iterator_tag, T>;
     std::string name;
     std::stringstream dat;
     template<class T>
@@ -46,9 +44,9 @@ class data{
         static inline std::shared_ptr<const data> create(const std::string _name, T* invals, size_t len){
             return std::make_shared<const data>(this_is_private(), _name, invals, len);
         }
-    template<class T>
-        static inline std::shared_ptr<const data> create(const std::string name, in_iter<T> b,
-                in_iter<T> e){
+    template<class in_iter, class end_iter>
+        static inline std::shared_ptr<const data> create(const std::string name, in_iter b,
+                end_iter e){
             return std::make_shared<const data>(this_is_private(), name, b, e);
         }
     template<class T>
@@ -65,9 +63,9 @@ class data{
         static inline std::shared_ptr<const data> create(const std::string _name, T* invals, size_t len, const strfnc<T>& tostr){
             return std::make_shared<const data>(this_is_private(), _name, invals, len, tostr);
         }
-    template<class T>
-        static inline std::shared_ptr<const data> create(const std::string name, in_iter<T> b,
-                in_iter<T> e, const strfnc<T>& tostr){
+    template<class T, class in_iter, class end_iter>
+        static inline std::shared_ptr<const data> create(const std::string name, in_iter b,
+                end_iter e, const strfnc<T>& tostr){
             return std::make_shared<const data>(this_is_private(), name, b, e, tostr);
         }
 
@@ -82,8 +80,8 @@ class data{
         data(const this_is_private& dummy, const std::string& _name, const T& inval):name(_name){
             addelem(inval);
         }
-    template<class T>
-        data(const this_is_private& dummy, const std::string _name, in_iter<T> b, in_iter<T> e):name(_name){
+    template<class in_iter, class end_iter, class T>
+        data(const this_is_private& dummy, const std::string _name, in_iter b, end_iter e):name(_name){
             std::for_each(b, e, [this](const T& val){addelem(val);});
         }
     //constructors taking a custom string function
