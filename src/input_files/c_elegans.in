@@ -11,4 +11,4 @@
 (string ag_mat input_files/Ag_t_ordered.in)
 (string a_mat input_files/A_init_t_ordered.in)
 (c_elegans rhs)
-(unsigned num_comb 4)
+(unsigned num_comb 1)

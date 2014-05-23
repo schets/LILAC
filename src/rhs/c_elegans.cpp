@@ -82,6 +82,9 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     dv[276]+= (1.0/tau)*amp;
     dv[278]+= (1.0/tau)*amp;
     
+    for(auto val : abl_neur){
+        dv[val] = ds[val] = 0;
+    }
 
     return 0;
 }
@@ -148,7 +151,9 @@ void c_elegans::postprocess(input& in){
     for(auto& val : abl_neur){
         val = 0;
     }
-    next_comb(abl_neur, num_neur);
+    if(abl_neur.size() != 1){
+        next_comb(abl_neur, num_neur);
+    }
     for(int i = 0; i < cur_ind; i++){
         for(int j = 0; j < iterations; j++){
             if(next_comb(abl_neur, num_neur)){
@@ -173,10 +178,39 @@ void c_elegans::postprocess(input& in){
     update();
 }
 void c_elegans::update(){
+    static bool has_gone = (cur_ind == 0) && (abl_neur.size() != 1);
+    if(has_gone){
+        if(next_comb(abl_neur, num_neur)){
+            char ind_str[20];//won't ever have a 20 digit index
+            //handy buffer to overflow for those hacking this.
+            sprintf(ind_str, "%d", cur_ind);
+            err(std::string("Combinations exhausted in index ") + ind_str,
+                    "c_elegans::update","rhs/c_elegans.cpp", FATAL_ERROR);
+        }
+    }
+    //this skips the first update, since postprocessing has done that
+    else{
+        has_gone = true;
+    }
+    auto dat_inds =
+        std::shared_ptr<writer>(new writer(true));
+    dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
+    holder->add_writer(dat_inds);
     Matrix<double, Dynamic, Dynamic> ag_dense(num_neur, num_neur);
     //insert code to zero it out later
+
     auto ag_m = ag_full;
     AEchem_trans = AEchem_trans_full;
+    auto fncval = [this](int i, int j, double val){
+        for(int kk = 0; kk < (int)this->abl_neur.size(); kk++){
+            if((int)this->abl_neur[kk] == i || (int)this->abl_neur[kk] == j){
+                return false;
+            }
+        }
+        return true;
+    };
+    AEchem_trans.prune(fncval);
+    ag_m.prune(fncval);
     ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
     auto sumvals = ag_dense.colwise().sum();
     sparse_type temp(num_neur, num_neur);
@@ -229,26 +263,9 @@ void c_elegans::update(){
     //calculate eqV
     eqV.matrix() = C.inverse()*b;
     vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
-    static bool has_gone = cur_ind;
-    std::cout << "done next something\n";
-    if(has_gone){
-        if(next_comb(abl_neur, num_neur)){
-            char ind_str[20];//won't ever have a 20 digit index
-            //handy buffer to overflow for those hacking this.
-            sprintf(ind_str, "%d", cur_ind);
-            err(std::string("Combinations exhausted in index ") + ind_str,
-                    "c_elegans::postprocess","rhs/c_elegans.cpp", FATAL_ERROR);
-        }
-        
-    }
-    //this skips the first update, since postprocessing has done that
-    else{
-        has_gone = true;
-    }
-    auto dat_inds =
-        std::shared_ptr<writer>(new writer(true));
-    dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
-    holder->add_writer(dat_inds);
+    for(auto val : abl_neur){
+        eqV[val] = vmean [val] = eqS[val] = 0;
+    };
 }
 
 std::vector<std::string> c_elegans::dependencies() const{

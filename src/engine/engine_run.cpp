@@ -13,6 +13,7 @@ void engineimp::run(){
     while(cont->is_good()){
         sys->simulate();
         cont->control(0, 0);
+        write_dat();
         update();
         index++;
     }

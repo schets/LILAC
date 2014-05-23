@@ -27,8 +27,8 @@ TODO (kinda ordered by priority):
 
 1. Re-verify rhs_CNLS
 2. Get documentation up to date
-3. Remove uneeded dependencies, refactor code (especially interpreter and engine/engineimp class)
-4. Add testing framework
+3. Add proper list semantics and combinations/permutations
+4. Remove uneeded dependencies, refactor code (especially interpreter and engine/engineimp class)
 5. Allow basic numerical operations to be done with lilac-lisp
 6. Add functions and macros to lilac-lisp
 7. Implement effecient way to reserve many different dimensions in the mempool
