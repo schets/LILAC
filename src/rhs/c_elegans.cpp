@@ -181,6 +181,7 @@ void c_elegans::update(){
     static bool has_gone = (cur_ind == 0) && (abl_neur.size() != 1);
     if(has_gone){
         if(next_comb(abl_neur, num_neur)){
+            holder->write_dat();
             char ind_str[20];//won't ever have a 20 digit index
             //handy buffer to overflow for those hacking this.
             sprintf(ind_str, "%d", cur_ind);

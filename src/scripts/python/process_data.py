@@ -56,7 +56,7 @@ while(len(ltest) != 0):
         fncstr = ''.join(fncstr)
         fncstack.append(np.fromstring(fncstr, sep=' '))
 
-
+    print len(fncstack)
     neur_mat = np.vstack(fncstack).transpose();
     time_vec = np.fromstring(timelist, sep=' ')
 #write to .mat file

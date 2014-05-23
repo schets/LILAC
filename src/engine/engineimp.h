@@ -35,8 +35,8 @@ class engineimp{
     std::set<std::shared_ptr<item>> update_vars;
     void write_data(std::shared_ptr<writer> inval, std::ofstream& fwrite);
     void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats);
-    void write_dat();
     public:
+    void write_dat();
     void add_writer(const std::shared_ptr<writer>& wval);
     void needs_updating(std::string name);
     void needs_updating(std::shared_ptr<item> p);
