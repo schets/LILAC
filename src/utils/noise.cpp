@@ -13,8 +13,13 @@ extern "C"{
 #ifdef ICC
 #define alignas(x) __declspec(align(x))
 #endif
+#ifdef GCC
+#define alignas(x)   
+
+
+#endif
 //defines the alignment value for these classes
-constexpr size_t CACHE_BLOCK=16;
+#define CACHE_BLOCK=16;
 //classes for block fills of random numbers
 class vector_rng{
         //this is the number of RNGS that are statically held
