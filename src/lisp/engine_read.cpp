@@ -77,7 +77,7 @@ void engineimp::execute_command(std::string inval){
     }
     else if(command=="cd"){
         curdir.append(inval);
-        trim(curdir, '/');
+        trim(curdir, "/");
         curdir.push_back('/');
     }
     else if(command=="setdir"){

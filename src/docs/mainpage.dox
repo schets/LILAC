@@ -1,0 +1,14 @@
+/*!
+\mainpage LILAC
+LILAC is a C++ framework for simulating complex dynamical systems. It provides an extensible set of utilities for performing simulations, from integrators to data IO.
+For many cases, one may just have to write a class that represents the actual system itself-the f(x) in dx/dt = f(x). An example with extensive documentation and commenting can be found in example_rhs.cpp and example_rhs.h, and the class \ref example_rhs show how to do this.
+
+The main internal structure of a simulation works like this:
+    -# The \ref engine reads the input file and constructs each object \sa engineimp
+    -# A dependency graph is generated from the items. Execution ceases here if it is impossible to satisfy the dependencies (a dependency does not exist, or is cyclical)
+    -# Each item performs processing processing to prepare for the simulation (allocating memory, calculating values, etc)
+    -# The engine calls the simulate function of the \ref simulation class that is active
+    -# The engine increments the \ref controller to the next value, and calls the update function on each item that references a \ref variable
+    -# The process repeats until the \ref controller is out of values
+*/
+

@@ -79,29 +79,60 @@ class mempool{
         }
 
     public:
+    //!Creates memory pool with alignment of 32 bytes
+    /*!
+     * Creates a memory pool with an alignment of 32 bytes, and sets each pointer to its respective position.
+     * @param dim the length of each pointer
+     * @param args the address of each pointer
+     */
     template<class ...Tl>
         void create(size_t dim, Tl* restr *... args){
             clear();
             make_this(32, dim, args...);
         }
+    //!Creates memory pool with specified alignment
+    /*!
+     * Creates a memory pool with specified alignment, and sets each pointer to its respective position.
+     * @param dim the length of each pointer
+     * @param args the address of each pointer
+     * @param mal The alignment in bytes
+     */
     template<class ...Tl>
         void create(size_t mal, size_t dim, Tl* restr *... args){
             clear();
             make_this(mal, dim, args...);
         }
+    /*!
+     * Adds new pointers to the memory pool, with an alignment of 32 bytes
+     */
     template<class ...Tl>
         void add(size_t mal, size_t dim, Tl* restr * ... args);
     template<class ...Tl>
         void add(size_t dim, Tl* restr * ... args){
             add(32, dim, args...);
         }
+    //!Resets the dimension and alignment of the pool
+    /*!
+     * Sets the dimension and alignment of each pointer in the memory pool
+     *
+     * @param num New dimension of the memory pool
+     * @param mal Alignment of the pointers
+     */
     void set_dim(size_t num, size_t mal=32);
+    //!Clears the memory pool and deallocates the memory
     void clear();
     mempool();
     ~mempool();
 };
 
-
+/*!
+ * Performs the creation of the memory pool, with alignment mal, length dim,
+ *  and types Tl...
+ *
+ *  @param mal The alignment in bytes
+ *  @param dim the dimension of the pointers
+ *  @param args the addresses of each pointer
+ */
 template<class ...Tl>
 void mempool::make_this(size_t mal, size_t dim, Tl* restr *... args){
     assert(mal >= 16);
@@ -141,6 +172,17 @@ void mempool::make_this(size_t mal, size_t dim, Tl* restr *... args){
     }
 }
 
+/*!
+ * Adds new pointers to the existing memory pool, with a dimension of dim.
+ * This can be different than the previous dimensions, and will not affect previously entered pointers
+ *
+ * \note pointers that were directly passes to the pool will still be valid, but others pointing to that memory
+ * will be invalidated as the memory is likely in a different position
+ *
+ * @param mal The alignment in bytes
+ * @param dim The dimension of each pointer
+ * @param args The addresses of the pointers
+ */
 template<class ...Tl>
 void mempool::add(size_t mal, size_t dim, Tl* restr * ... args){
     assert(mal >= 16);

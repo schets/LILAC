@@ -15,12 +15,10 @@ extern "C"{
 #endif
 #ifdef GCC
 #define alignas(x)   
-
-
 #endif
 //defines the alignment value for these classes
 #define CACHE_BLOCK=16;
-//classes for block fills of random numbers
+//!class for block fills of random numbers
 class vector_rng{
         //this is the number of RNGS that are statically held
         //It is big to ensure that the most benefit of obtained from sse2 instructions

@@ -115,6 +115,20 @@ template<class T> class __retrieve_checker:public retrieve_wrapper{
 //allowing for cleaner code. It also may help to abstract this operation,
 //should it change. Finally, it blocks access to the retrieve function and the
 //retrieve_checker class;
+//!Type safe method of retrieving value from a variable
+/*!
+ * This function provides a type-safe interface for extracting values from the item class
+ * The variable type is automatically inferred from the passed type-
+ * For example, passing an int to recieve an unsigned will result in a failure, as will passing anything other than a size_t.
+ * Same goes for doubles and floats
+ *
+ * When retrieving item* type classes, the type of pointer passed must be in the same inheritance line as the 
+ * value being retrieved.
+ *
+ * @param inval A reference to the variable that will recieve the internal value of the item
+ * @param sender The item containing the variable
+ * @param caller The item receiving the variable
+ */
 template<class T> inline void retrieve(T& inval, item* sender, item* caller){
     if(sender){
     sender->_retrieve(__retrieve_checker<T>(inval), caller);
@@ -131,6 +145,7 @@ template<class T> inline void retrieve(T& inval, item* sender, item* caller){
     }
 }
 
+//!Allows passing of a shared_ptr instead of a native one
 template<class T> inline void retrieve(T& inval, std::shared_ptr<item> sender, item* caller){
     if(sender.use_count()){
         retrieve(inval, sender.get(), caller);
@@ -147,7 +162,11 @@ template<class T> inline void retrieve(T& inval, std::shared_ptr<item> sender, i
     }
 }
 
-//This allows for an optional value to be passed, and simply creates that if the requested item does not exist
+/*!
+ * Adds an optional value that will be placed in inval if the item does not exist
+ * 
+ * @param standard The value that inval is set to if the passed item does not exist
+ */
 template<class T> inline void retrieve(T& inval, item* sender, item* caller, const T& standard){
     if(sender){
         retrieve(inval, sender, caller);

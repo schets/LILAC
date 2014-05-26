@@ -64,10 +64,9 @@ void err(std::string message, std::string function, std::string file, std::share
 //also ensures return value is valid
 void* al_malloc(size_t ss);
 void al_free(void* ss);
-void trim(std::string& curline);
-void trim(std::string& curline, char val);
+void trim(std::string& curline, const std::string& val = "\n\r\t ");
 void ltoken(std::string& tok, std::string& str, std::string delim=" ");
-std::string get_unique_name(std::string base);
+std::string get_unique_name(std::string base = "");
 extern "C"{
 #include <malloc.h>
 }
