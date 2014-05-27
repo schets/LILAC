@@ -9,6 +9,10 @@ class example_integrator : public integrator{
     //types without the performance problems of dynamic polymorphism
     //!Holds a collected pointer to the actual integrator being used
     std::shared_ptr<example_integrator> actual_int;
+    double rval1, calculation;
+    int rval2;
+    size_t unsigned_var;
+    std::string something;
     public:
         //This is the definition of the integrate function
         //Nothing too interesting here, but \sa example_integrator_tmpl::integrate
@@ -25,6 +29,7 @@ class example_integrator : public integrator{
          *  This class depends on 
          *      - double rval1: Some parameter
          *      - int rval2: Some other parameter, optional value of -1
+         *      - unsigned unsigned_var: Something random
          *      - string something: Some third parameter
          */
         std::vector<std::string> dependencies() const;
@@ -35,6 +40,10 @@ class example_integrator : public integrator{
         //!Processes the input data
         void postprocess(input& inval);
 
+        //This returns the variable type of the integrator
+        //This is actually going to be done by the integrator
+        //!Returns the type of the integrator \sa vartype
+        const std::type_info& vtype() const;
 
 }
 #endif
