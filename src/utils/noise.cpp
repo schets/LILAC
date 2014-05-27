@@ -27,19 +27,6 @@ class vector_rng{
     public:
         constexpr static size_t num_64 = 64;
         constexpr static size_t num_32 = num_64*2;
-    private:
-        //both i_cur and d_cur are actually aliased, but they are the only ones that actually access the memory
-        //in this classes routines
-        double * restr d_cur, * const restr d_end;
-        uint32_t * restr i_cur, * const restr i_end; 
-        //large alignments likely put it on a cache boundary
-        alignas(CACHE_BLOCK) double d_rands[num_64];
-        alignas(CACHE_BLOCK) uint32_t i_rands[num_32];
-        dsfmt_t * dsm;
-        sfmt_t * sm;
-        dsfmt_t act_dsm;
-        sfmt_t act_sm;
-    public:
         vector_rng():d_end(d_rands+num_64), i_end(i_rands+num_32){
             d_cur = d_rands;
             i_cur = i_rands;
@@ -81,6 +68,18 @@ class vector_rng{
             sfmt_fill_array32(sm, i_rands, num_32);
             return i_rands[0];
         }
+    private:
+        //both i_cur and d_cur are actually aliased, but they are the only ones that actually access the memory
+        //in this classes routines
+        double * restr d_cur, * const restr d_end;
+        uint32_t * restr i_cur, * const restr i_end; 
+        //large alignments likely put it on a cache boundary
+        alignas(CACHE_BLOCK) double d_rands[num_64];
+        alignas(CACHE_BLOCK) uint32_t i_rands[num_32];
+        dsfmt_t * dsm;
+        sfmt_t * sm;
+        dsfmt_t act_dsm;
+        sfmt_t act_sm;
 };
 
 
@@ -113,9 +112,8 @@ class vector_rng{
  */
 
 /* position of right-most step */
-#define PARAM_R 3.44428647676
-/* tabulated values for the heigt of the Ziggurat levels */
-alignas(CACHE_BLOCK) static const double ytab[128] = {
+constexpr static double right_step = 3.44428647676;
+static const double ytab[128] = {
     1, 0.963598623011, 0.936280813353, 0.913041104253,
     0.892278506696, 0.873239356919, 0.855496407634, 0.838778928349,
     0.822902083699, 0.807732738234, 0.793171045519, 0.779139726505,
@@ -153,7 +151,7 @@ alignas(CACHE_BLOCK) static const double ytab[128] = {
 /* tabulated values for 2^24 times x[i]/x[i+1],
  * used to accept for U*x[i+1]<=x[i] without any floating point operations */
 
-alignas(CACHE_BLOCK) static const unsigned long ktab[128] = {
+static const uint32_t ktab[128] = {
     0, 12590644, 14272653, 14988939,
     15384584, 15635009, 15807561, 15933577,
     16029594, 16105155, 16166147, 16216399,
@@ -188,8 +186,8 @@ alignas(CACHE_BLOCK) static const unsigned long ktab[128] = {
     16207738, 16047994, 15704248, 15472926
 };
 
-/* tabulated values of 2^{-24}*x[i] */
-alignas(CACHE_BLOCK) static const double wtab[128] = {
+/* 2^-24*x[i] */
+static const double wtab[128] = {
     1.62318314817e-08, 2.16291505214e-08, 2.54246305087e-08, 2.84579525938e-08,
     3.10340022482e-08, 3.33011726243e-08, 3.53439060345e-08, 3.72152672658e-08,
     3.8950989572e-08, 4.05763964764e-08, 4.21101548915e-08, 4.35664624904e-08,
@@ -225,95 +223,52 @@ alignas(CACHE_BLOCK) static const double wtab[128] = {
 };
 
 
-void gsl_ran_gaussian_ziggurat_fill (vector_rng& vrng, double sigma, double* restr invals, size_t len)
-{
-    ALIGNED(invals);
-    for(size_t qq = 0; qq < len; qq++){
-        unsigned long  U, sign, i, j;
-        double  x, y;
-        while (1) {
-            U = vrng.uint_32();
-            i = U & 0x0000007F;		/* 7 bit to choose the step */
-            sign = U & 0x00000080;	/* 1 bit for the sign */
-            j = U>>8;			/* 24 bit for the x-value */
 
-            x = j*wtab[i];
-            if (j < ktab[i]){
-                break;
-            }
-
-            if (PREDICT(i<127, 1)) {
-                double  y0, y1;
-                y0 = ytab[i];
-                y1 = ytab[i+1];
-                y = y1+(y0-y1)*vrng.real_64();
-            } else {
-                x = PARAM_R - std::log(1.0-vrng.real_64())/PARAM_R;
-                y = std::exp(-PARAM_R*(x-0.5*PARAM_R))*vrng.real_64();
-            }
-            if (y < std::exp(-0.5*x*x)) {
-                break;
-            }
-        }
-        invals[qq] = sign ? sigma*x : -sigma*x;
-    }
-}
-double gsl_ran_gaussian_ziggurat (vector_rng& vrng, double sigma)
-{
-    unsigned long  U, sign, i, j;
+static inline double ran_gauss (vector_rng& vrng, double sigma){
+    uint32_t r32, step, xval;
+    int32_t sign;
     double  x, y;
     while (1) {
-        U = vrng.uint_32();
-        i = U & 0x0000007F;		/* 7 bit to choose the step */
-        sign = U & 0x00000080;	/* 1 bit for the sign */
-        j = U>>8;			/* 24 bit for the x-value */
+        r32 = vrng.uint_32();
+        step = r32 & 0x0000007F;
+        sign = r32 & 0x00000080 ? 1 : -1;
+        xval = r32>>8;			
 
-        x = j*wtab[i];
-        if (j < ktab[i]){
-            break;
+        x = xval*wtab[step];
+        if (xval < ktab[step]){
+            return sign * sigma * x;
         }
 
-        if (PREDICT(i<127, 1)) {
+        if (step<127) {
             double  y0, y1;
-            y0 = ytab[i];
-            y1 = ytab[i+1];
+            y0 = ytab[step];
+            y1 = ytab[step+1];
             y = y1+(y0-y1)*vrng.real_64();
         } else {
-            x = PARAM_R - std::log(1.0-vrng.real_64())/PARAM_R;
-            y = std::exp(-PARAM_R*(x-0.5*PARAM_R))*vrng.real_64();
+            x = right_step - std::log(1.0-vrng.real_64())/right_step;
+            y = std::exp(-right_step*(x-0.5*right_step))*vrng.real_64();
         }
         if (y < std::exp(-0.5*x*x)) {
-            break;
+            return sign * sigma * x;
         }
     }
-    return sign ? sigma*x : -sigma*x;
+    return sign * sigma*x;
 }
-
-void _fill_gaussian_noise(double* restr inv, size_t len, double sdev){
-    ALIGNED(inv);
-    static std::ranlux48_base gener(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    std::normal_distribution<double> ngen(0.0, sdev);
-    for(size_t i = 0; i < len; i++){
-        inv[i] = ngen(gener);
-    }
-}
-void _fill_gaussian_noise(float* restr inv, size_t len, double sdev){
-    ALIGNED(inv);
-    static std::ranlux48_base gener(std::chrono::high_resolution_clock::now().time_since_epoch().count());
-    std::normal_distribution<float> ngen(0.0, sdev);
-    for(size_t i = 0; i < len; i++){
-        inv[i] = ngen(gener);
+inline static void ran_gauss (vector_rng& vrng, double sigma, double* restr invals, size_t len){
+    ALIGNED(invals);
+    for(size_t qq = 0; qq < len; qq++){
+        invals[qq] = ran_gauss(vrng, sigma);
     }
 }
 void fill_gaussian_noise(double* restr inv, size_t len, double sdev){
     ALIGNED(inv);
     static vector_rng vrng;
-    gsl_ran_gaussian_ziggurat_fill(vrng, sdev, inv, len);
+    ran_gauss(vrng, sdev, inv, len);
 }
 void fill_gaussian_noise(float* restr inv, size_t len, double sdev){
     ALIGNED(inv);
     static vector_rng vrng;
     for(size_t i = 0; i < len; i++){
-        inv[i] = (float)gsl_ran_gaussian_ziggurat(vrng, sdev);
+        inv[i] = (float)ran_gauss(vrng, sdev);
     }
 }

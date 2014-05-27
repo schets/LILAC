@@ -23,36 +23,10 @@ const std::type_info& rk4_tmpl<T>::vtype()const{
 template<class T>
 rk4_tmpl<T>::~rk4_tmpl(){
  }
-/****************************************************************************80
- * comp *rk4vec ( double t0, int m, comp* u0, double dt, 
- rhs* func )
 
-
-*/
-//This has been modified to work with complex numbers
-//and fit into the solver object structure.
-//But the code mostly remains unchanged
 template<class T>
 int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     //****************************************************************************80
-    //
-    //  Purpose:
-    //
-    //    RK4VEC takes one Runge-Kutta step for a vector ODE.
-    //
-    //  Discussion:
-    //
-    //    It is assumed that an initial value problem, of the form
-    //
-    //      du/dt = f ( t, u )
-    //      u(t0) = u0
-    //
-    //    is being solved.
-    //
-    //    If the user can supply current values of t, u, a stepsize dt, and a
-    //    function to evaluate the derivative, this function can compute the
-    //    fourth-order Runge Kutta estimate to the solution at time t+dt.
-    //
     //  Licensing:
     //
     //    This code is distributed under the GNU LGPL license. 
@@ -65,25 +39,12 @@ int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     //
     //    John Burkardt
     //
-    //  Parameters:
-    //
-    //    Input, comp T0, the current time.
-    //
-    //    Input, int M, the spatial dimension.
-    //
-    //    Input, comp U0[M], the solution estimate at the current time.
-    //
-    //    Input, comp DT, the time step.
-    //
-    //    Input, comp *F ( comp T, int M, comp U[] ), a function which evaluates
-    //    the derivative, or right hand side of the problem.
-    //
-    //    Output, comp RK4VEC[M], the fourth-order Runge-Kutta solution estimate
-    //    at time T0+DT.
+    //    Sam Schetterer (memory optimizations, put in object model)
     //
 {
     //get dt
     T* restr u0 = _u0.get<T>();
+    ALIGNED(u0);
     ALIGNED(f0);
     ALIGNED(f1);
     ALIGNED(f2);
@@ -107,33 +68,28 @@ int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
         func->dxdt(u0, f0, t0);
 
         t1 = t0 + dt / 2.0;
-        for ( i = 0; i < m; i++ )
-        {
+        for ( i = 0; i < m; i++ ){
             u_calc[i] = u0[i] + dt * f0[i] / 2.0;
         }
+
         func->dxdt(u_calc, f1, t1);
         t2 = t0 + dt / 2.0;
-        for ( i = 0; i < m; i++ )
-        {
+        for ( i = 0; i < m; i++ ){
             u_calc[i] = u0[i] + dt * f1[i] / 2.0;
         }
 
         func->dxdt(u_calc, f2, t2); 
         t3 = t0 + dt;
-        for ( i = 0; i < m; i++ )
-        {
+        for ( i = 0; i < m; i++ ){
             u_calc[i] = u0[i] + dt * f2[i];
 
         }
 
         func->dxdt(u_calc, f3, t3); 
-        //
-        //  Combine them to estimate the solution.
-        //
-        for ( i = 0; i < m; i++ )
-        {
+        for ( i = 0; i < m; i++ ){
             u0[i] = u0[i] + (dt * ( f0[i]  + 2.0 * f1[i] + 2.0 * f2[i] + f3[i] ) / 6.0);
         }
+
         t0 += dt;
     }
     return 0;
