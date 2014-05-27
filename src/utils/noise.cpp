@@ -3,6 +3,7 @@
 #include "mempool.hpp"
 #include <chrono>
 #include <random>
+#include <fstream>
 extern "C"{
 #define HAVE_SSE2
 #define DSFMT_MEXP 521
@@ -13,11 +14,10 @@ extern "C"{
 #ifdef ICC
 #define alignas(x) __declspec(align(x))
 #endif
-#ifdef GCC
-#define alignas(x)   
-#endif
+
+
 //defines the alignment value for these classes
-#define CACHE_BLOCK=16;
+constexpr size_t CACHE_BLOCK=16;
 //!class for block fills of random numbers
 class vector_rng{
         //this is the number of RNGS that are statically held
@@ -45,16 +45,17 @@ class vector_rng{
             i_cur = i_rands;
             dsm = & act_dsm;
             sm = & act_sm;
-            try{
-                std::random_device rnd("/dev/urandom");
-                dsfmt_init_gen_rand(dsm, rnd());
-                sfmt_init_gen_rand(sm, rnd());
+            std::ifstream rand_in;
+            rand_in.open("/dev/urandom");
+            if(rand_in.is_open()){
+                size_t rval;
+                rand_in >> rval;
+                dsfmt_init_gen_rand(dsm, rval);
+                rand_in >> rval;
+                sfmt_init_gen_rand(sm, rval);
             }
-            catch(...){
-#ifdef NDEBUG
-                std::cout << "The current platform does not support std::random_device(), try inserting special code into utils/noise.cpp to ensure proper RNG seeding. ";
-                std::cout << "With the current RNG, it is extremely possibly that two instances of lilac started very close to each other will have the same RNG seed and generate identical noise" << std::endl;
-#endif
+            else{
+                std::cout << "Proper RNG cannot be found (/dev/urandom), using time values" << std::endl;
                 dsfmt_init_gen_rand(dsm,
                         std::chrono::high_resolution_clock::now().time_since_epoch().count());
                 sfmt_init_gen_rand(sm, dsfmt_genrand_uint32(dsm));

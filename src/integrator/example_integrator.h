@@ -9,10 +9,6 @@ class example_integrator : public integrator{
     //types without the performance problems of dynamic polymorphism
     //!Holds a collected pointer to the actual integrator being used
     std::shared_ptr<example_integrator> actual_int;
-    double rval1, calculation;
-    int rval2;
-    size_t unsigned_var;
-    std::string something;
     public:
         //This is the definition of the integrate function
         //Nothing too interesting here, but \sa example_integrator_tmpl::integrate
@@ -20,6 +16,7 @@ class example_integrator : public integrator{
         int integrate(ptr_passer u, double t0, double tf);
 
         //Returns the type of the current class
+
         //This is the name that one would write in the input file to initialize this class
         //!Returns the typename of the current class
         std::string type() const;
@@ -45,5 +42,5 @@ class example_integrator : public integrator{
         //!Returns the type of the integrator \sa vartype
         const std::type_info& vtype() const;
 
-}
+};
 #endif

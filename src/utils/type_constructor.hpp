@@ -3,6 +3,7 @@
 #define TYPE_CONSTRUCTOR_HPP
 #include "vartype.hpp"
 #include "defs.hpp"
+#include "example_type.hpp"
 #include <type_traits>
 //
 //There has to be a better way to combine this and satisfy the compiler...
@@ -164,7 +165,7 @@ class type_constructor{
      * arithmetic operations with itself and doubles, and has an abs function (absolute value)
      * definied in the global namespace
      */
-    typedef typelist<comp, double, float, long double> std_type_list;
+    typedef typelist<comp, double, float, example_type> std_type_list;
 
     //!Creates a Tout* pointing to a Tin<type>*, where type is the type of the vartype tval.
     /*!

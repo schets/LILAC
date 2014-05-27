@@ -11,19 +11,32 @@
 #include <iostream>
 #include <string>
 #include <vector>
-//#include "../eigen3/Eigen/Eigen"
 #include <memory>
+//some commands to help with effeciency
 #ifdef ICC
-//only worrying about mega-aligned stuff like this for icc, rest is blank for easier compatibility
 #define restr restrict
 #define ALIGNED(x) __assume_aligned(x, 16)
 #define MAKE_ALIGNED __declspec(align(16))
 #define PREDICT(x, val) __builtin_expect(x, val)
-#else
+#endif
+
+#ifdef CLANG
 #define restr __restrict__
-#define ALIGNED(x) 
+#define ALIGNED(x)
 #define PREDICT(x, val) x
+#define MAKE_ALIGNED alignas(16)
+#endif
+
+#ifdef GCC
+#define restr __restrict__
+#define ALIGNED(x)
+#define PREDICT(x, val) __builtin_expect(x, val)
+#if __GNUC__ >= 4 && __GNUC_MINOR__ >= 7 && __GNUC_PATCHLEVEL__ >= 2
+#define MAKE_ALIGNED alignas(16)
+#else
+#define alignas(x)
 #define MAKE_ALIGNED
+#endif
 #endif
 class item;
 typedef std::complex<double> comp;

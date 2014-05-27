@@ -40,20 +40,20 @@ int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
                 func->dxdt(vals, f0, tc);
                 func->dwdt(vals, bfnc, tc);
                 for(size_t j = 0; j < dimension; j++){
-                    vals[j] += dt*f0[j] + bfnc[j]*w0[j];
+                    vals[j] = vals[j] + dt*f0[j] + bfnc[j]*w0[j];
                 }
             }
             else{
                 rh_val->dxdt(vals, f0, tc);
                 for(size_t j = 0; j < dimension; j++){
-                    vals[j] += dt*f0[j] + w0[j];
+                    vals[j] = vals[j] + dt*f0[j] + w0[j];
                 }
             }
         }
         else{
             rh_val->dxdt(vals, f0, tc);
             for(size_t j = 0; j < dimension; j++){
-                vals[j] += dt*f0[j];
+                vals[j] = vals[j] + dt*f0[j];
             }
         }
 

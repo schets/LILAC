@@ -2,7 +2,7 @@
 include ../make.inc
 LIB_PATH=$(LIB_MAIN)
 
-INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/rk4.o $(LIB_PATH)/euler_sde.o
+INT_OBJ =  $(LIB_PATH)/rk45.o $(LIB_PATH)/integrator.o $(LIB_PATH)/rk4.o $(LIB_PATH)/euler_sde.o $(LIB_PATH)/example_integrator.o
 
 all: $(INT_OBJ)
 
@@ -28,6 +28,9 @@ $(LIB_PATH)/euler_sde.o: euler_sde.cpp euler_sde_tmpl.hpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/euler_sde.o
 	$(CPP) -c euler_sde.cpp $(INC_PATH) $(FASTMATH) $(CFLAGS) -o $(LIB_PATH)/euler_sde.o
 
+$(LIB_PATH)/example_integrator.o: example_integrator.cpp example_integrator_tmpl.hpp $(INLINE_HEADERS)
+	@rm -f $(LIB_PATH)/example_integrator.o
+	$(CPP) -c example_integrator.cpp $(INC_PATH) $(FASTMATH) $(CFLAGS) -o $(LIB_PATH)/example_integrator.o
 
 .PHONY: clean
 

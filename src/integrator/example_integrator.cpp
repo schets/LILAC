@@ -1,7 +1,9 @@
 #include "example_integrator.h"
 #include "type_register.hpp"
+#include "type_constructor.hpp"
 #include "item_heads.hpp"
 #include "example_integrator_tmpl.hpp"
+#include "comp_funcs.hpp"
 //Note that this function serves as a proxy for the actual version, the template class
 int example_integrator::integrate(ptr_passer u, double t0, double tf){
     return actual_int->integrate(u, t0, tf);
@@ -13,7 +15,7 @@ std::string example_integrator::type() const{
     return "example_integrator";
 }
 
-std::vector<std::string> example_integrator::dependencies(){
+std::vector<std::string> example_integrator::dependencies() const{
     //rules for dependencies:
     //A name preceded with a ! is optional
     std::string deps[] = {"rval1", "!rval2", "unsigned_var", "something"};
@@ -23,7 +25,7 @@ std::vector<std::string> example_integrator::dependencies(){
 
 void example_integrator::postprocess(input& dat){
     //always do the base class processing first
-    integrator::postprocess();
+    integrator::postprocess(dat);
     //create the actual integrator with the type_constructor class
     //see type_constructor.hpp for details on this
     type_constructor<example_integrator_tmpl>::create(&actual_int, rh_val);
@@ -35,6 +37,8 @@ void example_integrator::postprocess(input& dat){
 }
 
 //simply return actual_int
-const std::type_info& vtype() const{
+const std::type_info& example_integrator::vtype() const{
     return actual_int->vtype();
 }
+
+template class type_register<example_integrator>;
