@@ -13,7 +13,6 @@ const static int num_min = 10;
 double stable::simulate(){
     bad_res=0;
     cur_writer = std::shared_ptr<writer>(new writer(true));
-    cur_writer->add_data(data::create("index", cont->num_cont), writer::INDEX);
     for (round = 0; round < max_iterations; round++){
 
         this->iterate_system();
@@ -27,13 +26,15 @@ double stable::simulate(){
             }
         }
     }
+    bool is_stable = (round <= 45);
+    cur_writer->add_data(data::create("is_stable", is_stable), writer::OTHER);
     double v = this->score();
     cur_writer->add_data(data::create("score", v), writer::FINAL_SCORE);
     comp* uc = ((stable_ode_tmpl<comp>*)this)->ucur;
     cur_writer->add_data(
             data::create("final function", uc, dimension),
                 writer::FINAL_FUNC);
-    if(1 || !num_gone || !(num_gone%1)){
+    if(!num_gone || !(num_gone%10)){
         printf("System:%d, test# %d,  took %d iterations, score was %e\n",
                 cont->index, (int)cont->num_cont, round, v);
     }

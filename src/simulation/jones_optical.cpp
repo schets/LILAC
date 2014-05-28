@@ -7,6 +7,7 @@
 #include "utils/comp_funcs.hpp"
 #include "utils/noise.h"
 #include "type_register.hpp"
+#include "engine/engineimp.h"
 
 template class type_register<jones_optical>;
 /*!
@@ -18,6 +19,7 @@ class jones_matrix:public _double{
 
     public:
         double a1, a2, a3, ap;
+        int num_seg;
         Eigen::Matrix<comp, 2, 2> wq, wh, wp, j1, j2, j3, jp;
         Eigen::Matrix<comp, 2, 2> mvals;
         Eigen::Matrix<comp, 2, 2> rmat(double alpha){
@@ -32,15 +34,21 @@ class jones_matrix:public _double{
             return "jones_matrix";
         }
         virtual void update(){
+            std::shared_ptr<writer> dat(new writer(true));
+            dat->add_data(data::create("Segment", num_seg), writer::PARAMETER);
+            double avals[4] = {a1, a2, a3, ap};
+            dat->add_data(data::create("Angles", avals, 4), writer::PARAMETER);
+            holder->add_writer(dat);
             j1=rmat(a1)*wq*rmat(-1*a1);
             j2=rmat(a2)*wq*rmat(-1*a2);
             j3=rmat(a3)*wh*rmat(-1*a3);
             jp=rmat(ap)*wp*rmat(-1*ap);
             mvals = j1*jp*j2*j3;
         }
-        jones_matrix(std::string n){
+        jones_matrix(std::string n, int seg, engineimp* hold){
+            this->holder = hold;
+            num_seg = seg;
             setname(n);
-
         }
         void setup(std::vector<std::shared_ptr<variable> > avars){
             wq(1, 0) = wq (0, 1) = 0;
@@ -124,7 +132,7 @@ void jones_optical::postprocess(input& invals){
             invals[val->name()]= val;
             cont->addvar(val);
         }
-        std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(get_unique_name(mat_base));
+        std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(get_unique_name(mat_base), i, holder);
         invals[m->name()]= m;
         m->setup(vv);
         jones_matrices.push_back(m);

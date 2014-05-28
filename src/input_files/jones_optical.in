@@ -1,4 +1,3 @@
-!testing the euler integrator
 (jones_optical simulation)
 (double t0 0)
 (double int_len 1.5)

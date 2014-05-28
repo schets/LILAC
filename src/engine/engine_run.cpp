@@ -12,9 +12,9 @@ void engineimp::run(){
     index=0;
     while(cont->is_good()){
         sys->simulate();
+        index++;
         cont->control(0, 0);
         update();
-        index++;
     }
     fft_cleanup();
 }

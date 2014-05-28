@@ -16,6 +16,7 @@ extern "C"{
 #endif
 
 
+
 //defines the alignment value for these classes
 constexpr size_t CACHE_BLOCK=16;
 //!class for block fills of random numbers

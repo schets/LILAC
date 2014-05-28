@@ -31,12 +31,8 @@
 #define restr __restrict__
 #define ALIGNED(x)
 #define PREDICT(x, val) __builtin_expect(x, val)
-#if __GNUC__ >= 4 && __GNUC_MINOR__ >= 7 && __GNUC_PATCHLEVEL__ >= 2
-#define MAKE_ALIGNED alignas(16)
-#else
-#define alignas(x)
 #define MAKE_ALIGNED
-#endif
+#define alignas(x)
 #endif
 class item;
 typedef std::complex<double> comp;
