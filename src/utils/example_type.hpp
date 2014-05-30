@@ -9,8 +9,10 @@ class example_type{
     double val1;
     double val2;
     public:
-    example_type(){};
-    example_type(double v1, double v2): val1(v1), val2(v2){}
+    //This will be refactored when I have more time
+    double* start_add;
+    example_type():start_add(&val1){};
+    example_type(double v1, double v2): val1(v1), val2(v2), start_add(&val1){}
     //This class should break the rule of seperating into cpp and h files
     //even though it isn't a template. This allows the operator calls
     //to be inlined, and will provide a giant boost to performance
@@ -72,5 +74,8 @@ template<>
 class float_traits<example_type>{
     public:
         typedef double type;
+	static inline rep_type<double, 2> get_rep(example_type& inval){
+		return rep_type<double, 2>(inval.start_add);
+	}
 };
 #endif

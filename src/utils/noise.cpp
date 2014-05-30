@@ -273,3 +273,7 @@ void fill_gaussian_noise(float* restr inv, size_t len, double sdev){
         inv[i] = (float)ran_gauss(vrng, sdev);
     }
 }
+double get_norm_rand(double sigma){
+	static vector_rng vrng;
+	return ran_gauss(vrng, sigma);
+}

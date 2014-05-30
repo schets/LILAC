@@ -1,10 +1,10 @@
 export
 CPP=clang
 CPP=gcc
-#CPP=icc
+CPP=icc
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer
-CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
+CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
 LD=gcc
 LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -march=native -m64 -pipe $(FASTMATH)
 endif
@@ -18,7 +18,7 @@ LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm
 endif
 ifeq ($(CPP), icc)
 export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions
-export CFLAGS= -std=c++11 -no-ipo -fast -restrict -O3 -fpermissive -DICC -mkl=sequential
+export CFLAGS= -ip -ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=sequential
 export LD=$(CPP)
 export LFLAGS= -lstdc++ -mkl=sequential
 endif
