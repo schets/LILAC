@@ -3,6 +3,7 @@
 #include "integrator.h"
 #include "utils/comp_funcs.hpp"
 #include "rk45.h"
+#include "utils/float_traits.hpp"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the
@@ -10,13 +11,17 @@
  * which allows for definitions using multiple variables
  */
 template<class T>
-class rk45_tmpl:public rk45 {
+class rk45_tmpl final:public rk45 {
+    typedef typename float_traits<T>::type real_type;
     protected:
-    double dt_init, dt_min, dt_max, relerr, abserr;
+    //since these values aren't used to much in actual computation
+    //it's fine to just have them be doubles and easily retrieve them
+    double dt_init, dt_min, dt_max;
+    double relerr, abserr;
     T* restr f0, * restr f1, * restr f2, * restr f3;
     T* restr f4, * restr f5, * restr f6;
     T* restr u_calc;
-    double* restr u_calc2;
+    real_type* restr u_calc2;
     public:
     virtual const std::type_info& vtype() const;
     void postprocess(input& dat);
@@ -31,33 +36,32 @@ const std::type_info& rk45_tmpl<T>::vtype() const {
 template<class T>
 int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
     T* restr u0 = _u0.get<T>();
-
     size_t num_fail = 0;
-    double dt = dt_init;
-    double dtave=0;
+    real_type dt = dt_init;
+    real_type dtave=0;
     size_t steps=0;
 
 
-    const double magic_power = 1.0/6; //found from reference file, reference p.91 Ascher and Petzold
-    const double magic_mult = .8;//magic multiplying safety factor for determining the next timestep;
+    const real_type magic_power = 1.0/6; //found from reference file, reference p.91 Ascher and Petzold
+    const real_type magic_mult = .8;//magic multiplying safety factor for determining the next timestep;
     //    dorman prince integrator parameters
-    MAKE_ALIGNED const static double a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
-    MAKE_ALIGNED const static double b1 = 0.2;
-    MAKE_ALIGNED const static double b2[] = {3.0/40, 9.0/40};
-    MAKE_ALIGNED const static double b3[] = {44.0/45, -56.0/15, 32.0/9};
-    MAKE_ALIGNED const static double b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
-    MAKE_ALIGNED const static double b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
-    MAKE_ALIGNED const static double b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
-    MAKE_ALIGNED const static double c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
+    MAKE_ALIGNED const static real_type a[] = {0.2, 0.3, 0.8, 8.0/9, 1, 1};
+    MAKE_ALIGNED const static real_type b1 = 0.2;
+    MAKE_ALIGNED const static real_type b2[] = {3.0/40, 9.0/40};
+    MAKE_ALIGNED const static real_type b3[] = {44.0/45, -56.0/15, 32.0/9};
+    MAKE_ALIGNED const static real_type b4[] = {19372.0/6561, -25360.0/2187, 64448.0/6561, -212.0/729};
+    MAKE_ALIGNED const static real_type b5[] = {9017.0/3168, -355.0/33, 46732.0/5247, 49.0/176, -5103.0/18656};
+    MAKE_ALIGNED const static real_type b6[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84};
+    MAKE_ALIGNED const static real_type c4[] = {5179.0/57600, 0, 7571.0/16695, 393.0/640,
         -92097.0/339200, 187.0/2100, 1.0/40};
-    MAKE_ALIGNED       const static double c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
+    MAKE_ALIGNED       const static real_type c5[] = {35.0/384, 0, 500.0/1113, 125.0/192, -2187.0/6784, 11.0/84, 0};
 
-    double taui;
+    real_type taui;
     taui = 0;
-    double tcur=t0;
-    double tauv = 0;
+    real_type tcur=t0;
+    real_type tauv = 0;
     for(size_t i = 0; i < dimension; i++){
-        double taum = abs(u0[i]);
+        real_type taum = abs(u0[i]);
         if(taum > tau){
             taui = taum;
         }
@@ -102,7 +106,7 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         swp=f6;
         f6=f0;
         f0=swp;
-        double ts = tcur;
+        real_type ts = tcur;
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + b1*f0[i]*dt;
@@ -148,7 +152,7 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         //not sure if this is the way to go, but sounds about right
         //internally, I do calculations with the squares to avoid calculations of sqrt
         //This is done with the inf norm
-        double delta=1E-12;
+        real_type delta=1E-12;
 
         for(size_t i = 0; i < dimension; i++){
             u_calc[i] = u0[i] + dt*(c5[0]*f0[i] + c5[1] * f1[i] + c5[2] * f2[i] + c5[3] * f3[i] + 
@@ -160,14 +164,14 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
 
         //seperate these two loops to allow vectorization of the first
         for(size_t i = 0; i < dimension; i++){
-            double deltam = u_calc2[i];//square of absolute error
+            real_type deltam = u_calc2[i];//square of absolute error
             if(deltam>delta){
                 delta=deltam;
             }
         }
         //delta = std::sqrt(delta);
         //estimated optimal dt, smallest of the two options to ensure accuracy
-        double dt_last = dt;
+        real_type dt_last = dt;
         dt =dt*magic_mult*std::pow(tauv/delta, magic_power);
         if(dt < dt_min){
             num_fail++;
@@ -185,7 +189,8 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         else{
             num_fail = 0;
         }
-        dt = std::min(dt, dt_max);
+        //since dt_max is always a double, explcit specialization is needed
+        dt = std::min<real_type>(dt, dt_max);
         if(delta>=tauv){
             swp=f6;
             f6=f0;
@@ -198,7 +203,7 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         }
         // #define give_out
         for(size_t i = 0; i < dimension; i++){
-            double val = abs(u_calc[i]);
+            real_type val = abs(u_calc[i]);
             if(val > taui){
                 taui = val;
             }

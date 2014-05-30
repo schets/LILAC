@@ -22,6 +22,9 @@ template<class ...P>
 class typelist:public typelist_checker{
     template<class Tout, template<class> class Toh, template <class, class> class Tcr, class Tf, class ...Tl>
         static  Toh<Tout>* __create(const vartype* tval){
+
+            static_assert(std::is_floating_point<typename float_traits<Tf>::type>::value,
+                    "The float_traits of the current class is not a floating point type");
             if(tval->compare<Tf>()){
                 return new Tcr<Tf, Tout>();
             }

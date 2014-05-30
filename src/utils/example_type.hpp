@@ -3,6 +3,7 @@
 #define EXAMPLE_TYPE_HPP
 #include <cmath>
 #include <ostream>
+#include "float_traits.hpp"
 //This class is an example of how to make a custom type fo use in the integrators
 class example_type{
     double val1;
@@ -63,4 +64,13 @@ inline std::ostream& operator <<(std::ostream& out, const example_type& dat){
     out << "(" << dat.val1 << ", " << dat.val2 << ")";
     return out;
 }
+
+//This template specialization is used by the engine to determine what the
+//underlying floating point type of the class should be
+//in this case, it would be double since the class uses doubles
+template<>
+class float_traits<example_type>{
+    public:
+        typedef double type;
+};
 #endif

@@ -1,13 +1,15 @@
 #include "integrator.h"
 #include "rk4.h"
 #include "item_heads.hpp"
+#include "float_traits.hpp"
 template<class T>
-class rk4_tmpl:public rk4 {
+class rk4_tmpl final:public rk4 {
+    typedef typename float_traits<T>::type real_type;
     protected:
     T* restr f0, * restr f1, * restr f2, * restr f3;
     T* restr u_calc;
     rhs* func;
-    double stepsize;
+    real_type stepsize;
     public:
     virtual const std::type_info& vtype() const;
     void postprocess(input& dat);
@@ -39,7 +41,7 @@ int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     //
     //    John Burkardt
     //
-    //    Sam Schetterer (memory optimizations, put in object model)
+    //    Sam Schetterer (memory optimizations, put in object model, generic types)
     //
 {
     //get dt
@@ -54,14 +56,14 @@ int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     const size_t m = dimension;
     const double t_diff = tf-t0;
     const size_t steps = ceil(t_diff/stepsize);
-    const double dt = t_diff/steps;
+    const real_type dt = t_diff/steps;
     //do steps integrations
     //each loop iteration is a runge_kutta timestep
     for(size_t j = 0; j < steps; j++){
         size_t i;
-        double t1;
-        double t2;
-        double t3;
+        real_type t1;
+        real_type t2;
+        real_type t3;
         //
         //  Get four sample values of the derivative.
         //

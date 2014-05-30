@@ -7,13 +7,15 @@
 #include "euler_sde.h"
 #include <limits>
 #include <stdlib.h>
+#include "utils/float_traits.hpp"
 template<class T>
-class euler_sde_tmpl: public euler_sde{
-    double stepsize;
+class euler_sde_tmpl final: public euler_sde{
+    typedef typename float_traits<T>::type real_type;
+    real_type stepsize;
     T* restr f0, * restr w0, *restr bfnc;
     rhs_sde* func;
     int calc_dw;
-    double dw_weight;
+    real_type dw_weight;
     public:
     const std::type_info& vtype() const;
     void postprocess(input& dat);
@@ -25,14 +27,14 @@ template<class T>
 int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
     T* restr vals = u0.get<T>();
     size_t steps =  ceil((tf-ts)/stepsize);
-    double dt = (tf-ts)/steps;
-    double tc = ts;
+    real_type dt = (tf-ts)/steps;
+    real_type tc = ts;
     ALIGNED(vals);
     ALIGNED(f0);
     ALIGNED(w0);
     ALIGNED(bfnc);
     for(size_t i = 0; i < steps; i++){
-        if(std::abs(dw_weight) > std::numeric_limits<double>::epsilon())
+        if(std::abs(dw_weight) > std::numeric_limits<real_type>::epsilon())
         {
             gaussian_noise(w0, dimension, dt*dw_weight);
             //only calculate coefficients for dw if needed
@@ -87,8 +89,13 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
         err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.h", FATAL_ERROR);
     }
-    retrieve(dw_weight, dat["dw_weight"], this);
-    retrieve(stepsize, dat["stepsize"], this);
+    //This is a temporay value so that the retrieve is always double
+    double _dw_weight;
+    retrieve(_dw_weight, dat["dw_weight"], this);
+    dw_weight=_dw_weight;
+    double _stepsize;
+    retrieve(_stepsize, dat["stepsize"], this);
+    stepsize=_stepsize;
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.hpp", dat["stepsize"], FATAL_ERROR);
