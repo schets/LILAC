@@ -3,7 +3,7 @@
 #define TYPE_CONSTRUCTOR_HPP
 #include "vartype.hpp"
 #include "defs.hpp"
-#include "example_type.hpp"
+#include "types/example_type.hpp"
 #include <type_traits>
 //
 //There has to be a better way to combine this and satisfy the compiler...
