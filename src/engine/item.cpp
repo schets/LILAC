@@ -6,8 +6,8 @@
 #include <sstream>
 #include "comp_funcs.hpp"
 #include "item_heads.hpp"
-#include "utils/item_factory.h"
-#include "utils/type_register.hpp"
+#include "types/item_factory.h"
+#include "types/type_register.hpp"
 template class type_register<_double>;
 
 template class type_register<_float>;

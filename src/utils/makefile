@@ -2,7 +2,7 @@
 include ../make.inc
 LIB_PATH= $(LIB_MAIN)
 
-UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o $(LIB_PATH)/noise.o $(LIB_PATH)/mempool.o $(LIB_PATH)/item_factory.o
+UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o $(LIB_PATH)/noise.o $(LIB_PATH)/mempool.o
 
 all: $(UTIL_OBJ)
 
@@ -21,10 +21,6 @@ $(LIB_PATH)/noise.o: noise.cpp noise.h $(INLINE HEADERS)
 $(LIB_PATH)/mempool.o: mempool.cpp $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/mempool.o
 	$(CPP) -c mempool.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/mempool.o
-
-$(LIB_PATH)/item_factory.o: item_factory.cpp $(INLINE HEADERS)
-	@rm -f $(LIB_PATH)/item_factory.o
-	$(CPP) -c item_factory.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/item_factory.o
 
 
 .PHONY: clean

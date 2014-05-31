@@ -1,6 +1,6 @@
 #include "example_integrator.h"
-#include "type_register.hpp"
-#include "type_constructor.hpp"
+#include "types/type_register.hpp"
+#include "types/type_constructor.hpp"
 #include "item_heads.hpp"
 #include "example_integrator_tmpl.hpp"
 #include "comp_funcs.hpp"

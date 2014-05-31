@@ -1,8 +1,8 @@
 #include "../utils/comp_funcs.hpp"
 #include "euler_sde.h"
 #include "euler_sde_tmpl.hpp"
-#include "utils/type_constructor.hpp"
-#include "utils/type_register.hpp"
+#include "types/type_constructor.hpp"
+#include "types/type_register.hpp"
 template class type_register<euler_sde>;
 
 int euler_sde::integrate(ptr_passer u, double t0, double tf){

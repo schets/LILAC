@@ -2,7 +2,7 @@
 #define NOISE_HPP
 #include "defs.hpp"
 #include "float_traits.hpp"
-#include "type_operators.hpp"
+#include "types/type_operators.hpp"
 double get_norm_rand( double sigma);
 template<class T>
 inline void gaussian_noise(T* inval, size_t len, double sdev){

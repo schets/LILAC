@@ -1,8 +1,8 @@
 #include "rk4.h"
 #include "rk4_tmpl.hpp"
-#include "utils/type_constructor.hpp"
+#include "types/type_constructor.hpp"
 #include "utils/comp_funcs.hpp"
-#include "utils/type_register.hpp"
+#include "types/type_register.hpp"
 template class type_register<rk4>;
 
 int rk4::integrate(ptr_passer u, double t0, double tf){

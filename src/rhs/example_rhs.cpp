@@ -6,7 +6,7 @@
 #include "example_rhs.h"
 #include "utils/item_heads.hpp"//various headers important to dealing with items, see header for current content
 #include "comp_funcs.hpp" //includes various functions for complex variables and some template math ones
-#include "utils/type_register.hpp"//include file for the type_register class;
+#include "types/type_register.hpp"//include file for the type_register class;
 //****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*****IMPORTANT*
 //To have code that compiles with the engine, you need to edit the makefile in
 //the rhs directory. It is the file that controls when pieces of code are built.
