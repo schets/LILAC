@@ -8,7 +8,7 @@
 
 include make.inc
 .PHONY: all
-all: init integrator rhs controller engine objective simulation utils writer lisp SFMT
+all: init integrator rhs controller engine objective simulation utils writer lisp types SFMT
 	$(LD)  ../lib/*.o -o ../bin/lilac $(LFLAGS) 
 	@cp ../bin/lilac ../rundir/lilac
 
@@ -52,6 +52,10 @@ utils:
 .PHONY: lisp
 lisp:
 	@$(MAKE) -C lisp
+
+.PHONY: types
+types:
+	@$(MAKE) -C types
 
 .PHONY: SFMT
 SFMT:

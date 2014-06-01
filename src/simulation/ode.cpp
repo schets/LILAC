@@ -1,7 +1,7 @@
 #include "ode.h"
 #include "ode_tmpl.hpp"
-#include "utils/type_constructor.hpp"
-#include "type_register.hpp"
+#include "types/type_constructor.hpp"
+#include "types/type_register.hpp"
 template class type_register<ode>;
 /*!
  * This function returns the type name of the ode class, "ode"

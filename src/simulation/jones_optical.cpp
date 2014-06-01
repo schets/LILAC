@@ -6,7 +6,7 @@
 #include "jones_optical.h"
 #include "utils/comp_funcs.hpp"
 #include "utils/noise.h"
-#include "type_register.hpp"
+#include "types/type_register.hpp"
 #include "engine/engineimp.h"
 
 template class type_register<jones_optical>;

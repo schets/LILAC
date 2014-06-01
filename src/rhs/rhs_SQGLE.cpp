@@ -2,7 +2,7 @@
 #include "utils/inline_trig.h"
 #include "utils/comp_funcs.hpp"
 #include "controller/controller.h"
-#include "utils/type_register.hpp"
+#include "types/type_register.hpp"
 template class type_register<rhs_SQGLE>;
 /*!
  * Destructor for rhs_SQGLE

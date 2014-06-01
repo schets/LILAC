@@ -3,7 +3,7 @@
 #define EXAMPLE_TYPE_HPP
 #include <cmath>
 #include <ostream>
-#include "utils/type_operators.hpp"
+#include "type_operators.hpp"
 //This class is an example of how to make a custom type fo use in the integrators
 class example_type{
     double val1;

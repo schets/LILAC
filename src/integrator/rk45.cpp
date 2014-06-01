@@ -3,8 +3,8 @@
 #include "rk45_tmpl.hpp"
 #include "utils/item_heads.hpp"
 #include "../utils/comp_funcs.hpp"
-#include "utils/type_constructor.hpp"
-#include "utils/type_register.hpp"
+#include "types/type_constructor.hpp"
+#include "types/type_register.hpp"
 
 template class type_register<rk45>;
 

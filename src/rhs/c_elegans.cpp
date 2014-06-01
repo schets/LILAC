@@ -2,12 +2,11 @@
 #include "engine/input.h"
 #include "utils/comp_funcs.hpp"
 #include "utils/item_heads.hpp"
-#include "utils/type_register.hpp"
+#include "types/type_register.hpp"
 #include <vector>
 #include <fstream>
 #include "gaba_list.hpp"
 #include <eigen3/Eigen/Core>
-#include "ptr_passer.hpp"
 #include "writer/writer.h"
 #include "engine/engineimp.h"
 #include "controller/controller.h"

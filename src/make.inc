@@ -25,5 +25,5 @@ endif
 
 LIB_MAIN=../../lib
 MAIN_PATH=..
-INLINE_HEADERS=../utils/*.hpp
+INLINE_HEADERS=../utils/*.hpp ../types/*.hpp
 INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/

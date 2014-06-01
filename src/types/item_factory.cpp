@@ -1,7 +1,7 @@
 #include "item_factory.h"
 #include <map>
 #include "defs.hpp"
-typedef item* (*create_fnc)(); 
+typedef std::function<item*()> create_fnc; 
 std::map<std::string, create_fnc>* types=0;
 void item_factory::register_type(const std::string& name, create_fnc creator){
     //this enforces that types will be made upon entry into the function
