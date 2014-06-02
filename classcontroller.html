@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -113,9 +114,6 @@ Collaboration diagram for controller:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1f7bf5d64d26d0110ede2285233e12de"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#a1f7bf5d64d26d0110ede2285233e12de">parse</a> (std::string inval)</td></tr>
-<tr class="memdesc:a1f7bf5d64d26d0110ede2285233e12de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deprecated.  <a href="#a1f7bf5d64d26d0110ede2285233e12de">More...</a><br/></td></tr>
-<tr class="separator:a1f7bf5d64d26d0110ede2285233e12de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0851bcc6efa3d1131eba7bb7ff33fb4"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4">dependencies</a> () const </td></tr>
 <tr class="separator:af0851bcc6efa3d1131eba7bb7ff33fb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed317bfb9b38c15afb75c53fbd67cac5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5">postprocess</a> (<a class="el" href="classinput.html">input</a> &amp;inval)</td></tr>
@@ -143,7 +141,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba4568f32fc335c3398985d81f1e1e59 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab2fe701fc632b52bb9a1ad84965c7b44 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ab2fe701fc632b52bb9a1ad84965c7b44">update</a> ()</td></tr>
 <tr class="separator:ab2fe701fc632b52bb9a1ad84965c7b44 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const std::string n)</td></tr>
+<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const std::string <a class="el" href="lsoda_8cpp.html#a76f11d9a0a47b94f72c2d0e77fb32240">n</a>)</td></tr>
 <tr class="separator:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a064fd6a60dae7e171b40c913b2a4f5a7">set_write_name</a> (std::string wname)</td></tr>
 <tr class="separator:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,7 +231,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classcontroller_a5a00a62059302dd54307e5d9111fa022_icgraph.png" border="0" usemap="#classcontroller_a5a00a62059302dd54307e5d9111fa022_icgraph" alt=""/></div>
 <map name="classcontroller_a5a00a62059302dd54307e5d9111fa022_icgraph" id="classcontroller_a5a00a62059302dd54307e5d9111fa022_icgraph">
-<area shape="rect" id="node3" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="180,5,351,35"/><area shape="rect" id="node5" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="177,59,353,88"/></map>
+<area shape="rect" id="node3" href="classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="185,5,345,35"/><area shape="rect" id="node5" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="180,59,351,88"/><area shape="rect" id="node7" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="177,112,353,141"/></map>
 </div>
 </p>
 
@@ -313,7 +311,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889">toroidal</a>.</p>
 
-<p>Definition at line <a class="el" href="controller_8cpp_source.html#l00017">17</a> of file <a class="el" href="controller_8cpp_source.html">controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="controller_8cpp_source.html#l00011">11</a> of file <a class="el" href="controller_8cpp_source.html">controller.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -369,34 +367,6 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="a1f7bf5d64d26d0110ede2285233e12de"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void controller::parse </td>
-          <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>inval</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Deprecated. </p>
-
-<p>Definition at line <a class="el" href="controller_8cpp_source.html#l00007">7</a> of file <a class="el" href="controller_8cpp_source.html">controller.cpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="aed317bfb9b38c15afb75c53fbd67cac5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -431,7 +401,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571">toroidal</a>.</p>
 
-<p>Definition at line <a class="el" href="controller_8cpp_source.html#l00033">33</a> of file <a class="el" href="controller_8cpp_source.html">controller.cpp</a>.</p>
+<p>Definition at line <a class="el" href="controller_8cpp_source.html#l00027">27</a> of file <a class="el" href="controller_8cpp_source.html">controller.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -476,7 +446,7 @@ Here is the caller graph for this function:</div>
 
 <p>Reimplemented in <a class="el" href="classtoroidal.html#ac96de779bc1d94f7271c7f0745d5da16">toroidal</a>.</p>
 
-<p>Definition at line <a class="el" href="controller_8h_source.html#l00024">24</a> of file <a class="el" href="controller_8h_source.html">controller.h</a>.</p>
+<p>Definition at line <a class="el" href="controller_8h_source.html#l00023">23</a> of file <a class="el" href="controller_8h_source.html">controller.h</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -574,7 +544,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

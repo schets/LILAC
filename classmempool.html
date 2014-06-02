@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +85,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classmempool-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">mempool Class Reference</div>  </div>
@@ -98,25 +102,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:abfbb07ce2b87181f3e337551608dfa5e"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
-<tr class="memitem:abfbb07ce2b87181f3e337551608dfa5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e">create</a> (size_t dim, Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...args)</td></tr>
+<tr class="memitem:abfbb07ce2b87181f3e337551608dfa5e"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e">create</a> (size_t dim, Tl *restr *...args)</td></tr>
+<tr class="memdesc:abfbb07ce2b87181f3e337551608dfa5e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates memory pool with alignment of 32 bytes.  <a href="#abfbb07ce2b87181f3e337551608dfa5e">More...</a><br/></td></tr>
 <tr class="separator:abfbb07ce2b87181f3e337551608dfa5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38eb42e16c050932f8b724eacd3b8ab6"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
-<tr class="memitem:a38eb42e16c050932f8b724eacd3b8ab6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#a38eb42e16c050932f8b724eacd3b8ab6">create</a> (size_t mal, size_t dim, Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...args)</td></tr>
+<tr class="memitem:a38eb42e16c050932f8b724eacd3b8ab6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#a38eb42e16c050932f8b724eacd3b8ab6">create</a> (size_t mal, size_t dim, Tl *restr *...args)</td></tr>
+<tr class="memdesc:a38eb42e16c050932f8b724eacd3b8ab6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates memory pool with specified alignment.  <a href="#a38eb42e16c050932f8b724eacd3b8ab6">More...</a><br/></td></tr>
 <tr class="separator:a38eb42e16c050932f8b724eacd3b8ab6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac6c2d226d58a493b5c732fb525095def"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
-<tr class="memitem:ac6c2d226d58a493b5c732fb525095def"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def">add</a> (size_t mal, size_t dim, Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...args)</td></tr>
+<tr class="memitem:ac6c2d226d58a493b5c732fb525095def"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def">add</a> (size_t mal, size_t dim, Tl *restr *...args)</td></tr>
 <tr class="separator:ac6c2d226d58a493b5c732fb525095def"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93aed953bb58e8c58516cc485a0695f8"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
-<tr class="memitem:a93aed953bb58e8c58516cc485a0695f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#a93aed953bb58e8c58516cc485a0695f8">add</a> (size_t dim, Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...args)</td></tr>
+<tr class="memitem:a93aed953bb58e8c58516cc485a0695f8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#a93aed953bb58e8c58516cc485a0695f8">add</a> (size_t dim, Tl *restr *...args)</td></tr>
 <tr class="separator:a93aed953bb58e8c58516cc485a0695f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7816ca9637babafaf4e71911afb4647"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#ac7816ca9637babafaf4e71911afb4647">set_dim</a> (size_t num, size_t mal=32)</td></tr>
+<tr class="memdesc:ac7816ca9637babafaf4e71911afb4647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the dimension and alignment of the pool.  <a href="#ac7816ca9637babafaf4e71911afb4647">More...</a><br/></td></tr>
 <tr class="separator:ac7816ca9637babafaf4e71911afb4647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24105977367cfa8a903777363fd93523"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a24105977367cfa8a903777363fd93523">clear</a> ()</td></tr>
+<tr class="memdesc:a24105977367cfa8a903777363fd93523"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the memory pool and deallocates the memory.  <a href="#a24105977367cfa8a903777363fd93523">More...</a><br/></td></tr>
 <tr class="separator:a24105977367cfa8a903777363fd93523"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82790c13ca9c147d100c6555da3dba06"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a82790c13ca9c147d100c6555da3dba06">mempool</a> ()</td></tr>
 <tr class="separator:a82790c13ca9c147d100c6555da3dba06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24463edceb188c840613b51be592dd6c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a24463edceb188c840613b51be592dd6c">~mempool</a> ()</td></tr>
 <tr class="separator:a24463edceb188c840613b51be592dd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aa38736653b5a980379ddcda840145fce"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
+<tr class="memitem:aa38736653b5a980379ddcda840145fce"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#aa38736653b5a980379ddcda840145fce">make_this</a> (size_t mal, size_t dim, Tl *restr *...args)</td></tr>
+<tr class="separator:aa38736653b5a980379ddcda840145fce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa59c3f4f57ecd04b3a1e2972bde41a"><td class="memTemplParams" colspan="2">template&lt;class... Tl&gt; </td></tr>
+<tr class="memitem:adfa59c3f4f57ecd04b3a1e2972bde41a"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classmempool.html#adfa59c3f4f57ecd04b3a1e2972bde41a">make_this</a> (size_t dim, Tl *restr *...args)</td></tr>
+<tr class="separator:adfa59c3f4f57ecd04b3a1e2972bde41a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a3459a57b257af55a071aa85ca6674609"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a3459a57b257af55a071aa85ca6674609">_create</a> (size_t al, char *v, char *en, std::list&lt; size_t &gt; sizes, std::list&lt; size_t &gt; <a class="el" href="classmempool.html#a36587f4604e048f701994511c5389c7f">vsizes</a>, std::list&lt; char * &gt; &amp;ptrl)</td></tr>
+<tr class="separator:a3459a57b257af55a071aa85ca6674609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a29c733caa49e94e36797cdd26a8a88af"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a29c733caa49e94e36797cdd26a8a88af">izard</a></td></tr>
+<tr class="separator:a29c733caa49e94e36797cdd26a8a88af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a79c88f29f145a692c2668423dbfc68e7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a79c88f29f145a692c2668423dbfc68e7">total_bytes</a></td></tr>
+<tr class="separator:a79c88f29f145a692c2668423dbfc68e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7612c4f3559d027f30225fa42d9dd0a"><td class="memItemLeft" align="right" valign="top">std::list&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#ac7612c4f3559d027f30225fa42d9dd0a">csizes</a></td></tr>
+<tr class="separator:ac7612c4f3559d027f30225fa42d9dd0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36587f4604e048f701994511c5389c7f"><td class="memItemLeft" align="right" valign="top">std::list&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a36587f4604e048f701994511c5389c7f">vsizes</a></td></tr>
+<tr class="separator:a36587f4604e048f701994511c5389c7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d82a6636199a664818f8d2df36777a9"><td class="memItemLeft" align="right" valign="top">std::list&lt; void ** &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmempool.html#a5d82a6636199a664818f8d2df36777a9">cptrs</a></td></tr>
+<tr class="separator:a5d82a6636199a664818f8d2df36777a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This provides a class to assisst with memory management. </p>
@@ -168,6 +203,75 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a3459a57b257af55a071aa85ca6674609"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mempool::_create </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>al</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>v</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>en</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>sizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; size_t &gt;&#160;</td>
+          <td class="paramname"><em>vsizes</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::list&lt; char * &gt; &amp;&#160;</td>
+          <td class="paramname"><em>ptrl</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8cpp_source.html#l00041">41</a> of file <a class="el" href="mempool_8cpp_source.html">mempool.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmempool_a3459a57b257af55a071aa85ca6674609_icgraph.png" border="0" usemap="#classmempool_a3459a57b257af55a071aa85ca6674609_icgraph" alt=""/></div>
+<map name="classmempool_a3459a57b257af55a071aa85ca6674609_icgraph" id="classmempool_a3459a57b257af55a071aa85ca6674609_icgraph">
+<area shape="rect" id="node3" href="classmempool.html#ac7816ca9637babafaf4e71911afb4647" title="Resets the dimension and alignment of the pool." alt="" coords="189,36,317,65"/><area shape="rect" id="node11" href="classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="183,123,324,152"/><area shape="rect" id="node25" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="201,296,305,325"/><area shape="rect" id="node5" href="classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="379,19,565,48"/><area shape="rect" id="node7" href="classitem__dim.html#a6cbafb706fbeb706d453048db6cf568a" title="item_dim::update_dim" alt="" coords="637,5,787,35"/><area shape="rect" id="node9" href="classitem__dim.html#afa0952c75592b1936c346cfe12dd2d1e" title="item_dim::update_dim" alt="" coords="868,5,1017,35"/><area shape="rect" id="node13" href="classmempool.html#adfa59c3f4f57ecd04b3a1e2972bde41a" title="mempool::make_this" alt="" coords="401,85,543,115"/><area shape="rect" id="node15" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="413,139,531,168"/><area shape="rect" id="node17" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="620,59,804,88"/><area shape="rect" id="node19" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="625,112,799,141"/><area shape="rect" id="node21" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="631,165,793,195"/><area shape="rect" id="node23" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="627,219,797,248"/><area shape="rect" id="node27" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="855,300,1031,329"/><area shape="rect" id="node29" href="classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="375,323,569,352"/><area shape="rect" id="node34" href="classmempool.html#a93aed953bb58e8c58516cc485a0695f8" title="mempool::add" alt="" coords="420,376,524,405"/><area shape="rect" id="node31" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="635,322,789,369"/></map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="ac6c2d226d58a493b5c732fb525095def"></a>
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +293,7 @@ template&lt;class... Tl&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...&#160;</td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
           <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
@@ -199,15 +303,26 @@ template&lt;class... Tl&gt; </div>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Adds new pointers to the memory pool, with an alignment of 32 bytes</p>
+<p>Adds new pointers to the existing memory pool, with a dimension of dim. This can be different than the previous dimensions, and will not affect previously entered pointers</p>
+<dl class="section note"><dt>Note</dt><dd>pointers that were directly passes to the pool will still be valid, but others pointing to that memory will be invalidated as the memory is likely in a different position</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mal</td><td>The alignment in bytes </td></tr>
+    <tr><td class="paramname">dim</td><td>The dimension of each pointer </td></tr>
+    <tr><td class="paramname">args</td><td>The addresses of the pointers </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00145">145</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00187">187</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_ac6c2d226d58a493b5c732fb525095def_cgraph.png" border="0" usemap="#classmempool_ac6c2d226d58a493b5c732fb525095def_cgraph" alt=""/></div>
 <map name="classmempool_ac6c2d226d58a493b5c732fb525095def_cgraph" id="classmempool_ac6c2d226d58a493b5c732fb525095def_cgraph">
-<area shape="rect" id="node3" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="165,5,227,35"/><area shape="rect" id="node7" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="157,59,235,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="284,32,321,61"/></map>
+<area shape="rect" id="node3" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="191,5,252,35"/><area shape="rect" id="node7" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="183,59,260,88"/><area shape="rect" id="node10" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="159,112,284,141"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="335,32,372,61"/></map>
 </div>
 </p>
 
@@ -240,7 +355,7 @@ template&lt;class... Tl&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...&#160;</td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
           <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
@@ -256,14 +371,14 @@ template&lt;class... Tl&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00095">95</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00111">111</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_a93aed953bb58e8c58516cc485a0695f8_cgraph.png" border="0" usemap="#classmempool_a93aed953bb58e8c58516cc485a0695f8_cgraph" alt=""/></div>
 <map name="classmempool_a93aed953bb58e8c58516cc485a0695f8_cgraph" id="classmempool_a93aed953bb58e8c58516cc485a0695f8_cgraph">
-<area shape="rect" id="node3" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="157,32,261,61"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="317,5,379,35"/><area shape="rect" id="node9" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="309,59,387,88"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="436,32,473,61"/></map>
+<area shape="rect" id="node3" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="157,59,261,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="343,5,404,35"/><area shape="rect" id="node9" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="335,59,412,88"/><area shape="rect" id="node12" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="311,112,436,141"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="487,32,524,61"/></map>
 </div>
 </p>
 
@@ -282,6 +397,8 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Clears the memory pool and deallocates the memory. </p>
+
 <p>Definition at line <a class="el" href="mempool_8cpp_source.html#l00065">65</a> of file <a class="el" href="mempool_8cpp_source.html">mempool.cpp</a>.</p>
 
 <p><div class="dynheader">
@@ -298,7 +415,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_a24105977367cfa8a903777363fd93523_icgraph.png" border="0" usemap="#classmempool_a24105977367cfa8a903777363fd93523_icgraph" alt=""/></div>
 <map name="classmempool_a24105977367cfa8a903777363fd93523_icgraph" id="classmempool_a24105977367cfa8a903777363fd93523_icgraph">
-<area shape="rect" id="node3" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="mempool::create" alt="" coords="167,85,284,115"/><area shape="rect" id="node5" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="335,5,519,35"/><area shape="rect" id="node7" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="340,59,513,88"/><area shape="rect" id="node9" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="345,112,508,141"/><area shape="rect" id="node11" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="341,165,512,195"/></map>
+<area shape="rect" id="node3" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="167,85,284,115"/><area shape="rect" id="node5" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="335,5,519,35"/><area shape="rect" id="node7" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="340,59,513,88"/><area shape="rect" id="node9" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="345,112,508,141"/><area shape="rect" id="node11" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="341,165,512,195"/></map>
 </div>
 </p>
 
@@ -322,7 +439,7 @@ template&lt;class... Tl&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...&#160;</td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
           <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
@@ -338,14 +455,24 @@ template&lt;class... Tl&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00083">83</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+<p>Creates memory pool with alignment of 32 bytes. </p>
+<p>Creates a memory pool with an alignment of 32 bytes, and sets each pointer to its respective position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dim</td><td>the length of each pointer </td></tr>
+    <tr><td class="paramname">args</td><td>the address of each pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00089">89</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_abfbb07ce2b87181f3e337551608dfa5e_cgraph.png" border="0" usemap="#classmempool_abfbb07ce2b87181f3e337551608dfa5e_cgraph" alt=""/></div>
 <map name="classmempool_abfbb07ce2b87181f3e337551608dfa5e_cgraph" id="classmempool_abfbb07ce2b87181f3e337551608dfa5e_cgraph">
-<area shape="rect" id="node3" href="classmempool.html#a24105977367cfa8a903777363fd93523" title="mempool::clear" alt="" coords="175,5,284,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="333,5,395,35"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="444,5,481,35"/></map>
+<area shape="rect" id="node3" href="classmempool.html#a24105977367cfa8a903777363fd93523" title="Clears the memory pool and deallocates the memory." alt="" coords="191,5,300,35"/><area shape="rect" id="node9" href="classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="175,59,316,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="399,5,460,35"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="543,32,580,61"/><area shape="rect" id="node11" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="391,59,468,88"/><area shape="rect" id="node14" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="367,112,492,141"/></map>
 </div>
 </p>
 
@@ -384,7 +511,7 @@ template&lt;class... Tl&gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Tl *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *...&#160;</td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
           <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
@@ -400,14 +527,143 @@ template&lt;class... Tl&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00088">88</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+<p>Creates memory pool with specified alignment. </p>
+<p>Creates a memory pool with specified alignment, and sets each pointer to its respective position. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">dim</td><td>the length of each pointer </td></tr>
+    <tr><td class="paramname">args</td><td>the address of each pointer </td></tr>
+    <tr><td class="paramname">mal</td><td>The alignment in bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00101">101</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_a38eb42e16c050932f8b724eacd3b8ab6_cgraph.png" border="0" usemap="#classmempool_a38eb42e16c050932f8b724eacd3b8ab6_cgraph" alt=""/></div>
 <map name="classmempool_a38eb42e16c050932f8b724eacd3b8ab6_cgraph" id="classmempool_a38eb42e16c050932f8b724eacd3b8ab6_cgraph">
-<area shape="rect" id="node3" href="classmempool.html#a24105977367cfa8a903777363fd93523" title="mempool::clear" alt="" coords="175,5,284,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="333,5,395,35"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="444,5,481,35"/></map>
+<area shape="rect" id="node3" href="classmempool.html#a24105977367cfa8a903777363fd93523" title="Clears the memory pool and deallocates the memory." alt="" coords="191,5,300,35"/><area shape="rect" id="node9" href="classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="175,59,316,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="399,5,460,35"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="543,32,580,61"/><area shape="rect" id="node11" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="391,59,468,88"/><area shape="rect" id="node14" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="367,112,492,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aa38736653b5a980379ddcda840145fce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Tl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mempool::make_this </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>mal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Performs the creation of the memory pool, with alignment mal, length dim, and types Tl...</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mal</td><td>The alignment in bytes </td></tr>
+    <tr><td class="paramname">dim</td><td>the dimension of the pointers </td></tr>
+    <tr><td class="paramname">args</td><td>the addresses of each pointer </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00137">137</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmempool_aa38736653b5a980379ddcda840145fce_cgraph.png" border="0" usemap="#classmempool_aa38736653b5a980379ddcda840145fce_cgraph" alt=""/></div>
+<map name="classmempool_aa38736653b5a980379ddcda840145fce_cgraph" id="classmempool_aa38736653b5a980379ddcda840145fce_cgraph">
+<area shape="rect" id="node3" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="223,5,300,35"/><area shape="rect" id="node7" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="199,59,324,88"/><area shape="rect" id="node9" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="231,112,292,141"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="375,59,412,88"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmempool_aa38736653b5a980379ddcda840145fce_icgraph.png" border="0" usemap="#classmempool_aa38736653b5a980379ddcda840145fce_icgraph" alt=""/></div>
+<map name="classmempool_aa38736653b5a980379ddcda840145fce_icgraph" id="classmempool_aa38736653b5a980379ddcda840145fce_icgraph">
+<area shape="rect" id="node3" href="classmempool.html#adfa59c3f4f57ecd04b3a1e2972bde41a" title="mempool::make_this" alt="" coords="199,32,340,61"/><area shape="rect" id="node5" href="classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="211,85,328,115"/><area shape="rect" id="node7" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="391,5,575,35"/><area shape="rect" id="node9" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="396,59,569,88"/><area shape="rect" id="node11" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="401,112,564,141"/><area shape="rect" id="node13" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="397,165,568,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="adfa59c3f4f57ecd04b3a1e2972bde41a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Tl&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void mempool::make_this </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>dim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Tl *restr *...&#160;</td>
+          <td class="paramname"><em>args</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00077">77</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classmempool_adfa59c3f4f57ecd04b3a1e2972bde41a_cgraph.png" border="0" usemap="#classmempool_adfa59c3f4f57ecd04b3a1e2972bde41a_cgraph" alt=""/></div>
+<map name="classmempool_adfa59c3f4f57ecd04b3a1e2972bde41a_cgraph" id="classmempool_adfa59c3f4f57ecd04b3a1e2972bde41a_cgraph">
+<area shape="rect" id="node3" href="classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="199,59,340,88"/><area shape="rect" id="node5" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="415,5,492,35"/><area shape="rect" id="node9" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="391,59,516,88"/><area shape="rect" id="node11" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="423,112,484,141"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="567,59,604,88"/></map>
 </div>
 </p>
 
@@ -437,6 +693,16 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Resets the dimension and alignment of the pool. </p>
+<p>Sets the dimension and alignment of each pointer in the memory pool</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">num</td><td>New dimension of the memory pool </td></tr>
+    <tr><td class="paramname">mal</td><td>Alignment of the pointers </td></tr>
+  </table>
+  </dd>
+</dl>
+
 <p>Definition at line <a class="el" href="mempool_8cpp_source.html#l00003">3</a> of file <a class="el" href="mempool_8cpp_source.html">mempool.cpp</a>.</p>
 
 <p><div class="dynheader">
@@ -444,7 +710,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_ac7816ca9637babafaf4e71911afb4647_cgraph.png" border="0" usemap="#classmempool_ac7816ca9637babafaf4e71911afb4647_cgraph" alt=""/></div>
 <map name="classmempool_ac7816ca9637babafaf4e71911afb4647_cgraph" id="classmempool_ac7816ca9637babafaf4e71911afb4647_cgraph">
-<area shape="rect" id="node3" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="192,5,253,35"/><area shape="rect" id="node7" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="184,59,261,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="311,32,348,61"/></map>
+<area shape="rect" id="node3" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="217,5,279,35"/><area shape="rect" id="node7" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="209,59,287,88"/><area shape="rect" id="node10" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="185,112,311,141"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="361,32,399,61"/></map>
 </div>
 </p>
 
@@ -453,9 +719,121 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classmempool_ac7816ca9637babafaf4e71911afb4647_icgraph.png" border="0" usemap="#classmempool_ac7816ca9637babafaf4e71911afb4647_icgraph" alt=""/></div>
 <map name="classmempool_ac7816ca9637babafaf4e71911afb4647_icgraph" id="classmempool_ac7816ca9637babafaf4e71911afb4647_icgraph">
-<area shape="rect" id="node3" href="classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="184,5,371,35"/></map>
+<area shape="rect" id="node3" href="classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="184,5,371,35"/><area shape="rect" id="node5" href="classitem__dim.html#a6cbafb706fbeb706d453048db6cf568a" title="item_dim::update_dim" alt="" coords="420,5,569,35"/><area shape="rect" id="node7" href="classitem__dim.html#afa0952c75592b1936c346cfe12dd2d1e" title="item_dim::update_dim" alt="" coords="620,5,769,35"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a5d82a6636199a664818f8d2df36777a9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;void**&gt; mempool::cptrs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00073">73</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ac7612c4f3559d027f30225fa42d9dd0a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;size_t&gt; mempool::csizes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00072">72</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a29c733caa49e94e36797cdd26a8a88af"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* mempool::izard</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Charizard is the third evolution of flame pokemon charmander. Very powerful and difficult to tame. Also known for it's ability to store the raw memory used in memory pools </p>
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00070">70</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a79c88f29f145a692c2668423dbfc68e7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t mempool::total_bytes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00071">71</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a36587f4604e048f701994511c5389c7f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::list&lt;size_t&gt; mempool::vsizes</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="mempool_8hpp_source.html#l00072">72</a> of file <a class="el" href="mempool_8hpp_source.html">mempool.hpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +844,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

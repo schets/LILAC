@@ -1,5 +1,6 @@
 <map id="integrator::dependencies" name="integrator::dependencies">
 <area shape="rect" id="node3" href="$classeuler__sde.html#af8fef552b8fd07eb162639cd8f1cdaba" title="euler_sde::dependencies" alt="" coords="220,5,385,35"/>
-<area shape="rect" id="node5" href="$classrk4.html#a8356569d094120e01707af26b24f9ee5" title="rk4::dependencies" alt="" coords="239,59,367,88"/>
-<area shape="rect" id="node7" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="236,112,369,141"/>
+<area shape="rect" id="node5" href="$classexample__integrator.html#aaa470d55eed5ac45b88ca11abf1a2b0c" title="Returns the variables that this class depends on." alt="" coords="237,58,368,105"/>
+<area shape="rect" id="node7" href="$classrk4.html#a8356569d094120e01707af26b24f9ee5" title="rk4::dependencies" alt="" coords="239,128,367,157"/>
+<area shape="rect" id="node9" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="236,181,369,211"/>
 </map>

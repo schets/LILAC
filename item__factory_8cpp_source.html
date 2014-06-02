@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>LILAC: utils/item_factory.cpp Source File</title>
+<title>LILAC: types/item_factory.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -80,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_cbdb8362360e11eafe2fa3bc74cf0ffd.html">utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_5784fb0e3502fad0f55808155bba3d8e.html">types</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -91,30 +92,31 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="item__factory_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__factory_8h.html">item_factory.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="defs_8hpp.html">defs.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">    4</a></span>&#160;std::map&lt;std::string, create_fnc&gt;* <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>=0;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keywordtype">void</span> item_factory::register_type(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> create_fnc&amp; creator){</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="comment">//this enforces that types will be made upon entry into the function</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">static</span> std::map&lt;std::string, create_fnc&gt; make_types;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a> = &amp;make_types;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;count(name)){</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(name + <span class="stringliteral">&quot;has already been registered in the type system&quot;</span>,</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;                <span class="stringliteral">&quot;item_factory::register_type&quot;</span>, <span class="stringliteral">&quot;utils/item_factory.cpp&quot;</span>,</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                FATAL_ERROR);</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;insert(std::pair&lt;std::string, create_fnc&gt;(name, creator));</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="classitem__factory.html#ab5772699b275261911c5a261bd8948ba">   16</a></span>&#160;<a class="code" href="classitem.html">item</a>* <a class="code" href="classitem__factory.html#ab5772699b275261911c5a261bd8948ba">item_factory::create_item</a>(<span class="keyword">const</span> std::string&amp; name){</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a> || !<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;count(name)){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(std::string() + <span class="stringliteral">&quot;The requested type &quot;</span> + name + <span class="stringliteral">&quot; does not exist&quot;</span>,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="stringliteral">&quot;item_factory::create_item&quot;</span>, <span class="stringliteral">&quot;utils/item_factory.cpp&quot;</span>,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                FATAL_ERROR);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>)[name]();</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="item__factory_8cpp.html#abe84d9813b9866f7c8843e79438bb4e2">    4</a></span>&#160;<span class="keyword">typedef</span> std::function&lt;item*()&gt; <a class="code" href="item__factory_8cpp.html#abe84d9813b9866f7c8843e79438bb4e2">create_fnc</a>; </div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">    5</a></span>&#160;std::map&lt;std::string, create_fnc&gt;* <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>=0;</div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="code" href="classitem__factory.html#a11183c725cdadd75b82fe5a857378fad">    6</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classitem__factory.html#a11183c725cdadd75b82fe5a857378fad">item_factory::register_type</a>(<span class="keyword">const</span> std::string&amp; name, <a class="code" href="item__factory_8cpp.html#abe84d9813b9866f7c8843e79438bb4e2">create_fnc</a> creator){</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="comment">//this enforces that types will be made upon entry into the function</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="keyword">static</span> std::map&lt;std::string, create_fnc&gt; make_types;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a> = &amp;make_types;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;count(name)){</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(name + <span class="stringliteral">&quot; has already been registered in the type system&quot;</span>,</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <span class="stringliteral">&quot;item_factory::register_type&quot;</span>, <span class="stringliteral">&quot;utils/item_factory.cpp&quot;</span>,</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;insert(std::pair&lt;std::string, create_fnc&gt;(name, creator));</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;}</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classitem__factory.html#ab5772699b275261911c5a261bd8948ba">   17</a></span>&#160;<a class="code" href="classitem.html">item</a>* <a class="code" href="classitem__factory.html#ab5772699b275261911c5a261bd8948ba">item_factory::create_item</a>(<span class="keyword">const</span> std::string&amp; name){</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a> || !<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>-&gt;count(name)){</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(std::string() + <span class="stringliteral">&quot;The requested type &quot;</span> + name + <span class="stringliteral">&quot; does not exist&quot;</span>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                <span class="stringliteral">&quot;item_factory::create_item&quot;</span>, <span class="stringliteral">&quot;utils/item_factory.cpp&quot;</span>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="item__factory_8cpp.html#ada337e78b2e22d1cbac44ebacce5da5a">types</a>)[name]();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

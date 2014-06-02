@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -92,34 +93,34 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="writer_8h.html">writer/writer.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__heads_8hpp.html">utils/item_heads.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8">engineimp::add_writer</a>(<span class="keyword">const</span> std::shared_ptr&lt;writer&gt;&amp; wval){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    writers[<a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>].push_back(wval);</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>[<a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>].push_back(wval);</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//write data to disk and clear from ram</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> engineimp::write_individual_dat(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;writer&gt;&gt;&amp; dats){</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">engineimp::write_individual_dat</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;writer&gt;&gt;&amp; dats, <span class="keywordtype">size_t</span> ind){</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::string oname=<span class="stringliteral">&quot;data_out.out&quot;</span>;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//retrieve(oname, values[&quot;!out_file&quot;], 0);</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::ofstream ofile(oname.c_str(), std::ofstream::app);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;index: &quot;</span> &lt;&lt; <a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;index: &quot;</span> &lt;&lt; ind &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; dat : dats){</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        write_data(dat, ofile);</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">write_data</a>(dat, ofile);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;&amp;&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ofile.close();</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc">engineimp::write_dat</a>(){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; writes : writers){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        write_individual_dat(writes.second);</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; writes : <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>){</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">write_individual_dat</a>(writes.second, writes.first);</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    writers.clear();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keywordtype">void</span> engineimp::write_data(std::shared_ptr&lt;writer&gt; dat, std::ofstream&amp; ofile){</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">engineimp::write_data</a>(std::shared_ptr&lt;writer&gt; dat, std::ofstream&amp; ofile){</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    dat-&gt;write(ofile);</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;&amp;&amp;&quot;</span> &lt;&lt; std::endl;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:38 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

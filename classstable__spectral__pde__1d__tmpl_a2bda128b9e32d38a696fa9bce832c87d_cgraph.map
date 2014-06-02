@@ -1,0 +1,5 @@
+<map id="stable_spectral_pde_1d_tmpl::post_integration_operations" name="stable_spectral_pde_1d_tmpl::post_integration_operations">
+<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="231,32,268,61"/>
+<area shape="rect" id="node5" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="317,5,360,35"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="320,59,357,88"/>
+</map>

@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -94,25 +95,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">class </span><a class="code" href="classgraph.html">graph</a>{</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keyword">class </span>graphnode{</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;            std::list&lt;std::string&gt; pointsto;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            std::list&lt;std::string&gt; pointedat;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            std::shared_ptr&lt;item&gt; p;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordtype">char</span> processed;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;            std::list&lt;std::string&gt; <a class="code" href="classgraph_1_1graphnode.html#a4ed77074fdeaae78721c96fee94f46bb">pointsto</a>;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;            std::list&lt;std::string&gt; <a class="code" href="classgraph_1_1graphnode.html#a3bdeaf68251ded09e2c8879a9331c5d2">pointedat</a>;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            std::shared_ptr&lt;item&gt; <a class="code" href="classgraph_1_1graphnode.html#a972fe00cfb5f1129bd2b1542a0242afe">p</a>;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordtype">char</span> <a class="code" href="classgraph_1_1graphnode.html#ae4148b2a712f9b6d45608951132ffeeb">processed</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    };</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::map&lt;std::string, graphnode&gt; nodes;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> ins_extra_deps();</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> proc_node_deps(graphnode&amp; g);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    std::map&lt;std::string, graphnode&gt; <a class="code" href="classgraph.html#a6da3720dfab4bec9c75fad820c698c5f">nodes</a>;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgraph.html#ab924e1065579a1329276aff110a1756e">ins_extra_deps</a>();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgraph.html#ab9b13251e3096ab0e96cbcb1371648ba">proc_node_deps</a>(graphnode&amp; g);</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="comment">//void set_pointedat();</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    graphnode&amp; _insert(<a class="code" href="classitem__wrapper.html">item_wrapper</a> p);</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    graphnode&amp; <a class="code" href="classgraph.html#a822b9d87a7acf07172dddb7c06686b83">_insert</a>(<a class="code" href="classitem__wrapper.html">item_wrapper</a> p);</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classgraph.html#ad8cf52014e60191b24e96625ae07a553">insert</a>(<a class="code" href="classitem__wrapper.html">item_wrapper</a> p);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::list&lt;item_wrapper&gt; <a class="code" href="classgraph.html#a11918928d92dfb79762c3f394c01049d">sort</a>(<span class="keyword">const</span> std::list&lt;item_wrapper &gt;&amp; l);</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::list&lt;item_wrapper&gt; <a class="code" href="classgraph.html#a11918928d92dfb79762c3f394c01049d">sort</a>(<span class="keyword">const</span> std::list&lt;item_wrapper &gt;&amp; <a class="code" href="lsoda_8cpp.html#a89606eca6b563ec68d2da2e84657736f">l</a>);</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;};</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:38 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

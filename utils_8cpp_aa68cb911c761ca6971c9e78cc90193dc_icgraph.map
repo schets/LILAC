@@ -1,9 +1,18 @@
 <map id="al_malloc" name="al_malloc">
-<area shape="rect" id="node3" href="$classmempool.html#ac7816ca9637babafaf4e71911afb4647" title="mempool::set_dim" alt="" coords="132,19,260,48"/>
-<area shape="rect" id="node7" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="144,97,248,127"/>
-<area shape="rect" id="node5" href="$classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="315,5,501,35"/>
-<area shape="rect" id="node9" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="759,88,935,117"/>
-<area shape="rect" id="node11" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="311,109,505,139"/>
-<area shape="rect" id="node16" href="$classmempool.html#a93aed953bb58e8c58516cc485a0695f8" title="mempool::add" alt="" coords="356,163,460,192"/>
-<area shape="rect" id="node13" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="555,109,709,155"/>
+<area shape="rect" id="node3" href="$classmempool.html#ac7816ca9637babafaf4e71911afb4647" title="Resets the dimension and alignment of the pool." alt="" coords="139,36,267,65"/>
+<area shape="rect" id="node11" href="$classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="132,123,273,152"/>
+<area shape="rect" id="node25" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="151,296,255,325"/>
+<area shape="rect" id="node5" href="$classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="328,19,515,48"/>
+<area shape="rect" id="node7" href="$classitem__dim.html#a6cbafb706fbeb706d453048db6cf568a" title="item_dim::update_dim" alt="" coords="587,5,736,35"/>
+<area shape="rect" id="node9" href="$classitem__dim.html#afa0952c75592b1936c346cfe12dd2d1e" title="item_dim::update_dim" alt="" coords="817,5,967,35"/>
+<area shape="rect" id="node13" href="$classmempool.html#adfa59c3f4f57ecd04b3a1e2972bde41a" title="mempool::make_this" alt="" coords="351,85,492,115"/>
+<area shape="rect" id="node15" href="$classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="363,139,480,168"/>
+<area shape="rect" id="node17" href="$classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="569,59,753,88"/>
+<area shape="rect" id="node19" href="$classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="575,112,748,141"/>
+<area shape="rect" id="node21" href="$classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="580,165,743,195"/>
+<area shape="rect" id="node23" href="$classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="576,219,747,248"/>
+<area shape="rect" id="node27" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="804,300,980,329"/>
+<area shape="rect" id="node29" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="324,323,519,352"/>
+<area shape="rect" id="node34" href="$classmempool.html#a93aed953bb58e8c58516cc485a0695f8" title="mempool::add" alt="" coords="369,376,473,405"/>
+<area shape="rect" id="node31" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="584,322,739,369"/>
 </map>

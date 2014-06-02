@@ -1,9 +1,9 @@
 <map id="vector_rng::uint_32" name="vector_rng::uint_32">
-<area shape="rect" id="node3" href="$noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="188,32,383,61"/>
-<area shape="rect" id="node13" href="$noise_8cpp.html#a1d3a0f22ab5ca886731375112041a307" title="gsl_ran_gaussian_ziggurat" alt="" coords="197,85,373,115"/>
-<area shape="rect" id="node5" href="$noise_8h.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="433,32,564,61"/>
-<area shape="rect" id="node7" href="$noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81" title="gaussian_noise" alt="" coords="613,32,725,61"/>
-<area shape="rect" id="node9" href="$classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="779,5,947,35"/>
-<area shape="rect" id="node11" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="775,59,951,88"/>
-<area shape="rect" id="node15" href="$noise_8h.html#ae2553c6018e06531056b1f808d31ff1b" title="fill_gaussian_noise" alt="" coords="433,85,564,115"/>
+<area shape="rect" id="node3" href="$noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="187,59,269,88"/>
+<area shape="rect" id="node5" href="$noise_8cpp.html#a78be2e08a480648b76696b09e2719b5c" title="ran_gauss" alt="" coords="343,5,425,35"/>
+<area shape="rect" id="node7" href="$noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="319,59,449,88"/>
+<area shape="rect" id="node9" href="$noise_8h.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="331,112,437,141"/>
+<area shape="rect" id="node11" href="$noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="499,112,611,141"/>
+<area shape="rect" id="node13" href="$exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="664,85,832,115"/>
+<area shape="rect" id="node15" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="660,139,836,168"/>
 </map>

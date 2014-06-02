@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -86,6 +87,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classdata-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -98,24 +102,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <p><code>#include &lt;<a class="el" href="data_8hpp_source.html">data.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata_1_1this__is__private.html">this_is_private</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa079a7eb48b30262f0ce19bb8efe6cac"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdata.html#aa079a7eb48b30262f0ce19bb8efe6cac">to_string</a> () const </td></tr>
 <tr class="separator:aa079a7eb48b30262f0ce19bb8efe6cac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a357c2b26dd2c4e839e16d67979920f5c"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a357c2b26dd2c4e839e16d67979920f5c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a357c2b26dd2c4e839e16d67979920f5c">data</a> (const this_is_private &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, T *invals, size_t len)</td></tr>
+<tr class="memitem:a357c2b26dd2c4e839e16d67979920f5c"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a357c2b26dd2c4e839e16d67979920f5c">data</a> (const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, T *invals, size_t len)</td></tr>
 <tr class="separator:a357c2b26dd2c4e839e16d67979920f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37aff4d8040208e86dda79a4de8923ff"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a37aff4d8040208e86dda79a4de8923ff"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a37aff4d8040208e86dda79a4de8923ff">data</a> (const this_is_private &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string &amp;_name, const T &amp;inval)</td></tr>
+<tr class="memitem:a37aff4d8040208e86dda79a4de8923ff"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a37aff4d8040208e86dda79a4de8923ff">data</a> (const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string &amp;_name, const T &amp;inval)</td></tr>
 <tr class="separator:a37aff4d8040208e86dda79a4de8923ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae48a5ec7d97906fb499491891017602d"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ae48a5ec7d97906fb499491891017602d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ae48a5ec7d97906fb499491891017602d">data</a> (const this_is_private &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, in_iter&lt; T &gt; b, in_iter&lt; T &gt; e)</td></tr>
-<tr class="separator:ae48a5ec7d97906fb499491891017602d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1611c31bef8cacf834824787cb6cc80d"><td class="memTemplParams" colspan="2">template&lt;class in_iter , class end_iter , class T &gt; </td></tr>
+<tr class="memitem:a1611c31bef8cacf834824787cb6cc80d"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a1611c31bef8cacf834824787cb6cc80d">data</a> (const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, in_iter b, end_iter e)</td></tr>
+<tr class="separator:a1611c31bef8cacf834824787cb6cc80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a38d476bef895602ebcae184318cdb0c0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a38d476bef895602ebcae184318cdb0c0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a38d476bef895602ebcae184318cdb0c0">data</a> (const this_is_private &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, T *invals, size_t len, const strfnc&lt; T &gt; &amp;tostr)</td></tr>
+<tr class="memitem:a38d476bef895602ebcae184318cdb0c0"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a38d476bef895602ebcae184318cdb0c0">data</a> (const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string _name, T *invals, size_t len, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
 <tr class="separator:a38d476bef895602ebcae184318cdb0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5725de6d17e71d8ec4c6357e340ed3f2"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a5725de6d17e71d8ec4c6357e340ed3f2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a5725de6d17e71d8ec4c6357e340ed3f2">data</a> (const this_is_private &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string &amp;_name, const T &amp;inval, const strfnc&lt; T &gt; &amp;tostr)</td></tr>
+<tr class="memitem:a5725de6d17e71d8ec4c6357e340ed3f2"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a5725de6d17e71d8ec4c6357e340ed3f2">data</a> (const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;<a class="el" href="test_8c.html#aa216679213a88db9eee4ffd0530addad">dummy</a>, const std::string &amp;_name, const T &amp;inval, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
 <tr class="separator:a5725de6d17e71d8ec4c6357e340ed3f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa09a31450b8729d5bb6fe95d02dacfbb"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdata.html#aa09a31450b8729d5bb6fe95d02dacfbb">~data</a> ()</td></tr>
 <tr class="separator:aa09a31450b8729d5bb6fe95d02dacfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -124,32 +133,54 @@ Public Member Functions</h2></td></tr>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a11f14665a764df56c4b2d279318f2277"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a11f14665a764df56c4b2d279318f2277"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a11f14665a764df56c4b2d279318f2277">create</a> (const std::string name, const T &amp;inval)</td></tr>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a11f14665a764df56c4b2d279318f2277">create</a> (const std::string <a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a>, const T &amp;inval)</td></tr>
 <tr class="separator:a11f14665a764df56c4b2d279318f2277"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72c91bc280812451183b37089b8b1de8"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a72c91bc280812451183b37089b8b1de8"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
 <a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a72c91bc280812451183b37089b8b1de8">create</a> (const std::string _name, T *invals, size_t len)</td></tr>
 <tr class="separator:a72c91bc280812451183b37089b8b1de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01c72ebe53a94acd1e627aee02bfaa61"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a01c72ebe53a94acd1e627aee02bfaa61"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a01c72ebe53a94acd1e627aee02bfaa61">create</a> (const std::string name, in_iter&lt; T &gt; b, in_iter&lt; T &gt; e)</td></tr>
-<tr class="separator:a01c72ebe53a94acd1e627aee02bfaa61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76ea3c1337bf624a5fa2797c13e66c28"><td class="memTemplParams" colspan="2">template&lt;class in_iter , class end_iter &gt; </td></tr>
+<tr class="memitem:a76ea3c1337bf624a5fa2797c13e66c28"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a76ea3c1337bf624a5fa2797c13e66c28">create</a> (const std::string <a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a>, in_iter b, end_iter e)</td></tr>
+<tr class="separator:a76ea3c1337bf624a5fa2797c13e66c28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d1a8137a1ef563f4a9c186d8f14c1b7"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a7d1a8137a1ef563f4a9c186d8f14c1b7"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a7d1a8137a1ef563f4a9c186d8f14c1b7">create</a> (const std::string name, T *b, T *e)</td></tr>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a7d1a8137a1ef563f4a9c186d8f14c1b7">create</a> (const std::string <a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a>, T *b, T *e)</td></tr>
 <tr class="separator:a7d1a8137a1ef563f4a9c186d8f14c1b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae89e77bac1f44daefd6c6b142796ed02"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ae89e77bac1f44daefd6c6b142796ed02"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ae89e77bac1f44daefd6c6b142796ed02">create</a> (const std::string name, const T &amp;inval, const strfnc&lt; T &gt; &amp;tostr)</td></tr>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ae89e77bac1f44daefd6c6b142796ed02">create</a> (const std::string <a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a>, const T &amp;inval, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
 <tr class="separator:ae89e77bac1f44daefd6c6b142796ed02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a813ded4ca07ca23b8f472c9922278897"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a813ded4ca07ca23b8f472c9922278897"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a813ded4ca07ca23b8f472c9922278897">create</a> (const std::string _name, T *invals, size_t len, const strfnc&lt; T &gt; &amp;tostr)</td></tr>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a813ded4ca07ca23b8f472c9922278897">create</a> (const std::string _name, T *invals, size_t len, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
 <tr class="separator:a813ded4ca07ca23b8f472c9922278897"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0bbbebce2fc7e5a1e57e0528c0afe2a"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ad0bbbebce2fc7e5a1e57e0528c0afe2a"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
-<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ad0bbbebce2fc7e5a1e57e0528c0afe2a">create</a> (const std::string name, in_iter&lt; T &gt; b, in_iter&lt; T &gt; e, const strfnc&lt; T &gt; &amp;tostr)</td></tr>
-<tr class="separator:ad0bbbebce2fc7e5a1e57e0528c0afe2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f5fabc8c66fe0cc4c8d6aa8734f6b75"><td class="memTemplParams" colspan="2">template&lt;class T , class in_iter , class end_iter &gt; </td></tr>
+<tr class="memitem:a4f5fabc8c66fe0cc4c8d6aa8734f6b75"><td class="memTemplItemLeft" align="right" valign="top">static std::shared_ptr&lt; const <br class="typebreak"/>
+<a class="el" href="classdata.html">data</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a4f5fabc8c66fe0cc4c8d6aa8734f6b75">create</a> (const std::string <a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a>, in_iter b, end_iter e, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
+<tr class="separator:a4f5fabc8c66fe0cc4c8d6aa8734f6b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:ace0cff2afb37fdda6206e15f88da438e"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ace0cff2afb37fdda6206e15f88da438e"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a> = std::function&lt; std::string(T)&gt;</td></tr>
+<tr class="separator:ace0cff2afb37fdda6206e15f88da438e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac7767e3fa9b80fe77c355166e4cefb69"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ac7767e3fa9b80fe77c355166e4cefb69"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69">addelem</a> (const T &amp;inval)</td></tr>
+<tr class="separator:ac7767e3fa9b80fe77c355166e4cefb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a906fb551663a6004d015c033fe24cfdf"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a906fb551663a6004d015c033fe24cfdf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classdata.html#a906fb551663a6004d015c033fe24cfdf">addelem</a> (const T &amp;inval, const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;tostr)</td></tr>
+<tr class="separator:a906fb551663a6004d015c033fe24cfdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad1f661a9259bcf189da3bd0b5a4e26bb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdata.html#ad1f661a9259bcf189da3bd0b5a4e26bb">name</a></td></tr>
+<tr class="separator:ad1f661a9259bcf189da3bd0b5a4e26bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57097b3062c3d32b0e437df5aec272cc"><td class="memItemLeft" align="right" valign="top">std::stringstream&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdata.html#a57097b3062c3d32b0e437df5aec272cc">dat</a></td></tr>
+<tr class="separator:a57097b3062c3d32b0e437df5aec272cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -160,7 +191,32 @@ Friends</h2></td></tr>
 <div class="textblock"><p>class to hold a piece of constant data, enforces constant correctness </p>
 
 <p>Definition at line <a class="el" href="data_8hpp_source.html#l00011">11</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a class="anchor" id="ace0cff2afb37fdda6206e15f88da438e"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">data::strfnc</a> =  std::function&lt;std::string(T)&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00014">14</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a357c2b26dd2c4e839e16d67979920f5c"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,7 +229,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">data::data </td>
           <td>(</td>
-          <td class="paramtype">const this_is_private &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;&#160;</td>
           <td class="paramname"><em>dummy</em>, </td>
         </tr>
         <tr>
@@ -207,7 +263,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00076">76</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00074">74</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_a357c2b26dd2c4e839e16d67979920f5c_cgraph.png" border="0" usemap="#classdata_a357c2b26dd2c4e839e16d67979920f5c_cgraph" alt=""/></div>
+<map name="classdata_a357c2b26dd2c4e839e16d67979920f5c_cgraph" id="classdata_a357c2b26dd2c4e839e16d67979920f5c_cgraph">
+<area shape="rect" id="node3" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69" title="data::addelem" alt="" coords="133,5,237,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -223,7 +288,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">data::data </td>
           <td>(</td>
-          <td class="paramtype">const this_is_private &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;&#160;</td>
           <td class="paramname"><em>dummy</em>, </td>
         </tr>
         <tr>
@@ -251,15 +316,24 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00082">82</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00080">80</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_a37aff4d8040208e86dda79a4de8923ff_cgraph.png" border="0" usemap="#classdata_a37aff4d8040208e86dda79a4de8923ff_cgraph" alt=""/></div>
+<map name="classdata_a37aff4d8040208e86dda79a4de8923ff_cgraph" id="classdata_a37aff4d8040208e86dda79a4de8923ff_cgraph">
+<area shape="rect" id="node3" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69" title="data::addelem" alt="" coords="133,5,237,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
-<a class="anchor" id="ae48a5ec7d97906fb499491891017602d"></a>
+<a class="anchor" id="a1611c31bef8cacf834824787cb6cc80d"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class in_iter , class end_iter , class T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -267,7 +341,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">data::data </td>
           <td>(</td>
-          <td class="paramtype">const this_is_private &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;&#160;</td>
           <td class="paramname"><em>dummy</em>, </td>
         </tr>
         <tr>
@@ -279,13 +353,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">in_iter&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">end_iter&#160;</td>
           <td class="paramname"><em>e</em>&#160;</td>
         </tr>
         <tr>
@@ -301,7 +375,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00086">86</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00084">84</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_a1611c31bef8cacf834824787cb6cc80d_cgraph.png" border="0" usemap="#classdata_a1611c31bef8cacf834824787cb6cc80d_cgraph" alt=""/></div>
+<map name="classdata_a1611c31bef8cacf834824787cb6cc80d_cgraph" id="classdata_a1611c31bef8cacf834824787cb6cc80d_cgraph">
+<area shape="rect" id="node3" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69" title="data::addelem" alt="" coords="133,5,237,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -317,7 +400,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">data::data </td>
           <td>(</td>
-          <td class="paramtype">const this_is_private &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;&#160;</td>
           <td class="paramname"><em>dummy</em>, </td>
         </tr>
         <tr>
@@ -341,7 +424,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const strfnc&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>tostr</em>&#160;</td>
         </tr>
         <tr>
@@ -357,7 +440,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00091">91</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00089">89</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_a38d476bef895602ebcae184318cdb0c0_cgraph.png" border="0" usemap="#classdata_a38d476bef895602ebcae184318cdb0c0_cgraph" alt=""/></div>
+<map name="classdata_a38d476bef895602ebcae184318cdb0c0_cgraph" id="classdata_a38d476bef895602ebcae184318cdb0c0_cgraph">
+<area shape="rect" id="node3" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69" title="data::addelem" alt="" coords="133,5,237,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -373,7 +465,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">data::data </td>
           <td>(</td>
-          <td class="paramtype">const this_is_private &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="structdata_1_1this__is__private.html">this_is_private</a> &amp;&#160;</td>
           <td class="paramname"><em>dummy</em>, </td>
         </tr>
         <tr>
@@ -391,7 +483,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const strfnc&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>tostr</em>&#160;</td>
         </tr>
         <tr>
@@ -407,7 +499,16 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00097">97</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00095">95</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_a5725de6d17e71d8ec4c6357e340ed3f2_cgraph.png" border="0" usemap="#classdata_a5725de6d17e71d8ec4c6357e340ed3f2_cgraph" alt=""/></div>
+<map name="classdata_a5725de6d17e71d8ec4c6357e340ed3f2_cgraph" id="classdata_a5725de6d17e71d8ec4c6357e340ed3f2_cgraph">
+<area shape="rect" id="node3" href="classdata.html#ac7767e3fa9b80fe77c355166e4cefb69" title="data::addelem" alt="" coords="133,5,237,35"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -432,11 +533,86 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00102">102</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00100">100</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="ac7767e3fa9b80fe77c355166e4cefb69"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void data::addelem </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00018">18</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classdata_ac7767e3fa9b80fe77c355166e4cefb69_icgraph.png" border="0" usemap="#classdata_ac7767e3fa9b80fe77c355166e4cefb69_icgraph" alt=""/></div>
+<map name="classdata_ac7767e3fa9b80fe77c355166e4cefb69_icgraph" id="classdata_ac7767e3fa9b80fe77c355166e4cefb69_icgraph">
+<area shape="rect" id="node3" href="classdata.html#a357c2b26dd2c4e839e16d67979920f5c" title="data::data" alt="" coords="157,5,237,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a906fb551663a6004d015c033fe24cfdf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void data::addelem </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>tostr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00022">22</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a11f14665a764df56c4b2d279318f2277"></a>
 <div class="memitem">
 <div class="memproto">
@@ -471,14 +647,14 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00042">42</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00040">40</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classdata_a11f14665a764df56c4b2d279318f2277_icgraph.png" border="0" usemap="#classdata_a11f14665a764df56c4b2d279318f2277_icgraph" alt=""/></div>
 <map name="classdata_a11f14665a764df56c4b2d279318f2277_icgraph" id="classdata_a11f14665a764df56c4b2d279318f2277_icgraph">
-<area shape="rect" id="node3" href="classstable.html#a79279beb50f624ba987b39f890d7d9fc" title="stable::simulate" alt="" coords="144,5,259,35"/></map>
+<area shape="rect" id="node3" href="classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="152,5,280,35"/><area shape="rect" id="node7" href="classjones__matrix.html#ad635ff6b8cba8ea00c6d28f19e5cc38f" title="jones_matrix::update" alt="" coords="145,59,287,88"/><area shape="rect" id="node9" href="classode__tmpl.html#a72aeab06eadaa693f6d5b5d4b09a20c7" title="ode_tmpl::write_t" alt="" coords="155,112,277,141"/><area shape="rect" id="node11" href="classstable.html#a79279beb50f624ba987b39f890d7d9fc" title="stable::simulate" alt="" coords="159,165,273,195"/><area shape="rect" id="node5" href="classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="336,5,496,35"/></map>
 </div>
 </p>
 
@@ -524,15 +700,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00046">46</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00044">44</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a01c72ebe53a94acd1e627aee02bfaa61"></a>
+<a class="anchor" id="a76ea3c1337bf624a5fa2797c13e66c28"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class in_iter , class end_iter &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -546,13 +722,13 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">in_iter&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">end_iter&#160;</td>
           <td class="paramname"><em>e</em>&#160;</td>
         </tr>
         <tr>
@@ -568,7 +744,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00050">50</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00048">48</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -612,7 +788,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00055">55</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00053">53</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -640,7 +816,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const strfnc&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>tostr</em>&#160;</td>
         </tr>
         <tr>
@@ -656,7 +832,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00061">61</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00059">59</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -690,7 +866,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const strfnc&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>tostr</em>&#160;</td>
         </tr>
         <tr>
@@ -706,15 +882,15 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00065">65</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00063">63</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="ad0bbbebce2fc7e5a1e57e0528c0afe2a"></a>
+<a class="anchor" id="a4f5fabc8c66fe0cc4c8d6aa8734f6b75"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class T , class in_iter , class end_iter &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -728,19 +904,19 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">in_iter&#160;</td>
           <td class="paramname"><em>b</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">in_iter&lt; T &gt;&#160;</td>
+          <td class="paramtype">end_iter&#160;</td>
           <td class="paramname"><em>e</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const strfnc&lt; T &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classdata.html#ace0cff2afb37fdda6206e15f88da438e">strfnc</a>&lt; T &gt; &amp;&#160;</td>
           <td class="paramname"><em>tostr</em>&#160;</td>
         </tr>
         <tr>
@@ -756,7 +932,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00069">69</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00067">67</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -781,7 +957,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00036">36</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00034">34</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -804,7 +980,52 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="data_8hpp_source.html#l00029">29</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00027">27</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a57097b3062c3d32b0e437df5aec272cc"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::stringstream data::dat</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00016">16</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad1f661a9259bcf189da3bd0b5a4e26bb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string data::name</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="data_8hpp_source.html#l00015">15</a> of file <a class="el" href="data_8hpp_source.html">data.hpp</a>.</p>
 
 </div>
 </div>
@@ -814,7 +1035,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

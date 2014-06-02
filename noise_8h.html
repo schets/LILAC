@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,12 +92,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="defs_8hpp_source.html">defs.hpp</a>&quot;</code><br/>
+<code>#include &quot;<a class="el" href="type__operators_8hpp_source.html">types/type_operators.hpp</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for noise.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="noise_8h__incl.png" border="0" usemap="#utils_2noise_8h" alt=""/></div>
 <map name="utils_2noise_8h" id="utils_2noise_8h">
-<area shape="rect" id="node3" href="defs_8hpp.html" title="defs.hpp" alt="" coords="268,83,340,112"/></map>
+<area shape="rect" id="node3" href="defs_8hpp.html" title="defs.hpp" alt="" coords="239,83,311,112"/><area shape="rect" id="node19" href="type__operators_8hpp.html" title="types/type_operators.hpp" alt="" coords="517,83,685,112"/><area shape="rect" id="node24" href="float__traits_8hpp.html" title="float_traits.hpp" alt="" coords="683,160,790,189"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -110,114 +112,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2cabab12ec3a82e7b5848ddd3d927a10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="noise_8h.html#a2cabab12ec3a82e7b5848ddd3d927a10">fill_gaussian_noise</a> (double *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, size_t len, double sdev)</td></tr>
-<tr class="separator:a2cabab12ec3a82e7b5848ddd3d927a10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2553c6018e06531056b1f808d31ff1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="noise_8h.html#ae2553c6018e06531056b1f808d31ff1b">fill_gaussian_noise</a> (float *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, size_t len, double sdev)</td></tr>
-<tr class="separator:ae2553c6018e06531056b1f808d31ff1b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad89e9d1db7e9aa68aa10da3170051b81"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:ad89e9d1db7e9aa68aa10da3170051b81"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81">gaussian_noise</a> (T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inval, size_t len, double sdev)</td></tr>
-<tr class="separator:ad89e9d1db7e9aa68aa10da3170051b81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40e97cf2a1d8531668b3416a320c1c4f"><td class="memTemplParams" colspan="2">template&lt;&gt; </td></tr>
-<tr class="memitem:a40e97cf2a1d8531668b3416a320c1c4f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="noise_8h.html#a40e97cf2a1d8531668b3416a320c1c4f">gaussian_noise</a> (float *inval, size_t len, double sdev)</td></tr>
-<tr class="separator:a40e97cf2a1d8531668b3416a320c1c4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2626873bf3350d661efcfdbb317bca9f"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="noise_8h.html#a2626873bf3350d661efcfdbb317bca9f">get_norm_rand</a> (double sigma)</td></tr>
+<tr class="separator:a2626873bf3350d661efcfdbb317bca9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0676b255e6be46e39b930f1cd82a8783"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a0676b255e6be46e39b930f1cd82a8783"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="noise_8h.html#a0676b255e6be46e39b930f1cd82a8783">gaussian_noise</a> (T *inval, size_t len, double sdev)</td></tr>
+<tr class="separator:a0676b255e6be46e39b930f1cd82a8783"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a2cabab12ec3a82e7b5848ddd3d927a10"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fill_gaussian_noise </td>
-          <td>(</td>
-          <td class="paramtype">double *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td>
-          <td class="paramname"><em>inv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>sdev</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="noise_8cpp_source.html#l00304">304</a> of file <a class="el" href="noise_8cpp_source.html">noise.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_cgraph.png" border="0" usemap="#noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_cgraph" alt=""/></div>
-<map name="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_cgraph" id="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_cgraph">
-<area shape="rect" id="node3" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="188,59,383,88"/><area shape="rect" id="node5" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="476,5,521,35"/><area shape="rect" id="node7" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="432,59,565,88"/><area shape="rect" id="node11" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="432,112,565,141"/><area shape="rect" id="node9" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="647,59,764,88"/><area shape="rect" id="node13" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="613,112,797,141"/></map>
-</div>
-</p>
-
-<p><div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_icgraph.png" border="0" usemap="#noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_icgraph" alt=""/></div>
-<map name="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_icgraph" id="noise_8h_a2cabab12ec3a82e7b5848ddd3d927a10_icgraph">
-<area shape="rect" id="node3" href="noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81" title="gaussian_noise" alt="" coords="187,32,299,61"/><area shape="rect" id="node5" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="352,5,520,35"/><area shape="rect" id="node7" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="348,59,524,88"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ae2553c6018e06531056b1f808d31ff1b"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void fill_gaussian_noise </td>
-          <td>(</td>
-          <td class="paramtype">float *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td>
-          <td class="paramname"><em>inv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>sdev</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="noise_8cpp_source.html#l00309">309</a> of file <a class="el" href="noise_8cpp_source.html">noise.cpp</a>.</p>
-
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="noise_8h_ae2553c6018e06531056b1f808d31ff1b_cgraph.png" border="0" usemap="#noise_8h_ae2553c6018e06531056b1f808d31ff1b_cgraph" alt=""/></div>
-<map name="noise_8h_ae2553c6018e06531056b1f808d31ff1b_cgraph" id="noise_8h_ae2553c6018e06531056b1f808d31ff1b_cgraph">
-<area shape="rect" id="node3" href="noise_8cpp.html#a1d3a0f22ab5ca886731375112041a307" title="gsl_ran_gaussian_ziggurat" alt="" coords="187,59,363,88"/><area shape="rect" id="node5" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="455,5,500,35"/><area shape="rect" id="node7" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="411,59,544,88"/><area shape="rect" id="node11" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="411,112,544,141"/><area shape="rect" id="node9" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="625,59,743,88"/><area shape="rect" id="node13" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="592,112,776,141"/></map>
-</div>
-</p>
-
-</div>
-</div>
-<a class="anchor" id="ad89e9d1db7e9aa68aa10da3170051b81"></a>
+<a class="anchor" id="a0676b255e6be46e39b930f1cd82a8783"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -229,7 +131,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="memname">void gaussian_noise </td>
           <td>(</td>
-          <td class="paramtype">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td>
+          <td class="paramtype">T *&#160;</td>
           <td class="paramname"><em>inval</em>, </td>
         </tr>
         <tr>
@@ -262,71 +164,54 @@ template&lt;class T &gt; </div>
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_cgraph.png" border="0" usemap="#noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_cgraph" alt=""/></div>
-<map name="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_cgraph" id="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_cgraph">
-<area shape="rect" id="node3" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="167,59,297,88"/><area shape="rect" id="node5" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="348,59,543,88"/><area shape="rect" id="node7" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="636,5,681,35"/><area shape="rect" id="node9" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="592,59,725,88"/><area shape="rect" id="node13" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="592,112,725,141"/><area shape="rect" id="node11" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="807,59,924,88"/><area shape="rect" id="node15" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="773,112,957,141"/></map>
+<div class="center"><img src="noise_8h_a0676b255e6be46e39b930f1cd82a8783_cgraph.png" border="0" usemap="#noise_8h_a0676b255e6be46e39b930f1cd82a8783_cgraph" alt=""/></div>
+<map name="noise_8h_a0676b255e6be46e39b930f1cd82a8783_cgraph" id="noise_8h_a0676b255e6be46e39b930f1cd82a8783_cgraph">
+<area shape="rect" id="node3" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="167,5,281,35"/><area shape="rect" id="node5" href="noise_8cpp.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="171,59,277,88"/><area shape="rect" id="node7" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="331,59,413,88"/><area shape="rect" id="node9" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="505,5,551,35"/><area shape="rect" id="node11" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="461,59,595,88"/><area shape="rect" id="node19" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="461,112,595,141"/><area shape="rect" id="node13" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="676,59,793,88"/><area shape="rect" id="node15" href="_s_f_m_t_8c.html#a6bc561a0aa50307534d7e6dd93311d4f" title="gen_rand_array" alt="" coords="893,59,1003,88"/><area shape="rect" id="node17" href="d_s_f_m_t-common_8h.html#a7608e546e97c84f277f505fa5723e5bb" title="do_recursion" alt="" coords="1072,59,1168,88"/><area shape="rect" id="node21" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="643,112,827,141"/><area shape="rect" id="node23" href="d_s_f_m_t_8c.html#adb7241ebd46f1b54cc8d0543bc66cf54" title="gen_rand_array_c0o1" alt="" coords="875,112,1021,141"/><area shape="rect" id="node26" href="d_s_f_m_t_8c.html#a07ac3fa725952f7118b6ef2ea1f50df2" title="convert_c0o1" alt="" coords="1071,112,1169,141"/></map>
 </div>
 </p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_icgraph.png" border="0" usemap="#noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_icgraph" alt=""/></div>
-<map name="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_icgraph" id="noise_8h_ad89e9d1db7e9aa68aa10da3170051b81_icgraph">
-<area shape="rect" id="node3" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="171,5,339,35"/><area shape="rect" id="node5" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="167,59,343,88"/></map>
+<div class="center"><img src="noise_8h_a0676b255e6be46e39b930f1cd82a8783_icgraph.png" border="0" usemap="#noise_8h_a0676b255e6be46e39b930f1cd82a8783_icgraph" alt=""/></div>
+<map name="noise_8h_a0676b255e6be46e39b930f1cd82a8783_icgraph" id="noise_8h_a0676b255e6be46e39b930f1cd82a8783_icgraph">
+<area shape="rect" id="node3" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="171,5,339,35"/><area shape="rect" id="node5" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="167,59,343,88"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="a40e97cf2a1d8531668b3416a320c1c4f"></a>
+<a class="anchor" id="a2626873bf3350d661efcfdbb317bca9f"></a>
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void gaussian_noise </td>
+          <td class="memname">double get_norm_rand </td>
           <td>(</td>
-          <td class="paramtype">float *&#160;</td>
-          <td class="paramname"><em>inval</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>sdev</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>sigma</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="noise_8h_source.html#l00012">12</a> of file <a class="el" href="noise_8h_source.html">noise.h</a>.</p>
+<p>Definition at line <a class="el" href="noise_8cpp_source.html#l00276">276</a> of file <a class="el" href="noise_8cpp_source.html">noise.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="noise_8h_a40e97cf2a1d8531668b3416a320c1c4f_cgraph.png" border="0" usemap="#noise_8h_a40e97cf2a1d8531668b3416a320c1c4f_cgraph" alt=""/></div>
-<map name="noise_8h_a40e97cf2a1d8531668b3416a320c1c4f_cgraph" id="noise_8h_a40e97cf2a1d8531668b3416a320c1c4f_cgraph">
-<area shape="rect" id="node3" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="167,59,297,88"/><area shape="rect" id="node5" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="348,59,543,88"/><area shape="rect" id="node7" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="636,5,681,35"/><area shape="rect" id="node9" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="592,59,725,88"/><area shape="rect" id="node13" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="592,112,725,141"/><area shape="rect" id="node11" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="807,59,924,88"/><area shape="rect" id="node15" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="773,112,957,141"/></map>
+<div class="center"><img src="noise_8h_a2626873bf3350d661efcfdbb317bca9f_cgraph.png" border="0" usemap="#noise_8h_a2626873bf3350d661efcfdbb317bca9f_cgraph" alt=""/></div>
+<map name="noise_8h_a2626873bf3350d661efcfdbb317bca9f_cgraph" id="noise_8h_a2626873bf3350d661efcfdbb317bca9f_cgraph">
+<area shape="rect" id="node3" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="163,59,245,88"/><area shape="rect" id="node5" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="337,5,383,35"/><area shape="rect" id="node7" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="293,59,427,88"/><area shape="rect" id="node15" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="293,112,427,141"/><area shape="rect" id="node9" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="508,59,625,88"/><area shape="rect" id="node11" href="_s_f_m_t_8c.html#a6bc561a0aa50307534d7e6dd93311d4f" title="gen_rand_array" alt="" coords="725,59,835,88"/><area shape="rect" id="node13" href="d_s_f_m_t-common_8h.html#a7608e546e97c84f277f505fa5723e5bb" title="do_recursion" alt="" coords="904,59,1000,88"/><area shape="rect" id="node17" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="475,112,659,141"/><area shape="rect" id="node19" href="d_s_f_m_t_8c.html#adb7241ebd46f1b54cc8d0543bc66cf54" title="gen_rand_array_c0o1" alt="" coords="707,112,853,141"/><area shape="rect" id="node22" href="d_s_f_m_t_8c.html#a07ac3fa725952f7118b6ef2ea1f50df2" title="convert_c0o1" alt="" coords="903,112,1001,141"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="noise_8h_a2626873bf3350d661efcfdbb317bca9f_icgraph.png" border="0" usemap="#noise_8h_a2626873bf3350d661efcfdbb317bca9f_icgraph" alt=""/></div>
+<map name="noise_8h_a2626873bf3350d661efcfdbb317bca9f_icgraph" id="noise_8h_a2626873bf3350d661efcfdbb317bca9f_icgraph">
+<area shape="rect" id="node3" href="noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="163,32,275,61"/><area shape="rect" id="node5" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="328,5,496,35"/><area shape="rect" id="node7" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="324,59,500,88"/></map>
 </div>
 </p>
 
@@ -335,7 +220,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

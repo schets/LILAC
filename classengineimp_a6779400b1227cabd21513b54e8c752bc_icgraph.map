@@ -1,3 +1,5 @@
 <map id="engineimp::write_dat" name="engineimp::write_dat">
 <area shape="rect" id="node3" href="$classengineimp.html#aebe76bc108ed88119d9522d71c99ce13" title="Deletes data." alt="" coords="199,5,353,35"/>
+<area shape="rect" id="node5" href="$classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="212,59,340,88"/>
+<area shape="rect" id="node7" href="$classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="403,59,563,88"/>
 </map>

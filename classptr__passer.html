@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classptr__passer-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">ptr_passer Class Reference</div>  </div>
@@ -102,6 +104,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb47b1ac64e91f521ffcb8617b3077de"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:aeb47b1ac64e91f521ffcb8617b3077de"><td class="memTemplItemLeft" align="right" valign="top">T *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de">get</a> ()</td></tr>
 <tr class="separator:aeb47b1ac64e91f521ffcb8617b3077de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a7a2993b4924ad07720c7c17c605ace0f"><td class="memItemLeft" align="right" valign="top">const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classptr__passer.html#a7a2993b4924ad07720c7c17c605ace0f">tval</a></td></tr>
+<tr class="separator:a7a2993b4924ad07720c7c17c605ace0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23b66ace9b24fc0736def97c25fc68cd"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classptr__passer.html#a23b66ace9b24fc0736def97c25fc68cd">ptr</a></td></tr>
+<tr class="separator:a23b66ace9b24fc0736def97c25fc68cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -201,9 +210,54 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classptr__passer_aeb47b1ac64e91f521ffcb8617b3077de_icgraph.png" border="0" usemap="#classptr__passer_aeb47b1ac64e91f521ffcb8617b3077de_icgraph" alt=""/></div>
 <map name="classptr__passer_aeb47b1ac64e91f521ffcb8617b3077de_icgraph" id="classptr__passer_aeb47b1ac64e91f521ffcb8617b3077de_icgraph">
-<area shape="rect" id="node3" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="163,5,331,35"/><area shape="rect" id="node5" href="classrk45__tmpl.html#a1e6a8cd81532e3215bc77fc72330846a" title="rk45_tmpl::integrate" alt="" coords="179,59,315,88"/><area shape="rect" id="node7" href="classrk4__tmpl.html#a9cfd8145949989c054c32179b09e151b" title="rk4_tmpl::integrate" alt="" coords="181,112,312,141"/><area shape="rect" id="node9" href="classc__elegans.html#a08dfd9826e57cb989540e7e733151cb8" title="c_elegans::dxdt" alt="" coords="189,165,304,195"/><area shape="rect" id="node11" href="classc__elegans.html#a0a0793a6ad3d1e748db2245e30a76cd3" title="c_elegans::dwdt" alt="" coords="188,219,305,248"/><area shape="rect" id="node13" href="classc__elegans.html#a7beecdd9b1072ac35cb9285a010f96d0" title="c_elegans::initial\l_condition" alt="" coords="188,271,305,318"/><area shape="rect" id="node15" href="classexample__rhs.html#a68d552cfb72ba95ae60a7ca5f2f399bc" title="This is the rhs function that calculates the derivative." alt="" coords="183,341,311,371"/><area shape="rect" id="node17" href="classrhs___c_n_l_s.html#a2b1f796630d1dff99ca12795ba4abec6" title="rhs_CNLS::dxdt" alt="" coords="189,395,304,424"/><area shape="rect" id="node19" href="classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="184,448,309,477"/><area shape="rect" id="node21" href="classrhs__type.html#a7e927f5083fbe0b17bf5f124c746df22" title="Generic initial condition, call default constructor for each element/." alt="" coords="180,501,313,547"/></map>
+<area shape="rect" id="node3" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="163,5,331,35"/><area shape="rect" id="node5" href="classexample__integrator__tmpl.html#ab392f0049cd550cb733e304de3d679cf" title="Actual implementation of the integration function." alt="" coords="181,58,312,105"/><area shape="rect" id="node7" href="exceptionrk45__tmpl.html#a1e6a8cd81532e3215bc77fc72330846a" title="rk45_tmpl::integrate" alt="" coords="179,128,315,157"/><area shape="rect" id="node9" href="exceptionrk4__tmpl.html#a9cfd8145949989c054c32179b09e151b" title="rk4_tmpl::integrate" alt="" coords="181,181,312,211"/><area shape="rect" id="node11" href="classc__elegans.html#a08dfd9826e57cb989540e7e733151cb8" title="c_elegans::dxdt" alt="" coords="189,235,304,264"/><area shape="rect" id="node13" href="classc__elegans.html#a0a0793a6ad3d1e748db2245e30a76cd3" title="c_elegans::dwdt" alt="" coords="188,288,305,317"/><area shape="rect" id="node15" href="classc__elegans.html#a7beecdd9b1072ac35cb9285a010f96d0" title="c_elegans::initial\l_condition" alt="" coords="188,341,305,387"/><area shape="rect" id="node17" href="classexample__rhs.html#a68d552cfb72ba95ae60a7ca5f2f399bc" title="This is the rhs function that calculates the derivative." alt="" coords="183,411,311,440"/><area shape="rect" id="node19" href="classrhs___c_n_l_s.html#a2b1f796630d1dff99ca12795ba4abec6" title="rhs_CNLS::dxdt" alt="" coords="189,464,304,493"/><area shape="rect" id="node21" href="classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="184,517,309,547"/><area shape="rect" id="node23" href="classrhs__type.html#a7e927f5083fbe0b17bf5f124c746df22" title="Generic initial condition, call default constructor for each element/." alt="" coords="180,570,313,617"/></map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a23b66ace9b24fc0736def97c25fc68cd"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void* ptr_passer::ptr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ptr__passer_8hpp_source.html#l00007">7</a> of file <a class="el" href="ptr__passer_8hpp_source.html">ptr_passer.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a7a2993b4924ad07720c7c17c605ace0f"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::type_info&amp; ptr_passer::tval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="ptr__passer_8hpp_source.html#l00006">6</a> of file <a class="el" href="ptr__passer_8hpp_source.html">ptr_passer.hpp</a>.</p>
 
 </div>
 </div>
@@ -213,7 +267,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

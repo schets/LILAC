@@ -1,9 +1,10 @@
 <map id="writer/data.hpp" name="writer/data.hpp">
-<area shape="rect" id="node3" href="$writer_8h.html" title="writer/writer.h" alt="" coords="433,83,535,112"/>
+<area shape="rect" id="node3" href="$writer_8h.html" title="writer/writer.h" alt="" coords="485,83,587,112"/>
 <area shape="rect" id="node5" href="$engine__write_8cpp.html" title="engine/engine_write.cpp" alt="" coords="5,160,168,189"/>
-<area shape="rect" id="node7" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="192,160,379,189"/>
-<area shape="rect" id="node9" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="403,160,565,189"/>
-<area shape="rect" id="node13" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="589,160,733,189"/>
-<area shape="rect" id="node15" href="$writer_8cpp.html" title="writer/writer.cpp" alt="" coords="757,160,872,189"/>
-<area shape="rect" id="node11" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="419,237,549,267"/>
+<area shape="rect" id="node7" href="$c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="192,160,320,189"/>
+<area shape="rect" id="node9" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="344,160,531,189"/>
+<area shape="rect" id="node11" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="555,160,717,189"/>
+<area shape="rect" id="node15" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="741,160,885,189"/>
+<area shape="rect" id="node17" href="$writer_8cpp.html" title="writer/writer.cpp" alt="" coords="909,160,1024,189"/>
+<area shape="rect" id="node13" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="571,237,701,267"/>
 </map>

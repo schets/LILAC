@@ -1,4 +1,7 @@
 <map id="dsfmt_gv_init_gen_rand" name="dsfmt_gv_init_gen_rand">
-<area shape="rect" id="node3" href="$d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de" title="dsfmt_init_gen_rand" alt="" coords="213,5,352,35"/>
-<area shape="rect" id="node5" href="$d_s_f_m_t_8c.html#a2fa6a84095a280a4e1556415f3d4f259" title="dsfmt_chk_init_gen_rand" alt="" coords="401,5,567,35"/>
+<area shape="rect" id="node3" href="$d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de" title="dsfmt_init_gen_rand" alt="" coords="213,59,352,88"/>
+<area shape="rect" id="node5" href="$d_s_f_m_t_8c.html#a2fa6a84095a280a4e1556415f3d4f259" title="dsfmt_chk_init_gen_rand" alt="" coords="401,59,567,88"/>
+<area shape="rect" id="node7" href="$d_s_f_m_t_8c.html#a6ceeab85133c3fd7ec95aa85523ff544" title="idxof" alt="" coords="656,5,707,35"/>
+<area shape="rect" id="node9" href="$d_s_f_m_t_8c.html#a95a1673e2b7b3a48a7eab8fa19e18e1d" title="initial_mask" alt="" coords="636,59,727,88"/>
+<area shape="rect" id="node11" href="$d_s_f_m_t_8c.html#a8c0334eb83e12d16f2cfe48929114e44" title="period_certification" alt="" coords="616,112,747,141"/>
 </map>

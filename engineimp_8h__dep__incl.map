@@ -7,7 +7,9 @@
 <area shape="rect" id="node13" href="$engine__read_8cpp.html" title="lisp/engine_read.cpp" alt="" coords="819,83,960,112"/>
 <area shape="rect" id="node15" href="$eval__lisp_8cpp.html" title="lisp/eval_lisp.cpp" alt="" coords="984,83,1107,112"/>
 <area shape="rect" id="node17" href="$lisp_2graph_8cpp.html" title="lisp/graph.cpp" alt="" coords="1131,83,1232,112"/>
-<area shape="rect" id="node19" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="1256,83,1419,112"/>
-<area shape="rect" id="node23" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="1443,83,1587,112"/>
-<area shape="rect" id="node21" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="1272,160,1403,189"/>
+<area shape="rect" id="node19" href="$c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="1256,83,1384,112"/>
+<area shape="rect" id="node21" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="1408,83,1595,112"/>
+<area shape="rect" id="node23" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="1619,83,1781,112"/>
+<area shape="rect" id="node27" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="1805,83,1949,112"/>
+<area shape="rect" id="node25" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="1635,160,1765,189"/>
 </map>

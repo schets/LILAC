@@ -6,6 +6,7 @@ var searchData=
   ['_5fdouble',['_double',['../class__double.html',1,'']]],
   ['_5ffatal',['_fatal',['../class__fatal.html',1,'']]],
   ['_5ffloat',['_float',['../class__float.html',1,'']]],
+  ['_5fttype',['_ttype',['../classtype__constructor_1_1__ttype.html',1,'type_constructor']]],
   ['_5funique_5fname',['_unique_name',['../class_____h_i_d_e_r_____1_1__unique__name.html',1,'__HIDER__']]],
   ['_5funsigned',['_unsigned',['../class__unsigned.html',1,'']]],
   ['_5fwarning',['_warning',['../class__warning.html',1,'']]]

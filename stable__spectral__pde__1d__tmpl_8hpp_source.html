@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,8 +98,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
 <div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE.">stable_spectral_pde_1d_tmpl</a>:<span class="keyword">public</span> <a class="code" href="classstable__ode__tmpl.html">stable_ode_tmpl</a>&lt;T&gt;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> pre_integration_operations();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> post_integration_operations();</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a6137b0834df6d1dc5f8015f80f9ed030">pre_integration_operations</a>();</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a2bda128b9e32d38a696fa9bce832c87d">post_integration_operations</a>();</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keyword">protected</span>:</div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html#a2741ffe333cc947f5ac468b59399c68f">   17</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a2741ffe333cc947f5ac468b59399c68f">t</a>;</div>
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html#ad423e6639b6b80a6cde6f45df3bb6813">   18</a></span>&#160;        <span class="keywordtype">double</span>* <a class="code" href="classstable__spectral__pde__1d__tmpl.html#ad423e6639b6b80a6cde6f45df3bb6813">help</a>;</div>
@@ -131,15 +132,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312">stable_spectral_pde_1d_tmpl&lt;T&gt;::postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; invals){</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <a class="code" href="classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1">stable_ode_tmpl&lt;T&gt;::postprocess</a>(invals);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">int</span> _num;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d">retrieve</a>(_num, invals[<span class="stringliteral">&quot;num_pulses&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(_num, invals[<span class="stringliteral">&quot;num_pulses&quot;</span>], <span class="keyword">this</span>);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">if</span>(_num &lt;= 0){</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Number of pulses must be greater than zero&quot;</span>, <span class="stringliteral">&quot;stable_spectral_pde_1d_tmpl&lt;T&gt;::postprocess&quot;</span>,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="stringliteral">&quot;simulation/stable.cpp&quot;</span>, FATAL_ERROR);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="stringliteral">&quot;simulation/stable.cpp&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    num_pulses=_num;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(this-&gt;dimension%num_pulses){</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Dimension must be divisible by the number of pulses&quot;</span>,  <span class="stringliteral">&quot;stable_spectral_pde_1d_tmpl&lt;T&gt;::postprocess&quot;</span>,</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="stringliteral">&quot;simulation/stable.cpp&quot;</span>, FATAL_ERROR);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                <span class="stringliteral">&quot;simulation/stable.cpp&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    nts=this-&gt;dimension/num_pulses;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> dt=60.0/nts;</div>
@@ -153,7 +154,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    }</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE.">stable_spectral_pde_1d_tmpl&lt;T&gt;::pre_integration_operations</a>(){</div>
+<div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html#a6137b0834df6d1dc5f8015f80f9ed030">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a6137b0834df6d1dc5f8015f80f9ed030">stable_spectral_pde_1d_tmpl&lt;T&gt;::pre_integration_operations</a>(){</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classstable.html#ae7f4670edfb2de6450f64f8757565a61">stable::round</a>==0){</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; nts; i++){</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            this-&gt;ucur[i] = this-&gt;ucur[i+nts] = 1.00/cosh(t[i]/2.0);</div>
@@ -166,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    post_fft_operations();</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE.">stable_spectral_pde_1d_tmpl&lt;T&gt;::post_integration_operations</a>(){</div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="code" href="classstable__spectral__pde__1d__tmpl.html#a2bda128b9e32d38a696fa9bce832c87d">   87</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classstable__spectral__pde__1d__tmpl.html#a2bda128b9e32d38a696fa9bce832c87d">stable_spectral_pde_1d_tmpl&lt;T&gt;::post_integration_operations</a>(){</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    pre_ifft_operations();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; num_pulses; i++){</div>
@@ -194,7 +195,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

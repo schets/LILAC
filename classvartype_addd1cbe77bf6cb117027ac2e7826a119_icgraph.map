@@ -1,7 +1,12 @@
 <map id="vartype::vtype" name="vartype::vtype">
-<area shape="rect" id="node3" href="$classvartype.html#af737847af21866d6ca14949b67683f42" title="vartype::compare" alt="" coords="176,5,299,35"/>
-<area shape="rect" id="node5" href="$classvartype.html#a29b5d676675f9fb86d757791ec9777f7" title="vartype::vname" alt="" coords="181,59,293,88"/>
-<area shape="rect" id="node7" href="$classvartype.html#a61ece164329afa4ba5184ed093262492" title="vartype::vtype_internal" alt="" coords="160,112,315,141"/>
-<area shape="rect" id="node9" href="$classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05" title="vartype::compare_internal" alt="" coords="364,85,535,115"/>
-<area shape="rect" id="node11" href="$classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006" title="vartype::vname_internal" alt="" coords="369,139,529,168"/>
+<area shape="rect" id="node3" href="$classvartype.html#af737847af21866d6ca14949b67683f42" title="vartype::compare" alt="" coords="176,59,299,88"/>
+<area shape="rect" id="node13" href="$classvartype.html#a29b5d676675f9fb86d757791ec9777f7" title="vartype::vname" alt="" coords="181,112,293,141"/>
+<area shape="rect" id="node17" href="$classvartype.html#a61ece164329afa4ba5184ed093262492" title="vartype::vtype_internal" alt="" coords="160,165,315,195"/>
+<area shape="rect" id="node5" href="$classtypelist.html#a467f90f9ca134fdbfa2258235b55f84c" title="typelist::__create" alt="" coords="388,5,511,35"/>
+<area shape="rect" id="node9" href="$classblacklist.html#af6fc0d5b63f99579a9ecf1846bb3433c" title="blacklist::__check" alt="" coords="387,59,512,88"/>
+<area shape="rect" id="node7" href="$classtypelist.html#adfa1b84e88f35ac3df2a2423e140d328" title="typelist::create" alt="" coords="588,5,695,35"/>
+<area shape="rect" id="node11" href="$classblacklist.html#a9dee122c3f942a68d92596da100e0c14" title="blacklist::check" alt="" coords="585,59,697,88"/>
+<area shape="rect" id="node15" href="$classtypelist.html#aa425f520cdd6bac290c5c50dea0a675e" title="typelist::__create" alt="" coords="388,112,511,141"/>
+<area shape="rect" id="node19" href="$classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05" title="vartype::compare_internal" alt="" coords="364,165,535,195"/>
+<area shape="rect" id="node21" href="$classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006" title="vartype::vname_internal" alt="" coords="369,219,529,248"/>
 </map>

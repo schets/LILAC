@@ -1,8 +1,11 @@
 <map id="n_pulse_score::postprocess" name="n_pulse_score::postprocess">
 <area shape="rect" id="node3" href="$classobjective.html#af5c36b8f77e4b7bba20f8689fe10dafb" title="objective::postprocess" alt="" coords="241,5,393,35"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="807,57,844,87"/>
-<area shape="rect" id="node10" href="$classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="mempool::create" alt="" coords="259,109,376,139"/>
-<area shape="rect" id="node5" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="603,5,757,35"/>
-<area shape="rect" id="node12" href="$classmempool.html#a24105977367cfa8a903777363fd93523" title="mempool::clear" alt="" coords="444,109,553,139"/>
-<area shape="rect" id="node14" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="649,109,711,139"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="823,84,860,113"/>
+<area shape="rect" id="node10" href="$classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="259,109,376,139"/>
+<area shape="rect" id="node5" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="443,5,597,35"/>
+<area shape="rect" id="node12" href="$classmempool.html#a24105977367cfa8a903777363fd93523" title="Clears the memory pool and deallocates the memory." alt="" coords="465,109,575,139"/>
+<area shape="rect" id="node17" href="$classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="449,163,591,192"/>
+<area shape="rect" id="node14" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="679,109,740,139"/>
+<area shape="rect" id="node19" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="671,163,748,192"/>
+<area shape="rect" id="node22" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="647,216,772,245"/>
 </map>

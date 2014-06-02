@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -91,8 +92,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a href="toroidal_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item_8h.html">engine/item.h</a>&quot;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="toroidal_8h.html">toroidal.h</a>&quot;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comp__funcs_8hpp.html">comp_funcs.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type__register_8hpp.html">utils/type_register.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> <span class="keyword">class </span><a class="code" href="classtype__register.html">type_register&lt;toroidal&gt;</a>;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="type__register_8hpp.html">types/type_register.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">template</span> <span class="keyword">class </span><a class="code" href="classtype__register.html" title="Registers a string to a type creation function.">type_register&lt;toroidal&gt;</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">/*</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> * This function returns the dependencies of the toroidal class</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> * \note</span></div>
@@ -111,21 +112,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno"><a class="code" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571">   28</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571">toroidal::postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat){</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5">controller::postprocess</a>(dat);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    num_int=0;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classtoroidal.html#a92524cb69bb5c15e3a3577d9687ee058">num_int</a>=0;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="keywordtype">int</span> _iterations;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86">retrieve</a>(_iterations, dat[<span class="stringliteral">&quot;iterations&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86">retrieve</a>(initial_inc, dat[<span class="stringliteral">&quot;initial_inc&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86">retrieve</a>(mul_fac, dat[<span class="stringliteral">&quot;mul_fac&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    iterations = _iterations;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(mul_fac==0){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86" title="Type safe method of retrieving value from a variable.">retrieve</a>(_iterations, dat[<span class="stringliteral">&quot;iterations&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86" title="Type safe method of retrieving value from a variable.">retrieve</a>(<a class="code" href="classtoroidal.html#a69dcf1bc2f10484ec9b70a2e61b8e637">initial_inc</a>, dat[<span class="stringliteral">&quot;initial_inc&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classitem.html#a25f872fe2145ff37f144adcd5d966c86" title="Type safe method of retrieving value from a variable.">retrieve</a>(<a class="code" href="classtoroidal.html#afdb8c18123e48c48f2e49ba6e133a734">mul_fac</a>, dat[<span class="stringliteral">&quot;mul_fac&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classtoroidal.html#a39daf5316dd132433ea19865cf9a5885">iterations</a> = _iterations;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classtoroidal.html#afdb8c18123e48c48f2e49ba6e133a734">mul_fac</a>==0){</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Multiply factor, mul_fac, must not be equal to zero&quot;</span>, </div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;               <span class="stringliteral">&quot;toroidal::postprocess&quot;</span>, <span class="stringliteral">&quot;controller/toroidal.cpp&quot;</span>,</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               FATAL_ERROR);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;               <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(initial_inc==0){</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classtoroidal.html#a69dcf1bc2f10484ec9b70a2e61b8e637">initial_inc</a>==0){</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;The initial increment, initial_inc, must not be equal to zero&quot;</span>, </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;               <span class="stringliteral">&quot;toroidal::postprocess&quot;</span>, <span class="stringliteral">&quot;controller/toroidal.cpp&quot;</span>,</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;               FATAL_ERROR);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;               <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="comment">//find the controllers place in the number of iterations</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
@@ -135,8 +136,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno"><a class="code" href="classtoroidal.html#a9111a080bb471f23059e16af914a077c">   57</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtoroidal.html#a9111a080bb471f23059e16af914a077c">toroidal::control</a>(<a class="code" href="defs_8hpp.html#a407c4f6cd09a6f2bf296c8cf21a76aca">comp</a>* u, <a class="code" href="classobjective.html">objective</a>* obj){</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span> curinc = initial_inc;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    num_int++;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordtype">double</span> curinc = <a class="code" href="classtoroidal.html#a69dcf1bc2f10484ec9b70a2e61b8e637">initial_inc</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <a class="code" href="classtoroidal.html#a92524cb69bb5c15e3a3577d9687ee058">num_int</a>++;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classcontroller.html#acd62c9e58bff9787218669cbdcf8c99f">num_cont</a>++;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="classcontroller.html#a3e8f16066b2440e2757e327622cedae9">vars</a>.size() == 4){</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="comment">//hard coded to test against matlab code</span></div>
@@ -150,7 +151,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::shared_ptr&lt;variable&gt; cvar = _cvar.lock();</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">if</span>(cvar.use_count()){</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            cvar-&gt;inc(curinc);</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            curinc *= mul_fac;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;            curinc *= <a class="code" href="classtoroidal.html#afdb8c18123e48c48f2e49ba6e133a734">mul_fac</a>;</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        }</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;}</div>
@@ -159,16 +160,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="classcontroller.html#a3e8f16066b2440e2757e327622cedae9">vars</a>.push_back(v);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classtoroidal.html#a47d0b97f238032c81a9db1808fd45b72">   81</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="classtoroidal.html#a47d0b97f238032c81a9db1808fd45b72">toroidal::is_good</a>(){</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> num_int &lt;= iterations;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classtoroidal.html#a92524cb69bb5c15e3a3577d9687ee058">num_int</a> &lt;= <a class="code" href="classtoroidal.html#a39daf5316dd132433ea19865cf9a5885">iterations</a>;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 <div class="line"><a name="l00084"></a><span class="lineno"><a class="code" href="classtoroidal.html#ac96de779bc1d94f7271c7f0745d5da16">   84</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classtoroidal.html#ac96de779bc1d94f7271c7f0745d5da16">toroidal::pre_set</a>(){</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classcontroller.html#a8dfaeba3ef7dacae66f455393c33f7c0">index</a>*iterations; i++){</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">double</span> curinc=initial_inc;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="classcontroller.html#a8dfaeba3ef7dacae66f455393c33f7c0">index</a>*<a class="code" href="classtoroidal.html#a39daf5316dd132433ea19865cf9a5885">iterations</a>; i++){</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">double</span> curinc=<a class="code" href="classtoroidal.html#a69dcf1bc2f10484ec9b70a2e61b8e637">initial_inc</a>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">for</span>(<span class="keyword">auto</span> _val : <a class="code" href="classcontroller.html#a3e8f16066b2440e2757e327622cedae9">vars</a>){</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            std::shared_ptr&lt;variable&gt; var = _val.lock();</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span>(var.use_count()){</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                var-&gt;inc(curinc);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                curinc *= mul_fac;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                curinc *= <a class="code" href="classtoroidal.html#afdb8c18123e48c48f2e49ba6e133a734">mul_fac</a>;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        }</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
@@ -176,7 +177,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:38 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

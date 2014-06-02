@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -71,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -84,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classinput-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -105,6 +107,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aed0c9b400fd60d8390416ad0a37017ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abd86bf847bcba5d8e2d8c1c5866bf258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">add_remap</a> (const std::string &amp;oldname, const std::string &amp;newname)</td></tr>
 <tr class="separator:abd86bf847bcba5d8e2d8c1c5866bf258"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5e2969c45af75b9d457ac839021e4076"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a5e2969c45af75b9d457ac839021e4076">invals</a></td></tr>
+<tr class="separator:a5e2969c45af75b9d457ac839021e4076"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70083eca32c4f5f5c3c2e2e484b3e654"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+<a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654">re_directions</a></td></tr>
+<tr class="separator:a70083eca32c4f5f5c3c2e2e484b3e654"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae26087127cfc378e0418f8609ea4fa97"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a></td></tr>
+<tr class="separator:ae26087127cfc378e0418f8609ea4fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
 Friends</h2></td></tr>
@@ -154,7 +168,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8cpp_source.html#l00003">3</a> of file <a class="el" href="input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00003">3</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 </div>
 </div>
@@ -183,7 +197,7 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8cpp_source.html#l00017">17</a> of file <a class="el" href="input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00017">17</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -220,7 +234,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8cpp_source.html#l00021">21</a> of file <a class="el" href="input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00021">21</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -247,7 +261,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8cpp_source.html#l00005">5</a> of file <a class="el" href="input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00005">5</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 </div>
 </div>
@@ -286,14 +300,81 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a5e2969c45af75b9d457ac839021e4076"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt;* input::invals</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00009">9</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a70083eca32c4f5f5c3c2e2e484b3e654"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt; input::re_directions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00010">10</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ae26087127cfc378e0418f8609ea4fa97"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::map&lt;std::string, std::string&gt; input::re_mappings</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00011">11</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>engine/<a class="el" href="input_8h_source.html">input.h</a></li>
-<li>engine/<a class="el" href="input_8cpp_source.html">input.cpp</a></li>
+<li>engine/<a class="el" href="engine_2input_8cpp_source.html">input.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

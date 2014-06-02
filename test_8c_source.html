@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -108,88 +109,88 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">   18</a></span>&#160;<span class="keyword">typedef</span> void (*<a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">st_fill_array_t</a>)(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifdef __GNUC__</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> test_co(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;static <span class="keywordtype">void</span> test_oc(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;static <span class="keywordtype">void</span> test_oo(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;static <span class="keywordtype">void</span> test_12(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;static <span class="keywordtype">void</span> test_seq_co(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;static <span class="keywordtype">void</span> test_seq_oc(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;static <span class="keywordtype">void</span> test_seq_oo(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;static <span class="keywordtype">void</span> test_seq_12(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a28a97b46ed4a3503980267080cd59768">test_co</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#acd98dbe001c2851c008039ec119d57eb">test_oc</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b">test_oo</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1">test_12</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22">test_seq_co</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683">test_seq_oc</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#abb32b27aa529921720fcbe50b1215153">test_seq_oo</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;static <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0">test_seq_12</a>(<span class="keywordtype">void</span>) __attribute__((noinline));</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> test_co(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_oc(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_oo(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_12(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_co(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_oc(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_oo(<span class="keywordtype">void</span>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_12(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a28a97b46ed4a3503980267080cd59768">test_co</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#acd98dbe001c2851c008039ec119d57eb">test_oc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b">test_oo</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1">test_12</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22">test_seq_co</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683">test_seq_oc</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#abb32b27aa529921720fcbe50b1215153">test_seq_oo</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0">test_seq_12</a>(<span class="keywordtype">void</span>);</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> check(<span class="keywordtype">char</span> *start_mess, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="preprocessor"></span><span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="keywordtype">char</span> *start_mess, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;          <a class="code" href="test_8c.html#a23e231cb97d9adf97f51087bf8673bea">st_genrand_t</a> st_genrand, <a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">st_fill_array_t</a> st_fill_array,</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          uint32_t seed, <span class="keywordtype">int</span> n);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> check_ar(<span class="keywordtype">char</span> *start_mess, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;          uint32_t seed, <span class="keywordtype">int</span> <a class="code" href="lsoda_8cpp.html#a76f11d9a0a47b94f72c2d0e77fb32240">n</a>);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a4a926a4901be718fa6bbf54241dacc9f">check_ar</a>(<span class="keywordtype">char</span> *start_mess, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, </div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;             <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;             <a class="code" href="test_8c.html#a23e231cb97d9adf97f51087bf8673bea">st_genrand_t</a> st_genrand,</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;             <a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">st_fill_array_t</a> st_fill_array,</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;             <span class="keywordtype">int</span> n);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;             <span class="keywordtype">int</span> <a class="code" href="lsoda_8cpp.html#a76f11d9a0a47b94f72c2d0e77fb32240">n</a>);</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="comment">/* not inline wrapper functions for check() */</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> s_genrand_close_open(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="test_8c.html#a5a955bb6e8422dfe0a2b5b94496bed5a">   49</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a5a955bb6e8422dfe0a2b5b94496bed5a">s_genrand_close_open</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#a6f2a1cb0b0b6f868708a00350affbbfa">dsfmt_gv_genrand_close_open</a>();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> s_genrand_open_close(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="test_8c.html#a2016a35185f3dc14e74e333f4fbc69af">   52</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a2016a35185f3dc14e74e333f4fbc69af">s_genrand_open_close</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#aad429a1aead793e75fdff0e9616db4f3">dsfmt_gv_genrand_open_close</a>();</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> s_genrand_open_open(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="test_8c.html#aed2cc1446b98a59d9168d78e78e0f061">   55</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#aed2cc1446b98a59d9168d78e78e0f061">s_genrand_open_open</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#a27b4a95b9fd7066d55d414f385237447">dsfmt_gv_genrand_open_open</a>();</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> s_genrand_close1_open2(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="code" href="test_8c.html#a661e307976f53b221614a5a78514418d">   58</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a661e307976f53b221614a5a78514418d">s_genrand_close1_open2</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#aab9284ee31e49e698240748e5c422e76">dsfmt_gv_genrand_close1_open2</a>();</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> sst_genrand_close_open(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="code" href="test_8c.html#a71676e186ca54bb4367ff5f5b10b6cdb">   61</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a71676e186ca54bb4367ff5f5b10b6cdb">sst_genrand_close_open</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#a1d070f0dc97e95122038aed8be76f8dd">dsfmt_genrand_close_open</a>(dsfmt);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> sst_genrand_open_close(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="test_8c.html#a11cb09a090ac315f429230a5490fc36d">   64</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a11cb09a090ac315f429230a5490fc36d">sst_genrand_open_close</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#adb8392cee5e6d63095024b7595d3555a">dsfmt_genrand_open_close</a>(dsfmt);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> sst_genrand_open_open(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="test_8c.html#acd4fd25d56b29b14be1d97c97643bf83">   67</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#acd4fd25d56b29b14be1d97c97643bf83">sst_genrand_open_open</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#ad0a3324227d2e65e8d8888eb675170ac">dsfmt_genrand_open_open</a>(dsfmt);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> sst_genrand_close1_open2(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
+<div class="line"><a name="l00070"></a><span class="lineno"><a class="code" href="test_8c.html#a0066a0d5be80884498e5212af18f91ad">   70</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">double</span> <a class="code" href="test_8c.html#a0066a0d5be80884498e5212af18f91ad">sst_genrand_close1_open2</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt) {</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="d_s_f_m_t_8h.html#a988f7f99c98960c22f19f68edb41f399">dsfmt_genrand_close1_open2</a>(dsfmt);</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> s_fill_array_close_open(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="test_8c.html#af67cf2a0b18ef8d3818d9fba0a67e7a8">   73</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#af67cf2a0b18ef8d3818d9fba0a67e7a8">s_fill_array_close_open</a>(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="d_s_f_m_t_8h.html#a55ca4ccdc72ba0b34386df16a3dfd48f">dsfmt_gv_fill_array_close_open</a>(array, size);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> s_fill_array_open_close(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="test_8c.html#a0f850d07425f0b0dc256c5e7d6a07fd8">   76</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a0f850d07425f0b0dc256c5e7d6a07fd8">s_fill_array_open_close</a>(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="d_s_f_m_t_8h.html#a66881a0b8e76641024d09bbae3d9be7e">dsfmt_gv_fill_array_open_close</a>(array, size);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> s_fill_array_open_open(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="code" href="test_8c.html#aa44f5869953c9c0519e8d4a382ffd417">   79</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#aa44f5869953c9c0519e8d4a382ffd417">s_fill_array_open_open</a>(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="d_s_f_m_t_8h.html#aabefce2df25b67305dc71355e7a4ba28">dsfmt_gv_fill_array_open_open</a>(array, size);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> s_fill_array_close1_open2(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="test_8c.html#a907b7cc6f266cfdb655c7a3f4350d902">   82</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a907b7cc6f266cfdb655c7a3f4350d902">s_fill_array_close1_open2</a>(<span class="keywordtype">double</span> array[], <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <a class="code" href="d_s_f_m_t_8h.html#a6dc013d6bb958f355ca211707498a6aa">dsfmt_gv_fill_array_close1_open2</a>(array, size);</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;}</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sst_fill_array_close_open(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="code" href="test_8c.html#a04aa02f21486fd6b83082a53f26c263d">   85</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a04aa02f21486fd6b83082a53f26c263d">sst_fill_array_close_open</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                      <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <a class="code" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0">dsfmt_fill_array_close_open</a>(dsfmt, array, size);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sst_fill_array_open_close(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="code" href="test_8c.html#a42ccba7499a32ed46e3d73e8ebef6343">   89</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a42ccba7499a32ed46e3d73e8ebef6343">sst_fill_array_open_close</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                      <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="d_s_f_m_t_8c.html#a6ad6f12b9a47ea89ceab693b1eec5079">dsfmt_fill_array_open_close</a>(dsfmt, array, size);</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sst_fill_array_open_open(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="code" href="test_8c.html#a5b1a0268699e4107b85bea88b221031e">   93</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a5b1a0268699e4107b85bea88b221031e">sst_fill_array_open_open</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                      <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <a class="code" href="d_s_f_m_t_8c.html#aeed310e17f9f652c1b0ec86298c834c1">dsfmt_fill_array_open_open</a>(dsfmt, array, size);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> sst_fill_array_close1_open2(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="code" href="test_8c.html#a2ba464db1559395c224f2804f5a46c2c">   97</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a2ba464db1559395c224f2804f5a46c2c">sst_fill_array_close1_open2</a>(<a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> *dsfmt, <span class="keywordtype">double</span> array[],</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                      <span class="keywordtype">int</span> size) {</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <a class="code" href="d_s_f_m_t_8c.html#abeef257039f3b95b7475bbecdb521b89">dsfmt_fill_array_close1_open2</a>(dsfmt, array, size);</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> check(<span class="keywordtype">char</span> *range_str, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">  102</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="keywordtype">char</span> *range_str, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand, <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          <a class="code" href="test_8c.html#a23e231cb97d9adf97f51087bf8673bea">st_genrand_t</a> st_genrand, <a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">st_fill_array_t</a> st_fill_array,</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          uint32_t seed, <span class="keywordtype">int</span> print_size) {</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordtype">int</span> i;</div>
@@ -272,7 +273,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    }</div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;}</div>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> check_ar(<span class="keywordtype">char</span> *range_str, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand,</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="code" href="test_8c.html#a4a926a4901be718fa6bbf54241dacc9f">  185</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a4a926a4901be718fa6bbf54241dacc9f">check_ar</a>(<span class="keywordtype">char</span> *range_str, <a class="code" href="test_8c.html#a413c4006abf26dcf4b28a71529489979">genrand_t</a> genrand,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;             <a class="code" href="test_8c.html#a6a2140bef5e8b2a0cd899b3dccd6e4b2">fill_array_t</a> fill_array,</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;             <a class="code" href="test_8c.html#a23e231cb97d9adf97f51087bf8673bea">st_genrand_t</a> st_genrand,</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;             <a class="code" href="test_8c.html#a70dd4fb8e0a5e0ff9306d903bb28cf75">st_fill_array_t</a> st_fill_array,</div>
@@ -358,7 +359,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    }</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;}</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_co(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00271"></a><span class="lineno"><a class="code" href="test_8c.html#a28a97b46ed4a3503980267080cd59768">  271</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a28a97b46ed4a3503980267080cd59768">test_co</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    uint32_t i, j;</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    uint64_t sum;</div>
@@ -393,7 +394,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;       (sum * 100) / CLOCKS_PER_SEC);</div>
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;}</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_oc(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00306"></a><span class="lineno"><a class="code" href="test_8c.html#acd98dbe001c2851c008039ec119d57eb">  306</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#acd98dbe001c2851c008039ec119d57eb">test_oc</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    uint32_t i, j;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;    uint64_t sum;</div>
@@ -427,7 +428,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;       (sum * 100) / CLOCKS_PER_SEC);</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;}</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_oo(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00340"></a><span class="lineno"><a class="code" href="test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b">  340</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b">test_oo</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    uint32_t i, j;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    uint64_t sum;</div>
@@ -461,7 +462,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;       (sum * 100) / CLOCKS_PER_SEC);</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;}</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_12(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00374"></a><span class="lineno"><a class="code" href="test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1">  374</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1">test_12</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    uint32_t i, j;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;    uint64_t sum;</div>
@@ -495,7 +496,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;       (sum * 100) / CLOCKS_PER_SEC);</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;}</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;</div>
-<div class="line"><a name="l00408"></a><span class="lineno">  408</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_co(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00408"></a><span class="lineno"><a class="code" href="test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22">  408</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22">test_seq_co</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00409"></a><span class="lineno">  409</span>&#160;    uint32_t i, j, k;</div>
 <div class="line"><a name="l00410"></a><span class="lineno">  410</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00411"></a><span class="lineno">  411</span>&#160;    uint64_t sum;</div>
@@ -575,7 +576,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;    printf(<span class="stringliteral">&quot;total = %f\n&quot;</span>, total);</div>
 <div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;}</div>
 <div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_oc(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00488"></a><span class="lineno"><a class="code" href="test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683">  488</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683">test_seq_oc</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    uint32_t i, j, k;</div>
 <div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;    uint64_t sum;</div>
@@ -652,7 +653,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00562"></a><span class="lineno">  562</span>&#160;    printf(<span class="stringliteral">&quot;total = %f\n&quot;</span>, total);</div>
 <div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;}</div>
 <div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_oo(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00565"></a><span class="lineno"><a class="code" href="test_8c.html#abb32b27aa529921720fcbe50b1215153">  565</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#abb32b27aa529921720fcbe50b1215153">test_seq_oo</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;    uint32_t i, j, k;</div>
 <div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00568"></a><span class="lineno">  568</span>&#160;    uint64_t sum;</div>
@@ -729,7 +730,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00639"></a><span class="lineno">  639</span>&#160;    printf(<span class="stringliteral">&quot;total = %f\n&quot;</span>, total);</div>
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160;}</div>
 <div class="line"><a name="l00641"></a><span class="lineno">  641</span>&#160;</div>
-<div class="line"><a name="l00642"></a><span class="lineno">  642</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> test_seq_12(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a name="l00642"></a><span class="lineno"><a class="code" href="test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0">  642</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0">test_seq_12</a>(<span class="keywordtype">void</span>) {</div>
 <div class="line"><a name="l00643"></a><span class="lineno">  643</span>&#160;    uint32_t i, j, k;</div>
 <div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;    uint64_t clo;</div>
 <div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;    uint64_t sum;</div>
@@ -811,48 +812,48 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;</div>
 <div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;    <span class="keywordflow">if</span> ((argc &gt;= 2) &amp;&amp; (strncmp(argv[1],<span class="stringliteral">&quot;-s&quot;</span>,2) == 0)) {</div>
 <div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160;    printf(<span class="stringliteral">&quot;consumed time for generating %d randoms.\n&quot;</span>,</div>
-<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;           NUM_RANDS * TIC_COUNT);</div>
-<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    test_co();</div>
-<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    test_oc();</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    test_oo();</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    test_12();</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    test_seq_co();</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    test_seq_oc();</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    test_seq_oo();</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    test_seq_12();</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;           <a class="code" href="test_8c.html#a810d42748e53322fb44d77423ab831c6">NUM_RANDS</a> * <a class="code" href="test_8c.html#a7a4c620d96382ec11bb7e5cc712c1bf8">TIC_COUNT</a>);</div>
+<div class="line"><a name="l00725"></a><span class="lineno">  725</span>&#160;    <a class="code" href="test_8c.html#a28a97b46ed4a3503980267080cd59768">test_co</a>();</div>
+<div class="line"><a name="l00726"></a><span class="lineno">  726</span>&#160;    <a class="code" href="test_8c.html#acd98dbe001c2851c008039ec119d57eb">test_oc</a>();</div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;    <a class="code" href="test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b">test_oo</a>();</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;    <a class="code" href="test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1">test_12</a>();</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;    <a class="code" href="test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22">test_seq_co</a>();</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;    <a class="code" href="test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683">test_seq_oc</a>();</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;    <a class="code" href="test_8c.html#abb32b27aa529921720fcbe50b1215153">test_seq_oo</a>();</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;    <a class="code" href="test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0">test_seq_12</a>();</div>
 <div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="d_s_f_m_t_8c.html#af181eeb77513e5a399dd2c585cfaa055">dsfmt_get_idstring</a>());</div>
 <div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160;    printf(<span class="stringliteral">&quot;init_gen_rand(0) &quot;</span>);</div>
-<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    check(<span class="stringliteral">&quot;[1, 2)&quot;</span>, s_genrand_close1_open2, s_fill_array_close1_open2,</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;          sst_genrand_close1_open2, sst_fill_array_close1_open2, 0, 1000);</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;    <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="stringliteral">&quot;[1, 2)&quot;</span>, <a class="code" href="test_8c.html#a661e307976f53b221614a5a78514418d">s_genrand_close1_open2</a>, <a class="code" href="test_8c.html#a907b7cc6f266cfdb655c7a3f4350d902">s_fill_array_close1_open2</a>,</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;          <a class="code" href="test_8c.html#a0066a0d5be80884498e5212af18f91ad">sst_genrand_close1_open2</a>, <a class="code" href="test_8c.html#a2ba464db1559395c224f2804f5a46c2c">sst_fill_array_close1_open2</a>, 0, 1000);</div>
 <div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;    <span class="keywordflow">for</span> (i = 0; i &lt; 20; i++) {</div>
 <div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;        printf(<span class="stringliteral">&quot;init_gen_rand(%d) &quot;</span>, i);</div>
 <div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;        <span class="keywordflow">switch</span> (i % 4) {</div>
 <div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160;        <span class="keywordflow">case</span> 0:</div>
-<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        check(<span class="stringliteral">&quot;[0, 1)&quot;</span>, s_genrand_close_open, s_fill_array_close_open,</div>
-<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;              sst_genrand_close_open, sst_fill_array_close_open, i, 12);</div>
+<div class="line"><a name="l00742"></a><span class="lineno">  742</span>&#160;        <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="stringliteral">&quot;[0, 1)&quot;</span>, <a class="code" href="test_8c.html#a5a955bb6e8422dfe0a2b5b94496bed5a">s_genrand_close_open</a>, <a class="code" href="test_8c.html#af67cf2a0b18ef8d3818d9fba0a67e7a8">s_fill_array_close_open</a>,</div>
+<div class="line"><a name="l00743"></a><span class="lineno">  743</span>&#160;              <a class="code" href="test_8c.html#a71676e186ca54bb4367ff5f5b10b6cdb">sst_genrand_close_open</a>, <a class="code" href="test_8c.html#a04aa02f21486fd6b83082a53f26c263d">sst_fill_array_close_open</a>, i, 12);</div>
 <div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;        <span class="keywordflow">case</span> 1:</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        check(<span class="stringliteral">&quot;(0, 1]&quot;</span>, s_genrand_open_close, s_fill_array_open_close,</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;              sst_genrand_open_close, sst_fill_array_open_close, i, 12);</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="stringliteral">&quot;(0, 1]&quot;</span>, <a class="code" href="test_8c.html#a2016a35185f3dc14e74e333f4fbc69af">s_genrand_open_close</a>, <a class="code" href="test_8c.html#a0f850d07425f0b0dc256c5e7d6a07fd8">s_fill_array_open_close</a>,</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;              <a class="code" href="test_8c.html#a11cb09a090ac315f429230a5490fc36d">sst_genrand_open_close</a>, <a class="code" href="test_8c.html#a42ccba7499a32ed46e3d73e8ebef6343">sst_fill_array_open_close</a>, i, 12);</div>
 <div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        <span class="keywordflow">case</span> 2:</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        check(<span class="stringliteral">&quot;(0, 1)&quot;</span>, s_genrand_open_open, s_fill_array_open_open,</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;              sst_genrand_open_open, sst_fill_array_open_open, i, 12);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="stringliteral">&quot;(0, 1)&quot;</span>, <a class="code" href="test_8c.html#aed2cc1446b98a59d9168d78e78e0f061">s_genrand_open_open</a>, <a class="code" href="test_8c.html#aa44f5869953c9c0519e8d4a382ffd417">s_fill_array_open_open</a>,</div>
+<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;              <a class="code" href="test_8c.html#acd4fd25d56b29b14be1d97c97643bf83">sst_genrand_open_open</a>, <a class="code" href="test_8c.html#a5b1a0268699e4107b85bea88b221031e">sst_fill_array_open_open</a>, i, 12);</div>
 <div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;        <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        <span class="keywordflow">case</span> 3:</div>
 <div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;        <span class="keywordflow">default</span>:</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        check(<span class="stringliteral">&quot;[1, 2)&quot;</span>, s_genrand_close1_open2, </div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;              s_fill_array_close1_open2,</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;              sst_genrand_close1_open2, </div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;              sst_fill_array_close1_open2, i, 12);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;        <a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a>(<span class="stringliteral">&quot;[1, 2)&quot;</span>, <a class="code" href="test_8c.html#a661e307976f53b221614a5a78514418d">s_genrand_close1_open2</a>, </div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;              <a class="code" href="test_8c.html#a907b7cc6f266cfdb655c7a3f4350d902">s_fill_array_close1_open2</a>,</div>
+<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;              <a class="code" href="test_8c.html#a0066a0d5be80884498e5212af18f91ad">sst_genrand_close1_open2</a>, </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;              <a class="code" href="test_8c.html#a2ba464db1559395c224f2804f5a46c2c">sst_fill_array_close1_open2</a>, i, 12);</div>
 <div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        }</div>
 <div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;    }</div>
 <div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;    printf(<span class="stringliteral">&quot;init_by_array {1, 2, 3, 4} &quot;</span>);</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    check_ar(<span class="stringliteral">&quot;[1, 2)&quot;</span>, s_genrand_close1_open2, </div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;         s_fill_array_close1_open2,</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;         sst_genrand_close1_open2, </div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;         sst_fill_array_close1_open2,</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    <a class="code" href="test_8c.html#a4a926a4901be718fa6bbf54241dacc9f">check_ar</a>(<span class="stringliteral">&quot;[1, 2)&quot;</span>, <a class="code" href="test_8c.html#a661e307976f53b221614a5a78514418d">s_genrand_close1_open2</a>, </div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;         <a class="code" href="test_8c.html#a907b7cc6f266cfdb655c7a3f4350d902">s_fill_array_close1_open2</a>,</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;         <a class="code" href="test_8c.html#a0066a0d5be80884498e5212af18f91ad">sst_genrand_close1_open2</a>, </div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;         <a class="code" href="test_8c.html#a2ba464db1559395c224f2804f5a46c2c">sst_fill_array_close1_open2</a>,</div>
 <div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;         1000);</div>
 <div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;    }</div>
 <div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;    <span class="keywordflow">return</span> 0;</div>
@@ -860,7 +861,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

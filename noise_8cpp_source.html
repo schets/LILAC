@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,320 +94,283 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mempool_8hpp.html">mempool.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;chrono&gt;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
-<div class="line"><a name="l00007"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a2cde8953a3c0685181e8fdf51d3bdaab">    7</a></span>&#160;<span class="preprocessor">#define HAVE_SSE2</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="noise_8cpp.html#aeda2790c35e4e205219e3c0ef1a2dd0a">    8</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DSFMT_MEXP 521</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="noise_8cpp.html#ae8765d3beb939a39118cbcbf4def7905">    9</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SFMT_MEXP 607</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="_s_f_m_t_8h.html" title="SIMD oriented Fast Mersenne Twister(SFMT) pseudorandom number generator using C structure.">SFMT/SFMT.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="d_s_f_m_t_8h.html" title="double precision SIMD oriented Fast Mersenne Twister(dSFMT) pseudorandom number generator based on IE...">SFMT/dSFMT.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;}</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#ifdef ICC</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define alignas(x) __declspec(align(x))</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="comment">//defines the alignment value for these classes</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">   17</a></span>&#160;constexpr <span class="keywordtype">size_t</span> <a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>=16;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment">//classes for block fills of random numbers</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classvector__rng.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvector__rng.html">vector_rng</a>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">//this is the number of RNGS that are statically held</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="comment">//It is big to ensure that the most benefit of obtained from sse2 instructions</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="comment">//But not too big that it isn&#39;t cache friendly</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">//64 seems to perform the best on my architecture</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">   25</a></span>&#160;        constexpr <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a> = 64;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">   26</a></span>&#160;        constexpr <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a> = <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>*2;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">//both i_cur and d_cur are actually aliased, but they are the only ones that actually access the memory</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="comment">//in this classes routines</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordtype">double</span> * <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> d_cur, * <span class="keyword">const</span> <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> d_end;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        uint32_t * <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> i_cur, * <span class="keyword">const</span> <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> i_end; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="comment">//large alignments likely put it on a cache boundary</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        alignas(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) double d_rands[<a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>];</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        alignas(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) uint32_t i_rands[<a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>];</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> * dsm;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="struct_s_f_m_t___t.html">sfmt_t</a> * sm;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> act_dsm;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="struct_s_f_m_t___t.html">sfmt_t</a> act_sm;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    public:</div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="code" href="classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd">   40</a></span>&#160;        <a class="code" href="classvector__rng.html">vector_rng</a>():d_end(d_rands+num_64), i_end(i_rands+num_32){</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            d_cur = d_rands;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            i_cur = i_rands;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            dsm = &amp; act_dsm;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            sm = &amp; act_sm;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::random_device rnd(<span class="stringliteral">&quot;/dev/urandom&quot;</span>);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de">dsfmt_init_gen_rand</a>(dsm, rnd());</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <a class="code" href="_s_f_m_t_8c.html#a674d820db863265836ef9cb203aa4130">sfmt_init_gen_rand</a>(sm, rnd());</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">catch</span>(...){</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#ifdef NDEBUG</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor"></span>                std::cout &lt;&lt; <span class="stringliteral">&quot;The current platform does not support std::random_device(), try inserting special code into utils/noise.cpp to ensure proper RNG seeding. &quot;</span>;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;With the current RNG, it is extremely possibly that two instances of lilac started very close to each other will have the same RNG seed and generate identical noise&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span>                <a class="code" href="d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de">dsfmt_init_gen_rand</a>(dsm,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                        std::chrono::high_resolution_clock::now().time_since_epoch().count());</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <a class="code" href="_s_f_m_t_8c.html#a674d820db863265836ef9cb203aa4130">sfmt_init_gen_rand</a>(sm, <a class="code" href="d_s_f_m_t_8h.html#a1391665a8e5f9295a589aacb776e9de6">dsfmt_genrand_uint32</a>(dsm));</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <a class="code" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0">dsfmt_fill_array_close_open</a>(dsm, d_rands, num_64);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e">sfmt_fill_array32</a>(sm, i_rands, num_32);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        }</div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">   62</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>(){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="defs_8hpp.html#aa211acd4c84fa9fa11b26f5f8c1cb4cf">PREDICT</a>(d_cur &lt; d_end, 1)){</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                <span class="keywordflow">return</span> *d_cur++;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            }</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            d_cur = d_rands+1;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <span class="comment">//need to refill array</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <a class="code" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0">dsfmt_fill_array_close_open</a>(dsm, d_rands, <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <span class="keywordflow">return</span> d_rands[0];</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">   71</a></span>&#160;        <span class="keyword">inline</span> uint32_t <a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">uint_32</a>(){</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            <span class="keywordflow">if</span>(<a class="code" href="defs_8hpp.html#aa211acd4c84fa9fa11b26f5f8c1cb4cf">PREDICT</a>(i_cur &lt; i_end, 1)){</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordflow">return</span> *i_cur++;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            i_cur = i_rands+1;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;            <span class="comment">//need to refill array</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            <a class="code" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e">sfmt_fill_array32</a>(sm, i_rands, <a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;            <span class="keywordflow">return</span> i_rands[0];</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="comment">/* gauss.c - gaussian random numbers, using the Ziggurat method</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment"> * Copyright (C) 2005  Jochen Voss.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * For details see the following article.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span>{</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a2cde8953a3c0685181e8fdf51d3bdaab">    8</a></span>&#160;<span class="preprocessor">#define HAVE_SSE2</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="code" href="noise_8cpp.html#aeda2790c35e4e205219e3c0ef1a2dd0a">    9</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define DSFMT_MEXP 521</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="code" href="noise_8cpp.html#ae8765d3beb939a39118cbcbf4def7905">   10</a></span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SFMT_MEXP 607</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="_s_f_m_t_8h.html" title="SIMD oriented Fast Mersenne Twister(SFMT) pseudorandom number generator using C structure.">SFMT/SFMT.h</a>&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="d_s_f_m_t_8h.html" title="double precision SIMD oriented Fast Mersenne Twister(dSFMT) pseudorandom number generator based on IE...">SFMT/dSFMT.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#ifdef ICC</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define alignas(x) __declspec(align(x))</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="comment">//defines the alignment value for these classes</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">   21</a></span>&#160;constexpr <span class="keywordtype">size_t</span> <a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>=16;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="code" href="classvector__rng.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a>{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">//this is the number of RNGS that are statically held</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="comment">//It is big to ensure that the most benefit of obtained from sse2 instructions</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="comment">//But not too big that it isn&#39;t cache friendly</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">//64 seems to perform the best on my architecture</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">   29</a></span>&#160;        constexpr <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a> = 64;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">   30</a></span>&#160;        constexpr <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a> = <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>*2;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="code" href="classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd">   31</a></span>&#160;        <a class="code" href="classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd">vector_rng</a>():<a class="code" href="classvector__rng.html#a27d6a89a8e8f8b08b20b514c040b0678">d_end</a>(d_rands+<a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>), <a class="code" href="classvector__rng.html#a2accfeba93d0e4e36bb106c22d745e88">i_end</a>(i_rands+<a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>){</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="classvector__rng.html#ab310fd5a4c521f8ee3bd5d1b2e5400c0">d_cur</a> = d_rands;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <a class="code" href="classvector__rng.html#a816049a0f91371b2506eefca6ba8b3c7">i_cur</a> = i_rands;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            <a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a> = &amp; <a class="code" href="classvector__rng.html#aa393b2758c83e6405f193f2d10d96521">act_dsm</a>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a> = &amp; <a class="code" href="classvector__rng.html#a23a1b52295fa0cc7bd7b7943f877e8de">act_sm</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            std::ifstream rand_in;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            rand_in.open(<span class="stringliteral">&quot;/dev/urandom&quot;</span>);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">if</span>(rand_in.is_open()){</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="keywordtype">size_t</span> rval;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                rand_in &gt;&gt; rval;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <a class="code" href="d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de">dsfmt_init_gen_rand</a>(<a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>, rval);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                rand_in &gt;&gt; rval;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <a class="code" href="_s_f_m_t_8c.html#a674d820db863265836ef9cb203aa4130">sfmt_init_gen_rand</a>(<a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a>, rval);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                std::cout &lt;&lt; <span class="stringliteral">&quot;Proper RNG cannot be found (/dev/urandom), using time values&quot;</span> &lt;&lt; std::endl;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <a class="code" href="d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de">dsfmt_init_gen_rand</a>(<a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                        std::chrono::high_resolution_clock::now().time_since_epoch().count());</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="_s_f_m_t_8c.html#a674d820db863265836ef9cb203aa4130">sfmt_init_gen_rand</a>(<a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a>, <a class="code" href="d_s_f_m_t_8h.html#a1391665a8e5f9295a589aacb776e9de6">dsfmt_genrand_uint32</a>(<a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <a class="code" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0">dsfmt_fill_array_close_open</a>(<a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>, d_rands, <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <a class="code" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e">sfmt_fill_array32</a>(<a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a>, i_rands, <a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">   54</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>(){</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">if</span>(PREDICT(<a class="code" href="classvector__rng.html#ab310fd5a4c521f8ee3bd5d1b2e5400c0">d_cur</a> &lt; <a class="code" href="classvector__rng.html#a27d6a89a8e8f8b08b20b514c040b0678">d_end</a>, 1)){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="classvector__rng.html#ab310fd5a4c521f8ee3bd5d1b2e5400c0">d_cur</a>++;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            <a class="code" href="classvector__rng.html#ab310fd5a4c521f8ee3bd5d1b2e5400c0">d_cur</a> = d_rands+1;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="comment">//need to refill array</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;            <a class="code" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0">dsfmt_fill_array_close_open</a>(<a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>, d_rands, <a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            <span class="keywordflow">return</span> d_rands[0];</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        }</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">   63</a></span>&#160;        <span class="keyword">inline</span> uint32_t <a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">uint_32</a>(){</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">if</span>(PREDICT(<a class="code" href="classvector__rng.html#a816049a0f91371b2506eefca6ba8b3c7">i_cur</a> &lt; <a class="code" href="classvector__rng.html#a2accfeba93d0e4e36bb106c22d745e88">i_end</a>, 1)){</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                <span class="keywordflow">return</span> *<a class="code" href="classvector__rng.html#a816049a0f91371b2506eefca6ba8b3c7">i_cur</a>++;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;            }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;            <a class="code" href="classvector__rng.html#a816049a0f91371b2506eefca6ba8b3c7">i_cur</a> = i_rands+1;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;            <span class="comment">//need to refill array</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            <a class="code" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e">sfmt_fill_array32</a>(<a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a>, i_rands, <a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;            <span class="keywordflow">return</span> i_rands[0];</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        }</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="comment">//both i_cur and d_cur are actually aliased, but they are the only ones that actually access the memory</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">//in this classes routines</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="classvector__rng.html#a27d6a89a8e8f8b08b20b514c040b0678">   75</a></span>&#160;        <span class="keywordtype">double</span> * restr <a class="code" href="classvector__rng.html#ab310fd5a4c521f8ee3bd5d1b2e5400c0">d_cur</a>, * <span class="keyword">const</span> restr <a class="code" href="classvector__rng.html#a27d6a89a8e8f8b08b20b514c040b0678">d_end</a>;</div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="code" href="classvector__rng.html#a2accfeba93d0e4e36bb106c22d745e88">   76</a></span>&#160;        uint32_t * restr <a class="code" href="classvector__rng.html#a816049a0f91371b2506eefca6ba8b3c7">i_cur</a>, * <span class="keyword">const</span> restr <a class="code" href="classvector__rng.html#a2accfeba93d0e4e36bb106c22d745e88">i_end</a>; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">//large alignments likely put it on a cache boundary</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="classvector__rng.html#a73246fc90345fe72336ac3ba90dd82ec">alignas</a>(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) double d_rands[<a class="code" href="classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618">num_64</a>];</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="classvector__rng.html#a73246fc90345fe72336ac3ba90dd82ec">alignas</a>(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) uint32_t i_rands[<a class="code" href="classvector__rng.html#ac85a65084204181a3024a5ab21baa5db">num_32</a>];</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">   80</a></span>&#160;        <a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> * <a class="code" href="classvector__rng.html#af0c9b7f6a18edd67c957346d54f175c8">dsm</a>;</div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">   81</a></span>&#160;        <a class="code" href="struct_s_f_m_t___t.html">sfmt_t</a> * <a class="code" href="classvector__rng.html#a0678937fdbc2997026a85b05bf32e03a">sm</a>;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="code" href="classvector__rng.html#aa393b2758c83e6405f193f2d10d96521">   82</a></span>&#160;        <a class="code" href="struct_d_s_f_m_t___t.html">dsfmt_t</a> <a class="code" href="classvector__rng.html#aa393b2758c83e6405f193f2d10d96521">act_dsm</a>;</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="code" href="classvector__rng.html#a23a1b52295fa0cc7bd7b7943f877e8de">   83</a></span>&#160;        <a class="code" href="struct_s_f_m_t___t.html">sfmt_t</a> <a class="code" href="classvector__rng.html#a23a1b52295fa0cc7bd7b7943f877e8de">act_sm</a>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment">/* gauss.c - gaussian random numbers, using the Ziggurat method</span></div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> *     George Marsaglia, Wai Wan Tsang</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> *     The Ziggurat Method for Generating Random Variables</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> *     Journal of Statistical Software, vol. 5 (2000), no. 8</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> *     http://www.jstatsoft.org/v05/i08/</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * Copyright (C) 2005  Jochen Voss.</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="comment"> * For details see the following article.</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment"> *     George Marsaglia, Wai Wan Tsang</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> *     The Ziggurat Method for Generating Random Variables</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> *     Journal of Statistical Software, vol. 5 (2000), no. 8</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> *     http://www.jstatsoft.org/v05/i08/</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="comment"> * This program is free software; you can redistribute it and/or modify</span></div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="comment"> * it under the terms of the GNU General Public License as published by</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment"> * the Free Software Foundation; either version 2 of the License, or</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment"> * (at your option) any later version.</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="comment"> * This program is distributed in the hope that it will be useful,</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment"> * but WITHOUT ANY WARRANTY; without even the implied warranty of</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment"> * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="comment"> * GNU General Public License for more details.</span></div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * $Id: gauss.c 6739 2005-11-12 02:47:20Z voss $</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> */</span></div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment">/* position of right-most step */</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">  112</a></span>&#160;<span class="preprocessor">#define PARAM_R 3.44428647676</span></div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor"></span><span class="comment">/* tabulated values for the heigt of the Ziggurat levels */</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<a class="code" href="noise_8cpp.html#ac6a247766c331f03497630887ae70838">alignas</a>(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) static const <span class="keywordtype">double</span> ytab[128] = {</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    1, 0.963598623011, 0.936280813353, 0.913041104253,</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    0.892278506696, 0.873239356919, 0.855496407634, 0.838778928349,</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    0.822902083699, 0.807732738234, 0.793171045519, 0.779139726505,</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    0.765577436082, 0.752434456248, 0.739669787677, 0.727249120285,</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    0.715143377413, 0.703327646455, 0.691780377035, 0.68048276891,</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    0.669418297233, 0.65857233912, 0.647931876189, 0.637485254896,</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    0.62722199145, 0.617132611532, 0.607208517467, 0.597441877296,</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    0.587825531465, 0.578352913803, 0.569017984198, 0.559815170911,</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    0.550739320877, 0.541785656682, 0.532949739145, 0.524227434628,</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    0.515614886373, 0.507108489253, 0.498704867478, 0.490400854812,</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    0.482193476986, 0.47407993601, 0.466057596125, 0.458123971214,</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    0.450276713467, 0.442513603171, 0.434832539473, 0.427231532022,</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    0.419708693379, 0.41226223212, 0.404890446548, 0.397591718955,</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    0.390364510382, 0.383207355816, 0.376118859788, 0.369097692334,</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    0.362142585282, 0.355252328834, 0.348425768415, 0.341661801776,</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    0.334959376311, 0.328317486588, 0.321735172063, 0.31521151497,</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    0.308745638367, 0.302336704338, 0.29598391232, 0.289686497571,</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    0.283443729739, 0.27725491156, 0.271119377649, 0.265036493387,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    0.259005653912, 0.253026283183, 0.247097833139, 0.241219782932,</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    0.235391638239, 0.229612930649, 0.223883217122, 0.218202079518,</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    0.212569124201, 0.206983981709, 0.201446306496, 0.195955776745,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    0.190512094256, 0.185114984406, 0.179764196185, 0.174459502324,</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    0.169200699492, 0.1639876086, 0.158820075195, 0.153697969964,</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    0.148621189348, 0.143589656295, 0.138603321143, 0.133662162669,</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    0.128766189309, 0.123915440582, 0.119109988745, 0.114349940703,</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    0.10963544023, 0.104966670533, 0.100343857232, 0.0957672718266,</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    0.0912372357329, 0.0867541250127, 0.082318375932, 0.0779304915295,</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    0.0735910494266, 0.0693007111742, 0.065060233529, 0.0608704821745,</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    0.056732448584, 0.05264727098, 0.0486162607163, 0.0446409359769,</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    0.0407230655415, 0.0368647267386, 0.0330683839378, 0.0293369977411,</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    0.0256741818288, 0.0220844372634, 0.0185735200577, 0.0151490552854,</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    0.0118216532614, 0.00860719483079, 0.00553245272614, 0.00265435214565</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;};</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="comment">/* tabulated values for 2^24 times x[i]/x[i+1],</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="comment"> * used to accept for U*x[i+1]&lt;=x[i] without any floating point operations */</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="comment"> * You should have received a copy of the GNU General Public License</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;<span class="comment"> * along with this program; if not, write to the Free Software</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="comment"> * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment"> * $Id: gauss.c 6739 2005-11-12 02:47:20Z voss $</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="comment"> */</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="comment">/* position of right-most step */</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">  116</a></span>&#160;constexpr static <span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">right_step</a> = 3.44428647676;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="code" href="noise_8cpp.html#aecc833b7b7feea6f97ddc79c534a458f">  117</a></span>&#160;static const <span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#aecc833b7b7feea6f97ddc79c534a458f">ytab</a>[128] = {</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    1, 0.963598623011, 0.936280813353, 0.913041104253,</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    0.892278506696, 0.873239356919, 0.855496407634, 0.838778928349,</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    0.822902083699, 0.807732738234, 0.793171045519, 0.779139726505,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    0.765577436082, 0.752434456248, 0.739669787677, 0.727249120285,</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    0.715143377413, 0.703327646455, 0.691780377035, 0.68048276891,</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    0.669418297233, 0.65857233912, 0.647931876189, 0.637485254896,</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    0.62722199145, 0.617132611532, 0.607208517467, 0.597441877296,</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    0.587825531465, 0.578352913803, 0.569017984198, 0.559815170911,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;    0.550739320877, 0.541785656682, 0.532949739145, 0.524227434628,</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    0.515614886373, 0.507108489253, 0.498704867478, 0.490400854812,</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    0.482193476986, 0.47407993601, 0.466057596125, 0.458123971214,</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    0.450276713467, 0.442513603171, 0.434832539473, 0.427231532022,</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    0.419708693379, 0.41226223212, 0.404890446548, 0.397591718955,</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    0.390364510382, 0.383207355816, 0.376118859788, 0.369097692334,</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    0.362142585282, 0.355252328834, 0.348425768415, 0.341661801776,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    0.334959376311, 0.328317486588, 0.321735172063, 0.31521151497,</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;    0.308745638367, 0.302336704338, 0.29598391232, 0.289686497571,</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    0.283443729739, 0.27725491156, 0.271119377649, 0.265036493387,</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    0.259005653912, 0.253026283183, 0.247097833139, 0.241219782932,</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    0.235391638239, 0.229612930649, 0.223883217122, 0.218202079518,</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    0.212569124201, 0.206983981709, 0.201446306496, 0.195955776745,</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    0.190512094256, 0.185114984406, 0.179764196185, 0.174459502324,</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;    0.169200699492, 0.1639876086, 0.158820075195, 0.153697969964,</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    0.148621189348, 0.143589656295, 0.138603321143, 0.133662162669,</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    0.128766189309, 0.123915440582, 0.119109988745, 0.114349940703,</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;    0.10963544023, 0.104966670533, 0.100343857232, 0.0957672718266,</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;    0.0912372357329, 0.0867541250127, 0.082318375932, 0.0779304915295,</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    0.0735910494266, 0.0693007111742, 0.065060233529, 0.0608704821745,</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    0.056732448584, 0.05264727098, 0.0486162607163, 0.0446409359769,</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    0.0407230655415, 0.0368647267386, 0.0330683839378, 0.0293369977411,</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    0.0256741818288, 0.0220844372634, 0.0185735200577, 0.0151490552854,</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    0.0118216532614, 0.00860719483079, 0.00553245272614, 0.00265435214565</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;};</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<a class="code" href="noise_8cpp.html#ac6a247766c331f03497630887ae70838">alignas</a>(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) static const <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ktab[128] = {</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    0, 12590644, 14272653, 14988939,</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    15384584, 15635009, 15807561, 15933577,</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    16029594, 16105155, 16166147, 16216399,</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    16258508, 16294295, 16325078, 16351831,</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    16375291, 16396026, 16414479, 16431002,</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    16445880, 16459343, 16471578, 16482744,</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    16492970, 16502368, 16511031, 16519039,</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    16526459, 16533352, 16539769, 16545755,</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    16551348, 16556584, 16561493, 16566101,</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    16570433, 16574511, 16578353, 16581977,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    16585398, 16588629, 16591685, 16594575,</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    16597311, 16599901, 16602354, 16604679,</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    16606881, 16608968, 16610945, 16612818,</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    16614592, 16616272, 16617861, 16619363,</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    16620782, 16622121, 16623383, 16624570,</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    16625685, 16626730, 16627708, 16628619,</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    16629465, 16630248, 16630969, 16631628,</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    16632228, 16632768, 16633248, 16633671,</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    16634034, 16634340, 16634586, 16634774,</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    16634903, 16634972, 16634980, 16634926,</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    16634810, 16634628, 16634381, 16634066,</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    16633680, 16633222, 16632688, 16632075,</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    16631380, 16630598, 16629726, 16628757,</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    16627686, 16626507, 16625212, 16623794,</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    16622243, 16620548, 16618698, 16616679,</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    16614476, 16612071, 16609444, 16606571,</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    16603425, 16599973, 16596178, 16591995,</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    16587369, 16582237, 16576520, 16570120,</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    16562917, 16554758, 16545450, 16534739,</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    16522287, 16507638, 16490152, 16468907,</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    16442518, 16408804, 16364095, 16301683,</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    16207738, 16047994, 15704248, 15472926</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;};</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="comment">/* tabulated values of 2^{-24}*x[i] */</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;<a class="code" href="noise_8cpp.html#ac6a247766c331f03497630887ae70838">alignas</a>(<a class="code" href="noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17">CACHE_BLOCK</a>) static const <span class="keywordtype">double</span> wtab[128] = {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    1.62318314817e-08, 2.16291505214e-08, 2.54246305087e-08, 2.84579525938e-08,</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    3.10340022482e-08, 3.33011726243e-08, 3.53439060345e-08, 3.72152672658e-08,</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    3.8950989572e-08, 4.05763964764e-08, 4.21101548915e-08, 4.35664624904e-08,</div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    4.49563968336e-08, 4.62887864029e-08, 4.75707945735e-08, 4.88083237257e-08,</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    5.00063025384e-08, 5.11688950428e-08, 5.22996558616e-08, 5.34016475624e-08,</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    5.44775307871e-08, 5.55296344581e-08, 5.65600111659e-08, 5.75704813695e-08,</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    5.85626690412e-08, 5.95380306862e-08, 6.04978791776e-08, 6.14434034901e-08,</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    6.23756851626e-08, 6.32957121259e-08, 6.42043903937e-08, 6.51025540077e-08,</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    6.59909735447e-08, 6.68703634341e-08, 6.77413882848e-08, 6.8604668381e-08,</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    6.94607844804e-08, 7.03102820203e-08, 7.11536748229e-08, 7.1991448372e-08,</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    7.2824062723e-08, 7.36519550992e-08, 7.44755422158e-08, 7.52952223703e-08,</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    7.61113773308e-08, 7.69243740467e-08, 7.77345662086e-08, 7.85422956743e-08,</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    7.93478937793e-08, 8.01516825471e-08, 8.09539758128e-08, 8.17550802699e-08,</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    8.25552964535e-08, 8.33549196661e-08, 8.41542408569e-08, 8.49535474601e-08,</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    8.57531242006e-08, 8.65532538723e-08, 8.73542180955e-08, 8.8156298059e-08,</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    8.89597752521e-08, 8.97649321908e-08, 9.05720531451e-08, 9.138142487e-08,</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    9.21933373471e-08, 9.30080845407e-08, 9.38259651738e-08, 9.46472835298e-08,</div>
-<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    9.54723502847e-08, 9.63014833769e-08, 9.71350089201e-08, 9.79732621669e-08,</div>
-<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    9.88165885297e-08, 9.96653446693e-08, 1.00519899658e-07, 1.0138063623e-07,</div>
-<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    1.02247952126e-07, 1.03122261554e-07, 1.04003996769e-07, 1.04893609795e-07,</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    1.05791574313e-07, 1.06698387725e-07, 1.07614573423e-07, 1.08540683296e-07,</div>
-<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    1.09477300508e-07, 1.1042504257e-07, 1.11384564771e-07, 1.12356564007e-07,</div>
-<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    1.13341783071e-07, 1.14341015475e-07, 1.15355110887e-07, 1.16384981291e-07,</div>
-<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    1.17431607977e-07, 1.18496049514e-07, 1.19579450872e-07, 1.20683053909e-07,</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    1.21808209468e-07, 1.2295639141e-07, 1.24129212952e-07, 1.25328445797e-07,</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    1.26556042658e-07, 1.27814163916e-07, 1.29105209375e-07, 1.30431856341e-07,</div>
-<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    1.31797105598e-07, 1.3320433736e-07, 1.34657379914e-07, 1.36160594606e-07,</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    1.37718982103e-07, 1.39338316679e-07, 1.41025317971e-07, 1.42787873535e-07,</div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    1.44635331499e-07, 1.4657889173e-07, 1.48632138436e-07, 1.50811780719e-07,</div>
-<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    1.53138707402e-07, 1.55639532047e-07, 1.58348931426e-07, 1.61313325908e-07,</div>
-<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    1.64596952856e-07, 1.68292495203e-07, 1.72541128694e-07, 1.77574279496e-07,</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    1.83813550477e-07, 1.92166040885e-07, 2.05295471952e-07, 2.22600839893e-07</div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;};</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;</div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
-<div class="line"><a name="l00224"></a><span class="lineno"><a class="code" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02">  224</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02">gsl_ran_gaussian_ziggurat_fill</a> (<a class="code" href="classvector__rng.html">vector_rng</a>&amp; vrng, <span class="keywordtype">double</span> sigma, <span class="keywordtype">double</span>* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> invals, <span class="keywordtype">size_t</span> len)</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;{</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(invals);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> qq = 0; qq &lt; len; qq++){</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;        <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>  U, <a class="code" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3">sign</a>, i, j;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;        <span class="keywordtype">double</span>  x, y;</div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;        <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;            U = vrng.<a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">uint_32</a>();</div>
-<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;            i = U &amp; 0x0000007F;     <span class="comment">/* 7 bit to choose the step */</span></div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;            sign = U &amp; 0x00000080;  <span class="comment">/* 1 bit for the sign */</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;            j = U&gt;&gt;8;           <span class="comment">/* 24 bit for the x-value */</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;            x = j*wtab[i];</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;            <span class="keywordflow">if</span> (j &lt; ktab[i]){</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;            }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;</div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="defs_8hpp.html#aa211acd4c84fa9fa11b26f5f8c1cb4cf">PREDICT</a>(i&lt;127, 1)) {</div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;                <span class="keywordtype">double</span>  y0, y1;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;                y0 = ytab[i];</div>
-<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;                y1 = ytab[i+1];</div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;                y = y1+(y0-y1)*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;                x = <a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a> - std::log(1.0-vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>())/<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>;</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;                y = std::exp(-<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>*(x-0.5*<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>))*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            }</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            <span class="keywordflow">if</span> (y &lt; std::exp(-0.5*x*x)) {</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;                <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            }</div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;        }</div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        invals[qq] = sign ? sigma*x : -sigma*x;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="comment">/* tabulated values for 2^24 times x[i]/x[i+1],</span></div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="comment"> * used to accept for U*x[i+1]&lt;=x[i] without any floating point operations */</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="code" href="noise_8cpp.html#aaacd0afd5278aa07173d78dc17a6b0e9">  155</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> uint32_t <a class="code" href="noise_8cpp.html#aaacd0afd5278aa07173d78dc17a6b0e9">ktab</a>[128] = {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    0, 12590644, 14272653, 14988939,</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    15384584, 15635009, 15807561, 15933577,</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    16029594, 16105155, 16166147, 16216399,</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    16258508, 16294295, 16325078, 16351831,</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    16375291, 16396026, 16414479, 16431002,</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    16445880, 16459343, 16471578, 16482744,</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    16492970, 16502368, 16511031, 16519039,</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    16526459, 16533352, 16539769, 16545755,</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    16551348, 16556584, 16561493, 16566101,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    16570433, 16574511, 16578353, 16581977,</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    16585398, 16588629, 16591685, 16594575,</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    16597311, 16599901, 16602354, 16604679,</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    16606881, 16608968, 16610945, 16612818,</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    16614592, 16616272, 16617861, 16619363,</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    16620782, 16622121, 16623383, 16624570,</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    16625685, 16626730, 16627708, 16628619,</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    16629465, 16630248, 16630969, 16631628,</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    16632228, 16632768, 16633248, 16633671,</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    16634034, 16634340, 16634586, 16634774,</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    16634903, 16634972, 16634980, 16634926,</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    16634810, 16634628, 16634381, 16634066,</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    16633680, 16633222, 16632688, 16632075,</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    16631380, 16630598, 16629726, 16628757,</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    16627686, 16626507, 16625212, 16623794,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    16622243, 16620548, 16618698, 16616679,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    16614476, 16612071, 16609444, 16606571,</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    16603425, 16599973, 16596178, 16591995,</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    16587369, 16582237, 16576520, 16570120,</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    16562917, 16554758, 16545450, 16534739,</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    16522287, 16507638, 16490152, 16468907,</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    16442518, 16408804, 16364095, 16301683,</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    16207738, 16047994, 15704248, 15472926</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;};</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;<span class="comment">/* 2^-24*x[i] */</span></div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="code" href="noise_8cpp.html#ade8dbbd39090ef743482f6fd56a0d05d">  191</a></span>&#160;<span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#ade8dbbd39090ef743482f6fd56a0d05d">wtab</a>[128] = {</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    1.62318314817e-08, 2.16291505214e-08, 2.54246305087e-08, 2.84579525938e-08,</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    3.10340022482e-08, 3.33011726243e-08, 3.53439060345e-08, 3.72152672658e-08,</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    3.8950989572e-08, 4.05763964764e-08, 4.21101548915e-08, 4.35664624904e-08,</div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    4.49563968336e-08, 4.62887864029e-08, 4.75707945735e-08, 4.88083237257e-08,</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;    5.00063025384e-08, 5.11688950428e-08, 5.22996558616e-08, 5.34016475624e-08,</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    5.44775307871e-08, 5.55296344581e-08, 5.65600111659e-08, 5.75704813695e-08,</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    5.85626690412e-08, 5.95380306862e-08, 6.04978791776e-08, 6.14434034901e-08,</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;    6.23756851626e-08, 6.32957121259e-08, 6.42043903937e-08, 6.51025540077e-08,</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;    6.59909735447e-08, 6.68703634341e-08, 6.77413882848e-08, 6.8604668381e-08,</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    6.94607844804e-08, 7.03102820203e-08, 7.11536748229e-08, 7.1991448372e-08,</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;    7.2824062723e-08, 7.36519550992e-08, 7.44755422158e-08, 7.52952223703e-08,</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;    7.61113773308e-08, 7.69243740467e-08, 7.77345662086e-08, 7.85422956743e-08,</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    7.93478937793e-08, 8.01516825471e-08, 8.09539758128e-08, 8.17550802699e-08,</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    8.25552964535e-08, 8.33549196661e-08, 8.41542408569e-08, 8.49535474601e-08,</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;    8.57531242006e-08, 8.65532538723e-08, 8.73542180955e-08, 8.8156298059e-08,</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;    8.89597752521e-08, 8.97649321908e-08, 9.05720531451e-08, 9.138142487e-08,</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;    9.21933373471e-08, 9.30080845407e-08, 9.38259651738e-08, 9.46472835298e-08,</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;    9.54723502847e-08, 9.63014833769e-08, 9.71350089201e-08, 9.79732621669e-08,</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;    9.88165885297e-08, 9.96653446693e-08, 1.00519899658e-07, 1.0138063623e-07,</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    1.02247952126e-07, 1.03122261554e-07, 1.04003996769e-07, 1.04893609795e-07,</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    1.05791574313e-07, 1.06698387725e-07, 1.07614573423e-07, 1.08540683296e-07,</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;    1.09477300508e-07, 1.1042504257e-07, 1.11384564771e-07, 1.12356564007e-07,</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    1.13341783071e-07, 1.14341015475e-07, 1.15355110887e-07, 1.16384981291e-07,</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    1.17431607977e-07, 1.18496049514e-07, 1.19579450872e-07, 1.20683053909e-07,</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    1.21808209468e-07, 1.2295639141e-07, 1.24129212952e-07, 1.25328445797e-07,</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;    1.26556042658e-07, 1.27814163916e-07, 1.29105209375e-07, 1.30431856341e-07,</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    1.31797105598e-07, 1.3320433736e-07, 1.34657379914e-07, 1.36160594606e-07,</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;    1.37718982103e-07, 1.39338316679e-07, 1.41025317971e-07, 1.42787873535e-07,</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;    1.44635331499e-07, 1.4657889173e-07, 1.48632138436e-07, 1.50811780719e-07,</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    1.53138707402e-07, 1.55639532047e-07, 1.58348931426e-07, 1.61313325908e-07,</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    1.64596952856e-07, 1.68292495203e-07, 1.72541128694e-07, 1.77574279496e-07,</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    1.83813550477e-07, 1.92166040885e-07, 2.05295471952e-07, 2.22600839893e-07</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;};</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;</div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
+<div class="line"><a name="l00228"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">  228</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a> (<a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a>&amp; vrng, <span class="keywordtype">double</span> sigma){</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    uint32_t r32, step, xval;</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    int32_t <a class="code" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3">sign</a>;</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">double</span>  x, y;</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;        r32 = vrng.<a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">uint_32</a>();</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;        step = r32 &amp; 0x0000007F;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;        sign = r32 &amp; 0x00000080 ? 1 : -1;</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;        xval = r32&gt;&gt;8;          </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;        x = xval*<a class="code" href="noise_8cpp.html#ade8dbbd39090ef743482f6fd56a0d05d">wtab</a>[step];</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;        <span class="keywordflow">if</span> (xval &lt; <a class="code" href="noise_8cpp.html#aaacd0afd5278aa07173d78dc17a6b0e9">ktab</a>[step]){</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;            <span class="keywordflow">return</span> sign * sigma * x;</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;        }</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">if</span> (step&lt;127) {</div>
+<div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;            <span class="keywordtype">double</span>  y0, y1;</div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;            y0 = <a class="code" href="noise_8cpp.html#aecc833b7b7feea6f97ddc79c534a458f">ytab</a>[step];</div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;            y1 = <a class="code" href="noise_8cpp.html#aecc833b7b7feea6f97ddc79c534a458f">ytab</a>[step+1];</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;            y = y1+(y0-y1)*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;            x = <a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">right_step</a> - std::log(1.0-vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>())/<a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">right_step</a>;</div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;            y = std::exp(-<a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">right_step</a>*(x-0.5*<a class="code" href="noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c">right_step</a>))*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;        }</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;        <span class="keywordflow">if</span> (y &lt; std::exp(-0.5*x*x)) {</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;            <span class="keywordflow">return</span> sign * sigma * x;</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;        }</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    }</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;}</div>
-<div class="line"><a name="l00257"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a1d3a0f22ab5ca886731375112041a307">  257</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#a1d3a0f22ab5ca886731375112041a307">gsl_ran_gaussian_ziggurat</a> (<a class="code" href="classvector__rng.html">vector_rng</a>&amp; vrng, <span class="keywordtype">double</span> sigma)</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;{</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span>  U, <a class="code" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3">sign</a>, i, j;</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordtype">double</span>  x, y;</div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keywordflow">while</span> (1) {</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        U = vrng.<a class="code" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01">uint_32</a>();</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;        i = U &amp; 0x0000007F;     <span class="comment">/* 7 bit to choose the step */</span></div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;        sign = U &amp; 0x00000080;  <span class="comment">/* 1 bit for the sign */</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;        j = U&gt;&gt;8;           <span class="comment">/* 24 bit for the x-value */</span></div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;        x = j*wtab[i];</div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;        <span class="keywordflow">if</span> (j &lt; ktab[i]){</div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;        }</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;</div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="defs_8hpp.html#aa211acd4c84fa9fa11b26f5f8c1cb4cf">PREDICT</a>(i&lt;127, 1)) {</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;            <span class="keywordtype">double</span>  y0, y1;</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;            y0 = ytab[i];</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;            y1 = ytab[i+1];</div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            y = y1+(y0-y1)*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;            x = <a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a> - std::log(1.0-vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>())/<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;            y = std::exp(-<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>*(x-0.5*<a class="code" href="noise_8cpp.html#a14b86675272e29889cd276bc7dc3f864">PARAM_R</a>))*vrng.<a class="code" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878">real_64</a>();</div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        }</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <span class="keywordflow">if</span> (y &lt; std::exp(-0.5*x*x)) {</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;        }</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    }</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;    <span class="keywordflow">return</span> sign ? sigma*x : -sigma*x;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;}</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
-<div class="line"><a name="l00288"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a84095db80ad1d888fb083ba0f1da454d">  288</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a84095db80ad1d888fb083ba0f1da454d">_fill_gaussian_noise</a>(<span class="keywordtype">double</span>* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(inv);</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    <span class="keyword">static</span> std::ranlux48_base gener(std::chrono::high_resolution_clock::now().time_since_epoch().count());</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;    std::normal_distribution&lt;double&gt; ngen(0.0, sdev);</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        inv[i] = ngen(gener);</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    }</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;}</div>
-<div class="line"><a name="l00296"></a><span class="lineno"><a class="code" href="noise_8cpp.html#ad630d31b0108efaffebd08e757540e80">  296</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a84095db80ad1d888fb083ba0f1da454d">_fill_gaussian_noise</a>(<span class="keywordtype">float</span>* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(inv);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keyword">static</span> std::ranlux48_base gener(std::chrono::high_resolution_clock::now().time_since_epoch().count());</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    std::normal_distribution&lt;float&gt; ngen(0.0, sdev);</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
-<div class="line"><a name="l00301"></a><span class="lineno">  301</span>&#160;        inv[i] = ngen(gener);</div>
-<div class="line"><a name="l00302"></a><span class="lineno">  302</span>&#160;    }</div>
-<div class="line"><a name="l00303"></a><span class="lineno">  303</span>&#160;}</div>
-<div class="line"><a name="l00304"></a><span class="lineno"><a class="code" href="noise_8h.html#a2cabab12ec3a82e7b5848ddd3d927a10">  304</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10">fill_gaussian_noise</a>(<span class="keywordtype">double</span>* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
-<div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(inv);</div>
-<div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvector__rng.html">vector_rng</a> vrng;</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <a class="code" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02">gsl_ran_gaussian_ziggurat_fill</a>(vrng, sdev, inv, len);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;}</div>
-<div class="line"><a name="l00309"></a><span class="lineno"><a class="code" href="noise_8h.html#ae2553c6018e06531056b1f808d31ff1b">  309</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10">fill_gaussian_noise</a>(<span class="keywordtype">float</span>* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(inv);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvector__rng.html">vector_rng</a> vrng;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        inv[i] = (float)<a class="code" href="noise_8cpp.html#a1d3a0f22ab5ca886731375112041a307">gsl_ran_gaussian_ziggurat</a>(vrng, sdev);</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    }</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keywordflow">return</span> sign * sigma*x;</div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;}</div>
+<div class="line"><a name="l00258"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a78be2e08a480648b76696b09e2719b5c">  258</a></span>&#160;<span class="keyword">inline</span> <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a> (<a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a>&amp; vrng, <span class="keywordtype">double</span> sigma, <span class="keywordtype">double</span>* restr invals, <span class="keywordtype">size_t</span> len){</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    ALIGNED(invals);</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> qq = 0; qq &lt; len; qq++){</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        invals[qq] = <a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a>(vrng, sigma);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    }</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;}</div>
+<div class="line"><a name="l00264"></a><span class="lineno"><a class="code" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10">  264</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10">fill_gaussian_noise</a>(<span class="keywordtype">double</span>* restr inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    ALIGNED(inv);</div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a> vrng;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;    <a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a>(vrng, sdev, inv, len);</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;}</div>
+<div class="line"><a name="l00269"></a><span class="lineno"><a class="code" href="noise_8cpp.html#ae2553c6018e06531056b1f808d31ff1b">  269</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10">fill_gaussian_noise</a>(<span class="keywordtype">float</span>* restr inv, <span class="keywordtype">size_t</span> len, <span class="keywordtype">double</span> sdev){</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    ALIGNED(inv);</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a> vrng;</div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; len; i++){</div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        inv[i] = (float)<a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a>(vrng, sdev);</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;    }</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;}</div>
+<div class="line"><a name="l00276"></a><span class="lineno"><a class="code" href="noise_8h.html#a2626873bf3350d661efcfdbb317bca9f">  276</a></span>&#160;<span class="keywordtype">double</span> <a class="code" href="noise_8cpp.html#a2626873bf3350d661efcfdbb317bca9f">get_norm_rand</a>(<span class="keywordtype">double</span> sigma){</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;    <span class="keyword">static</span> <a class="code" href="classvector__rng.html" title="class for block fills of random numbers">vector_rng</a> vrng;</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8">ran_gauss</a>(vrng, sigma);</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:39 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

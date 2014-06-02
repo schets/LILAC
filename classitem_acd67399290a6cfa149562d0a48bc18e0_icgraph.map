@@ -1,15 +1,16 @@
 <map id="item::_retrieve" name="item::_retrieve">
-<area shape="rect" id="node3" href="$retrieve__checker_8hpp.html#ad5a2b8c37cefb2c7340a0bfa06a855d7" title="retrieve" alt="" coords="161,219,225,248"/>
+<area shape="rect" id="node3" href="$retrieve__checker_8hpp.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="161,261,225,291"/>
 <area shape="rect" id="node5" href="$classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772" title="Runs the engine." alt="" coords="320,5,427,35"/>
-<area shape="rect" id="node11" href="$classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761" title="euler_sde_tmpl::postprocess" alt="" coords="279,59,468,88"/>
-<area shape="rect" id="node13" href="$classrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633" title="rk45_tmpl::postprocess" alt="" coords="295,112,452,141"/>
-<area shape="rect" id="node15" href="$classrk4__tmpl.html#a572dd7c8f76784671eac295c92905a2b" title="rk4_tmpl::postprocess" alt="" coords="299,165,448,195"/>
-<area shape="rect" id="node17" href="$classjones__matrix.html#a534c66c8954176d5d2906cb1f24a447e" title="jones_matrix::setup" alt="" coords="305,219,441,248"/>
-<area shape="rect" id="node19" href="$classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="296,272,451,301"/>
-<area shape="rect" id="node21" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="276,325,471,355"/>
-<area shape="rect" id="node23" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="520,342,675,389"/>
-<area shape="rect" id="node28" href="$retrieve__checker_8hpp.html#a0be8c948c77d9b7d80941c5c3c0bb616" title="retrieve" alt="" coords="341,429,405,459"/>
+<area shape="rect" id="node11" href="$exceptioneuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761" title="euler_sde_tmpl::postprocess" alt="" coords="279,59,468,88"/>
+<area shape="rect" id="node13" href="$classexample__integrator__tmpl.html#a2c664333f79dc6a5593c69623b17e450" title="example_integrator\l_tmpl::postprocess" alt="" coords="307,111,440,158"/>
+<area shape="rect" id="node15" href="$exceptionrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633" title="rk45_tmpl::postprocess" alt="" coords="295,181,452,211"/>
+<area shape="rect" id="node17" href="$exceptionrk4__tmpl.html#a572dd7c8f76784671eac295c92905a2b" title="rk4_tmpl::postprocess" alt="" coords="299,235,448,264"/>
+<area shape="rect" id="node19" href="$classjones__matrix.html#a534c66c8954176d5d2906cb1f24a447e" title="jones_matrix::setup" alt="" coords="305,288,441,317"/>
+<area shape="rect" id="node21" href="$classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="296,341,451,371"/>
+<area shape="rect" id="node23" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="276,395,471,424"/>
+<area shape="rect" id="node25" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="520,411,675,458"/>
+<area shape="rect" id="node30" href="$retrieve__checker_8hpp.html#a4644c3ee77d9e731076e10acb32b5f5f" title="Allows passing of a shared_ptr instead of a native one." alt="" coords="341,499,405,528"/>
 <area shape="rect" id="node7" href="$classengine.html#a54e1fe05c9e06f98f91860a89ee5e532" title="engine::run" alt="" coords="555,5,640,35"/>
 <area shape="rect" id="node9" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="787,5,837,35"/>
-<area shape="rect" id="node25" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="724,351,900,380"/>
+<area shape="rect" id="node27" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="724,420,900,449"/>
 </map>

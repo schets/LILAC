@@ -1,6 +1,17 @@
 <map id="dsfmt_chk_init_gen_rand" name="dsfmt_chk_init_gen_rand">
-<area shape="rect" id="node3" href="$d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de" title="dsfmt_init_gen_rand" alt="" coords="221,32,360,61"/>
-<area shape="rect" id="node5" href="$d_s_f_m_t_8h.html#a7b740379d0e954de5836560e4bc5dbfc" title="dsfmt_gv_init_gen_rand" alt="" coords="408,5,568,35"/>
-<area shape="rect" id="node9" href="$classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd" title="vector_rng::vector_rng" alt="" coords="412,59,564,88"/>
-<area shape="rect" id="node7" href="$d_s_f_m_t_8h.html#a8dc496135101ef4140c7e790bf7474cd" title="init_gen_rand" alt="" coords="616,5,715,35"/>
+<area shape="rect" id="node3" href="$d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de" title="dsfmt_init_gen_rand" alt="" coords="221,272,360,301"/>
+<area shape="rect" id="node5" href="$d_s_f_m_t_8h.html#a7b740379d0e954de5836560e4bc5dbfc" title="dsfmt_gv_init_gen_rand" alt="" coords="408,220,568,249"/>
+<area shape="rect" id="node9" href="$test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc" title="check" alt="" coords="637,5,693,35"/>
+<area shape="rect" id="node15" href="$test_8c.html#a28a97b46ed4a3503980267080cd59768" title="test_co" alt="" coords="633,432,697,461"/>
+<area shape="rect" id="node18" href="$test_8c.html#acd98dbe001c2851c008039ec119d57eb" title="test_oc" alt="" coords="633,485,697,515"/>
+<area shape="rect" id="node21" href="$test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b" title="test_oo" alt="" coords="633,59,697,88"/>
+<area shape="rect" id="node24" href="$test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1" title="test_12" alt="" coords="633,112,697,141"/>
+<area shape="rect" id="node27" href="$test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22" title="test_seq_co" alt="" coords="619,165,712,195"/>
+<area shape="rect" id="node30" href="$test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683" title="test_seq_oc" alt="" coords="619,272,712,301"/>
+<area shape="rect" id="node33" href="$test_8c.html#abb32b27aa529921720fcbe50b1215153" title="test_seq_oo" alt="" coords="619,325,712,355"/>
+<area shape="rect" id="node36" href="$test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0" title="test_seq_12" alt="" coords="619,379,712,408"/>
+<area shape="rect" id="node48" href="$classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd" title="vector_rng::vector_rng" alt="" coords="412,527,564,556"/>
+<area shape="rect" id="node7" href="$d_s_f_m_t_8h.html#a8dc496135101ef4140c7e790bf7474cd" title="init_gen_rand" alt="" coords="616,219,715,248"/>
+<area shape="rect" id="node11" href="$test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="819,272,869,301"/>
+<area shape="rect" id="node13" href="$classtype__constructor.html#ab7aab8ee5db0ba661f60dc4dcd49ba2e" title="type_constructor::create" alt="" coords="763,5,925,35"/>
 </map>

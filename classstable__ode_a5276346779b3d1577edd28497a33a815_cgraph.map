@@ -1,6 +1,7 @@
 <map id="stable_ode::postprocess" name="stable_ode::postprocess">
-<area shape="rect" id="node3" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="221,5,384,35"/>
-<area shape="rect" id="node5" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="436,57,521,87"/>
-<area shape="rect" id="node7" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="219,109,387,139"/>
-<area shape="rect" id="node9" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="460,111,497,140"/>
+<area shape="rect" id="node3" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="221,16,384,45"/>
+<area shape="rect" id="node7" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="456,75,541,104"/>
+<area shape="rect" id="node9" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="219,124,387,153"/>
+<area shape="rect" id="node5" href="$classtype__constructor_1_1__ttype.html#a12c0e9b32c76bb51ede4d1ff4ab3330b" title="type_constructor::\l_ttype::create" alt="" coords="436,5,561,51"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="480,128,517,157"/>
 </map>

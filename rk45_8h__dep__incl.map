@@ -1,5 +1,4 @@
 <map id="integrator/rk45.h" name="integrator/rk45.h">
-<area shape="rect" id="node3" href="$integrator_8cpp.html" title="integrator/integrator.cpp" alt="" coords="5,83,163,112"/>
-<area shape="rect" id="node5" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="193,160,324,189"/>
-<area shape="rect" id="node7" href="$rk45__tmpl_8hpp.html" title="integrator/rk45_tmpl.hpp" alt="" coords="237,83,400,112"/>
+<area shape="rect" id="node3" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="5,160,136,189"/>
+<area shape="rect" id="node5" href="$rk45__tmpl_8hpp.html" title="integrator/rk45_tmpl.hpp" alt="" coords="49,83,212,112"/>
 </map>

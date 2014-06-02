@@ -1,6 +1,6 @@
 <map id="eval_lisp" name="eval_lisp">
 <area shape="rect" id="node3" href="$eval__lisp_8cpp.html#a90360270aeba640d82d1e8377b7f59ef" title="split_into_toks" alt="" coords="164,58,271,87"/>
-<area shape="rect" id="node5" href="$defs_8hpp.html#a33ff486b4ceee2d682f6e73549a14e27" title="trim" alt="" coords="419,19,461,49"/>
+<area shape="rect" id="node5" href="$defs_8hpp.html#af384f9ebd69beb4dc607ae5717830e3f" title="trim" alt="" coords="419,19,461,49"/>
 <area shape="rect" id="node7" href="$defs_8hpp.html#a48637ee3e6629bed92d796245edb0cc2" title="ltoken" alt="" coords="412,85,468,114"/>
 <area shape="rect" id="node9" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="172,162,263,191"/>
 <area shape="rect" id="node15" href="$classnative__item.html#a73831442ba20f8ef40612b16ce639092" title="native_item::parse" alt="" coords="153,215,281,245"/>

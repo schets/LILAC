@@ -1,3 +1,29 @@
 <map id="n_lsoda" name="n_lsoda">
-<area shape="rect" id="node3" href="$lsoda_8cpp.html#aaa5ac27a4d96b972ef3ddb41e9f8b6ce" title="lsoda" alt="" coords="120,5,173,35"/>
+<area shape="rect" id="node3" href="$lsoda_8cpp.html#aaa5ac27a4d96b972ef3ddb41e9f8b6ce" title="lsoda" alt="" coords="120,216,173,245"/>
+<area shape="rect" id="node5" href="$lsoda_8cpp.html#a4b0ee1a0d7144ba5fe82206baf2557ee" title="_freevectors" alt="" coords="227,5,320,35"/>
+<area shape="rect" id="node7" href="$lsoda_8cpp.html#acadd1168c1a8236327f9c245dae187fa" title="terminate" alt="" coords="236,59,311,88"/>
+<area shape="rect" id="node9" href="$lsoda_8cpp.html#aeb473ecc784d57680675908731a1fccd" title="freevectors" alt="" coords="375,216,460,245"/>
+<area shape="rect" id="node11" href="$lsoda_8cpp.html#a4b2cd0142d629a1dc6362dcc2258e5f1" title="ewset" alt="" coords="245,163,301,192"/>
+<area shape="rect" id="node13" href="$lsoda_8cpp.html#a779e2e42713b88339ad457ba9f094125" title="terminate2" alt="" coords="232,216,315,245"/>
+<area shape="rect" id="node16" href="$lsoda_8cpp.html#abe34650ff7b01603355310bc74df5b4a" title="vmnorm" alt="" coords="661,565,731,595"/>
+<area shape="rect" id="node18" href="$lsoda_8cpp.html#ac0cd409f47e98d5b8477765c0f5a7dea" title="intdy" alt="" coords="248,323,299,352"/>
+<area shape="rect" id="node20" href="$lsoda_8cpp.html#af831db34efe6e2065bd1db1fe2e12442" title="successreturn" alt="" coords="221,269,325,299"/>
+<area shape="rect" id="node23" href="$lsoda_8cpp.html#a543085a53174564c75f98da2468c9cca" title="stoda" alt="" coords="247,581,300,611"/>
+<area shape="rect" id="node25" href="$lsoda_8cpp.html#a2ceac5b789b162e750be6c2361afe066" title="cfode" alt="" coords="391,581,444,611"/>
+<area shape="rect" id="node27" href="$lsoda_8cpp.html#ae796461e6deac015a6dbb9f49082f7a9" title="resetcoeff" alt="" coords="377,635,457,664"/>
+<area shape="rect" id="node29" href="$lsoda_8cpp.html#ae5f3b7f38e34711f73ac5126ac41133a" title="scaleh" alt="" coords="388,688,447,717"/>
+<area shape="rect" id="node32" href="$lsoda_8cpp.html#a3da24bdbae7cfb5a878215dc16570747" title="correction" alt="" coords="379,792,456,821"/>
+<area shape="rect" id="node57" href="$lsoda_8cpp.html#abf3b394c630a18d0db6b441e628a5106" title="methodswitch" alt="" coords="511,532,612,561"/>
+<area shape="rect" id="node60" href="$lsoda_8cpp.html#a3a681fd8aab28735c66c0e6377189881" title="endstoda" alt="" coords="380,477,455,507"/>
+<area shape="rect" id="node62" href="$lsoda_8cpp.html#ac1fb9bb06ce310205aa9c5e786815c26" title="orderswitch" alt="" coords="517,592,605,621"/>
+<area shape="rect" id="node34" href="$lsoda_8cpp.html#a03e3e52e5cd95a58b2942a77eb0884e8" title="prja" alt="" coords="540,788,583,817"/>
+<area shape="rect" id="node47" href="$lsoda_8cpp.html#a511e37a2150396e77fdcc0fb72c5e277" title="corfailure" alt="" coords="524,735,599,764"/>
+<area shape="rect" id="node50" href="$lsoda_8cpp.html#ae07e664636e868eb7e046fa4dcb21557" title="solsy" alt="" coords="535,841,588,871"/>
+<area shape="rect" id="node37" href="$lsoda_8cpp.html#a7320557d61286c2b0e0474ee96617df0" title="fnorm" alt="" coords="669,735,723,764"/>
+<area shape="rect" id="node39" href="$lsoda_8cpp.html#a488e3690e82c9dce0c4d5958f95e7499" title="dgefa" alt="" coords="669,788,723,817"/>
+<area shape="rect" id="node41" href="$lsoda_8cpp.html#ab4b8779856ec7d3a8c9b2375c6e0382f" title="idamax" alt="" coords="779,735,843,764"/>
+<area shape="rect" id="node43" href="$lsoda_8cpp.html#a5a4bc437218441c46840db526e63bb83" title="dscal" alt="" coords="784,788,837,817"/>
+<area shape="rect" id="node45" href="$lsoda_8cpp.html#abdde4b8f72351c10557a11a3e62ae05d" title="daxpy" alt="" coords="783,841,839,871"/>
+<area shape="rect" id="node52" href="$lsoda_8cpp.html#a98657c49d0b9c8008b5358113c363b6c" title="dgesl" alt="" coords="669,841,723,871"/>
+<area shape="rect" id="node54" href="$lsoda_8cpp.html#ac4140e254db1539905e835194aa32979" title="ddot" alt="" coords="788,895,833,924"/>
 </map>

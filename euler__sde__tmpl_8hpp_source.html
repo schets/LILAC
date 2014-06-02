@@ -37,6 +37,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li><a href="annotated.html"><span>Classes</span></a></li>
       <li class="current"><a href="files.html"><span>Files</span></a></li>
@@ -69,7 +70,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -97,99 +98,106 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="euler__sde_8h.html">euler_sde.h</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;limits&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;stdlib.h&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="code" href="classeuler__sde__tmpl.html">   11</a></span>&#160;<span class="keyword">class </span><a class="code" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>: <span class="keyword">public</span> <a class="code" href="classeuler__sde.html" title="Dormand-Prince integrator.">euler_sde</a>{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="keywordtype">double</span> stepsize;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    T* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> f0, * <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> w0, *<a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> bfnc;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="classrhs__sde.html">rhs_sde</a>* func;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <span class="keywordtype">int</span> calc_dw;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordtype">double</span> dw_weight;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">const</span> std::type_info&amp; <a class="code" href="classeuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">vtype</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat);</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    std::string <a class="code" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">integrate</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> u, <span class="keywordtype">double</span> t0, <span class="keywordtype">double</span> tf);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;};</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">   25</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">euler_sde_tmpl&lt;T&gt;::integrate</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> u0, <span class="keywordtype">double</span> ts, <span class="keywordtype">double</span> tf){</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    T* <a class="code" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> vals = u0.<a class="code" href="classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de">get</a>&lt;T&gt;();</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">size_t</span> steps =  ceil((tf-ts)/stepsize);</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">double</span> dt = (tf-ts)/steps;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">double</span> tc = ts;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(vals);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(f0);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(w0);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="defs_8hpp.html#a8e7a3bf6003d72a62606f343c2db6245">ALIGNED</a>(bfnc);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; steps; i++){</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordflow">if</span>(std::abs(dw_weight) &gt; std::numeric_limits&lt;double&gt;::epsilon())</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            <a class="code" href="noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81">gaussian_noise</a>(w0, dimension, dt*dw_weight);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="comment">//only calculate coefficients for dw if needed</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">if</span>(calc_dw){</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                func-&gt;dxdt(vals, f0, tc);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                func-&gt;dwdt(vals, bfnc, tc);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                    vals[j] += dt*f0[j] + bfnc[j]*w0[j];</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                rh_val-&gt;dxdt(vals, f0, tc);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    vals[j] += dt*f0[j] + w0[j];</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        }</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">else</span>{</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            rh_val-&gt;dxdt(vals, f0, tc);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                vals[j] += dt*f0[j];</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        }</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        tc += dt;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    }</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="code" href="classeuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">   65</a></span>&#160;<span class="keyword">const</span> std::type_info&amp; <a class="code" href="classeuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">euler_sde_tmpl&lt;T&gt;::vtype</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">typeid</span>(T);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;}</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="code" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">   69</a></span>&#160;std::string <a class="code" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">euler_sde_tmpl&lt;T&gt;::type</a>()<span class="keyword"> const</span>{</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;euler_sde_tmpl&lt;&quot;</span>) + this-&gt;vname() + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;}</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="code" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">euler_sde_tmpl&lt;T&gt;::postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat){</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values.">integrator::postprocess</a>(dat);</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="comment">//since the rh_val is already obtained by the map,</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="comment">//may as well just check instead of going through retrieve</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d">retrieve</a>(calc_dw, dat[<span class="stringliteral">&quot;calc_dw&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">if</span>(calc_dw){</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        func = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classrhs__sde.html">rhs_sde</a>*<span class="keyword">&gt;</span>(rh_val);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordflow">if</span>(func == 0){</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;            <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(std::string(<span class="stringliteral">&quot;The rhs, &quot;</span>) + rh_val-&gt;name() + <span class="stringliteral">&quot;, is not part of the rhs_sde inheritance heirarchy.&quot;</span> +</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                    <span class="stringliteral">&quot; Consider setting calc_dw to 0 to allow for a constant multiple of the noise factor&quot;</span>,</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                    this-&gt;type() + <span class="stringliteral">&quot;::postprocess&quot;</span>, <span class="stringliteral">&quot;integrator/euler_sde_tmpl.hpp&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">if</span>(!rh_val-&gt;compare&lt;T&gt;()){</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Bad rhs type passed to euler_sde integrator&quot;</span>, <span class="stringliteral">&quot;euler_sde_tmpl::postprocess&quot;</span>,</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="stringliteral">&quot;integrator/euler_sde_tmpl.h&quot;</span>, FATAL_ERROR);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d">retrieve</a>(dw_weight, dat[<span class="stringliteral">&quot;dw_weight&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d">retrieve</a>(stepsize, dat[<span class="stringliteral">&quot;stepsize&quot;</span>], <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordflow">if</span>(stepsize &lt;= 0){</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;stepsize is invalid, must be &gt;= 0&quot;</span>, <span class="stringliteral">&quot;euler_sde_tmpl::postprocess&quot;</span>,</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="stringliteral">&quot;integrator/euler_sde_tmpl.hpp&quot;</span>, dat[<span class="stringliteral">&quot;stepsize&quot;</span>], FATAL_ERROR);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    memp.create(dimension, &amp;f0, &amp;w0, &amp;bfnc);</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;}</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="float__traits_8hpp.html">types/float_traits.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html">   12</a></span>&#160;<span class="keyword">class </span><a class="code" href="exceptioneuler__sde__tmpl.html">euler_sde_tmpl</a> final: <span class="keyword">public</span> <a class="code" href="classeuler__sde.html" title="Dormand-Prince integrator.">euler_sde</a>{</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">   13</a></span>&#160;    <span class="keyword">typedef</span> <span class="keyword">typename</span> <a class="code" href="structfloat__traits.html#a44f838c8788f6a54067b166a764943c9">float_traits&lt;T&gt;::type</a> <a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a>;</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a08b438974355bd3282ecf3d83a535dc0">   14</a></span>&#160;    <a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> <a class="code" href="exceptioneuler__sde__tmpl.html#a08b438974355bd3282ecf3d83a535dc0">stepsize</a>;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#af2dfdc8d01c6a366d4a84a0b1b1788d4">   15</a></span>&#160;    T* restr <a class="code" href="exceptioneuler__sde__tmpl.html#a50c4eee063f7276ae2c45c1fcf4967a2">f0</a>, * restr <a class="code" href="exceptioneuler__sde__tmpl.html#af2dfdc8d01c6a366d4a84a0b1b1788d4">w0</a>, *restr <a class="code" href="exceptioneuler__sde__tmpl.html#af7b58b890c29371607ee5cb0e412532a">bfnc</a>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a73158608982f7018b5962571cc4dfacc">   16</a></span>&#160;    <a class="code" href="classrhs__sde.html">rhs_sde</a>* <a class="code" href="exceptioneuler__sde__tmpl.html#a73158608982f7018b5962571cc4dfacc">func</a>;</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a004b437dcdd1b3ada87756ed2b61bf9d">   17</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="exceptioneuler__sde__tmpl.html#a004b437dcdd1b3ada87756ed2b61bf9d">calc_dw</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a9b06651130e707c81f9a43072f1e9bb5">   18</a></span>&#160;    <a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> <a class="code" href="exceptioneuler__sde__tmpl.html#a9b06651130e707c81f9a43072f1e9bb5">dw_weight</a>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">const</span> std::type_info&amp; <a class="code" href="exceptioneuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">vtype</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="exceptioneuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    std::string <a class="code" href="exceptioneuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordtype">int</span> <a class="code" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">integrate</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> u, <span class="keywordtype">double</span> t0, <span class="keywordtype">double</span> tf);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;};</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">   27</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">euler_sde_tmpl&lt;T&gt;::integrate</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> u0, <span class="keywordtype">double</span> ts, <span class="keywordtype">double</span> tf){</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    T* restr vals = u0.<a class="code" href="classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de">get</a>&lt;T&gt;();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordtype">size_t</span> steps =  ceil((tf-ts)/stepsize);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> dt = (tf-ts)/steps;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="exceptioneuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> tc = ts;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    ALIGNED(vals);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    ALIGNED(f0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    ALIGNED(w0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    ALIGNED(bfnc);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> i = 0; i &lt; steps; i++){</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c">std::abs</a>(dw_weight) &gt; std::numeric_limits&lt;real_type&gt;::epsilon())</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <a class="code" href="noise_8h.html#a0676b255e6be46e39b930f1cd82a8783">gaussian_noise</a>(w0, dimension, dt*dw_weight);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="comment">//only calculate coefficients for dw if needed</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span>(calc_dw){</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                func-&gt;dxdt(vals, f0, tc);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                func-&gt;dwdt(vals, bfnc, tc);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                    vals[j] = vals[j] + dt*f0[j] + bfnc[j]*w0[j];</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                rh_val-&gt;dxdt(vals, f0, tc);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    vals[j] = vals[j] + dt*f0[j] + w0[j];</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            rh_val-&gt;dxdt(vals, f0, tc);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> j = 0; j &lt; dimension; j++){</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                vals[j] = vals[j] + dt*f0[j];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        tc += dt;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">   67</a></span>&#160;<span class="keyword">const</span> std::type_info&amp; <a class="code" href="exceptioneuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">euler_sde_tmpl&lt;T&gt;::vtype</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">typeid</span>(T);</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">   71</a></span>&#160;std::string <a class="code" href="exceptioneuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">euler_sde_tmpl&lt;T&gt;::type</a>()<span class="keyword"> const</span>{</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> std::string(<span class="stringliteral">&quot;euler_sde_tmpl&lt;&quot;</span>) + this-&gt;vname() + <span class="stringliteral">&quot;&gt;&quot;</span>;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="code" href="exceptioneuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">   75</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="exceptioneuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">euler_sde_tmpl&lt;T&gt;::postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat){</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values.">integrator::postprocess</a>(dat);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="comment">//since the rh_val is already obtained by the map,</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="comment">//may as well just check instead of going through retrieve</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(calc_dw, dat[<span class="stringliteral">&quot;calc_dw&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(calc_dw){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        func = <span class="keyword">dynamic_cast&lt;</span><a class="code" href="classrhs__sde.html">rhs_sde</a>*<span class="keyword">&gt;</span>(rh_val);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span>(func == 0){</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(std::string(<span class="stringliteral">&quot;The rhs, &quot;</span>) + rh_val-&gt;name() + <span class="stringliteral">&quot;, is not part of the rhs_sde inheritance heirarchy.&quot;</span> +</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                    <span class="stringliteral">&quot; Consider setting calc_dw to 0 to allow for a constant multiple of the noise factor&quot;</span>,</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                    this-&gt;type() + <span class="stringliteral">&quot;::postprocess&quot;</span>, <span class="stringliteral">&quot;integrator/euler_sde_tmpl.hpp&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">if</span>(!rh_val-&gt;compare&lt;T&gt;()){</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Bad rhs type passed to euler_sde integrator&quot;</span>, <span class="stringliteral">&quot;euler_sde_tmpl::postprocess&quot;</span>,</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                <span class="stringliteral">&quot;integrator/euler_sde_tmpl.h&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="comment">//This is a temporay value so that the retrieve is always double</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordtype">double</span> _dw_weight;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(_dw_weight, dat[<span class="stringliteral">&quot;dw_weight&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    dw_weight=_dw_weight;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">double</span> _stepsize;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(_stepsize, dat[<span class="stringliteral">&quot;stepsize&quot;</span>], <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    stepsize=_stepsize;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordflow">if</span>(stepsize &lt;= 0){</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;stepsize is invalid, must be &gt;= 0&quot;</span>, <span class="stringliteral">&quot;euler_sde_tmpl::postprocess&quot;</span>,</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                <span class="stringliteral">&quot;integrator/euler_sde_tmpl.hpp&quot;</span>, dat[<span class="stringliteral">&quot;stepsize&quot;</span>], <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    memp.create(dimension, &amp;f0, &amp;w0, &amp;bfnc);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;}</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu May 15 2014 23:29:18 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Jun 1 2014 18:48:38 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.3.1
 </small></address>

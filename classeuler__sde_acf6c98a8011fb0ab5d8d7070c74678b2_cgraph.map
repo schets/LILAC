@@ -1,7 +1,8 @@
 <map id="euler_sde::postprocess" name="euler_sde::postprocess">
-<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="215,5,369,35"/>
-<area shape="rect" id="node9" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="211,59,373,88"/>
-<area shape="rect" id="node11" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="249,112,335,141"/>
+<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="215,9,369,39"/>
+<area shape="rect" id="node9" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="211,64,373,93"/>
+<area shape="rect" id="node13" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="249,117,335,147"/>
 <area shape="rect" id="node5" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="421,5,576,35"/>
 <area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="625,5,663,35"/>
+<area shape="rect" id="node11" href="$classtype__constructor_1_1__ttype.html#a12c0e9b32c76bb51ede4d1ff4ab3330b" title="type_constructor::\l_ttype::create" alt="" coords="436,58,561,105"/>
 </map>
