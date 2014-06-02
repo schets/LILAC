@@ -1,7 +1,9 @@
 export
 CPP=clang
 #CPP=gcc
-#CPP=icc
+CPP=icc
+CPP=CC
+CPP=NERSC
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer
 CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
@@ -22,6 +24,14 @@ export CFLAGS= -ip -ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=s
 export LD=$(CPP)
 export LFLAGS= -lstdc++ -mkl=sequential
 endif
+ifeq ($(CPP), NERSC)
+CPP=CC
+FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer -funroll-loops -funsafe-loop-optimizations
+CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -Ofast -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
+LD=CC
+LFLAGS= -L/usr/local/lib -lstdc++ -O3 -march=native -m64 -pipe $(FASTMATH)
+endif
+
 
 LIB_MAIN=../../lib
 MAIN_PATH=..
