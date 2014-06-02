@@ -25,7 +25,7 @@ class euler_sde_tmpl final: public euler_sde{
 };
 template<class T>
 int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
-    T* restr vals = u0.get<T>();
+    T* restr vals = u0;
     size_t steps =  ceil((tf-ts)/stepsize);
     real_type dt = (tf-ts)/steps;
     real_type tc = ts;

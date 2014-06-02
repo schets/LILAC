@@ -63,7 +63,7 @@ int example_integrator_tmpl<T>::integrate(ptr_passer _u, double t0, double tf){
     //That is a lie!!! But nothing will be modifying this location during the function call
     //so it can be delcared restr. Even if this were multithreaded, it would be incorrect to access this pointer
     //from another thread and would have meaningless results anyways
-    T* restr u = _u.get<T>();
+    T* restr u = _u;
 
     //This declaration will tell the compiler that the resulting pointer is aligned in memory.
     //If you use the mempool and align to 16 bytes or more (32, 64, etc) This will be true

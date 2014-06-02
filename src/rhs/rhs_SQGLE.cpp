@@ -18,8 +18,8 @@ inline comp _clog(comp inval){
 
 
 int rhs_SQGLE::dxdt(ptr_passer x, ptr_passer _dx, double t){
-    comp* restr dx = _dx.get<comp>();
-    uf1= x.get<comp>();
+    comp* restr dx = _dx;
+    uf1= x;
     //take the inverse fourier transform
     ifft(uf1, u1, NUM_TIME_STEPS);
     //Inform compiler of alignment, if supported

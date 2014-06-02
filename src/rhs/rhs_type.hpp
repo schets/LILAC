@@ -27,7 +27,7 @@ template<typename T> class rhs_type:public rhs{
             static_assert(std::is_default_constructible<T>::value,
                     "Type needs to be default constructable in rhs_type");
 #endif
-            T* vals = in.get<T>();
+            T* vals = in;
             for(size_t j = 0; j < len; j++){
                 vals[j] = T();
             } 

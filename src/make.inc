@@ -1,6 +1,6 @@
 export
 CPP=clang
-CPP=gcc
+#CPP=gcc
 #CPP=icc
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer

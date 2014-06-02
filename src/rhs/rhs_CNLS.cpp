@@ -10,8 +10,8 @@ template class type_register<rhs_CNLS>;
 rhs_CNLS::~rhs_CNLS(){}
     
 int rhs_CNLS::dxdt(ptr_passer x, ptr_passer _dx, double t){
-    comp* restr dx = _dx.get<comp>();
-    uf1= x.get<comp>();
+    comp* restr dx = _dx;
+    uf1= x;
     uf2=uf1+NUM_TIME_STEPS;
     //take the inverse fourier transform
     ifft(uf1, u1, NUM_TIME_STEPS);

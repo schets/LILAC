@@ -146,6 +146,8 @@ void example_rhs::update(){
  */
 example_rhs::~example_rhs(){
     //this->free_various_resources();
+    //Seriously though try to use resources which destruct automatically
+    //Through their own destructor
 }
 
 //!This is the rhs function that calculates the derivative
@@ -159,12 +161,10 @@ example_rhs::~example_rhs(){
  */
 int example_rhs::dxdt(ptr_passer _x, ptr_passer _dx, double t){
     //This pulls the pointer out of the ptr_passer object.
-    //The call requires a template argument with the desired pointer type,
-    //
-    //This function will throw a fatal error if the template type is different than the type
-    //that the ptr_passer was instantiated with
-    comp* restr x = _x.get<comp>();
-    comp* restr dx = _dx.get<comp>();
+    //The conversion is implicit, but will throw a fatal error if the
+    //types do not match.
+    comp* restr x = _x;
+    comp* restr dx = _dx;
     //This doesn't really do anything useful
     //but showcases some of the compex variable functions
     //See detailed documentation for more

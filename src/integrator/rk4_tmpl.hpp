@@ -45,7 +45,7 @@ int rk4_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf)
     //
 {
     //get dt
-    T* restr u0 = _u0.get<T>();
+    T* restr u0 = _u0;
     ALIGNED(u0);
     ALIGNED(f0);
     ALIGNED(f1);

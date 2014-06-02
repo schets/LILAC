@@ -54,8 +54,8 @@ constexpr size_t c_elegans::dim_v;
 constexpr size_t c_elegans::dim_s;
 template class type_register<c_elegans>;
 int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
-    double* restr v = x.get<double>();
-    double* restr dv = dx.get<double>();
+    double* restr v = x;
+    double* restr dv = dx;
     double* restr ds = dv+dim_v;
     double* restr s = v+dim_v;
     //map eigen arrays over input pointers
@@ -88,7 +88,7 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     return 0;
 }
 int c_elegans::dwdt(ptr_passer x, ptr_passer _dx, double dt){
-	double* dx = _dx.get<double>();
+	double* dx = _dx;
 	std::fill(dx, dx+num_neur*2, 1);
 	return 0;
 }
@@ -279,7 +279,7 @@ void c_elegans::initial_condition(ptr_passer in, size_t len){
     if(len != dimension){
         rhs_type<double>::initial_condition(in, len);
     }
-    double* vals = in.get<double>();
+    double* vals = in;
     //create fake initial condition
     for(size_t i = 0; i < num_neur; i++){
         //vals[i] = eqV[i];
