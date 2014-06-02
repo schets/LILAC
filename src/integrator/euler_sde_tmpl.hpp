@@ -7,7 +7,7 @@
 #include "euler_sde.h"
 #include <limits>
 #include <stdlib.h>
-#include "utils/float_traits.hpp"
+#include "types/float_traits.hpp"
 template<class T>
 class euler_sde_tmpl final: public euler_sde{
     typedef typename float_traits<T>::type real_type;

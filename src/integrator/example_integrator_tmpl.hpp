@@ -1,7 +1,7 @@
 #ifndef EXAMPLE_INTEGRATOR_TMPL_HPP
 #define EXAMPLE_INTEGRATOR_TMPL_HPP
 #include "example_integrator.h"
-#include "float_traits.hpp"
+#include "types/float_traits.hpp"
 //It seems that it would be easier to use dynamic types, since we have a problem
 //where the type is decided at runtime. However, that murders performance terribly
 //so we do compile-time type selection and then instantiate the right type at runtime from 

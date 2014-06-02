@@ -10,5 +10,8 @@ The main internal structure of a simulation works like this:
     -# The engine calls the simulate function of the \ref simulation class that is active
     -# The engine increments the \ref controller to the next value, and calls the update function on each item that references a \ref variable
     -# The process repeats until the \ref controller is out of values
+
+
+    For documentation on the input language, see \ref input_page 
 */
 

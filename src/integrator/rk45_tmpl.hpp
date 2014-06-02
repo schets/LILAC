@@ -3,7 +3,7 @@
 #include "integrator.h"
 #include "utils/comp_funcs.hpp"
 #include "rk45.h"
-#include "utils/float_traits.hpp"
+#include "types/float_traits.hpp"
 //!Dormand-Prince integrator
 /*!
  * This class defines a Dormand-Prince integrator, the same type used by the

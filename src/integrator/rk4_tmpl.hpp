@@ -1,7 +1,7 @@
 #include "integrator.h"
 #include "rk4.h"
 #include "item_heads.hpp"
-#include "float_traits.hpp"
+#include "types/float_traits.hpp"
 template<class T>
 class rk4_tmpl final:public rk4 {
     typedef typename float_traits<T>::type real_type;
