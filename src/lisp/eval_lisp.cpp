@@ -3,7 +3,13 @@
 #include "utils/defs.hpp"
 #include "engine/item.h"
 #include "engine/engineimp.h"
-static std::set<std::string> keywords = {"@map"};
+static std::set<std::string> get_keywords(){
+	std::set<std::string> vals;
+	vals.insert("@map");
+	return vals;
+}
+//ICC doesn't support initializer lists yet again
+static std::set<std::string> keywords = get_keywords();
 param_val split_into_toks(std::string param_vals, bool has_paren){
     trim(param_vals);
     param_val p_ret;

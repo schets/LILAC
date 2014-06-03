@@ -18,9 +18,11 @@
 #define ALIGNED(x) __assume_aligned(x, 16)
 #define MAKE_ALIGNED __declspec(align(16))
 #define PREDICT(x, val) __builtin_expect(x, val)
+#define final_def
 #endif
 
 #ifdef CLANG
+#define final_def final
 #define restr __restrict__
 #define ALIGNED(x)
 #define PREDICT(x, val) x
@@ -28,6 +30,7 @@
 #endif
 
 #ifdef GCC
+#define final_def final
 #define restr __restrict__
 #define ALIGNED(x)
 #define PREDICT(x, val) __builtin_expect(x, val)

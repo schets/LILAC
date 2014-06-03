@@ -3,7 +3,7 @@
 #include "item_heads.hpp"
 #include "types/float_traits.hpp"
 template<class T>
-class rk4_tmpl final:public rk4 {
+class rk4_tmpl final_def :public rk4 {
     typedef typename float_traits<T>::type real_type;
     protected:
     T* restr f0, * restr f1, * restr f2, * restr f3;

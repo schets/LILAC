@@ -16,7 +16,7 @@
 template<typename T> class rhs_type:public rhs{
     public:
         //!returns the type of the current variable
-        virtual const std::type_info& vtype() const final{
+        virtual const std::type_info& vtype() const final_def{
             return typeid(T);
         }
         

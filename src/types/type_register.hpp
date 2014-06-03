@@ -29,7 +29,7 @@ item* __maker__(){
  * \sa item_factory
  */
 template<class T>
-class type_register final {
+class type_register final_def {
     static bool regis;
     static bool init();
     static item* create();

@@ -8,11 +8,17 @@ class item_wrapper{
     std::set<std::string> deps;
     public:
     template<class T, class = typename std::enable_if<std::is_base_of<item, T>::value>::type>
-        item_wrapper(const std::shared_ptr<T>& inv):item_wrapper(std::static_pointer_cast<item>(inv)){
-        }
+	    item_wrapper(const std::shared_ptr<T>& inv){
+		    ptr = std::static_pointer_cast<item>(inv);
+		    if(ptr.use_count()){
+			    for(auto& str : inv->dependencies()){
+				    deps.insert(str);
+			    }
+		    }
+	    }
     item_wrapper(const std::shared_ptr<item>& inv);
     item_wrapper(const item_wrapper& inv);
-   // item_wrapper(item_wrapper&& inv);
+    // item_wrapper(item_wrapper&& inv);
     item_wrapper();
     std::vector<std::string> dependencies() const;
     item* get();

@@ -45,8 +45,8 @@ class native_item:public item{
     public:
         virtual void parse(const std::string& inval) = 0;
         //native items can't have dependencies or perform postprocessing
-        std::vector<std::string> dependencies() const final;
-        void postprocess(input& inval) final;
+        std::vector<std::string> dependencies() const final_def;
+        void postprocess(input& inval) final_def;
 };
 //!Stores a real-valued input
 class _double:public native_item{
@@ -99,6 +99,11 @@ class _unsigned:public native_item{
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     friend class engineimp;
 };
+
+#ifdef ICC
+//!helper function for variable class
+bool operator < (const std::weak_ptr<item>& a, std::weak_ptr<item>& b);
+#endif
 //!stores a real number that is varied during the simulation
 /*!
  * This class stores a real number that is allowed to vary during the simulation
@@ -114,53 +119,58 @@ class _unsigned:public native_item{
  * \sa real
  */
 class variable:public _double{
-    //double* are not use by std since they are mostly to stack allocated mem
-    std::map<item*, std::set<double*> > modifiers;
-    std::map<std::weak_ptr<item>, std::set<double*>, std::owner_less<std::weak_ptr<item> > > safe_mods;
-    public:
-    double low_bound, high_bound, inc_size;
-    virtual void print() const;
-    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
-    virtual void copy(double* inval);
-    virtual void parse(const std::string& inval);
-    virtual std::string type() const;
-    void inc();
-    void inc(double i);
-    void set(double v);
+	//double* are not use by std since they are mostly to stack allocated mem
+	std::map<item*, std::set<double*> > modifiers;
+#ifdef ICC
+	std::map<std::weak_ptr<item>, std::set<double*>> safe_mods;
+#else
+	std::map<std::weak_ptr<item>, std::set<double*>,
+		std::owner_less<std::weak_ptr<item>>> safe_mods;
+#endif
+	public:
+	double low_bound, high_bound, inc_size;
+	virtual void print() const;
+	virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
+	virtual void copy(double* inval);
+	virtual void parse(const std::string& inval);
+	virtual std::string type() const;
+	void inc();
+	void inc(double i);
+	void set(double v);
 };
 
 
 //classes for testing graphsort, mainly to ensure that it finds cyclical and unsatisfied dependencies
 class ftest1 : public item{
-    public:
-        virtual std::vector<std::string> dependencies() const{
-            std::string deps[] = {"var1"};
-            return std::vector<std::string>(deps, deps+1);
-        }
-        virtual std::string type() const{
-            return "ftest1";
-        }
+	public:
+		virtual std::vector<std::string> dependencies() const{
+			std::string deps[] = {"var1"};
+			return std::vector<std::string>(deps, deps+1);
+		}
+		virtual std::string type() const{
+			return "ftest1";
+		}
 };
 
 class ftest2 : public item{
-    public:
-        virtual std::vector<std::string> dependencies() const{
-            std::string deps[] = {"var2"};
-            return std::vector<std::string>(deps, deps+1);
-        }
-        virtual std::string type() const{
-            return "ftest2";
-        }
+	public:
+		virtual std::vector<std::string> dependencies() const{
+			std::string deps[] = {"var2"};
+			return std::vector<std::string>(deps, deps+1);
+		}
+		virtual std::string type() const{
+			return "ftest2";
+		}
 };
 class ftest3 : public item{
-    public:
-        virtual std::vector<std::string> dependencies() const{
-            std::string deps[] = {"var3", "var4"};
-            return std::vector<std::string>(deps, deps+2);
-        }
-        virtual std::string type() const{
-            return "ftest3";
-        }
+	public:
+		virtual std::vector<std::string> dependencies() const{
+			std::string deps[] = {"var3", "var4"};
+			return std::vector<std::string>(deps, deps+2);
+		}
+		virtual std::string type() const{
+			return "ftest3";
+		}
 };
 #endif
 

@@ -2,7 +2,6 @@
 #include "utils/comp_funcs.hpp"
 #include "integrator/integrator.h"
 #include "engine/engine.h"
-#include <chrono>
 using namespace std;
 int main(int argc, char** argv){
     std::string outfile;
@@ -20,10 +19,7 @@ int main(int argc, char** argv){
         index="0";
     }
     srand(time(0));
-    std::chrono::high_resolution_clock::time_point tval = std::chrono::high_resolution_clock::now();
     engine e("infile.in", outfile, index);
-    std::chrono::duration<double> init_dur = std::chrono::duration_cast<std::chrono::duration<double> >(std::chrono::high_resolution_clock::now() - tval);
-    std::cout << "Initialization took " << init_dur.count() << " second" << std::endl;
     e.run();
     //
     //This cleans up the fftw memory

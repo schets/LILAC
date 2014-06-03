@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include "types/float_traits.hpp"
 template<class T>
-class euler_sde_tmpl final: public euler_sde{
+class euler_sde_tmpl final_def : public euler_sde{
     typedef typename float_traits<T>::type real_type;
     real_type stepsize;
     T* restr f0, * restr w0, *restr bfnc;

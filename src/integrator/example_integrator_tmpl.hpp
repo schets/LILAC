@@ -7,7 +7,7 @@
 //so we do compile-time type selection and then instantiate the right type at runtime from 
 //a list of types with the type_constructor class
 template<class T>
-class example_integrator_tmpl : public example_integrator{
+class example_integrator_tmpl final_def : public example_integrator{
     //!The current type of floating point value
     /*!
     * This queries the float_traits template class to see

@@ -1,7 +1,11 @@
 #include "noise.h"
 #include "comp_funcs.hpp"
 #include "mempool.hpp"
+#ifndef ICC
 #include <chrono>
+#else
+#include <time.h>
+#endif
 #include <random>
 #include <fstream>
 extern "C"{
@@ -44,9 +48,14 @@ class vector_rng{
             }
             else{
                 std::cout << "Proper RNG cannot be found (/dev/urandom), using time values" << std::endl;
+#ifndef ICC
                 dsfmt_init_gen_rand(dsm,
                         std::chrono::high_resolution_clock::now().time_since_epoch().count());
                 sfmt_init_gen_rand(sm, dsfmt_genrand_uint32(dsm));
+#else
+             dsfmt_init_gen_rand(dsm, clock());
+                sfmt_init_gen_rand(sm, dsfmt_genrand_uint32(dsm));
+#endif
             }
             dsfmt_fill_array_close_open(dsm, d_rands, num_64);
             sfmt_fill_array32(sm, i_rands, num_32);

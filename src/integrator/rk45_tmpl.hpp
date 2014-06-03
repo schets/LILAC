@@ -11,7 +11,7 @@
  * which allows for definitions using multiple variables
  */
 template<class T>
-class rk45_tmpl final:public rk45 {
+class rk45_tmpl final_def :public rk45 {
     typedef typename float_traits<T>::type real_type;
     protected:
     //since these values aren't used to much in actual computation

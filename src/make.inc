@@ -20,16 +20,16 @@ LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm
 endif
 ifeq ($(CPP), icc)
 export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions
-export CFLAGS= -ip -ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=sequential
+export CFLAGS= -no-ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=sequential
 export LD=$(CPP)
 export LFLAGS= -lstdc++ -mkl=sequential
 endif
 ifeq ($(CPP), NERSC)
+FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer -funroll-loops
 CPP=CC
-FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer -funroll-loops -funsafe-loop-optimizations
-CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -Ofast -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
+CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
 LD=CC
-LFLAGS= -L/usr/local/lib -lstdc++ -O3 -march=native -m64 -pipe $(FASTMATH)
+LFLAGS= -L/usr/local/lib -Ofast -march=native -m64 $(FASTMATH)
 endif
 
 

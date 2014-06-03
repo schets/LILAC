@@ -18,6 +18,20 @@ template class type_register<variable>;
 template class type_register<ftest1>;
 template class type_register<ftest2>;
 template class type_register<ftest3>;
+#ifdef ICC
+//!helper function for variable class, since icc can't compare them using the stl...
+bool operator < (const std::weak_ptr<item>& a, std::weak_ptr<item>& b){
+	if(a.expired()){
+		return false;
+	}
+	if(b.expired()){
+		return true;
+	}
+	auto vala = a.lock();
+	auto valb = b.lock();
+	return vala.get() < valb.get();
+}
+#endif
 item::~item(){}
 item::item(){
     has_write_name=0;
