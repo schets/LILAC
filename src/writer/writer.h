@@ -8,6 +8,7 @@
 #include <list>
 #include "utils/defs.hpp"
 #include "data.hpp"
+//!This class defines the interface for sending data to the engine for writing
 class writer{
     //!Holds each data point
     std::list<std::shared_ptr<const data>> dvals;

@@ -60,7 +60,7 @@ void stable_ode_tmpl<T>::postprocess(input& invals){
                 "simulation/stable_ode_tmpl.hpp", FATAL_ERROR);
     }
     this->add_as_parent(inter);
-    retrieve(t0, invals["t0"], this);
+    retrieve(t0, invals["t0"], this, 0.0);
     tcur = t0;
     retrieve(int_len, invals["int_len"], this);
     const double eps_val = 1e-12;

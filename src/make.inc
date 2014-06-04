@@ -1,14 +1,13 @@
 export
 CPP=clang
-#CPP=gcc
-CPP=icc
-CPP=CC
-CPP=NERSC
+CPP=gcc
+#CPP=icc
+#CPP=NERSC
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer
-CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe
+CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing -pipe
 LD=gcc
-LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -march=native -m64 -pipe $(FASTMATH)
+LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -m64 -pipe $(FASTMATH)
 endif
 ifeq ($(CPP), clang)
 #clang generates significantly worse code than gcc for this project, but compiles faster

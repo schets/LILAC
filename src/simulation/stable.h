@@ -31,10 +31,12 @@ class stable:public simulation, public vartype{
 };
 //!A class representing an ODE system that is integrated towards stability
 /*!
- * This class represents an ODE system that undergoes integration.
- * This class doesn't add too much, but since simple ode systems are so ubiquitous,
- * I think having it encapsulated in a class is important so one doesn't have to
- * rewrite a system every time they want to integrate an ode.
+ * This class represents an ODE system that undergoes integration, possibly towards a stable equilibrium.
+ * Upon reaching this equilibrium, the integration will cease.
+ *
+ * The class tests this by doing multiple sub-integrations,
+ * and checking the difference between consecutive solutions.
+ * In addition, operators can be applied before and after each integration round.
  *
  * Note that this class is really a wrapper to a statically typed template class.
  * This allows the system to choose the type at runtime, and generally be ignorant of the

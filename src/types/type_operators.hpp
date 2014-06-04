@@ -82,35 +82,40 @@ struct get_val{
 //applies a function to each dimension along the way down
 template<class T, size_t dim = float_traits<T>::dim>
 struct apply{
-    static_assert(dim >= 1, "A dimension less then one has been given to the apply structure");
-    //no dimension hecking here, that should be done by the getter function
-    template<class Lambda>
-        static inline void transform(T& inval, Lambda&& func){
-            std::forward<Lambda>(func)(get<T, dim>::pull(inval), dim);
-            apply<T, dim-1>::transform(inval, std::forward<Lambda>(func));
-        }
-    template<class Lambda, class Trans>
-        static inline void map_into(const T& inval, Lambda&& func, Trans& outval){
-            static_assert(float_traits<Trans>::dim == float_traits<T>::dim,
-                    "The dimension of the Trans type is not euqal to the dimension of the T type");
-            get<Trans, dim>::pull(outval) = std::forward<Lambda>(func)(get_cref<T, dim>::pull(inval), dim);
-            apply<T, dim-1>::map_into(inval, std::forward<Lambda>(func), outval);
-        }
-    template<class Lambda, class Trans, class constr, class postop>
-        static inline Trans map(const T& inval, Lambda&& func,
-                postop&& finish=[](Trans&){}, constr&& build=[]{return Trans();}){
-            Trans val = std::forward<constr>(build)();
-            map_into(inval, std::forward<Lambda>(func), val);
-            std::forward<postop>(finish)(val);
-            return val;
-        }
-    //simple wrapper to make it simpler for pre-building classes and not doing post operations
-    template<class Lambda, class Trans, class constr, class postop>
-        static inline Trans map_build(const T& inval,  Lambda&& func, 
-                constr&& build, postop&& finish=[](Trans&){}){
-            return map(inval, std::forward<Lambda>(func),
-                    std::forward<postop>(finish), std::forward<constr>(build));
-        }
+    private:
+        //!helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility
+    public:
+        static_assert(dim >= 1, "A dimension less then one has been given to the apply structure");
+        //no dimension hecking here, that should be done by the getter function
+        template<class Lambda>
+            static inline void transform(T& inval, Lambda&& func){
+                std::forward<Lambda>(func)(get<T, dim>::pull(inval), dim);
+                apply<T, dim-1>::transform(inval, std::forward<Lambda>(func));
+            }
+
+        template<class Lambda, class Trans>
+            static inline void map_into(const T& inval, Lambda&& func, Trans& outval){
+                static_assert(float_traits<Trans>::dim == float_traits<T>::dim,
+                        "The dimension of the Trans type is not euqal to the dimension of the T type");
+                get<Trans, dim>::pull(outval) = std::forward<Lambda>(func)(get_cref<T, dim>::pull(inval), dim);
+                apply<T, dim-1>::map_into(inval, std::forward<Lambda>(func), outval);
+            }
+        //!Generates a variable of type trans with the functor by mapping each coordinate of the first to the second
+        template<class Lambda, class Trans, class constr, class postop>
+            static inline Trans map(const T& inval, Lambda&& func){
+                Trans val;
+                map_into(inval, std::forward<Lambda>(func), val);
+                return val;
+            }
+        //!Mapper with custom building and postoperation functors
+        template<class Lambda, class Trans, class constr, class postop>
+            static inline Trans map(const T& inval, Lambda&& func,
+                    postop&& finish, constr&& build){
+                Trans val = std::forward<constr>(build)();
+                map_into(inval, std::forward<Lambda>(func), val);
+                std::forward<postop>(finish)(val);
+                return val;
+            }
 };
 template<class T>
 struct apply<T, 1>{

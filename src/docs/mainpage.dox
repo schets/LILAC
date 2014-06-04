@@ -13,5 +13,9 @@ The main internal structure of a simulation works like this:
 
 
     For documentation on the input language, see \ref input_page 
+
+    Documentation on compiling can be found in \ref compiling_page
+
+    Documentation on running LILAC can be found in \ref running_lilac
 */
 
