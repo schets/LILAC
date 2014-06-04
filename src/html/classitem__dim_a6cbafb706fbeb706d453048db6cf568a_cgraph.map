@@ -1,0 +1,8 @@
+<map id="item_dim::update_dim" name="item_dim::update_dim">
+<area shape="rect" id="node3" href="$classitem__dim.html#a9c9b71ca131ba8360c9ccb948e2251f4" title="item_dim::_do_mem_update" alt="" coords="205,59,392,88"/>
+<area shape="rect" id="node5" href="$classmempool.html#ac7816ca9637babafaf4e71911afb4647" title="Resets the dimension and alignment of the pool." alt="" coords="441,59,569,88"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="652,5,713,35"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="644,59,721,88"/>
+<area shape="rect" id="node14" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="620,112,745,141"/>
+<area shape="rect" id="node9" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="796,32,833,61"/>
+</map>

@@ -1,0 +1,9 @@
+<map id="graph::sort" name="graph::sort">
+<area shape="rect" id="node3" href="$classgraph.html#ad8cf52014e60191b24e96625ae07a553" title="graph::insert" alt="" coords="168,57,261,87"/>
+<area shape="rect" id="node12" href="$classgraph.html#ab924e1065579a1329276aff110a1756e" title="graph::ins_extra_deps" alt="" coords="140,111,289,140"/>
+<area shape="rect" id="node16" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="196,164,233,193"/>
+<area shape="rect" id="node5" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="569,5,655,35"/>
+<area shape="rect" id="node7" href="$classgraph.html#a822b9d87a7acf07172dddb7c06686b83" title="graph::_insert" alt="" coords="367,57,468,87"/>
+<area shape="rect" id="node10" href="$classitem.html#a136f583a65c94f9bf565ce9ca7d076b3" title="Returns dependencies of item, for which there are none." alt="" coords="545,59,679,88"/>
+<area shape="rect" id="node14" href="$classgraph.html#ab9b13251e3096ab0e96cbcb1371648ba" title="graph::proc_node_deps" alt="" coords="339,111,496,140"/>
+</map>

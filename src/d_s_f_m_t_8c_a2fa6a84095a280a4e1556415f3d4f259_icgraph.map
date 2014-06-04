@@ -1,0 +1,18 @@
+<map id="dsfmt_chk_init_gen_rand" name="dsfmt_chk_init_gen_rand">
+<area shape="rect" id="node3" href="$d_s_f_m_t_8h.html#aa767efdc0f36a3cde4d61d3764a473de" title="dsfmt_init_gen_rand" alt="" coords="221,311,360,340"/>
+<area shape="rect" id="node5" href="$d_s_f_m_t_8h.html#a7b740379d0e954de5836560e4bc5dbfc" title="dsfmt_gv_init_gen_rand" alt="" coords="408,259,568,288"/>
+<area shape="rect" id="node9" href="$test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc" title="check" alt="" coords="637,44,693,73"/>
+<area shape="rect" id="node17" href="$test_8c.html#a28a97b46ed4a3503980267080cd59768" title="test_co" alt="" coords="633,471,697,500"/>
+<area shape="rect" id="node20" href="$test_8c.html#acd98dbe001c2851c008039ec119d57eb" title="test_oc" alt="" coords="633,524,697,553"/>
+<area shape="rect" id="node23" href="$test_8c.html#a090e3f35a8e9c925dc81d0ccf457658b" title="test_oo" alt="" coords="633,97,697,127"/>
+<area shape="rect" id="node26" href="$test_8c.html#a03fac1fb9382f69cfcbd2dc582facac1" title="test_12" alt="" coords="633,151,697,180"/>
+<area shape="rect" id="node29" href="$test_8c.html#a04b9f13fce4c4f6c4511f000523e9d22" title="test_seq_co" alt="" coords="619,204,712,233"/>
+<area shape="rect" id="node32" href="$test_8c.html#a5dff7dec7bfa433fdf6b2171d0e57683" title="test_seq_oc" alt="" coords="619,311,712,340"/>
+<area shape="rect" id="node35" href="$test_8c.html#abb32b27aa529921720fcbe50b1215153" title="test_seq_oo" alt="" coords="619,364,712,393"/>
+<area shape="rect" id="node38" href="$test_8c.html#a6e47b6ff78cc073f4a50b8f7f0d0c5c0" title="test_seq_12" alt="" coords="619,417,712,447"/>
+<area shape="rect" id="node50" href="$classvector__rng.html#a27f4d219240fdb479ecb4452e69bdafd" title="vector_rng::vector_rng" alt="" coords="412,565,564,595"/>
+<area shape="rect" id="node7" href="$d_s_f_m_t_8h.html#a8dc496135101ef4140c7e790bf7474cd" title="init_gen_rand" alt="" coords="616,257,715,287"/>
+<area shape="rect" id="node11" href="$test_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="main" alt="" coords="819,311,869,340"/>
+<area shape="rect" id="node13" href="$classtype__constructor.html#ab7aab8ee5db0ba661f60dc4dcd49ba2e" title="type_constructor::create" alt="" coords="763,75,925,104"/>
+<area shape="rect" id="node15" href="$class____retrieve__checker.html#a2497388291d33c557e7391e9cc3ba7c0" title="__retrieve_checker\l::check_and_get_type" alt="" coords="769,5,919,51"/>
+</map>

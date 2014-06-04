@@ -1,0 +1,18 @@
+<map id="simulation/stable_ode_tmpl.hpp" name="simulation/stable_ode_tmpl.hpp">
+<area shape="rect" id="node3" href="$stable_8h.html" title="stable.h" alt="" coords="523,101,589,131"/>
+<area shape="rect" id="node67" href="$item__heads_8hpp.html" title="item_heads.hpp" alt="" coords="705,256,820,285"/>
+<area shape="rect" id="node5" href="$simulation_8h.html" title="simulation.h" alt="" coords="511,179,601,208"/>
+<area shape="rect" id="node50" href="$integrator_8h.html" title="integrator/integrator.h" alt="" coords="175,256,319,285"/>
+<area shape="rect" id="node7" href="$item_8h.html" title="engine/item.h" alt="" coords="537,488,636,517"/>
+<area shape="rect" id="node30" href="$controller_8h.html" title="controller/controller.h" alt="" coords="436,256,577,285"/>
+<area shape="rect" id="node15" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="357,565,456,595"/>
+<area shape="rect" id="node33" href="$item__dim_8h.html" title="engine/item_dim.h" alt="" coords="291,411,419,440"/>
+<area shape="rect" id="node46" href="$objective_8h.html" title="objective/objective.h" alt="" coords="411,333,552,363"/>
+<area shape="rect" id="node36" href="$mempool_8hpp.html" title="mempool.hpp" alt="" coords="249,488,348,517"/>
+<area shape="rect" id="node52" href="$rhs_8h.html" title="../rhs/rhs.h" alt="" coords="99,333,184,363"/>
+<area shape="rect" id="node55" href="$vartype_8hpp.html" title="../utils/vartype.hpp" alt="" coords="5,411,136,440"/>
+<area shape="rect" id="node60" href="$ptr__passer_8hpp.html" title="ptr_passer.hpp" alt="" coords="160,411,267,440"/>
+<area shape="rect" id="node69" href="$retrieve__checker_8hpp.html" title="utils/retrieve_checker.hpp" alt="" coords="677,333,848,363"/>
+<area shape="rect" id="node72" href="$input_8h.html" title="engine/input.h" alt="" coords="872,333,973,363"/>
+<area shape="rect" id="node75" href="$item__wrapper_8h.html" title="item_wrapper.h" alt="" coords="855,411,964,440"/>
+</map>

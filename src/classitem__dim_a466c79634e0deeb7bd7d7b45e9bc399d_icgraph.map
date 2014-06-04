@@ -1,0 +1,13 @@
+<map id="item_dim::dependencies" name="item_dim::dependencies">
+<area shape="rect" id="node3" href="$classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4" title="controller::dependencies" alt="" coords="220,36,383,65"/>
+<area shape="rect" id="node7" href="$classintegrator.html#a5314ff7d5a35e730cb8279a81bb07c08" title="integrator::dependencies" alt="" coords="220,151,383,180"/>
+<area shape="rect" id="node17" href="$classsimulation.html#a166cf85cd6e92fde6ad08e9104733c72" title="simulation::dependencies" alt="" coords="217,288,385,317"/>
+<area shape="rect" id="node5" href="$classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889" title="toroidal::dependencies" alt="" coords="443,5,595,35"/>
+<area shape="rect" id="node9" href="$classeuler__sde.html#af8fef552b8fd07eb162639cd8f1cdaba" title="euler_sde::dependencies" alt="" coords="436,59,601,88"/>
+<area shape="rect" id="node11" href="$classexample__integrator.html#aaa470d55eed5ac45b88ca11abf1a2b0c" title="Returns the variables that this class depends on." alt="" coords="453,111,584,158"/>
+<area shape="rect" id="node13" href="$classrk4.html#a8356569d094120e01707af26b24f9ee5" title="rk4::dependencies" alt="" coords="455,181,583,211"/>
+<area shape="rect" id="node15" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="452,235,585,264"/>
+<area shape="rect" id="node19" href="$classode.html#abca470e488473e9842fb63ec47fd0e31" title="ode::dependencies" alt="" coords="453,288,584,317"/>
+<area shape="rect" id="node21" href="$classstable.html#a23034870f1989c0e655f29493ef95f0d" title="stable::dependencies" alt="" coords="447,341,591,371"/>
+<area shape="rect" id="node23" href="$classstable__ode.html#a33edb6392535f9d260b625d98713bda5" title="stable_ode::dependencies" alt="" coords="651,341,824,371"/>
+</map>
