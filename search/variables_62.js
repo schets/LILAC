@@ -8,5 +8,5 @@ var searchData=
   ['bap',['bap',['../classjones__optical.html#a9a4f2dd6af63a98f557c1927075ead1c',1,'jones_optical']]],
   ['best_5fscore',['best_score',['../classjones__optical.html#a503f195af9e34a58b1099beebf033745',1,'jones_optical']]],
   ['beta',['beta',['../classc__elegans.html#a06e2dae7c3949f2fb4c6db1954765120',1,'c_elegans']]],
-  ['bfnc',['bfnc',['../exceptioneuler__sde__tmpl.html#af7b58b890c29371607ee5cb0e412532a',1,'euler_sde_tmpl']]]
+  ['bfnc',['bfnc',['../classfinal__def.html#a8bccf5f5fdffb1640188c86b2925f7f5',1,'final_def']]]
 ];

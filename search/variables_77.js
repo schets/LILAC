@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w0',['w0',['../exceptioneuler__sde__tmpl.html#af2dfdc8d01c6a366d4a84a0b1b1788d4',1,'euler_sde_tmpl']]],
+  ['w0',['w0',['../classfinal__def.html#a4a8d4d53c66446b21f54d7c4582e497f',1,'final_def']]],
   ['w_5fstep',['w_step',['../classode__tmpl.html#a73c73e616cdfda733e8d30d15f6c46af',1,'ode_tmpl']]],
   ['warning',['WARNING',['../defs_8hpp.html#a4709cd67f0f9a81fa03b70eece4e019d',1,'defs.hpp']]],
   ['wh',['wh',['../classjones__matrix.html#ab656b030d9fdec7d324f1dd4619a374e',1,'jones_matrix']]],

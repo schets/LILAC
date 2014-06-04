@@ -8,6 +8,6 @@
 <area shape="rect" id="node6" href="$classitem.html" title="item" alt="" coords="203,101,248,131"/>
 <area shape="rect" id="node8" href="$classengineimp.html" title="engineimp" alt="" coords="185,5,265,35"/>
 <area shape="rect" id="node10" href="$classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="272,101,347,131"/>
-<area shape="rect" id="node13" href="$classwriter.html" title="writer" alt="" coords="5,277,59,307"/>
+<area shape="rect" id="node13" href="$classwriter.html" title="This class defines the interface for sending data to the engine for writing." alt="" coords="5,277,59,307"/>
 <area shape="rect" id="node21" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="445,197,509,227"/>
 </map>

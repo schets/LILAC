@@ -1,4 +1,10 @@
 <map id="item_factory::create_item" name="item_factory::create_item">
-<area shape="rect" id="node3" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="224,5,315,35"/>
-<area shape="rect" id="node5" href="$eval__lisp_8h.html#a9207a256904b184254111cc14209aa4d" title="eval_lisp" alt="" coords="364,5,436,35"/>
+<area shape="rect" id="node3" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="224,181,315,211"/>
+<area shape="rect" id="node5" href="$classeuler__sde.html#acf6c98a8011fb0ab5d8d7070c74678b2" title="euler_sde::postprocess" alt="" coords="367,5,524,35"/>
+<area shape="rect" id="node7" href="$classexample__integrator.html#ab3deabcdc0d82da03bbf0cdd85961f7d" title="Processes the input data." alt="" coords="380,58,511,105"/>
+<area shape="rect" id="node9" href="$classrk4.html#affbfb508878fa5fd4f7f85177a1fa14b" title="rk4::postprocess" alt="" coords="387,128,504,157"/>
+<area shape="rect" id="node11" href="$classrk45.html#a7387b11ff00d955aa8188047dbe55ee1" title="rk45::postprocess" alt="" coords="383,181,508,211"/>
+<area shape="rect" id="node13" href="$eval__lisp_8h.html#a9207a256904b184254111cc14209aa4d" title="eval_lisp" alt="" coords="409,235,481,264"/>
+<area shape="rect" id="node15" href="$classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="384,288,507,317"/>
+<area shape="rect" id="node17" href="$classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="364,341,527,371"/>
 </map>

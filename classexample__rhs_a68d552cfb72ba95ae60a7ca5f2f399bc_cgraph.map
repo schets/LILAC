@@ -1,6 +1,4 @@
 <map id="example_rhs::dxdt" name="example_rhs::dxdt">
-<area shape="rect" id="node3" href="$classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="184,5,293,35"/>
-<area shape="rect" id="node7" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="213,59,264,88"/>
-<area shape="rect" id="node9" href="$comp__funcs_8hpp.html#a0190174fd4e334f6127740d25155d675" title="_imag" alt="" coords="211,112,267,141"/>
-<area shape="rect" id="node5" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="343,5,380,35"/>
+<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="188,5,239,35"/>
+<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a0190174fd4e334f6127740d25155d675" title="_imag" alt="" coords="185,59,241,88"/>
 </map>

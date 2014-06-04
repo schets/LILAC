@@ -1,9 +1,3 @@
 <map id="type_constructor::_ttype::create" name="type_constructor::_ttype::create">
-<area shape="rect" id="node3" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="181,155,344,184"/>
-<area shape="rect" id="node5" href="$classeuler__sde.html#acf6c98a8011fb0ab5d8d7070c74678b2" title="euler_sde::postprocess" alt="" coords="396,5,553,35"/>
-<area shape="rect" id="node7" href="$classexample__integrator.html#ab3deabcdc0d82da03bbf0cdd85961f7d" title="Processes the input data." alt="" coords="409,58,540,105"/>
-<area shape="rect" id="node9" href="$classrk4.html#affbfb508878fa5fd4f7f85177a1fa14b" title="rk4::postprocess" alt="" coords="416,128,533,157"/>
-<area shape="rect" id="node11" href="$classrk45.html#a7387b11ff00d955aa8188047dbe55ee1" title="rk45::postprocess" alt="" coords="412,181,537,211"/>
-<area shape="rect" id="node13" href="$classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="413,235,536,264"/>
-<area shape="rect" id="node15" href="$classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="393,288,556,317"/>
+<area shape="rect" id="node3" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="181,13,344,43"/>
 </map>

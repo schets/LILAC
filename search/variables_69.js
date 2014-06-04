@@ -25,7 +25,7 @@ var searchData=
   ['irflag',['irflag',['../lsoda_8cpp.html#adb7766acc9644784b70b72cfc2b5a473',1,'lsoda.cpp']]],
   ['is_5ffp',['is_fp',['../structfloat__traits.html#ada5a0366bf466f285c6fedc444d27d86',1,'float_traits']]],
   ['iterations',['iterations',['../classtoroidal.html#a39daf5316dd132433ea19865cf9a5885',1,'toroidal']]],
-  ['ival',['ival',['../structfast__comp.html#ae881bcd78dbe38dad66f6f7bb355b439',1,'fast_comp']]],
+  ['ival',['ival',['../structfinal.html#a36eea21af1dd4df6d47f7197310f03ac',1,'final']]],
   ['ixpr',['ixpr',['../lsoda_8cpp.html#a15d19de0c66a0d1ca65c76ba1cf9de4c',1,'lsoda.cpp']]],
   ['izard',['izard',['../classmempool.html#a29c733caa49e94e36797cdd26a8a88af',1,'mempool']]]
 ];

@@ -1,35 +1,26 @@
 <map id="jones_optical::postprocess" name="jones_optical::postprocess">
-<area shape="rect" id="node3" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="232,438,387,485"/>
-<area shape="rect" id="node13" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="1391,325,1428,355"/>
-<area shape="rect" id="node28" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="712,557,816,587"/>
-<area shape="rect" id="node40" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="508,505,559,535"/>
-<area shape="rect" id="node44" href="$noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="253,609,365,639"/>
-<area shape="rect" id="node72" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="291,117,328,147"/>
-<area shape="rect" id="node77" href="$defs_8hpp.html#a56d6f1d56099eb797e6d84210504bf04" title="get_unique_name" alt="" coords="248,663,371,692"/>
-<area shape="rect" id="node81" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="248,716,371,745"/>
-<area shape="rect" id="node5" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="436,325,631,355"/>
-<area shape="rect" id="node16" href="$item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="732,195,796,224"/>
-<area shape="rect" id="node7" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="696,352,832,381"/>
-<area shape="rect" id="node24" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="680,248,848,277"/>
-<area shape="rect" id="node9" href="$classsimulation.html#a35314f30ad8650dcd7f46aa271f53a11" title="simulation::postprocess" alt="" coords="896,403,1056,432"/>
-<area shape="rect" id="node11" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="1119,403,1273,432"/>
-<area shape="rect" id="node18" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="924,93,1028,123"/>
-<area shape="rect" id="node21" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="933,197,1019,227"/>
-<area shape="rect" id="node30" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="1165,507,1227,536"/>
-<area shape="rect" id="node33" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="1157,584,1235,613"/>
-<area shape="rect" id="node36" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="913,557,1039,587"/>
-<area shape="rect" id="node46" href="$structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="476,609,591,639"/>
-<area shape="rect" id="node48" href="$noise_8cpp.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="480,663,587,692"/>
-<area shape="rect" id="node50" href="$noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="723,689,805,719"/>
-<area shape="rect" id="node52" href="$jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="953,768,999,797"/>
-<area shape="rect" id="node54" href="$classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="909,661,1043,691"/>
-<area shape="rect" id="node62" href="$classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="909,715,1043,744"/>
-<area shape="rect" id="node56" href="$_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="1137,661,1255,691"/>
-<area shape="rect" id="node58" href="$_s_f_m_t_8c.html#a6bc561a0aa50307534d7e6dd93311d4f" title="gen_rand_array" alt="" coords="1355,661,1464,691"/>
-<area shape="rect" id="node60" href="$d_s_f_m_t-common_8h.html#a7608e546e97c84f277f505fa5723e5bb" title="do_recursion" alt="" coords="1533,661,1629,691"/>
-<area shape="rect" id="node64" href="$d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="1104,715,1288,744"/>
-<area shape="rect" id="node66" href="$d_s_f_m_t_8c.html#adb7241ebd46f1b54cc8d0543bc66cf54" title="gen_rand_array_c0o1" alt="" coords="1336,715,1483,744"/>
-<area shape="rect" id="node69" href="$d_s_f_m_t_8c.html#a07ac3fa725952f7118b6ef2ea1f50df2" title="convert_c0o1" alt="" coords="1532,715,1631,744"/>
-<area shape="rect" id="node74" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="512,117,555,147"/>
-<area shape="rect" id="node79" href="$class_____h_i_d_e_r_____1_1__unique__name.html#a2bea81562ca7b8e3d3510c0253956603" title="__HIDER__::_unique\l_name::get_unique_name" alt="" coords="448,715,619,762"/>
+<area shape="rect" id="node3" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="647,107,684,136"/>
+<area shape="rect" id="node5" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="243,185,347,215"/>
+<area shape="rect" id="node15" href="$noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="239,292,351,321"/>
+<area shape="rect" id="node42" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="269,239,320,268"/>
+<area shape="rect" id="node44" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="276,79,313,108"/>
+<area shape="rect" id="node49" href="$defs_8hpp.html#a56d6f1d56099eb797e6d84210504bf04" title="get_unique_name" alt="" coords="233,345,356,375"/>
+<area shape="rect" id="node53" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="233,399,356,428"/>
+<area shape="rect" id="node7" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="428,132,553,161"/>
+<area shape="rect" id="node9" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="460,185,521,215"/>
+<area shape="rect" id="node12" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="452,239,529,268"/>
+<area shape="rect" id="node17" href="$structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="433,292,548,321"/>
+<area shape="rect" id="node19" href="$noise_8cpp.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="437,345,544,375"/>
+<area shape="rect" id="node21" href="$noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="624,345,707,375"/>
+<area shape="rect" id="node23" href="$jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="799,292,844,321"/>
+<area shape="rect" id="node25" href="$classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="755,345,888,375"/>
+<area shape="rect" id="node33" href="$classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="755,399,888,428"/>
+<area shape="rect" id="node27" href="$_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="969,345,1087,375"/>
+<area shape="rect" id="node29" href="$_s_f_m_t_8c.html#a6bc561a0aa50307534d7e6dd93311d4f" title="gen_rand_array" alt="" coords="1187,345,1296,375"/>
+<area shape="rect" id="node31" href="$d_s_f_m_t-common_8h.html#a7608e546e97c84f277f505fa5723e5bb" title="do_recursion" alt="" coords="1365,345,1461,375"/>
+<area shape="rect" id="node35" href="$d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="936,399,1120,428"/>
+<area shape="rect" id="node37" href="$d_s_f_m_t_8c.html#adb7241ebd46f1b54cc8d0543bc66cf54" title="gen_rand_array_c0o1" alt="" coords="1168,399,1315,428"/>
+<area shape="rect" id="node40" href="$d_s_f_m_t_8c.html#a07ac3fa725952f7118b6ef2ea1f50df2" title="convert_c0o1" alt="" coords="1364,399,1463,428"/>
+<area shape="rect" id="node46" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="469,79,512,108"/>
+<area shape="rect" id="node51" href="$class_____h_i_d_e_r_____1_1__unique__name.html#a2bea81562ca7b8e3d3510c0253956603" title="__HIDER__::_unique\l_name::get_unique_name" alt="" coords="405,398,576,445"/>
 </map>

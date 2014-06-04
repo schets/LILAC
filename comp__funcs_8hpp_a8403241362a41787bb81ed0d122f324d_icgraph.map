@@ -1,8 +1,8 @@
 <map id="_real" name="_real">
-<area shape="rect" id="node3" href="$classexample__rhs.html#a68d552cfb72ba95ae60a7ca5f2f399bc" title="This is the rhs function that calculates the derivative." alt="" coords="117,5,245,35"/>
-<area shape="rect" id="node5" href="$rhs___s_q_g_l_e_8cpp.html#a10385d956bb6dc6b90b9c40a4ce9b09c" title="_clog" alt="" coords="155,59,208,88"/>
-<area shape="rect" id="node7" href="$classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="119,112,244,141"/>
-<area shape="rect" id="node9" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="308,229,484,259"/>
-<area shape="rect" id="node11" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre\l_fft_operations" alt="" coords="120,215,243,262"/>
-<area shape="rect" id="node13" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="104,285,259,331"/>
+<area shape="rect" id="node3" href="$classexample__rhs.html#a68d552cfb72ba95ae60a7ca5f2f399bc" title="This is the rhs function that calculates the derivative." alt="" coords="129,5,257,35"/>
+<area shape="rect" id="node5" href="$rhs___s_q_g_l_e_8cpp.html#a10385d956bb6dc6b90b9c40a4ce9b09c" title="_clog" alt="" coords="167,59,220,88"/>
+<area shape="rect" id="node7" href="$classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="131,112,256,141"/>
+<area shape="rect" id="node9" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="105,165,281,195"/>
+<area shape="rect" id="node11" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre\l_fft_operations" alt="" coords="132,218,255,265"/>
+<area shape="rect" id="node13" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="116,287,271,334"/>
 </map>

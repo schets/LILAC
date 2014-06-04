@@ -7,7 +7,7 @@ var searchData=
   ['abl_5fneur',['abl_neur',['../classc__elegans.html#adad1ebba62600e9ed763db4bb3cbd450',1,'c_elegans']]],
   ['abl_5fval',['abl_val',['../namespaceprocess__data.html#a89ea6373b20d1abc7303e9dc9602cbaf',1,'process_data']]],
   ['abs',['abs',['../classexample__type.html#a75b5a4d6d6fbee658658f4bacd788e3c',1,'example_type::abs()'],['../example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c',1,'abs():&#160;example_type.hpp']]],
-  ['abserr',['abserr',['../exceptionrk45__tmpl.html#a7ea5c45936b19a220833e3f09c223690',1,'rk45_tmpl']]],
+  ['abserr',['abserr',['../classfinal__def.html#ab50afdb1f1d7ef11716ad92fbdcf7ad8',1,'final_def']]],
   ['acor',['acor',['../lsoda_8cpp.html#a9507e380e85c26ad254de5893b9cfc09',1,'lsoda.cpp']]],
   ['act_5fdsm',['act_dsm',['../classvector__rng.html#aa393b2758c83e6405f193f2d10d96521',1,'vector_rng']]],
   ['act_5fsm',['act_sm',['../classvector__rng.html#a23a1b52295fa0cc7bd7b7943f877e8de',1,'vector_rng']]],

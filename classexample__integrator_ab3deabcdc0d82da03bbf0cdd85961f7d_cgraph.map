@@ -1,7 +1,5 @@
 <map id="example_integrator::postprocess" name="example_integrator::postprocess">
-<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="191,8,345,37"/>
-<area shape="rect" id="node9" href="$classtype__constructor.html#a91a959d4f357afafeca04e6305afed10" title="Creates a Tout* pointing to a Tin&lt;type&gt;*, where type is the type of the vartype tval." alt="" coords="187,63,349,92"/>
-<area shape="rect" id="node5" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="397,5,552,35"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="601,5,639,35"/>
-<area shape="rect" id="node11" href="$classtype__constructor_1_1__ttype.html#a12c0e9b32c76bb51ede4d1ff4ab3330b" title="type_constructor::\l_ttype::create" alt="" coords="412,58,537,105"/>
+<area shape="rect" id="node3" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="187,13,277,43"/>
+<area shape="rect" id="node5" href="$classitem__factory.html#ab5772699b275261911c5a261bd8948ba" title="item_factory::create_item" alt="" coords="325,13,496,43"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="545,13,583,43"/>
 </map>

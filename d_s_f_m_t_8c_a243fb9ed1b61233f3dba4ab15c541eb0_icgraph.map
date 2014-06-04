@@ -12,6 +12,5 @@
 <area shape="rect" id="node26" href="$noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="665,271,796,300"/>
 <area shape="rect" id="node28" href="$noise_8h.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="677,324,784,353"/>
 <area shape="rect" id="node30" href="$noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="845,324,957,353"/>
-<area shape="rect" id="node32" href="$exceptioneuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="1011,297,1179,327"/>
-<area shape="rect" id="node34" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="1007,351,1183,380"/>
+<area shape="rect" id="node32" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="1007,324,1183,353"/>
 </map>

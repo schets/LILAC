@@ -7,14 +7,14 @@ var searchData=
   ['rc',['rc',['../lsoda_8cpp.html#af77cf650495294f69237f94cc237cba3',1,'lsoda.cpp']]],
   ['re_5fdirections',['re_directions',['../classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654',1,'input']]],
   ['re_5fmappings',['re_mappings',['../classinput.html#ae26087127cfc378e0418f8609ea4fa97',1,'input']]],
-  ['regis',['regis',['../classtype__register.html#adc4053bdc7d0a8095127475b84fb5fae',1,'type_register']]],
-  ['relerr',['relerr',['../exceptionrk45__tmpl.html#a632438616091fb3482f883014b37afd2',1,'rk45_tmpl']]],
+  ['regis',['regis',['../classfinal__def.html#a0d60ef31a2b03c69ee2c39e85517f548',1,'final_def']]],
+  ['relerr',['relerr',['../classfinal__def.html#a6f0eac22fb876f12ce20f7c02fc197dc',1,'final_def']]],
   ['rh_5fval',['rh_val',['../classintegrator.html#a63ecdf7336bd3ce2f2733e4a4c1b1c9a',1,'integrator']]],
   ['right_5fstep',['right_step',['../noise_8cpp.html#a771a7a3f01fd06692d37817e9dc6799c',1,'noise.cpp']]],
   ['rmax',['rmax',['../lsoda_8cpp.html#a99380f4387c67cd1abe105877d439104',1,'lsoda.cpp']]],
   ['round',['round',['../classstable.html#ae7f4670edfb2de6450f64f8757565a61',1,'stable']]],
   ['rtlength',['RTlength',['../defs_8hpp.html#a52844c1af4d9e0f0fd14b2f6d4bf0083',1,'defs.hpp']]],
-  ['rval',['rval',['../structfast__comp.html#ae8b7dad49b6cf4c963f806c7b49368f7',1,'fast_comp']]],
-  ['rval1',['rval1',['../classexample__integrator__tmpl.html#ab33b2c2e07cab650b4ce8d627a573e29',1,'example_integrator_tmpl']]],
-  ['rval2',['rval2',['../classexample__integrator__tmpl.html#a7a27b2544e047e45eb0a438472167bf1',1,'example_integrator_tmpl']]]
+  ['rval',['rval',['../structfinal.html#a75dc8572c1bd7fc3c570eb85d82d9fbb',1,'final']]],
+  ['rval1',['rval1',['../classfinal__def.html#a84e935b01108a8799fc6e0a07cd00c2f',1,'final_def']]],
+  ['rval2',['rval2',['../classfinal__def.html#ad07bea99e1fdf73572b4f114ab13ef08',1,'final_def']]]
 ];

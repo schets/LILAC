@@ -10,7 +10,5 @@ var searchData=
   ['rhs_5ftype_3c_20comp_20_3e',['rhs_type&lt; comp &gt;',['../classrhs__type.html',1,'']]],
   ['rhs_5ftype_3c_20double_20_3e',['rhs_type&lt; double &gt;',['../classrhs__type.html',1,'']]],
   ['rk4',['rk4',['../classrk4.html',1,'']]],
-  ['rk45',['rk45',['../classrk45.html',1,'']]],
-  ['rk45_5ftmpl',['rk45_tmpl',['../exceptionrk45__tmpl.html',1,'']]],
-  ['rk4_5ftmpl',['rk4_tmpl',['../exceptionrk4__tmpl.html',1,'']]]
+  ['rk45',['rk45',['../classrk45.html',1,'']]]
 ];

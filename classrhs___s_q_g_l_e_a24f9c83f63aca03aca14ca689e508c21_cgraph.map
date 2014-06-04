@@ -1,14 +1,13 @@
 <map id="rhs_SQGLE::dxdt" name="rhs_SQGLE::dxdt">
-<area shape="rect" id="node3" href="$classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="179,5,288,35"/>
-<area shape="rect" id="node7" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="215,59,252,88"/>
-<area shape="rect" id="node12" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="201,165,265,195"/>
-<area shape="rect" id="node14" href="$comp__funcs_8hpp.html#a029d01e533e53a637be034662a9e1e90" title="trap" alt="" coords="212,219,255,248"/>
-<area shape="rect" id="node16" href="$inline__trig_8h.html#a29465b363a810a95789e636e83ad4acf" title="cos_ps" alt="" coords="201,272,265,301"/>
-<area shape="rect" id="node18" href="$inline__trig_8h.html#a0478f51dacc8f4d49f8c258c35c21343" title="sin_ps" alt="" coords="204,325,263,355"/>
-<area shape="rect" id="node20" href="$inline__trig_8h.html#a105f22fc857992c01c2822fea48a9d3b" title="log_ps" alt="" coords="204,379,263,408"/>
-<area shape="rect" id="node22" href="$comp__funcs_8hpp.html#a0190174fd4e334f6127740d25155d675" title="_imag" alt="" coords="205,432,261,461"/>
-<area shape="rect" id="node24" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="208,485,259,515"/>
-<area shape="rect" id="node26" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="215,112,252,141"/>
-<area shape="rect" id="node5" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="339,59,376,88"/>
-<area shape="rect" id="node9" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="336,112,379,141"/>
+<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="192,59,229,88"/>
+<area shape="rect" id="node9" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="179,112,243,141"/>
+<area shape="rect" id="node11" href="$comp__funcs_8hpp.html#a029d01e533e53a637be034662a9e1e90" title="trap" alt="" coords="189,165,232,195"/>
+<area shape="rect" id="node13" href="$inline__trig_8h.html#a29465b363a810a95789e636e83ad4acf" title="cos_ps" alt="" coords="179,219,243,248"/>
+<area shape="rect" id="node15" href="$inline__trig_8h.html#a0478f51dacc8f4d49f8c258c35c21343" title="sin_ps" alt="" coords="181,272,240,301"/>
+<area shape="rect" id="node17" href="$inline__trig_8h.html#a105f22fc857992c01c2822fea48a9d3b" title="log_ps" alt="" coords="181,325,240,355"/>
+<area shape="rect" id="node19" href="$comp__funcs_8hpp.html#a0190174fd4e334f6127740d25155d675" title="_imag" alt="" coords="183,379,239,408"/>
+<area shape="rect" id="node21" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="185,432,236,461"/>
+<area shape="rect" id="node23" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="192,5,229,35"/>
+<area shape="rect" id="node5" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="291,5,333,35"/>
+<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="293,59,331,88"/>
 </map>

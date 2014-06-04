@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['w0',['w0',['../exceptioneuler__sde__tmpl.html#af2dfdc8d01c6a366d4a84a0b1b1788d4',1,'euler_sde_tmpl']]],
+  ['w0',['w0',['../classfinal__def.html#a4a8d4d53c66446b21f54d7c4582e497f',1,'final_def']]],
   ['w128_5ft',['W128_T',['../union_w128___t.html',1,'W128_T'],['../_s_f_m_t_8h.html#ab1ee414cba9ca0f33a3716e7a92c2b79',1,'w128_t():&#160;SFMT.h']]],
   ['w_5fstep',['w_step',['../classode__tmpl.html#a73c73e616cdfda733e8d30d15f6c46af',1,'ode_tmpl']]],
   ['w_5ftype',['w_type',['../classwriter.html#a4841828df6516848fffdae73094493f8',1,'writer']]],
   ['warning',['WARNING',['../defs_8hpp.html#a4709cd67f0f9a81fa03b70eece4e019d',1,'defs.hpp']]],
+  ['weak_5fptr_5fcmp_2ehpp',['weak_ptr_cmp.hpp',['../weak__ptr__cmp_8hpp.html',1,'']]],
+  ['weak_5fptr_5fcompare',['weak_ptr_compare',['../classweak__ptr__compare.html',1,'']]],
   ['wh',['wh',['../classjones__matrix.html#ab656b030d9fdec7d324f1dd4619a374e',1,'jones_matrix']]],
   ['will_5fwrite',['will_write',['../classwriter.html#a23dba9f4dc94e48975dbe34069de2769',1,'writer']]],
   ['wm',['wm',['../lsoda_8cpp.html#ae29c4bb4436ba16f8527c9b92a0939ee',1,'lsoda.cpp']]],

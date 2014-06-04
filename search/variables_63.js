@@ -1,8 +1,8 @@
 var searchData=
 [
   ['cache_5fblock',['CACHE_BLOCK',['../noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17',1,'noise.cpp']]],
-  ['calc_5fdw',['calc_dw',['../exceptioneuler__sde__tmpl.html#a004b437dcdd1b3ada87756ed2b61bf9d',1,'euler_sde_tmpl']]],
-  ['calc_5fval',['calc_val',['../classexample__integrator__tmpl.html#ada858289ab41787549cdd21990a5e94b',1,'example_integrator_tmpl']]],
+  ['calc_5fdw',['calc_dw',['../classfinal__def.html#aa4fe48f13969ee8527ab3ac882d216fc',1,'final_def']]],
+  ['calc_5fval',['calc_val',['../classfinal__def.html#a9ef69860bb80a9b081f7cc10be41895c',1,'final_def']]],
   ['ccmax',['ccmax',['../lsoda_8cpp.html#a6402e739117bf08f148bea189209d4c0',1,'lsoda.cpp']]],
   ['change_5fthreshold',['change_threshold',['../classstable.html#ac769a346e2cc948b18ac3f836b006698',1,'stable']]],
   ['children',['children',['../classitem__dim.html#a81ee26f4d24b71b6e6cce12b3e042035',1,'item_dim']]],

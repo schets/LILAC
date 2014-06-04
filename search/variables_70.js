@@ -11,5 +11,5 @@ var searchData=
   ['pointedat',['pointedat',['../classgraph_1_1graphnode.html#a3bdeaf68251ded09e2c8879a9331c5d2',1,'graph::graphnode']]],
   ['pointsto',['pointsto',['../classgraph_1_1graphnode.html#a4ed77074fdeaae78721c96fee94f46bb',1,'graph::graphnode']]],
   ['processed',['processed',['../classgraph_1_1graphnode.html#ae4148b2a712f9b6d45608951132ffeeb',1,'graph::graphnode']]],
-  ['ptr',['ptr',['../classitem__wrapper.html#ab814c0d4f0f38baee1ca1f19ee757ca6',1,'item_wrapper::ptr()'],['../classptr__passer.html#a23b66ace9b24fc0736def97c25fc68cd',1,'ptr_passer::ptr()']]]
+  ['ptr',['ptr',['../classitem__wrapper.html#ab814c0d4f0f38baee1ca1f19ee757ca6',1,'item_wrapper::ptr()'],['../classweak__ptr__compare.html#a4294a1bd800c2f63b1b99878a97760f4',1,'weak_ptr_compare::ptr()']]]
 ];
