@@ -82,7 +82,8 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     dv[278]+= (1.0/tau)*amp;
     
     for(auto val : abl_neur){
-        dv[val] = ds[val] = 0;
+        dv[val] = 0;
+        ds[val] = 0;
     }
 
     return 0;
@@ -211,6 +212,10 @@ void c_elegans::update(){
 		}
 		return true;
 	};
+        for(auto val : abl_neur){
+            std::cout << val << ", ";
+        }
+        std::cout << std::endl;
 	AEchem_trans.prune(fncval);
 	ag_m.prune(fncval);
 	ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
@@ -282,7 +287,6 @@ void c_elegans::initial_condition(ptr_passer in, size_t len){
 		rhs_type<double>::initial_condition(in, len);
 	}
 	double* vals = in;
-	//create fake initial condition
 	for(size_t i = 0; i < num_neur; i++){
 		//vals[i] = eqV[i];
 		vals[i] = vmean[i];

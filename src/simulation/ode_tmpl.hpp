@@ -79,10 +79,10 @@ void ode_tmpl<T>::postprocess(input& in){
         tw = t0;
     }
     this->memp.create(this->dimension, &sol);
-    inter->initial_condition(sol);
 }
 template<class T>
 double ode_tmpl<T>::simulate(){
+    inter->initial_condition(sol);
     clock_t cval = clock();
     if(w_step < 0 || abs(w_step) <= std::numeric_limits<double>::epsilon()){
         //don't do any intermittent recording
