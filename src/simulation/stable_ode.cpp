@@ -27,9 +27,15 @@ void stable_ode::postprocess(input& invals){
 
 stable_ode::~stable_ode(){
 }
+/*!
+ * Performs operations that occur before the integration
+ */
 void stable_ode::pre_integration_operations(){
     actual->pre_integration_operations();
 }
+/*!
+ * Performs operations after the integration
+ */
 void stable_ode::post_integration_operations(){
 
     actual->post_integration_operations();
@@ -37,6 +43,16 @@ void stable_ode::post_integration_operations(){
 std::string stable_ode::type() const{
     return "stable_ode";
 }
+/*!
+ * Returns the dependencies of the stable_ode class
+ * the stable_ode class depends on:
+ *      - integrator integrator: The integrator that is being used
+ *      - double int_len: The time to integrate between checking for convergence
+ *
+ * And has optional parameters:
+ *      - double t0: The starting time, defaults to 0
+ *
+ */
 std::vector<std::string> stable_ode::dependencies() const{
     std::string deps[] = {"integrator", "t0", "int_len"};
     return make_append(deps, stable::dependencies());

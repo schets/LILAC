@@ -167,6 +167,11 @@ void jones_optical::pre_fft_operations(){
     }
     
 }
+/*!
+ * This function applies the Jones matrices after each integration run.
+ * In addition, exatra integration is performed between each set of matrices to simulate the
+ * waveplates being a physical distance apart
+ */
 void jones_optical::post_ifft_operations(){
     //apply the jones matrices, and integration between them
 
@@ -187,6 +192,11 @@ void jones_optical::post_ifft_operations(){
         }
     }
 }
+//!Finds the difference between each pulse. 
+/*!
+ * This functions finds how much the light pulse has changed on the round trip.
+ * This comparison compares the magnitude of the laser, instead of including phase information as well
+ */
 double jones_optical::get_change(){
     double norm, change_norm;
     norm = change_norm = 0;
@@ -208,36 +218,10 @@ double jones_optical::get_change(){
     }
     return sqrt(change_norm/norm);
 }
+
+//!Returns score that favors tight and high-energy single pulses \sa n_pulse_score
 double jones_optical::score(){
-    double score = obj->score(ucur);
-    data_store dat;
-    dat.avals.resize(4*jones_matrices.size());
-    for(size_t i = 0; i < jones_matrices.size(); i++){
-        dat.avals[i*4]=jones_matrices[i]->a1;
-        dat.avals[i*4+1]=jones_matrices[i]->a2;
-        dat.avals[i*4+2]=jones_matrices[i]->a3;
-        dat.avals[i*4+3]=jones_matrices[i]->ap;
-    }
-    dat.score = score;
-    out_dat.push_back(dat);
-    if(score > best_score){
-        best_score = score;
-
-        ba1=jones_matrices[0]->a1;
-        ba2=jones_matrices[0]->a2;
-        ba3=jones_matrices[0]->a3;
-        bap=jones_matrices[0]->ap;
-        for(size_t i = 0; i < nts; i++){
-            phold[i] = _sqabs(ucur[i]);
-            for(size_t j = 1; j < num_pulses; j++){
-                phold[i] += _sqabs(ucur[i+j*nts]);
-            }
-            phold[i] = sqrt(phold[i]);
-        }       
-    }
-
-    
-    return score;
+    return obj->score(ucur);
 }
 jones_optical::~jones_optical(){
 }
