@@ -3,6 +3,10 @@
 #define ODE_H
 #include "simulation.h"
 #include "integrator/integrator.h"
+//!Integrates an ODE forwards in time
+/*
+ * This simulation class integrates and ODE forwards in time, and writes data at specified intervals
+ */
 class ode: public simulation, public vartype{
     std::shared_ptr<ode> actual;
     protected:
