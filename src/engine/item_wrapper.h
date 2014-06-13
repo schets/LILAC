@@ -3,6 +3,13 @@
 #include "item.h"
 #include <type_traits>
 class item;
+//!This class wraps the actual item that has been input
+/*
+ * This class wraps the items that have been created by the system.
+ * Items need wrapping to have proper dependency resolution. Internally,
+ * all objects are stored in the same map. This means that local objects must have
+ * names that differ from global objects. However, they still must be callable from
+ */
 class item_wrapper{
     std::shared_ptr<item> ptr;
     std::set<std::string> deps;

@@ -26,9 +26,11 @@ class euler_sde_tmpl final_def : public euler_sde{
 template<class T>
 int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
     T* restr vals = u0;
-    size_t steps =  ceil((tf-ts)/stepsize);
-    real_type dt = (tf-ts)/steps;
-    real_type tc = ts;
+    size_t steps =  std::ceil((tf-ts)/stepsize);
+    double dt = (tf-ts)/steps;
+    double tc = ts;
+    //separate real_type for use as a multiplying noise factor
+    real_type dt_mul = dt;
     ALIGNED(vals);
     ALIGNED(f0);
     ALIGNED(w0);
@@ -37,25 +39,28 @@ int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
         if(std::abs(dw_weight) > std::numeric_limits<real_type>::epsilon())
         {
             gaussian_noise(w0, dimension, dt*dw_weight);
+            if(func){
+                func->mod_w(w0, tc);
+            }
             //only calculate coefficients for dw if needed
             if(calc_dw){
                 func->dxdt(vals, f0, tc);
                 func->dwdt(vals, bfnc, tc);
                 for(size_t j = 0; j < dimension; j++){
-                    vals[j] = vals[j] + dt*f0[j] + bfnc[j]*w0[j];
+                    vals[j] = vals[j] + dt_mul*f0[j] + bfnc[j]*w0[j];
                 }
             }
             else{
                 rh_val->dxdt(vals, f0, tc);
                 for(size_t j = 0; j < dimension; j++){
-                    vals[j] = vals[j] + dt*f0[j] + w0[j];
+                    vals[j] = vals[j] + dt_mul*f0[j] + w0[j];
                 }
             }
         }
         else{
             rh_val->dxdt(vals, f0, tc);
             for(size_t j = 0; j < dimension; j++){
-                vals[j] = vals[j] + dt*f0[j];
+                vals[j] = vals[j] + dt_mul*f0[j];
             }
         }
 
@@ -77,14 +82,15 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
     //since the rh_val is already obtained by the map,
     //may as well just check instead of going through retrieve
     retrieve(calc_dw, dat["calc_dw"], this);
+    func = dynamic_cast<rhs_sde*>(rh_val);
     if(calc_dw){
-        func = dynamic_cast<rhs_sde*>(rh_val);
         if(func == 0){
             err(std::string("The rhs, ") + rh_val->name() + ", is not part of the rhs_sde inheritance heirarchy." +
                     " Consider setting calc_dw to 0 to allow for a constant multiple of the noise factor",
                     this->type() + "::postprocess", "integrator/euler_sde_tmpl.hpp", FATAL_ERROR);
         }
     }
+    std::cout << rh_val->type() << std::endl;
     if(!rh_val->compare<T>()){
         err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.h", FATAL_ERROR);

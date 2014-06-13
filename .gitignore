@@ -29,4 +29,6 @@ rundir/lilac
 *.ignore
 *.out
 *.3D
+#.pyc
+lilac
 tags

@@ -1,10 +1,11 @@
 #ifndef C_ELEGANS_H
 #define C_ELEGANS_H
 #include "rhs_type.hpp"
+#include "rhs_sde.h"
 #include "eigen3/Eigen/Eigen"
 #include "eigen3/Eigen/Sparse"
 using namespace Eigen;
-class c_elegans:public rhs_type<double>{
+class c_elegans:public rhs_type<double, rhs_sde>{
     int cur_ind;
     double dummy;
     constexpr static size_t num_neur = 279;
@@ -25,6 +26,7 @@ class c_elegans:public rhs_type<double>{
     std::vector<std::string> dependencies() const;
     int dxdt(ptr_passer x, ptr_passer dx, double dt);
     int dwdt(ptr_passer x, ptr_passer dx, double dt);
+    void mod_w(ptr_passer w, double t);
     void initial_condition(ptr_passer in, size_t len);
 };
 #endif

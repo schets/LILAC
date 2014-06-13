@@ -9,7 +9,7 @@ item_wrapper& input::operator [](const std::string& value){
     }
     auto&& m_it = re_mappings.find(value);
     if(m_it != re_mappings.end()){
-        return (*invals)[m_it->second];
+        return (*this)[m_it->second];
     }
     return (*invals)[value];
 }

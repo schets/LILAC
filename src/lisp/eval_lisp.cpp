@@ -90,6 +90,7 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
         for(auto& str : split_into_sepxr(invals.params)){
             //this will check if special commands are being done
             auto exp_tok=split_into_toks(str);
+            //should replace this with callbacks in the map
             if(keywords.count(exp_tok.type)){
                 //remap the passed variable names to single name
                 if(exp_tok.type == "@map"){
@@ -108,7 +109,7 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
                     //replace named dependencies with new fake names
                     param_val pp = split_into_toks(str);
                     c_wrap.replace_dep(child_item->name(), pp.name);
-                    inval.add_redir(pp.name, child_item);
+                    inval.add_remap(pp.name, child_item->name());
                     en->values[child_item->name()] = child_item;
                 }
             }

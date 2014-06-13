@@ -264,24 +264,6 @@ static inline double ran_gauss (vector_rng& vrng, double sigma){
     }
     return sign * sigma*x;
 }
-inline static void ran_gauss (vector_rng& vrng, double sigma, double* restr invals, size_t len){
-    ALIGNED(invals);
-    for(size_t qq = 0; qq < len; qq++){
-        invals[qq] = ran_gauss(vrng, sigma);
-    }
-}
-void fill_gaussian_noise(double* restr inv, size_t len, double sdev){
-    ALIGNED(inv);
-    static vector_rng vrng;
-    ran_gauss(vrng, sdev, inv, len);
-}
-void fill_gaussian_noise(float* restr inv, size_t len, double sdev){
-    ALIGNED(inv);
-    static vector_rng vrng;
-    for(size_t i = 0; i < len; i++){
-        inv[i] = (float)ran_gauss(vrng, sdev);
-    }
-}
 double get_norm_rand(double sigma){
 	static vector_rng vrng;
 	return ran_gauss(vrng, sigma);

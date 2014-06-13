@@ -28,3 +28,4 @@ void euler_sde::postprocess(input& dat){
 const std::type_info& euler_sde::vtype() const{
     return actual->vtype();
 }
+
