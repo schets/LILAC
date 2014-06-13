@@ -19,7 +19,8 @@
  * @ref _unsigned "unsigned", and @ref  variable "var" types have slightly different names
  *
  * \subsection obj Objects
- * In addition to native types, one can create objects that are interior to the system. The possible objects are those registered with the
+ * In addition to native types, one can create objects that are interior to the system.
+ * The possible objects are those registered with the
  * @ref type_register class.
  * The syntax is very similar to the native types, with the object being declared as (type name arguments).
  * 
