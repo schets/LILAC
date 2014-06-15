@@ -107,7 +107,6 @@ void c_elegans::mod_w(ptr_passer _w, double t){
     }
 }
 std::string c_elegans::type() const{
-    std::cout << "calling type\n";
     return "c_elegans";
 }
 template<class sp_t>

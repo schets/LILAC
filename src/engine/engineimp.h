@@ -29,6 +29,7 @@ class engineimp{
     void execute_command(std::string inval);
     void update();
     std::string curdir;
+    std::ofstream ofile;
     std::map<size_t, std::list<std::shared_ptr<writer>>> writers;
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;

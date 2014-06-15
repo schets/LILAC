@@ -9,8 +9,7 @@ engineimp::engineimp(const std::string& fname, const std::string& outname, const
     values["!out_file"] =  std::make_shared<string>();
     ((native_item*)(values["!out_file"].get()))->parse(outname);
     values["!out_file"]->setname("!out_file");
-    std::ofstream f_clear(outname.c_str(), std::ofstream::trunc);
-    f_clear.close();
+    ofile.open(outname.c_str(), std::ofstream::trunc);
     auto p = std::make_shared<integer>();
     p->parse(index);
     p->setname("!start_ind");

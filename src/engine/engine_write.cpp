@@ -6,9 +6,6 @@ void engineimp::add_writer(const std::shared_ptr<writer>& wval){
 }
 //write data to disk and clear from ram
 void engineimp::write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind){
-    std::string oname="data_out.out";
-    //retrieve(oname, values["!out_file"], 0);
-    std::ofstream ofile(oname.c_str(), std::ofstream::app);
     ofile << "index: " << ind << std::endl;
     for(auto& dat : dats){
         write_data(dat, ofile);

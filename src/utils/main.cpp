@@ -8,7 +8,6 @@ int main(int argc, char** argv){
     std::string index;
     if(argc == 2){
         outfile = argv[1];
-        std::cout << outfile << ", " << argv[1] << std::endl;
     }
     else if(argc == 3){
         outfile = argv[1];
