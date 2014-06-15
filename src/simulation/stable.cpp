@@ -50,12 +50,12 @@ std::vector<std::string> stable::dependencies() const{
 void stable::postprocess(input& invals){
     num_gone=0;
     simulation::postprocess(invals);
-    retrieve(change_threshold, invals["change_threshold"], this);
+    invals.retrieve(change_threshold, "change_threshold", this);
     if(change_threshold < 0){
         err("Input parameter change_threshold must be greater than or equal to zero",
                 "stable::postprocess", "system/stable.cpp", FATAL_ERROR);
     }
-    retrieve(max_iterations, invals["max_iterations"], this);
+    invals.retrieve(max_iterations, "max_iterations", this);
     if(max_iterations <= 0){
         err("Input parameter max_iterations must be greater than or equal to zero",
                 "stable::postprocess", "system/stable.cpp", FATAL_ERROR);

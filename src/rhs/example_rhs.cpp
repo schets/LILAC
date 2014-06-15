@@ -103,9 +103,9 @@ void example_rhs::postprocess(input& dat){
     //an item*. Then this pointer is called to retrieve the value, and is passed the address
     //of val1
 
-    retrieve(val1, dat["val1"], this);
-    retrieve(val2, dat["val2"], this);
-    retrieve(random_info, dat["random_info"], this);
+    dat.retrieve(val1, "val1", this);
+    dat.retrieve(val2, "val2", this);
+    dat.retrieve(random_info, "random_info", this);
 
     //now, we are going to allocate some memory to something
     //This may be useful for storing temporary calculations during the RHS.

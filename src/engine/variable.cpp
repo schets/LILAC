@@ -11,26 +11,58 @@ void variable::print() const{
 /*!
  * This function assigns the real value stored to the value pointed
  * at by inval. It also keeps track of the pointer and updates it whenever
- * the variable has changed
+ * the variable has changed. Passing a null pointer will result in the variable
+ * not receiving updates
  */
 void variable::_retrieve(retrieve_wrapper&& inval, item* caller){
     inval.check_and_get_type(typeid(double), &value);
-    double* d = (double*)inval.get_ptr();
-    //add pointer to the list of pointer for the given class
-    if(caller && holder->item_exists(caller->name())){
-        safe_mods[std::weak_ptr<item>(holder->values[caller->name()].get_shared())].insert(d);
+    if(caller){
+        double* d = (double*)inval.get_ptr();
+        add_ref(*d, caller);
+    }
+}
+
+void variable::add_ref(double& in, std::shared_ptr<item> inval){
+    in=value;
+    if(inval.use_count()){
+        safe_mods[inval].insert(&in);
     }
     else{
-        modifiers[caller].insert(d);
-        if(caller){
+#ifdef DEBUG
+        err("Null pointer passed to variable add_ref", "variable::add_ref",
+                "engine/variable.cpp", FATAL_ERROR);
+#else
+        err("Null pointer passed to variable add_ref", "variable::add_ref",
+                "engine/variable.cpp", WARNING);
+#endif
+    }
+}
+void variable::add_ref(double& in, item* caller){
+    if(caller){
+        in = value;
+        double* d = &in;
+        //add pointer to the list of pointer for the given class
+        if(holder->item_exists(caller->name())){
+            safe_mods[std::weak_ptr<item>(holder->values[caller->name()].get_shared())].insert(d);
+        }
+        else{
+            modifiers[caller].insert(d);
             err(std::string("Unsafe item ") + caller->name() + 
                     std::string(" being added to a variable modifier list"), 
                     "variable::retrieve", "engine/variable.cpp",
                     WARNING);
         }
     }
+    else{
+#ifdef DEBUG
+        err("Null pointer passed to variable add_ref", "variable::add_ref",
+                "engine/variable.cpp", FATAL_ERROR);
+#else
+        err("Null pointer passed to variable add_ref", "variable::add_ref",
+                "engine/variable.cpp", WARNING);
+#endif
+    }
 }
-
 /*!
  * This function increments the variable, and updates the relevant classes
  */
@@ -92,7 +124,7 @@ void variable::inc(){
 
 /*!
  * This function copies the value without linking it to the actual variable
- * @param inval The pointer ot the double that is updated
+ * @param inval The pointer to the double that is updated
  */
 void variable::copy(double* inval){
     *inval = value;

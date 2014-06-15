@@ -1,9 +1,9 @@
 #include "item_wrapper.h"
 item* item_wrapper::operator->(){
-    return ptr.get();
+    return get();
 }
 const item* item_wrapper::operator->()const{
-    return ptr.get();
+    return get();
 }
 std::vector<std::string> item_wrapper::dependencies()const{
     return std::vector<std::string>(deps.begin(), deps.end());
@@ -17,10 +17,16 @@ void item_wrapper::replace_dep(const std::string& newdep, const std::string& old
     }
 }
 item* item_wrapper::get(){
-    return ptr.get();
+    if(ptr.use_count()){
+        return ptr.get();
+    }
+    return 0;
 }
 const item* item_wrapper::get()const{
-    return ptr.get();
+    if(ptr.use_count()){
+        return ptr.get();
+    }
+    return 0;
 }
 item_wrapper::operator std::shared_ptr<item>(){
     return ptr;

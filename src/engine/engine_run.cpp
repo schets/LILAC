@@ -3,10 +3,12 @@
 #include "simulation/simulation.h"
 #include "item_heads.hpp"
 void engineimp::run(){
-    simulation* sys=0;
-    retrieve(sys, values["simulation"], 0);
-    controller* cont=0;
-    retrieve(cont, values["controller"], 0);
+    auto sys = std::dynamic_pointer_cast<simulation>(values["simulation"].get_shared());
+    auto cont = std::dynamic_pointer_cast<controller>(values["controller"].get_shared());
+    if(!((bool)sys && (bool)cont)){
+        err("The engine requires a simulation class called sys and a controller class called cont",
+                "engineimp::engine_run", "engine/engine_run.cpp", FATAL_ERROR);
+    }
     cont->pre_set();
     update();
     index=0;

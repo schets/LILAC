@@ -1,4 +1,5 @@
 #include "rhs_SQGLE.h"
+#include "engine/input.h"
 #include "utils/inline_trig.h"
 #include "utils/comp_funcs.hpp"
 #include "controller/controller.h"
@@ -124,15 +125,15 @@ std::string rhs_SQGLE::type() const {
 void rhs_SQGLE::postprocess(input& dat){
     rhs::postprocess(dat);
     NUM_TIME_STEPS = dimension;
-    retrieve(LENGTH_T, dat["t_int"], this);
+    dat.retrieve(LENGTH_T, "t_int", this);
     if(LENGTH_T <= 0){
         std::string errmess = "t_int is invalid, must be >= 0";
         err(errmess, "rhs_SQGLE::postprocess", "rhs/rhs_SQGLE.cpp",
                 dat["t_int"], FATAL_ERROR);
     }
     dt = LENGTH_T/NUM_TIME_STEPS;
-    retrieve(g0, dat["g0"], this);
-    retrieve(e0, dat["e0"], this);
+    dat.retrieve(g0, "g0", this);
+    dat.retrieve(e0, "e0", this);
     memp.create(dimension, &u1, &u2, &comp_in, &comp_out, &sq1, &ksq, &k);
     //create k values
 
@@ -146,16 +147,16 @@ void rhs_SQGLE::postprocess(input& dat){
         ksq[i] = k[i]*k[i];
     }
     controller* cont;
-    retrieve(cont, dat["controller"], this);
+    dat.retrieve(cont, "controller", this);
     a1=a2=a3=ap=0;
     std::shared_ptr<variable> vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a1");
     vv->set(a1);
     vv->parse("0.1");
-    dat[vv->name()]=vv;
-    retrieve(a1, vv, this);
+    dat.insert_item(vv);
     cont->addvar(vv);
+    dat.retrieve(a1, vv->name(), this);
 
     //a2
     vv = std::make_shared<variable>();
@@ -163,27 +164,27 @@ void rhs_SQGLE::postprocess(input& dat){
     vv->setname("a2");
     vv->set(a2);
     vv->parse("0.1");
-    dat[vv->name()]=vv;
+    dat.insert_item(vv);
     cont->addvar(vv);
-    retrieve(a2, vv, this);
+    dat.retrieve(a2, vv->name(), this);
     //a3
     vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("a3");
     vv->set(a3);
     vv->parse("0.1");
-    dat[vv->name()]=vv;
+    dat.insert_item(vv);
     cont->addvar(vv);
-    retrieve(a3, vv, this);
+    dat.retrieve(a3, vv->name(), this);
     //ap
     vv = std::make_shared<variable>();
     vv->holder=holder;
     vv->setname("ap");
     vv->set(ap);
     vv->parse("0.1");
-    dat[vv->name()]=vv;
+    dat.insert_item(vv);
     cont->addvar(vv);
-    retrieve(ap, vv, this); 
+    dat.retrieve(ap, vv->name(), this); 
     //temporary solution, add variables directly to controller
 }
 void rhs_SQGLE::update(){}

@@ -66,8 +66,8 @@ const static _fatal FATAL_ERROR;
 const static _warning WARNING;
 void err(std::string message, std::string function, std::string file, _fatal f);
 void err(std::string message, std::string function, std::string file, _warning w);
-void err(std::string message, std::string function, std::string file, item* p, _fatal f);
-void err(std::string message, std::string function, std::string file, item* p, _warning f);
+void err(std::string message, std::string function, std::string file, const item* p, _fatal f);
+void err(std::string message, std::string function, std::string file, const item* p, _warning f);
 void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _fatal f);
 void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f);
 

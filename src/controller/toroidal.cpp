@@ -2,6 +2,7 @@
 #include "toroidal.h"
 #include "comp_funcs.hpp"
 #include "types/type_register.hpp"
+#include <algorithm>
 template class type_register<toroidal>;
 /*
  * This function returns the dependencies of the toroidal class
@@ -29,9 +30,9 @@ void toroidal::postprocess(input& dat){
     controller::postprocess(dat);
     num_int=0;
     int _iterations;
-    retrieve(_iterations, dat["iterations"], this);
-    retrieve(initial_inc, dat["initial_inc"], this);
-    retrieve(mul_fac, dat["mul_fac"], this);
+    dat.retrieve(_iterations, "iterations", this);
+    dat.retrieve(initial_inc, "initial_inc", this);
+    dat.retrieve(mul_fac, "mul_fac", this);
     iterations = _iterations;
     if(mul_fac==0){
         err("Multiply factor, mul_fac, must not be equal to zero", 
@@ -66,9 +67,14 @@ void toroidal::control(comp* u, objective* obj){
         vars[3].lock()->inc(sqrt(0.19)*100.0*PI/1000.0);
         return;
     }
+    vars.erase(std::remove_if(vars.begin(), vars.end(), [](std::weak_ptr<variable>& inval){
+            return inval.expired();
+            }), vars.end());
+
+    //still resume loack here in case a multithreaded engine appears in the future
     for(auto _cvar : vars){
         std::shared_ptr<variable> cvar = _cvar.lock();
-        if(cvar.use_count()){
+        if(cvar){
             cvar->inc(curinc);
             curinc *= mul_fac;
         }

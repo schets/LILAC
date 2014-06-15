@@ -52,7 +52,7 @@ std::vector<std::string> n_pulse_score::dependencies() const {
 void n_pulse_score::postprocess(input& invals){
     objective::postprocess(invals);
     int _n_pulse = 0;
-    retrieve(_n_pulse, invals["num_pulses"], this);
+    invals.retrieve(_n_pulse, "num_pulses", this);
     n_pulse = _n_pulse;
     if(dimension%n_pulse){
         err("n_pulse_score requires a dimension divisible by the number of pulses", 

@@ -70,14 +70,14 @@ void err(std::string message, std::string function, std::string file, _warning w
     std::cerr<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         std::endl<<"Error message is:"<<std::endl<<message<<std::endl;
 }
-void err(std::string message, std::string function, std::string file, item* p, _fatal f){
+void err(std::string message, std::string function, std::string file, const item* p, _fatal f){
     std::cerr<<"A fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();
     std::cerr << "\nExiting program\n";
     exit(1);
 }
-void err(std::string message, std::string function, std::string file, item* p, _warning f){
+void err(std::string message, std::string function, std::string file, const item* p, _warning f){
     std::cerr<<"A non-fatal error has occurred in function "<<function<<" in file "<<file<<
         "\nError message is:\n"<<message<<"\n";
     p->print();

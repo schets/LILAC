@@ -53,6 +53,11 @@ const std::string& item::write_name() const{
 std::vector<std::string> native_item::dependencies() const{
     return std::vector<std::string>();
 }
+void native_item::_retrieve(retrieve_wrapper&& inval, item* caller){
+    err("Retrieve called on native item not overloading class",
+            "native_item::_retrieve", "engine/item.cpp",
+            FATAL_ERROR);
+}
 void native_item::postprocess(input& inval){
 }
 /*!

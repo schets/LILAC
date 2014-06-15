@@ -84,15 +84,15 @@ void rhs_CNLS::postprocess(input& dat){
         err("dimension not even, which is required for rhs_CNLS", 
                 "rhs_CNLS::postprocess", "rhs/rhs_CNLS.cpp", FATAL_ERROR);
     }
-    retrieve(LENGTH_T, dat["t_int"], this);
+    dat.retrieve(LENGTH_T, "t_int", this);
     if(LENGTH_T <= 0){
         std::string errmess = "t_int is invalid, must be >= 0";
         err(errmess, "rhs_CNLS::postprocess", "rhs/rhs_CNLS.cpp",
                 dat["t_int"], FATAL_ERROR);
     }
     dt = LENGTH_T/NUM_TIME_STEPS;
-    retrieve(g0, dat["g0"], this);
-    retrieve(e0, dat["e0"], this);
+    dat.retrieve(g0, "g0", this);
+    dat.retrieve(e0, "e0", this);
     memp.create(NUM_TIME_STEPS, &u1, &u2, &comp_in, &comp_in_r, &comp_out, &comp_out_r, &sq1, &sq2, &k, &ksq);
     //create k values
     double mulval=(2.0*PI/LENGTH_T)*(NUM_TIME_STEPS/2.0);

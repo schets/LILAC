@@ -169,7 +169,6 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
                 delta=deltam;
             }
         }
-        //delta = std::sqrt(delta);
         //estimated optimal dt, smallest of the two options to ensure accuracy
         real_type dt_last = dt;
         dt =dt*magic_mult*std::pow(tauv/delta, magic_power);
@@ -201,7 +200,6 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         if((tcur + dt) > tf){
             dt = tf-tcur;
         }
-        // #define give_out
         for(size_t i = 0; i < dimension; i++){
             real_type val = abs(u_calc[i]);
             if(val > taui){
@@ -213,8 +211,7 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
         tauv=taui;
         tauv *= relerr;
         tries=0;
-        //e
-        //rror is acceptable, continue on
+        //error is acceptable, continue on
         swp = u_calc;
         u_calc = u0;
         u0 = swp;
@@ -232,10 +229,6 @@ int rk45_tmpl<T>::integrate(ptr_passer _u0, double t0, double tf){
     f0=tmp;
     f6 = tmp6;
     u_calc=tmpc;
-    //#define PRINT_TIME
-#ifdef PRINT_TIME
-    std::cout << "steps takes was " << steps << ", average step size was " << dtave/steps<< "\n";
-#endif
     return 0;
 }
 template<class T>
@@ -255,27 +248,27 @@ void rk45_tmpl<T>::postprocess(input& dat){
                 "rhs/rk45_tmpl.h", FATAL_ERROR);
     }
     this->add_as_parent(rh_val);
-    retrieve(dt_init, dat["dt_init"], this);
+    dat.retrieve(dt_init, "dt_init", this);
     if(dt_init <= 0){
         err("dt_init is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_init"], FATAL_ERROR);
     }
-    retrieve(dt_min, dat["dt_min"], this);
+    dat.retrieve(dt_min, "dt_min", this);
     if(dt_min <= 0){
         err("dt_min is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_min"], FATAL_ERROR);
     }
-    retrieve(dt_max, dat["dt_max"], this);
+    dat.retrieve(dt_max, "dt_max", this);
     if(dt_max <= 0){
         err("dt_max is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["dt_max"], FATAL_ERROR);
     }
-    retrieve(relerr, dat["relerr"], this);
+    dat.retrieve(relerr, "relerr", this);
     if(relerr <= 0){
         err("relerr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["relerr"], FATAL_ERROR);
     }
-    retrieve(abserr, dat["abserr"], this);
+    dat.retrieve(abserr, "abserr", this);
     if(abserr <= 0){
         err("abserr is invalid, must be >= 0", "rk45::postprocess",
                 "integrator/rk45.cpp", dat["abserr"], FATAL_ERROR);

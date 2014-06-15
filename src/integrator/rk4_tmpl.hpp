@@ -108,10 +108,10 @@ void rk4_tmpl<T>::postprocess(input& dat){
                 "integrator/rk4_tmpl.h", FATAL_ERROR);
     }
     this->add_as_parent(rh_val);
-    retrieve(stepsize, dat["stepsize"], this);
+    dat.retrieve(stepsize, "stepsize", this);
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "rk4_tmpl::postprocess",
-                "integrator/rk4.hpp", dat["stepsize"].get(), FATAL_ERROR);
+                "integrator/rk4.hpp", dat["stepsize"], FATAL_ERROR);
     }
     memp.create(dimension, &f0, &f1, &f2, &f3, &u_calc);
 }

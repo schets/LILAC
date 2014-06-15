@@ -16,5 +16,5 @@ std::vector<std::string> controller::dependencies() const{
 void controller::postprocess(input& inval){
     item_dim::postprocess(inval);
     num_cont = 0;
-    retrieve(index, inval["!start_ind"], this);
+    inval.retrieve(index, "!start_ind", this);
  }

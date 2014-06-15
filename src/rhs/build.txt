@@ -1,0 +1,83 @@
+gcc -c rhs_SQGLE.cpp -I.. -I../utils/  -o ../../lib/rhs_SQGLE.o -I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing -pipe -ffast-math -fstrict-aliasing -fomit-frame-pointer 
+rhs_SQGLE.cpp: In member function ‘virtual void rhs_SQGLE::postprocess(input&)’:
+rhs_SQGLE.cpp:158:30: error: no matching function for call to ‘input::retrieve(double&, std::shared_ptr<variable>&, rhs_SQGLE* const)’
+     dat.retrieve(a1, vv, this);
+                              ^
+rhs_SQGLE.cpp:158:30: note: candidates are:
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:61:14: note: template<class T> void input::retrieve(T&, const string&, item*)
+         void retrieve(T& inval, const std::string& name, item* caller){
+              ^
+../engine/input.h:61:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:158:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a1, vv, this);
+                              ^
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:84:14: note: template<class T> void input::retrieve(T&, const string&, item*, T&&)
+         void retrieve(T& inval, const std::string& name, item* caller, T&& stdval){
+              ^
+../engine/input.h:84:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:158:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a1, vv, this);
+                              ^
+rhs_SQGLE.cpp:169:30: error: no matching function for call to ‘input::retrieve(double&, std::shared_ptr<variable>&, rhs_SQGLE* const)’
+     dat.retrieve(a2, vv, this);
+                              ^
+rhs_SQGLE.cpp:169:30: note: candidates are:
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:61:14: note: template<class T> void input::retrieve(T&, const string&, item*)
+         void retrieve(T& inval, const std::string& name, item* caller){
+              ^
+../engine/input.h:61:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:169:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a2, vv, this);
+                              ^
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:84:14: note: template<class T> void input::retrieve(T&, const string&, item*, T&&)
+         void retrieve(T& inval, const std::string& name, item* caller, T&& stdval){
+              ^
+../engine/input.h:84:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:169:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a2, vv, this);
+                              ^
+rhs_SQGLE.cpp:178:30: error: no matching function for call to ‘input::retrieve(double&, std::shared_ptr<variable>&, rhs_SQGLE* const)’
+     dat.retrieve(a3, vv, this);
+                              ^
+rhs_SQGLE.cpp:178:30: note: candidates are:
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:61:14: note: template<class T> void input::retrieve(T&, const string&, item*)
+         void retrieve(T& inval, const std::string& name, item* caller){
+              ^
+../engine/input.h:61:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:178:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a3, vv, this);
+                              ^
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:84:14: note: template<class T> void input::retrieve(T&, const string&, item*, T&&)
+         void retrieve(T& inval, const std::string& name, item* caller, T&& stdval){
+              ^
+../engine/input.h:84:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:178:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(a3, vv, this);
+                              ^
+rhs_SQGLE.cpp:187:30: error: no matching function for call to ‘input::retrieve(double&, std::shared_ptr<variable>&, rhs_SQGLE* const)’
+     dat.retrieve(ap, vv, this); 
+                              ^
+rhs_SQGLE.cpp:187:30: note: candidates are:
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:61:14: note: template<class T> void input::retrieve(T&, const string&, item*)
+         void retrieve(T& inval, const std::string& name, item* caller){
+              ^
+../engine/input.h:61:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:187:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(ap, vv, this); 
+                              ^
+In file included from rhs_SQGLE.cpp:2:0:
+../engine/input.h:84:14: note: template<class T> void input::retrieve(T&, const string&, item*, T&&)
+         void retrieve(T& inval, const std::string& name, item* caller, T&& stdval){
+              ^
+../engine/input.h:84:14: note:   template argument deduction/substitution failed:
+rhs_SQGLE.cpp:187:30: note:   cannot convert ‘vv’ (type ‘std::shared_ptr<variable>’) to type ‘const string& {aka const std::basic_string<char>&}’
+     dat.retrieve(ap, vv, this); 
+                              ^
+make: *** [../../lib/rhs_SQGLE.o] Error 1

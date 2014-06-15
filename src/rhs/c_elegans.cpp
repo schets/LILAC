@@ -135,19 +135,19 @@ void c_elegans::postprocess(input& in){
         err("Dimension must be 558, which is double the number of neurons",
                 "", "", FATAL_ERROR);
     }
-    retrieve(beta, in["beta"], this);
-    retrieve(tau, in["tau"], this);
-    retrieve(gelec, in["gelec"], this);
-    retrieve(gchem, in["gchem"], this);
-    retrieve(memV, in["memV"], this);
-    retrieve(memG, in["memG"], this);
-    retrieve(EchemEx, in["EchemEx"], this);
-    retrieve(EchemInh, in["EchemInh"], this);
-    retrieve(ar, in["ar"], this);
-    retrieve(ad, in["ad"], this);
+    in.retrieve(beta, "beta", this);
+    in.retrieve(tau, "tau", this);
+    in.retrieve(gelec, "gelec", this);
+    in.retrieve(gchem, "gchem", this);
+    in.retrieve(memV, "memV", this);
+    in.retrieve(memG, "memG", this);
+    in.retrieve(EchemEx, "EchemEx", this);
+    in.retrieve(EchemInh, "EchemInh", this);
+    in.retrieve(ar, "ar", this);
+    in.retrieve(ad, "ad", this);
     std::string ag_fname, a_fname;
-    retrieve(ag_fname, in["ag_mat"], this);
-    retrieve(a_fname, in["a_mat"], this);
+    in.retrieve(ag_fname, "ag_mat", this);
+    in.retrieve(a_fname, "a_mat", this);
     sparse_type a_m(num_neur, num_neur);
     ag_full.resize(num_neur, num_neur);
     laplacian.resize(num_neur, num_neur);
@@ -160,9 +160,9 @@ void c_elegans::postprocess(input& in){
     //do any needed fake iterations, must make more general at some point
     size_t num_comb;
     int iterations;
-    retrieve(num_comb, in["num_comb"], this);
-    retrieve(iterations, in["iterations"], this);
-    retrieve(cur_ind, in["!start_ind"], this);
+    in.retrieve(num_comb, "num_comb", this);
+    in.retrieve(iterations, "iterations", this);
+    in.retrieve(cur_ind, "!start_ind", this);
     abl_neur.resize(num_comb);
     for(auto& val : abl_neur){
         val = 0;
@@ -183,14 +183,14 @@ void c_elegans::postprocess(input& in){
     }
     //set up dummy connection to toroidal controller for now
     controller* cont;
-    retrieve(cont, in["controller"], this);
+    in.retrieve(cont, "controller", this);
     auto val = std::make_shared<variable>();
     val->setname(get_unique_name(name()));
     val->holder = holder;
     val->parse("0.1");
-    in[val->name()] = val;
+    in.insert_item(val);
     cont->addvar(val);
-    retrieve(dummy, in[val->name()], this);
+    in.retrieve(dummy, val->name(), this);
     update();
 }
 void c_elegans::update(){

@@ -60,10 +60,10 @@ class jones_matrix:public _double{
             wp(0, 1)=wp(1, 0)=0;
             wp(0, 0)=1;
             wp(1, 1)=0;
-            retrieve(a1, avars[0], this);
-            retrieve(a2, avars[1], this);
-            retrieve(a3, avars[2], this);
-            retrieve(ap, avars[3], this);
+            avars[0]->add_ref(a1, this);
+            avars[1]->add_ref(a2, this);
+            avars[2]->add_ref(a3, this);
+            avars[3]->add_ref(ap, this);
             update();
         }
 };
@@ -86,12 +86,12 @@ void jones_optical::postprocess(input& invals){
                 "system/jones_optical.cpp", FATAL_ERROR);
     }
     int num_segments;
-    retrieve(num_segments, invals["num_jones_segments"], this);
+    invals.retrieve(num_segments, "num_jones_segments", this);
     if(num_segments < 0){
         err("Number of jones segments must be greater than or equal to zero",
                 "jones_optical::postprocess", "system/jones_optical.cpp", FATAL_ERROR);
     }
-    retrieve(jones_int_dist, invals["jones_int_dist"], this);
+    invals.retrieve(jones_int_dist, "jones_int_dist", this);
     if(jones_int_dist<0){
         err("The distance between jones segments, jones_int_dist,  must be greater than or equal to zero",
                 "jones_optical::postprocess", "system/jones_optical.cpp", FATAL_ERROR);
@@ -129,11 +129,11 @@ void jones_optical::postprocess(input& invals){
 #else
             val->set(0);
 #endif
-            invals[val->name()]= val;
+            invals.insert_item(val);
             cont->addvar(val);
         }
         std::shared_ptr<jones_matrix> m = std::make_shared<jones_matrix>(get_unique_name(mat_base), i, holder);
-        invals[m->name()]= m;
+        invals.insert_item(m);
         m->setup(vv);
         jones_matrices.push_back(m);
     }
@@ -165,7 +165,7 @@ void jones_optical::pre_fft_operations(){
             ifft(ucur+j*nts, ucur+j*nts, nts);
         }
     }
-    
+
 }
 /*!
  * This function applies the Jones matrices after each integration run.

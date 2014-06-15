@@ -9,11 +9,11 @@ void item_dim::_do_mem_update(size_t dim_old){
 void item_dim::postprocess(input& dat){
     int dimt;
     parent=0;
-    retrieve(dimt, dat["dimension"], this);
+    dat.retrieve(dimt, "dimension", this);
     if(dimt <= 0){
         std::string errmess = "dimension invalid, must be >= 0";
         err(errmess, "int_dim::postprocess", "item/item.cpp",
-                dat["dimension"].get(), FATAL_ERROR);
+                dat["dimension"], FATAL_ERROR);
     }
     dimension = (size_t)dimt;
 }

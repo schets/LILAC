@@ -54,22 +54,22 @@ template<class T>
 void ode_tmpl<T>::postprocess(input& in){
     simulation::postprocess(in);
     item_dim::postprocess(in);
-    retrieve(inter, in["integrator"], this);
+    in.retrieve(inter, "integrator", this);
     if(!inter->compare<T>()){
         err(this->name() + " is of type " + this->vname() + ", while the integrator inter \
                 is of type " + inter->vname(), "ode_tmpl::postprocess", "simulation/ode_tmpl.hpp",
                 FATAL_ERROR);
     }
     this->add_as_parent(inter);
-    retrieve(tf, in["tf"], this);
-    retrieve(t0, in["t0"], this, 0.0);
+    in.retrieve(tf, "tf", this);
+    in.retrieve(t0, "t0", this, 0.0);
     if(t0 >= tf){
         err("t0 is >= than tf", "ode_tmpl::postprocess",
                 "simulation/ode_tmpl.hpp", FATAL_ERROR);
     }
 
-    retrieve(tw, in["tw"], this, t0);
-    retrieve(w_step, in["w_step"],this, -1.0);
+    in.retrieve(tw, "tw", this, t0);
+    in.retrieve(w_step, "w_step",this, -1.0);
     if(tw >= tf){
         err("tw is >= than tf, not writing intermittent data", "ode_tmpl::postprocess",
                 "simulation/ode_tmpl.hpp", WARNING);

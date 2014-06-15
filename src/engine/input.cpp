@@ -2,14 +2,36 @@
 
 input::input(std::map<std::string, item_wrapper >& values):invals(&values){}
 
-item_wrapper& input::operator [](const std::string& value){
+void input::insert_item(std::shared_ptr<item> inval){
+    if(inval.use_count()){
+        if(invals->count(inval->name())==0){
+            invals->insert(std::pair<std::string, std::shared_ptr<item>>(
+                        inval->name(), inval));
+        }
+        else{
+            err(std::string("Item ") + inval->name() + " already exists in the engine",
+                    "input::insert_item", "engine/input.cpp",
+#ifdef DEBUG
+                    FATAL_ERROR);
+#else
+                    WARNING);
+#endif
+        }
+    }
+    else{
+        err("Null item inserted into input map", "input::insert_item",
+                "engine/input.cpp", FATAL_ERROR);
+    }
+}
+
+item_wrapper& input::get_val(const std::string& value){
     auto&& d_it = re_directions.find(value);
     if(d_it != re_directions.end()){
         return d_it->second;
     }
     auto&& m_it = re_mappings.find(value);
     if(m_it != re_mappings.end()){
-        return (*this)[m_it->second];
+        return get_val(m_it->second);
     }
     return (*invals)[value];
 }

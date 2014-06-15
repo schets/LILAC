@@ -49,7 +49,7 @@ template<class T>
 void stable_spectral_pde_1d_tmpl<T>::postprocess(input& invals){
     stable_ode_tmpl<T>::postprocess(invals);
     int _num;
-    retrieve(_num, invals["num_pulses"], this);
+    invals.retrieve(_num, "num_pulses", this);
     if(_num <= 0){
         err("Number of pulses must be greater than zero", "stable_spectral_pde_1d_tmpl<T>::postprocess",
                 "simulation/stable.cpp", FATAL_ERROR);

@@ -84,11 +84,11 @@ void example_integrator_tmpl<T>::postprocess(input& in){
     //If the variable in question is not part of the hardcore numerical analysis code,
     //it may be better to just use a double and not deal with this in the postprocessing
     double _rval1 = 0; 
-    retrieve(_rval1, in["rval1"], this);
+    in.retrieve(_rval1, "rval1", this);
     rval1=_rval1;
-    retrieve(rval2, in["rval2"], this);
-    retrieve(unsigned_var, in["unsigned_var"], this);
-    retrieve(something, in["something"], this);
+    in.retrieve(rval2, "rval2", this);
+    in.retrieve(unsigned_var, "unsigned_var", this);
+    in.retrieve(something, "something", this);
     update();
 }
 

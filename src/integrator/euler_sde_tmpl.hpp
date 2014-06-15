@@ -81,7 +81,7 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
     integrator::postprocess(dat);
     //since the rh_val is already obtained by the map,
     //may as well just check instead of going through retrieve
-    retrieve(calc_dw, dat["calc_dw"], this);
+    dat.retrieve(calc_dw, "calc_dw", this);
     func = dynamic_cast<rhs_sde*>(rh_val);
     if(calc_dw){
         if(func == 0){
@@ -97,10 +97,10 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
     }
     //This is a temporay value so that the retrieve is always double
     double _dw_weight;
-    retrieve(_dw_weight, dat["dw_weight"], this);
+    dat.retrieve(_dw_weight, "dw_weight", this);
     dw_weight=_dw_weight;
     double _stepsize;
-    retrieve(_stepsize, dat["stepsize"], this);
+    dat.retrieve(_stepsize, "stepsize", this);
     stepsize=_stepsize;
     if(stepsize <= 0){
         err("stepsize is invalid, must be >= 0", "euler_sde_tmpl::postprocess",

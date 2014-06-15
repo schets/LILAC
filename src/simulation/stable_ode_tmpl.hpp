@@ -54,15 +54,15 @@ void stable_ode_tmpl<T>::iterate_system(){
 template <class T>
 void stable_ode_tmpl<T>::postprocess(input& invals){
     stable::postprocess(invals);
-    retrieve(inter, invals["integrator"], this);
+    invals.retrieve(inter, "integrator", this);
     if(!inter->compare<T>()){
         err("Bad integrator type passed to stable_ode_tmpl", "stable_ode_tmpl:postprocess",
                 "simulation/stable_ode_tmpl.hpp", FATAL_ERROR);
     }
     this->add_as_parent(inter);
-    retrieve(t0, invals["t0"], this, 0.0);
+    invals.retrieve(t0, "t0", this, 0.0);
     tcur = t0;
-    retrieve(int_len, invals["int_len"], this);
+    invals.retrieve(int_len, "int_len", this);
     const double eps_val = 1e-12;
     if(int_len < eps_val){
         err("Variable int_len is too small, int_len must be greater than 1e-12",

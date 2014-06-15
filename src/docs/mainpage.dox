@@ -19,5 +19,7 @@ The main internal structure of a simulation works like this:
     Documentation on running LILAC can be found in \ref running_lilac
 
     Documentation on Nersc scripts can be found in \ref nersc_lilac
+
+    Features that could be added are describes in \ref todo_page
 */
 

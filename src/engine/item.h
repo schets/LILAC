@@ -11,6 +11,7 @@ class item;
 template<class T>
 void retrieve(T& inval, item* sender, item* caller);
 class input;
+class native_item;
 class item{
     protected:
     //_retrieve should never be called by itself, only through the retrieve function
@@ -40,8 +41,13 @@ class item{
     const std::string& write_name() const;
 
     template<class T> friend void retrieve(T& inval, item* setter, item* caller);
+    friend class input;
+    friend class native_item;
 };
 class native_item:public item{
+    protected:
+        //move tom protected scope so native values can override it
+    virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     public:
         virtual void parse(const std::string& inval) = 0;
         //native items can't have dependencies or perform postprocessing
@@ -131,6 +137,8 @@ class variable:public _double{
 	double low_bound, high_bound, inc_size;
 	virtual void print() const;
 	virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
+    virtual void add_ref(double& in, std::shared_ptr<item> inval);
+    virtual void add_ref(double& in, item* inval);
 	virtual void copy(double* inval);
 	virtual void parse(const std::string& inval);
 	virtual std::string type() const;

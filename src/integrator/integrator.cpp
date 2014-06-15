@@ -1,4 +1,5 @@
 #include "integrator.h"
+
 #include "comp_funcs.hpp"
 /*!
  * This function returns the dependencies of the integrator class
@@ -22,7 +23,7 @@ std::vector<std::string> integrator::dependencies() const {
  */
 void integrator::postprocess(input& dat){
     item_dim::postprocess(dat); 
-    retrieve(rh_val, dat["rhs"], this);
+    dat.retrieve(rh_val, "rhs", this);
 }
 
 void integrator::initial_condition(ptr_passer in, size_t len){

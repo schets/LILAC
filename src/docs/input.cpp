@@ -65,5 +65,5 @@
  *      -# #include <filename>: This works like the C include in that it directly includes the file <filename>
  *      -# #cd <directory>: This works like the linux command cd. It changes the directory in which the engine looks for include files. This command starts relative to the running directory of the binary, and doesn't affect other IO.
  *      -# #setdir <directory>: This sets the directory relative to the running directory. Like cd but doesn't have to be a directory accessible from the current one
- *
  */
+

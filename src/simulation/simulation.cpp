@@ -2,9 +2,9 @@
 #include "utils/comp_funcs.hpp"
 void simulation::postprocess(input& invals){
     item_dim::postprocess(invals);
-    retrieve(cont, invals["controller"], this);
-    retrieve(obj, invals["objective"], this);
-    retrieve(out_f_name, invals["!out_file"], this);
+    invals.retrieve(cont, "controller", this);
+    invals.retrieve(obj, "objective", this);
+    invals.retrieve(out_f_name, "!out_file", this);
 }
 
 /*!
