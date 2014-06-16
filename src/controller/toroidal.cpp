@@ -87,7 +87,7 @@ void toroidal::addvar(std::weak_ptr<variable> v){
 char toroidal::is_good(){
     return num_int <= iterations;
 }
-void toroidal::pre_set(){
+int toroidal::pre_set(){
     for(size_t i = 0; i < index*iterations; i++){
         double curinc=initial_inc;
         for(auto _val : vars){
@@ -98,4 +98,5 @@ void toroidal::pre_set(){
             }
         }
     }
+    return index*iterations;
 }

@@ -1,6 +1,7 @@
 #include "variable.h"
 #include "engineimp.h"
 #include "item_heads.hpp"
+#include "types/type_register.hpp"
 /*!
  * This function prints the value of the current variable
  */
@@ -142,3 +143,4 @@ std::string variable::type()const{
 }
 
 template class type_register<variable>;
+

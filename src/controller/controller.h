@@ -11,6 +11,7 @@
 class controller:public item_dim{
     protected:
     std::vector<std::weak_ptr<variable> > vars;
+    int act_index;
     public:
     int index;
     size_t num_cont;
@@ -20,7 +21,7 @@ class controller:public item_dim{
     virtual std::string type() const = 0;
     virtual void control(comp* u, objective* obj) = 0;
     virtual char is_good() = 0;
-    virtual void pre_set(){};
+    virtual int pre_set()=0;
 };
 #endif
 

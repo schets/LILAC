@@ -6,13 +6,13 @@
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
-engineimp::engineimp(const std::string& fname, const std::string& outname, const std::string& index){
+engineimp::engineimp(const std::string& fname, const std::string& outname, const std::string& start_index){
     values["!out_file"] =  std::make_shared<string>();
     ((native_item*)(values["!out_file"].get()))->parse(outname);
     values["!out_file"]->setname("!out_file");
     ofile.open(outname.c_str(), std::ofstream::trunc);
     auto p = std::make_shared<integer>();
-    p->parse(index);
+    p->parse(start_index);
     p->setname("!start_ind");
     values["!start_ind"]=p;
     std::ifstream fstr(fname.c_str());

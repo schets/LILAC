@@ -90,7 +90,6 @@ void euler_sde_tmpl<T>::postprocess(input& dat){
                     this->type() + "::postprocess", "integrator/euler_sde_tmpl.hpp", FATAL_ERROR);
         }
     }
-    std::cout << rh_val->type() << std::endl;
     if(!rh_val->compare<T>()){
         err("Bad rhs type passed to euler_sde integrator", "euler_sde_tmpl::postprocess",
                 "integrator/euler_sde_tmpl.h", FATAL_ERROR);

@@ -11,7 +11,6 @@ void engineimp::write_individual_dat(const std::list<std::shared_ptr<writer>>& d
         write_data(dat, ofile);
     }
     ofile << "&" << std::endl;
-    ofile.close();
 }
 void engineimp::write_dat(){
     for(auto& writes : writers){

@@ -9,14 +9,12 @@ void engineimp::run(){
         err("The engine requires a simulation class called sys and a controller class called cont",
                 "engineimp::engine_run", "engine/engine_run.cpp", FATAL_ERROR);
     }
-    cont->pre_set();
-    update();
-    index=0;
+    index=cont->pre_set();
     while(cont->is_good()){
+        update();
         sys->simulate();
         index++;
         cont->control(0, 0);
-        update();
     }
     fft_cleanup();
 }

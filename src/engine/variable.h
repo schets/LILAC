@@ -34,8 +34,9 @@ class variable:public _double{
 	virtual void copy(double* inval);
 	virtual void parse(const std::string& inval);
 	virtual std::string type() const;
-	void inc();
+	virtual void inc();
 	void inc(double i);
 	void set(double v);
 };
+
 #endif

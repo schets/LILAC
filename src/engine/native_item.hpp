@@ -2,8 +2,6 @@
 #define NATIVE_ITEM_HPP
 #include "item.h"
 #include "utils/retrieve_checker.hpp"
-#include "types/type_register.hpp"
-
 
 //!This class provides a generic interface for making native types
 /**
@@ -37,6 +35,7 @@ namespace __HIDER__{
             static constexpr char unsigned_name[] = "unsigned";
             static constexpr char string_name[] = "string";
             static constexpr char integer_name[] = "integer";
+            static constexpr char vector_name[] = "vector";
     };
 }
 typedef native_tmpl<double, __HIDER__::native_names::double_name> _double;

@@ -19,6 +19,8 @@ class c_elegans:public rhs_type<double, rhs_sde>{
     std::vector<size_t> inj_nodes;
     std::vector<size_t> abl_neur;
     double cur_inj;
+    bool has_gone;
+    bool first_round;
     public:
     virtual void update();
     std::string type() const;

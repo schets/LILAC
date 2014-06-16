@@ -20,6 +20,6 @@ class toroidal:public controller{
         virtual std::string type() const;
         virtual void control(comp* u, objective* obj);
         virtual char is_good();
-        virtual void pre_set();
+        virtual int pre_set();
 };
 #endif

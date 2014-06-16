@@ -109,7 +109,7 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
                     //replace named dependencies with new fake names
                     param_val pp = split_into_toks(str);
                     c_wrap.replace_dep(child_item->name(), pp.name);
-                    inval.add_remap(pp.name, child_item->name());
+                    inval.add_redir(pp.name, child_item);
                     en->values[child_item->name()] = child_item;
                 }
             }

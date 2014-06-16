@@ -54,6 +54,7 @@ constexpr size_t c_elegans::dim_v;
 constexpr size_t c_elegans::dim_s;
 template class type_register<c_elegans>;
 int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
+    has_gone=true;
     double* restr v = x;
     double* restr dv = dx;
     double* restr ds = dv+dim_v;
@@ -66,16 +67,16 @@ int c_elegans::dxdt(ptr_passer x,  ptr_passer dx, double dt){
     //calculations from matlab file
     sig = 1.0 / (1.0 + (-1*beta*(vmap-vmean)).exp());
     dsmap = ar*(sig * (1.0-smap)) - ad*smap;
-   /* Iohm = (memG*(vmap - memV));
-    Ielec = (gelec*laplacian*vmap.matrix()).array();
-    Ichem = (gchem *
-            (vmap*(AEchem_trans*smap.matrix()).array() 
-             - (AEchem_trans*(smap*Echem).matrix()).array()));
-    dvmap = (-1.0/tau)*(Iohm + Ielec + Ichem);*/
+    /* Iohm = (memG*(vmap - memV));
+       Ielec = (gelec*laplacian*vmap.matrix()).array();
+       Ichem = (gchem *
+       (vmap*(AEchem_trans*smap.matrix()).array() 
+       - (AEchem_trans*(smap*Echem).matrix()).array()));
+       dvmap = (-1.0/tau)*(Iohm + Ielec + Ichem);*/
     dvmap = (-1.0/tau)*(
             (memG*(vmap - memV)) +
             (gchem * (vmap*(AEchem_trans*smap.matrix()).array() 
-              - (AEchem_trans*(smap*Echem).matrix()).array())) +
+                      - (AEchem_trans*(smap*Echem).matrix()).array())) +
             (gelec*laplacian*vmap.matrix()).array()
             );
     //current injection-for now is hard coded below, inj_nodes is empty here
@@ -180,112 +181,129 @@ void c_elegans::postprocess(input& in){
             }
         }
     }
+    //write first ablation data
+    if(cur_ind == 0){
+        auto dat_inds =
+            std::shared_ptr<writer>(new writer(true));
+        dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
+        holder->add_writer(dat_inds);
+    }
+    else{
+        if(next_comb(abl_neur, num_neur)){
+            char ind_str[20];//won't ever have a 20 digit index
+            //handy buffer to overflow for those hacking this.
+            sprintf(ind_str, "%d", (int)cur_ind);
+            err(std::string("Combinations exhausted in index ") + ind_str,
+                    "c_elegans::postprocess","rhs/c_elegans.cpp", FATAL_ERROR);
+        }
+    }
     //set up dummy connection to toroidal controller for now
     controller* cont;
     in.retrieve(cont, "controller", this);
     auto val = std::make_shared<variable>();
-    val->setname(get_unique_name(name()));
+    val->setname("c_elegans_quickfix");
     val->holder = holder;
     val->parse("0.1");
     in.insert_item(val);
     cont->addvar(val);
     in.retrieve(dummy, val->name(), this);
+    has_gone=true; //is true at first to allow update of zero index to occur
+    first_round=true;
     update();
 }
 void c_elegans::update(){
-    static bool has_gone = (cur_ind == 0) && (abl_neur.size() != 1);
     if(has_gone){
-        if(next_comb(abl_neur, num_neur)){
-            holder->write_dat();
-            char ind_str[20];//won't ever have a 20 digit index
-            //handy buffer to overflow for those hacking this.
-            sprintf(ind_str, "%d", cur_ind);
-            err(std::string("Combinations exhausted in index ") + ind_str,
-                    "c_elegans::update","rhs/c_elegans.cpp", FATAL_ERROR);
-        }
-    }
-    //this skips the first update, since postprocessing has done that
-    else{
-        has_gone = true;
-    }
-    auto dat_inds =
-        std::shared_ptr<writer>(new writer(true));
-    dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
-    holder->add_writer(dat_inds);
-    Matrix<double, Dynamic, Dynamic> ag_dense(num_neur, num_neur);
-    //insert code to zero it out later
-
-    auto ag_m = ag_full;
-    AEchem_trans = AEchem_trans_full;
-    auto fncval = [this](int i, int j, double val)->bool{
-        for(int kk = 0; kk < (int)this->abl_neur.size(); kk++){
-            if((int)this->abl_neur[kk] == i || (int)this->abl_neur[kk] == j){
-                return false;
+        has_gone=false;//prevent more than one update happening without call to rhs
+        if(!first_round){
+            if(next_comb(abl_neur, num_neur)){
+                holder->write_dat();
+                char ind_str[20];//won't ever have a 20 digit index
+                //handy buffer to overflow for those hacking this.
+                sprintf(ind_str, "%d", cur_ind);
+                err(std::string("Combinations exhausted in index ") + ind_str,
+                        "c_elegans::update","rhs/c_elegans.cpp", FATAL_ERROR);
             }
-        }
-        return true;
-    };
-    for(auto val : abl_neur){
-        std::cout << val << ", ";
-    }
-    std::cout << std::endl;
-    AEchem_trans.prune(fncval);
-    ag_m.prune(fncval);
-    ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
-    auto sumvals = ag_dense.colwise().sum();
-    sparse_type temp(num_neur, num_neur);
-    //generate the sparse diagonal matrix to build the lapacian
-    std::vector<Triplet<double, int> > temp_tr;
-    for(int i = 0; i < (int)num_neur; i++){
-        temp_tr.push_back(Triplet<double, int>(i, i, sumvals[i]));
-    }
-    temp.setFromTriplets(temp_tr.begin(), temp_tr.end());
-    laplacian = temp - ag_m;
-    //initialize the Echem array
-    for(size_t i = 0; i < num_neur; i++){
-        if(GABAergic[i]){
-            Echem[i] = EchemInh;
+            auto dat_inds =
+                std::shared_ptr<writer>(new writer(true));
+            dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
+            holder->add_writer(dat_inds);
+
         }
         else{
-            Echem[i] = EchemEx;
+            first_round=false;
         }
-    }
-    //Initialize the sig array
-    for(size_t i = 0; i < num_neur; i++){
-        sig[i] = 0.5;
-    }
 
-    eqS = sig * (ar/(ar*sig + ad));
-    //more initialization of temporary dense matrices
-    Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
-    ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
-    Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
-    aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
-    Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
-    //create the C matrix
-    C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
-    //initialize matrix to modify diagonal part of C
-    Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS.matrix()); 
-    for(size_t i = 0; i < num_neur; i++){
-        C(i, i) += tmp(i);
+        Matrix<double, Dynamic, Dynamic> ag_dense(num_neur, num_neur);
+        //insert code to zero it out later
+
+        auto ag_m = ag_full;
+        AEchem_trans = AEchem_trans_full;
+        auto fncval = [this](int i, int j, double val)->bool{
+            for(int kk = 0; kk < (int)this->abl_neur.size(); kk++){
+                if((int)this->abl_neur[kk] == i || (int)this->abl_neur[kk] == j){
+                    return false;
+                }
+            }
+            return true;
+        };
+        AEchem_trans.prune(fncval);
+        ag_m.prune(fncval);
+        ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
+        auto sumvals = ag_dense.colwise().sum();
+        sparse_type temp(num_neur, num_neur);
+        //generate the sparse diagonal matrix to build the lapacian
+        std::vector<Triplet<double, int> > temp_tr;
+        for(int i = 0; i < (int)num_neur; i++){
+            temp_tr.push_back(Triplet<double, int>(i, i, sumvals[i]));
+        }
+        temp.setFromTriplets(temp_tr.begin(), temp_tr.end());
+        laplacian = temp - ag_m;
+        //initialize the Echem array
+        for(size_t i = 0; i < num_neur; i++){
+            if(GABAergic[i]){
+                Echem[i] = EchemInh;
+            }
+            else{
+                Echem[i] = EchemEx;
+            }
+        }
+        //Initialize the sig array
+        for(size_t i = 0; i < num_neur; i++){
+            sig[i] = 0.5;
+        }
+
+        eqS = sig * (ar/(ar*sig + ad));
+        //more initialization of temporary dense matrices
+        Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
+        ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
+        Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
+        aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
+        Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
+        //create the C matrix
+        C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
+        //initialize matrix to modify diagonal part of C
+        Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS.matrix()); 
+        for(size_t i = 0; i < num_neur; i++){
+            C(i, i) += tmp(i);
+        }
+        Matrix<double, num_neur, 1> Ivals;
+        Ivals.setZero();
+        double amp=2e4;
+        Ivals[276]=amp;
+        Ivals[278]=amp;
+        Matrix<double, num_neur, 1> b;
+        //create B vector
+        b= gchem*aedense*(eqS * Echem).matrix();
+        for(size_t i = 0; i < num_neur; i++){
+            b[i] += (memG*memV + Ivals[i]);
+        }
+        //calculate eqV
+        eqV.matrix() = C.inverse()*b;
+        vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
+        for(auto val : abl_neur){
+            eqV[val] = vmean [val] = eqS[val] = 0;
+        };
     }
-    Matrix<double, num_neur, 1> Ivals;
-    Ivals.setZero();
-    double amp=2e4;
-    Ivals[276]=amp;
-    Ivals[278]=amp;
-    Matrix<double, num_neur, 1> b;
-    //create B vector
-    b= gchem*aedense*(eqS * Echem).matrix();
-    for(size_t i = 0; i < num_neur; i++){
-        b[i] += (memG*memV + Ivals[i]);
-    }
-    //calculate eqV
-    eqV.matrix() = C.inverse()*b;
-    vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
-    for(auto val : abl_neur){
-        eqV[val] = vmean [val] = eqS[val] = 0;
-    };
 }
 
 std::vector<std::string> c_elegans::dependencies() const{
