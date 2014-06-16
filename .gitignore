@@ -8,6 +8,7 @@
 *.pyc
 *.tgz
 *.mat
+*.out
 html/*
 bin/*
 lib/*

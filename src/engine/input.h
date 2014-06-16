@@ -68,7 +68,9 @@ class input{
      */
     template<class T>
         void retrieve(T& inval, const std::string& name, item* caller){
+
             item* sender = get_val(name).get();
+
             if(sender){
                 sender->_retrieve(__retrieve_checker<T>(inval), caller);
             }
