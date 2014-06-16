@@ -2,7 +2,7 @@ export
 CPP=clang
 CPP=gcc
 #CPP=icc
-CPP=NERSC
+#CPP=NERSC
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer
 CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing -pipe

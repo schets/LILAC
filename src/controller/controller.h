@@ -1,6 +1,6 @@
 #ifndef CONTROLLER_H
 #define CONTROLLER_H
-#include "../engine/item.h"
+#include "engine/variable.h"
 #include "engine/item_dim.h"
 #include "objective/objective.h"
 //!This is the base class for the control type classes

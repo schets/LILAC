@@ -129,5 +129,15 @@ class input{
         void retrieve_notrack(T& inval, const std::string& name, T&& stdval){
             retrieve(inval, name, 0, stdval);
         }
+
+    /*!
+     * Non-tracking retrieve with standard value
+     * \sa input::retrieve
+     */
+    template<class T>
+        void retrieve_notrack(T& inval, const std::string& name, const T& stdval){
+            retrieve(inval, name, 0, stdval);
+        }
+
 };
 #endif

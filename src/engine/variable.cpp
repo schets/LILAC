@@ -1,4 +1,4 @@
-#include "item.h"
+#include "variable.h"
 #include "engineimp.h"
 #include "item_heads.hpp"
 /*!
@@ -141,3 +141,4 @@ std::string variable::type()const{
     return "var";
 }
 
+template class type_register<variable>;

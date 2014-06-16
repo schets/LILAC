@@ -2,6 +2,7 @@
 #include "engineimp.h"
 #include "item.h"
 #include "input.h"
+#include "native_item.hpp"
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }

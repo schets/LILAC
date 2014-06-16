@@ -8,16 +8,25 @@
 #include "item_heads.hpp"
 #include "types/item_factory.h"
 #include "types/type_register.hpp"
-template class type_register<_double>;
+#include "native_item.hpp"
 
+using __HIDER__::native_names;
+
+constexpr char native_names::double_name[];
+constexpr char native_names::float_name[];
+constexpr char native_names::unsigned_name[];
+constexpr char native_names::string_name[];
+constexpr char native_names::integer_name[];
+
+template class type_register<_double>;
 template class type_register<_float>;
 template class type_register<string>;
 template class type_register<integer>;
 template class type_register<_unsigned>;
-template class type_register<variable>;
 template class type_register<ftest1>;
 template class type_register<ftest2>;
 template class type_register<ftest3>;
+
 #ifdef ICC
 //!helper function for variable class, since icc can't compare them using the stl...
 bool operator < (const std::weak_ptr<item>& a, std::weak_ptr<item>& b){
@@ -110,158 +119,6 @@ void item::setname(const std::string n){
 const std::string& item::name()const {
     return _name;
 }
-
-void _double::parse(const std::string& inval){
-    std::stringstream convert(inval);
-    convert >> value;
-}
-
-/*!
- * Stores the value in the address pointed to by inval
- * @param inval Address where the value of the real8 is stored
- */
-void _double::_retrieve(retrieve_wrapper&& inval, item* caller){
-    inval.check_and_get_type(typeid(double), &value);
-}
-
-/*!
- * Returns the type of real8
- * @return Type of real8 class, which is "real8"
- */
-std::string _double::type() const{
-    return "double";
-}
-
-/*!
- *Prints the value, along with the name
- */
-void _double::print() const{
-    std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
-}
-
-//_float functions
-//
-void _float::parse(const std::string& inval){
-    std::stringstream convert(inval);
-    convert >> value;
-}
-
-/*!
- * Stores the value in the address pointed to by inval
- * @param inval Address where the value of the real8 is stored
- */
-void _float::_retrieve(retrieve_wrapper&& inval, item* caller){
-    inval.check_and_get_type(typeid(float), &value);
-}
-
-/*!
- * Returns the type of real8
- * @return Type of real8 class, which is "real8"
- */
-std::string _float::type() const{
-    return "float";
-}
-
-/*!
- *Prints the value, along with the name
- */
-void _float::print() const{
-    std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
-}
-
-//string functions
-
-void string::parse(const std::string& inval){
-    value = inval;
-}
-/*!
- * Sets the value stored at inval equal to the string
- * @param inval The address of the string
- */
-void string::_retrieve(retrieve_wrapper&& inval, item* caller){
-    inval.check_and_get_type(typeid(std::string), &value);
-}
-
-/*!
- * Returns the name of the string type, "string"
- * @return Name of string type, "string"
- */
-std::string string::type() const {
-    return "string";
-}
-/*!
- * Prints the string
- */
-void string::print() const{
-    std::cout<<this->type()<<" "<<this->name()<<"="<<value<<std::endl;
-}
-
-
-//integer functions
-//
-/*!
- * Parses the input int, deprecated
- */
-void integer::parse(const std::string& inval){
-    std::stringstream convert(inval);
-    convert >> value;
-}
-/*!
- * Prints the int
- */
-void integer::print() const{
-    std::cout << this->type()<<" "<<this->name() << "=" << value << std::endl;
-}
-
-/*!
- * Returns the name of the integer type
- * @return Name of the integer type, "integer"
- */
-std::string integer::type() const{
-    return "integer";
-}
-
-
-/*!
- * Sets the input pointer to the value of the integer
- */
-void integer::_retrieve(retrieve_wrapper&& inval, item* caller){
-    inval.check_and_get_type(typeid(int), &value);
-}
-
-//unisgned functions
-//
-/*!
- * Parses the input int, deprecated
- */
-void _unsigned::parse(const std::string& inval){
-    std::stringstream convert(inval);
-    convert >> value;
-}
-/*!
- * Prints the int
- */
-void _unsigned::print() const{
-    std::cout << this->type()<<" "<<this->name() << "=" << value << std::endl;
-}
-
-/*!
- * Returns the name of the _unsigned type
- * @return Name of the _unsigned type, "unsigned"
- */
-std::string _unsigned::type() const{
-    return "unsigned";
-}
-
-
-/*!
- * Sets the input pointer to the value of the _unsigned
- */
-void _unsigned::_retrieve(retrieve_wrapper&& inval, item* caller){
-    inval.check_and_get_type(typeid(size_t), &value);
-}
-
-
 
 //variable functions
 
