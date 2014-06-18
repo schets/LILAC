@@ -32,9 +32,8 @@ class writer{
         END=OTHER} w_type;
 
     virtual void add_data(std::shared_ptr<const data> inval, const w_type dat_t);
-
+    std::string to_string() const;
     void set_rule(w_type inval, bool rule);
-
     virtual ~writer();
     writer(bool def = true);
     writer(const std::map<int, bool>& writevals, bool def = true);

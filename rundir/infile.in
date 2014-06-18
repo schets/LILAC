@@ -1,1 +1,2 @@
-../src/infile.in
+#cd input_files
+#include infile.in

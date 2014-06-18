@@ -34,8 +34,8 @@ class engineimp{
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;
     std::set<std::shared_ptr<item>> update_vars;
-    void write_data(std::shared_ptr<writer> inval, std::ofstream& fwrite);
-    void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind);
+    void write_data(std::shared_ptr<writer> inval, std::ostream& fwrite);
+    void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind, std::ostream& ostr);
     public:
     void write_dat();
     void add_writer(const std::shared_ptr<writer>& wval);

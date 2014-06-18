@@ -1,6 +1,5 @@
 (string names doesntmatter)
-(integer iterations 3)
+(integer iterations 12)
 (double initial_inc .14)
 (double mul_fac 1.24784622373)
-(double mul_fac2 93939)
 (toroidal controller)
