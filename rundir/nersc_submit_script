@@ -1,16 +1,17 @@
-#PBS -q regular
+#PBS -q debug 
 #PBS -l mppwidth=24
 #PBS -l walltime=00:10:00
 #PBS -N LILAC
 #PBS -m n
-#PBS -o output/lilac_out.txt
-#PBS -e output/lilac_err.txt
+#PBS -o lilac_out.txt
+#PBS -e lilac_err.txt
 #PBS -S /bin/bash
 #PBS -V
 
 cd $PBS_O_WORKDIR
 module load taskfarmer
 cd $PBS_O_WORKDIR
-
+setenv PAT_RT_EXPFILE_DIR $SCRATCH/data_dir
+setenv PAT_RT_HWPC 0
 
 tf -t 24 -n 1 ./tf_script.sh

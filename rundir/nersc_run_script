@@ -4,7 +4,7 @@ rm -rf $SCRATCH/lilac_run_dir
 cp -r ../rundir $SCRATCH/lilac_run_dir
 cd $SCRATCH/lilac_run_dir
 rm -rf output
+mkdir -p $SCRATCH/lilac_profile_output
 mkdir output
-mkdir output/stdout
-mkdir output/stderr
+mkdir -p $SCRATCH/lilac_output
 qsub nersc_submit_script

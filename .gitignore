@@ -27,6 +27,7 @@ rundir/failed
 !rundir/*.sh
 !*.sh
 rundir/lilac
+rundir/lilac+pat
 *.ignore
 *.out
 *.3D
