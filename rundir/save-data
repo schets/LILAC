@@ -9,4 +9,5 @@ cp -r input_files $dirname/
 cp -r output $dirname/
 rm output/*.* 
 rm output/lilac_stdout/*
-cp nersc-run-script $dirname/
+cp nersc_submit_script $dirname/
+cp nersc_run_script $dirname/
