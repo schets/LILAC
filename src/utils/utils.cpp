@@ -1,41 +1,26 @@
+/*
+Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington
+Authors: Sam Schetterer
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
 #include "defs.hpp"
 #include "engine/item.h"
 #include <map>
 #include <set>
 extern "C"{
 #include <complex.h>
-#include "eigen3/fftw3.h"
-}
-
-/*!
- * This function returns a pointer that is aligned to at least whatever
- * FFTTW requires for data alignment.
- *
- * \note The mempool class should almost always be used instead of direct calls to al_malloc
- * @param ss The number of bytes to allocate
- */
-void* al_malloc(size_t ss){
-    void* rv = fftw_malloc(ss);
-    if(!rv){
-        std::stringstream str;
-        str << "Memory allocation of " << ss << " bytes of data failed";
-        err(str.str(), "malloc", "defs.h", FATAL_ERROR);
-    }
-    return rv;
-}
-
-/*!
- * Frees memory that has been allocated by al_malloc
- *
- * \note Only call on data allocated by al_malloc, not malloc or new
- *
- * @param ss The pointer to be freed
- */
-void al_free(void* ss){
-    if(!ss){
-        err("Attempt to free a null pointer", "free", "defs.h", WARNING);
-    }
-    fftw_free(ss);
+#include <acml.h>
 }
 
 
@@ -97,20 +82,45 @@ void err(std::string message, std::string function, std::string file, std::share
     std::cerr << "\nContinuing program\n";
 }
 
+//Since everything has fftw wrappers, I'm writing in terms of that although we use the acml functions
+
 /*!
- * Lifetime control for fftw_plans
+ * Lifetime control for fft_plans
  */
-class fftw_plan_holder{
+class fft_plan_holder{
     public: 
-        fftw_plan p;
-        fftw_plan_holder():p(0){}
-        fftw_plan_holder(fftw_plan h):p(h){}
-        ~fftw_plan_holder(){
-            if(p){
-                fftw_destroy_plan(p);
+        doublecomplex* comm;
+        int info;
+        size_t len;
+        fft_plan_holder():comm(0){}
+        fft_plan_holder(size_t n):comm(new doublecomplex[3*n+100]), len(n){
+            zfft1dx(0, 1.0, 0, (int)n, 0, 1, 0, 1, comm, &info);
+        }
+        fft_plan_holder(const fft_plan_holder& cpy):comm(new doublecomplex[cpy.len*3+100]), len(cpy.len){
+            zfft1dx(0, 1.0, 0, (int)len, 0, 1, 0, 1, comm, &info);
+        }
+        ~fft_plan_holder(){
+            if(comm){
+                delete[] comm;
             }
         }
 };
+
+//!Actual fft function that fft and ifft wrap
+void _fft(comp* _in, comp* _out, const size_t len, int dir, double scale){
+    doublecomplex* in = (doublecomplex*)_in;
+    doublecomplex* out = (doublecomplex*)_out;
+    static std::map<size_t, fft_plan_holder> fft_plans;
+    if(in != out && (size_t)std::abs((std::ptrdiff_t)(_in - _out)) < len){
+        err("Input arrays to fft alias each other, and are not equal", "fft", "utils/utils.cpp",
+                FATAL_ERROR);
+    }
+    if(fft_plans.count(len)==0){
+        fft_plans.insert(std::pair<size_t, fft_plan_holder>(len, fft_plan_holder(len)));
+    }
+    auto& fplan = fft_plans[len];
+    zfft1dx(dir, scale, in==out, (int)len, in, 1, out, 1, fplan.comm, &(fplan.info));
+}
 /*
  * This function calculates the non-normalized forwards fourier transform of complex input data, and stores it 
  * in an output array. These arrays can point to the same location, but they must not alias in any other fashion
@@ -121,27 +131,9 @@ class fftw_plan_holder{
  * @param _out an array pointing towards the output locations (may be equal to input)
  * @param len length of the arrays
  */
-void fft(comp* _in, comp* _out, const size_t len){
-    fftw_complex* in = (fftw_complex*)_in;
-    fftw_complex* out = (fftw_complex*)_out;
-    static std::map<size_t, fftw_plan_holder> in_place, out_place;
-    if(in == out){
-        if(!in_place.count(len)){
-            in_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
-        }
-        fftw_execute_dft(in_place[len].p, in, out);
-        return;
-    }
-    if((size_t)std::abs((std::ptrdiff_t)(_in - _out)) < len){
-        err("Input arrays to fft alias each other, and are not equal", "fft", "utils/utils.cpp",
-                FATAL_ERROR);
-    }
-    if(!out_place.count(len)){
-        out_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_FORWARD, FFTW_ESTIMATE);
-    }
-    fftw_execute_dft(out_place[len].p, in, out);
+void fft(comp* in, comp* out, const size_t len){
+    _fft(in, out, len, 1, 1.0);
 }
-
 
 /*
  * This function calculates the normalized backwards fourier transform of complex input data, and stores it 
@@ -153,37 +145,13 @@ void fft(comp* _in, comp* _out, const size_t len){
  * @param _out an array pointing towards the output locations (may be equal to input)
  * @param len length of the arrays
  */
-void ifft(comp* _in, comp* _out, const size_t len){
-    fftw_complex*  in = (fftw_complex*)_in;
-    fftw_complex*  out = (fftw_complex*)_out;
-    static std::map<size_t, fftw_plan_holder> in_place, out_place;
-    if(in == out){
-        if(!in_place.count(len)){
-            in_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
-        }
-        fftw_execute_dft(in_place[len].p, in, out);
-    }
-    else{
-        if((size_t)std::abs((std::ptrdiff_t)(_in - _out)) < len){
-            err("Input arrays to ifft alias each other, and are not equal", "ifft", "utils/utils.cpp",
-                    FATAL_ERROR);
-        }
-        if(!out_place.count(len)){
-            out_place[len].p = fftw_plan_dft_1d(len, in, out, FFTW_BACKWARD, FFTW_ESTIMATE);
-        }
-        fftw_execute_dft(out_place[len].p, in, out);
-    }
-    double nval;
-    nval=1.00/len;
-    for(size_t i = 0; i < len; i++){
-        _out[i]*=nval;
-    }
+void ifft(comp* in, comp* out, const size_t len){
+    _fft(in, out, len, -1, 1.0/len);
 }
 
-//!Cleans up any data held by the fft code
-void fft_cleanup(){
-    fftw_cleanup();
-}
+
+
+
 
 /*!
  * Trims specified characters from beginning and end of string

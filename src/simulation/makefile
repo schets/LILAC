@@ -15,7 +15,7 @@ $(LIB_PATH)/simulation.o: simulation.cpp $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/simulation.o
 	$(CPP) -c simulation.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/simulation.o
 
-$(LIB_PATH)/jones_optical.o: jones_optical.cpp $(S_HEADS) ../utils/noise.h $(INLINE_HEADERS)
+$(LIB_PATH)/jones_optical.o: jones_optical.cpp $(S_HEADS)  $(INLINE_HEADERS)
 	@rm -f $(LIB_PATH)/jones_optical.o
 	$(CPP) -c jones_optical.cpp $(INC_PATH) $(CFLAGS) -o $(LIB_PATH)/jones_optical.o
 

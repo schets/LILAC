@@ -2,13 +2,12 @@ LILAC: Learning and Integration of Lasers for Adaptive Control
 
 This project provides a framework with which to analyze/control lasers, and more generally, any tunable dynamical system.
 
-You can find documentation on the [wiki](http://github.com/schets/LILAC/wiki), and doxygen generated [advanced documentation](http://schets.github.io/LILAC) as well 
+You can find advanced documentation [here](http://schets.github.io/LILAC)
 
 Installation:
-This project depends on [FFTW](www.fftw.org), and the makefile has configurations for GCC and the Intel C++ Compiler. These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
+This project depends on [ACML](http://developer.amd.com/tools-and-sdks/cpu-development/cpu-libraries/amd-core-math-library-acml/acml-downloads-resources/#download) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page), and the makefile has configurations for GCC, CLANG, and the Intel C++ Compiler. These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
 
-The library Eigen3 is included with the source. This is done to simplify installation, especially on NERSC which is iffy about non-standard libraries. Eigen3 is a set of headers, so no work is required on the part of the user.
-
+Eigen can be install with the script get_libs in the main directory, while ACML can be downloaded from the AMD website.
 
 Installation on Linux:
 

@@ -6,14 +6,14 @@ CPP=gcc
 ifeq ($(CPP), gcc)
 FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer
 CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing -pipe
-LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -m64 -pipe -pg $(FASTMATH)
+LFLAGS= -L/usr/local/lib  -L~/lib-src/gfortran64/lib/ -lstdc++ -O3 -lacml -lm -m64 -pipe -pg $(FASTMATH)
 endif
 ifeq ($(CPP), clang)
 #clang generates significantly worse code than gcc for this project, but compiles faster
 #so might as well make it a default debug build
 FASTMATH=
 CFLAGS=-I../ -I./utils -stdlib=libc++ -std=c++11 -g -DCLANG  -DDEBUG -m64 -Werror -W -Wall
-LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm 
+LFLAGS= -L/usr/local/lib -lstdc++ -lacml -lm 
 endif
 ifeq ($(CPP), icc)
 export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions

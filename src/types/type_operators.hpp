@@ -1,3 +1,19 @@
+/*
+Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington
+Authors: Sam Schetterer
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
 #ifndef TYPE_OPERATORS_HPP
 #define TYPE_OPERATORS_HPP
 #include <complex>
@@ -105,6 +121,7 @@ struct get_val{
         return get<T, dim>(const_cast<T&>(inval));
     }
 };
+
 //!Class containing functions for mapping over generic objects
 template<class T, size_t dim = float_traits<T>::dim>
 struct apply{
@@ -117,6 +134,11 @@ struct apply{
             static inline void transform(T& inval, Lambda&& func){
                 std::forward<Lambda>(func)(get<T, dim>::pull(inval), dim);
                 apply<T, dim-1>::transform(inval, std::forward<Lambda>(func));
+            }
+        template<class Lambda, class Final>
+            static inline void transform(T& inval, Lambda&& func, Final&& finish){
+                apply<T, dim>::transform(inval, std::forward<Lambda>(func));
+                std::forward<Final>(finish)(inval);
             }
 
         template<class Lambda, class Trans>
@@ -148,6 +170,11 @@ struct apply<T, 1>{
     template<class Lambda>
         static inline void transform(T& inval, Lambda&& func){
             std::forward<Lambda>(func)(get<T, 1>::pull(inval), 1);
+        }
+    template<class Lambda, class Final>
+        static inline void transform(T& inval, Lambda&& func, Final&& finish){
+            apply<T, 1>::transform(inval, std::forward<Lambda>(func));
+            std::forward<Final>(finish)(inval);
         }
     template<class Lambda, class Trans>
         static inline void map_into(const T& inval, Lambda&& func, Trans& outval){

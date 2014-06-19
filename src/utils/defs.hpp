@@ -1,3 +1,19 @@
+/*
+Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington
+Authors: Sam Schetterer
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
+
+2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+
+3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+*/
 #ifndef DEF_H
 #define DEF_H
 #ifdef CLANG
@@ -72,14 +88,7 @@ void err(std::string message, std::string function, std::string file, std::share
 void err(std::string message, std::string function, std::string file, std::shared_ptr<item> p, _warning f);
 
 
-//Alligned malloc
-//also ensures return value is valid
-void* al_malloc(size_t ss);
-void al_free(void* ss);
 void trim(std::string& curline, const std::string& val = "\n\r\t ");
 void ltoken(std::string& tok, std::string& str, std::string delim=" ");
 std::string get_unique_name(std::string base = "");
-extern "C"{
-#include <malloc.h>
-}
 #endif

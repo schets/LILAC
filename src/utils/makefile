@@ -2,7 +2,7 @@
 include ../make.inc
 LIB_PATH= $(LIB_MAIN)
 
-UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o $(LIB_PATH)/noise.o $(LIB_PATH)/mempool.o
+UTIL_OBJ=$(LIB_PATH)/utils.o $(LIB_PATH)/main.o  $(LIB_PATH)/mempool.o
 
 all: $(UTIL_OBJ)
 
@@ -13,10 +13,6 @@ $(LIB_PATH)/utils.o: utils.cpp $(INLINE HEADERS)
 $(LIB_PATH)/main.o: main.cpp $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/main.o
 	$(CPP) -c main.cpp $(CFLAGS) $(INC_PATH) -o $(LIB_PATH)/main.o
-
-$(LIB_PATH)/noise.o: noise.cpp noise.h $(INLINE HEADERS)
-	@rm -f $(LIB_PATH)/noise.o
-	$(CPP) -c noise.cpp $(CFLAGS) $(FASTMATH) $(INC_PATH) -o $(LIB_PATH)/noise.o
 
 $(LIB_PATH)/mempool.o: mempool.cpp $(INLINE HEADERS)
 	@rm -f $(LIB_PATH)/mempool.o
