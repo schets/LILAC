@@ -20,7 +20,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "types/type_operators.hpp"
 #include <stdlib.h>
 #include <time.h>
-#include <fstream>
 #include <acml.h>
 namespace __HIDER__{
     //!rng generator struct;
@@ -92,6 +91,6 @@ inline void gaussian_noise(T* inval, size_t len, double sdev, Lambda&& fnc){
 }
 template<class T>
 inline void gaussian_noise(T* inval, size_t len, double sdev){
-    gaussian_noise(inval, len, sdev, [](T& inval){});
+    gaussian_noise(inval, len, sdev, [](T&){});
 }
 #endif

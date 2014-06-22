@@ -24,10 +24,11 @@ void simulation::postprocess(input& invals){
 }
 
 /*!
- * This returns the dependencies for the simulation class, which are
- * "controller" and the dependencies for item_dim
- * \note
- * System depends on "controller"
+ * This returns the dependencies for the simulation class.
+ * The simulation class has the same dependencies as item_dim, as well as:
+ *
+ *      - controller controller: This object is the controller that controls the variables in the current simulation class
+ *      - objective objective: This object is the objective function for the 
  * \sa item_dim::dependencies
  * @return Dependencies for system
  */

@@ -34,10 +34,10 @@ const std::type_info& ode::vtype() const{
 
 /*!
  * Returns the dependencies of the ode class.
- * The ode class depends on:
+ * The ode class has the same dependencies as the simulation class, as well as:
  *      - double tf: Ending time of the integration
  *
- *      - integrator: Type of interator being used, must be a type that inherits from integrator class
+ *      - integrator integrator: Type of interator being used, must be a type that inherits from integrator class
  *
  * And has optional parameters: 
  *      - double t0: Starting time of integration, default value of 0

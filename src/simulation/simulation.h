@@ -21,11 +21,19 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 class writer;
 /*!
  * This class defines the system being simulated. It simulates a run of the system
- * and returns a single value for the 
+ * and returns a score for the current simulation run.
+ *
+ * Every run of LILAC will have a simulation class that determines what is computed
+ *
+ * For example, the jones_optical simulation class is used for the mode-locked laser simulations.
+ * This class holds an integrator object, which then in turns holds a certain rhs function. This function
+ * normally is of the type rhs_CNLS.
  */
 class simulation:public item_dim{
     protected:
+        //!The controller
         controller* cont;
+        //!The objective function
         objective* obj;
         writer* cur_writer;
     public:

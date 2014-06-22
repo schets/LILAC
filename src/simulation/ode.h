@@ -21,7 +21,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "integrator/integrator.h"
 //!Integrates an ODE forwards in time
 /*
- * This simulation class integrates and ODE forwards in time, and writes data at specified intervals
+ * This simulation class integrates an ODE forwards in time, and writes data at specified intervals
  */
 class ode: public simulation, public vartype{
     std::shared_ptr<ode> actual;

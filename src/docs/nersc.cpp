@@ -4,7 +4,7 @@
  * Nersc has published some good examples of jobs to run,
  * mainly <a href="https://www.nersc.gov/users/computational-systems/genepool/running-jobs/submitting-jobs/" here\a>
  *
- * In addition, one can find the script to run nersc jobs in rundir/nersc_run_script.
+ * In addition, one can find the script that describes nersc jobs in rundir/nersc_submit_script.
  * The script that runs LILAC is rundir/tf_script.sh. It is a fairly simple script.
  * It creates a filename that is attached to the index, called run#.out.
  * LILAC is then piped to the scratch folder, where the data is stored 
@@ -19,10 +19,14 @@
  * In addition, the queue type can be set to regular or debug.
  * The debug queue can only run smaller jobs and should only be used for testing.
  *
- * To submit a jub, perform
+ *@section Running Jobs
+ *
+ *
+ * To submit a jub, enter the rundir directory of LILAC and perform
  * @code
- * qsub nersc-run-script.
+ * ./nersc-run-script.
  * @endcode
+ * This saves the data currently in the ouptut folder, copies the running directory to a compute node and then submits a job.
  * You can check the status of the job with
  * @code qstat -u kutz @endcode
  * and delete a job with
@@ -31,6 +35,10 @@
  *
  * There is also a script called save_data. This will take everything in the folder
  * $SCRATCH/lilac_output and puts it into a .tgz file. It also prints the location of the file,
- * which will be in $scratch/final_data_outs/lilac-out.xxx.tgz. xxx consistof of two things. 
+ * which will be in $SCRATCH/final_data_outs/lilac-out.xxx.tgz. xxx consistof of two things. 
  * The first parameter passed to the script, and the second is the data.
+ *
+ * This is automatically run upon submitting a script,
+ * and all unsaved data will be moved to a tarfile in the save directory called
+ * lilac-out.no-name-given-to-save-data.<date>.tgz
  */

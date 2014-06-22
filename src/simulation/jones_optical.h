@@ -25,8 +25,6 @@ class jones_optical:public stable_spectral_pde_1d_tmpl<comp>{
     double* help, *t, *phold;
     comp* nvec1;
     double *nvec2;
-    double best_score;
-    double ba1, ba2, bap, ba3;
     comp* kurtosis_help;
     std::vector<std::shared_ptr<jones_matrix> > jones_matrices;
     struct data_store{

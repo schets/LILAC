@@ -126,15 +126,86 @@ struct get_val{
 template<class T, size_t dim = float_traits<T>::dim>
 struct apply{
     private:
-        //!helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility
+        //!helper function to reduce complexity of get function calls
+        template<class U>
+            static auto get(U& inval) -> decltype(get<U, dim>::pull(inval)){
+                return ::get<U, dim>::pull(inval);
+            }
     public:
         static_assert(dim >= 1, "A dimension less then one has been given to the apply structure");
-        //no dimension hecking here, that should be done by the getter function
+        //no dimension checking here, that should be done by the getter function
+        /*!
+         * This function transforms a value, based upon the function func.
+         * For each dimension, func is called with the current dimension of inval and
+         * the dimension number, and returns the new value for the current dimension of inval.
+         *
+         * For example, if the data type was an array, the transform function would be equivilant to
+         * @code
+         * inval[0] = func(inval[0], 1);
+         * inval[1] = func(inval[1], 2);
+         * ...
+         * inval[i] = func(inval[i], i+1);
+         * @endcode
+         * Note that in the above example, the loop is unrolled, and the dimensions are 1-indexed instead of zero indexed.
+         * In addition, the compiler should inline the call to func is possible.
+         *
+         * In addition, note that the function isn't given knowledge of inval as a whole, simply each respective dimension.
+         * This is because inval is modified during the process, so passing inval to the function wouldn't be meaningful.
+         * 
+         * You can get around this by binding a copy of inval to the passed function for use in calculations, like
+         * @code
+         * apply<T, dim>::transform(some_val, [some_val](T& inval, size_t dim){
+         *      auto calc_val = do_calculation(some_val);
+         *      inval.dimensions[dim-1] = calc_val * inval.dimensions[dim-1];
+         * }
+         * @endcode
+         *
+         * If the binding was be reference [&some_val], this would be incorrect as the value being used in the lambda
+         * would be the same as the value being modified by transform
+         *
+         * @param inval The value being transformed
+         * @param func The function object that operates on each dimension. Can be any callable object
+         */
         template<class Lambda>
             static inline void transform(T& inval, Lambda&& func){
-                std::forward<Lambda>(func)(get<T, dim>::pull(inval), dim);
+                std::forward<Lambda>(func)(get(inval), dim);
                 apply<T, dim-1>::transform(inval, std::forward<Lambda>(func));
             }
+        //!Version of transform where Lambda takes dim as a template parameter
+        /*!
+         * This version of transform takes a struct as a template parameter, where the
+         * struct takes the dimension as a template parameter and has a function called apply
+         * which takes the proper type as a reference parameter and does the coordinate transformation
+         *
+         * For example, one may have
+         * @code
+         * template<size_t dim>
+         * struct do_calc{
+         *      static void apply(double& inval){
+         *          inval = calculation_based_on_dim(inval);
+         *      }
+         * };
+         * ...
+         * ...
+         * ...
+         * double x;
+         * apply<double>::transform<do_calc>(x);
+         * ...
+         * ...
+         *
+         * @endcode
+         */
+        template<template<size_t> class Lambda>
+            static inline void transform(T& inval){
+                Lambda<dim>::apply(inval);
+                apply<T, dim-1>::template transform<Lambda>(inval);
+            }
+        /*!
+         * This function transforms an existing values, based upon the functions func and finish that have been passed
+         * First, transform is called with inval and func, and then finish is applied
+         *
+         * @param finish the function applied after the calculations are finished
+         */
         template<class Lambda, class Final>
             static inline void transform(T& inval, Lambda&& func, Final&& finish){
                 apply<T, dim>::transform(inval, std::forward<Lambda>(func));
@@ -144,12 +215,12 @@ struct apply{
         template<class Lambda, class Trans>
             static inline void map_into(const T& inval, Lambda&& func, Trans& outval){
                 static_assert(float_traits<Trans>::dim == float_traits<T>::dim,
-                        "The dimension of the Trans type is not euqal to the dimension of the T type");
-                get<Trans, dim>::pull(outval) = std::forward<Lambda>(func)(get_cref<T, dim>::pull(inval), dim);
+                        "The dimension of the Trans type is not equal to the dimension of the T type");
+                get(outval) = std::forward<Lambda>(func)(get_cref<T, dim>::pull(inval), dim);
                 apply<T, dim-1>::map_into(inval, std::forward<Lambda>(func), outval);
             }
         //!Generates a variable of type trans with the functor by mapping each coordinate of the first to the second
-        template<class Lambda, class Trans, class constr, class postop>
+        template<class Lambda, class Trans>
             static inline Trans map(const T& inval, Lambda&& func){
                 Trans val;
                 map_into(inval, std::forward<Lambda>(func), val);
@@ -167,18 +238,29 @@ struct apply{
 };
 template<class T>
 struct apply<T, 1>{
+    private:
+    static constexpr size_t dim=1;
+    template<class U>
+        static auto get(U& inval) -> decltype(get<U, dim>::pull(inval)){
+            return ::get<U, 1>::pull(inval);
+        }
+    public:
     template<class Lambda>
         static inline void transform(T& inval, Lambda&& func){
-            std::forward<Lambda>(func)(get<T, 1>::pull(inval), 1);
+            std::forward<Lambda>(func)(get(inval), 1);
+        }
+    template<template<size_t> class Lambda>
+        static inline void transform(T& inval){
+            Lambda<1>::apply(inval);
         }
     template<class Lambda, class Final>
         static inline void transform(T& inval, Lambda&& func, Final&& finish){
-            apply<T, 1>::transform(inval, std::forward<Lambda>(func));
+            std::forward<Lambda>(func)(get(inval), 1);
             std::forward<Final>(finish)(inval);
         }
     template<class Lambda, class Trans>
         static inline void map_into(const T& inval, Lambda&& func, Trans& outval){
-            get<Trans, 1>::pull(outval) = std::forward<Lambda>(func)(get<T, 1>::pull(inval), 1);
+            get(outval) = std::forward<Lambda>(func)(get(inval), 1);
         }
 
 };
