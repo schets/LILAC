@@ -84,6 +84,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#friends">Friends</a> &#124;
 <a href="classinput-members.html">List of all members</a>  </div>
@@ -92,32 +93,62 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This class wraps the raw input for retrieval purposes.  
+ <a href="classinput.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="input_8h_source.html">input.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:adac0ea346c43d7762baef3e3f387eebd"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#adac0ea346c43d7762baef3e3f387eebd">input</a> ()</td></tr>
-<tr class="memitem:a1e9bd109a6f96f2d7db60e790e86f88c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a1e9bd109a6f96f2d7db60e790e86f88c">input</a> (std::map&lt; std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; &amp;values)</td></tr>
-<tr class="memitem:af025937954ff9ecab9f17ed6dabc2fc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#af025937954ff9ecab9f17ed6dabc2fc1">operator[]</a> (const std::string &amp;inval)</td></tr>
-<tr class="memitem:aed0c9b400fd60d8390416ad0a37017ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae">add_redir</a> (const std::string &amp;name, const <a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp;inv)</td></tr>
-<tr class="memitem:abd86bf847bcba5d8e2d8c1c5866bf258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">add_remap</a> (const std::string &amp;oldname, const std::string &amp;newname)</td></tr>
+<tr class="memitem:a1e9bd109a6f96f2d7db60e790e86f88c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a1e9bd109a6f96f2d7db60e790e86f88c">input</a> (std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; &amp;values)</td></tr>
+<tr class="memitem:ad7ebf02ca90361e11a5472caf40af0d8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classitem.html">item</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#ad7ebf02ca90361e11a5472caf40af0d8">operator[]</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;inval)</td></tr>
+<tr class="memitem:aed0c9b400fd60d8390416ad0a37017ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae">add_redir</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, const <a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp;inv)</td></tr>
+<tr class="memdesc:aed0c9b400fd60d8390416ad0a37017ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Redirects an input value to a local item.  <a href="#aed0c9b400fd60d8390416ad0a37017ae"></a><br/></td></tr>
+<tr class="memitem:abd86bf847bcba5d8e2d8c1c5866bf258"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">add_remap</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;oldname, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;newname)</td></tr>
+<tr class="memdesc:abd86bf847bcba5d8e2d8c1c5866bf258"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remaps one name to another item. Mappings will prioritize local variables over global.  <a href="#abd86bf847bcba5d8e2d8c1c5866bf258"></a><br/></td></tr>
+<tr class="memitem:a169558ab7654aac73a65ab112bc58fd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a169558ab7654aac73a65ab112bc58fd9">insert_item</a> (std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt; inval)</td></tr>
+<tr class="memitem:a38c173a46b9b35ce4c2f49250a6dc6b0"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a38c173a46b9b35ce4c2f49250a6dc6b0"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a38c173a46b9b35ce4c2f49250a6dc6b0">insert_item</a> (std::shared_ptr&lt; T &gt; inval)</td></tr>
+<tr class="memitem:a171d9a8b650eb89cc398a7c574b4a4d4"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a171d9a8b650eb89cc398a7c574b4a4d4"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4">retrieve</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, <a class="el" href="classitem.html">item</a> *caller)</td></tr>
+<tr class="memdesc:a171d9a8b650eb89cc398a7c574b4a4d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type safe method of retrieving value from a variable.  <a href="#a171d9a8b650eb89cc398a7c574b4a4d4"></a><br/></td></tr>
+<tr class="memitem:a44620bd68753c765fc79139e4a0c9330"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a44620bd68753c765fc79139e4a0c9330"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a44620bd68753c765fc79139e4a0c9330">retrieve</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, <a class="el" href="classitem.html">item</a> *caller, T &amp;&amp;stdval)</td></tr>
+<tr class="memitem:ae0b795f7246e437b3f0cf7d7abb64adf"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ae0b795f7246e437b3f0cf7d7abb64adf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#ae0b795f7246e437b3f0cf7d7abb64adf">retrieve</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, <a class="el" href="classitem.html">item</a> *caller, const T &amp;stdval)</td></tr>
+<tr class="memitem:a40bf48636dbb642e56b9ca3c25af08fe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a40bf48636dbb642e56b9ca3c25af08fe"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a40bf48636dbb642e56b9ca3c25af08fe">retrieve_notrack</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name)</td></tr>
+<tr class="memitem:a47702ccdf17d97fcae418d0ccfae9467"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a47702ccdf17d97fcae418d0ccfae9467"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a47702ccdf17d97fcae418d0ccfae9467">retrieve_notrack</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, T &amp;&amp;stdval)</td></tr>
+<tr class="memitem:a9477ff7cf14a54d9e579164624dfe7bc"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a9477ff7cf14a54d9e579164624dfe7bc"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classinput.html#a9477ff7cf14a54d9e579164624dfe7bc">retrieve_notrack</a> (T &amp;inval, const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;name, const T &amp;stdval)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a6e03ad2731def84cf3a94b9ebb186d2a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a">get_val</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;value)</td></tr>
+<tr class="memdesc:a6e03ad2731def84cf3a94b9ebb186d2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">gets a value from the input  <a href="#a6e03ad2731def84cf3a94b9ebb186d2a"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5e2969c45af75b9d457ac839021e4076"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+<tr class="memitem:a5e2969c45af75b9d457ac839021e4076"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <br class="typebreak"/>
 <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a5e2969c45af75b9d457ac839021e4076">invals</a></td></tr>
-<tr class="memitem:a70083eca32c4f5f5c3c2e2e484b3e654"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
+<tr class="memdesc:a5e2969c45af75b9d457ac839021e4076"><td class="mdescLeft">&#160;</td><td class="mdescRight">Points to the actual map of input values.  <a href="#a5e2969c45af75b9d457ac839021e4076"></a><br/></td></tr>
+<tr class="memitem:a70083eca32c4f5f5c3c2e2e484b3e654"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <br class="typebreak"/>
 <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654">re_directions</a></td></tr>
-<tr class="memitem:ae26087127cfc378e0418f8609ea4fa97"><td class="memItemLeft" align="right" valign="top">std::map&lt; std::string, <br class="typebreak"/>
-std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a></td></tr>
+<tr class="memdesc:a70083eca32c4f5f5c3c2e2e484b3e654"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-directs an input value to a locally defined item.  <a href="#a70083eca32c4f5f5c3c2e2e484b3e654"></a><br/></td></tr>
+<tr class="memitem:ae26087127cfc378e0418f8609ea4fa97"><td class="memItemLeft" align="right" valign="top">std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <br class="typebreak"/>
+<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a></td></tr>
+<tr class="memdesc:ae26087127cfc378e0418f8609ea4fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Re-directs one name to another.  <a href="#ae26087127cfc378e0418f8609ea4fa97"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
-<tr class="memitem:a1e2d5b23a3c52f54b3d7c89ede4b14e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a1e2d5b23a3c52f54b3d7c89ede4b14e0">eval_lisp</a> (std::string in_cmd, <a class="el" href="classinput.html">input</a> &amp;inv)</td></tr>
+<tr class="memitem:a1e2d5b23a3c52f54b3d7c89ede4b14e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classinput.html#a1e2d5b23a3c52f54b3d7c89ede4b14e0">eval_lisp</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> in_cmd, <a class="el" href="classinput.html">input</a> &amp;inv)</td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="input_8h_source.html#l00008">8</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+<div class="textblock"><p>This class wraps the raw input for retrieval purposes. </p>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00034">34</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="adac0ea346c43d7762baef3e3f387eebd"></a>
 <div class="memitem">
@@ -140,7 +171,7 @@ Friends</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8h_source.html#l00013">13</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+<p>Definition at line <a class="el" href="input_8h_source.html#l00047">47</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
 
 </div>
 </div>
@@ -151,14 +182,14 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">input::input </td>
           <td>(</td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classitem__wrapper.html">item_wrapper</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>values</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00003">3</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00019">19</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 </div>
 </div>
@@ -170,7 +201,7 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">void input::add_redir </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>name</em>, </td>
         </tr>
         <tr>
@@ -187,7 +218,9 @@ Friends</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00017">17</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+<p>Redirects an input value to a local item. </p>
+
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00055">55</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -207,13 +240,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void input::add_remap </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>oldname</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>newname</em>&#160;</td>
         </tr>
         <tr>
@@ -224,7 +257,9 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00021">21</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+<p>Remaps one name to another item. Mappings will prioritize local variables over global. </p>
+
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00059">59</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -237,21 +272,506 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a class="anchor" id="af025937954ff9ecab9f17ed6dabc2fc1"></a>
+<a class="anchor" id="a6e03ad2731def84cf3a94b9ebb186d2a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp; input::get_val </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>gets a value from the input </p>
+
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00043">43</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a6e03ad2731def84cf3a94b9ebb186d2a_icgraph.png" border="0" usemap="#classinput_a6e03ad2731def84cf3a94b9ebb186d2a_icgraph" alt=""/></div>
+<map name="classinput_a6e03ad2731def84cf3a94b9ebb186d2a_icgraph" id="classinput_a6e03ad2731def84cf3a94b9ebb186d2a_icgraph">
+<area shape="rect" id="node3" href="classinput.html#ad7ebf02ca90361e11a5472caf40af0d8" title="input::operator[]" alt="" coords="156,500,268,529"/><area shape="rect" id="node5" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="161,553,263,583"/><area shape="rect" id="node7" href="classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5" title="controller::postprocess" alt="" coords="333,5,488,35"/><area shape="rect" id="node9" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571" title="toroidal::postprocess" alt="" coords="340,59,481,88"/><area shape="rect" id="node11" href="classinput.html#a40bf48636dbb642e56b9ca3c25af08fe" title="input::retrieve_notrack" alt="" coords="336,112,485,141"/><area shape="rect" id="node13" href="classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="333,216,488,245"/><area shape="rect" id="node15" href="classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="573,216,728,245"/><area shape="rect" id="node17" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761" title="euler_sde_tmpl::postprocess" alt="" coords="556,325,745,355"/><area shape="rect" id="node19" href="classexample__integrator__tmpl.html#a2c664333f79dc6a5593c69623b17e450" title="example_integrator\l_tmpl::postprocess" alt="" coords="584,385,717,431"/><area shape="rect" id="node21" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="333,424,488,453"/><area shape="rect" id="node25" href="classrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633" title="rk45_tmpl::postprocess" alt="" coords="572,469,729,499"/><area shape="rect" id="node27" href="classrk4__tmpl.html#a572dd7c8f76784671eac295c92905a2b" title="rk4_tmpl::postprocess" alt="" coords="576,525,725,555"/><area shape="rect" id="node31" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="319,579,503,608"/><area shape="rect" id="node33" href="classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="331,632,491,661"/><area shape="rect" id="node35" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="324,685,497,715"/><area shape="rect" id="node37" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="329,739,492,768"/><area shape="rect" id="node39" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="325,792,496,821"/><area shape="rect" id="node41" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="323,845,499,875"/><area shape="rect" id="node43" href="classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="349,899,472,928"/><area shape="rect" id="node46" href="classsimulation.html#a35314f30ad8650dcd7f46aa271f53a11" title="simulation::postprocess" alt="" coords="331,269,491,299"/><area shape="rect" id="node49" href="classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="343,952,479,981"/><area shape="rect" id="node51" href="classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="553,1003,748,1032"/><area shape="rect" id="node53" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="797,1021,952,1067"/><area shape="rect" id="node55" href="classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="329,1107,492,1136"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a169558ab7654aac73a65ab112bc58fd9"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classitem__wrapper.html">item_wrapper</a> &amp; input::operator[] </td>
+          <td class="memname">void input::insert_item </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td>
           <td class="paramname"><em>inval</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00005">5</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+<p>Definition at line <a class="el" href="engine_2input_8cpp_source.html#l00021">21</a> of file <a class="el" href="engine_2input_8cpp_source.html">input.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a169558ab7654aac73a65ab112bc58fd9_cgraph.png" border="0" usemap="#classinput_a169558ab7654aac73a65ab112bc58fd9_cgraph" alt=""/></div>
+<map name="classinput_a169558ab7654aac73a65ab112bc58fd9_cgraph" id="classinput_a169558ab7654aac73a65ab112bc58fd9_cgraph">
+<area shape="rect" id="node3" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="177,5,215,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a169558ab7654aac73a65ab112bc58fd9_icgraph.png" border="0" usemap="#classinput_a169558ab7654aac73a65ab112bc58fd9_icgraph" alt=""/></div>
+<map name="classinput_a169558ab7654aac73a65ab112bc58fd9_icgraph" id="classinput_a169558ab7654aac73a65ab112bc58fd9_icgraph">
+<area shape="rect" id="node3" href="classinput.html#a38c173a46b9b35ce4c2f49250a6dc6b0" title="input::insert_item" alt="" coords="204,5,327,35"/><area shape="rect" id="node5" href="classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="185,59,345,88"/><area shape="rect" id="node7" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="180,112,351,141"/><area shape="rect" id="node9" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="177,165,353,195"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a38c173a46b9b35ce4c2f49250a6dc6b0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::insert_item </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; T &gt;&#160;</td>
+          <td class="paramname"><em>inval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00062">62</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a38c173a46b9b35ce4c2f49250a6dc6b0_cgraph.png" border="0" usemap="#classinput_a38c173a46b9b35ce4c2f49250a6dc6b0_cgraph" alt=""/></div>
+<map name="classinput_a38c173a46b9b35ce4c2f49250a6dc6b0_cgraph" id="classinput_a38c173a46b9b35ce4c2f49250a6dc6b0_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a169558ab7654aac73a65ab112bc58fd9" title="input::insert_item" alt="" coords="176,5,299,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="348,5,385,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ad7ebf02ca90361e11a5472caf40af0d8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classitem.html">item</a>* input::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>inval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00049">49</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_ad7ebf02ca90361e11a5472caf40af0d8_cgraph.png" border="0" usemap="#classinput_ad7ebf02ca90361e11a5472caf40af0d8_cgraph" alt=""/></div>
+<map name="classinput_ad7ebf02ca90361e11a5472caf40af0d8_cgraph" id="classinput_ad7ebf02ca90361e11a5472caf40af0d8_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="183,5,281,35"/><area shape="rect" id="node5" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="169,59,295,88"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a171d9a8b650eb89cc398a7c574b4a4d4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classitem.html">item</a> *&#160;</td>
+          <td class="paramname"><em>caller</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Type safe method of retrieving value from a variable. </p>
+<p>This function provides a type-safe interface for extracting values from the item class The variable type is automatically inferred from the passed type- For example, passing an int to recieve an unsigned will result in a failure, as will passing anything other than a size_t. Same goes for doubles and floats</p>
+<p>When retrieving item* type classes, the type of pointer passed must be in the same inheritance line as the value being retrieved.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inval</td><td>A reference to the variable that will recieve the internal value of the item </td></tr>
+    <tr><td class="paramname">name</td><td>The name of the item being retrieved </td></tr>
+    <tr><td class="paramname">caller</td><td>The item receiving the variable </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00086">86</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_cgraph.png" border="0" usemap="#classinput_a171d9a8b650eb89cc398a7c574b4a4d4_cgraph" alt=""/></div>
+<map name="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_cgraph" id="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="169,5,268,35"/><area shape="rect" id="node5" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="156,59,281,88"/><area shape="rect" id="node7" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="167,112,271,141"/><area shape="rect" id="node9" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="200,165,237,195"/><area shape="rect" id="node11" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="176,219,261,248"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_icgraph.png" border="0" usemap="#classinput_a171d9a8b650eb89cc398a7c574b4a4d4_icgraph" alt=""/></div>
+<map name="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_icgraph" id="classinput_a171d9a8b650eb89cc398a7c574b4a4d4_icgraph">
+<area shape="rect" id="node3" href="classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5" title="controller::postprocess" alt="" coords="171,5,325,35"/><area shape="rect" id="node5" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571" title="toroidal::postprocess" alt="" coords="177,59,319,88"/><area shape="rect" id="node7" href="classinput.html#a40bf48636dbb642e56b9ca3c25af08fe" title="input::retrieve_notrack" alt="" coords="173,112,323,141"/><area shape="rect" id="node9" href="classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="171,216,325,245"/><area shape="rect" id="node11" href="classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="411,216,565,245"/><area shape="rect" id="node13" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761" title="euler_sde_tmpl::postprocess" alt="" coords="393,325,583,355"/><area shape="rect" id="node15" href="classexample__integrator__tmpl.html#a2c664333f79dc6a5593c69623b17e450" title="example_integrator\l_tmpl::postprocess" alt="" coords="421,385,555,431"/><area shape="rect" id="node17" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="171,424,325,453"/><area shape="rect" id="node21" href="classrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633" title="rk45_tmpl::postprocess" alt="" coords="409,469,567,499"/><area shape="rect" id="node23" href="classrk4__tmpl.html#a572dd7c8f76784671eac295c92905a2b" title="rk4_tmpl::postprocess" alt="" coords="413,525,563,555"/><area shape="rect" id="node27" href="classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="156,579,340,608"/><area shape="rect" id="node29" href="classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="168,632,328,661"/><area shape="rect" id="node31" href="classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="161,685,335,715"/><area shape="rect" id="node33" href="classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="167,739,329,768"/><area shape="rect" id="node35" href="classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="163,792,333,821"/><area shape="rect" id="node37" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="160,845,336,875"/><area shape="rect" id="node39" href="classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="187,899,309,928"/><area shape="rect" id="node42" href="classsimulation.html#a35314f30ad8650dcd7f46aa271f53a11" title="simulation::postprocess" alt="" coords="168,269,328,299"/><area shape="rect" id="node45" href="classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="180,952,316,981"/><area shape="rect" id="node47" href="classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="391,1003,585,1032"/><area shape="rect" id="node49" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="635,1021,789,1067"/><area shape="rect" id="node51" href="classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="167,1107,329,1136"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a44620bd68753c765fc79139e4a0c9330"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classitem.html">item</a> *&#160;</td>
+          <td class="paramname"><em>caller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>stdval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Adds an optional value that will be placed in inval if the item does not exist</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stdval</td><td>The value that inval is set to if the passed item does not exist </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00111">111</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a44620bd68753c765fc79139e4a0c9330_cgraph.png" border="0" usemap="#classinput_a44620bd68753c765fc79139e4a0c9330_cgraph" alt=""/></div>
+<map name="classinput_a44620bd68753c765fc79139e4a0c9330_cgraph" id="classinput_a44620bd68753c765fc79139e4a0c9330_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="169,5,268,35"/><area shape="rect" id="node5" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="156,59,281,88"/><area shape="rect" id="node7" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="167,112,271,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae0b795f7246e437b3f0cf7d7abb64adf"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classitem.html">item</a> *&#160;</td>
+          <td class="paramname"><em>caller</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>stdval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00121">121</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_ae0b795f7246e437b3f0cf7d7abb64adf_cgraph.png" border="0" usemap="#classinput_ae0b795f7246e437b3f0cf7d7abb64adf_cgraph" alt=""/></div>
+<map name="classinput_ae0b795f7246e437b3f0cf7d7abb64adf_cgraph" id="classinput_ae0b795f7246e437b3f0cf7d7abb64adf_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="169,5,268,35"/><area shape="rect" id="node5" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="156,59,281,88"/><area shape="rect" id="node7" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="167,112,271,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a40bf48636dbb642e56b9ca3c25af08fe"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve_notrack </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Retrieves a value without tracking the caller. This is not reccomended since it prevents variable changes from being broadcasted to the caller </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable.">input::retrieve</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00139">139</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a40bf48636dbb642e56b9ca3c25af08fe_cgraph.png" border="0" usemap="#classinput_a40bf48636dbb642e56b9ca3c25af08fe_cgraph" alt=""/></div>
+<map name="classinput_a40bf48636dbb642e56b9ca3c25af08fe_cgraph" id="classinput_a40bf48636dbb642e56b9ca3c25af08fe_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="205,112,307,141"/><area shape="rect" id="node5" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="369,5,468,35"/><area shape="rect" id="node7" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="356,59,481,88"/><area shape="rect" id="node9" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="367,112,471,141"/><area shape="rect" id="node11" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="400,165,437,195"/><area shape="rect" id="node13" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="376,219,461,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a47702ccdf17d97fcae418d0ccfae9467"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve_notrack </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">T &amp;&amp;&#160;</td>
+          <td class="paramname"><em>stdval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Non-tracking retrieve with standard value </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable.">input::retrieve</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00147">147</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a47702ccdf17d97fcae418d0ccfae9467_cgraph.png" border="0" usemap="#classinput_a47702ccdf17d97fcae418d0ccfae9467_cgraph" alt=""/></div>
+<map name="classinput_a47702ccdf17d97fcae418d0ccfae9467_cgraph" id="classinput_a47702ccdf17d97fcae418d0ccfae9467_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="205,112,307,141"/><area shape="rect" id="node5" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="369,5,468,35"/><area shape="rect" id="node7" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="356,59,481,88"/><area shape="rect" id="node9" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="367,112,471,141"/><area shape="rect" id="node11" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="400,165,437,195"/><area shape="rect" id="node13" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="376,219,461,248"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9477ff7cf14a54d9e579164624dfe7bc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void input::retrieve_notrack </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>stdval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Non-tracking retrieve with standard value </p>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable.">input::retrieve</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00156">156</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classinput_a9477ff7cf14a54d9e579164624dfe7bc_cgraph.png" border="0" usemap="#classinput_a9477ff7cf14a54d9e579164624dfe7bc_cgraph" alt=""/></div>
+<map name="classinput_a9477ff7cf14a54d9e579164624dfe7bc_cgraph" id="classinput_a9477ff7cf14a54d9e579164624dfe7bc_cgraph">
+<area shape="rect" id="node3" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="205,112,307,141"/><area shape="rect" id="node5" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="369,5,468,35"/><area shape="rect" id="node7" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="356,59,481,88"/><area shape="rect" id="node9" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="367,112,471,141"/><area shape="rect" id="node11" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="400,165,437,195"/><area shape="rect" id="node13" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="376,219,461,248"/></map>
+</div>
+</p>
 
 </div>
 </div>
@@ -266,7 +786,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">void eval_lisp </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td>
           <td class="paramname"><em>in_cmd</em>, </td>
         </tr>
         <tr>
@@ -299,7 +819,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt;* input::invals</td>
+          <td class="memname">std::map&lt;<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt;* input::invals</td>
         </tr>
       </table>
   </td>
@@ -309,7 +829,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8h_source.html#l00009">9</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+<p>Points to the actual map of input values. </p>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00036">36</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
 
 </div>
 </div>
@@ -321,7 +843,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;std::string, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt; input::re_directions</td>
+          <td class="memname">std::map&lt;<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classitem__wrapper.html">item_wrapper</a>&gt; input::re_directions</td>
         </tr>
       </table>
   </td>
@@ -331,7 +853,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8h_source.html#l00010">10</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+<p>Re-directs an input value to a locally defined item. </p>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00039">39</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
 
 </div>
 </div>
@@ -343,7 +867,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::map&lt;std::string, std::string&gt; input::re_mappings</td>
+          <td class="memname">std::map&lt;<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&gt; input::re_mappings</td>
         </tr>
       </table>
   </td>
@@ -353,7 +877,9 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="input_8h_source.html#l00011">11</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
+<p>Re-directs one name to another. </p>
+
+<p>Definition at line <a class="el" href="input_8h_source.html#l00042">42</a> of file <a class="el" href="input_8h_source.html">input.h</a>.</p>
 
 </div>
 </div>
@@ -364,7 +890,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

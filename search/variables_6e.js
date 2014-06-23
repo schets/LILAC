@@ -16,8 +16,6 @@ var searchData=
   ['nst',['nst',['../lsoda_8cpp.html#adf6a690fcdd701c950fc463709a55444',1,'lsoda.cpp']]],
   ['ntrep',['ntrep',['../lsoda_8cpp.html#aaf76eafc0c51523953fa8b4d77dad3b1',1,'lsoda.cpp']]],
   ['nts',['nts',['../classn__pulse__score.html#aa733e22e32f402a56209783907ec233d',1,'n_pulse_score::nts()'],['../classstable__spectral__pde__1d__tmpl.html#ad907eaa0de1a29534a1d56ec6b0ffcce',1,'stable_spectral_pde_1d_tmpl::nts()']]],
-  ['num_5f32',['num_32',['../classvector__rng.html#ac85a65084204181a3024a5ab21baa5db',1,'vector_rng']]],
-  ['num_5f64',['num_64',['../classvector__rng.html#a7fc0842e26f3fbcc0c32fac7a6b60618',1,'vector_rng']]],
   ['num_5fcont',['num_cont',['../classcontroller.html#acd62c9e58bff9787218669cbdcf8c99f',1,'controller']]],
   ['num_5fgone',['num_gone',['../classstable.html#a775cf02bc6e43895c37c5f3ad5d50fd8',1,'stable']]],
   ['num_5fint',['num_int',['../classtoroidal.html#a92524cb69bb5c15e3a3577d9687ee058',1,'toroidal']]],

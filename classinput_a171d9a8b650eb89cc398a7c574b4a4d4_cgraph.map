@@ -1,0 +1,7 @@
+<map id="input::retrieve" name="input::retrieve">
+<area shape="rect" id="node3" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="169,5,268,35"/>
+<area shape="rect" id="node5" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="156,59,281,88"/>
+<area shape="rect" id="node7" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="167,112,271,141"/>
+<area shape="rect" id="node9" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="200,165,237,195"/>
+<area shape="rect" id="node11" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="176,219,261,248"/>
+</map>

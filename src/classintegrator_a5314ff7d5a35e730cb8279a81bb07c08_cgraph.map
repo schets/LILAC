@@ -1,6 +1,0 @@
-<map id="integrator::dependencies" name="integrator::dependencies">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#ad8ef5de626ba2afc3d5e96ec78dafa07" title="make_append" alt="" coords="249,32,351,61"/>
-<area shape="rect" id="node9" href="$classitem__dim.html#a466c79634e0deeb7bd7d7b45e9bc399d" title="item_dim::dependencies" alt="" coords="219,85,381,115"/>
-<area shape="rect" id="node5" href="$comp__funcs_8hpp.html#a054a2ed01dde8e71088e7b8a4e0e07f5" title="appendvec" alt="" coords="429,5,515,35"/>
-<area shape="rect" id="node7" href="$comp__funcs_8hpp.html#a94257bc90060b52db380556ad29fe245" title="makevec" alt="" coords="435,59,509,88"/>
-</map>

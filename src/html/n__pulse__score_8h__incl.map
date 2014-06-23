@@ -1,7 +1,0 @@
-<map id="objective/n_pulse_score.h" name="objective/n_pulse_score.h">
-<area shape="rect" id="node3" href="$objective_8h.html" title="objective.h" alt="" coords="176,83,261,112"/>
-<area shape="rect" id="node5" href="$item_8h.html" title="engine/item.h" alt="" coords="123,237,221,267"/>
-<area shape="rect" id="node28" href="$item__dim_8h.html" title="engine/item_dim.h" alt="" coords="205,160,333,189"/>
-<area shape="rect" id="node13" href="$defs_8hpp.html" title="utils/defs.hpp" alt="" coords="249,315,348,344"/>
-<area shape="rect" id="node31" href="$mempool_8hpp.html" title="mempool.hpp" alt="" coords="341,237,440,267"/>
-</map>

@@ -1,11 +1,25 @@
 <map id="item::_retrieve" name="item::_retrieve">
-<area shape="rect" id="node3" href="$retrieve__checker_8hpp.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="161,139,225,168"/>
-<area shape="rect" id="node5" href="$classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772" title="Runs the engine." alt="" coords="320,5,427,35"/>
-<area shape="rect" id="node11" href="$classjones__matrix.html#a534c66c8954176d5d2906cb1f24a447e" title="jones_matrix::setup" alt="" coords="305,59,441,88"/>
-<area shape="rect" id="node13" href="$classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="296,112,451,141"/>
-<area shape="rect" id="node15" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="276,165,471,195"/>
-<area shape="rect" id="node17" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="520,182,675,229"/>
-<area shape="rect" id="node20" href="$retrieve__checker_8hpp.html#a4644c3ee77d9e731076e10acb32b5f5f" title="Allows passing of a shared_ptr instead of a native one." alt="" coords="341,269,405,299"/>
-<area shape="rect" id="node7" href="$classengine.html#a54e1fe05c9e06f98f91860a89ee5e532" title="engine::run" alt="" coords="555,5,640,35"/>
-<area shape="rect" id="node9" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="723,5,773,35"/>
+<area shape="rect" id="node3" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="160,553,261,583"/>
+<area shape="rect" id="node5" href="$classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5" title="controller::postprocess" alt="" coords="325,5,480,35"/>
+<area shape="rect" id="node7" href="$classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571" title="toroidal::postprocess" alt="" coords="332,59,473,88"/>
+<area shape="rect" id="node9" href="$classinput.html#a40bf48636dbb642e56b9ca3c25af08fe" title="input::retrieve_notrack" alt="" coords="328,112,477,141"/>
+<area shape="rect" id="node11" href="$classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8" title="item_dim::postprocess" alt="" coords="325,216,480,245"/>
+<area shape="rect" id="node13" href="$classode__tmpl.html#ab7cba966a23606ac3d52ea7e0ca7b506" title="ode_tmpl::postprocess" alt="" coords="565,216,720,245"/>
+<area shape="rect" id="node15" href="$classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761" title="euler_sde_tmpl::postprocess" alt="" coords="548,325,737,355"/>
+<area shape="rect" id="node17" href="$classexample__integrator__tmpl.html#a2c664333f79dc6a5593c69623b17e450" title="example_integrator\l_tmpl::postprocess" alt="" coords="576,385,709,431"/>
+<area shape="rect" id="node19" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="325,424,480,453"/>
+<area shape="rect" id="node23" href="$classrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633" title="rk45_tmpl::postprocess" alt="" coords="564,469,721,499"/>
+<area shape="rect" id="node25" href="$classrk4__tmpl.html#a572dd7c8f76784671eac295c92905a2b" title="rk4_tmpl::postprocess" alt="" coords="568,525,717,555"/>
+<area shape="rect" id="node29" href="$classn__pulse__score.html#a14457fa20cb5ad549ac63282fef6d365" title="n_pulse_score::postprocess" alt="" coords="311,579,495,608"/>
+<area shape="rect" id="node31" href="$classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="323,632,483,661"/>
+<area shape="rect" id="node33" href="$classexample__rhs.html#a95214b74af391c577b4e7e1192b82218" title="This function processes the input data for the class." alt="" coords="316,685,489,715"/>
+<area shape="rect" id="node35" href="$classrhs___c_n_l_s.html#a972bed6b6f444c08fd29355ad1b0dfc7" title="rhs_CNLS::postprocess" alt="" coords="321,739,484,768"/>
+<area shape="rect" id="node37" href="$classrhs___s_q_g_l_e.html#ac86d5ea35e1ffb807516661469c823fd" title="rhs_SQGLE::postprocess" alt="" coords="317,792,488,821"/>
+<area shape="rect" id="node39" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="315,845,491,875"/>
+<area shape="rect" id="node41" href="$classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="341,899,464,928"/>
+<area shape="rect" id="node44" href="$classsimulation.html#a35314f30ad8650dcd7f46aa271f53a11" title="simulation::postprocess" alt="" coords="323,269,483,299"/>
+<area shape="rect" id="node47" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="335,952,471,981"/>
+<area shape="rect" id="node49" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="545,1003,740,1032"/>
+<area shape="rect" id="node51" href="$classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312" title="stable_spectral_pde\l_1d_tmpl::postprocess" alt="" coords="789,1021,944,1067"/>
+<area shape="rect" id="node53" href="$classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="321,1107,484,1136"/>
 </map>

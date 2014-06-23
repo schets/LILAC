@@ -36,6 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -84,6 +85,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
 <a href="classrk45__tmpl-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">rk45_tmpl&lt; T &gt; Class Template Reference</div>  </div>
@@ -113,11 +115,11 @@ Collaboration diagram for rk45_tmpl&lt; T &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a24b473895f04f6aadf37d337f2ddb696"><td class="memItemLeft" align="right" valign="top">virtual const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a24b473895f04f6aadf37d337f2ddb696">vtype</a> () const </td></tr>
 <tr class="memitem:aaa81dd3e0a20bd04f797650909131633"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#aaa81dd3e0a20bd04f797650909131633">postprocess</a> (<a class="el" href="classinput.html">input</a> &amp;dat)</td></tr>
-<tr class="memitem:a2a770b905a0a8d127c20f93726a7f7b7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a2a770b905a0a8d127c20f93726a7f7b7">type</a> () const </td></tr>
+<tr class="memitem:a2a770b905a0a8d127c20f93726a7f7b7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a2a770b905a0a8d127c20f93726a7f7b7">type</a> () const </td></tr>
 <tr class="memitem:a1e6a8cd81532e3215bc77fc72330846a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a1e6a8cd81532e3215bc77fc72330846a">integrate</a> (<a class="el" href="classptr__passer.html">ptr_passer</a> u, double t0, double tf)</td></tr>
 <tr class="memitem:a3737482bd2915b8d683a0397a2352eb6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a3737482bd2915b8d683a0397a2352eb6">~rk45_tmpl</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classrk45"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classrk45')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classrk45.html">rk45</a></td></tr>
-<tr class="memitem:ae29eb12196e38096b46d41c66798abba inherit pub_methods_classrk45"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45.html#ae29eb12196e38096b46d41c66798abba">dependencies</a> () const </td></tr>
+<tr class="memitem:ae29eb12196e38096b46d41c66798abba inherit pub_methods_classrk45"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45.html#ae29eb12196e38096b46d41c66798abba">dependencies</a> () const </td></tr>
 <tr class="memitem:a543d9b87f2329ff0df456d29b09e4e9f inherit pub_methods_classrk45"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45.html#a543d9b87f2329ff0df456d29b09e4e9f">~rk45</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classintegrator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classintegrator')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classintegrator.html">integrator</a></td></tr>
 <tr class="memitem:a467a1b1e650c6a5ce128e8de89b4c25e inherit pub_methods_classintegrator"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classintegrator.html#a467a1b1e650c6a5ce128e8de89b4c25e">initial_condition</a> (<a class="el" href="classptr__passer.html">ptr_passer</a> in, size_t len)</td></tr>
@@ -132,10 +134,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aba4568f32fc335c3398985d81f1e1e59 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#aba4568f32fc335c3398985d81f1e1e59">print</a> () const </td></tr>
 <tr class="memdesc:aba4568f32fc335c3398985d81f1e1e59 inherit pub_methods_classitem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard print function.  <a href="#aba4568f32fc335c3398985d81f1e1e59"></a><br/></td></tr>
 <tr class="memitem:ab2fe701fc632b52bb9a1ad84965c7b44 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ab2fe701fc632b52bb9a1ad84965c7b44">update</a> ()</td></tr>
-<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const std::string n)</td></tr>
-<tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a064fd6a60dae7e171b40c913b2a4f5a7">set_write_name</a> (std::string wname)</td></tr>
-<tr class="memitem:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a> () const </td></tr>
-<tr class="memitem:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a72060014e9571651db88ffc035f37086">write_name</a> () const </td></tr>
+<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="lsoda_8cpp.html#a76f11d9a0a47b94f72c2d0e77fb32240">n</a>)</td></tr>
+<tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a064fd6a60dae7e171b40c913b2a4f5a7">set_write_name</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> wname)</td></tr>
+<tr class="memitem:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a> () const </td></tr>
+<tr class="memitem:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a72060014e9571651db88ffc035f37086">write_name</a> () const </td></tr>
 <tr class="inherit_header pub_methods_classvartype"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvartype')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classvartype.html">vartype</a></td></tr>
 <tr class="memitem:af737847af21866d6ca14949b67683f42 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#af737847af21866d6ca14949b67683f42">compare</a> (const <a class="el" href="classvartype.html">vartype</a> *in) const </td></tr>
 <tr class="memitem:a6173ef8a0c01d0cb9d686363591335ca inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a6173ef8a0c01d0cb9d686363591335ca">compare</a> (const <a class="el" href="classvartype.html">vartype</a> &amp;in) const </td></tr>
@@ -144,7 +146,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a742c7682a6e336e7e63c89cc9f71c108"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a742c7682a6e336e7e63c89cc9f71c108">compare</a> () const </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a113715a6267314ee5006004293163120">compare</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
+<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
 <tr class="memitem:a61ece164329afa4ba5184ed093262492 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a61ece164329afa4ba5184ed093262492">vtype_internal</a> () const </td></tr>
 <tr class="memitem:ac0439696ac7183cdc7415f3bf51f5c05 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> *in) const </td></tr>
 <tr class="memitem:aa5327982722b4f7c1104149ec327334a inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aa5327982722b4f7c1104149ec327334a">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> &amp;in) const </td></tr>
@@ -153,7 +155,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fce730c38933fa90970c774e98bb5e3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a9fce730c38933fa90970c774e98bb5e3">compare_internal</a> () const </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#ad87579bb36217265ee71086b57d23e24">compare_internal</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
+<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
 <tr class="memitem:a95f1b522c6bc063048ff19be1a74a12c inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a95f1b522c6bc063048ff19be1a74a12c">~vartype</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
@@ -163,15 +165,15 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:ae5065b6a29858593091db6f8ef7688eb"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#ae5065b6a29858593091db6f8ef7688eb">dt_max</a></td></tr>
 <tr class="memitem:a632438616091fb3482f883014b37afd2"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a632438616091fb3482f883014b37afd2">relerr</a></td></tr>
 <tr class="memitem:a7ea5c45936b19a220833e3f09c223690"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a7ea5c45936b19a220833e3f09c223690">abserr</a></td></tr>
-<tr class="memitem:ae30f90f6bf1494afe3d323c453f96b1d"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#ae30f90f6bf1494afe3d323c453f96b1d">f0</a></td></tr>
-<tr class="memitem:a9b94b4c73baa97530ae8b6715caeb69b"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a9b94b4c73baa97530ae8b6715caeb69b">f1</a></td></tr>
-<tr class="memitem:a0c436308984b18657bd995a0f7f83c28"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a0c436308984b18657bd995a0f7f83c28">f2</a></td></tr>
-<tr class="memitem:acec2eb82cfcb0e2870a2a03e9a089e0f"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#acec2eb82cfcb0e2870a2a03e9a089e0f">f3</a></td></tr>
-<tr class="memitem:a7d5a57b0ae7b05861bed83f5f7dd692d"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a7d5a57b0ae7b05861bed83f5f7dd692d">f4</a></td></tr>
-<tr class="memitem:a6006599ae7961d3a404f2574cd4f8132"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a6006599ae7961d3a404f2574cd4f8132">f5</a></td></tr>
-<tr class="memitem:af5200aca8fb1d2718237a969abec9e93"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#af5200aca8fb1d2718237a969abec9e93">f6</a></td></tr>
-<tr class="memitem:a2f9cbd19c7419a652ef0e7a1bb22f847"><td class="memItemLeft" align="right" valign="top">T *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a2f9cbd19c7419a652ef0e7a1bb22f847">u_calc</a></td></tr>
-<tr class="memitem:a422cfe5669937d0d9e8423aa4b03b9f7"><td class="memItemLeft" align="right" valign="top">double *<a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a422cfe5669937d0d9e8423aa4b03b9f7">u_calc2</a></td></tr>
+<tr class="memitem:ae30f90f6bf1494afe3d323c453f96b1d"><td class="memItemLeft" align="right" valign="top">T *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#ae30f90f6bf1494afe3d323c453f96b1d">f0</a></td></tr>
+<tr class="memitem:a9b94b4c73baa97530ae8b6715caeb69b"><td class="memItemLeft" align="right" valign="top">T *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a9b94b4c73baa97530ae8b6715caeb69b">f1</a></td></tr>
+<tr class="memitem:a0c436308984b18657bd995a0f7f83c28"><td class="memItemLeft" align="right" valign="top">T *restr *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a0c436308984b18657bd995a0f7f83c28">f2</a></td></tr>
+<tr class="memitem:acec2eb82cfcb0e2870a2a03e9a089e0f"><td class="memItemLeft" align="right" valign="top">T *restr *restr *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#acec2eb82cfcb0e2870a2a03e9a089e0f">f3</a></td></tr>
+<tr class="memitem:a7d5a57b0ae7b05861bed83f5f7dd692d"><td class="memItemLeft" align="right" valign="top">T *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a7d5a57b0ae7b05861bed83f5f7dd692d">f4</a></td></tr>
+<tr class="memitem:a6006599ae7961d3a404f2574cd4f8132"><td class="memItemLeft" align="right" valign="top">T *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a6006599ae7961d3a404f2574cd4f8132">f5</a></td></tr>
+<tr class="memitem:af5200aca8fb1d2718237a969abec9e93"><td class="memItemLeft" align="right" valign="top">T *restr *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#af5200aca8fb1d2718237a969abec9e93">f6</a></td></tr>
+<tr class="memitem:a2f9cbd19c7419a652ef0e7a1bb22f847"><td class="memItemLeft" align="right" valign="top">T *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a2f9cbd19c7419a652ef0e7a1bb22f847">u_calc</a></td></tr>
+<tr class="memitem:a5486e47aed299759f0ff61af74c1564b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrk45__tmpl.html#acf91ed3033b79550ef98a57a6e3d4bef">real_type</a> *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#a5486e47aed299759f0ff61af74c1564b">u_calc2</a></td></tr>
 <tr class="inherit_header pro_attribs_classrk45"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classrk45')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classrk45.html">rk45</a></td></tr>
 <tr class="memitem:a637ed1ad3db0d61d7aa974c392add93a inherit pro_attribs_classrk45"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classrk45.html">rk45</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45.html#a637ed1ad3db0d61d7aa974c392add93a">actual</a></td></tr>
 <tr class="inherit_header pro_attribs_classintegrator"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classintegrator')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classintegrator.html">integrator</a></td></tr>
@@ -182,14 +184,18 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:a06035079b0255be7b9c96e23c70b151c inherit pro_attribs_classitem__dim"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitem__dim.html">item_dim</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem__dim.html#a06035079b0255be7b9c96e23c70b151c">parent</a></td></tr>
 <tr class="memitem:a3cbb20c8a55447ada9f905599040a7e3 inherit pro_attribs_classitem__dim"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem__dim.html#a3cbb20c8a55447ada9f905599040a7e3">dimension</a></td></tr>
 <tr class="inherit_header pro_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitem')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a13fa7212061bd53e0db1f52c39a3f339">_name</a></td></tr>
-<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a0020fe4550f089fdd232945685f0751c">_write_name</a></td></tr>
+<tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a13fa7212061bd53e0db1f52c39a3f339">_name</a></td></tr>
+<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a0020fe4550f089fdd232945685f0751c">_write_name</a></td></tr>
 <tr class="memitem:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a19c29c4c00e11827b4a2f09b7d0575e5">has_write_name</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:acf91ed3033b79550ef98a57a6e3d4bef"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structfloat__traits.html">float_traits</a>&lt; T &gt;::<a class="el" href="classrk45__tmpl.html#a2a770b905a0a8d127c20f93726a7f7b7">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classrk45__tmpl.html#acf91ed3033b79550ef98a57a6e3d4bef">real_type</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&nbsp;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
+<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="inherit_header pub_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem')"><img src="closed.png" alt="-"/>&nbsp;Public Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
 <tr class="memitem:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengineimp.html">engineimp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a569eb08923d5a28860e5531dc627dedb">holder</a></td></tr>
 <tr class="inherit_header pro_methods_classitem__dim"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitem__dim')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="classitem__dim.html">item_dim</a></td></tr>
@@ -206,8 +212,33 @@ class rk45_tmpl&lt; T &gt;</h3>
 <p>Dormand-Prince integrator. </p>
 <p>This class defines a Dormand-Prince integrator, the same type used by the Matlab function ODE45. This is the actual template implementation, which allows for definitions using multiple variables </p>
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00013">13</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
-</div><h2>Constructor &amp; Destructor Documentation</h2>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00030">30</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+</div><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="acf91ed3033b79550ef98a57a6e3d4bef"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structfloat__traits.html">float_traits</a>&lt;T&gt;::<a class="el" href="classrk45__tmpl.html#a2a770b905a0a8d127c20f93726a7f7b7">type</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::<a class="el" href="classrk45__tmpl.html#acf91ed3033b79550ef98a57a6e3d4bef">real_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00031">31</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a3737482bd2915b8d683a0397a2352eb6"></a>
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +254,7 @@ template&lt;class T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00237">237</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00251">251</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -270,14 +301,14 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classrk45.html#a097c46f5d2130b5b339d71723522d2e1">rk45</a>.</p>
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00032">32</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00053">53</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrk45__tmpl_a1e6a8cd81532e3215bc77fc72330846a_cgraph.png" border="0" usemap="#classrk45__tmpl_a1e6a8cd81532e3215bc77fc72330846a_cgraph" alt=""/></div>
 <map name="classrk45__tmpl_a1e6a8cd81532e3215bc77fc72330846a_cgraph" id="classrk45__tmpl_a1e6a8cd81532e3215bc77fc72330846a_cgraph">
-<area shape="rect" id="node3" href="classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="192,5,301,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="351,32,388,61"/></map>
+<area shape="rect" id="node3" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="192,5,235,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="195,59,232,88"/></map>
 </div>
 </p>
 
@@ -309,14 +340,14 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classrk45.html#a7387b11ff00d955aa8188047dbe55ee1">rk45</a>.</p>
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00246">246</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00260">260</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classrk45__tmpl_aaa81dd3e0a20bd04f797650909131633_cgraph.png" border="0" usemap="#classrk45__tmpl_aaa81dd3e0a20bd04f797650909131633_cgraph" alt=""/></div>
 <map name="classrk45__tmpl_aaa81dd3e0a20bd04f797650909131633_cgraph" id="classrk45__tmpl_aaa81dd3e0a20bd04f797650909131633_cgraph">
-<area shape="rect" id="node3" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="213,5,368,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="451,56,488,85"/><area shape="rect" id="node7" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="259,109,323,139"/><area shape="rect" id="node9" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="417,109,521,139"/><area shape="rect" id="node12" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="427,163,512,192"/></map>
+<area shape="rect" id="node3" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="213,113,368,143"/><area shape="rect" id="node5" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="416,113,517,143"/><area shape="rect" id="node13" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="611,219,648,248"/><area shape="rect" id="node7" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="580,5,679,35"/><area shape="rect" id="node9" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="567,59,692,88"/><area shape="rect" id="node11" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="577,112,681,141"/><area shape="rect" id="node15" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="587,165,672,195"/></map>
 </div>
 </p>
 
@@ -332,7 +363,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::type </td>
+          <td class="memname"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -347,7 +378,7 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classrk45.html#a8e08081dc93403e3422e79017c8be78a">rk45</a>.</p>
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00242">242</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00256">256</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -376,7 +407,7 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classrk45.html#aaab29e38536e5546c40e5009d0cbf23a">rk45</a>.</p>
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00028">28</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00049">49</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -401,7 +432,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00015">15</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00036">36</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -425,7 +456,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00015">15</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00035">35</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +480,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00015">15</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00035">35</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -473,7 +504,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00015">15</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00035">35</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -487,7 +518,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f0</td>
+          <td class="memname">T* restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f0</td>
         </tr>
       </table>
   </td>
@@ -497,7 +528,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00016">16</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00037">37</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -511,7 +542,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f1</td>
+          <td class="memname">T* restr * restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f1</td>
         </tr>
       </table>
   </td>
@@ -521,7 +552,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00016">16</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00037">37</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -535,7 +566,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f2</td>
+          <td class="memname">T* restr * restr * restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f2</td>
         </tr>
       </table>
   </td>
@@ -545,7 +576,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00016">16</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00037">37</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -559,7 +590,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f3</td>
+          <td class="memname">T* restr * restr * restr * restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f3</td>
         </tr>
       </table>
   </td>
@@ -569,7 +600,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00016">16</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00037">37</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -583,7 +614,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f4</td>
+          <td class="memname">T* restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f4</td>
         </tr>
       </table>
   </td>
@@ -593,7 +624,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00017">17</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00038">38</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -607,7 +638,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f5</td>
+          <td class="memname">T* restr * restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f5</td>
         </tr>
       </table>
   </td>
@@ -617,7 +648,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00017">17</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00038">38</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -631,7 +662,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> * <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f6</td>
+          <td class="memname">T* restr * restr * restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::f6</td>
         </tr>
       </table>
   </td>
@@ -641,7 +672,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00017">17</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00038">38</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -665,7 +696,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00015">15</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00036">36</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -679,7 +710,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::u_calc</td>
+          <td class="memname">T* restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::u_calc</td>
         </tr>
       </table>
   </td>
@@ -689,11 +720,11 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00018">18</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00039">39</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
-<a class="anchor" id="a422cfe5669937d0d9e8423aa4b03b9f7"></a>
+<a class="anchor" id="a5486e47aed299759f0ff61af74c1564b"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -703,7 +734,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">double* <a class="el" href="defs_8hpp.html#aecbb5faf46500de782ba4511863f8c9e">restr</a> <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::u_calc2</td>
+          <td class="memname"><a class="el" href="classrk45__tmpl.html#acf91ed3033b79550ef98a57a6e3d4bef">real_type</a>* restr <a class="el" href="classrk45__tmpl.html">rk45_tmpl</a>&lt; T &gt;::u_calc2</td>
         </tr>
       </table>
   </td>
@@ -713,7 +744,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00019">19</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="rk45__tmpl_8hpp_source.html#l00040">40</a> of file <a class="el" href="rk45__tmpl_8hpp_source.html">rk45_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -723,7 +754,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 25 2014 18:44:02 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

@@ -1,8 +1,0 @@
-<map id="type_constructor::create" name="type_constructor::create">
-<area shape="rect" id="node3" href="$classeuler__sde.html#acf6c98a8011fb0ab5d8d7070c74678b2" title="euler_sde::postprocess" alt="" coords="220,5,377,35"/>
-<area shape="rect" id="node5" href="$classexample__integrator.html#ab3deabcdc0d82da03bbf0cdd85961f7d" title="Processes the input data." alt="" coords="233,58,364,105"/>
-<area shape="rect" id="node7" href="$classrk4.html#affbfb508878fa5fd4f7f85177a1fa14b" title="rk4::postprocess" alt="" coords="240,128,357,157"/>
-<area shape="rect" id="node9" href="$classrk45.html#a7387b11ff00d955aa8188047dbe55ee1" title="rk45::postprocess" alt="" coords="236,181,361,211"/>
-<area shape="rect" id="node11" href="$classode.html#a88ce7bdda99b2a4d1fd2cf316774a065" title="ode::postprocess" alt="" coords="237,235,360,264"/>
-<area shape="rect" id="node13" href="$classstable__ode.html#a5276346779b3d1577edd28497a33a815" title="stable_ode::postprocess" alt="" coords="217,288,380,317"/>
-</map>

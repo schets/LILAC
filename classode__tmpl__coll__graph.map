@@ -1,8 +1,8 @@
 <map id="ode_tmpl&lt; T &gt;" name="ode_tmpl&lt; T &gt;">
-<area shape="rect" id="node2" href="$classode.html" title="ode" alt="" coords="399,469,441,499"/>
+<area shape="rect" id="node2" href="$classode.html" title="Integrates an ODE forwards in time." alt="" coords="399,469,441,499"/>
 <area shape="rect" id="node4" href="$classsimulation.html" title="simulation" alt="" coords="148,373,228,403"/>
 <area shape="rect" id="node6" href="$classitem__dim.html" title="item_dim" alt="" coords="249,197,324,227"/>
-<area shape="rect" id="node17" href="$classobjective.html" title="objective" alt="" coords="151,277,225,307"/>
+<area shape="rect" id="node17" href="$classobjective.html" title="THis class represents the objective function class that calculates the score of a solution..." alt="" coords="151,277,225,307"/>
 <area shape="rect" id="node20" href="$classcontroller.html" title="This is the base class for the control type classes." alt="" coords="249,277,324,307"/>
 <area shape="rect" id="node25" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="383,373,457,403"/>
 <area shape="rect" id="node29" href="$classrhs.html" title="The rhs base class." alt="" coords="457,277,497,307"/>

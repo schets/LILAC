@@ -88,30 +88,46 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">engine_run.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="engine__run_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="engineimp_8h.html">engineimp.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comp__funcs_8hpp.html">utils/comp_funcs.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="simulation_8h.html">simulation/simulation.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__heads_8hpp.html">item_heads.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772">    5</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772" title="Runs the engine.">engineimp::run</a>(){</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="classsimulation.html">simulation</a>* sys=0;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(sys, <a class="code" href="classengineimp.html#a69a8d27dc7cfe25cacf003763b1e2e3a">values</a>[<span class="stringliteral">&quot;simulation&quot;</span>], 0);</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="classcontroller.html" title="This is the base class for the control type classes.">controller</a>* cont=0;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <a class="code" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable.">retrieve</a>(cont, <a class="code" href="classengineimp.html#a69a8d27dc7cfe25cacf003763b1e2e3a">values</a>[<span class="stringliteral">&quot;controller&quot;</span>], 0);</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    cont-&gt;<a class="code" href="classcontroller.html#abb85d8f417c37432c5a8a6b87968fb30">pre_set</a>();</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="classengineimp.html#a5b99b5994e02d4f036965c80bad62e74">update</a>();</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>=0;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">while</span>(cont-&gt;<a class="code" href="classcontroller.html#a6ba8a8ccac0cb7c07e8ea8de46b43cb4">is_good</a>()){</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        sys-&gt;<a class="code" href="classsimulation.html#af8f7fe0e231553621903de9f02f1eed5" title="This function simulates the system and returns the resulting score.">simulate</a>();</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>++;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        cont-&gt;<a class="code" href="classcontroller.html#a48a0f4d9a92e4c976942e9bc85b3aa37">control</a>(0, 0);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="classengineimp.html#a5b99b5994e02d4f036965c80bad62e74">update</a>();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="comp__funcs_8hpp.html#aecea6ba6e0546a047a6b84c714b1799e" title="Cleans up any data held by the fft code.">fft_cleanup</a>();</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;}</div>
+<a href="engine__run_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Authors: Sam Schetterer</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="engineimp_8h.html">engineimp.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="comp__funcs_8hpp.html">utils/comp_funcs.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="simulation_8h.html">simulation/simulation.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__heads_8hpp.html">item_heads.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772" title="Runs the engine.">engineimp::run</a>(){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">auto</span> sys = std::dynamic_pointer_cast&lt;<a class="code" href="classsimulation.html">simulation</a>&gt;(<a class="code" href="classengineimp.html#a69a8d27dc7cfe25cacf003763b1e2e3a">values</a>[<span class="stringliteral">&quot;simulation&quot;</span>].get_shared());</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keyword">auto</span> cont = std::dynamic_pointer_cast&lt;<a class="code" href="classcontroller.html" title="This is the base class for the control type classes.">controller</a>&gt;(<a class="code" href="classengineimp.html#a69a8d27dc7cfe25cacf003763b1e2e3a">values</a>[<span class="stringliteral">&quot;controller&quot;</span>].get_shared());</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">if</span>(!((<span class="keywordtype">bool</span>)sys &amp;&amp; (<span class="keywordtype">bool</span>)cont)){</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;The engine requires a simulation class called sys and a controller class called cont&quot;</span>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                <span class="stringliteral">&quot;engineimp::engine_run&quot;</span>, <span class="stringliteral">&quot;engine/engine_run.cpp&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>=cont-&gt;pre_set();</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">while</span>(cont-&gt;is_good()){</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="classengineimp.html#a5b99b5994e02d4f036965c80bad62e74">update</a>();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        sys-&gt;simulate();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc" title="Writes formatted data to disk and clears from ram.">write_dat</a>();</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>++;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        cont-&gt;control(0, 0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

@@ -88,33 +88,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">input.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="engine_2input_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="input_8h.html">input.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div>
-<div class="line"><a name="l00003"></a><span class="lineno"><a class="code" href="classinput.html#a1e9bd109a6f96f2d7db60e790e86f88c">    3</a></span>&#160;<a class="code" href="classinput.html#adac0ea346c43d7762baef3e3f387eebd">input::input</a>(std::map&lt;std::string, item_wrapper &gt;&amp; values):invals(&amp;values){}</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
-<div class="line"><a name="l00005"></a><span class="lineno"><a class="code" href="classinput.html#af025937954ff9ecab9f17ed6dabc2fc1">    5</a></span>&#160;<a class="code" href="classitem__wrapper.html">item_wrapper</a>&amp; <a class="code" href="classinput.html#af025937954ff9ecab9f17ed6dabc2fc1">input::operator []</a>(<span class="keyword">const</span> std::string&amp; value){</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keyword">auto</span>&amp;&amp; d_it = <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654">re_directions</a>.find(value);</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">if</span>(d_it != <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654">re_directions</a>.end()){</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="keywordflow">return</span> d_it-&gt;second;</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keyword">auto</span>&amp;&amp; m_it = <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a>.find(value);</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordflow">if</span>(m_it != <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a>.end()){</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <span class="keywordflow">return</span> (*<a class="code" href="classinput.html#a5e2969c45af75b9d457ac839021e4076">invals</a>)[m_it-&gt;second];</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    }</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="classinput.html#a5e2969c45af75b9d457ac839021e4076">invals</a>)[value];</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;}</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="code" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae">   17</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae">input::add_redir</a>(<span class="keyword">const</span> std::string&amp; name, <span class="keyword">const</span> <a class="code" href="classitem__wrapper.html">item_wrapper</a>&amp; inv){</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654">re_directions</a>[name] = inv;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;}</div>
+<a href="engine_2input_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Authors: Sam Schetterer</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="input_8h.html">input.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classinput.html#a1e9bd109a6f96f2d7db60e790e86f88c">   19</a></span>&#160;<a class="code" href="classinput.html#adac0ea346c43d7762baef3e3f387eebd">input::input</a>(std::map&lt;std::string, item_wrapper &gt;&amp; values):invals(&amp;values){}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">input::add_remap</a>(<span class="keyword">const</span> std::string&amp; newname, <span class="keyword">const</span> std::string&amp; oldname){</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97">re_mappings</a>[oldname] = newname;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="code" href="classinput.html#a169558ab7654aac73a65ab112bc58fd9">   21</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classinput.html#a169558ab7654aac73a65ab112bc58fd9">input::insert_item</a>(std::shared_ptr&lt;item&gt; inval){</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordflow">if</span>(inval.use_count()){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="classinput.html#a5e2969c45af75b9d457ac839021e4076" title="Points to the actual map of input values.">invals</a>-&gt;count(inval-&gt;name())==0){</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            <a class="code" href="classinput.html#a5e2969c45af75b9d457ac839021e4076" title="Points to the actual map of input values.">invals</a>-&gt;insert(std::pair&lt;<a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, std::shared_ptr&lt;item&gt;&gt;(</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                        inval-&gt;name(), inval));</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>(<span class="stringliteral">&quot;Item &quot;</span>) + inval-&gt;name() + <span class="stringliteral">&quot; already exists in the engine&quot;</span>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                    <span class="stringliteral">&quot;input::insert_item&quot;</span>, <span class="stringliteral">&quot;engine/input.cpp&quot;</span>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#ifdef DEBUG</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor"></span>                    <a class="code" href="defs_8hpp.html#a4709cd67f0f9a81fa03b70eece4e019d">WARNING</a>);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">else</span>{</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5">err</a>(<span class="stringliteral">&quot;Null item inserted into input map&quot;</span>, <span class="stringliteral">&quot;input::insert_item&quot;</span>,</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                <span class="stringliteral">&quot;engine/input.cpp&quot;</span>, <a class="code" href="defs_8hpp.html#a0f5c1c5337ec6f02e900360886456c1e">FATAL_ERROR</a>);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="code" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a">   43</a></span>&#160;<a class="code" href="classitem__wrapper.html" title="This class wraps the actual item that has been input.">item_wrapper</a>&amp; <a class="code" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input">input::get_val</a>(<span class="keyword">const</span> <a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&amp; value){</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">auto</span>&amp;&amp; d_it = <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654" title="Re-directs an input value to a locally defined item.">re_directions</a>.find(value);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">if</span>(d_it != <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654" title="Re-directs an input value to a locally defined item.">re_directions</a>.end()){</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">return</span> d_it-&gt;second;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">auto</span>&amp;&amp; m_it = <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97" title="Re-directs one name to another.">re_mappings</a>.find(value);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(m_it != <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97" title="Re-directs one name to another.">re_mappings</a>.end()){</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input">get_val</a>(m_it-&gt;second);</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> (*<a class="code" href="classinput.html#a5e2969c45af75b9d457ac839021e4076" title="Points to the actual map of input values.">invals</a>)[value];</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="code" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae">   55</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classinput.html#aed0c9b400fd60d8390416ad0a37017ae" title="Redirects an input value to a local item.">input::add_redir</a>(<span class="keyword">const</span> <a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&amp; name, <span class="keyword">const</span> <a class="code" href="classitem__wrapper.html" title="This class wraps the actual item that has been input.">item_wrapper</a>&amp; inv){</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="classinput.html#a70083eca32c4f5f5c3c2e2e484b3e654" title="Re-directs an input value to a locally defined item.">re_directions</a>[name] = inv;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258">   59</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classinput.html#abd86bf847bcba5d8e2d8c1c5866bf258" title="Remaps one name to another item. Mappings will prioritize local variables over global.">input::add_remap</a>(<span class="keyword">const</span> <a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&amp; newname, <span class="keyword">const</span> <a class="code" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&amp; oldname){</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="classinput.html#ae26087127cfc378e0418f8609ea4fa97" title="Re-directs one name to another.">re_mappings</a>[oldname] = newname;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

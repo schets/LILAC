@@ -1,15 +1,16 @@
 <map id="c_elegans::postprocess" name="c_elegans::postprocess">
-<area shape="rect" id="node3" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="456,5,493,35"/>
-<area shape="rect" id="node5" href="$c__elegans_8cpp.html#a65fd9e0da2729c416f4e480349cf7abb" title="read_mat" alt="" coords="240,164,315,193"/>
-<area shape="rect" id="node7" href="$c__elegans_8cpp.html#a1d293aa2d67deac4d43423dbac519eef" title="next_comb" alt="" coords="432,59,517,88"/>
-<area shape="rect" id="node9" href="$defs_8hpp.html#a56d6f1d56099eb797e6d84210504bf04" title="get_unique_name" alt="" coords="216,217,339,247"/>
-<area shape="rect" id="node13" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="235,271,320,300"/>
-<area shape="rect" id="node15" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="216,324,339,353"/>
-<area shape="rect" id="node17" href="$classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="213,111,341,140"/>
-<area shape="rect" id="node11" href="$class_____h_i_d_e_r_____1_1__unique__name.html#a2bea81562ca7b8e3d3510c0253956603" title="__HIDER__::_unique\l_name::get_unique_name" alt="" coords="389,271,560,318"/>
-<area shape="rect" id="node20" href="$classengineimp.html#a6779400b1227cabd21513b54e8c752bc" title="engineimp::write_dat" alt="" coords="404,112,545,141"/>
-<area shape="rect" id="node27" href="$classdata.html#a11f14665a764df56c4b2d279318f2277" title="data::create" alt="" coords="429,165,520,195"/>
-<area shape="rect" id="node29" href="$classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8" title="engineimp::add_writer" alt="" coords="400,219,549,248"/>
-<area shape="rect" id="node22" href="$classengineimp.html#a8c4a56e4a3234915784659695aa1f106" title="engineimp::write_individual_dat" alt="" coords="608,112,811,141"/>
-<area shape="rect" id="node24" href="$classengineimp.html#a86a7c47cda22dab041f2018581c12fa1" title="engineimp::write_data" alt="" coords="859,112,1008,141"/>
+<area shape="rect" id="node3" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="445,231,483,260"/>
+<area shape="rect" id="node5" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="227,100,328,129"/>
+<area shape="rect" id="node16" href="$c__elegans_8cpp.html#a65fd9e0da2729c416f4e480349cf7abb" title="read_mat" alt="" coords="240,207,315,236"/>
+<area shape="rect" id="node18" href="$c__elegans_8cpp.html#a1d293aa2d67deac4d43423dbac519eef" title="next_comb" alt="" coords="421,308,507,337"/>
+<area shape="rect" id="node20" href="$classdata.html#a11f14665a764df56c4b2d279318f2277" title="data::create" alt="" coords="419,415,509,444"/>
+<area shape="rect" id="node22" href="$classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8" title="Adds a new writer to the engine." alt="" coords="389,492,539,521"/>
+<area shape="rect" id="node24" href="$classinput.html#a169558ab7654aac73a65ab112bc58fd9" title="input::insert_item" alt="" coords="216,153,339,183"/>
+<area shape="rect" id="node27" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="216,465,339,495"/>
+<area shape="rect" id="node29" href="$classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="213,361,341,391"/>
+<area shape="rect" id="node7" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="415,165,513,195"/>
+<area shape="rect" id="node9" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="401,5,527,35"/>
+<area shape="rect" id="node11" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="412,59,516,88"/>
+<area shape="rect" id="node14" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="421,112,507,141"/>
+<area shape="rect" id="node32" href="$classengineimp.html#a6779400b1227cabd21513b54e8c752bc" title="Writes formatted data to disk and clears from ram." alt="" coords="393,361,535,391"/>
 </map>

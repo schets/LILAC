@@ -107,7 +107,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="entry"><a class="el" href="classvartype.html#a9fce730c38933fa90970c774e98bb5e3">compare_internal</a>() const </td><td class="entry"><a class="el" href="classvartype.html">vartype</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classvartype.html#ad87579bb36217265ee71086b57d23e24">compare_internal</a>(const T &amp;in) const </td><td class="entry"><a class="el" href="classvartype.html">vartype</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr><td class="entry"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a>(std::string name, engineimp *rval)</td><td class="entry"><a class="el" href="classitem.html">item</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classrhs.html#a0eee78a024976d37b6948237b3e7963a">dependencies</a>() const </td><td class="entry"><a class="el" href="classrhs.html">rhs</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classitem__dim.html#a466c79634e0deeb7bd7d7b45e9bc399d">dependencies</a>() const =0</td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classitem__dim.html#a3cbb20c8a55447ada9f905599040a7e3">dimension</a></td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classrhs.html#a918332e3c5929d788ce983cbc32713ef">dxdt</a>(ptr_passer x, ptr_passer dx, double t)=0</td><td class="entry"><a class="el" href="classrhs.html">rhs</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classitem__dim.html#a8e6fdfbc3698c8904f45127e744a3300">get_dimension</a>() const </td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -119,7 +119,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="entry"><a class="el" href="classitem__dim.html#a14d8c4b8db1a34f50293cfa1a98d4af6">memp</a></td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>() const </td><td class="entry"><a class="el" href="classitem.html">item</a></td><td class="entry"></td></tr>
   <tr><td class="entry"><a class="el" href="classitem__dim.html#a06035079b0255be7b9c96e23c70b151c">parent</a></td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classrhs.html#a2b8984531851f004caa1eb0dd3584de5">postprocess</a>(input &amp;dat)</td><td class="entry"><a class="el" href="classrhs.html">rhs</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classitem__dim.html#ae916e7ba8157ac0472abdb6726db24f8">postprocess</a>(input &amp;dat)</td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr><td class="entry"><a class="el" href="classitem.html#aba4568f32fc335c3398985d81f1e1e59">print</a>() const </td><td class="entry"><a class="el" href="classitem.html">item</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classitem__dim.html#a413c6e3a7292068561c91e8f4802b871">print_upstream</a>()</td><td class="entry"><a class="el" href="classitem__dim.html">item_dim</a></td><td class="entry"><span class="mlabel">protected</span></td></tr>
   <tr><td class="entry"><a class="el" href="classrhs.html#a9840fd9c2e758af9337b55ee98f31ceb">rhs</a>()</td><td class="entry"><a class="el" href="classrhs.html">rhs</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

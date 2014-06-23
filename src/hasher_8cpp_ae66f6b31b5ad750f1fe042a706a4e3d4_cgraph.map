@@ -1,6 +1,0 @@
-<map id="main" name="main">
-<area shape="rect" id="node3" href="$classhasher.html#a052f7e4ed56818f63fa8ce2e8dc86628" title="hasher::add_vecs" alt="" coords="104,7,229,36"/>
-<area shape="rect" id="node9" href="$classhasher.html#a9e322e125346c58f0d5b86faa138ec27" title="hasher::get_cur_scores" alt="" coords="279,59,436,88"/>
-<area shape="rect" id="node5" href="$classhasher.html#a9380bff572ebc4eb7b7db710cefc29d4" title="hasher::add_scores" alt="" coords="289,5,425,35"/>
-<area shape="rect" id="node7" href="$classhasher.html#aa4950f8db7737c6d149d784ee1aef062" title="hasher::get_bin" alt="" coords="487,32,596,61"/>
-</map>

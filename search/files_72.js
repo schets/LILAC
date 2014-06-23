@@ -7,7 +7,6 @@ var searchData=
   ['rhs_5fcnls_2eh',['rhs_CNLS.h',['../rhs___c_n_l_s_8h.html',1,'']]],
   ['rhs_5fsde_2ecpp',['rhs_sde.cpp',['../rhs__sde_8cpp.html',1,'']]],
   ['rhs_5fsde_2eh',['rhs_sde.h',['../rhs__sde_8h.html',1,'']]],
-  ['rhs_5fsde_5ftype_2ehpp',['rhs_sde_type.hpp',['../rhs__sde__type_8hpp.html',1,'']]],
   ['rhs_5fsqgle_2ecpp',['rhs_SQGLE.cpp',['../rhs___s_q_g_l_e_8cpp.html',1,'']]],
   ['rhs_5fsqgle_2eh',['rhs_SQGLE.h',['../rhs___s_q_g_l_e_8h.html',1,'']]],
   ['rhs_5ftype_2ehpp',['rhs_type.hpp',['../rhs__type_8hpp.html',1,'']]],

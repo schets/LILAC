@@ -1,8 +1,0 @@
-<map id="idamax" name="idamax">
-<area shape="rect" id="node3" href="$lsoda_8cpp.html#a488e3690e82c9dce0c4d5958f95e7499" title="dgefa" alt="" coords="119,5,172,35"/>
-<area shape="rect" id="node5" href="$lsoda_8cpp.html#a03e3e52e5cd95a58b2942a77eb0884e8" title="prja" alt="" coords="221,5,264,35"/>
-<area shape="rect" id="node7" href="$lsoda_8cpp.html#a3da24bdbae7cfb5a878215dc16570747" title="correction" alt="" coords="313,5,391,35"/>
-<area shape="rect" id="node9" href="$lsoda_8cpp.html#a543085a53174564c75f98da2468c9cca" title="stoda" alt="" coords="441,5,495,35"/>
-<area shape="rect" id="node11" href="$lsoda_8cpp.html#aaa5ac27a4d96b972ef3ddb41e9f8b6ce" title="lsoda" alt="" coords="544,5,597,35"/>
-<area shape="rect" id="node13" href="$lsoda_8cpp.html#a7082e628fc878891266a36d165c1311b" title="n_lsoda" alt="" coords="645,5,712,35"/>
-</map>

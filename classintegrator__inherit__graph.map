@@ -1,10 +1,13 @@
 <map id="integrator" name="integrator">
-<area shape="rect" id="node9" href="$classeuler__sde.html" title="Dormand&#45;Prince integrator." alt="" coords="5,237,83,267"/>
-<area shape="rect" id="node13" href="$classexample__integrator.html" title="example_integrator" alt="" coords="107,237,237,267"/>
-<area shape="rect" id="node16" href="$classrk4.html" title="Dormand&#45;Prince integrator." alt="" coords="261,237,301,267"/>
-<area shape="rect" id="node19" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="325,237,371,267"/>
-<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="143,83,217,112"/>
-<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="157,5,203,35"/>
-<area shape="rect" id="node6" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="241,83,305,112"/>
-<area shape="rect" id="node11" href="$classfinal__def.html" title="Dormand&#45;Prince integrator." alt="" coords="176,315,277,344"/>
+<area shape="rect" id="node9" href="$classeuler__sde.html" title="Dormand&#45;Prince integrator." alt="" coords="57,237,135,267"/>
+<area shape="rect" id="node13" href="$classexample__integrator.html" title="example_integrator" alt="" coords="179,237,309,267"/>
+<area shape="rect" id="node17" href="$classrk4.html" title="Dormand&#45;Prince integrator." alt="" coords="349,237,389,267"/>
+<area shape="rect" id="node21" href="$classrk45.html" title="Dormand&#45;Prince integrator." alt="" coords="453,237,499,267"/>
+<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="223,83,297,112"/>
+<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="237,5,283,35"/>
+<area shape="rect" id="node6" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="321,83,385,112"/>
+<area shape="rect" id="node11" href="$classeuler__sde__tmpl.html" title="Template implementation of the stochastic euler integrator." alt="" coords="5,324,147,353"/>
+<area shape="rect" id="node15" href="$classexample__integrator__tmpl.html" title="example_integrator\l_tmpl\&lt; T \&gt;" alt="" coords="171,315,301,362"/>
+<area shape="rect" id="node19" href="$classrk4__tmpl.html" title="rk4_tmpl\&lt; T \&gt;" alt="" coords="325,324,429,353"/>
+<area shape="rect" id="node23" href="$classrk45__tmpl.html" title="Dormand&#45;Prince integrator." alt="" coords="453,324,563,353"/>
 </map>

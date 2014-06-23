@@ -1,5 +1,5 @@
 <map id="n_pulse_score" name="n_pulse_score">
-<area shape="rect" id="node2" href="$classobjective.html" title="objective" alt="" coords="69,277,144,307"/>
+<area shape="rect" id="node2" href="$classobjective.html" title="THis class represents the objective function class that calculates the score of a solution..." alt="" coords="69,277,144,307"/>
 <area shape="rect" id="node4" href="$classitem__dim.html" title="item_dim" alt="" coords="69,197,144,227"/>
 <area shape="rect" id="node6" href="$classitem.html" title="item" alt="" coords="23,101,68,131"/>
 <area shape="rect" id="node8" href="$classengineimp.html" title="engineimp" alt="" coords="5,5,85,35"/>

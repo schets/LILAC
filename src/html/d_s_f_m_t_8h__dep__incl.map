@@ -1,7 +1,0 @@
-<map id="SFMT/dSFMT.h" name="SFMT/dSFMT.h">
-<area shape="rect" id="node3" href="$d_s_f_m_t-common_8h.html" title="SIMD oriented Fast Mersenne Twister(SFMT) pseudorandom number generator with jump function..." alt="" coords="5,83,176,112"/>
-<area shape="rect" id="node7" href="$d_s_f_m_t-params_8h.html" title="SFMT/dSFMT&#45;params.h" alt="" coords="200,83,363,112"/>
-<area shape="rect" id="node10" href="$test_8c.html" title="SFMT/test.c" alt="" coords="387,83,480,112"/>
-<area shape="rect" id="node12" href="$noise_8cpp.html" title="utils/noise.cpp" alt="" coords="504,83,611,112"/>
-<area shape="rect" id="node5" href="$d_s_f_m_t_8c.html" title="double precision SIMD&#45;oriented Fast Mersenne Twister (dSFMT) based on IEEE 754 format." alt="" coords="128,160,243,189"/>
-</map>

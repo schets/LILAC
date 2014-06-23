@@ -93,6 +93,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>This class defines a jones matrix optical system.  
+ <a href="classjones__optical.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for jones_optical:</div>
@@ -106,7 +109,7 @@ Collaboration diagram for jones_optical:</div>
 <div class="dyncontent">
 <div class="center"><img src="classjones__optical__coll__graph.png" border="0" usemap="#jones__optical_coll__map" alt="Collaboration graph"/></div>
 <map name="jones__optical_coll__map" id="jones__optical_coll__map">
-<area shape="rect" id="node2" href="classstable__spectral__pde__1d__tmpl.html" title="stable_spectral_pde\l_1d_tmpl\&lt; comp \&gt;" alt="" coords="379,726,517,773"/><area shape="rect" id="node4" href="classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; comp \&gt;" alt="" coords="361,645,535,675"/><area shape="rect" id="node6" href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="345,565,431,595"/><area shape="rect" id="node8" href="classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="339,469,395,499"/><area shape="rect" id="node10" href="classsimulation.html" title="simulation" alt="" coords="139,373,219,403"/><area shape="rect" id="node12" href="classitem__dim.html" title="item_dim" alt="" coords="232,197,307,227"/><area shape="rect" id="node23" href="classobjective.html" title="objective" alt="" coords="232,277,307,307"/><area shape="rect" id="node26" href="classcontroller.html" title="This is the base class for the control type classes." alt="" coords="5,277,80,307"/><area shape="rect" id="node31" href="classintegrator.html" title="This class defines the integration base class." alt="" coords="441,469,516,499"/><area shape="rect" id="node35" href="classrhs.html" title="The rhs base class." alt="" coords="404,373,444,403"/><area shape="rect" id="node14" href="classitem.html" title="item" alt="" coords="185,101,231,131"/><area shape="rect" id="node16" href="classengineimp.html" title="engineimp" alt="" coords="168,5,248,35"/><area shape="rect" id="node18" href="classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="255,101,329,131"/><area shape="rect" id="node21" href="classwriter.html" title="This class defines the interface for sending data to the engine for writing." alt="" coords="155,277,208,307"/><area shape="rect" id="node29" href="classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="392,277,456,307"/></map>
+<area shape="rect" id="node2" href="classstable__spectral__pde__1d__tmpl.html" title="stable_spectral_pde\l_1d_tmpl\&lt; comp \&gt;" alt="" coords="379,726,517,773"/><area shape="rect" id="node4" href="classstable__ode__tmpl.html" title="stable_ode_tmpl\&lt; comp \&gt;" alt="" coords="361,645,535,675"/><area shape="rect" id="node6" href="classstable__ode.html" title="A class representing an ODE system that is integrated towards stability." alt="" coords="345,565,431,595"/><area shape="rect" id="node8" href="classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="339,469,395,499"/><area shape="rect" id="node10" href="classsimulation.html" title="simulation" alt="" coords="139,373,219,403"/><area shape="rect" id="node12" href="classitem__dim.html" title="item_dim" alt="" coords="232,197,307,227"/><area shape="rect" id="node23" href="classobjective.html" title="THis class represents the objective function class that calculates the score of a solution..." alt="" coords="232,277,307,307"/><area shape="rect" id="node26" href="classcontroller.html" title="This is the base class for the control type classes." alt="" coords="5,277,80,307"/><area shape="rect" id="node31" href="classintegrator.html" title="This class defines the integration base class." alt="" coords="441,469,516,499"/><area shape="rect" id="node35" href="classrhs.html" title="The rhs base class." alt="" coords="404,373,444,403"/><area shape="rect" id="node14" href="classitem.html" title="item" alt="" coords="185,101,231,131"/><area shape="rect" id="node16" href="classengineimp.html" title="engineimp" alt="" coords="168,5,248,35"/><area shape="rect" id="node18" href="classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="255,101,329,131"/><area shape="rect" id="node21" href="classwriter.html" title="This class defines the interface for sending data to the engine for writing." alt="" coords="155,277,208,307"/><area shape="rect" id="node29" href="classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="392,277,456,307"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
@@ -118,8 +121,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a838ebcaa1b0518ed9c978f463c8ae107"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a838ebcaa1b0518ed9c978f463c8ae107">score</a> ()</td></tr>
 <tr class="memdesc:a838ebcaa1b0518ed9c978f463c8ae107"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns score that favors tight and high-energy single pulses.  <a href="#a838ebcaa1b0518ed9c978f463c8ae107"></a><br/></td></tr>
 <tr class="memitem:ab9bda3e8f20dc810438f25d8ac7fc341"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341">postprocess</a> (<a class="el" href="classinput.html">input</a> &amp;invals)</td></tr>
-<tr class="memitem:a4cea8c8867354d915f1d239852b7e3df"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">dependencies</a> () const </td></tr>
-<tr class="memitem:af79a9e11715f83f420c9cbb145e476bc"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#af79a9e11715f83f420c9cbb145e476bc">type</a> () const </td></tr>
+<tr class="memitem:a4cea8c8867354d915f1d239852b7e3df"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a4cea8c8867354d915f1d239852b7e3df">dependencies</a> () const </td></tr>
+<tr class="memitem:af79a9e11715f83f420c9cbb145e476bc"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#af79a9e11715f83f420c9cbb145e476bc">type</a> () const </td></tr>
 <tr class="memitem:a230742ec5564cf3b8ea0581f4f8366ce"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a230742ec5564cf3b8ea0581f4f8366ce">~jones_optical</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classstable__spectral__pde__1d__tmpl"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classstable__spectral__pde__1d__tmpl')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classstable__spectral__pde__1d__tmpl.html">stable_spectral_pde_1d_tmpl< comp ></a></td></tr>
 <tr class="memitem:a418e3116dead9f7e097d4160ad181ea7 inherit pub_methods_classstable__spectral__pde__1d__tmpl"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d__tmpl.html#a418e3116dead9f7e097d4160ad181ea7">~stable_spectral_pde_1d_tmpl</a> ()</td></tr>
@@ -139,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a742c7682a6e336e7e63c89cc9f71c108"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a742c7682a6e336e7e63c89cc9f71c108">compare</a> () const </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a113715a6267314ee5006004293163120">compare</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
+<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
 <tr class="memitem:a61ece164329afa4ba5184ed093262492 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a61ece164329afa4ba5184ed093262492">vtype_internal</a> () const </td></tr>
 <tr class="memitem:ac0439696ac7183cdc7415f3bf51f5c05 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> *in) const </td></tr>
 <tr class="memitem:aa5327982722b4f7c1104149ec327334a inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aa5327982722b4f7c1104149ec327334a">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> &amp;in) const </td></tr>
@@ -148,7 +151,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fce730c38933fa90970c774e98bb5e3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a9fce730c38933fa90970c774e98bb5e3">compare_internal</a> () const </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#ad87579bb36217265ee71086b57d23e24">compare_internal</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
+<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
 <tr class="memitem:a95f1b522c6bc063048ff19be1a74a12c inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a95f1b522c6bc063048ff19be1a74a12c">~vartype</a> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
@@ -176,11 +179,6 @@ Private Attributes</h2></td></tr>
 <tr class="memitem:a8094461bb4023429883591b0f4e441df"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a8094461bb4023429883591b0f4e441df">phold</a></td></tr>
 <tr class="memitem:a73ff105ad6329ace6e30b2e315411ec9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8hpp.html#a407c4f6cd09a6f2bf296c8cf21a76aca">comp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a73ff105ad6329ace6e30b2e315411ec9">nvec1</a></td></tr>
 <tr class="memitem:a38609eacf86117b6e7bc3703dedf2f2c"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a38609eacf86117b6e7bc3703dedf2f2c">nvec2</a></td></tr>
-<tr class="memitem:a503f195af9e34a58b1099beebf033745"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a503f195af9e34a58b1099beebf033745">best_score</a></td></tr>
-<tr class="memitem:ac338fdbdf8b88cc4b12e1a10e8579a36"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#ac338fdbdf8b88cc4b12e1a10e8579a36">ba1</a></td></tr>
-<tr class="memitem:ad6b91d9c1186e56dff7ca134b26fa834"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#ad6b91d9c1186e56dff7ca134b26fa834">ba2</a></td></tr>
-<tr class="memitem:a9a4f2dd6af63a98f557c1927075ead1c"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a9a4f2dd6af63a98f557c1927075ead1c">bap</a></td></tr>
-<tr class="memitem:a850a657969d8425c7c327277275075da"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a850a657969d8425c7c327277275075da">ba3</a></td></tr>
 <tr class="memitem:a1ce52a37155749300abdceff1c5b41cf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="defs_8hpp.html#a407c4f6cd09a6f2bf296c8cf21a76aca">comp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a1ce52a37155749300abdceff1c5b41cf">kurtosis_help</a></td></tr>
 <tr class="memitem:a9128130b8efa2f6177e9ab7c4d58332d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::shared_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classjones__matrix.html">jones_matrix</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classjones__optical.html#a9128130b8efa2f6177e9ab7c4d58332d">jones_matrices</a></td></tr>
@@ -192,9 +190,9 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&nbsp;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
+<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="inherit_header pub_attribs_classsimulation"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classsimulation')"><img src="closed.png" alt="-"/>&nbsp;Public Attributes inherited from <a class="el" href="classsimulation.html">simulation</a></td></tr>
-<tr class="memitem:ab876ef55f93382f1d6b5bd9989dd4065 inherit pub_attribs_classsimulation"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimulation.html#ab876ef55f93382f1d6b5bd9989dd4065">out_f_name</a></td></tr>
+<tr class="memitem:ab876ef55f93382f1d6b5bd9989dd4065 inherit pub_attribs_classsimulation"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classsimulation.html#ab876ef55f93382f1d6b5bd9989dd4065">out_f_name</a></td></tr>
 <tr class="inherit_header pro_attribs_classstable__spectral__pde__1d__tmpl"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classstable__spectral__pde__1d__tmpl')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classstable__spectral__pde__1d__tmpl.html">stable_spectral_pde_1d_tmpl< comp ></a></td></tr>
 <tr class="memitem:a2741ffe333cc947f5ac468b59399c68f inherit pro_attribs_classstable__spectral__pde__1d__tmpl"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d__tmpl.html#a2741ffe333cc947f5ac468b59399c68f">t</a></td></tr>
 <tr class="memitem:ad423e6639b6b80a6cde6f45df3bb6813 inherit pro_attribs_classstable__spectral__pde__1d__tmpl"><td class="memItemLeft" align="right" valign="top">double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d__tmpl.html#ad423e6639b6b80a6cde6f45df3bb6813">help</a></td></tr>
@@ -202,8 +200,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memitem:afdb5b429a624032805885454c7505dd2 inherit pro_attribs_classstable__spectral__pde__1d__tmpl"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstable__spectral__pde__1d__tmpl.html#afdb5b429a624032805885454c7505dd2">num_pulses</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
-<div class="textblock">
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00008">8</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<div class="textblock"><p>This class defines a jones matrix optical system. </p>
+<p>This class represents an optical system controlled by a set of waveplates and polarizers. Mathematically, these are represented by jones matrices, hence the name.</p>
+<p>This simulation mathematically represents a spectral solution to a PDE, followed by an application of matrices with further integration between each matrix.</p>
+<p>The passed rhs is the Fourier transformed PDE. First, the simulation will apply a fourier transform to the current condition, and the integrate forwards for a specified period of time. Then, the solution will have the jones matrices applied to it. This happens in two steps. First, the solution is multiplied by the matrices that represent the current waveplates. Then, the solution is integrated forwards for a specified amount of time until it reaches the next matrix, upon which the process is repeated.</p>
+<p>This repeates until the system is stabilizes, or is deemed unstable. </p>
+
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00039">39</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 </div><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a230742ec5564cf3b8ea0581f4f8366ce"></a>
 <div class="memitem">
@@ -226,7 +229,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00226">226</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00249">249</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 </div>
 </div>
@@ -239,7 +242,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; jones_optical::dependencies </td>
+          <td class="memname">std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt; jones_optical::dependencies </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -251,10 +254,12 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-
+<p>This returns the dependencies of the jones matrix class. jones matrix has the same dependencies as <a class="el" href="classstable__spectral__pde__1d__tmpl.html" title="This class represents the spectral integration of a PDE.">stable_spectral_pde_1d_tmpl</a>, as well as </p>
+<pre class="fragment"> - int num_jones_segments: The number of sets of waveplates to have
+ - double jones_int_dist: The distance to integrate between waveplates</pre> 
 <p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d__tmpl.html#affe3e36f8633d19f26da601297dcc8c5">stable_spectral_pde_1d_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00070">70</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00093">93</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -293,7 +298,7 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classstable__ode__tmpl.html#a399034ec05b68b5b8c758e5557cd6277">stable_ode_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00200">200</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00223">223</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -330,14 +335,14 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d__tmpl.html#a91d32f29acbd1613a9a14a9177aed0f7">stable_spectral_pde_1d_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00175">175</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00198">198</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classjones__optical_a9988a52e2fa53446c5b985845d8ce3a3_cgraph.png" border="0" usemap="#classjones__optical_a9988a52e2fa53446c5b985845d8ce3a3_cgraph" alt=""/></div>
 <map name="classjones__optical_a9988a52e2fa53446c5b985845d8ce3a3_cgraph" id="classjones__optical_a9988a52e2fa53446c5b985845d8ce3a3_cgraph">
-<area shape="rect" id="node3" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="233,59,271,88"/><area shape="rect" id="node9" href="classintegrator.html#ad7967afe20a7fe05ec264d9d83fcf668" title="Integrates the function rh." alt="" coords="185,112,319,141"/><area shape="rect" id="node11" href="comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="233,5,271,35"/><area shape="rect" id="node5" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="368,5,411,35"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="371,59,408,88"/></map>
+<area shape="rect" id="node3" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="233,5,271,35"/><area shape="rect" id="node11" href="classintegrator.html#ad7967afe20a7fe05ec264d9d83fcf668" title="Integrates the function rh." alt="" coords="185,59,319,88"/><area shape="rect" id="node13" href="comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="233,112,271,141"/><area shape="rect" id="node5" href="utils_8cpp.html#ac0c44bfdf77af6087543e0bafb6ecc59" title="Actual fft function that fft and ifft wrap." alt="" coords="369,59,409,88"/><area shape="rect" id="node7" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="459,32,501,61"/><area shape="rect" id="node9" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="461,85,499,115"/></map>
 </div>
 </p>
 
@@ -367,14 +372,14 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d__tmpl.html#a9808d89a5d2ff68ef569a6f8e3e9f312">stable_spectral_pde_1d_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00074">74</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00097">97</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classjones__optical_ab9bda3e8f20dc810438f25d8ac7fc341_cgraph.png" border="0" usemap="#classjones__optical_ab9bda3e8f20dc810438f25d8ac7fc341_cgraph" alt=""/></div>
 <map name="classjones__optical_ab9bda3e8f20dc810438f25d8ac7fc341_cgraph" id="classjones__optical_ab9bda3e8f20dc810438f25d8ac7fc341_cgraph">
-<area shape="rect" id="node3" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="647,107,684,136"/><area shape="rect" id="node5" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="243,185,347,215"/><area shape="rect" id="node15" href="noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="239,292,351,321"/><area shape="rect" id="node42" href="comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="269,239,320,268"/><area shape="rect" id="node44" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="276,79,313,108"/><area shape="rect" id="node49" href="defs_8hpp.html#a56d6f1d56099eb797e6d84210504bf04" title="get_unique_name" alt="" coords="233,345,356,375"/><area shape="rect" id="node53" href="classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="233,399,356,428"/><area shape="rect" id="node7" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="428,132,553,161"/><area shape="rect" id="node9" href="defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="460,185,521,215"/><area shape="rect" id="node12" href="defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="452,239,529,268"/><area shape="rect" id="node17" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="433,292,548,321"/><area shape="rect" id="node19" href="noise_8cpp.html#a2626873bf3350d661efcfdbb317bca9f" title="get_norm_rand" alt="" coords="437,345,544,375"/><area shape="rect" id="node21" href="noise_8cpp.html#a56109474996addf273d3f4086511edc8" title="ran_gauss" alt="" coords="624,345,707,375"/><area shape="rect" id="node23" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="799,292,844,321"/><area shape="rect" id="node25" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="755,345,888,375"/><area shape="rect" id="node33" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="755,399,888,428"/><area shape="rect" id="node27" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="969,345,1087,375"/><area shape="rect" id="node29" href="_s_f_m_t_8c.html#a6bc561a0aa50307534d7e6dd93311d4f" title="gen_rand_array" alt="" coords="1187,345,1296,375"/><area shape="rect" id="node31" href="d_s_f_m_t-common_8h.html#a7608e546e97c84f277f505fa5723e5bb" title="do_recursion" alt="" coords="1365,345,1461,375"/><area shape="rect" id="node35" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="936,399,1120,428"/><area shape="rect" id="node37" href="d_s_f_m_t_8c.html#adb7241ebd46f1b54cc8d0543bc66cf54" title="gen_rand_array_c0o1" alt="" coords="1168,399,1315,428"/><area shape="rect" id="node40" href="d_s_f_m_t_8c.html#a07ac3fa725952f7118b6ef2ea1f50df2" title="convert_c0o1" alt="" coords="1364,399,1463,428"/><area shape="rect" id="node46" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="469,79,512,108"/><area shape="rect" id="node51" href="class_____h_i_d_e_r_____1_1__unique__name.html#a2bea81562ca7b8e3d3510c0253956603" title="__HIDER__::_unique\l_name::get_unique_name" alt="" coords="405,398,576,445"/></map>
+<area shape="rect" id="node3" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="627,317,664,346"/><area shape="rect" id="node5" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="244,177,345,206"/><area shape="rect" id="node16" href="classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="243,316,347,345"/><area shape="rect" id="node20" href="noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="239,373,351,402"/><area shape="rect" id="node26" href="comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="269,426,320,456"/><area shape="rect" id="node28" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="276,586,313,616"/><area shape="rect" id="node35" href="defs_8hpp.html#a56d6f1d56099eb797e6d84210504bf04" title="get_unique_name" alt="" coords="233,533,356,562"/><area shape="rect" id="node39" href="classinput.html#a169558ab7654aac73a65ab112bc58fd9" title="input::insert_item" alt="" coords="233,480,356,509"/><area shape="rect" id="node42" href="classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="233,640,356,669"/><area shape="rect" id="node7" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="441,202,540,232"/><area shape="rect" id="node9" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="428,256,553,285"/><area shape="rect" id="node11" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="439,45,543,74"/><area shape="rect" id="node14" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="448,98,533,128"/><area shape="rect" id="node18" href="classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="428,309,553,338"/><area shape="rect" id="node22" href="struct_____h_i_d_e_r_____1_1acml__rng.html#a4f2425ef70b926f2f6adbab887f9fd0b" title="__HIDER__::acml_rng\l::fill" alt="" coords="413,362,568,408"/><area shape="rect" id="node24" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="433,432,548,461"/><area shape="rect" id="node30" href="utils_8cpp.html#ac0c44bfdf77af6087543e0bafb6ecc59" title="Actual fft function that fft and ifft wrap." alt="" coords="471,605,511,634"/><area shape="rect" id="node32" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="624,605,667,634"/><area shape="rect" id="node37" href="class_____h_i_d_e_r_____1_1__unique__name.html#a2bea81562ca7b8e3d3510c0253956603" title="__HIDER__::_unique\l_name::get_unique_name" alt="" coords="405,535,576,582"/></map>
 </div>
 </p>
 
@@ -404,14 +409,14 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d__tmpl.html#a261fbfc245775136b24bf39ed452b39f">stable_spectral_pde_1d_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00150">150</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00173">173</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classjones__optical_a154a378dce4b88caeb4a4d53d665e286_cgraph.png" border="0" usemap="#classjones__optical_a154a378dce4b88caeb4a4d53d665e286_cgraph" alt=""/></div>
 <map name="classjones__optical_a154a378dce4b88caeb4a4d53d665e286_cgraph" id="classjones__optical_a154a378dce4b88caeb4a4d53d665e286_cgraph">
-<area shape="rect" id="node3" href="comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="179,5,229,35"/><area shape="rect" id="node5" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="185,112,223,141"/><area shape="rect" id="node11" href="comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="185,59,223,88"/><area shape="rect" id="node7" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="277,59,320,88"/><area shape="rect" id="node9" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="280,112,317,141"/></map>
+<area shape="rect" id="node3" href="comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="179,5,229,35"/><area shape="rect" id="node5" href="comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="185,59,223,88"/><area shape="rect" id="node13" href="comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="185,112,223,141"/><area shape="rect" id="node7" href="utils_8cpp.html#ac0c44bfdf77af6087543e0bafb6ecc59" title="Actual fft function that fft and ifft wrap." alt="" coords="279,85,319,115"/><area shape="rect" id="node9" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="368,59,411,88"/><area shape="rect" id="node11" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="371,112,408,141"/></map>
 </div>
 </p>
 
@@ -439,11 +444,11 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Returns score that favors tight and high-energy single pulses. </p>
-<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classn__pulse__score.html">n_pulse_score</a> </dd></dl>
+<dl class="section see"><dt>See Also</dt><dd><a class="el" href="classn__pulse__score.html" title="This class calculates the score of a solution with n pulses, tailored towards the quality of a laser ...">n_pulse_score</a> </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classstable__ode__tmpl.html#ab094b9dce1da9a4e51ec775772188378">stable_ode_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00223">223</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00246">246</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -464,7 +469,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string jones_optical::type </td>
+          <td class="memname"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> jones_optical::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -479,121 +484,11 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classstable__spectral__pde__1d__tmpl.html#a6b20738f34da4ed16a21dea34bc87f26">stable_spectral_pde_1d_tmpl&lt; comp &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00229">229</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8cpp_source.html#l00252">252</a> of file <a class="el" href="jones__optical_8cpp_source.html">jones_optical.cpp</a>.</p>
 
 </div>
 </div>
 <h2>Member Data Documentation</h2>
-<a class="anchor" id="ac338fdbdf8b88cc4b12e1a10e8579a36"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double jones_optical::ba1</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00013">13</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ad6b91d9c1186e56dff7ca134b26fa834"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double jones_optical::ba2</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00013">13</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a850a657969d8425c7c327277275075da"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double jones_optical::ba3</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00013">13</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a9a4f2dd6af63a98f557c1927075ead1c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double jones_optical::bap</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00013">13</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a503f195af9e34a58b1099beebf033745"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">double jones_optical::best_score</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00012">12</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a28cdcd93562020297a83fe9b6855d249"></a>
 <div class="memitem">
 <div class="memproto">
@@ -612,7 +507,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00022">22</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00051">51</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -634,7 +529,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00022">22</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00051">51</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -656,7 +551,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00009">9</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00040">40</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -678,7 +573,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00020">20</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00049">49</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -700,7 +595,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00015">15</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00044">44</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -722,7 +617,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00014">14</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00043">43</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -744,7 +639,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00010">10</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00041">41</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -766,7 +661,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00011">11</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00042">42</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -788,7 +683,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00021">21</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00050">50</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -810,7 +705,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00009">9</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00040">40</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -832,7 +727,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00009">9</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
+<p>Definition at line <a class="el" href="jones__optical_8h_source.html#l00040">40</a> of file <a class="el" href="jones__optical_8h_source.html">jones_optical.h</a>.</p>
 
 </div>
 </div>
@@ -843,7 +738,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

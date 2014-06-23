@@ -1,7 +1,0 @@
-<map id="euler_sde_tmpl::postprocess" name="euler_sde_tmpl::postprocess">
-<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="243,7,397,36"/>
-<area shape="rect" id="node5" href="$item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="288,60,352,89"/>
-<area shape="rect" id="node9" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="480,112,517,141"/>
-<area shape="rect" id="node7" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="447,5,551,35"/>
-<area shape="rect" id="node11" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="456,59,541,88"/>
-</map>

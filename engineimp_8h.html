@@ -92,22 +92,28 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;list&gt;</code><br/>
+<code>#include &lt;queue&gt;</code><br/>
 <code>#include &lt;iostream&gt;</code><br/>
 <code>#include &lt;fstream&gt;</code><br/>
+<code>#include &lt;stdio.h&gt;</code><br/>
+<code>#include &lt;thread&gt;</code><br/>
+<code>#include &lt;mutex&gt;</code><br/>
+<code>#include &lt;atomic&gt;</code><br/>
+<code>#include &lt;condition_variable&gt;</code><br/>
 <code>#include &quot;<a class="el" href="item__wrapper_8h_source.html">item_wrapper.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for engineimp.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="engineimp_8h__incl.png" border="0" usemap="#engine_2engineimp_8h" alt=""/></div>
 <map name="engine_2engineimp_8h" id="engine_2engineimp_8h">
-<area shape="rect" id="node9" href="item__wrapper_8h.html" title="item_wrapper.h" alt="" coords="208,83,317,112"/><area shape="rect" id="node11" href="item_8h.html" title="item.h" alt="" coords="195,160,253,189"/><area shape="rect" id="node18" href="defs_8hpp.html" title="utils/defs.hpp" alt="" coords="301,237,400,267"/></map>
+<area shape="rect" id="node21" href="item__wrapper_8h.html" title="item_wrapper.h" alt="" coords="773,83,883,112"/><area shape="rect" id="node23" href="item_8h.html" title="item.h" alt="" coords="527,160,585,189"/><area shape="rect" id="node30" href="defs_8hpp.html" title="utils/defs.hpp" alt="" coords="600,237,699,267"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="engineimp_8h__dep__incl.png" border="0" usemap="#engine_2engineimp_8hdep" alt=""/></div>
 <map name="engine_2engineimp_8hdep" id="engine_2engineimp_8hdep">
-<area shape="rect" id="node3" href="engine_8cpp.html" title="engine/engine.cpp" alt="" coords="5,83,131,112"/><area shape="rect" id="node5" href="engine__run_8cpp.html" title="engine/engine_run.cpp" alt="" coords="155,83,307,112"/><area shape="rect" id="node7" href="engine__write_8cpp.html" title="engine/engine_write.cpp" alt="" coords="331,83,493,112"/><area shape="rect" id="node9" href="engine_2graph_8cpp.html" title="engine/graph.cpp" alt="" coords="517,83,637,112"/><area shape="rect" id="node11" href="variable_8cpp.html" title="engine/variable.cpp" alt="" coords="661,83,795,112"/><area shape="rect" id="node13" href="engine__read_8cpp.html" title="lisp/engine_read.cpp" alt="" coords="819,83,960,112"/><area shape="rect" id="node15" href="eval__lisp_8cpp.html" title="lisp/eval_lisp.cpp" alt="" coords="984,83,1107,112"/><area shape="rect" id="node17" href="lisp_2graph_8cpp.html" title="lisp/graph.cpp" alt="" coords="1131,83,1232,112"/><area shape="rect" id="node19" href="c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="1256,83,1384,112"/><area shape="rect" id="node21" href="jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="1408,83,1595,112"/><area shape="rect" id="node23" href="ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="1619,83,1781,112"/><area shape="rect" id="node27" href="stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="1805,83,1949,112"/><area shape="rect" id="node25" href="ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="1635,160,1765,189"/></map>
+<area shape="rect" id="node3" href="toroidal_8cpp.html" title="controller/toroidal.cpp" alt="" coords="5,83,152,112"/><area shape="rect" id="node5" href="async__write_8cpp.html" title="engine/async_write.cpp" alt="" coords="176,83,333,112"/><area shape="rect" id="node7" href="engine_8cpp.html" title="engine/engine.cpp" alt="" coords="357,83,483,112"/><area shape="rect" id="node9" href="engine__run_8cpp.html" title="engine/engine_run.cpp" alt="" coords="507,83,659,112"/><area shape="rect" id="node11" href="engine__write_8cpp.html" title="engine/engine_write.cpp" alt="" coords="683,83,845,112"/><area shape="rect" id="node13" href="engine_2graph_8cpp.html" title="engine/graph.cpp" alt="" coords="869,83,989,112"/><area shape="rect" id="node15" href="variable_8cpp.html" title="engine/variable.cpp" alt="" coords="1013,83,1147,112"/><area shape="rect" id="node17" href="engine__read_8cpp.html" title="lisp/engine_read.cpp" alt="" coords="1171,83,1312,112"/><area shape="rect" id="node19" href="eval__lisp_8cpp.html" title="lisp/eval_lisp.cpp" alt="" coords="1336,83,1459,112"/><area shape="rect" id="node21" href="lisp_2graph_8cpp.html" title="lisp/graph.cpp" alt="" coords="1483,83,1584,112"/><area shape="rect" id="node23" href="c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="1608,83,1736,112"/><area shape="rect" id="node25" href="jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="1760,83,1947,112"/><area shape="rect" id="node27" href="ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="1971,83,2133,112"/><area shape="rect" id="node31" href="stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="2157,83,2301,112"/><area shape="rect" id="node29" href="ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="1987,160,2117,189"/></map>
 </div>
 </div>
 <p><a href="engineimp_8h_source.html">Go to the source code of this file.</a></p>
@@ -115,10 +121,12 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classengineimp.html">engineimp</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdata__io__info.html">data_io_info</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">structure holding parameters for data io  <a href="structdata__io__info.html#details">More...</a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9207a256904b184254111cc14209aa4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitem__wrapper.html">item_wrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="engineimp_8h.html#a9207a256904b184254111cc14209aa4d">eval_lisp</a> (std::string in_cmd, std::string base_name, std::map&lt; std::string, <a class="el" href="classinput.html">input</a> &gt; &amp;inv, <a class="el" href="classengineimp.html">engineimp</a> *en)</td></tr>
+<tr class="memitem:a9207a256904b184254111cc14209aa4d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classitem__wrapper.html">item_wrapper</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="engineimp_8h.html#a9207a256904b184254111cc14209aa4d">eval_lisp</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> in_cmd, <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> base_name, std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classinput.html">input</a> &gt; &amp;inv, <a class="el" href="classengineimp.html">engineimp</a> *en)</td></tr>
 </table>
 <h2>Function Documentation</h2>
 <a class="anchor" id="a9207a256904b184254111cc14209aa4d"></a>
@@ -128,19 +136,19 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classitem__wrapper.html">item_wrapper</a> eval_lisp </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td>
           <td class="paramname"><em>in_cmd</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td>
           <td class="paramname"><em>base_name</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::map&lt; std::string, <a class="el" href="classinput.html">input</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::map&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>, <a class="el" href="classinput.html">input</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>inv</em>, </td>
         </tr>
         <tr>
@@ -157,7 +165,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="eval__lisp_8cpp_source.html#l00059">59</a> of file <a class="el" href="eval__lisp_8cpp_source.html">eval_lisp.cpp</a>.</p>
+<p>Definition at line <a class="el" href="eval__lisp_8cpp_source.html#l00075">75</a> of file <a class="el" href="eval__lisp_8cpp_source.html">eval_lisp.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -173,7 +181,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

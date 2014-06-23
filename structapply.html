@@ -85,46 +85,96 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-static-methods">Static Private Member Functions</a> &#124;
 <a href="structapply-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">apply&lt; T, dim &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
+<p>Class containing functions for mapping over generic objects.  
+ <a href="structapply.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a022d90941b32cee456af1a284038d22d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapply.html#a022d90941b32cee456af1a284038d22d">static_assert</a> (dim &gt;=1,&quot;A dimension less then one has been given to the <a class="el" href="structapply.html">apply</a> structure&quot;)</td></tr>
-<tr class="memdesc:a022d90941b32cee456af1a284038d22d"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility  <a href="#a022d90941b32cee456af1a284038d22d"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a83f95cd80fc0ab25b7a9e078af9d68d6"><td class="memTemplParams" colspan="2">template&lt;class Lambda &gt; </td></tr>
 <tr class="memitem:a83f95cd80fc0ab25b7a9e078af9d68d6"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6">transform</a> (T &amp;inval, Lambda &amp;&amp;func)</td></tr>
+<tr class="memitem:a9bfd7a6f930e3831a8e07a867cb11f8b"><td class="memTemplParams" colspan="2">template&lt;template&lt; size_t &gt; class Lambda&gt; </td></tr>
+<tr class="memitem:a9bfd7a6f930e3831a8e07a867cb11f8b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#a9bfd7a6f930e3831a8e07a867cb11f8b">transform</a> (T &amp;inval)</td></tr>
+<tr class="memdesc:a9bfd7a6f930e3831a8e07a867cb11f8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Version of transform where Lambda takes dim as a template parameter.  <a href="#a9bfd7a6f930e3831a8e07a867cb11f8b"></a><br/></td></tr>
+<tr class="memitem:ad5346ee35371151f61558fd503592c86"><td class="memTemplParams" colspan="2">template&lt;class Lambda , class Final &gt; </td></tr>
+<tr class="memitem:ad5346ee35371151f61558fd503592c86"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#ad5346ee35371151f61558fd503592c86">transform</a> (T &amp;inval, Lambda &amp;&amp;func, Final &amp;&amp;finish)</td></tr>
 <tr class="memitem:ae88892c5eaaf8ab8ceb9c1336bec8c77"><td class="memTemplParams" colspan="2">template&lt;class Lambda , class Trans &gt; </td></tr>
 <tr class="memitem:ae88892c5eaaf8ab8ceb9c1336bec8c77"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77">map_into</a> (const T &amp;inval, Lambda &amp;&amp;func, Trans &amp;outval)</td></tr>
-<tr class="memitem:a01592a37ec0859d0e304208fa0629ace"><td class="memTemplParams" colspan="2">template&lt;class Lambda , class Trans , class constr , class postop &gt; </td></tr>
-<tr class="memitem:a01592a37ec0859d0e304208fa0629ace"><td class="memTemplItemLeft" align="right" valign="top">static Trans&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#a01592a37ec0859d0e304208fa0629ace">map</a> (const T &amp;inval, Lambda &amp;&amp;func)</td></tr>
-<tr class="memdesc:a01592a37ec0859d0e304208fa0629ace"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a variable of type trans with the functor by mapping each coordinate of the first to the second.  <a href="#a01592a37ec0859d0e304208fa0629ace"></a><br/></td></tr>
+<tr class="memitem:a00323b955ef6fe311ddb067442432794"><td class="memTemplParams" colspan="2">template&lt;class Lambda , class Trans &gt; </td></tr>
+<tr class="memitem:a00323b955ef6fe311ddb067442432794"><td class="memTemplItemLeft" align="right" valign="top">static Trans&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#a00323b955ef6fe311ddb067442432794">map</a> (const T &amp;inval, Lambda &amp;&amp;func)</td></tr>
+<tr class="memdesc:a00323b955ef6fe311ddb067442432794"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a variable of type trans with the functor by mapping each coordinate of the first to the second.  <a href="#a00323b955ef6fe311ddb067442432794"></a><br/></td></tr>
 <tr class="memitem:ac0ce259bfda32dfebccb3567e4be31a2"><td class="memTemplParams" colspan="2">template&lt;class Lambda , class Trans , class constr , class postop &gt; </td></tr>
 <tr class="memitem:ac0ce259bfda32dfebccb3567e4be31a2"><td class="memTemplItemLeft" align="right" valign="top">static Trans&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#ac0ce259bfda32dfebccb3567e4be31a2">map</a> (const T &amp;inval, Lambda &amp;&amp;func, postop &amp;&amp;finish, constr &amp;&amp;build)</td></tr>
 <tr class="memdesc:ac0ce259bfda32dfebccb3567e4be31a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mapper with custom building and postoperation functors.  <a href="#ac0ce259bfda32dfebccb3567e4be31a2"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ac11fe2c0dfd954d65400d3d70d57ac66"><td class="memItemLeft" align="right" valign="top">static auto dim&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structapply.html#ac11fe2c0dfd954d65400d3d70d57ac66">pull</a> (inval))</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-static-methods"></a>
+Static Private Member Functions</h2></td></tr>
+<tr class="memitem:a1d63a873578678aedeb87ba958a18153"><td class="memTemplParams" colspan="2">template&lt;class U &gt; </td></tr>
+<tr class="memitem:a1d63a873578678aedeb87ba958a18153"><td class="memTemplItemLeft" align="right" valign="top">static auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structapply.html#a1d63a873578678aedeb87ba958a18153">get</a> (U &amp;inval)-&gt; decltype(<a class="el" href="structget.html">get</a>&lt;U</td></tr>
+<tr class="memdesc:a1d63a873578678aedeb87ba958a18153"><td class="mdescLeft">&#160;</td><td class="mdescRight">helper function to reduce complexity of get function calls  <a href="#a1d63a873578678aedeb87ba958a18153"></a><br/></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T, size_t dim = float_traits&lt;T&gt;::dim&gt;<br/>
 struct apply&lt; T, dim &gt;</h3>
 
+<p>Class containing functions for mapping over generic objects. </p>
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00084">84</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00127">127</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 </div><h2>Member Function Documentation</h2>
-<a class="anchor" id="a01592a37ec0859d0e304208fa0629ace"></a>
+<a class="anchor" id="a1d63a873578678aedeb87ba958a18153"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
 <div class="memtemplate">
-template&lt;class Lambda , class Trans , class constr , class postop &gt; </div>
+template&lt;class U &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto <a class="el" href="structapply.html">apply</a>&lt; T, dim &gt;::<a class="el" href="structget.html">get</a> </td>
+          <td>(</td>
+          <td class="paramtype">U &amp;&#160;</td>
+          <td class="paramname"><em>inval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>helper function to reduce complexity of get function calls </p>
+
+</div>
+</div>
+<a class="anchor" id="a00323b955ef6fe311ddb067442432794"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
+<div class="memtemplate">
+template&lt;class Lambda , class Trans &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -156,14 +206,14 @@ template&lt;class Lambda , class Trans , class constr , class postop &gt; </div>
 
 <p>Generates a variable of type trans with the functor by mapping each coordinate of the first to the second. </p>
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00105">105</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00224">224</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="structapply_a01592a37ec0859d0e304208fa0629ace_cgraph.png" border="0" usemap="#structapply_a01592a37ec0859d0e304208fa0629ace_cgraph" alt=""/></div>
-<map name="structapply_a01592a37ec0859d0e304208fa0629ace_cgraph" id="structapply_a01592a37ec0859d0e304208fa0629ace_cgraph">
-<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="141,5,256,35"/><area shape="rect" id="node5" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility" alt="" coords="304,5,440,35"/></map>
+<div class="center"><img src="structapply_a00323b955ef6fe311ddb067442432794_cgraph.png" border="0" usemap="#structapply_a00323b955ef6fe311ddb067442432794_cgraph" alt=""/></div>
+<map name="structapply_a00323b955ef6fe311ddb067442432794_cgraph" id="structapply_a00323b955ef6fe311ddb067442432794_cgraph">
+<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="141,32,256,61"/><area shape="rect" id="node5" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="apply::static_assert" alt="" coords="304,5,440,35"/><area shape="rect" id="node7" href="structapply.html#ac11fe2c0dfd954d65400d3d70d57ac66" title="apply::pull" alt="" coords="332,59,412,88"/></map>
 </div>
 </p>
 
@@ -219,14 +269,14 @@ template&lt;class Lambda , class Trans , class constr , class postop &gt; </div>
 
 <p>Mapper with custom building and postoperation functors. </p>
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00112">112</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00231">231</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structapply_ac0ce259bfda32dfebccb3567e4be31a2_cgraph.png" border="0" usemap="#structapply_ac0ce259bfda32dfebccb3567e4be31a2_cgraph" alt=""/></div>
 <map name="structapply_ac0ce259bfda32dfebccb3567e4be31a2_cgraph" id="structapply_ac0ce259bfda32dfebccb3567e4be31a2_cgraph">
-<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="141,5,256,35"/><area shape="rect" id="node5" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility" alt="" coords="304,5,440,35"/></map>
+<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="141,32,256,61"/><area shape="rect" id="node5" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="apply::static_assert" alt="" coords="304,5,440,35"/><area shape="rect" id="node7" href="structapply.html#ac11fe2c0dfd954d65400d3d70d57ac66" title="apply::pull" alt="" coords="332,59,412,88"/></map>
 </div>
 </p>
 
@@ -274,14 +324,14 @@ template&lt;class Lambda , class Trans &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00097">97</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00216">216</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_cgraph.png" border="0" usemap="#structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_cgraph" alt=""/></div>
 <map name="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_cgraph" id="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_cgraph">
-<area shape="rect" id="node3" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility" alt="" coords="168,5,304,35"/></map>
+<area shape="rect" id="node3" href="structapply.html#a022d90941b32cee456af1a284038d22d" title="apply::static_assert" alt="" coords="168,5,304,35"/><area shape="rect" id="node5" href="structapply.html#ac11fe2c0dfd954d65400d3d70d57ac66" title="apply::pull" alt="" coords="196,59,276,88"/></map>
 </div>
 </p>
 
@@ -290,7 +340,44 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_icgraph.png" border="0" usemap="#structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_icgraph" alt=""/></div>
 <map name="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_icgraph" id="structapply_ae88892c5eaaf8ab8ceb9c1336bec8c77_icgraph">
-<area shape="rect" id="node3" href="structapply.html#a01592a37ec0859d0e304208fa0629ace" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="169,5,255,35"/></map>
+<area shape="rect" id="node3" href="structapply.html#a00323b955ef6fe311ddb067442432794" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="169,5,255,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ac11fe2c0dfd954d65400d3d70d57ac66"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static auto dim <a class="el" href="structapply.html">apply</a>&lt; T, dim &gt;::pull </td>
+          <td>(</td>
+          <td class="paramtype">inval&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00131">131</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structapply_ac11fe2c0dfd954d65400d3d70d57ac66_icgraph.png" border="0" usemap="#structapply_ac11fe2c0dfd954d65400d3d70d57ac66_icgraph" alt=""/></div>
+<map name="structapply_ac11fe2c0dfd954d65400d3d70d57ac66_icgraph" id="structapply_ac11fe2c0dfd954d65400d3d70d57ac66_icgraph">
+<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="143,5,257,35"/><area shape="rect" id="node7" href="structapply_3_01_t_00_011_01_4.html#a01e68fe0c51667357146ef3a862e8f35" title="apply\&lt; T, 1 \&gt;::pull" alt="" coords="136,59,264,88"/><area shape="rect" id="node5" href="structapply.html#a00323b955ef6fe311ddb067442432794" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="313,5,399,35"/></map>
 </div>
 </p>
 
@@ -322,14 +409,12 @@ template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility </p>
-
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structapply_a022d90941b32cee456af1a284038d22d_icgraph.png" border="0" usemap="#structapply_a022d90941b32cee456af1a284038d22d_icgraph" alt=""/></div>
 <map name="structapply_a022d90941b32cee456af1a284038d22d_icgraph" id="structapply_a022d90941b32cee456af1a284038d22d_icgraph">
-<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="189,5,304,35"/><area shape="rect" id="node5" href="structapply.html#a01592a37ec0859d0e304208fa0629ace" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="353,5,439,35"/></map>
+<area shape="rect" id="node3" href="structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="189,5,304,35"/><area shape="rect" id="node5" href="structapply.html#a00323b955ef6fe311ddb067442432794" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="353,5,439,35"/></map>
 </div>
 </p>
 
@@ -370,15 +455,145 @@ template&lt;class Lambda &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>This function transforms a value, based upon the function func. For each dimension, func is called with the current dimension of inval and the dimension number, and returns the new value for the current dimension of inval.</p>
+<p>For example, if the data type was an array, the transform function would be equivilant to </p>
+<div class="fragment"><div class="line">inval[0] = func(inval[0], 1);</div>
+<div class="line">inval[1] = func(inval[1], 2);</div>
+<div class="line">...</div>
+<div class="line">inval[i] = func(inval[i], i+1);</div>
+</div><!-- fragment --><p> Note that in the above example, the loop is unrolled, and the dimensions are 1-indexed instead of zero indexed. In addition, the compiler should inline the call to func is possible.</p>
+<p>In addition, note that the function isn't given knowledge of inval as a whole, simply each respective dimension. This is because inval is modified during the process, so passing inval to the function wouldn't be meaningful.</p>
+<p>You can get around this by binding a copy of inval to the passed function for use in calculations, like </p>
+<div class="fragment"><div class="line"><a class="code" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6">apply&lt;T, dim&gt;::transform</a>(some_val, [some_val](T&amp; inval, <span class="keywordtype">size_t</span> dim){</div>
+<div class="line">     <span class="keyword">auto</span> calc_val = do_calculation(some_val);</div>
+<div class="line">     inval.dimensions[dim-1] = calc_val * inval.dimensions[dim-1];</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>If the binding was be reference [&amp;some_val], this would be incorrect as the value being used in the lambda would be the same as the value being modified by transform</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inval</td><td>The value being transformed </td></tr>
+    <tr><td class="paramname">func</td><td>The function object that operates on each dimension. Can be any callable object </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00091">91</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00170">170</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structapply_a83f95cd80fc0ab25b7a9e078af9d68d6_icgraph.png" border="0" usemap="#structapply_a83f95cd80fc0ab25b7a9e078af9d68d6_icgraph" alt=""/></div>
 <map name="structapply_a83f95cd80fc0ab25b7a9e078af9d68d6_icgraph" id="structapply_a83f95cd80fc0ab25b7a9e078af9d68d6_icgraph">
-<area shape="rect" id="node3" href="noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="171,5,283,35"/><area shape="rect" id="node5" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="332,5,508,35"/></map>
+<area shape="rect" id="node3" href="structapply.html#ad5346ee35371151f61558fd503592c86" title="apply::transform" alt="" coords="172,5,287,35"/><area shape="rect" id="node5" href="noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="173,59,285,88"/><area shape="rect" id="node7" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="341,5,509,35"/><area shape="rect" id="node9" href="classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="337,59,513,88"/><area shape="rect" id="node11" href="noise_8hpp.html#a235e8c7f051c60f5f737416c5bd28af5" title="gaussian_noise" alt="" coords="369,112,481,141"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a9bfd7a6f930e3831a8e07a867cb11f8b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
+<div class="memtemplate">
+template&lt;template&lt; size_t &gt; class Lambda&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structapply.html">apply</a>&lt; T, dim &gt;::transform </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Version of transform where Lambda takes dim as a template parameter. </p>
+<p>This version of transform takes a struct as a template parameter, where the struct takes the dimension as a template parameter and has a function called apply which takes the proper type as a reference parameter and does the coordinate transformation</p>
+<p>For example, one may have </p>
+<div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keywordtype">size_t</span> dim&gt;</div>
+<div class="line"><span class="keyword">struct </span>do_calc{</div>
+<div class="line">     <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="structapply.html" title="Class containing functions for mapping over generic objects.">apply</a>(<span class="keywordtype">double</span>&amp; inval){</div>
+<div class="line">         inval = calculation_based_on_dim(inval);</div>
+<div class="line">     }</div>
+<div class="line">};</div>
+<div class="line">...</div>
+<div class="line">...</div>
+<div class="line">...</div>
+<div class="line">double x;</div>
+<div class="line"><a class="code" href="structapply.html" title="Class containing functions for mapping over generic objects.">apply&lt;double&gt;::transform</a>&lt;do_calc&gt;(x);</div>
+<div class="line">...</div>
+<div class="line">...</div>
+</div><!-- fragment --> 
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00199">199</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad5346ee35371151f61558fd503592c86"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , size_t dim = float_traits&lt;T&gt;::dim&gt; </div>
+<div class="memtemplate">
+template&lt;class Lambda , class Final &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void <a class="el" href="structapply.html">apply</a>&lt; T, dim &gt;::transform </td>
+          <td>(</td>
+          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramname"><em>inval</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Lambda &amp;&amp;&#160;</td>
+          <td class="paramname"><em>func</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Final &amp;&amp;&#160;</td>
+          <td class="paramname"><em>finish</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>This function transforms an existing values, based upon the functions func and finish that have been passed First, transform is called with inval and func, and then finish is applied</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">finish</td><td>the function applied after the calculations are finished </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00210">210</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structapply_ad5346ee35371151f61558fd503592c86_cgraph.png" border="0" usemap="#structapply_ad5346ee35371151f61558fd503592c86_cgraph" alt=""/></div>
+<map name="structapply_ad5346ee35371151f61558fd503592c86_cgraph" id="structapply_ad5346ee35371151f61558fd503592c86_cgraph">
+<area shape="rect" id="node3" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="172,5,287,35"/></map>
 </div>
 </p>
 
@@ -390,7 +605,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

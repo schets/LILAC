@@ -1,7 +1,0 @@
-<map id="ifft" name="ifft">
-<area shape="rect" id="node3" href="$classrhs___c_n_l_s.html#a2b1f796630d1dff99ca12795ba4abec6" title="rhs_CNLS::dxdt" alt="" coords="124,5,239,35"/>
-<area shape="rect" id="node5" href="$classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="119,59,244,88"/>
-<area shape="rect" id="node7" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre\l_fft_operations" alt="" coords="120,111,243,158"/>
-<area shape="rect" id="node9" href="$classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3" title="jones_optical::post\l_ifft_operations" alt="" coords="116,181,247,227"/>
-<area shape="rect" id="node11" href="$classstable__spectral__pde__1d__tmpl.html#a2bda128b9e32d38a696fa9bce832c87d" title="stable_spectral_pde\l_1d_tmpl::post_integration\l_operations" alt="" coords="95,251,268,315"/>
-</map>

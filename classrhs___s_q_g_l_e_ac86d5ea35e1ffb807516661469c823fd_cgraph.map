@@ -1,10 +1,14 @@
 <map id="rhs_SQGLE::postprocess" name="rhs_SQGLE::postprocess">
-<area shape="rect" id="node3" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="764,42,801,71"/>
-<area shape="rect" id="node5" href="$classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="227,42,344,71"/>
-<area shape="rect" id="node20" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="224,95,347,124"/>
-<area shape="rect" id="node7" href="$classmempool.html#a24105977367cfa8a903777363fd93523" title="Clears the memory pool and deallocates the memory." alt="" coords="412,42,521,71"/>
-<area shape="rect" id="node12" href="$classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="396,95,537,124"/>
-<area shape="rect" id="node9" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="620,42,681,71"/>
-<area shape="rect" id="node14" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="588,95,713,124"/>
-<area shape="rect" id="node16" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="612,148,689,178"/>
+<area shape="rect" id="node3" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="235,113,336,143"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="448,219,485,248"/>
+<area shape="rect" id="node16" href="$classmempool.html#abfbb07ce2b87181f3e337551608dfa5e" title="Creates memory pool with alignment of 32 bytes." alt="" coords="227,272,344,301"/>
+<area shape="rect" id="node24" href="$classinput.html#a169558ab7654aac73a65ab112bc58fd9" title="input::insert_item" alt="" coords="224,219,347,248"/>
+<area shape="rect" id="node27" href="$classcontroller.html#a5a00a62059302dd54307e5d9111fa022" title="controller::addvar" alt="" coords="224,325,347,355"/>
+<area shape="rect" id="node5" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="417,5,516,35"/>
+<area shape="rect" id="node7" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="404,59,529,88"/>
+<area shape="rect" id="node9" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="415,112,519,141"/>
+<area shape="rect" id="node13" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="424,165,509,195"/>
+<area shape="rect" id="node18" href="$classmempool.html#a24105977367cfa8a903777363fd93523" title="Clears the memory pool and deallocates the memory." alt="" coords="412,272,521,301"/>
+<area shape="rect" id="node20" href="$classmempool.html#aa38736653b5a980379ddcda840145fce" title="mempool::make_this" alt="" coords="396,325,537,355"/>
+<area shape="rect" id="node22" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="588,325,713,355"/>
 </map>

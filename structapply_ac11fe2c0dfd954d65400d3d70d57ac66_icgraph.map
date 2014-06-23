@@ -1,0 +1,5 @@
+<map id="apply::pull" name="apply::pull">
+<area shape="rect" id="node3" href="$structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="143,5,257,35"/>
+<area shape="rect" id="node7" href="$structapply_3_01_t_00_011_01_4.html#a01e68fe0c51667357146ef3a862e8f35" title="apply\&lt; T, 1 \&gt;::pull" alt="" coords="136,59,264,88"/>
+<area shape="rect" id="node5" href="$structapply.html#a00323b955ef6fe311ddb067442432794" title="Generates a variable of type trans with the functor by mapping each coordinate of the first to the se..." alt="" coords="313,5,399,35"/>
+</map>

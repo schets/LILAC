@@ -1,0 +1,6 @@
+<map id="__HIDER__::acml_rng::fill" name="__HIDER__::acml_rng::fill">
+<area shape="rect" id="node3" href="$noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="208,59,320,88"/>
+<area shape="rect" id="node5" href="$classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="373,5,541,35"/>
+<area shape="rect" id="node7" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="369,59,545,88"/>
+<area shape="rect" id="node9" href="$noise_8hpp.html#a235e8c7f051c60f5f737416c5bd28af5" title="gaussian_noise" alt="" coords="401,112,513,141"/>
+</map>

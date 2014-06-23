@@ -113,12 +113,15 @@ Collaboration diagram for toroidal:</div>
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1ddc8186288e1ac27756c804a2a3bda8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a1ddc8186288e1ac27756c804a2a3bda8">addvar</a> (std::weak_ptr&lt; <a class="el" href="classvariable.html">variable</a> &gt; v)</td></tr>
-<tr class="memitem:a36f6c0a287ee3d8ee0b996b6364f7889"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889">dependencies</a> () const </td></tr>
+<tr class="memdesc:a1ddc8186288e1ac27756c804a2a3bda8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a variable to the controller.  <a href="#a1ddc8186288e1ac27756c804a2a3bda8"></a><br/></td></tr>
+<tr class="memitem:a36f6c0a287ee3d8ee0b996b6364f7889"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a36f6c0a287ee3d8ee0b996b6364f7889">dependencies</a> () const </td></tr>
 <tr class="memitem:a1ab7b6fa61fb1b058e7e4863d9424571"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a1ab7b6fa61fb1b058e7e4863d9424571">postprocess</a> (<a class="el" href="classinput.html">input</a> &amp;inval)</td></tr>
-<tr class="memitem:a70cfca7f898a29501b31a2b5a2498b59"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a70cfca7f898a29501b31a2b5a2498b59">type</a> () const </td></tr>
+<tr class="memitem:a70cfca7f898a29501b31a2b5a2498b59"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a70cfca7f898a29501b31a2b5a2498b59">type</a> () const </td></tr>
 <tr class="memitem:a9111a080bb471f23059e16af914a077c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a9111a080bb471f23059e16af914a077c">control</a> (<a class="el" href="defs_8hpp.html#a407c4f6cd09a6f2bf296c8cf21a76aca">comp</a> *u, <a class="el" href="classobjective.html">objective</a> *obj)</td></tr>
 <tr class="memitem:a47d0b97f238032c81a9db1808fd45b72"><td class="memItemLeft" align="right" valign="top">virtual char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#a47d0b97f238032c81a9db1808fd45b72">is_good</a> ()</td></tr>
-<tr class="memitem:ac96de779bc1d94f7271c7f0745d5da16"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#ac96de779bc1d94f7271c7f0745d5da16">pre_set</a> ()</td></tr>
+<tr class="memdesc:a47d0b97f238032c81a9db1808fd45b72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the controller is done or not.  <a href="#a47d0b97f238032c81a9db1808fd45b72"></a><br/></td></tr>
+<tr class="memitem:abbaac3477562f295dd804424751f367b"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classtoroidal.html#abbaac3477562f295dd804424751f367b">pre_set</a> ()</td></tr>
+<tr class="memdesc:abbaac3477562f295dd804424751f367b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the controller through fake iterations if the starting index is greater than 1.  <a href="#abbaac3477562f295dd804424751f367b"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -130,7 +133,7 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&nbsp;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
+<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="inherit_header pub_attribs_classcontroller"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classcontroller')"><img src="closed.png" alt="-"/>&nbsp;Public Attributes inherited from <a class="el" href="classcontroller.html">controller</a></td></tr>
 <tr class="memitem:a8dfaeba3ef7dacae66f455393c33f7c0 inherit pub_attribs_classcontroller"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#a8dfaeba3ef7dacae66f455393c33f7c0">index</a></td></tr>
 <tr class="memitem:acd62c9e58bff9787218669cbdcf8c99f inherit pub_attribs_classcontroller"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#acd62c9e58bff9787218669cbdcf8c99f">num_cont</a></td></tr>
@@ -143,12 +146,13 @@ Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classcontroller"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classcontroller')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classcontroller.html">controller</a></td></tr>
 <tr class="memitem:a3e8f16066b2440e2757e327622cedae9 inherit pro_attribs_classcontroller"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::weak_ptr<br class="typebreak"/>
 &lt; <a class="el" href="classvariable.html">variable</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#a3e8f16066b2440e2757e327622cedae9">vars</a></td></tr>
+<tr class="memitem:a3e98e8c55339e1344d1ea5ff0a031f66 inherit pro_attribs_classcontroller"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcontroller.html#a3e98e8c55339e1344d1ea5ff0a031f66">act_index</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This class defines the toroidal search controller. </p>
 <p>This class defines a controller that can be used for searching a toroidal parameter space It increments a set of variables at specified increments a set number of times. In the future, this class will also be able to perform searches until the parameter space has been successfully examined </p>
 
-<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00011">11</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00027">27</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
 </div><h2>Member Function Documentation</h2>
 <a class="anchor" id="a1ddc8186288e1ac27756c804a2a3bda8"></a>
 <div class="memitem">
@@ -172,9 +176,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Adds a variable to the controller. </p>
+
 <p>Implements <a class="el" href="classcontroller.html#a5a00a62059302dd54307e5d9111fa022">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00078">78</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00109">109</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 </div>
 </div>
@@ -212,7 +218,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Implements <a class="el" href="classcontroller.html#a48a0f4d9a92e4c976942e9bc85b3aa37">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00057">57</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00082">82</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,7 +230,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::string &gt; toroidal::dependencies </td>
+          <td class="memname">std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt; toroidal::dependencies </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -239,7 +245,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classcontroller.html#af0851bcc6efa3d1131eba7bb7ff33fb4">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00016">16</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00034">34</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -273,9 +279,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p>Returns whether the controller is done or not. </p>
+
 <p>Implements <a class="el" href="classcontroller.html#a6ba8a8ccac0cb7c07e8ea8de46b43cb4">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00081">81</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00113">113</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 </div>
 </div>
@@ -311,20 +319,20 @@ Here is the call graph for this function:</div>
 
 <p>Reimplemented from <a class="el" href="classcontroller.html#aed317bfb9b38c15afb75c53fbd67cac5">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00028">28</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00046">46</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classtoroidal_a1ab7b6fa61fb1b058e7e4863d9424571_cgraph.png" border="0" usemap="#classtoroidal_a1ab7b6fa61fb1b058e7e4863d9424571_cgraph" alt=""/></div>
 <map name="classtoroidal_a1ab7b6fa61fb1b058e7e4863d9424571_cgraph" id="classtoroidal_a1ab7b6fa61fb1b058e7e4863d9424571_cgraph">
-<area shape="rect" id="node3" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="199,5,236,35"/></map>
+<area shape="rect" id="node3" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="197,139,299,168"/><area shape="rect" id="node11" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="392,219,429,248"/><area shape="rect" id="node5" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="361,5,460,35"/><area shape="rect" id="node7" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="348,59,473,88"/><area shape="rect" id="node9" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="359,112,463,141"/><area shape="rect" id="node13" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="368,165,453,195"/></map>
 </div>
 </p>
 
 </div>
 </div>
-<a class="anchor" id="ac96de779bc1d94f7271c7f0745d5da16"></a>
+<a class="anchor" id="abbaac3477562f295dd804424751f367b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -332,7 +340,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void toroidal::pre_set </td>
+          <td class="memname">int toroidal::pre_set </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -345,9 +353,11 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="classcontroller.html#abb85d8f417c37432c5a8a6b87968fb30">controller</a>.</p>
+<p>Moves the controller through fake iterations if the starting index is greater than 1. </p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00084">84</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Implements <a class="el" href="classcontroller.html#a99b4c0bb68e8f632c3069787e239cf68">controller</a>.</p>
+
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00117">117</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 </div>
 </div>
@@ -359,7 +369,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string toroidal::type </td>
+          <td class="memname"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> toroidal::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -376,7 +386,7 @@ Here is the call graph for this function:</div>
 
 <p>Implements <a class="el" href="classcontroller.html#a0d9b65e1ba30aee864398df4c0efc6ad">controller</a>.</p>
 
-<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00053">53</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8cpp_source.html#l00078">78</a> of file <a class="el" href="toroidal_8cpp_source.html">toroidal.cpp</a>.</p>
 
 </div>
 </div>
@@ -399,7 +409,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00014">14</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00030">30</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
 
 </div>
 </div>
@@ -421,7 +431,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00012">12</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00028">28</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
 
 </div>
 </div>
@@ -443,7 +453,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00015">15</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00031">31</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
 
 </div>
 </div>
@@ -465,7 +475,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00013">13</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
+<p>Definition at line <a class="el" href="toroidal_8h_source.html#l00029">29</a> of file <a class="el" href="toroidal_8h_source.html">toroidal.h</a>.</p>
 
 </div>
 </div>
@@ -476,7 +486,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

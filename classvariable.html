@@ -95,30 +95,32 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>stores a real number that is varied during the simulation  
  <a href="classvariable.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="item_8h_source.html">item.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="variable_8h_source.html">variable.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for variable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvariable__inherit__graph.png" border="0" usemap="#variable_inherit__map" alt="Inheritance graph"/></div>
 <map name="variable_inherit__map" id="variable_inherit__map">
-<area shape="rect" id="node2" href="class__double.html" title="Stores a real&#45;valued input." alt="" coords="16,160,83,189"/><area shape="rect" id="node4" href="classnative__item.html" title="native_item" alt="" coords="5,83,93,112"/><area shape="rect" id="node6" href="classitem.html" title="item" alt="" coords="27,5,72,35"/></map>
+<area shape="rect" id="node2" href="classnative__tmpl.html" title="This class provides a generic interface for making native types." alt="" coords="16,160,83,189"/><area shape="rect" id="node4" href="classnative__item.html" title="native_item" alt="" coords="5,83,93,112"/><area shape="rect" id="node6" href="classitem.html" title="item" alt="" coords="27,5,72,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for variable:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvariable__coll__graph.png" border="0" usemap="#variable_coll__map" alt="Collaboration graph"/></div>
 <map name="variable_coll__map" id="variable_coll__map">
-<area shape="rect" id="node2" href="class__double.html" title="Stores a real&#45;valued input." alt="" coords="16,261,83,291"/><area shape="rect" id="node4" href="classnative__item.html" title="native_item" alt="" coords="5,181,93,211"/><area shape="rect" id="node6" href="classitem.html" title="item" alt="" coords="27,101,72,131"/><area shape="rect" id="node8" href="classengineimp.html" title="engineimp" alt="" coords="9,5,89,35"/></map>
+<area shape="rect" id="node2" href="classnative__tmpl.html" title="This class provides a generic interface for making native types." alt="" coords="80,277,147,307"/><area shape="rect" id="node4" href="classnative__item.html" title="native_item" alt="" coords="5,181,93,211"/><area shape="rect" id="node6" href="classitem.html" title="item" alt="" coords="27,101,72,131"/><area shape="rect" id="node8" href="classengineimp.html" title="engineimp" alt="" coords="9,5,89,35"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aaf81d0dce887591c60f396aa03715af6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#aaf81d0dce887591c60f396aa03715af6">print</a> () const </td></tr>
 <tr class="memitem:a19d1011f0058558099909ca0286c0a4d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a19d1011f0058558099909ca0286c0a4d">_retrieve</a> (<a class="el" href="classretrieve__wrapper.html">retrieve_wrapper</a> &amp;&amp;inval, <a class="el" href="classitem.html">item</a> *caller)</td></tr>
+<tr class="memitem:aeb98843b7400f3e725ad1f79d695baed"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#aeb98843b7400f3e725ad1f79d695baed">add_ref</a> (double &amp;in, std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt; inval)</td></tr>
+<tr class="memitem:a400a5332e27924b67379c9b16fdc76ff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a400a5332e27924b67379c9b16fdc76ff">add_ref</a> (double &amp;in, <a class="el" href="classitem.html">item</a> *inval)</td></tr>
 <tr class="memitem:a5e5ac831bed3a7fe2dd9bd6b447a79a4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a5e5ac831bed3a7fe2dd9bd6b447a79a4">copy</a> (double *inval)</td></tr>
-<tr class="memitem:acda2241195a49a2f6b0d8b5c862e6e0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#acda2241195a49a2f6b0d8b5c862e6e0e">parse</a> (const std::string &amp;inval)</td></tr>
-<tr class="memitem:ac7f0b5260609677bd76e9e5ac159b2ff"><td class="memItemLeft" align="right" valign="top">virtual std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#ac7f0b5260609677bd76e9e5ac159b2ff">type</a> () const </td></tr>
-<tr class="memitem:a99b78a0f918f872f91d4987ef68ec889"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a99b78a0f918f872f91d4987ef68ec889">inc</a> ()</td></tr>
+<tr class="memitem:acda2241195a49a2f6b0d8b5c862e6e0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#acda2241195a49a2f6b0d8b5c862e6e0e">parse</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;inval)</td></tr>
+<tr class="memitem:ac7f0b5260609677bd76e9e5ac159b2ff"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#ac7f0b5260609677bd76e9e5ac159b2ff">type</a> () const </td></tr>
+<tr class="memitem:a99b78a0f918f872f91d4987ef68ec889"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a99b78a0f918f872f91d4987ef68ec889">inc</a> ()</td></tr>
 <tr class="memdesc:a99b78a0f918f872f91d4987ef68ec889"><td class="mdescLeft">&#160;</td><td class="mdescRight">cover funtion for variable  <a href="#a99b78a0f918f872f91d4987ef68ec889"></a><br/></td></tr>
 <tr class="memitem:a11b8e2a08067f23c44f8fc88b368a2db"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#a11b8e2a08067f23c44f8fc88b368a2db">inc</a> (double i)</td></tr>
 <tr class="memitem:ab2b88efa9c1bce94f3f100bcaf4f1e2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvariable.html#ab2b88efa9c1bce94f3f100bcaf4f1e2d">set</a> (double v)</td></tr>
@@ -141,11 +143,9 @@ Private Attributes</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&nbsp;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
-<tr class="inherit_header pro_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classitem')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:a13fa7212061bd53e0db1f52c39a3f339 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a13fa7212061bd53e0db1f52c39a3f339">_name</a></td></tr>
-<tr class="memitem:a0020fe4550f089fdd232945685f0751c inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a0020fe4550f089fdd232945685f0751c">_write_name</a></td></tr>
-<tr class="memitem:a19c29c4c00e11827b4a2f09b7d0575e5 inherit pro_attribs_classitem"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a19c29c4c00e11827b4a2f09b7d0575e5">has_write_name</a></td></tr>
+<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
+<tr class="inherit_header pro_attribs_classnative__tmpl"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classnative__tmpl')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classnative__tmpl.html">native_tmpl< T, act_name ></a></td></tr>
+<tr class="memitem:acba78c568f7d4ccd892898a666b2cfd5 inherit pro_attribs_classnative__tmpl"><td class="memItemLeft" align="right" valign="top">T&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classnative__tmpl.html#acba78c568f7d4ccd892898a666b2cfd5">value</a></td></tr>
 </table>
 <a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>stores a real number that is varied during the simulation </p>
@@ -153,7 +153,7 @@ Additional Inherited Members</h2></td></tr>
 <p>currently, all values are set to ge between 0 and 2*pi. Again, this is just to satisfy the CNLS situation and have a function search. The engine uses the real parser and sets the initial value to zero As the engine framework is further built, the incrementing/decrementing interface will be generalized to be useful for general pruposes, not simply plain toroidal searches </p>
 <dl class="section see"><dt>See Also</dt><dd>real </dd></dl>
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00121">121</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00035">35</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 </div><h2>Member Function Documentation</h2>
 <a class="anchor" id="a19d1011f0058558099909ca0286c0a4d"></a>
 <div class="memitem">
@@ -186,18 +186,117 @@ Additional Inherited Members</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>This function assigns the real value stored to the value pointed at by inval. It also keeps track of the pointer and updates it whenever the variable has changed </p>
+<p>This function assigns the real value stored to the value pointed at by inval. It also keeps track of the pointer and updates it whenever the variable has changed. Passing a null pointer will result in the variable not receiving updates </p>
 
-<p>Reimplemented from <a class="el" href="class__double.html#ab2eaf2b216fcfeb27edbf040bb6054f4">_double</a>.</p>
+<p>Reimplemented from <a class="el" href="classnative__tmpl.html#a561657f1534fd9c4c1a07ecc5d996d65">native_tmpl&lt; T, act_name &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00016">16</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00034">34</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classvariable_a19d1011f0058558099909ca0286c0a4d_cgraph.png" border="0" usemap="#classvariable_a19d1011f0058558099909ca0286c0a4d_cgraph" alt=""/></div>
 <map name="classvariable_a19d1011f0058558099909ca0286c0a4d_cgraph" id="classvariable_a19d1011f0058558099909ca0286c0a4d_cgraph">
-<area shape="rect" id="node3" href="classengineimp.html#a53ad4c87b3f8cc39752bb17bfeffe2fe" title="Queries whether an item exists or not." alt="" coords="180,5,335,35"/><area shape="rect" id="node5" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="215,59,300,88"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="239,112,276,141"/></map>
+<area shape="rect" id="node3" href="classvariable.html#aeb98843b7400f3e725ad1f79d695baed" title="variable::add_ref" alt="" coords="180,5,297,35"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="348,5,385,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="aeb98843b7400f3e725ad1f79d695baed"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void variable::add_ref </td>
+          <td>(</td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td>
+          <td class="paramname"><em>inval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00042">42</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classvariable_aeb98843b7400f3e725ad1f79d695baed_cgraph.png" border="0" usemap="#classvariable_aeb98843b7400f3e725ad1f79d695baed_cgraph" alt=""/></div>
+<map name="classvariable_aeb98843b7400f3e725ad1f79d695baed_cgraph" id="classvariable_aeb98843b7400f3e725ad1f79d695baed_cgraph">
+<area shape="rect" id="node3" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="175,5,212,35"/></map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classvariable_aeb98843b7400f3e725ad1f79d695baed_icgraph.png" border="0" usemap="#classvariable_aeb98843b7400f3e725ad1f79d695baed_icgraph" alt=""/></div>
+<map name="classvariable_aeb98843b7400f3e725ad1f79d695baed_icgraph" id="classvariable_aeb98843b7400f3e725ad1f79d695baed_icgraph">
+<area shape="rect" id="node3" href="classvariable.html#a19d1011f0058558099909ca0286c0a4d" title="variable::_retrieve" alt="" coords="173,5,299,35"/></map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a400a5332e27924b67379c9b16fdc76ff"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void variable::add_ref </td>
+          <td>(</td>
+          <td class="paramtype">double &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classitem.html">item</a> *&#160;</td>
+          <td class="paramname"><em>inval</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00057">57</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="classvariable_a400a5332e27924b67379c9b16fdc76ff_cgraph.png" border="0" usemap="#classvariable_a400a5332e27924b67379c9b16fdc76ff_cgraph" alt=""/></div>
+<map name="classvariable_a400a5332e27924b67379c9b16fdc76ff_cgraph" id="classvariable_a400a5332e27924b67379c9b16fdc76ff_cgraph">
+<area shape="rect" id="node3" href="classengineimp.html#a53ad4c87b3f8cc39752bb17bfeffe2fe" title="Queries whether an item exists or not." alt="" coords="175,5,329,35"/><area shape="rect" id="node5" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="209,59,295,88"/><area shape="rect" id="node7" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="233,112,271,141"/></map>
 </div>
 </p>
 
@@ -227,18 +326,21 @@ Here is the call graph for this function:</div>
 <p>This function copies the value without linking it to the actual variable </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">inval</td><td>The pointer ot the double that is updated </td></tr>
+    <tr><td class="paramname">inval</td><td>The pointer to the double that is updated </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00097">97</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00146">146</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="a99b78a0f918f872f91d4987ef68ec889"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void variable::inc </td>
@@ -247,11 +349,16 @@ Here is the call graph for this function:</div>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>cover funtion for variable </p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00089">89</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00138">138</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 </div>
 </div>
@@ -269,7 +376,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00085">85</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00134">134</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 </div>
 </div>
@@ -283,7 +390,7 @@ Here is the call graph for this function:</div>
         <tr>
           <td class="memname">void variable::parse </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td>
           <td class="paramname"><em>inval</em></td><td>)</td>
           <td></td>
         </tr>
@@ -295,9 +402,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class__double.html#ad8dd19a3f6a3fa1c0021ca282277cd59">_double</a>.</p>
+<p>Reimplemented from <a class="el" href="classnative__tmpl.html#a4e3dc76ed3b83e96211c3ddffdad0d29">native_tmpl&lt; T, act_name &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00101">101</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00150">150</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 </div>
 </div>
@@ -323,9 +430,9 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>This function prints the value of the current variable </p>
 
-<p>Reimplemented from <a class="el" href="class__double.html#a10634f788c9fff632f8a02cc4228c1e0">_double</a>.</p>
+<p>Reimplemented from <a class="el" href="classitem.html#aba4568f32fc335c3398985d81f1e1e59">item</a>.</p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00007">7</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00024">24</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -353,7 +460,7 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 <p>This function increments the variable, and updates the relevant classes </p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00037">37</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00086">86</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -374,7 +481,7 @@ Here is the call graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string variable::type </td>
+          <td class="memname"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> variable::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -387,9 +494,9 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Reimplemented from <a class="el" href="class__double.html#ae9b033099a08223a3e98c41abae471a6">_double</a>.</p>
+<p>Reimplemented from <a class="el" href="classnative__tmpl.html#afe3035a2c7f0eec55b519790cc46b50d">native_tmpl&lt; T, act_name &gt;</a>.</p>
 
-<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00108">108</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
+<p>Definition at line <a class="el" href="variable_8cpp_source.html#l00157">157</a> of file <a class="el" href="variable_8cpp_source.html">variable.cpp</a>.</p>
 
 </div>
 </div>
@@ -404,7 +511,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00131">131</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00045">45</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 
 </div>
 </div>
@@ -418,7 +525,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00131">131</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00045">45</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 
 </div>
 </div>
@@ -432,7 +539,7 @@ Here is the call graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00131">131</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00045">45</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 
 </div>
 </div>
@@ -454,7 +561,7 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00123">123</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00037">37</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 
 </div>
 </div>
@@ -476,18 +583,18 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="item_8h_source.html#l00128">128</a> of file <a class="el" href="item_8h_source.html">item.h</a>.</p>
+<p>Definition at line <a class="el" href="variable_8h_source.html#l00042">42</a> of file <a class="el" href="variable_8h_source.html">variable.h</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>engine/<a class="el" href="item_8h_source.html">item.h</a></li>
+<li>engine/<a class="el" href="variable_8h_source.html">variable.h</a></li>
 <li>engine/<a class="el" href="variable_8cpp_source.html">variable.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

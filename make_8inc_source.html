@@ -90,42 +90,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#CPP=icc</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#CPP=NERSC</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor"></span>ifeq ($(CPP), gcc)</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing -pipe</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;LD=gcc</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;LFLAGS= -L/usr/local/lib -lstdc++ -O3 -lfftw3 -lm -m64 -pipe $(FASTMATH)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;endif</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;ifeq ($(CPP), clang)</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#clang generates significantly worse code than gcc for this project, but compiles faster</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#so might as well make it a default debug build</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor"></span>FASTMATH=</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;CFLAGS=-I../ -I./utils -stdlib=libc++ -std=c++11 -g -DCLANG  -DDEBUG -m64 -Werror -W -Wall</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;LD=clang</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;LFLAGS= -L/usr/local/lib -lstdc++ -lfftw3 -lm </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;endif</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;ifeq ($(CPP), icc)</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-<a class="code" href="test_8c.html#ab2755ce3bc79ad8510a88a162cb967cc">check</a> -complex-limited-range -scalar-rep -no-prec-div -finline-functions</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;export CFLAGS= -no-ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=sequential</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;export LD=$(CPP)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;export LFLAGS= -lstdc++ -mkl=sequential</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;endif</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;ifeq ($(CPP), NERSC)</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer -funroll-loops</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;CPP=CC</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;CFLAGS=-I../ -I./utils -std=c++0x -DGCC -DNDEBUG -m64 -O3 -march=native -mtune=native -Wall -Wno-strict-aliasing -pipe</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;LD=CC</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;LFLAGS= -L/usr/local/lib -Ofast -march=native -m64 $(FASTMATH)</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;endif</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;LIB_MAIN=../../lib</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;MAIN_PATH=..</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;INLINE_HEADERS=../utils<span class="comment">/*.hpp ../types/*.hpp</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="comment">INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;FASTMATH= -ffast-math -fstrict-aliasing -fomit-frame-pointer</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;CFLAGS=-I../ -I./utils -std=c++11 -g -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;LFLAGS= -lstdc++ -O3 -lacml -lm  $(FASTMATH)</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;endif</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;ifeq ($(CPP), clang)</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#clang generates significantly worse code than gcc for this project, but compiles faster</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#so might as well make it a default debug build</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor"></span>FASTMATH=</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;CFLAGS=-I../ -I./utils -stdlib=libc++ -std=c++11 -g -DCLANG  -DDEBUG -m64 -Werror -W -Wall</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;LFLAGS=  -lstdc++ -lacml -lm </div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;endif</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;ifeq ($(CPP), icc)</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;export FASTMATH= -ansi-alias -fargument-noalias -fno-alias -no-ansi-alias-check -complex-limited-range -scalar-rep -no-prec-div -finline-functions</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;export CFLAGS= -no-ipo -std=c++11 -fast -restrict -O3 -fpermissive -DICC -mkl=sequential</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;export LD=$(CPP)</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;export LFLAGS= -lstdc++ -lacml</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;endif</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;ifeq ($(CPP), NERSC)</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;FASTMATH=-ffast-math -fstrict-aliasing -fomit-frame-pointer -funroll-loops</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;CPP=CC</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -Ofast -march=native -mtune=native -pipe</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;LFLAGS=  -Ofast -march=native -m64  $(FASTMATH)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;endif</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;LD=$(CPP)</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;LIB_MAIN=../../lib</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;MAIN_PATH=..</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;INLINE_HEADERS=../utils<span class="comment">/*.hpp ../types/*.hpp</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="comment">INC_PATH= -I$(MAIN_PATH) -I$(MAIN_PATH)/utils/</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

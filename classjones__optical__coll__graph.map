@@ -5,7 +5,7 @@
 <area shape="rect" id="node8" href="$classstable.html" title="A system that attempts to reach an equilibrium." alt="" coords="339,469,395,499"/>
 <area shape="rect" id="node10" href="$classsimulation.html" title="simulation" alt="" coords="139,373,219,403"/>
 <area shape="rect" id="node12" href="$classitem__dim.html" title="item_dim" alt="" coords="232,197,307,227"/>
-<area shape="rect" id="node23" href="$classobjective.html" title="objective" alt="" coords="232,277,307,307"/>
+<area shape="rect" id="node23" href="$classobjective.html" title="THis class represents the objective function class that calculates the score of a solution..." alt="" coords="232,277,307,307"/>
 <area shape="rect" id="node26" href="$classcontroller.html" title="This is the base class for the control type classes." alt="" coords="5,277,80,307"/>
 <area shape="rect" id="node31" href="$classintegrator.html" title="This class defines the integration base class." alt="" coords="441,469,516,499"/>
 <area shape="rect" id="node35" href="$classrhs.html" title="The rhs base class." alt="" coords="404,373,444,403"/>

@@ -1,4 +1,0 @@
-<map id="apply::map" name="apply::map">
-<area shape="rect" id="node3" href="$structapply.html#ae88892c5eaaf8ab8ceb9c1336bec8c77" title="apply::map_into" alt="" coords="141,5,256,35"/>
-<area shape="rect" id="node5" href="$structapply.html#a022d90941b32cee456af1a284038d22d" title="helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility" alt="" coords="304,5,440,35"/>
-</map>

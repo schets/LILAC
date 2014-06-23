@@ -6,7 +6,7 @@
 <area shape="rect" id="node12" href="$classintegrator.html#a5314ff7d5a35e730cb8279a81bb07c08" title="integrator::dependencies" alt="" coords="173,207,336,236"/>
 <area shape="rect" id="node16" href="$classrk4.html#a8356569d094120e01707af26b24f9ee5" title="rk4::dependencies" alt="" coords="420,249,548,279"/>
 <area shape="rect" id="node18" href="$classrk45.html#ae29eb12196e38096b46d41c66798abba" title="rk45::dependencies" alt="" coords="417,307,551,336"/>
-<area shape="rect" id="node22" href="$classn__pulse__score.html#adfc7d46136caaf90ad9579fe11a291f9" title="n_pulse_score::dependencies" alt="" coords="157,361,352,391"/>
+<area shape="rect" id="node22" href="$classn__pulse__score.html#adfc7d46136caaf90ad9579fe11a291f9" title="Returns the dependencies of n_pulse_score." alt="" coords="157,361,352,391"/>
 <area shape="rect" id="node24" href="$classc__elegans.html#a8efbd8369417e1a8fd36a0f522036321" title="c_elegans::dependencies" alt="" coords="171,415,339,444"/>
 <area shape="rect" id="node26" href="$classexample__rhs.html#a3dc4f9a14a9340fb2a12f8bcf3349ce0" title="This function returns a list of the dependencies needed to initialize the class." alt="" coords="163,468,347,497"/>
 <area shape="rect" id="node28" href="$classrhs___c_n_l_s.html#a40eaa32cb5b2d1d8478f0fdf289b1898" title="rhs_CNLS::dependencies" alt="" coords="169,521,340,551"/>

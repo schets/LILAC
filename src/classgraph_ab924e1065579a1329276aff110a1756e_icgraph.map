@@ -1,6 +1,0 @@
-<map id="graph::ins_extra_deps" name="graph::ins_extra_deps">
-<area shape="rect" id="node3" href="$classgraph.html#a11918928d92dfb79762c3f394c01049d" title="graph::sort" alt="" coords="207,5,289,35"/>
-<area shape="rect" id="node5" href="$classengineimp.html#a3ba2207ee16c8831959bc82b587f1d2b" title="engineimp::sort_pp" alt="" coords="340,5,471,35"/>
-<area shape="rect" id="node7" href="$classengineimp.html#a1408b58f7fdac96494c386687c2ea84b" title="engineimp::read" alt="" coords="520,5,635,35"/>
-<area shape="rect" id="node9" href="$classengineimp.html#a37573c86eb1184b6030666b76cad9030" title="Constructor, reads from an input file." alt="" coords="684,5,831,35"/>
-</map>

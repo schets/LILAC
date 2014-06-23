@@ -1,9 +1,0 @@
-<map id="gaussian_noise" name="gaussian_noise">
-<area shape="rect" id="node3" href="$noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="167,59,297,88"/>
-<area shape="rect" id="node5" href="$noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="348,59,543,88"/>
-<area shape="rect" id="node7" href="$jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="636,5,681,35"/>
-<area shape="rect" id="node9" href="$classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="592,59,725,88"/>
-<area shape="rect" id="node13" href="$classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="592,112,725,141"/>
-<area shape="rect" id="node11" href="$_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="807,59,924,88"/>
-<area shape="rect" id="node15" href="$d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="773,112,957,141"/>
-</map>

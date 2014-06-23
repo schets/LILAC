@@ -88,38 +88,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">engine_write.cpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="engine__write_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="engineimp_8h.html">engineimp.h</a>&quot;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="writer_8h.html">writer/writer.h</a>&quot;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__heads_8hpp.html">utils/item_heads.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno"><a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8">    4</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8">engineimp::add_writer</a>(<span class="keyword">const</span> std::shared_ptr&lt;writer&gt;&amp; wval){</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>[<a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>].push_back(wval);</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;}</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//write data to disk and clear from ram</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno"><a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">    8</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">engineimp::write_individual_dat</a>(<span class="keyword">const</span> std::list&lt;std::shared_ptr&lt;writer&gt;&gt;&amp; dats, <span class="keywordtype">size_t</span> ind){</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    std::string oname=<span class="stringliteral">&quot;data_out.out&quot;</span>;</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="comment">//retrieve(oname, values[&quot;!out_file&quot;], 0);</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    std::ofstream ofile(oname.c_str(), std::ofstream::app);</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;index: &quot;</span> &lt;&lt; ind &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; dat : dats){</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">write_data</a>(dat, ofile);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    }</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;&amp;&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    ofile.close();</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;}</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc">   19</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc">engineimp::write_dat</a>(){</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; writes : <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>){</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="classengineimp.html#a8c4a56e4a3234915784659695aa1f106">write_individual_dat</a>(writes.second, writes.first);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    }</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    writers.clear();</div>
+<a href="engine__write_8cpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Authors: Sam Schetterer</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="engineimp_8h.html">engineimp.h</a>&quot;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="writer_8h.html">writer/writer.h</a>&quot;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="item__heads_8hpp.html">utils/item_heads.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &lt;ostream&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8">   22</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8" title="Adds a new writer to the engine.">engineimp::add_writer</a>(<span class="keyword">const</span> std::shared_ptr&lt;writer&gt;&amp; wval){</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>[<a class="code" href="classengineimp.html#ab1b45a5538670fcf8bfbe5d4d98d2b05">index</a>].push_back(wval);</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">   25</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a86a7c47cda22dab041f2018581c12fa1">engineimp::write_data</a>(std::shared_ptr&lt;writer&gt; dat, std::ofstream&amp; ofile){</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    dat-&gt;write(ofile);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    ofile &lt;&lt; <span class="stringliteral">&quot;&amp;&amp;&quot;</span> &lt;&lt; std::endl;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;}</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classengineimp.html#a6779400b1227cabd21513b54e8c752bc" title="Writes formatted data to disk and clears from ram.">engineimp::write_dat</a>(){</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::unique_lock&lt;std::mutex&gt; dat_lock(<a class="code" href="classengineimp.html#a257364e68c7fb8fb8089eb2a1517ad00">data_lock</a>);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="classengineimp.html#a779acff510648d2a78f31721730faa45">datas_queued</a>++;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="classengineimp.html#aede2559a13d498f64d875e2c6f264be6">async_write_queue</a>.push_back(std::move(<a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>));</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    dat_lock.unlock();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <a class="code" href="classengineimp.html#a00dfae4beed86e1ed6ded33053a7769c">writers</a>.clear();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="classengineimp.html#a4039f3d36b1cdd1857b279384a566af8">condition_lock</a>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classengineimp.html#aade3b16c4769cd74828fe5f069825844">write_cond</a>.notify_all();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    lock.unlock();</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

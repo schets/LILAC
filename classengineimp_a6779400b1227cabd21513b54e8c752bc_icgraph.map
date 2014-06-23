@@ -1,5 +1,8 @@
 <map id="engineimp::write_dat" name="engineimp::write_dat">
 <area shape="rect" id="node3" href="$classengineimp.html#aebe76bc108ed88119d9522d71c99ce13" title="Deletes data." alt="" coords="199,5,353,35"/>
-<area shape="rect" id="node5" href="$classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="212,59,340,88"/>
-<area shape="rect" id="node7" href="$classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="403,59,563,88"/>
+<area shape="rect" id="node5" href="$classengineimp.html#a8c8a98b9af3a5805881dc3c96a326772" title="Runs the engine." alt="" coords="223,59,329,88"/>
+<area shape="rect" id="node11" href="$classc__elegans.html#abea3b9627dd53f16255355ae7e030635" title="c_elegans::update" alt="" coords="212,112,340,141"/>
+<area shape="rect" id="node7" href="$classengine.html#a54e1fe05c9e06f98f91860a89ee5e532" title="engine::run" alt="" coords="440,59,525,88"/>
+<area shape="rect" id="node9" href="$main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="611,59,661,88"/>
+<area shape="rect" id="node13" href="$classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="403,112,563,141"/>
 </map>

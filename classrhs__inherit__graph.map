@@ -1,14 +1,12 @@
 <map id="rhs" name="rhs">
-<area shape="rect" id="node9" href="$classrhs__sde.html" title="rhs_sde" alt="" coords="37,237,104,267"/>
-<area shape="rect" id="node13" href="$classrhs__type.html" title="Type interface for the rhs class." alt="" coords="129,237,233,267"/>
-<area shape="rect" id="node15" href="$classrhs__type.html" title="rhs_type\&lt; comp \&gt;" alt="" coords="257,237,385,267"/>
-<area shape="rect" id="node23" href="$classrhs__type.html" title="rhs_type\&lt; double \&gt;" alt="" coords="441,237,575,267"/>
-<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="167,83,241,112"/>
-<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="181,5,227,35"/>
-<area shape="rect" id="node6" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="265,83,329,112"/>
-<area shape="rect" id="node11" href="$classrhs__sde__type.html" title="rhs_sde_type\&lt; T \&gt;" alt="" coords="5,315,136,344"/>
-<area shape="rect" id="node17" href="$classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="" coords="160,315,256,344"/>
-<area shape="rect" id="node19" href="$classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="" coords="280,315,363,344"/>
-<area shape="rect" id="node21" href="$classrhs___s_q_g_l_e.html" title="rhs_SQGLE" alt="" coords="387,315,477,344"/>
-<area shape="rect" id="node25" href="$classc__elegans.html" title="c_elegans" alt="" coords="501,315,581,344"/>
+<area shape="rect" id="node9" href="$classrhs__sde.html" title="rhs_sde" alt="" coords="85,237,152,267"/>
+<area shape="rect" id="node15" href="$classrhs__type.html" title="rhs_type\&lt; comp \&gt;" alt="" coords="216,237,344,267"/>
+<area shape="rect" id="node2" href="$classitem__dim.html" title="item_dim" alt="" coords="107,83,181,112"/>
+<area shape="rect" id="node4" href="$classitem.html" title="item" alt="" coords="121,5,167,35"/>
+<area shape="rect" id="node6" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="205,83,269,112"/>
+<area shape="rect" id="node11" href="$classrhs__type.html" title="rhs_type\&lt; double, rhs\l_sde \&gt;" alt="" coords="5,315,152,362"/>
+<area shape="rect" id="node13" href="$classc__elegans.html" title="This class represents the c_elegans system." alt="" coords="39,411,119,440"/>
+<area shape="rect" id="node17" href="$classexample__rhs.html" title="This class is a basic example of how to write an rhs class." alt="" coords="176,324,272,353"/>
+<area shape="rect" id="node19" href="$classrhs___c_n_l_s.html" title="The class defining the CNLS equations." alt="" coords="296,324,379,353"/>
+<area shape="rect" id="node21" href="$classrhs___s_q_g_l_e.html" title="rhs_SQGLE" alt="" coords="403,324,493,353"/>
 </map>

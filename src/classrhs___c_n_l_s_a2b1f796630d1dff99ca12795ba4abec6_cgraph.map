@@ -1,9 +1,0 @@
-<map id="rhs_CNLS::dxdt" name="rhs_CNLS::dxdt">
-<area shape="rect" id="node3" href="$comp__funcs_8hpp.html#a4daea414b45d921922789f1c99fcd747" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="184,59,221,88"/>
-<area shape="rect" id="node9" href="$comp__funcs_8hpp.html#a025ee459469e35b8a982da33c62ebdb6" title="_sqabs" alt="" coords="171,112,235,141"/>
-<area shape="rect" id="node11" href="$comp__funcs_8hpp.html#a029d01e533e53a637be034662a9e1e90" title="trap" alt="" coords="181,165,224,195"/>
-<area shape="rect" id="node13" href="$comp__funcs_8hpp.html#a82a3c2f7ce5b70a2c5e795cce932eab3" title="_conj" alt="" coords="176,219,229,248"/>
-<area shape="rect" id="node15" href="$comp__funcs_8hpp.html#aaec365fd4052969a9e0661da3bb64f9a" title="This function performs a fourier transform in the forward direction." alt="" coords="184,5,221,35"/>
-<area shape="rect" id="node5" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="283,5,325,35"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="285,59,323,88"/>
-</map>

@@ -1,5 +1,4 @@
 <map id="__HIDER__::_unique_name::get_unique_name" name="__HIDER__::_unique_name::get_unique_name">
-<area shape="rect" id="node3" href="$utils_8cpp.html#a168316b7104170039906ba3db1ad8c5f" title="get_unique_name" alt="" coords="225,32,348,61"/>
-<area shape="rect" id="node5" href="$classc__elegans.html#a63d9ea1461cd3d5d92256cca9a1a1a11" title="c_elegans::postprocess" alt="" coords="407,5,567,35"/>
-<area shape="rect" id="node7" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="399,59,575,88"/>
+<area shape="rect" id="node3" href="$utils_8cpp.html#a168316b7104170039906ba3db1ad8c5f" title="get_unique_name" alt="" coords="225,13,348,43"/>
+<area shape="rect" id="node5" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="399,13,575,43"/>
 </map>

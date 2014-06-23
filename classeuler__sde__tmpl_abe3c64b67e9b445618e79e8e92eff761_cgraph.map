@@ -1,7 +1,9 @@
 <map id="euler_sde_tmpl::postprocess" name="euler_sde_tmpl::postprocess">
-<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="243,7,397,36"/>
-<area shape="rect" id="node5" href="$item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="288,60,352,89"/>
-<area shape="rect" id="node9" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="480,112,517,141"/>
-<area shape="rect" id="node7" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="447,5,551,35"/>
-<area shape="rect" id="node11" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="456,59,541,88"/>
+<area shape="rect" id="node3" href="$classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="243,113,397,143"/>
+<area shape="rect" id="node5" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="445,113,547,143"/>
+<area shape="rect" id="node13" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="640,219,677,248"/>
+<area shape="rect" id="node7" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="609,5,708,35"/>
+<area shape="rect" id="node9" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="596,59,721,88"/>
+<area shape="rect" id="node11" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="607,112,711,141"/>
+<area shape="rect" id="node15" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="616,165,701,195"/>
 </map>

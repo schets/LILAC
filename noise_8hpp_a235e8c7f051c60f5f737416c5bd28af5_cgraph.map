@@ -1,0 +1,5 @@
+<map id="gaussian_noise" name="gaussian_noise">
+<area shape="rect" id="node3" href="$noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="165,44,277,73"/>
+<area shape="rect" id="node5" href="$struct_____h_i_d_e_r_____1_1acml__rng.html#a4f2425ef70b926f2f6adbab887f9fd0b" title="__HIDER__::acml_rng\l::fill" alt="" coords="325,5,480,51"/>
+<area shape="rect" id="node7" href="$structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="345,75,460,104"/>
+</map>

@@ -1,10 +1,11 @@
 <map id="writer/data.hpp" name="writer/data.hpp">
-<area shape="rect" id="node3" href="$writer_8h.html" title="writer/writer.h" alt="" coords="485,83,587,112"/>
-<area shape="rect" id="node5" href="$engine__write_8cpp.html" title="engine/engine_write.cpp" alt="" coords="5,160,168,189"/>
-<area shape="rect" id="node7" href="$c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="192,160,320,189"/>
-<area shape="rect" id="node9" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="344,160,531,189"/>
-<area shape="rect" id="node11" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="555,160,717,189"/>
-<area shape="rect" id="node15" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="741,160,885,189"/>
-<area shape="rect" id="node17" href="$writer_8cpp.html" title="writer/writer.cpp" alt="" coords="909,160,1024,189"/>
-<area shape="rect" id="node13" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="571,237,701,267"/>
+<area shape="rect" id="node3" href="$writer_8h.html" title="writer/writer.h" alt="" coords="568,83,669,112"/>
+<area shape="rect" id="node5" href="$async__write_8cpp.html" title="engine/async_write.cpp" alt="" coords="5,160,163,189"/>
+<area shape="rect" id="node7" href="$engine__write_8cpp.html" title="engine/engine_write.cpp" alt="" coords="187,160,349,189"/>
+<area shape="rect" id="node9" href="$c__elegans_8cpp.html" title="rhs/c_elegans.cpp" alt="" coords="373,160,501,189"/>
+<area shape="rect" id="node11" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="525,160,712,189"/>
+<area shape="rect" id="node13" href="$ode__tmpl_8hpp.html" title="simulation/ode_tmpl.hpp" alt="" coords="736,160,899,189"/>
+<area shape="rect" id="node17" href="$stable_8cpp.html" title="simulation/stable.cpp" alt="" coords="923,160,1067,189"/>
+<area shape="rect" id="node19" href="$writer_8cpp.html" title="writer/writer.cpp" alt="" coords="1091,160,1205,189"/>
+<area shape="rect" id="node15" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="752,237,883,267"/>
 </map>

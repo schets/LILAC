@@ -1,7 +1,8 @@
 <map id="rhs_sde" name="rhs_sde">
-<area shape="rect" id="node11" href="$classrhs__sde__type.html" title="rhs_sde_type\&lt; T \&gt;" alt="" coords="24,315,155,344"/>
+<area shape="rect" id="node11" href="$classrhs__type.html" title="rhs_type\&lt; double, rhs\l_sde \&gt;" alt="" coords="16,315,163,362"/>
 <area shape="rect" id="node2" href="$classrhs.html" title="The rhs base class." alt="" coords="69,160,109,189"/>
 <area shape="rect" id="node4" href="$classitem__dim.html" title="item_dim" alt="" coords="5,83,80,112"/>
 <area shape="rect" id="node6" href="$classitem.html" title="item" alt="" coords="20,5,65,35"/>
 <area shape="rect" id="node8" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="104,83,168,112"/>
+<area shape="rect" id="node13" href="$classc__elegans.html" title="This class represents the c_elegans system." alt="" coords="49,411,129,440"/>
 </map>

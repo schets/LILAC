@@ -1,14 +1,14 @@
 <map id="stable_spectral_pde_1d_tmpl::postprocess" name="stable_spectral_pde_1d_tmpl::postprocess">
-<area shape="rect" id="node3" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="209,208,404,238"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="847,260,884,290"/>
-<area shape="rect" id="node9" href="$item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="505,155,569,184"/>
-<area shape="rect" id="node33" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="281,262,332,291"/>
-<area shape="rect" id="node5" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="469,444,605,474"/>
-<area shape="rect" id="node17" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="453,208,621,238"/>
-<area shape="rect" id="node21" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="485,339,589,368"/>
-<area shape="rect" id="node11" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="681,104,785,134"/>
-<area shape="rect" id="node14" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="691,158,776,187"/>
-<area shape="rect" id="node23" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="671,312,796,342"/>
-<area shape="rect" id="node25" href="$defs_8hpp.html#a7341006fc4b1bd2af20939adaebcbe8d" title="al_free" alt="" coords="703,419,764,448"/>
-<area shape="rect" id="node28" href="$defs_8hpp.html#aa68cb911c761ca6971c9e78cc90193dc" title="al_malloc" alt="" coords="695,366,772,395"/>
+<area shape="rect" id="node3" href="$classstable__ode__tmpl.html#ae5a3c49a25815990b22fceea0a6a4bd1" title="stable_ode_tmpl::postprocess" alt="" coords="209,169,404,199"/>
+<area shape="rect" id="node7" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="671,247,772,276"/>
+<area shape="rect" id="node15" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="899,140,936,169"/>
+<area shape="rect" id="node32" href="$comp__funcs_8hpp.html#a8403241362a41787bb81ed0d122f324d" title="_real" alt="" coords="281,348,332,377"/>
+<area shape="rect" id="node5" href="$classstable.html#adaa31fa883496d863c6852c9006f071f" title="stable::postprocess" alt="" coords="453,143,589,172"/>
+<area shape="rect" id="node22" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="637,193,805,223"/>
+<area shape="rect" id="node26" href="$classmempool.html#ac6c2d226d58a493b5c732fb525095def" title="mempool::add" alt="" coords="469,89,573,119"/>
+<area shape="rect" id="node9" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="868,300,967,329"/>
+<area shape="rect" id="node11" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="855,353,980,383"/>
+<area shape="rect" id="node13" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="865,247,969,276"/>
+<area shape="rect" id="node17" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="875,193,960,223"/>
+<area shape="rect" id="node28" href="$classmempool.html#a3459a57b257af55a071aa85ca6674609" title="mempool::_create" alt="" coords="659,89,784,119"/>
 </map>

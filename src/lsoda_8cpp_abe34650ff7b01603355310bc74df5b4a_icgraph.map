@@ -1,9 +1,0 @@
-<map id="vmnorm" name="vmnorm">
-<area shape="rect" id="node3" href="$lsoda_8cpp.html#aaa5ac27a4d96b972ef3ddb41e9f8b6ce" title="lsoda" alt="" coords="517,29,571,58"/>
-<area shape="rect" id="node7" href="$lsoda_8cpp.html#a543085a53174564c75f98da2468c9cca" title="stoda" alt="" coords="415,92,468,121"/>
-<area shape="rect" id="node10" href="$lsoda_8cpp.html#a03e3e52e5cd95a58b2942a77eb0884e8" title="prja" alt="" coords="147,68,189,97"/>
-<area shape="rect" id="node12" href="$lsoda_8cpp.html#a3da24bdbae7cfb5a878215dc16570747" title="correction" alt="" coords="275,92,352,121"/>
-<area shape="rect" id="node16" href="$lsoda_8cpp.html#abf3b394c630a18d0db6b441e628a5106" title="methodswitch" alt="" coords="263,157,364,186"/>
-<area shape="rect" id="node19" href="$lsoda_8cpp.html#ac1fb9bb06ce310205aa9c5e786815c26" title="orderswitch" alt="" coords="124,222,212,252"/>
-<area shape="rect" id="node5" href="$lsoda_8cpp.html#a7082e628fc878891266a36d165c1311b" title="n_lsoda" alt="" coords="619,29,685,58"/>
-</map>

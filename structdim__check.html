@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structdim__check-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -90,8 +91,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
+<p>value is true if dim&gt;0 and dim &lt;= bound. static_asserts on value as well.  
+ <a href="structdim__check.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aae6780e9443dfcd7533081af2b2ddfa0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdim__check.html#aae6780e9443dfcd7533081af2b2ddfa0">static_assert</a> (<a class="el" href="structdim__check.html#a3cb42cc98b610dddbf6544f5aeebdc86">value</a>,&quot;Dimension is outside of bounds&quot;)</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
 <tr class="memitem:a3cb42cc98b610dddbf6544f5aeebdc86"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdim__check.html#a3cb42cc98b610dddbf6544f5aeebdc86">value</a> = dim &gt; 0 &amp;&amp; dim &lt;= bound</td></tr>
@@ -100,9 +108,39 @@ Static Public Attributes</h2></td></tr>
 <div class="textblock"><h3>template&lt;int bound, int dim&gt;<br/>
 struct dim_check&lt; bound, dim &gt;</h3>
 
+<p>value is true if dim&gt;0 and dim &lt;= bound. static_asserts on value as well. </p>
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00007">7</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
-</div><h2>Member Data Documentation</h2>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00026">26</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+</div><h2>Member Function Documentation</h2>
+<a class="anchor" id="aae6780e9443dfcd7533081af2b2ddfa0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;int bound, int dim&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdim__check.html">dim_check</a>&lt; bound, dim &gt;::static_assert </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdim__check.html#a3cb42cc98b610dddbf6544f5aeebdc86">value</a>&#160;</td>
+          <td class="paramname">, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&quot;Dimension is outside of bounds&quot;&#160;</td>
+          <td class="paramname">&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
 <a class="anchor" id="a3cb42cc98b610dddbf6544f5aeebdc86"></a>
 <div class="memitem">
 <div class="memproto">
@@ -123,7 +161,7 @@ template&lt;int bound, int dim&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00008">8</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
+<p>Definition at line <a class="el" href="type__operators_8hpp_source.html#l00027">27</a> of file <a class="el" href="type__operators_8hpp_source.html">type_operators.hpp</a>.</p>
 
 </div>
 </div>
@@ -133,7 +171,7 @@ template&lt;int bound, int dim&gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

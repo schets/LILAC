@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['p',['p',['../classgraph_1_1graphnode.html#a972fe00cfb5f1129bd2b1542a0242afe',1,'graph::graphnode::p()'],['../classfftw__plan__holder.html#a9b8a238d1a256c7ff3549136c2660221',1,'fftw_plan_holder::p()']]],
+  ['p',['p',['../classgraph_1_1graphnode.html#a972fe00cfb5f1129bd2b1542a0242afe',1,'graph::graphnode']]],
   ['params',['params',['../structparam__val.html#a0316d13693def2b4eae491a466122fa2',1,'param_val']]],
   ['parent',['parent',['../classitem__dim.html#a06035079b0255be7b9c96e23c70b151c',1,'item_dim']]],
   ['pdest',['pdest',['../lsoda_8cpp.html#a3db9e4fd178ba6bda6e31e1f9c036c67',1,'lsoda.cpp']]],
@@ -11,5 +11,5 @@ var searchData=
   ['pointedat',['pointedat',['../classgraph_1_1graphnode.html#a3bdeaf68251ded09e2c8879a9331c5d2',1,'graph::graphnode']]],
   ['pointsto',['pointsto',['../classgraph_1_1graphnode.html#a4ed77074fdeaae78721c96fee94f46bb',1,'graph::graphnode']]],
   ['processed',['processed',['../classgraph_1_1graphnode.html#ae4148b2a712f9b6d45608951132ffeeb',1,'graph::graphnode']]],
-  ['ptr',['ptr',['../classitem__wrapper.html#ab814c0d4f0f38baee1ca1f19ee757ca6',1,'item_wrapper::ptr()'],['../classweak__ptr__compare.html#a4294a1bd800c2f63b1b99878a97760f4',1,'weak_ptr_compare::ptr()']]]
+  ['ptr',['ptr',['../classitem__wrapper.html#ab814c0d4f0f38baee1ca1f19ee757ca6',1,'item_wrapper']]]
 ];

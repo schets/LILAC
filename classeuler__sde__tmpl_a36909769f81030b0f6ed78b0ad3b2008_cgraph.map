@@ -1,12 +1,6 @@
 <map id="euler_sde_tmpl::integrate" name="euler_sde_tmpl::integrate">
-<area shape="rect" id="node3" href="$classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="223,5,332,35"/>
-<area shape="rect" id="node7" href="$noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81" title="gaussian_noise" alt="" coords="221,59,333,88"/>
-<area shape="rect" id="node5" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="429,5,467,35"/>
-<area shape="rect" id="node9" href="$noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="383,59,513,88"/>
-<area shape="rect" id="node11" href="$noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="564,59,759,88"/>
-<area shape="rect" id="node13" href="$jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="852,5,897,35"/>
-<area shape="rect" id="node15" href="$classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="808,59,941,88"/>
-<area shape="rect" id="node19" href="$classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="808,112,941,141"/>
-<area shape="rect" id="node17" href="$_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="1023,59,1140,88"/>
-<area shape="rect" id="node21" href="$d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="989,112,1173,141"/>
+<area shape="rect" id="node3" href="$example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="256,5,299,35"/>
+<area shape="rect" id="node5" href="$noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="221,59,333,88"/>
+<area shape="rect" id="node7" href="$struct_____h_i_d_e_r_____1_1acml__rng.html#a4f2425ef70b926f2f6adbab887f9fd0b" title="__HIDER__::acml_rng\l::fill" alt="" coords="381,19,536,66"/>
+<area shape="rect" id="node9" href="$structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="401,89,516,119"/>
 </map>

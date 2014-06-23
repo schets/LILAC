@@ -1,18 +1,17 @@
 <map id="types/float_traits.hpp" name="types/float_traits.hpp">
-<area shape="rect" id="node3" href="$type__operators_8hpp.html" title="types/type_operators.hpp" alt="" coords="436,83,604,112"/>
-<area shape="rect" id="node7" href="$euler__sde__tmpl_8hpp.html" title="integrator/euler_sde\l_tmpl.hpp" alt="" coords="5,257,141,303"/>
-<area shape="rect" id="node31" href="$example__integrator__tmpl_8hpp.html" title="integrator/example\l_integrator_tmpl.hpp" alt="" coords="625,161,764,207"/>
-<area shape="rect" id="node34" href="$rk4__tmpl_8hpp.html" title="integrator/rk4_tmpl.hpp" alt="" coords="692,83,847,112"/>
-<area shape="rect" id="node37" href="$rk45__tmpl_8hpp.html" title="integrator/rk45_tmpl.hpp" alt="" coords="871,83,1033,112"/>
-<area shape="rect" id="node5" href="$noise_8h.html" title="utils/noise.h" alt="" coords="277,169,368,199"/>
-<area shape="rect" id="node15" href="$example__type_8hpp.html" title="types/example_type.hpp" alt="" coords="439,169,601,199"/>
-<area shape="rect" id="node11" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="296,265,483,295"/>
-<area shape="rect" id="node13" href="$noise_8cpp.html" title="utils/noise.cpp" alt="" coords="165,265,272,295"/>
-<area shape="rect" id="node9" href="$euler__sde_8cpp.html" title="integrator/euler_sde.cpp" alt="" coords="23,361,183,391"/>
-<area shape="rect" id="node17" href="$type__constructor_8hpp.html" title="types/type_constructor.hpp" alt="" coords="507,265,685,295"/>
-<area shape="rect" id="node20" href="$example__integrator_8cpp.html" title="integrator/example\l_integrator.cpp" alt="" coords="588,353,716,399"/>
-<area shape="rect" id="node22" href="$rk4_8cpp.html" title="integrator/rk4.cpp" alt="" coords="740,361,863,391"/>
-<area shape="rect" id="node24" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="887,361,1017,391"/>
-<area shape="rect" id="node26" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="433,361,564,391"/>
-<area shape="rect" id="node28" href="$stable__ode_8cpp.html" title="simulation/stable_ode.cpp" alt="" coords="236,361,409,391"/>
+<area shape="rect" id="node3" href="$type__operators_8hpp.html" title="types/type_operators.hpp" alt="" coords="347,83,515,112"/>
+<area shape="rect" id="node7" href="$euler__sde__tmpl_8hpp.html" title="integrator/euler_sde\l_tmpl.hpp" alt="" coords="17,257,153,303"/>
+<area shape="rect" id="node29" href="$example__integrator__tmpl_8hpp.html" title="integrator/example\l_integrator_tmpl.hpp" alt="" coords="536,161,675,207"/>
+<area shape="rect" id="node32" href="$rk4__tmpl_8hpp.html" title="integrator/rk4_tmpl.hpp" alt="" coords="643,83,797,112"/>
+<area shape="rect" id="node35" href="$rk45__tmpl_8hpp.html" title="integrator/rk45_tmpl.hpp" alt="" coords="821,83,984,112"/>
+<area shape="rect" id="node5" href="$noise_8hpp.html" title="utils/noise.hpp" alt="" coords="217,169,324,199"/>
+<area shape="rect" id="node13" href="$example__type_8hpp.html" title="types/example_type.hpp" alt="" coords="349,169,512,199"/>
+<area shape="rect" id="node11" href="$jones__optical_8cpp.html" title="simulation/jones_optical.cpp" alt="" coords="177,265,364,295"/>
+<area shape="rect" id="node9" href="$euler__sde_8cpp.html" title="integrator/euler_sde.cpp" alt="" coords="5,361,165,391"/>
+<area shape="rect" id="node15" href="$type__constructor_8hpp.html" title="types/type_constructor.hpp" alt="" coords="388,265,567,295"/>
+<area shape="rect" id="node18" href="$example__integrator_8cpp.html" title="integrator/example\l_integrator.cpp" alt="" coords="541,353,669,399"/>
+<area shape="rect" id="node20" href="$rk4_8cpp.html" title="integrator/rk4.cpp" alt="" coords="693,361,816,391"/>
+<area shape="rect" id="node22" href="$rk45_8cpp.html" title="integrator/rk45.cpp" alt="" coords="840,361,971,391"/>
+<area shape="rect" id="node24" href="$ode_8cpp.html" title="simulation/ode.cpp" alt="" coords="387,361,517,391"/>
+<area shape="rect" id="node26" href="$stable__ode_8cpp.html" title="simulation/stable_ode.cpp" alt="" coords="189,361,363,391"/>
 </map>

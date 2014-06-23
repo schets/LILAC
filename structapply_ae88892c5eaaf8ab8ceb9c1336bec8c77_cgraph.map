@@ -1,3 +1,4 @@
 <map id="apply::map_into" name="apply::map_into">
-<area shape="rect" id="node3" href="$structapply.html#a022d90941b32cee456af1a284038d22d" title="helper functions to avoid lambda calls in default constructor, for gcc 4.7.2 compatibility" alt="" coords="168,5,304,35"/>
+<area shape="rect" id="node3" href="$structapply.html#a022d90941b32cee456af1a284038d22d" title="apply::static_assert" alt="" coords="168,5,304,35"/>
+<area shape="rect" id="node5" href="$structapply.html#ac11fe2c0dfd954d65400d3d70d57ac66" title="apply::pull" alt="" coords="196,59,276,88"/>
 </map>

@@ -1,4 +1,7 @@
 <map id="apply::transform" name="apply::transform">
-<area shape="rect" id="node3" href="$noise_8h.html#a0676b255e6be46e39b930f1cd82a8783" title="gaussian_noise" alt="" coords="171,5,283,35"/>
-<area shape="rect" id="node5" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="332,5,508,35"/>
+<area shape="rect" id="node3" href="$structapply.html#ad5346ee35371151f61558fd503592c86" title="apply::transform" alt="" coords="172,5,287,35"/>
+<area shape="rect" id="node5" href="$noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="173,59,285,88"/>
+<area shape="rect" id="node7" href="$classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008" title="euler_sde_tmpl::integrate" alt="" coords="341,5,509,35"/>
+<area shape="rect" id="node9" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="337,59,513,88"/>
+<area shape="rect" id="node11" href="$noise_8hpp.html#a235e8c7f051c60f5f737416c5bd28af5" title="gaussian_noise" alt="" coords="369,112,481,141"/>
 </map>

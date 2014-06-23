@@ -36,6 +36,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow1" class="tabs">
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
+      <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
       <li><a href="namespaces.html"><span>Namespaces</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
@@ -83,11 +84,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-types">Private Types</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="classeuler__sde__tmpl-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">euler_sde_tmpl&lt; T &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>Template implementation of the stochastic euler integrator.  
+ <a href="classeuler__sde__tmpl.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>&gt;</code></p>
 <div class="dynheader">
@@ -102,17 +108,17 @@ Collaboration diagram for euler_sde_tmpl&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeuler__sde__tmpl__coll__graph.png" border="0" usemap="#euler__sde__tmpl_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="euler__sde__tmpl_3_01_t_01_4_coll__map" id="euler__sde__tmpl_3_01_t_01_4_coll__map">
-<area shape="rect" id="node2" href="classeuler__sde.html" title="Dormand&#45;Prince integrator." alt="" coords="48,453,125,483"/><area shape="rect" id="node4" href="classintegrator.html" title="This class defines the integration base class." alt="" coords="49,373,124,403"/><area shape="rect" id="node6" href="classitem__dim.html" title="item_dim" alt="" coords="104,197,179,227"/><area shape="rect" id="node17" href="classrhs.html" title="The rhs base class." alt="" coords="69,277,109,307"/><area shape="rect" id="node8" href="classitem.html" title="item" alt="" coords="67,101,112,131"/><area shape="rect" id="node10" href="classengineimp.html" title="engineimp" alt="" coords="49,5,129,35"/><area shape="rect" id="node12" href="classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="136,101,211,131"/><area shape="rect" id="node15" href="classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="5,197,69,227"/></map>
+<area shape="rect" id="node2" href="classeuler__sde.html" title="Dormand&#45;Prince integrator." alt="" coords="99,480,176,509"/><area shape="rect" id="node4" href="classintegrator.html" title="This class defines the integration base class." alt="" coords="104,373,179,403"/><area shape="rect" id="node6" href="classitem__dim.html" title="item_dim" alt="" coords="168,197,243,227"/><area shape="rect" id="node17" href="classrhs.html" title="The rhs base class." alt="" coords="64,277,104,307"/><area shape="rect" id="node8" href="classitem.html" title="item" alt="" coords="131,101,176,131"/><area shape="rect" id="node10" href="classengineimp.html" title="engineimp" alt="" coords="113,5,193,35"/><area shape="rect" id="node12" href="classmempool.html" title="This provides a class to assisst with memory management." alt="" coords="200,101,275,131"/><area shape="rect" id="node15" href="classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="64,197,128,227"/><area shape="rect" id="node21" href="classrhs__sde.html" title="rhs_sde" alt="" coords="11,427,77,456"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a846c78c8241ffa809064ce65e2e3fd34"><td class="memItemLeft" align="right" valign="top">const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a846c78c8241ffa809064ce65e2e3fd34">vtype</a> () const </td></tr>
 <tr class="memitem:abe3c64b67e9b445618e79e8e92eff761"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#abe3c64b67e9b445618e79e8e92eff761">postprocess</a> (<a class="el" href="classinput.html">input</a> &amp;dat)</td></tr>
-<tr class="memitem:a977d6958fe29ba55fdde65c410c693c6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a> () const </td></tr>
+<tr class="memitem:a977d6958fe29ba55fdde65c410c693c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a> () const </td></tr>
 <tr class="memitem:a36909769f81030b0f6ed78b0ad3b2008"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a36909769f81030b0f6ed78b0ad3b2008">integrate</a> (<a class="el" href="classptr__passer.html">ptr_passer</a> u, double t0, double tf)</td></tr>
 <tr class="inherit_header pub_methods_classeuler__sde"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classeuler__sde')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classeuler__sde.html">euler_sde</a></td></tr>
-<tr class="memitem:af8fef552b8fd07eb162639cd8f1cdaba inherit pub_methods_classeuler__sde"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde.html#af8fef552b8fd07eb162639cd8f1cdaba">dependencies</a> () const </td></tr>
+<tr class="memitem:af8fef552b8fd07eb162639cd8f1cdaba inherit pub_methods_classeuler__sde"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde.html#af8fef552b8fd07eb162639cd8f1cdaba">dependencies</a> () const </td></tr>
 <tr class="memitem:a1dd9a325c45cc59267314a017b39e0ca inherit pub_methods_classeuler__sde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde.html#a1dd9a325c45cc59267314a017b39e0ca">~euler_sde</a> ()</td></tr>
 <tr class="inherit_header pub_methods_classintegrator"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classintegrator')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classintegrator.html">integrator</a></td></tr>
 <tr class="memitem:a467a1b1e650c6a5ce128e8de89b4c25e inherit pub_methods_classintegrator"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classintegrator.html#a467a1b1e650c6a5ce128e8de89b4c25e">initial_condition</a> (<a class="el" href="classptr__passer.html">ptr_passer</a> in, size_t len)</td></tr>
@@ -127,10 +133,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aba4568f32fc335c3398985d81f1e1e59 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#aba4568f32fc335c3398985d81f1e1e59">print</a> () const </td></tr>
 <tr class="memdesc:aba4568f32fc335c3398985d81f1e1e59 inherit pub_methods_classitem"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard print function.  <a href="#aba4568f32fc335c3398985d81f1e1e59"></a><br/></td></tr>
 <tr class="memitem:ab2fe701fc632b52bb9a1ad84965c7b44 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ab2fe701fc632b52bb9a1ad84965c7b44">update</a> ()</td></tr>
-<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const std::string n)</td></tr>
-<tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a064fd6a60dae7e171b40c913b2a4f5a7">set_write_name</a> (std::string wname)</td></tr>
-<tr class="memitem:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a> () const </td></tr>
-<tr class="memitem:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a72060014e9571651db88ffc035f37086">write_name</a> () const </td></tr>
+<tr class="memitem:ad4a855c24a294bd011735d6792397007 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#ad4a855c24a294bd011735d6792397007">setname</a> (const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="lsoda_8cpp.html#a76f11d9a0a47b94f72c2d0e77fb32240">n</a>)</td></tr>
+<tr class="memitem:a064fd6a60dae7e171b40c913b2a4f5a7 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a064fd6a60dae7e171b40c913b2a4f5a7">set_write_name</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> wname)</td></tr>
+<tr class="memitem:a26ebec3d3c956bc6fa0eaa0c5332a9f0 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a> () const </td></tr>
+<tr class="memitem:a72060014e9571651db88ffc035f37086 inherit pub_methods_classitem"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a72060014e9571651db88ffc035f37086">write_name</a> () const </td></tr>
 <tr class="inherit_header pub_methods_classvartype"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classvartype')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classvartype.html">vartype</a></td></tr>
 <tr class="memitem:af737847af21866d6ca14949b67683f42 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#af737847af21866d6ca14949b67683f42">compare</a> (const <a class="el" href="classvartype.html">vartype</a> *in) const </td></tr>
 <tr class="memitem:a6173ef8a0c01d0cb9d686363591335ca inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a6173ef8a0c01d0cb9d686363591335ca">compare</a> (const <a class="el" href="classvartype.html">vartype</a> &amp;in) const </td></tr>
@@ -139,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a742c7682a6e336e7e63c89cc9f71c108"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a742c7682a6e336e7e63c89cc9f71c108">compare</a> () const </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a113715a6267314ee5006004293163120"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a113715a6267314ee5006004293163120">compare</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
+<tr class="memitem:a29b5d676675f9fb86d757791ec9777f7 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a29b5d676675f9fb86d757791ec9777f7">vname</a> () const </td></tr>
 <tr class="memitem:a61ece164329afa4ba5184ed093262492 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual const std::type_info &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a61ece164329afa4ba5184ed093262492">vtype_internal</a> () const </td></tr>
 <tr class="memitem:ac0439696ac7183cdc7415f3bf51f5c05 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#ac0439696ac7183cdc7415f3bf51f5c05">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> *in) const </td></tr>
 <tr class="memitem:aa5327982722b4f7c1104149ec327334a inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aa5327982722b4f7c1104149ec327334a">compare_internal</a> (const <a class="el" href="classvartype.html">vartype</a> &amp;in) const </td></tr>
@@ -148,13 +154,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9fce730c38933fa90970c774e98bb5e3"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#a9fce730c38933fa90970c774e98bb5e3">compare_internal</a> () const </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24 inherit pub_methods_classvartype"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ad87579bb36217265ee71086b57d23e24"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classvartype.html#ad87579bb36217265ee71086b57d23e24">compare_internal</a> (const T &amp;in) const </td></tr>
-<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
+<tr class="memitem:aab3d01fc65884b97c4f3d535eb6bb006 inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#aab3d01fc65884b97c4f3d535eb6bb006">vname_internal</a> () const </td></tr>
 <tr class="memitem:a95f1b522c6bc063048ff19be1a74a12c inherit pub_methods_classvartype"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classvartype.html#a95f1b522c6bc063048ff19be1a74a12c">~vartype</a> ()</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-types"></a>
+Private Types</h2></td></tr>
+<tr class="memitem:aa7df57ef3b645123f5fa2227cec25915"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="structfloat__traits.html">float_traits</a>&lt; T &gt;::<a class="el" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a08b438974355bd3282ecf3d83a535dc0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a08b438974355bd3282ecf3d83a535dc0">stepsize</a></td></tr>
+<tr class="memitem:a50c4eee063f7276ae2c45c1fcf4967a2"><td class="memItemLeft" align="right" valign="top">T *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a50c4eee063f7276ae2c45c1fcf4967a2">f0</a></td></tr>
+<tr class="memitem:af2dfdc8d01c6a366d4a84a0b1b1788d4"><td class="memItemLeft" align="right" valign="top">T *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#af2dfdc8d01c6a366d4a84a0b1b1788d4">w0</a></td></tr>
+<tr class="memitem:af7b58b890c29371607ee5cb0e412532a"><td class="memItemLeft" align="right" valign="top">T *restr *restr *restr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#af7b58b890c29371607ee5cb0e412532a">bfnc</a></td></tr>
+<tr class="memitem:a73158608982f7018b5962571cc4dfacc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classrhs__sde.html">rhs_sde</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a73158608982f7018b5962571cc4dfacc">func</a></td></tr>
+<tr class="memitem:a004b437dcdd1b3ada87756ed2b61bf9d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a004b437dcdd1b3ada87756ed2b61bf9d">calc_dw</a></td></tr>
+<tr class="memitem:a9b06651130e707c81f9a43072f1e9bb5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classeuler__sde__tmpl.html#a9b06651130e707c81f9a43072f1e9bb5">dw_weight</a></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pub_static_methods_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_static_methods_classitem')"><img src="closed.png" alt="-"/>&nbsp;Static Public Member Functions inherited from <a class="el" href="classitem.html">item</a></td></tr>
-<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (std::string <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
+<tr class="memitem:af54945c33299b403ee74146d40ff79e3 inherit pub_static_methods_classitem"><td class="memItemLeft" align="right" valign="top">static std::shared_ptr&lt; <a class="el" href="classitem.html">item</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#af54945c33299b403ee74146d40ff79e3">create</a> (<a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0">name</a>, <a class="el" href="classengineimp.html">engineimp</a> *rval)</td></tr>
 <tr class="inherit_header pub_attribs_classitem"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classitem')"><img src="closed.png" alt="-"/>&nbsp;Public Attributes inherited from <a class="el" href="classitem.html">item</a></td></tr>
 <tr class="memitem:a569eb08923d5a28860e5531dc627dedb inherit pub_attribs_classitem"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classengineimp.html">engineimp</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classitem.html#a569eb08923d5a28860e5531dc627dedb">holder</a></td></tr>
 <tr class="inherit_header pro_methods_classitem__dim"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classitem__dim')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="classitem__dim.html">item_dim</a></td></tr>
@@ -170,9 +190,35 @@ Additional Inherited Members</h2></td></tr>
 <div class="textblock"><h3>template&lt;class T&gt;<br/>
 class euler_sde_tmpl&lt; T &gt;</h3>
 
+<p>Template implementation of the stochastic euler integrator. </p>
 
-<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00011">11</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
-</div><h2>Member Function Documentation</h2>
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00029">29</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+</div><h2>Member Typedef Documentation</h2>
+<a class="anchor" id="aa7df57ef3b645123f5fa2227cec25915"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef <a class="el" href="structfloat__traits.html">float_traits</a>&lt;T&gt;::<a class="el" href="classeuler__sde__tmpl.html#a977d6958fe29ba55fdde65c410c693c6">type</a> <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::<a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00030">30</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<h2>Member Function Documentation</h2>
 <a class="anchor" id="a36909769f81030b0f6ed78b0ad3b2008"></a>
 <div class="memitem">
 <div class="memproto">
@@ -215,14 +261,14 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classeuler__sde.html#adb54c7ffc39bcc47fad26580f0d12f5b">euler_sde</a>.</p>
 
-<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00025">25</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00044">44</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeuler__sde__tmpl_a36909769f81030b0f6ed78b0ad3b2008_cgraph.png" border="0" usemap="#classeuler__sde__tmpl_a36909769f81030b0f6ed78b0ad3b2008_cgraph" alt=""/></div>
 <map name="classeuler__sde__tmpl_a36909769f81030b0f6ed78b0ad3b2008_cgraph" id="classeuler__sde__tmpl_a36909769f81030b0f6ed78b0ad3b2008_cgraph">
-<area shape="rect" id="node3" href="classptr__passer.html#aeb47b1ac64e91f521ffcb8617b3077de" title="ptr_passer::get" alt="" coords="223,5,332,35"/><area shape="rect" id="node7" href="noise_8h.html#ad89e9d1db7e9aa68aa10da3170051b81" title="gaussian_noise" alt="" coords="221,59,333,88"/><area shape="rect" id="node5" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="429,5,467,35"/><area shape="rect" id="node9" href="noise_8cpp.html#a2cabab12ec3a82e7b5848ddd3d927a10" title="fill_gaussian_noise" alt="" coords="383,59,513,88"/><area shape="rect" id="node11" href="noise_8cpp.html#aa236eb46c1be0ea05c8f257fdb959a02" title="gsl_ran_gaussian_ziggurat_fill" alt="" coords="564,59,759,88"/><area shape="rect" id="node13" href="jones__optical_8cpp.html#a54c8a0f93841ad244ac54f1c6f87f1e3" title="sign" alt="" coords="852,5,897,35"/><area shape="rect" id="node15" href="classvector__rng.html#a0801b29d347ca7d110244830052a3a01" title="vector_rng::uint_32" alt="" coords="808,59,941,88"/><area shape="rect" id="node19" href="classvector__rng.html#a0a8e927fbfefd227d30087e9140eb878" title="vector_rng::real_64" alt="" coords="808,112,941,141"/><area shape="rect" id="node17" href="_s_f_m_t_8c.html#a04f57c1e9a6b5c0c52ac774a50da6c7e" title="sfmt_fill_array32" alt="" coords="1023,59,1140,88"/><area shape="rect" id="node21" href="d_s_f_m_t_8c.html#a243fb9ed1b61233f3dba4ab15c541eb0" title="dsfmt_fill_array_close_open" alt="" coords="989,112,1173,141"/></map>
+<area shape="rect" id="node3" href="example__type_8hpp.html#a75b5a4d6d6fbee658658f4bacd788e3c" title="abs" alt="" coords="256,5,299,35"/><area shape="rect" id="node5" href="noise_8hpp.html#ad70b7262917b2f053cce3f1901d96842" title="This functions fills the input data with random gaussian noise." alt="" coords="221,59,333,88"/><area shape="rect" id="node7" href="struct_____h_i_d_e_r_____1_1acml__rng.html#a4f2425ef70b926f2f6adbab887f9fd0b" title="__HIDER__::acml_rng\l::fill" alt="" coords="381,19,536,66"/><area shape="rect" id="node9" href="structapply.html#a83f95cd80fc0ab25b7a9e078af9d68d6" title="apply::transform" alt="" coords="401,89,516,119"/></map>
 </div>
 </p>
 
@@ -254,14 +300,14 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classeuler__sde.html#acf6c98a8011fb0ab5d8d7070c74678b2">euler_sde</a>.</p>
 
-<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00073">73</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00097">97</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classeuler__sde__tmpl_abe3c64b67e9b445618e79e8e92eff761_cgraph.png" border="0" usemap="#classeuler__sde__tmpl_abe3c64b67e9b445618e79e8e92eff761_cgraph" alt=""/></div>
 <map name="classeuler__sde__tmpl_abe3c64b67e9b445618e79e8e92eff761_cgraph" id="classeuler__sde__tmpl_abe3c64b67e9b445618e79e8e92eff761_cgraph">
-<area shape="rect" id="node3" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="243,7,397,36"/><area shape="rect" id="node5" href="item_8h.html#adef74b0f1c6e327b114951804b9aed2d" title="Type safe method of retrieving value from a variable." alt="" coords="288,60,352,89"/><area shape="rect" id="node9" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="480,112,517,141"/><area shape="rect" id="node7" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="447,5,551,35"/><area shape="rect" id="node11" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="456,59,541,88"/></map>
+<area shape="rect" id="node3" href="classintegrator.html#a9f05e03d80eadc611c13e33c6bd87d82" title="Initiates the integrator from input values." alt="" coords="243,113,397,143"/><area shape="rect" id="node5" href="classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="445,113,547,143"/><area shape="rect" id="node13" href="defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="640,219,677,248"/><area shape="rect" id="node7" href="classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="609,5,708,35"/><area shape="rect" id="node9" href="classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="596,59,721,88"/><area shape="rect" id="node11" href="classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="607,112,711,141"/><area shape="rect" id="node15" href="classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="616,165,701,195"/></map>
 </div>
 </p>
 
@@ -277,7 +323,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::string <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::type </td>
+          <td class="memname"><a class="el" href="native__item_8hpp.html#aeb1fef441ff2e29533160927337f1060">std::string</a> <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::type </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -292,7 +338,7 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classeuler__sde.html#a542a7fba91702c82d51fe20f232d32c0">euler_sde</a>.</p>
 
-<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00069">69</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00093">93</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +367,176 @@ template&lt;class T &gt; </div>
 
 <p>Reimplemented from <a class="el" href="classeuler__sde.html#adba421ee5fcf069908857663f5014323">euler_sde</a>.</p>
 
-<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00065">65</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00089">89</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<h2>Member Data Documentation</h2>
+<a class="anchor" id="af7b58b890c29371607ee5cb0e412532a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* restr * restr * restr <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::bfnc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00032">32</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a004b437dcdd1b3ada87756ed2b61bf9d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::calc_dw</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00034">34</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9b06651130e707c81f9a43072f1e9bb5"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::dw_weight</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00035">35</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a50c4eee063f7276ae2c45c1fcf4967a2"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* restr <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::f0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00032">32</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a73158608982f7018b5962571cc4dfacc"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classrhs__sde.html">rhs_sde</a>* <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::func</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00033">33</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a08b438974355bd3282ecf3d83a535dc0"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classeuler__sde__tmpl.html#aa7df57ef3b645123f5fa2227cec25915">real_type</a> <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::stepsize</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00031">31</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="af2dfdc8d01c6a366d4a84a0b1b1788d4"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T* restr * restr <a class="el" href="classeuler__sde__tmpl.html">euler_sde_tmpl</a>&lt; T &gt;::w0</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="euler__sde__tmpl_8hpp_source.html#l00032">32</a> of file <a class="el" href="euler__sde__tmpl_8hpp_source.html">euler_sde_tmpl.hpp</a>.</p>
 
 </div>
 </div>
@@ -331,7 +546,7 @@ template&lt;class T &gt; </div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun May 25 2014 18:44:02 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

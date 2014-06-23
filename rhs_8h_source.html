@@ -88,35 +88,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">rhs.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="rhs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef RHS_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RHS_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="item__dim_8h.html">engine/item_dim.h</a>&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;../utils/vartype.hpp&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ptr__passer_8hpp.html">ptr_passer.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="code" href="classrhs.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrhs.html" title="The rhs base class.">rhs</a>:<span class="keyword">public</span> <a class="code" href="classitem__dim.html">item_dim</a>, <span class="keyword">public</span> <a class="code" href="classvartype.html" title="Interface class to signal that an object deals with typed variables.">vartype</a>{</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        std::vector&lt;std::string&gt; <a class="code" href="classrhs.html#a0eee78a024976d37b6948237b3e7963a">dependencies</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classrhs.html#a2b8984531851f004caa1eb0dd3584de5">postprocess</a>(<a class="code" href="classinput.html">input</a>&amp; dat);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;         </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="code" href="classrhs.html#a9840fd9c2e758af9337b55ee98f31ceb">   27</a></span>&#160;        <a class="code" href="classrhs.html#a9840fd9c2e758af9337b55ee98f31ceb" title="Creates the base rhs class with a dimension=dimen.">rhs</a>(){};</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classrhs.html#a75d010815245ae6ce0f99e6b8e61d60c">initial_condition</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x, <span class="keywordtype">size_t</span> len)=0;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="code" href="classrhs.html#a1b1a8fcc862e5610562be25246b2b8b3">   35</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classrhs.html#a1b1a8fcc862e5610562be25246b2b8b3" title="Wrapper for intial_condition that assumes the length is equal to dimension.">initial_condition</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x){</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            <a class="code" href="classrhs.html#a75d010815245ae6ce0f99e6b8e61d60c">initial_condition</a>(x, <a class="code" href="classitem__dim.html#a3cbb20c8a55447ada9f905599040a7e3">dimension</a>);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classrhs.html#a918332e3c5929d788ce983cbc32713ef" title="Stores the derivative in dx given the time t and current x.">dxdt</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x, <a class="code" href="classptr__passer.html">ptr_passer</a> dx, <span class="keywordtype">double</span> t) = 0;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="code" href="classrhs.html#ab8e36e8fdbb5806316ef9010c6751647">   42</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classrhs.html#ab8e36e8fdbb5806316ef9010c6751647">~rhs</a>(){};</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;};</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<a href="rhs_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment">Copyright (c) 2014, Sam Schetterer, Nathan Kutz, University of Washington</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment">Authors: Sam Schetterer</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment">All rights reserved.</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment">Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment">1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment">3. Neither the name of the copyright holder nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"></span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">*/</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#ifndef RHS_H</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define RHS_H</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &quot;<a class="code" href="item__dim_8h.html">engine/item_dim.h</a>&quot;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include &quot;../utils/vartype.hpp&quot;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ptr__passer_8hpp.html">ptr_passer.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="code" href="classrhs.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classrhs.html" title="The rhs base class.">rhs</a>:<span class="keyword">public</span> <a class="code" href="classitem__dim.html">item_dim</a>, <span class="keyword">public</span> <a class="code" href="classvartype.html" title="Interface class to signal that an object deals with typed variables.">vartype</a>{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="code" href="classrhs.html#a9840fd9c2e758af9337b55ee98f31ceb">   39</a></span>&#160;        <a class="code" href="classrhs.html#a9840fd9c2e758af9337b55ee98f31ceb" title="Creates the base rhs class with a dimension=dimen.">rhs</a>(){};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classrhs.html#a75d010815245ae6ce0f99e6b8e61d60c">initial_condition</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x, <span class="keywordtype">size_t</span> len)=0;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="code" href="classrhs.html#a1b1a8fcc862e5610562be25246b2b8b3">   47</a></span>&#160;        <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classrhs.html#a1b1a8fcc862e5610562be25246b2b8b3" title="Wrapper for intial_condition that assumes the length is equal to dimension.">initial_condition</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x){</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <a class="code" href="classrhs.html#a75d010815245ae6ce0f99e6b8e61d60c">initial_condition</a>(x, <a class="code" href="classitem__dim.html#a3cbb20c8a55447ada9f905599040a7e3">dimension</a>);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classrhs.html#a918332e3c5929d788ce983cbc32713ef" title="Stores the derivative in dx given the time t and current x.">dxdt</a>(<a class="code" href="classptr__passer.html">ptr_passer</a> x, <a class="code" href="classptr__passer.html">ptr_passer</a> dx, <span class="keywordtype">double</span> t) = 0;</div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="code" href="classrhs.html#ab8e36e8fdbb5806316ef9010c6751647">   54</a></span>&#160;        <span class="keyword">virtual</span> <a class="code" href="classrhs.html#ab8e36e8fdbb5806316ef9010c6751647">~rhs</a>(){};</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;};</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Jun 3 2014 23:15:44 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Jun 23 2014 12:30:16 for LILAC by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.2
 </small></address>

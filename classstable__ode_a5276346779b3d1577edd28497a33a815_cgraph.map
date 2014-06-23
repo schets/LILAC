@@ -1,7 +1,11 @@
 <map id="stable_ode::postprocess" name="stable_ode::postprocess">
-<area shape="rect" id="node3" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="257,7,348,36"/>
-<area shape="rect" id="node9" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="477,59,563,88"/>
-<area shape="rect" id="node11" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="219,111,387,140"/>
-<area shape="rect" id="node5" href="$classitem__factory.html#ab5772699b275261911c5a261bd8948ba" title="item_factory::create_item" alt="" coords="435,5,605,35"/>
-<area shape="rect" id="node7" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="655,59,692,88"/>
+<area shape="rect" id="node3" href="$classinput.html#a171d9a8b650eb89cc398a7c574b4a4d4" title="Type safe method of retrieving value from a variable." alt="" coords="252,137,353,167"/>
+<area shape="rect" id="node13" href="$classitem.html#a26ebec3d3c956bc6fa0eaa0c5332a9f0" title="item::name" alt="" coords="477,216,563,245"/>
+<area shape="rect" id="node15" href="$classitem.html#af54945c33299b403ee74146d40ff79e3" title="item::create" alt="" coords="257,320,348,349"/>
+<area shape="rect" id="node21" href="$classitem__dim.html#a862df3a3c815677d53c5dc9db50f665e" title="item_dim::add_as_parent" alt="" coords="219,267,387,296"/>
+<area shape="rect" id="node5" href="$classinput.html#a6e03ad2731def84cf3a94b9ebb186d2a" title="gets a value from the input" alt="" coords="471,112,569,141"/>
+<area shape="rect" id="node7" href="$classitem__wrapper.html#a14632d724395c28cc3bd3c3cdee2d587" title="item_wrapper::get" alt="" coords="457,5,583,35"/>
+<area shape="rect" id="node9" href="$classitem.html#acd67399290a6cfa149562d0a48bc18e0" title="item::_retrieve" alt="" coords="468,59,572,88"/>
+<area shape="rect" id="node11" href="$defs_8hpp.html#a1f97f6e68311b947f240e2f7379978c5" title="err" alt="" coords="655,268,692,297"/>
+<area shape="rect" id="node17" href="$classitem__factory.html#ab5772699b275261911c5a261bd8948ba" title="item_factory::create_item" alt="" coords="435,320,605,349"/>
 </map>

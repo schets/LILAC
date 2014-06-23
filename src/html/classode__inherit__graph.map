@@ -1,7 +1,0 @@
-<map id="ode" name="ode">
-<area shape="rect" id="node11" href="$classode__tmpl.html" title="ode_tmpl\&lt; T \&gt;" alt="" coords="40,315,147,344"/>
-<area shape="rect" id="node2" href="$classsimulation.html" title="simulation" alt="" coords="5,160,85,189"/>
-<area shape="rect" id="node4" href="$classitem__dim.html" title="item_dim" alt="" coords="8,83,83,112"/>
-<area shape="rect" id="node6" href="$classitem.html" title="item" alt="" coords="23,5,68,35"/>
-<area shape="rect" id="node8" href="$classvartype.html" title="Interface class to signal that an object deals with typed variables." alt="" coords="109,160,173,189"/>
-</map>

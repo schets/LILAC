@@ -1,18 +1,20 @@
 var searchData=
 [
-  ['cache_5fblock',['CACHE_BLOCK',['../noise_8cpp.html#a58e5b3e1691cd8075edf4e1d5a790e17',1,'noise.cpp']]],
-  ['calc_5fdw',['calc_dw',['../classfinal__def.html#aa4fe48f13969ee8527ab3ac882d216fc',1,'final_def']]],
-  ['calc_5fval',['calc_val',['../classfinal__def.html#a9ef69860bb80a9b081f7cc10be41895c',1,'final_def']]],
+  ['calc_5fdw',['calc_dw',['../classeuler__sde__tmpl.html#a004b437dcdd1b3ada87756ed2b61bf9d',1,'euler_sde_tmpl']]],
+  ['calc_5fval',['calc_val',['../classexample__integrator__tmpl.html#ada858289ab41787549cdd21990a5e94b',1,'example_integrator_tmpl']]],
+  ['cast_5fto_5fdouble',['cast_to_double',['../structfloat__traits_3_01example__type_01_4.html#acb29e350aa1de784ffc4246d814badb5',1,'float_traits&lt; example_type &gt;::cast_to_double()'],['../structfloat__traits.html#a4bd6d708d4c4d9f2e700e87157d5c2be',1,'float_traits::cast_to_double()'],['../structfloat__traits_3_01double_01_4.html#ab2f6ac0e96f3446933f6d747c540dda0',1,'float_traits&lt; double &gt;::cast_to_double()'],['../structfloat__traits_3_01std_1_1complex_3_01_t_01_4_01_4.html#a118349fcec2fed71e9ba8f9f6fb71dde',1,'float_traits&lt; std::complex&lt; T &gt; &gt;::cast_to_double()']]],
   ['ccmax',['ccmax',['../lsoda_8cpp.html#a6402e739117bf08f148bea189209d4c0',1,'lsoda.cpp']]],
   ['change_5fthreshold',['change_threshold',['../classstable.html#ac769a346e2cc948b18ac3f836b006698',1,'stable']]],
   ['children',['children',['../classitem__dim.html#a81ee26f4d24b71b6e6cce12b3e042035',1,'item_dim']]],
   ['cm1',['cm1',['../lsoda_8cpp.html#a369981874f266f28c979f755fd54da4b',1,'lsoda.cpp']]],
   ['cm2',['cm2',['../lsoda_8cpp.html#a9aafc4cc435ca67cda344c1d5352808b',1,'lsoda.cpp']]],
+  ['comm',['comm',['../classfft__plan__holder.html#a9ee428745ded41a95412505146c8e43c',1,'fft_plan_holder']]],
   ['comp_5fin',['comp_in',['../classrhs___c_n_l_s.html#a5c61b7a46f2944de04731e3a195d1905',1,'rhs_CNLS::comp_in()'],['../classrhs___s_q_g_l_e.html#aea2203777f7b55401355a3b9f7fbdb70',1,'rhs_SQGLE::comp_in()']]],
   ['comp_5fin_5fr',['comp_in_r',['../classrhs___c_n_l_s.html#aae6ecc398b87946eac10ea9eaa6279de',1,'rhs_CNLS::comp_in_r()'],['../classrhs___s_q_g_l_e.html#a2d094f622d69cc88e1d7b03d1cef6b33',1,'rhs_SQGLE::comp_in_r()']]],
   ['comp_5fout',['comp_out',['../classrhs___c_n_l_s.html#a4c0893907f92c9c22eb6c5b7dfe73e91',1,'rhs_CNLS::comp_out()'],['../classrhs___s_q_g_l_e.html#a257b55f3a206227748a2c9b93c4b895b',1,'rhs_SQGLE::comp_out()']]],
   ['comp_5fout_5fr',['comp_out_r',['../classrhs___c_n_l_s.html#acfbcf1cd7ce0cba5babe7da3ad1ce982',1,'rhs_CNLS']]],
-  ['compilation_5fdatabase_5ffolder',['compilation_database_folder',['../controller_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../engine_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../integrator_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../lisp_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../objective_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../rhs_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../_s_f_m_t_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../simulation_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../utils_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../writer_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py']]],
+  ['compilation_5fdatabase_5ffolder',['compilation_database_folder',['../controller_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../engine_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../integrator_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../lisp_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../objective_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../rhs_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../simulation_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../utils_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py'],['../writer_2_8ycm__extra__conf_8py.html#a6a4d7e96c7bc9093b406af626b7936a2',1,'compilation_database_folder():&#160;.ycm_extra_conf.py']]],
+  ['condition_5flock',['condition_lock',['../classengineimp.html#a4039f3d36b1cdd1857b279384a566af8',1,'engineimp']]],
   ['conit',['conit',['../lsoda_8cpp.html#a724990e46ef14824d0754b84808eb04f',1,'lsoda.cpp']]],
   ['cont',['cont',['../classsimulation.html#a4bcec51bbe6eda178528d892a604e39c',1,'simulation']]],
   ['cptrs',['cptrs',['../classmempool.html#a5d82a6636199a664818f8d2df36777a9',1,'mempool']]],
@@ -20,6 +22,7 @@ var searchData=
   ['csizes',['csizes',['../classmempool.html#ac7612c4f3559d027f30225fa42d9dd0a',1,'mempool']]],
   ['cur_5find',['cur_ind',['../classc__elegans.html#a80934212588504fd642fddca54ec29ea',1,'c_elegans']]],
   ['cur_5finj',['cur_inj',['../classc__elegans.html#a976d30f206c192118ff70b46375be09d',1,'c_elegans']]],
+  ['cur_5fval',['cur_val',['../struct_____h_i_d_e_r_____1_1acml__rng.html#a421dfa05ae196729cf8eee6fbd535590',1,'__HIDER__::acml_rng']]],
   ['cur_5fwriter',['cur_writer',['../classsimulation.html#ac5daa79f7e290d2cf76e344e7220ccc5',1,'simulation::cur_writer()'],['../classstable.html#ae81896b6645f383afdab6dffe41245df',1,'stable::cur_writer()']]],
   ['curdir',['curdir',['../classengineimp.html#af71057fcd2603152c7d51f821bd6e516',1,'engineimp']]]
 ];

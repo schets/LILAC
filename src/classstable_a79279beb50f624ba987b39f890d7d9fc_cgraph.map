@@ -1,7 +1,0 @@
-<map id="stable::simulate" name="stable::simulate">
-<area shape="rect" id="node3" href="$classstable.html#a99df92d0ce26d40e696bf2e2c82a85fa" title="stable::iterate_system" alt="" coords="169,5,319,35"/>
-<area shape="rect" id="node5" href="$classstable.html#a4319a1a34ba1c731f8da063d6a4a2333" title="Returns the difference between the two most recent iterations." alt="" coords="179,59,309,88"/>
-<area shape="rect" id="node7" href="$classdata.html#a11f14665a764df56c4b2d279318f2277" title="data::create" alt="" coords="199,112,289,141"/>
-<area shape="rect" id="node9" href="$classsimulation.html#a789968c6c596d1979789904971a10fd4" title="This function returns the score of the system in its current state." alt="" coords="184,165,304,195"/>
-<area shape="rect" id="node11" href="$classengineimp.html#ae0806de3c2cf5d0833624c4e17a590b8" title="engineimp::add_writer" alt="" coords="169,219,319,248"/>
-</map>

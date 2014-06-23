@@ -1,0 +1,12 @@
+<map id="_fft" name="_fft">
+<area shape="rect" id="node3" href="$utils_8cpp.html#a32946d8e2d4a8a04127b5b638cf1091f" title="This function performs a fourier transform in the forward direction." alt="" coords="97,285,135,315"/>
+<area shape="rect" id="node19" href="$utils_8cpp.html#a702384101834989d96144a3610d571a6" title="This functions performs a normalized fourier transform in the backwards direction." alt="" coords="97,201,135,231"/>
+<area shape="rect" id="node5" href="$classn__pulse__score.html#a3e5dbebf9482045d538e7cddfcca33cf" title="n_pulse_score::score" alt="" coords="200,339,347,368"/>
+<area shape="rect" id="node7" href="$classrhs___c_n_l_s.html#a2b1f796630d1dff99ca12795ba4abec6" title="rhs_CNLS::dxdt" alt="" coords="216,232,331,261"/>
+<area shape="rect" id="node9" href="$classrhs___s_q_g_l_e.html#a24f9c83f63aca03aca14ca689e508c21" title="rhs_SQGLE::dxdt" alt="" coords="211,285,336,315"/>
+<area shape="rect" id="node11" href="$classjones__optical.html#ab9bda3e8f20dc810438f25d8ac7fc341" title="jones_optical::postprocess" alt="" coords="185,392,361,421"/>
+<area shape="rect" id="node13" href="$classjones__optical.html#a154a378dce4b88caeb4a4d53d665e286" title="jones_optical::pre\l_fft_operations" alt="" coords="212,93,335,139"/>
+<area shape="rect" id="node15" href="$classjones__optical.html#a9988a52e2fa53446c5b985845d8ce3a3" title="jones_optical::post\l_ifft_operations" alt="" coords="208,162,339,209"/>
+<area shape="rect" id="node17" href="$classstable__spectral__pde__1d__tmpl.html#a6137b0834df6d1dc5f8015f80f9ed030" title="stable_spectral_pde\l_1d_tmpl::pre_integration\l_operations" alt="" coords="189,445,357,509"/>
+<area shape="rect" id="node25" href="$classstable__spectral__pde__1d__tmpl.html#a2bda128b9e32d38a696fa9bce832c87d" title="stable_spectral_pde\l_1d_tmpl::post_integration\l_operations" alt="" coords="187,5,360,69"/>
+</map>
