@@ -29,6 +29,7 @@ void engineimp::run(){
     while(cont->is_good()){
         update();
         sys->simulate();
+        write_dat();
         index++;
         cont->control(0, 0);
     }

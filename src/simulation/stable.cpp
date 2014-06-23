@@ -58,6 +58,13 @@ double stable::simulate(){
     num_gone++;
     return v;
 }
+/*!
+ * This function returns the dependencies of the stable class.
+ * The stable class depends on:
+ *
+ *      - double change_threshold: When the change between two iterations is less than change_threshold, the iteration stops.
+ *      - integer max_iterations: The number at which the iteration stops and the system is deemed unstable
+ */
 std::vector<std::string> stable::dependencies() const{
     std::string deps[] = {"change_threshold", "max_iterations"};
     return make_append(deps, simulation::dependencies());

@@ -32,9 +32,9 @@ class writer{
     std::map<int, bool> will_write;
     friend class engineimp;
     //!Writes the current data to a file
-    virtual void write(std::ostream& ofile) const;
     static bool is_w_type(int inval);
     public:
+    virtual void write(std::ostream& ofile) const;
     //!Labels for various input types
     typedef enum{
         FINAL_SCORE,

@@ -24,9 +24,11 @@ const item* item_wrapper::operator->()const{
 std::vector<std::string> item_wrapper::dependencies()const{
     return std::vector<std::string>(deps.begin(), deps.end());
 }
+//!Adds a dependency to the wrapper
 void item_wrapper::add_dep(const std::string& indep){
     deps.insert(indep);
 }
+//!Replaces an existing dependency with a new one
 void item_wrapper::replace_dep(const std::string& newdep, const std::string& olddep, bool must_rep){
     if(deps.erase(olddep) || !must_rep){
         deps.insert(newdep);

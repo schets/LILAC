@@ -17,8 +17,14 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #ifndef ENGINEIMP_H
 #define ENGINEIMP_H
 #include <list>
+#include <queue>
 #include <iostream>
 #include <fstream>
+#include <stdio.h>
+#include <thread>
+#include <mutex>
+#include <atomic>
+#include <condition_variable>
 #include "item_wrapper.h"
 class engine;
 class writer;
@@ -39,19 +45,24 @@ item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
  *
  */
 class engineimp{
+    std::thread write_thread;
+    std::mutex data_lock;
+    std::mutex condition_lock;
+    std::condition_variable write_cond;
+    volatile std::atomic_size_t datas_queued;
+    volatile std::atomic_char is_over;
     void read(std::istream& fstr);
     void _read(std::istream& fstr);
     void sort_pp();
     void execute_command(std::string inval);
     void update();
     std::string curdir;
-    std::ofstream ofile;
+    FILE*  ofile;
     std::map<size_t, std::list<std::shared_ptr<writer>>> writers;
+    std::list<std::map<size_t, std::list<std::shared_ptr<writer>>>> async_write_queue;
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;
     std::set<std::shared_ptr<item>> update_vars;
-    void write_data(std::shared_ptr<writer> inval, std::ostream& fwrite);
-    void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind, std::ostream& ostr);
     public:
     void write_dat();
     void add_writer(const std::shared_ptr<writer>& wval);
@@ -75,5 +86,12 @@ class engineimp{
     friend item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
             std::map<std::string, input>& inv, engineimp* en);
 };
-
+//!structure holding parameters for data io
+struct data_io_info{
+    FILE* file;
+    //list of requested data writes
+    std::list<std::map<size_t, std::list<std::shared_ptr<writer>>>>* writers;
+    volatile std::atomic_size_t* datas_queued;
+    volatile std::atomic_char* is_over;
+};
 #endif

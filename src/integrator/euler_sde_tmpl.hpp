@@ -54,7 +54,7 @@ int euler_sde_tmpl<T>::integrate(ptr_passer u0, double ts, double tf){
     for(size_t i = 0; i < steps; i++){
         if(std::abs(dw_weight) > std::numeric_limits<real_type>::epsilon())
         {
-            gaussian_noise(w0, dimension, dt*dw_weight);
+            gaussian_noise(w0, dimension, 0, dt*dw_weight);
             if(func){
                 func->mod_w(w0, tc);
             }

@@ -17,26 +17,20 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "engineimp.h"
 #include "writer/writer.h"
 #include "utils/item_heads.hpp"
+#include <ostream>
+//!Adds a new writer to the engine
 void engineimp::add_writer(const std::shared_ptr<writer>& wval){
     writers[index].push_back(wval);
 }
-//write data to disk and clear from ram
-void engineimp::write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind, std::ostream& out_stream){
-	ofile << "index: " << ind << std::endl;
-	for(auto& dat : dats){
-		write_data(dat, out_stream);
-	}
-	out_stream << "&\n";
-}
+//!Writes formatted data to disk and clears from ram
 void engineimp::write_dat(){
-	std::stringstream out_stream;
-	for(auto& writes : writers){
-		write_individual_dat(writes.second, writes.first, out_stream);
-	}
-	ofile << out_stream;
-	writers.clear();
+    std::unique_lock<std::mutex> dat_lock(data_lock);
+    datas_queued++;
+    async_write_queue.push_back(std::move(writers));
+    dat_lock.unlock();
+    writers.clear();
+    std::unique_lock<std::mutex> lock(condition_lock);
+    write_cond.notify_all();
+    lock.unlock();
 }
-void engineimp::write_data(std::shared_ptr<writer> dat, std::ostream& wfile){
-	dat->write(wfile);
-	wfile << "&&\n";
-}
+

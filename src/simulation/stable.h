@@ -19,10 +19,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "simulation.h"
 #include "integrator/integrator.h"
 //!A system that attempts to reach an equilibrium
-/*! This class defines a system that tries to reach an equilibrium
- * The actual implementation lets the user define a function get_change, which
- * gets the change between the two most recent iterations, and a function
- * iterate_system, which iterates the system forwards one time step
+/*! This class defines a system that tries to reach an equilibrium through repeated iterations
  */
 
 class stable:public simulation, public vartype{

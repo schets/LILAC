@@ -25,6 +25,8 @@ class item;
  * Items need wrapping to have proper dependency resolution. Internally,
  * all objects are stored in the same map. This means that local objects must have
  * names that differ from global objects. However, they still must be callable from
+ * the retrieve and dependency functionality and therefore each item must have a local map
+ * from dependency names to actual dependency objects
  */
 class item_wrapper{
     std::shared_ptr<item> ptr;

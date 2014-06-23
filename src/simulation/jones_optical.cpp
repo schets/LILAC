@@ -116,7 +116,7 @@ void jones_optical::postprocess(input& invals){
     memp.add(dimension, &nvec1);
     memp.add(nts, &help, &t, &kurtosis_help, &phold, &nvec2);
     double dt = 60.0/nts;
-    gaussian_noise(ucur, dimension, 0.2); 
+    gaussian_noise(ucur, dimension, 0, 0.2); 
     for(size_t i = 0; i < nts; i++){
         t[i] = dt*(i-nts/2.0);
     }

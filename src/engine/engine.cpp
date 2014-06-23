@@ -19,14 +19,20 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "item.h"
 #include "input.h"
 #include "native_item.hpp"
+
+
+void write_data(std::mutex& wait_m, std::mutex& data,
+        std::condition_variable& write_notify, data_io_info invals);
+
 char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
-engineimp::engineimp(const std::string& fname, const std::string& outname, const std::string& start_index){
+engineimp::engineimp(const std::string& fname, const std::string& outname,
+        const std::string& start_index):datas_queued(0), is_over(0){
     values["!out_file"] =  std::make_shared<string>();
     ((native_item*)(values["!out_file"].get()))->parse(outname);
     values["!out_file"]->setname("!out_file");
-    ofile.open(outname.c_str(), std::ofstream::trunc);
+    ofile=fopen(outname.c_str(), "w");
     auto p = std::make_shared<integer>();
     p->parse(start_index);
     p->setname("!start_ind");
@@ -37,10 +43,27 @@ engineimp::engineimp(const std::string& fname, const std::string& outname, const
                 "engineimp::engineimp(std::string)", "engine/engine.cpp", FATAL_ERROR);
     }
     read(fstr);
+    datas_queued=0;
+    data_io_info dat_inf;
+    dat_inf.datas_queued = &datas_queued;
+    dat_inf.file = ofile;
+    dat_inf.writers = &async_write_queue;
+    dat_inf.is_over = &is_over;
+    write_thread = std::thread(
+            [dat_inf, this](){
+            ::write_data(this->condition_lock, this->data_lock, this->write_cond, dat_inf);
+            });
 };
 
 engineimp::~engineimp(){
     this->write_dat();
+    is_over++;
+    while(datas_queued > 0){
+    }
+    std::unique_lock<std::mutex> lock(condition_lock);
+    write_cond.notify_all();
+    write_thread.join();
+    fclose(ofile);
 }
 bool engineimp::item_exists(std::shared_ptr<item> p) const{
     if(!p){

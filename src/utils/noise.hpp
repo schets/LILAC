@@ -37,13 +37,12 @@ namespace __HIDER__{
         int info;
         acml_rng():val_end((&(vals[0]))+rand_len){
             int seed = (int)clock();
+            while(seed <= 1){
+                seed = (int)clock();
+            }
             int lseed = 1;
-            seed *= clock();
-            seed = abs(seed);
             drandinitialize(genid, subid, &seed, &lseed, state, &lstate, &info);
             if(info == 1){
-                seed *= clock();
-                seed = abs(seed);
                 drandinitialize(genid, subid, &seed, &lseed, state, &lstate, &info);
             }
             drandgaussian(rand_len, 0, 1, state, vals, &info);
@@ -67,7 +66,7 @@ double get_norm_rand(double sigma);
  * This functions fills each variable of the 
  */
 template<class T, class Lambda>
-inline void gaussian_noise(T* inval, size_t len, double sdev, Lambda&& fnc){
+inline void gaussian_noise(T* inval, size_t len, double mean, double sdev, Lambda&& fnc){
     //  std::cout << "NOISE:" << std::endl;
     //!rng generator struct;
     static __HIDER__::acml_rng rng;
@@ -90,7 +89,7 @@ inline void gaussian_noise(T* inval, size_t len, double sdev, Lambda&& fnc){
     }
 }
 template<class T>
-inline void gaussian_noise(T* inval, size_t len, double sdev){
-    gaussian_noise(inval, len, sdev, [](T&){});
+inline void gaussian_noise(T* inval, size_t len, double mean, double sdev){
+    gaussian_noise(inval, len, mean, sdev, [](T&){});
 }
 #endif
