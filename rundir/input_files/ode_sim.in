@@ -1,5 +1,5 @@
 (double t0 0)
-(double tf 7)
+(double tf .05)
 (double w_step 0.01)
 (ode simulation)
 (n_pulse_score objective)

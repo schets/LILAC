@@ -21,6 +21,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "eigen3/Eigen/Eigen"
 #include "eigen3/Eigen/Sparse"
 using namespace Eigen;
+//!This class represents the c_elegans system
+/*!
+ * This class calculates the voltages and currents in the neural network of a c_elegans worm.
+ * In addition, it also allows for the ablation of specific neurons within the system
+ * to see how the system responds to the removal of neurons.
+ */
 class c_elegans:public rhs_type<double, rhs_sde>{
     int cur_ind;
     double dummy;

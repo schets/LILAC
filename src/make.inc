@@ -5,7 +5,7 @@ CPP=gcc
 #CPP=NERSC
 ifeq ($(CPP), gcc)
 FASTMATH= -ffast-math -fstrict-aliasing -fomit-frame-pointer
-CFLAGS=-I../ -I./utils -std=c++11 -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing
+CFLAGS=-I../ -I./utils -std=c++11 -g -DGCC -DNDEBUG -m64 -O3 -Wall -Wno-strict-aliasing
 LFLAGS= -lstdc++ -O3 -lacml -lm  $(FASTMATH)
 endif
 ifeq ($(CPP), clang)

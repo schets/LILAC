@@ -37,7 +37,10 @@ static size_t write_dat(std::map<size_t, std::list<std::shared_ptr<writer>>>& wr
     writers.clear();
     return o_str.size();
 }
-//worker function for asynchronous data io
+//This is somewhat of a mess of mutexes, condition variables, and atomic conditions.
+//I'm this can be cleaned up but it allows the engine to add data for writing while data is being currently written
+//and the thread will never exit until the engine ends.
+//!worker function for asynchronous data io
 void write_data(std::mutex& wait_m, std::mutex& data,
         std::condition_variable& write_notify, data_io_info invals){
     FILE* ofile = invals.file;
@@ -45,11 +48,13 @@ void write_data(std::mutex& wait_m, std::mutex& data,
     volatile std::atomic_size_t* datas_in_queue = invals.datas_queued;
     volatile std::atomic_char* is_over = invals.is_over;
     while(true){
+        //obtain a lock on the data structure
         std::unique_lock<std::mutex> data_lock(data);
         //wait until more data exists to write
         while(writers->empty()){
             //unblock data access
             data_lock.unlock();
+            //if waiting for data and engine ends, just quit
             if(*is_over == 1){
                 return;
             }
@@ -64,6 +69,7 @@ void write_data(std::mutex& wait_m, std::mutex& data,
         if(*is_over == 1 && writers->empty()){
             return;
         }
+        //move smeantics since this value is being destroyed anyways
         auto val_from_front = std::move(writers->front());
         writers->pop_front();
         //relinquish access to data, it isn't needed anymore

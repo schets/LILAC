@@ -58,6 +58,7 @@ template<class T>
 void ode_tmpl<T>::integrate_with_writes(){
     double tcur = tw;
     while(tcur <= (tf-w_step)){
+        std::cout << tcur << std::endl;
         write_t(tcur);
         inter->integrate(sol, tcur, tcur + w_step);
         tcur += w_step;

@@ -83,6 +83,13 @@ class jones_matrix:public _double{
             update();
         }
 };
+/*!
+ * This returns the dependencies of the jones matrix class.
+ * jones matrix has the same dependencies as stable_spectral_pde_1d_tmpl, as well as
+ *
+ *      - int num_jones_segments: The number of sets of waveplates to have
+ *      - double jones_int_dist: The distance to integrate between waveplates
+ */
 std::vector<std::string> jones_optical::dependencies() const{
     std::string deps[] = {"num_jones_segments", "jones_int_dist"};
     return make_append(deps, stable_spectral_pde_1d_tmpl<comp>::dependencies());
