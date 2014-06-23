@@ -77,6 +77,5 @@ void write_data(std::mutex& wait_m, std::mutex& data,
         //perform data io and subtract total from 
         write_dat(val_from_front, ofile);
         (*datas_in_queue)--;
-        std::cout << (size_t)*datas_in_queue << std::endl;
     }
 }

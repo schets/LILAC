@@ -21,7 +21,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
  * This function returns the dependencies of the controller class
  * \note This class depends on the variable names, as well as the dependencies for
  * item_dim
- * @return The list of dependencies for the controller class, which is "names"
+ * This class depends on:
+ *
+ *      - string names: The names of the variables to be controlled
+ *
+ * \note Variables can also be directly added by classes within the system. As of now, the names
+ * functionality is not yet implemented 
  * \sa item_dim::dependencies
  */
 std::vector<std::string> controller::dependencies() const{

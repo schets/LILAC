@@ -24,8 +24,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include <limits>
 #include <stdlib.h>
 #include "types/float_traits.hpp"
+//!Template implementation of the stochastic euler integrator
 template<class T>
-class euler_sde_tmpl final_def : public euler_sde{
+class euler_sde_tmpl: public euler_sde{
     typedef typename float_traits<T>::type real_type;
     real_type stepsize;
     T* restr f0, * restr w0, *restr bfnc;

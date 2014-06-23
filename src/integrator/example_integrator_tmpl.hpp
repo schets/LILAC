@@ -23,7 +23,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 //so we do compile-time type selection and then instantiate the right type at runtime from 
 //a list of types with the type_constructor class
 template<class T>
-class example_integrator_tmpl final_def : public example_integrator{
+class example_integrator_tmpl: public example_integrator{
     //!The current type of floating point value
     /*!
     * This queries the float_traits template class to see
@@ -96,13 +96,21 @@ int example_integrator_tmpl<T>::integrate(ptr_passer _u, double t0, double tf){
 
 template<class T>
 void example_integrator_tmpl<T>::postprocess(input& in){
+    //perform postprocessing of integrator class
+    //note how we skip example_integrator in this chain since example integrator is
+    //only a proxy that performs type erasure
+    integrator::postprocess(in);
+    item* some_class;
+    in.retrieve(some_class, "test_class", this);
     //this allows us to have a consistent representation in the input file.
     //If the variable in question is not part of the hardcore numerical analysis code,
     //it may be better to just use a double and not deal with this in the postprocessing
     double _rval1 = 0; 
     in.retrieve(_rval1, "rval1", this);
     rval1=_rval1;
-    in.retrieve(rval2, "rval2", this);
+
+    //note how we pass a default parameter since rval2 isn't necesarily going to exist
+    in.retrieve(rval2, "rval2", this, 0);
     in.retrieve(unsigned_var, "unsigned_var", this);
     in.retrieve(something, "something", this);
     update();

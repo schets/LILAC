@@ -17,8 +17,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "n_pulse_score.h"
 #include "comp_funcs.hpp"
 #include "types/type_register.hpp"
+//This calculates the kurtosis of an input array
 template class type_register<n_pulse_score>;
-double kurtosis(double in[], size_t len){
+static double kurtosis(double in[], size_t len){
     double mean, mom4, mom2;
     mean = mom4 = mom2 = 0;
     for(size_t i = 0; i < len; i++){
@@ -61,6 +62,14 @@ double n_pulse_score::score(comp* ucur){
     double score = kurtosis_v* ener;
     return score;
 }
+//!Returns the dependencies of n_pulse_score
+/*!
+ * This class has the same dependencies os the objective class,
+ * along with:
+ *
+ *      - integer num_pulses: The number of pulses in the solution
+ *
+ */
 std::vector<std::string> n_pulse_score::dependencies() const {
     std::string deps[] = {"num_pulses"};
     return make_append(deps, objective::dependencies());

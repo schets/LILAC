@@ -17,6 +17,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #ifndef graph_h
 #define graph_h
 #include "engine/item.h"
+//!This class puts data into a graph based upon dependencies and performs a topological sort
 class graph{
     class graphnode{
         public:

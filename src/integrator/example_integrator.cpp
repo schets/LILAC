@@ -34,7 +34,9 @@ std::string example_integrator::type() const{
 std::vector<std::string> example_integrator::dependencies() const{
     //rules for dependencies:
     //A name preceded with a ! is optional
-    std::string deps[] = {"rval1", "!rval2", "unsigned_var", "something"};
+    //A name preceded with a # isn't optional, but it doesn't need to be initialized
+    //for postprocess to work
+    std::string deps[] = {"rval1", "!rval2", "#test_class", "unsigned_var", "something"};
     //always call the dependencies of the parent class
     return make_append(deps, integrator::dependencies());
 }
@@ -46,7 +48,6 @@ void example_integrator::postprocess(input& dat){
     //see type_constructor.hpp for details on this
     type_constructor<example_integrator_tmpl>::create(&actual_int, rh_val);
     //rh_val is the rhs pointer that is retrieved by the base class
-
     //construct the actual_int class
     actual_int->holder = holder;
     actual_int->postprocess(dat);

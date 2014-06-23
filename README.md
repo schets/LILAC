@@ -7,8 +7,6 @@ You can find advanced documentation [here](http://schets.github.io/LILAC)
 Installation:
 This project depends on [ACML](http://developer.amd.com/tools-and-sdks/cpu-development/cpu-libraries/amd-core-math-library-acml/acml-downloads-resources/#download) and [Eigen](http://eigen.tuxfamily.org/index.php?title=Main_Page), and the makefile has configurations for GCC, CLANG, and the Intel C++ Compiler. These are simple to install on Linux and Macintosh systems and each site provides installation instructions.
 
-Eigen can be install with the script get_libs in the main directory, while ACML can be downloaded from the AMD website.
-
 Installation on Linux:
 
 1. From the command line, proceed to the directory in which you want to have lilac installed.

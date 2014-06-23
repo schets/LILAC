@@ -18,13 +18,16 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #define FAST_COMPLEX_HPP
 //helper class to eliminate operations
 template<class T>
-struct imag_unit final{};
+struct imag_unit{};
 template<class T>
-struct imag_val final{
+struct imag_val{
     T val;
 };
+//Maybe get faster complex operations by using expression templates for a complex class
+//This may or may not help, depending on how good compilers are at removing temporary objects
+//maybe looking at asm generated for simpler code may help
 template<class T>
-struct fast_comp final{
+struct fast_comp{
     T rval;
     T ival;
     public:

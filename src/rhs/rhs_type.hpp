@@ -32,7 +32,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 template<typename T, class _rhs_type=rhs> class rhs_type:public _rhs_type{
     public:
         //!returns the type of the current variable
-        virtual const std::type_info& vtype() const final_def{
+        virtual const std::type_info& vtype() const{
             return typeid(T);
         }
         

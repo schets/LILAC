@@ -66,9 +66,8 @@ class native_item:public item{
     virtual void _retrieve(retrieve_wrapper&& inval, item* caller);
     public:
         virtual void parse(const std::string& inval) = 0;
-        //native items can't have dependencies or perform postprocessing
-        std::vector<std::string> dependencies() const final_def;
-        void postprocess(input& inval) final_def;
+        std::vector<std::string> dependencies() const;
+        void postprocess(input& inval);
 };
 #ifdef ICC
 //!helper function for variable class

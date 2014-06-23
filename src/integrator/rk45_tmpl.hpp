@@ -27,7 +27,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
  * which allows for definitions using multiple variables
  */
 template<class T>
-class rk45_tmpl final_def :public rk45 {
+class rk45_tmpl:public rk45 {
     typedef typename float_traits<T>::type real_type;
     protected:
     //since these values aren't used to much in actual computation

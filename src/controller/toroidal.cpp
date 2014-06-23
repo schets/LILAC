@@ -23,12 +23,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 template class type_register<toroidal>;
 /*
  * This function returns the dependencies of the toroidal class
- * \note
- * This class depends on the parameter iterations, which is the number of iterations that
- * the search will perform
+ * This class has the same dependencies as the controller class, along with
  *
- * @return returns the dependencies of the toroidal class,
- * along with the dependencies of the controller class
+ *      - int iterations: The number of iterations the controller will perform
+ *      - double initial_inc: The stepsize of the first variable
+ *      - double mul_fac: The multiplying factor to find the increment of the next variable, inc2=mul_fac*inc1, inc3=mul_fac*inc2, etc.
+ *
  *\sa controller::dependencies, item_dim::dependencies
  */
 std::vector<std::string> toroidal::dependencies() const{
@@ -105,12 +105,15 @@ void toroidal::control(comp* u, objective* obj){
 	}
 }
 
+//!Adds a variable to the controller
 void toroidal::addvar(std::weak_ptr<variable> v){
 	vars.push_back(v);
 }
+//!Returns whether the controller is done or not
 char toroidal::is_good(){
 	return num_int < iterations;
 }
+//!Moves the controller through fake iterations if the starting index is greater than 1
 int toroidal::pre_set(){
 	for(size_t i = 0; i < index*iterations; i++){
 		double curinc=initial_inc;

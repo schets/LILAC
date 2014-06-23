@@ -17,6 +17,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #ifndef CNLS_PULSE_H
 #define CNLS_PULSE_H
 #include "objective.h"
+//!This class calculates the score of a solution with n pulses, tailored towards the quality of a laser pulse
+/*!
+ * This class calculates the quality of a laser pulse formed by n distinct pulses. First,
+ * it calculates the magnitude of the pulse which results from the base pulses, and then finds
+ * the quality of that resulting pulse. This is done by finding the energy divided by the kurtosis.
+ * of the Fourier transform. This metric balances high energy with a tight pulse.
+ */
 class n_pulse_score:public objective{
     size_t n_pulse;
     double* restr help;

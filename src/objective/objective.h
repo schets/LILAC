@@ -18,6 +18,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #define OBJECTIVE_H
 #include "engine/item.h"
 #include "engine/item_dim.h"
+//!THis class represents the objective function class that calculates the score of a solution
 class objective:public item_dim{
     public:
         virtual double score(comp* invals) = 0;
