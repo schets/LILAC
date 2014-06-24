@@ -16,36 +16,17 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 */
 #include "engineimp.h"
 #include "writer/writer.h"
-static void write_data(std::shared_ptr<writer> dat, std::ostream& wfile){
-    dat->write(wfile);
-    wfile << "&&\n";
-}
-static void write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind, std::ostream& out_stream){
-    out_stream << "index: " << ind << "\n";
-    for(auto& dat : dats){
-        write_data(dat, out_stream);
-    }
-    out_stream << "&\n";
-}
-static size_t write_dat(std::map<size_t, std::list<std::shared_ptr<writer>>>& writers, FILE* ofile){
-    std::stringstream out_stream;
-    for(auto& writes : writers){
-        write_individual_dat(writes.second, writes.first, out_stream);
-    }
-    const auto& o_str = out_stream.str();
-    fwrite(o_str.c_str(), sizeof(char), o_str.size(), ofile);
-    writers.clear();
-    return o_str.size();
-}
+
 //This is somewhat of a mess of mutexes, condition variables, and atomic conditions.
 //I'm this can be cleaned up but it allows the engine to add data for writing while data is being currently written
 //and the thread will never exit until the engine ends.
 //!worker function for asynchronous data io
 void write_data(std::mutex& wait_m, std::mutex& data,
         std::condition_variable& write_notify, data_io_info invals){
-    FILE* ofile = invals.file;
+    std::ofstream* ofile = invals.file;
     auto* writers = invals.writers;
     volatile std::atomic_size_t* datas_in_queue = invals.datas_queued;
+    volatile std::atomic_size_t* data_size= invals.data_size;
     volatile std::atomic_char* is_over = invals.is_over;
     while(true){
         //obtain a lock on the data structure
@@ -70,12 +51,16 @@ void write_data(std::mutex& wait_m, std::mutex& data,
             return;
         }
         //move smeantics since this value is being destroyed anyways
-        auto val_from_front = std::move(writers->front());
+        auto val_from_front = writers->front();
         writers->pop_front();
         //relinquish access to data, it isn't needed anymore
         data_lock.unlock();
         //perform data io and subtract total from 
-        write_dat(val_from_front, ofile);
+        (*ofile) << (val_from_front->dat.str());
+        size_t s = val_from_front->size;
+        val_from_front.reset();
+        //!Don't decrement size until objects have been destructed
+        (*data_size) -= s;
         (*datas_in_queue)--;
     }
 }

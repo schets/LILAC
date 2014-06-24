@@ -20,6 +20,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "engine/engine.h"
 using namespace std;
 int main(int argc, char** argv){
+    std::ios_base::sync_with_stdio(false);
     std::string outfile;
     std::string index;
     if(argc == 2){

@@ -60,20 +60,18 @@ namespace __HIDER__{
         }
     };
 }
-double get_norm_rand(double sigma);
 //!This functions fills the input data with random gaussian noise
 /*!
  * This functions fills each variable of the 
  */
 template<class T, class Lambda>
 inline void gaussian_noise(T* inval, size_t len, double mean, double sdev, Lambda&& fnc){
-    //  std::cout << "NOISE:" << std::endl;
     //!rng generator struct;
     static __HIDER__::acml_rng rng;
     auto* rng_ptr = &rng; //This bypasses a compiler warning
     typedef typename float_traits<T>::type real_type;
     if(float_traits<T>::cast_to_double){
-        rng.fill((double*)inval, len, 0, sdev*sdev);
+        rng.fill((double*)inval, len*float_traits<T>::dim, mean, sdev*sdev);
         for(size_t i = 0; i < len; i++){
             std::forward<Lambda>(fnc)(inval[i]);
         }
@@ -81,8 +79,8 @@ inline void gaussian_noise(T* inval, size_t len, double mean, double sdev, Lambd
     else{
         for(size_t i = 0; i < len; i++){
             apply<T>::transform(inval[i],
-                    [sdev, rng_ptr](real_type& val, size_t){
-                    val = real_type(rng_ptr->get_gauss_double(0, sdev));
+                    [sdev, mean, rng_ptr](real_type& val, size_t){
+                    val = real_type(rng_ptr->get_gauss_double(mean, sdev));
                     },
                     std::forward<Lambda>(fnc));
         }

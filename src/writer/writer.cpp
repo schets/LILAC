@@ -74,19 +74,20 @@ bool writer::is_w_type(int inval){
 }
 
 
-void writer::write(std::ostream& ofile) const{
+size_t writer::write(std::ostream& ofile) const{
+    size_t total_size = 0;
     for(const auto& val : dvals){
-        ofile << val->to_string();
+        std::string&& temp_str = val->to_string();
+        total_size += temp_str.size() * sizeof(std::string::value_type);
+        ofile << temp_str;
         ofile << '\n';
-	// \n instead of endl prevent is buffering
-	//this makes data IO quite a bit faster
+        total_size += sizeof('\n');
     }
+    return total_size;
 }
 
 std::string writer::to_string() const{
 	std::stringstream val;
 	write(val);
-	std::string retval;
-	val >> retval;
-	return retval;
+        return val.str();
 }

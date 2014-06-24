@@ -34,7 +34,8 @@ class writer{
     //!Writes the current data to a file
     static bool is_w_type(int inval);
     public:
-    virtual void write(std::ostream& ofile) const;
+    //!Writes to the ostream and returns the size of the data written
+    virtual size_t write(std::ostream& ofile) const;
     //!Labels for various input types
     typedef enum{
         FINAL_SCORE,

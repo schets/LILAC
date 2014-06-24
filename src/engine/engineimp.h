@@ -30,6 +30,10 @@ class engine;
 class writer;
 item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
         std::map<std::string, input>& inv, engineimp* en);
+struct data_blob{
+    std::stringstream dat;
+    size_t size;
+};
 /*!
  *
  * This class is the actual engime implementation. It is kept separate from
@@ -50,6 +54,7 @@ class engineimp{
     std::mutex condition_lock;
     std::condition_variable write_cond;
     volatile std::atomic_size_t datas_queued;
+    volatile std::atomic_size_t data_size;
     volatile std::atomic_char is_over;
     void read(std::istream& fstr);
     void _read(std::istream& fstr);
@@ -57,9 +62,9 @@ class engineimp{
     void execute_command(std::string inval);
     void update();
     std::string curdir;
-    FILE*  ofile;
+    std::ofstream ofile;
     std::map<size_t, std::list<std::shared_ptr<writer>>> writers;
-    std::list<std::map<size_t, std::list<std::shared_ptr<writer>>>> async_write_queue;
+    std::list<std::shared_ptr<data_blob>> async_write_queue;
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;
     std::set<std::shared_ptr<item>> update_vars;
@@ -86,12 +91,14 @@ class engineimp{
     friend item_wrapper eval_lisp(std::string in_cmd, std::string base_name,
             std::map<std::string, input>& inv, engineimp* en);
 };
+
 //!structure holding parameters for data io
 struct data_io_info{
-    FILE* file;
+    std::ofstream* file;
     //list of requested data writes
-    std::list<std::map<size_t, std::list<std::shared_ptr<writer>>>>* writers;
+    std::list<std::shared_ptr<data_blob>>* writers;
     volatile std::atomic_size_t* datas_queued;
+    volatile std::atomic_size_t* data_size;
     volatile std::atomic_char* is_over;
 };
 #endif
