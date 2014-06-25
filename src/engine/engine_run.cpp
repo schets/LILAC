@@ -26,6 +26,7 @@ void engineimp::run(){
                 "engineimp::engine_run", "engine/engine_run.cpp", FATAL_ERROR);
     }
     index=cont->pre_set();
+    writers.clear();
     while(cont->is_good()){
         update();
         sys->simulate();

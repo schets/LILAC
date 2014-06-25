@@ -28,36 +28,38 @@ char f_is_empty(std::ifstream& fstr){
     return fstr.peek()==std::ifstream::traits_type::eof();
 }
 engineimp::engineimp(const std::string& fname, const std::string& outname,
-        const std::string& start_index):datas_queued(0), data_size(0), is_over(0){
-    values["!out_file"] =  std::make_shared<string>();
-    ((native_item*)(values["!out_file"].get()))->parse(outname);
-    values["!out_file"]->setname("!out_file");
-    ofile.open(outname.c_str(), std::ofstream::out | std::ofstream::trunc);
-    auto p = std::make_shared<integer>();
-    p->parse(start_index);
-    p->setname("!start_ind");
-    values["!start_ind"]=p;
-    std::ifstream fstr(fname.c_str());
-    if(f_is_empty(fstr)){
-        err("Empty/non-existant file passed as configuration parameter",
-                "engineimp::engineimp(std::string)", "engine/engine.cpp", FATAL_ERROR);
-    }
-    read(fstr);
-    datas_queued=0;
-    data_io_info dat_inf;
-    dat_inf.data_size=&data_size;
-    dat_inf.datas_queued = &datas_queued;
-    dat_inf.file = &ofile;
-    dat_inf.writers = &async_write_queue;
-    dat_inf.is_over = &is_over;
-    write_thread = std::thread(
-            [dat_inf, this](){
-            ::write_data(this->condition_lock, this->data_lock, this->write_cond, dat_inf);
-            });
-};
+        const std::string& start_index):datas_queued(0), data_size(0), is_over(0),
+    cur_blob(std::make_shared<data_blob>()){
+        cur_blob->size=0;
+        values["!out_file"] =  std::make_shared<string>();
+        ((native_item*)(values["!out_file"].get()))->parse(outname);
+        values["!out_file"]->setname("!out_file");
+        ofile.open(outname.c_str(), std::ofstream::out | std::ofstream::trunc);
+        auto p = std::make_shared<integer>();
+        p->parse(start_index);
+        p->setname("!start_ind");
+        values["!start_ind"]=p;
+        std::ifstream fstr(fname.c_str());
+        if(f_is_empty(fstr)){
+            err("Empty/non-existant file passed as configuration parameter",
+                    "engineimp::engineimp(std::string)", "engine/engine.cpp", FATAL_ERROR);
+        }
+        read(fstr);
+        datas_queued=0;
+        data_io_info dat_inf;
+        dat_inf.data_size=&data_size;
+        dat_inf.datas_queued = &datas_queued;
+        dat_inf.file = &ofile;
+        dat_inf.writers = &async_write_queue;
+        dat_inf.is_over = &is_over;
+        write_thread = std::thread(
+                [dat_inf, this](){
+                ::write_data(this->condition_lock, this->data_lock, this->write_cond, dat_inf);
+                });
+    };
 
 engineimp::~engineimp(){
-    this->write_dat();
+    this->_write_dat(true);
     is_over++;
     while(datas_queued > 0){
     }

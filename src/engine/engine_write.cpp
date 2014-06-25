@@ -27,9 +27,14 @@ static size_t write_data(std::shared_ptr<writer> dat, std::ostream& wfile){
 static size_t write_individual_dat(const std::list<std::shared_ptr<writer>>& dats, size_t ind,
         std::ostream& out_stream){
     out_stream << "index: " << ind << "\n";
-    //this will be slightly innaccurate, but is easier than trying to figure out how many characters
+    //this may be slightly innaccurate, but is easier than trying to figure out how many characters
     //the stream will use to represent ind
-    size_t dat_size = sizeof("index: ") + sizeof("\n") + (size_t)std::floor(std::log10(ind));
+    size_t dat_size=sizeof("index: ") + sizeof("\n") + 1;
+    size_t ind_cpy=ind;
+    while(ind_cpy > 9){
+        ind_cpy/=10;
+        dat_size++;
+    }
     for(auto& dat : dats){
         dat_size += write_data(dat, out_stream);
     }
@@ -51,26 +56,34 @@ static size_t write_dat(std::map<size_t, std::list<std::shared_ptr<writer>>>& wr
 void engineimp::add_writer(const std::shared_ptr<writer>& wval){
     writers[index].push_back(wval);
 }
-//!Writes formatted data to disk and clears from ram
-void engineimp::write_dat(){
-    constexpr size_t max_size = 1e9; //won't add more data while ~1gb of data is waiting to be held
-    while(data_size > max_size){
-        //nothing is writing at 2gb a second, this might clear a few hundred mb if we are lucky!!!
-        std::chrono::milliseconds sleep_len(500);
+//OS still seems to block entire process during io...
+//both threads run simultaneously, but the 
+//!Writes data stored in writer to a buffer and writes to disk asynchronously every 50mb. Will block while > ~500mb of data is waiting to be written
+void engineimp::_write_dat(bool force){
+    //easier than dealing with orders of 1024
+    constexpr size_t max_size = 5e8; //won't add more data while ~500mb of data is waiting to be held
+    constexpr size_t write_size=2e8; //write every 50mb
+    while(data_size > max_size - write_size){
+        //nothing is writing at 2.5gb a second, this might clear a hundred mb if we are lucky!!!
+        //Better to let this thread sleep instead of waste cpu cycles
+        //Also, we wait on max_size - write_size since we may also have write_size worth of data in the engine
+        std::chrono::milliseconds sleep_len(200);
         std::this_thread::sleep_for(sleep_len);
     }
-    auto dat = std::make_shared<data_blob>();
-    dat->size = ::write_dat(writers,dat->dat);
-
-    std::unique_lock<std::mutex> dat_lock(data_lock);
-    datas_queued++;
-    data_size += dat->size;
-    async_write_queue.push_back(dat);
-    dat_lock.unlock();
-
-    writers.clear();
-    std::unique_lock<std::mutex> lock(condition_lock);
-    write_cond.notify_all();
-    lock.unlock();
+    cur_blob->size += ::write_dat(writers, cur_blob->dat);
+    if(force || cur_blob->size >= write_size){
+        std::unique_lock<std::mutex> dat_lock(data_lock);
+        datas_queued++;
+        data_size += cur_blob->size;
+        async_write_queue.push_back(cur_blob);
+        dat_lock.unlock();
+        cur_blob = std::make_shared<data_blob>();
+        cur_blob->size=0;
+        std::unique_lock<std::mutex> lock(condition_lock);
+        write_cond.notify_all();
+        lock.unlock();
+    }
 }
-
+void engineimp::write_dat(){
+    _write_dat(false);
+};

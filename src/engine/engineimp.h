@@ -61,6 +61,7 @@ class engineimp{
     void sort_pp();
     void execute_command(std::string inval);
     void update();
+    std::shared_ptr<data_blob> cur_blob;
     std::string curdir;
     std::ofstream ofile;
     std::map<size_t, std::list<std::shared_ptr<writer>>> writers;
@@ -68,6 +69,7 @@ class engineimp{
     std::map<std::string, item_wrapper > values;
     std::map<std::string, input> inputs;
     std::set<std::shared_ptr<item>> update_vars;
+    void _write_dat(bool force);
     public:
     void write_dat();
     void add_writer(const std::shared_ptr<writer>& wval);
