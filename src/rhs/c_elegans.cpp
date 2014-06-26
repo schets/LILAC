@@ -183,31 +183,22 @@ void c_elegans::postprocess(input& in){
     for(auto& val : abl_neur){
         val = 0;
     } 
-        if(abl_neur.size() != 1){
-	  next_comb(abl_neur, num_neur);
-	  }
-    for(int i = 0; i < cur_ind; i++){
-	    for(int j = 0; j < iterations; j++){
-		    if(next_comb(abl_neur, num_neur)){
-			    char ind_str[20];//won't ever have a 20 digit index
-			    //handy buffer to overflow for those hacking this.
-			    sprintf(ind_str, "%d", (int)cur_ind);
-			    err(std::string("Combinations exhausted in index ") + ind_str,
-					    "c_elegans::postprocess","rhs/c_elegans.cpp", FATAL_ERROR);
-		    }
-	    }
+    if(abl_neur.size() != 1){
+        next_comb(abl_neur, num_neur);
     }
-/*    if(cur_ind != 0){
-	    if(next_comb(abl_neur, num_neur)){
-		    char ind_str[20];//won't ever have a 20 digit index
-		    //handy buffer to overflow for those hacking this.
-		    sprintf(ind_str, "%d", (int)cur_ind);
-		    err(std::string("Combinations exhausted in index ") + ind_str,
-				    "c_elegans::postprocess","rhs/c_elegans.cpp", FATAL_ERROR);
-	    }
-    }*/
+    for(int i = 0; i < cur_ind; i++){
+        for(int j = 0; j < iterations; j++){
+            if(next_comb(abl_neur, num_neur)){
+                char ind_str[20];//won't ever have a 20 digit index
+                //handy buffer to overflow for those hacking this.
+                sprintf(ind_str, "%d", (int)cur_ind);
+                err(std::string("Combinations exhausted in index ") + ind_str,
+                        "c_elegans::postprocess","rhs/c_elegans.cpp", FATAL_ERROR);
+            }
+        }
+    }
     auto dat_inds =
-	    std::shared_ptr<writer>(new writer(true));
+        std::shared_ptr<writer>(new writer(true));
     dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
     holder->add_writer(dat_inds);
 
@@ -227,116 +218,119 @@ void c_elegans::postprocess(input& in){
     first_round=true;
     update();
 }
+
+
+
 void c_elegans::update(){
-	if(has_gone){
-		has_gone=false;//prevent more than one update happening without call to rhs
-		if(!first_round){
-			if(next_comb(abl_neur, num_neur)){
-				holder->write_dat();
-				char ind_str[20];//won't ever have a 20 digit index
-				//handy buffer to overflow for those hacking this.
-				sprintf(ind_str, "%d", cur_ind);
-				err(std::string("Combinations exhausted in index ") + ind_str,
-						"c_elegans::update","rhs/c_elegans.cpp", FATAL_ERROR);
-			}
-			auto dat_inds =
-				std::shared_ptr<writer>(new writer(true));
-			dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
-			holder->add_writer(dat_inds);
+    if(has_gone){
+        has_gone=false;//prevent more than one update happening without call to rhs
+        if(!first_round){
+            if(next_comb(abl_neur, num_neur)){
+                holder->write_dat();
+                char ind_str[20];//won't ever have a 20 digit index
+                //handy buffer to overflow for those hacking this.
+                sprintf(ind_str, "%d", cur_ind);
+                err(std::string("Combinations exhausted in index ") + ind_str,
+                        "c_elegans::update","rhs/c_elegans.cpp", FATAL_ERROR);
+            }
+            auto dat_inds =
+                std::shared_ptr<writer>(new writer(true));
+            dat_inds->add_data(data::create("Ablations", abl_neur.data(), abl_neur.size()), writer::OTHER);
+            holder->add_writer(dat_inds);
 
-		}
-		else{
-			first_round=false;
-		}
+        }
+        else{
+            first_round=false;
+        }
 
-		Matrix<double, Dynamic, Dynamic> ag_dense(num_neur, num_neur);
-		//insert code to zero it out later
+        Matrix<double, Dynamic, Dynamic> ag_dense(num_neur, num_neur);
+        //insert code to zero it out later
 
-		auto ag_m = ag_full;
-		AEchem_trans = AEchem_trans_full;
-		auto fncval = [this](int i, int j, double val)->bool{
-			for(int kk = 0; kk < (int)this->abl_neur.size(); kk++){
-				if((int)this->abl_neur[kk] == i || (int)this->abl_neur[kk] == j){
-					return false;
-				}
-			}
-			return true;
-		};
-		AEchem_trans.prune(fncval);
-		ag_m.prune(fncval);
-		ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
-		auto sumvals = ag_dense.colwise().sum();
-		sparse_type temp(num_neur, num_neur);
-		//generate the sparse diagonal matrix to build the lapacian
-		std::vector<Triplet<double, int> > temp_tr;
-		for(int i = 0; i < (int)num_neur; i++){
-			temp_tr.push_back(Triplet<double, int>(i, i, sumvals[i]));
-		}
-		temp.setFromTriplets(temp_tr.begin(), temp_tr.end());
-		laplacian = temp - ag_m;
-		//initialize the Echem array
-		for(size_t i = 0; i < num_neur; i++){
-			if(GABAergic[i]){
-				Echem[i] = EchemInh;
-			}
-			else{
-				Echem[i] = EchemEx;
-			}
-		}
-		//Initialize the sig array
-		for(size_t i = 0; i < num_neur; i++){
-			sig[i] = 0.5;
-		}
+        auto ag_m = ag_full;
+        AEchem_trans = AEchem_trans_full;
+        auto fncval = [this](int i, int j, double val)->bool{
+            for(int kk = 0; kk < (int)this->abl_neur.size(); kk++){
+                if((int)this->abl_neur[kk] == i || (int)this->abl_neur[kk] == j){
+                    return false;
+                }
+            }
+            return true;
+        };
+        AEchem_trans.prune(fncval);
+        ag_m.prune(fncval);
+        ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
+        auto sumvals = ag_dense.colwise().sum();
+        sparse_type temp(num_neur, num_neur);
+        //generate the sparse diagonal matrix to build the lapacian
+        std::vector<Triplet<double, int> > temp_tr;
+        for(int i = 0; i < (int)num_neur; i++){
+            temp_tr.push_back(Triplet<double, int>(i, i, sumvals[i]));
+        }
+        temp.setFromTriplets(temp_tr.begin(), temp_tr.end());
+        laplacian = temp - ag_m;
+        //initialize the Echem array
+        for(size_t i = 0; i < num_neur; i++){
+            if(GABAergic[i]){
+                Echem[i] = EchemInh;
+            }
+            else{
+                Echem[i] = EchemEx;
+            }
+        }
+        //Initialize the sig array
+        for(size_t i = 0; i < num_neur; i++){
+            sig[i] = 0.5;
+        }
 
-		eqS = sig * (ar/(ar*sig + ad));
-		//more initialization of temporary dense matrices
-		Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
-		ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
-		Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
-		aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
-		Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
-		//create the C matrix
-		C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
-		//initialize matrix to modify diagonal part of C
-		Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS.matrix()); 
-		for(size_t i = 0; i < num_neur; i++){
-			C(i, i) += tmp(i);
-		}
-		Matrix<double, num_neur, 1> Ivals;
-		Ivals.setZero();
-		double amp=2e4;
-		Ivals[276]=amp;
-		Ivals[278]=amp;
-		Matrix<double, num_neur, 1> b;
-		//create B vector
-		b= gchem*aedense*(eqS * Echem).matrix();
-		for(size_t i = 0; i < num_neur; i++){
-			b[i] += (memG*memV + Ivals[i]);
-		}
-		//calculate eqV
-		eqV.matrix() = C.inverse()*b;
-		vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
-		for(auto val : abl_neur){
-			eqV[val] = vmean [val] = eqS[val] = 0;
-		};
-	}
+        eqS = sig * (ar/(ar*sig + ad));
+        //more initialization of temporary dense matrices
+        Matrix<double, Dynamic, Dynamic> ldense(num_neur,num_neur);
+        ldense = laplacian*Matrix<double, num_neur, num_neur>::Identity();
+        Matrix<double, Dynamic, Dynamic> aedense(num_neur, num_neur);
+        aedense= AEchem_trans*Matrix<double, num_neur, num_neur>::Identity();
+        Matrix<double, Dynamic, Dynamic> C(num_neur, num_neur);
+        //create the C matrix
+        C= memG*Matrix<double, num_neur, num_neur>::Identity() + gelec*ldense;
+        //initialize matrix to modify diagonal part of C
+        Matrix<double, num_neur, 1> tmp =(gchem * aedense * eqS.matrix()); 
+        for(size_t i = 0; i < num_neur; i++){
+            C(i, i) += tmp(i);
+        }
+        Matrix<double, num_neur, 1> Ivals;
+        Ivals.setZero();
+        double amp=2e4;
+        Ivals[276]=amp;
+        Ivals[278]=amp;
+        Matrix<double, num_neur, 1> b;
+        //create B vector
+        b= gchem*aedense*(eqS * Echem).matrix();
+        for(size_t i = 0; i < num_neur; i++){
+            b[i] += (memG*memV + Ivals[i]);
+        }
+        //calculate eqV
+        eqV.matrix() = C.inverse()*b;
+        vmean = eqV+(1.0/beta) * (1.0/sig - 1).log();
+        for(auto val : abl_neur){
+            eqV[val] = vmean [val] = eqS[val] = 0;
+        };
+    }
 }
 
 std::vector<std::string> c_elegans::dependencies() const{
-	std::string deps[] = {"beta", "memV", "memG", "gchem", "gelec", "num_comb",
-		"tau", "EchemEx", "EchemInh", "ar", "ad", "ag_mat", "a_mat", "iterations",
-		"controller"};
-	return make_append(deps, rhs_type::dependencies());
+    std::string deps[] = {"beta", "memV", "memG", "gchem", "gelec", "num_comb",
+        "tau", "EchemEx", "EchemInh", "ar", "ad", "ag_mat", "a_mat", "iterations",
+        "controller"};
+    return make_append(deps, rhs_type::dependencies());
 }
 
 void c_elegans::initial_condition(ptr_passer in, size_t len){
-	if(len != dimension){
-		rhs_type<double, rhs_sde>::initial_condition(in, len);
-	}
-	double* vals = in;
-	for(size_t i = 0; i < num_neur; i++){
-		//vals[i] = eqV[i];
-		vals[i] = vmean[i];
-		vals[i+dim_v] = eqS[i];
-	}
+    if(len != dimension){
+        rhs_type<double, rhs_sde>::initial_condition(in, len);
+    }
+    double* vals = in;
+    for(size_t i = 0; i < num_neur; i++){
+        //vals[i] = eqV[i];
+        vals[i] = vmean[i];
+        vals[i+dim_v] = eqS[i];
+    }
 }
