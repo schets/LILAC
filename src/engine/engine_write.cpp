@@ -62,7 +62,7 @@ void engineimp::add_writer(const std::shared_ptr<writer>& wval){
 void engineimp::_write_dat(bool force){
     //easier than dealing with orders of 1024
     constexpr size_t max_size = 5e8; //won't add more data while ~500mb of data is waiting to be held
-    constexpr size_t write_size=2e8; //write every 50mb
+    constexpr size_t write_size=5e7; //write every 50mb
     while(data_size > max_size - write_size){
         //nothing is writing at 2.5gb a second, this might clear a hundred mb if we are lucky!!!
         //Better to let this thread sleep instead of waste cpu cycles
