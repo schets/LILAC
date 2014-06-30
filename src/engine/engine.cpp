@@ -46,6 +46,7 @@ engineimp::engineimp(const std::string& fname, const std::string& outname,
         }
         read(fstr);
         datas_queued=0;
+#ifdef ASYNC_IO
         data_io_info dat_inf;
         dat_inf.data_size=&data_size;
         dat_inf.datas_queued = &datas_queued;
@@ -56,16 +57,19 @@ engineimp::engineimp(const std::string& fname, const std::string& outname,
                 [dat_inf, this](){
                 ::write_data(this->condition_lock, this->data_lock, this->write_cond, dat_inf);
                 });
+#endif
     };
 
 engineimp::~engineimp(){
     this->_write_dat(true);
+#ifdef ASYNC_IO
     is_over++;
     while(datas_queued > 0){
     }
     std::unique_lock<std::mutex> lock(condition_lock);
     write_cond.notify_all();
     write_thread.join();
+#endif
 }
 bool engineimp::item_exists(std::shared_ptr<item> p) const{
     if(!p){

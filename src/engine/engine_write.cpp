@@ -72,6 +72,7 @@ void engineimp::_write_dat(bool force){
     }
     cur_blob->size += ::write_dat(writers, cur_blob->dat);
     if(force || cur_blob->size >= write_size){
+#ifdef ASYNC_IO
         std::unique_lock<std::mutex> dat_lock(data_lock);
         datas_queued++;
         data_size += cur_blob->size;
@@ -82,6 +83,10 @@ void engineimp::_write_dat(bool force){
         std::unique_lock<std::mutex> lock(condition_lock);
         write_cond.notify_all();
         lock.unlock();
+#else
+        ofile << cur_blob->dat.str();
+        cur_blob = std::make_shared<data_blob>();
+#endif
     }
 }
 void engineimp::write_dat(){

@@ -50,7 +50,7 @@ typedef void    (*_lsoda_f) (double, double *, double *, void *);
  ************/
 
 #include <math.h>
-#include "../utils/defs.h"
+#include "utils/defs.hpp"
 static int 
 idamax(size_t n, double* dx, size_t incx)
 

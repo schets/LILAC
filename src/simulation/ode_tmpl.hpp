@@ -84,7 +84,11 @@ void ode_tmpl<T>::postprocess(input& in){
                 "simulation/ode_tmpl.hpp", FATAL_ERROR);
     }
 
-    in.retrieve(tw, "tw", this, t0);
+    //examople of passing a function object-just passes a function to return t0
+    //I could (and should) just pass t0, but this is for illustrative purposes.
+    //A different example may be creating a new object/allocating memory if the desired item
+    //isn't in the system
+    in.retrieve(tw, "tw", this, [this](){return this->t0;});
     in.retrieve(w_step, "w_step",this, -1.0);
     if(tw >= tf){
         err("tw is >= than tf, not writing intermittent data", "ode_tmpl::postprocess",

@@ -132,7 +132,7 @@ void _fft(comp* _in, comp* _out, const size_t len, int dir, double scale){
  * @param len length of the arrays
  */
 void fft(comp* in, comp* out, const size_t len){
-    _fft(in, out, len, 1, 1.0);
+    _fft(in, out, len, -1, 1.0);
 }
 
 /*
@@ -146,7 +146,7 @@ void fft(comp* in, comp* out, const size_t len){
  * @param len length of the arrays
  */
 void ifft(comp* in, comp* out, const size_t len){
-    _fft(in, out, len, -1, 1.0/len);
+    _fft(in, out, len, 1, 1.0/len);
 }
 
 

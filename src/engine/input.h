@@ -34,10 +34,10 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 class input{
     //!Points to the actual map of input values
     std::map<std::string, item_wrapper>* invals;
-    
+
     //!Re-directs an input value to a locally defined item
     std::map<std::string, item_wrapper> re_directions;
-    
+
     //!Re-directs one name to another
     std::map<std::string, std::string> re_mappings;
 
@@ -49,7 +49,7 @@ class input{
     inline const item* operator[](const std::string& inval){
         return get_val(inval).get();
     }
-     
+
     //!Redirects an input value to a local item
     void add_redir(const std::string& name, const item_wrapper& inv);
 
@@ -101,14 +101,33 @@ class input{
                 }
             }
         }
-
+//!Retrieve that allows passing of a constructor function
+    /*!
+     * This retrieve function allows the passing of a function type argument to construct
+     * the value if the item does not exist in the input.
+     * It must be an actual function type object, not a callable object or a function pointer.
+     * See the C++ reference on std::is_function for a more detailed overview on what constitutes a function
+     */
+    template<class T, class Lambda>
+        typename std::enable_if<!std::is_convertible<T, Lambda>::value>::type
+        retrieve(T& inval, const std::string name, item* caller, Lambda&& ctor){
+            item* sender = get_val(name).get();
+            if(sender){
+                sender->_retrieve(__retrieve_checker<T>(inval), caller);
+            }
+            else{
+                inval=std::forward<Lambda>(ctor)();
+            }
+        }
     /*!
      * Adds an optional value that will be placed in inval if the item does not exist
+     * The type passed to the function must be the convertible to the type being retrieved
      * 
      * @param stdval The value that inval is set to if the passed item does not exist
      */
-    template<class T>
-        void retrieve(T& inval, const std::string& name, item* caller, T&& stdval){
+    template<class T, class U>
+        typename std::enable_if<std::is_convertible<T, U>::value>::type
+        retrieve(T& inval, const std::string& name, item* caller, U&& stdval){
             item* sender = get_val(name).get();
             if(sender){
                 sender->_retrieve(__retrieve_checker<T>(inval), caller);
@@ -117,8 +136,9 @@ class input{
                 inval=std::forward<T>(stdval); 
             }
         }
-    template<class T>
-        void retrieve(T& inval, const std::string& name, item* caller, const T& stdval){
+    template<class T, class U>
+        typename std::enable_if<std::is_same<T, U>::value>::type
+        retrieve(T& inval, const std::string& name, item* caller, const U& stdval){
             item* sender = get_val(name).get();
             if(sender){
                 sender->_retrieve(__retrieve_checker<T>(inval), caller);
@@ -128,6 +148,8 @@ class input{
             }
         }
 
+    
+
 
     //non-tracking versions of retrieve
     /*!
@@ -135,16 +157,17 @@ class input{
      * since it prevents variable changes from being broadcasted to the caller
      * \sa input::retrieve
      */
+
     template<class T>
         void retrieve_notrack(T& inval, const std::string& name){
             retrieve(inval, name, 0);
         }
     /*!
-     * Non-tracking retrieve with standard value
+     * Non-tracking retrieve with standard value or creation function
      * \sa input::retrieve
      */
-    template<class T>
-        void retrieve_notrack(T& inval, const std::string& name, T&& stdval){
+    template<class T, class U>
+        void retrieve_notrack(T& inval, const std::string& name, U&& stdval){
             retrieve(inval, name, 0, stdval);
         }
 
@@ -152,10 +175,9 @@ class input{
      * Non-tracking retrieve with standard value
      * \sa input::retrieve
      */
-    template<class T>
-        void retrieve_notrack(T& inval, const std::string& name, const T& stdval){
+    template<class T, class U>
+        void retrieve_notrack(T& inval, const std::string& name, const U& stdval){
             retrieve(inval, name, 0, stdval);
         }
-
 };
 #endif
