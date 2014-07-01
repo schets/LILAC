@@ -26,6 +26,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 #include "writer/writer.h"
 #include "engine/engineimp.h"
 #include "controller/controller.h"
+#include "utils/dmd.hpp"
 bool next_comb(std::vector<size_t>& inval, size_t max_num){
     class comb_helper{
         public:
@@ -258,7 +259,8 @@ void c_elegans::update(){
         };
         AEchem_trans.prune(fncval);
         ag_m.prune(fncval);
-        ag_dense = ag_m *  Matrix<double, num_neur, num_neur>::Identity();
+        ag_dense = ag_m *  Matrix<double, num_neur, num_neur, ColMajor>::Identity();
+        dmd(ag_dense);
         auto sumvals = ag_dense.colwise().sum();
         sparse_type temp(num_neur, num_neur);
         //generate the sparse diagonal matrix to build the lapacian

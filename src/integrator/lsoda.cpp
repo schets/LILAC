@@ -42,7 +42,8 @@
 */
 
 /* Contact: Heng Li <lh3@sanger.ac.uk> */
-
+//work in progress, moving this into the integrator system by Sam Schetterer
+//also making C++/Eigen
 typedef void    (*_lsoda_f) (double, double *, double *, void *);
 
 /************
@@ -51,6 +52,7 @@ typedef void    (*_lsoda_f) (double, double *, double *, void *);
 
 #include <math.h>
 #include "utils/defs.hpp"
+#include <eigen3/Eigen/Eigen/Core>
 static int 
 idamax(size_t n, double* dx, size_t incx)
 
